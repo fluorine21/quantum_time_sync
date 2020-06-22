@@ -1,0 +1,21 @@
+12:42:16 **** Incremental Build of configuration Debug for project test_proj_hello ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v8 gcc compiler'
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: test_proj_hello.elf'
+'Invoking: ARM v8 gcc linker'
+aarch64-none-elf-gcc -Wl,-T -Wl,../src/lscript.ld -LC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bsplib/lib -o "test_proj_hello.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: test_proj_hello.elf'
+' '
+'Invoking: ARM v8 Print Size'
+aarch64-none-elf-size test_proj_hello.elf  |tee "test_proj_hello.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29492	   2048	  20660	  52200	   cbe8	test_proj_hello.elf
+'Finished building: test_proj_hello.elf.size'
+' '
+
+12:42:17 Build Finished (took 1s.562ms)
+

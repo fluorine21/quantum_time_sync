@@ -1,0 +1,9 @@
+22:44:44 **** Clean-only build of project test_project_platform ****
+buildplatform.bat 50648 test_project_platform clean 
+XSDB Server Channel: tcfchan#9
+Reading the platform  : "test_project_platform"
+Reading the platform  : "test_project_platform"
+Command canceled
+
+22:45:04 Build Cancelled (took 20s.190ms)
+

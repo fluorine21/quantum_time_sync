@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="test_proj_hello_system" key="programflash.hwplatform"/>
+	<item value="qspi-x4-single" key="test_proj_hello_system-flashType"/>
+	<item value="true" key="test_proj_hello_system-blankCheck"/>
+	<item value="Local" key="test_proj_hello_system-target"/>
+	<item value="C:/James/vitis_workspace/test_proj_hello_system/Debug/sd_card/BOOT.BIN" key="test_proj_hello_system-imgFile"/>
+	<item value="Auto Detect" key="test_proj_hello_system-device"/>
+	<item value="C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/boot/fsbl.elf" key="test_proj_hello_system-fsblFile"/>
+	<item value="true" key="test_proj_hello_system-verifyFlash"/>
+	<item value="" key="test_proj_hello_system-offSet"/>
+</section>

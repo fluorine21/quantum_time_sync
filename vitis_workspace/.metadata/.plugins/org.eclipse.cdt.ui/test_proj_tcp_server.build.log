@@ -1,0 +1,21 @@
+15:15:51 **** Incremental Build of configuration Debug for project test_proj_tcp_server ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM v8 gcc compiler'
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: test_proj_tcp_server.elf'
+'Invoking: ARM v8 gcc linker'
+aarch64-none-elf-gcc -Wl,-T -Wl,../src/lscript.ld -LC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bsplib/lib -o "test_proj_tcp_server.elf"  ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o ./src/tcp_perf_server.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+'Finished building target: test_proj_tcp_server.elf'
+' '
+'Invoking: ARM v8 Print Size'
+aarch64-none-elf-size test_proj_tcp_server.elf  |tee "test_proj_tcp_server.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 157108	   7928	4346124	4511160	 44d5b8	test_proj_tcp_server.elf
+'Finished building: test_proj_tcp_server.elf.size'
+' '
+
+15:15:53 Build Finished (took 1s.804ms)
+

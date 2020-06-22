@@ -1,0 +1,13 @@
+vhdl xil_defaultlib  \
+"../../../bd/top_level_block_design/ip/top_level_block_design_microblaze_0_1/sim/top_level_block_design_microblaze_0_1.vhd" \
+"../../../bd/top_level_block_design/ip/top_level_block_design_dlmb_v10_0/sim/top_level_block_design_dlmb_v10_0.vhd" \
+"../../../bd/top_level_block_design/ip/top_level_block_design_ilmb_v10_0/sim/top_level_block_design_ilmb_v10_0.vhd" \
+"../../../bd/top_level_block_design/ip/top_level_block_design_dlmb_bram_if_cntlr_0/sim/top_level_block_design_dlmb_bram_if_cntlr_0.vhd" \
+"../../../bd/top_level_block_design/ip/top_level_block_design_ilmb_bram_if_cntlr_0/sim/top_level_block_design_ilmb_bram_if_cntlr_0.vhd" \
+"../../../bd/top_level_block_design/ip/top_level_block_design_mdm_1_0/sim/top_level_block_design_mdm_1_0.vhd" \
+"../../../bd/top_level_block_design/ip/top_level_block_design_rst_clk_wiz_1_100M_0/sim/top_level_block_design_rst_clk_wiz_1_100M_0.vhd" \
+"../../../bd/top_level_block_design/ip/top_level_block_design_axi_ethernetlite_0_1/sim/top_level_block_design_axi_ethernetlite_0_1.vhd" \
+"../../../bd/top_level_block_design/ip/top_level_block_design_axi_uartlite_0_0/sim/top_level_block_design_axi_uartlite_0_0.vhd" \
+"../../../bd/top_level_block_design/ip/top_level_block_design_axi_gpio_0_0/sim/top_level_block_design_axi_gpio_0_0.vhd" \
+
+nosort

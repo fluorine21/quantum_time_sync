@@ -1,0 +1,26 @@
+22:43:43 **** Build of configuration Debug for project test_project_app ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v8 gcc compiler'
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -IC:/James/vitis_workspace/test_project_platform/export/test_project_platform/sw/test_project_platform/standalone_domain/bspinclude/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v8 gcc compiler'
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -IC:/James/vitis_workspace/test_project_platform/export/test_project_platform/sw/test_project_platform/standalone_domain/bspinclude/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: test_project_app.elf'
+'Invoking: ARM v8 gcc linker'
+aarch64-none-elf-gcc -Wl,-T -Wl,../src/lscript.ld -LC:/James/vitis_workspace/test_project_platform/export/test_project_platform/sw/test_project_platform/standalone_domain/bsplib/lib -o "test_project_app.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: test_project_app.elf'
+' '
+'Invoking: ARM v8 Print Size'
+aarch64-none-elf-size test_project_app.elf  |tee "test_project_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29668	   2048	  20676	  52392	   cca8	test_project_app.elf
+'Finished building: test_project_app.elf.size'
+' '
+
+22:43:46 Build Finished (took 2s.88ms)
+

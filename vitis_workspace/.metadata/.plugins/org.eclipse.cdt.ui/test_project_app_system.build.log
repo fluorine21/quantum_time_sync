@@ -1,0 +1,12 @@
+22:43:46 **** Build of configuration Debug for project test_project_app_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 50648 C:/James/vitis_workspace/test_project_platform/export/test_project_platform/test_project_platform.xpfm standalone_domain C:/James/vitis_workspace/test_project_app_system/Debug/system.bif
+sdcard_gen --xpfm C:/James/vitis_workspace/test_project_platform/export/test_project_platform/test_project_platform.xpfm --sys_config test_project_platform --bif C:/James/vitis_workspace/test_project_app_system/Debug/system.bif --bitstream C:/James/vitis_workspace/test_project_app/_ide/bitstream/top_level_block_design_wrapper.bit --elf C:/James/vitis_workspace/test_project_app/Debug/test_project_app.elf,psu_cortexa53_0
+creating BOOT.BIN using C:/James/vitis_workspace/test_project_app/_ide/bitstream/top_level_block_design_wrapper.bit
+Error: platform file not found: C:/James/vitis_workspace/test_project_platform/export/test_project_platform/sw/test_project_platform/boot/fsbl.elf
+Running C:/Xilinx/Vitis/2020.1/bin/bootgen -arch zynqmp -image C:/James/vitis_workspace/test_project_app_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+[ERROR]  : Cannot read file - C:/James/vitis_workspace/test_project_platform/export/test_project_platform/sw/test_project_platform/boot/fsbl.elf
+
+22:43:58 Build Finished (took 12s.306ms)
+

@@ -1,0 +1,10 @@
+12:42:18 **** Incremental Build of configuration Debug for project test_proj_hello_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 52188 C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm standalone_domain C:/James/vitis_workspace/test_proj_hello_system/Debug/system.bif
+sdcard_gen --xpfm C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm --sys_config test_proj_plat --bif C:/James/vitis_workspace/test_proj_hello_system/Debug/system.bif --bitstream C:/James/vitis_workspace/test_proj_hello/_ide/bitstream/top_level_block_design_wrapper.bit --elf C:/James/vitis_workspace/test_proj_hello/Debug/test_proj_hello.elf,psu_cortexa53_0
+creating BOOT.BIN using C:/James/vitis_workspace/test_proj_hello/_ide/bitstream/top_level_block_design_wrapper.bit
+Running C:/Xilinx/Vitis/2020.1/bin/bootgen -arch zynqmp -image C:/James/vitis_workspace/test_proj_hello_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+
+12:42:32 Build Finished (took 13s.987ms)
+
