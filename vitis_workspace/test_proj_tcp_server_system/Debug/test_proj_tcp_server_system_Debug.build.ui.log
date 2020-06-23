@@ -1,10 +1,10 @@
-2020-06-22T15:15:53.659737400255-15:15:53 **** Incremental Build of configuration Debug for project test_proj_tcp_server_system ****
+2020-06-23T12:41:32.14605700255-12:41:32 **** Build of configuration Debug for project test_proj_tcp_server_system ****
 000-make all 
 000-Generating bif file for the system project
-000-generate_system_bif.bat 52346 C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm standalone_domain C:/James/vitis_workspace/test_proj_tcp_server_system/Debug/system.bif
+000-generate_system_bif.bat 49815 C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm standalone_domain C:/James/vitis_workspace/test_proj_tcp_server_system/Debug/system.bif
 000-sdcard_gen --xpfm C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm --sys_config test_proj_plat --bif C:/James/vitis_workspace/test_proj_tcp_server_system/Debug/system.bif --bitstream C:/James/vitis_workspace/test_proj_tcp_server/_ide/bitstream/top_level_block_design_wrapper.bit --elf C:/James/vitis_workspace/test_proj_tcp_server/Debug/test_proj_tcp_server.elf,psu_cortexa53_0
 000-creating BOOT.BIN using C:/James/vitis_workspace/test_proj_tcp_server/_ide/bitstream/top_level_block_design_wrapper.bit
 000-Running C:/Xilinx/Vitis/2020.1/bin/bootgen -arch zynqmp -image C:/James/vitis_workspace/test_proj_tcp_server_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
 00255-
-15:16:07 Build Finished (took 13s.687ms)
+12:41:45 Build Finished (took 13s.279ms)
 

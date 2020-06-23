@@ -58,3 +58,27 @@ timestamp=[2020-06-22 15:03:35], mode=BUILD, duration=0:00:04.560, duration_ms=4
 timestamp=[2020-06-22 15:03:50], mode=BUILD, duration=0:00:13.897, duration_ms=13897, data={name=test_proj_tcp_server_system, configuration=Debug, clean_build=false}
 timestamp=[2020-06-22 15:15:53], mode=BUILD, duration=0:00:01.826, duration_ms=1826, data={name=test_proj_tcp_server, configuration=Debug, clean_build=false}
 timestamp=[2020-06-22 15:16:07], mode=BUILD, duration=0:00:13.700, duration_ms=13700, data={name=test_proj_tcp_server_system, configuration=Debug, clean_build=false}
+timestamp=[2020-06-23 12:38:54], mode=WORKBENCH_START, duration=0:00:11.616, duration_ms=11616, data={}
+timestamp=[2020-06-23 12:38:54], mode=WORKBENCH_UI_INIT, duration=0:00:00.693, duration_ms=693, data={editors_count=6, platform_editors_count=5, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,test_proj_plat,test_proj_tcp_server,test_proj_tcp_server_system}
+timestamp=[2020-06-23 12:38:55], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.141, duration_ms=141, data={}
+timestamp=[2020-06-23 12:41:25], mode=PLATFORM_GENERATION, duration=0:01:32.937, duration_ms=92937, data={name=test_proj_plat}
+timestamp=[2020-06-23 12:41:31], mode=BUILD, duration=0:00:05.584, duration_ms=5584, data={name=test_proj_tcp_server, configuration=Debug, clean_build=false}
+timestamp=[2020-06-23 12:41:45], mode=BUILD, duration=0:00:13.326, duration_ms=13326, data={name=test_proj_tcp_server_system, configuration=Debug, clean_build=false}
+timestamp=[2020-06-23 12:48:29], mode=APP_CREATION, duration=0:00:21.540, duration_ms=21540, data={name=test_proj_uart_test, project_type=sdk, os=standalone, processor=cortex-a53, runtime=C/C++, platform=test_proj_plat, application_type=application}
+timestamp=[2020-06-23 13:22:34], mode=APP_CREATION, duration=0:00:02.579, duration_ms=2579, data={name=test_proj_pulse_ctrl, project_type=sdk, os=standalone, processor=cortex-a53, runtime=C/C++, platform=test_proj_plat, application_type=application}
+timestamp=[2020-06-23 13:23:50], mode=APP_CREATION, duration=0:00:02.561, duration_ms=2561, data={name=test_proj_pulse_ctrl, project_type=sdk, os=standalone, processor=cortex-a53, runtime=C/C++, platform=test_proj_plat, application_type=application}
+timestamp=[2020-06-23 13:47:40], mode=PLATFORM_GENERATION, duration=0:01:13.834, duration_ms=73834, data={name=test_proj_plat}
+timestamp=[2020-06-23 13:48:02], mode=BUILD, duration=0:00:02.046, duration_ms=2046, data={name=test_proj_pulse_ctrl, configuration=Debug, clean_build=false}
+timestamp=[2020-06-23 13:48:07], mode=BUILD, duration=0:00:04.576, duration_ms=4576, data={name=test_proj_pulse_ctrl_system, configuration=Debug, clean_build=false}
+timestamp=[2020-06-23 13:49:36], mode=BUILD, duration=0:00:02.003, duration_ms=2003, data={name=test_proj_pulse_ctrl, configuration=Debug, clean_build=false}
+timestamp=[2020-06-23 13:49:50], mode=BUILD, duration=0:00:13.428, duration_ms=13428, data={name=test_proj_pulse_ctrl_system, configuration=Debug, clean_build=false}
+timestamp=[2020-06-23 13:51:57], mode=BUILD, duration=0:00:01.550, duration_ms=1550, data={name=test_proj_pulse_ctrl, configuration=Debug, clean_build=false}
+timestamp=[2020-06-23 13:52:11], mode=BUILD, duration=0:00:13.290, duration_ms=13290, data={name=test_proj_pulse_ctrl_system, configuration=Debug, clean_build=false}
+timestamp=[2020-06-23 14:19:40], mode=PLATFORM_GENERATION, duration=0:00:11.580, duration_ms=11580, data={name=test_proj_plat}
+timestamp=[2020-06-23 14:19:41], mode=BUILD, duration=0:00:00.315, duration_ms=315, data={name=test_proj_pulse_ctrl, configuration=Debug, clean_build=true}
+timestamp=[2020-06-23 14:19:41], mode=BUILD, duration=0:00:00.271, duration_ms=271, data={name=test_proj_pulse_ctrl_system, configuration=Debug, clean_build=true}
+timestamp=[2020-06-23 14:23:22], mode=PLATFORM_GENERATION, duration=0:03:35.845, duration_ms=215845, data={name=test_proj_plat}
+timestamp=[2020-06-23 14:23:24], mode=BUILD, duration=0:00:02.522, duration_ms=2522, data={name=test_proj_pulse_ctrl, configuration=Debug, clean_build=false}
+timestamp=[2020-06-23 14:23:39], mode=BUILD, duration=0:00:13.788, duration_ms=13788, data={name=test_proj_pulse_ctrl_system, configuration=Debug, clean_build=false}
+timestamp=[2020-06-23 14:24:51], mode=BUILD, duration=0:00:01.445, duration_ms=1445, data={name=test_proj_pulse_ctrl, configuration=Debug, clean_build=false}
+timestamp=[2020-06-23 14:25:05], mode=BUILD, duration=0:00:12.950, duration_ms=12950, data={name=test_proj_pulse_ctrl_system, configuration=Debug, clean_build=false}

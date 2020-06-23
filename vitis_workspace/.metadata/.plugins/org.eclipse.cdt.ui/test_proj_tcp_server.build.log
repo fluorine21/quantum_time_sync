@@ -1,9 +1,57 @@
-15:15:51 **** Incremental Build of configuration Debug for project test_proj_tcp_server ****
+12:41:25 **** Build of configuration Debug for project test_proj_tcp_server ****
 make all 
+'Building file: ../src/i2c_access.c'
+'Invoking: ARM v8 gcc compiler'
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/i2c_access.o" -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"src/i2c_access.d" -MT"src/i2c_access.o" -o "src/i2c_access.o" "../src/i2c_access.c"
+'Finished building: ../src/i2c_access.c'
+' '
+'Building file: ../src/iic_phyreset.c'
+'Invoking: ARM v8 gcc compiler'
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/iic_phyreset.o" -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"src/iic_phyreset.d" -MT"src/iic_phyreset.o" -o "src/iic_phyreset.o" "../src/iic_phyreset.c"
+'Finished building: ../src/iic_phyreset.c'
+' '
 'Building file: ../src/main.c'
 'Invoking: ARM v8 gcc compiler'
 aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
 'Finished building: ../src/main.c'
+' '
+'Building file: ../src/platform_zynqmp.c'
+'Invoking: ARM v8 gcc compiler'
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform_zynqmp.o" -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"src/platform_zynqmp.d" -MT"src/platform_zynqmp.o" -o "src/platform_zynqmp.o" "../src/platform_zynqmp.c"
+In file included from ../src/platform_zynqmp.c:49:
+C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include/xtime_l.h:65:9: note: #pragma message: For the sleep routines, Global timer is being used
+   65 | #pragma message ("For the sleep routines, Global timer is being used")
+      |         ^~~~~~~
+../src/platform_zynqmp.c: In function 'platform_setup_timer':
+../src/platform_zynqmp.c:117:66: warning: passing argument 3 of 'XTtcPs_CalcIntervalFromFreq' from incompatible pointer type [-Wincompatible-pointer-types]
+  117 |  XTtcPs_CalcIntervalFromFreq(Timer, PLATFORM_TIMER_INTR_RATE_HZ, &Interval, &Prescaler);
+      |                                                                  ^~~~~~~~~
+      |                                                                  |
+      |                                                                  u16 * {aka short unsigned int *}
+In file included from ../src/platform_zynqmp.c:48:
+C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include/xttcps.h:495:20: note: expected 'XInterval *' {aka 'unsigned int *'} but argument is of type 'u16 *' {aka 'short unsigned int *'}
+  495 |         XInterval *Interval, u8 *Prescaler);
+      |         ~~~~~~~~~~~^~~~~~~~
+../src/platform_zynqmp.c: In function 'platform_clear_interrupt':
+../src/platform_zynqmp.c:124:6: warning: variable 'StatusEvent' set but not used [-Wunused-but-set-variable]
+  124 |  u32 StatusEvent;
+      |      ^~~~~~~~~~~
+'Finished building: ../src/platform_zynqmp.c'
+' '
+'Building file: ../src/sfp.c'
+'Invoking: ARM v8 gcc compiler'
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sfp.o" -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"src/sfp.d" -MT"src/sfp.o" -o "src/sfp.o" "../src/sfp.c"
+'Finished building: ../src/sfp.c'
+' '
+'Building file: ../src/si5324.c'
+'Invoking: ARM v8 gcc compiler'
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/si5324.o" -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"src/si5324.d" -MT"src/si5324.o" -o "src/si5324.o" "../src/si5324.c"
+'Finished building: ../src/si5324.c'
+' '
+'Building file: ../src/tcp_perf_server.c'
+'Invoking: ARM v8 gcc compiler'
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/tcp_perf_server.o" -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"src/tcp_perf_server.d" -MT"src/tcp_perf_server.o" -o "src/tcp_perf_server.o" "../src/tcp_perf_server.c"
+'Finished building: ../src/tcp_perf_server.c'
 ' '
 'Building target: test_proj_tcp_server.elf'
 'Invoking: ARM v8 gcc linker'
@@ -17,5 +65,5 @@ aarch64-none-elf-size test_proj_tcp_server.elf  |tee "test_proj_tcp_server.elf.s
 'Finished building: test_proj_tcp_server.elf.size'
 ' '
 
-15:15:53 Build Finished (took 1s.804ms)
+12:41:31 Build Finished (took 5s.554ms)
 

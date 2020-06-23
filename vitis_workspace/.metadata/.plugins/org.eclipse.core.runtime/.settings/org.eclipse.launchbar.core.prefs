@@ -1,13 +1,14 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_test_proj_hello_system,org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_test_proj_hello_system_FSBL,org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_test_proj_tcp_server_system
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_test_proj_tcp_server_system,org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_test_proj_pulse_ctrl_system
 eclipse.preferences.version=1
 org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_test_proj_hello_system/activeLaunchMode=debug
 org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_test_proj_hello_system/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
 org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_test_proj_hello_system_FSBL/activeLaunchMode=debug
 org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_test_proj_hello_system_FSBL/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
 org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_test_proj_tcp_server_system/activeLaunchMode=systemdebug
+org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_test_proj_tcp_server_system/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
 org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_test_project_app_system/activeLaunchMode=run
 org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_test_project_app_system/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
 org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_test_project_hello_world_system/activeLaunchMode=systemdebug

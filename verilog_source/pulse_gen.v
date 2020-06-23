@@ -69,6 +69,7 @@ always @ (posedge clk or negedge rst) begin
 				//Default state for outputs
 				fifo_read <= 0;
 				m_axis_tdata <= 0;
+				rst_clock <= 0;
 				
 			
 				//If we have a command waiting for us in the FIFO

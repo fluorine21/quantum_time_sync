@@ -1,10 +1,10 @@
-15:15:53 **** Incremental Build of configuration Debug for project test_proj_tcp_server_system ****
+12:41:32 **** Build of configuration Debug for project test_proj_tcp_server_system ****
 make all 
 Generating bif file for the system project
-generate_system_bif.bat 52346 C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm standalone_domain C:/James/vitis_workspace/test_proj_tcp_server_system/Debug/system.bif
+generate_system_bif.bat 49815 C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm standalone_domain C:/James/vitis_workspace/test_proj_tcp_server_system/Debug/system.bif
 sdcard_gen --xpfm C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm --sys_config test_proj_plat --bif C:/James/vitis_workspace/test_proj_tcp_server_system/Debug/system.bif --bitstream C:/James/vitis_workspace/test_proj_tcp_server/_ide/bitstream/top_level_block_design_wrapper.bit --elf C:/James/vitis_workspace/test_proj_tcp_server/Debug/test_proj_tcp_server.elf,psu_cortexa53_0
 creating BOOT.BIN using C:/James/vitis_workspace/test_proj_tcp_server/_ide/bitstream/top_level_block_design_wrapper.bit
 Running C:/Xilinx/Vitis/2020.1/bin/bootgen -arch zynqmp -image C:/James/vitis_workspace/test_proj_tcp_server_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
 
-15:16:07 Build Finished (took 13s.687ms)
+12:41:45 Build Finished (took 13s.279ms)
 

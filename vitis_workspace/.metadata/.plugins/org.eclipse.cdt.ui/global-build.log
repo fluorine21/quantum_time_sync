@@ -1,27 +1,27 @@
 Nothing to build in platform 'test_proj_plat'
 
-15:15:51 **** Incremental Build of configuration Debug for project test_proj_tcp_server ****
+14:24:50 **** Incremental Build of configuration Debug for project test_proj_pulse_ctrl ****
 make all 
-'Building file: ../src/main.c'
+'Building file: ../src/helloworld.c'
 'Invoking: ARM v8 gcc compiler'
-aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-'Finished building: ../src/main.c'
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
 ' '
-'Building target: test_proj_tcp_server.elf'
+'Building target: test_proj_pulse_ctrl.elf'
 'Invoking: ARM v8 gcc linker'
-aarch64-none-elf-gcc -Wl,-T -Wl,../src/lscript.ld -LC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bsplib/lib -o "test_proj_tcp_server.elf"  ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o ./src/tcp_perf_server.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-'Finished building target: test_proj_tcp_server.elf'
+aarch64-none-elf-gcc -Wl,-T -Wl,../src/lscript.ld -LC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bsplib/lib -o "test_proj_pulse_ctrl.elf"  ./src/helloworld.o ./src/platform.o  ./drivers/uart.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+'Finished building target: test_proj_pulse_ctrl.elf'
 ' '
 'Invoking: ARM v8 Print Size'
-aarch64-none-elf-size test_proj_tcp_server.elf  |tee "test_proj_tcp_server.elf.size"
+aarch64-none-elf-size test_proj_pulse_ctrl.elf  |tee "test_proj_pulse_ctrl.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 157108	   7928	4346124	4511160	 44d5b8	test_proj_tcp_server.elf
-'Finished building: test_proj_tcp_server.elf.size'
+  37348	   2104	  20828	  60280	   eb78	test_proj_pulse_ctrl.elf
+'Finished building: test_proj_pulse_ctrl.elf.size'
 ' '
-15:15:53 **** Incremental Build of configuration Debug for project test_proj_tcp_server_system ****
+14:24:52 **** Incremental Build of configuration Debug for project test_proj_pulse_ctrl_system ****
 make all 
 Generating bif file for the system project
-generate_system_bif.bat 52346 C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm standalone_domain C:/James/vitis_workspace/test_proj_tcp_server_system/Debug/system.bif
-sdcard_gen --xpfm C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm --sys_config test_proj_plat --bif C:/James/vitis_workspace/test_proj_tcp_server_system/Debug/system.bif --bitstream C:/James/vitis_workspace/test_proj_tcp_server/_ide/bitstream/top_level_block_design_wrapper.bit --elf C:/James/vitis_workspace/test_proj_tcp_server/Debug/test_proj_tcp_server.elf,psu_cortexa53_0
-creating BOOT.BIN using C:/James/vitis_workspace/test_proj_tcp_server/_ide/bitstream/top_level_block_design_wrapper.bit
-Running C:/Xilinx/Vitis/2020.1/bin/bootgen -arch zynqmp -image C:/James/vitis_workspace/test_proj_tcp_server_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+generate_system_bif.bat 49815 C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm standalone_domain C:/James/vitis_workspace/test_proj_pulse_ctrl_system/Debug/system.bif
+sdcard_gen --xpfm C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm --sys_config test_proj_plat --bif C:/James/vitis_workspace/test_proj_pulse_ctrl_system/Debug/system.bif --bitstream C:/James/vitis_workspace/test_proj_pulse_ctrl/_ide/bitstream/top_level_block_design_wrapper.bit --elf C:/James/vitis_workspace/test_proj_pulse_ctrl/Debug/test_proj_pulse_ctrl.elf,psu_cortexa53_0
+creating BOOT.BIN using C:/James/vitis_workspace/test_proj_pulse_ctrl/_ide/bitstream/top_level_block_design_wrapper.bit
+Running C:/Xilinx/Vitis/2020.1/bin/bootgen -arch zynqmp -image C:/James/vitis_workspace/test_proj_pulse_ctrl_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN

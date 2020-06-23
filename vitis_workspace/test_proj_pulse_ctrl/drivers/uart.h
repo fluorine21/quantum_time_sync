@@ -1,0 +1,15 @@
+
+
+#ifndef _UART_H_
+#define _UART_H_
+
+
+
+//Functions
+uint8_t uart_init();
+uint8_t uart_send_byte(uint8_t data_byte);
+uint32_t uart_receive_bytes(uint32_t num_bytes, uint8_t * buff);
+
+
+
+#endif
