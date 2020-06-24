@@ -6,9 +6,16 @@
 
 
 //Functions
-uint8_t uart_init();
+uint8_t uart_init_polled();
+uint8_t uart_init_interrupt();
 uint8_t uart_send_byte(uint8_t data_byte);
 uint32_t uart_receive_bytes(uint32_t num_bytes, uint8_t * buff);
+
+//Reads a byte from the uart buffer
+uint8_t uart_get_buffer_byte();
+uint32_t uart_get_buffer_size();
+
+void uart_clear_buffer();
 
 
 
