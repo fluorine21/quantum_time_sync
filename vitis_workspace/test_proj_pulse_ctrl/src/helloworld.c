@@ -54,6 +54,8 @@
 
 int main()
 {
+
+	int r_cnt = 0;
     init_platform();
 
     print("Hello World\n\r");
@@ -68,12 +70,12 @@ int main()
 
     	while(1)
     	{
-    		uart_clear_buffer();
-
-    		print("Waiting to receive 3 bytes...\r\n");
+    		//uart_clear_buffer();
+    		xil_printf("Run %i", r_cnt);
+    		//print("Waiting to receive 3 bytes...\r\n");
 
     		while(uart_get_buffer_size() < 3);
-
+    		r_cnt++;
     		xil_printf("Got bytes %c, %c, %c\r\n", uart_get_buffer_byte(), uart_get_buffer_byte(),uart_get_buffer_byte());
 
     	}

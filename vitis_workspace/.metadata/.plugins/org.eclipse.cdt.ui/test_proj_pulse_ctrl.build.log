@@ -1,9 +1,9 @@
-20:44:26 **** Incremental Build of configuration Debug for project test_proj_pulse_ctrl ****
+20:52:59 **** Incremental Build of configuration Debug for project test_proj_pulse_ctrl ****
 make all 
-'Building file: ../drivers/uart.c'
+'Building file: ../src/helloworld.c'
 'Invoking: ARM v8 gcc compiler'
-aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"drivers/uart.o" -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"drivers/uart.d" -MT"drivers/uart.o" -o "drivers/uart.o" "../drivers/uart.c"
-'Finished building: ../drivers/uart.c'
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
 ' '
 'Building target: test_proj_pulse_ctrl.elf'
 'Invoking: ARM v8 gcc linker'
@@ -13,9 +13,9 @@ aarch64-none-elf-gcc -Wl,-T -Wl,../src/lscript.ld -LC:/James/vitis_workspace/tes
 'Invoking: ARM v8 Print Size'
 aarch64-none-elf-size test_proj_pulse_ctrl.elf  |tee "test_proj_pulse_ctrl.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  42076	   5240	  21884	  69200	  10e50	test_proj_pulse_ctrl.elf
+  42068	   5240	  21908	  69216	  10e60	test_proj_pulse_ctrl.elf
 'Finished building: test_proj_pulse_ctrl.elf.size'
 ' '
 
-20:44:28 Build Finished (took 1s.470ms)
+20:53:00 Build Finished (took 1s.486ms)
 
