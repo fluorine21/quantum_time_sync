@@ -71,7 +71,7 @@ int main()
     	while(1)
     	{
     		//uart_clear_buffer();
-    		xil_printf("Run: %i", r_cnt);
+    		xil_printf("Run %i", r_cnt);
     		//print("Waiting to receive 3 bytes...\r\n");
 
     		while(uart_get_buffer_size() < 3);
