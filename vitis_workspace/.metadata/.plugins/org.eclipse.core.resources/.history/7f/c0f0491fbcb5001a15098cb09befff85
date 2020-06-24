@@ -134,15 +134,6 @@ int uart_UartPsIntrExample(INTC *IntcInstPtr, XUartPs *UartInstPtr,
 
 	XUartPs_SetOperMode(UartInstPtr, XUARTPS_OPER_MODE_NORMAL);
 
-	/*
-	 * Disable RX timeout
-	 */
-	XUartPs_SetRecvTimeout(UartInstPtr, 0);
-	/*
-	 * Set RX FIFO threshold to 1
-	 */
-	XUartPs_SetFifoThreshold(UartInstPtr, 1);
-
 	//Reset the receive callback
 	//XUartPs_Recv(&Uart_PS, rec_buff, 0);
 	XUartPs_Recv(&Uart_PS, rec_buff, 1);

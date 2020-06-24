@@ -25,6 +25,7 @@
             <includePath path="#undef __ARM_FEATURE_SVE" removed="true"/>
             <includePath path="#undef __AARCH64_CMODEL_SMALL__" removed="true"/>
             <includePath path="C:\Xilinx\Vitis\2020.1\gnu\aarch64\nt\aarch64-none\bin\\..\aarch64-xilinx-elf/usr/include"/>
+            <includePath path="#undef __ARM_FEATURE_SHA2" removed="true"/>
             <includePath path="#undef __ARM_FEATURE_AES" removed="true"/>
             <includePath path="#undef __ARM_FEATURE_FP16_FML" removed="true"/>
             <includePath path="#undef __ARM_FEATURE_SVE_BITS" removed="true"/>

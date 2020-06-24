@@ -1,4 +1,4 @@
-19:30:18 **** Incremental Build of configuration Debug for project test_proj_pulse_ctrl_system ****
+20:44:28 **** Incremental Build of configuration Debug for project test_proj_pulse_ctrl_system ****
 make all 
 Generating bif file for the system project
 generate_system_bif.bat 49815 C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm standalone_domain C:/James/vitis_workspace/test_proj_pulse_ctrl_system/Debug/system.bif
@@ -6,5 +6,5 @@ sdcard_gen --xpfm C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/
 creating BOOT.BIN using C:/James/vitis_workspace/test_proj_pulse_ctrl/_ide/bitstream/top_level_block_design_wrapper.bit
 Running C:/Xilinx/Vitis/2020.1/bin/bootgen -arch zynqmp -image C:/James/vitis_workspace/test_proj_pulse_ctrl_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
 
-19:30:31 Build Finished (took 12s.858ms)
+20:44:42 Build Finished (took 13s.104ms)
 

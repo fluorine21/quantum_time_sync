@@ -134,18 +134,9 @@ int uart_UartPsIntrExample(INTC *IntcInstPtr, XUartPs *UartInstPtr,
 
 	XUartPs_SetOperMode(UartInstPtr, XUARTPS_OPER_MODE_NORMAL);
 
-	/*
-	 * Disable RX timeout
-	 */
-	XUartPs_SetRecvTimeout(UartInstPtr, 0);
-	/*
-	 * Set RX FIFO threshold to 1
-	 */
-	XUartPs_SetFifoThreshold(UartInstPtr, 1);
-
 	//Reset the receive callback
-	//XUartPs_Recv(&Uart_PS, rec_buff, 0);
-	XUartPs_Recv(&Uart_PS, rec_buff, 1);
+	XUartPs_Recv(&Uart_PS, rec_buff, 0);
+	while(XUartPs_Recv(&Uart_PS, rec_buff, 1));
 
 	return XST_SUCCESS;
 }
@@ -251,7 +242,7 @@ uint32_t uart_receive_bytes(uint32_t num_bytes, uint8_t * buff)
 void uart_handler(void *CallBackRef, u32 Event, unsigned int EventData)
 {
 	//Disable interrupts
-	//XScuGic_Disable(&InterruptController, UART_INT_IRQ_ID);
+	XScuGic_Disable(&InterruptController, UART_INT_IRQ_ID);
 
 	/* All of the data has been sent */
 	if (Event == XUARTPS_EVENT_SENT_DATA) {
@@ -275,10 +266,10 @@ void uart_handler(void *CallBackRef, u32 Event, unsigned int EventData)
 		}
 
 		//Reset the receive callback
-		//XUartPs_Recv(&Uart_PS, rec_buff, 0);
+		XUartPs_Recv(&Uart_PS, rec_buff, 0);
 
 		//Flush the receive buffer
-		XUartPs_Recv(&Uart_PS, rec_buff, 1);
+		while(XUartPs_Recv(&Uart_PS, rec_buff, 1));
 	}
 
 	/*
@@ -319,7 +310,7 @@ void uart_handler(void *CallBackRef, u32 Event, unsigned int EventData)
 		//TotalErrorCount++;
 	}
 
-	//XScuGic_Enable(&InterruptController, UART_INT_IRQ_ID);
+	XScuGic_Enable(&InterruptController, UART_INT_IRQ_ID);
 }
 
 
