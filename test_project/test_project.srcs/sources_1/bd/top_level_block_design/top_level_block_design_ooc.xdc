@@ -6,5 +6,6 @@
 # This constraints file is not used in normal top-down synthesis (default flow
 # of Vivado)
 ################################################################################
+create_clock -name dac0_clk_clk_p -period 4 [get_ports dac0_clk_clk_p]
 
 ################################################################################

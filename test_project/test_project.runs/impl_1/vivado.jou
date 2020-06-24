@@ -2,8 +2,8 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Mon Jun 22 11:58:52 2020
-# Process ID: 18984
+# Start of session at: Wed Jun 24 12:44:24 2020
+# Process ID: 13052
 # Current directory: C:/James/test_project/test_project.runs/impl_1
 # Command line: vivado.exe -log top_level_block_design_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top_level_block_design_wrapper.tcl -notrace
 # Log file: C:/James/test_project/test_project.runs/impl_1/top_level_block_design_wrapper.vdi

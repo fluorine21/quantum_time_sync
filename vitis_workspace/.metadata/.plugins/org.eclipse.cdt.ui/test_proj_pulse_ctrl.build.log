@@ -1,13 +1,23 @@
-20:52:59 **** Incremental Build of configuration Debug for project test_proj_pulse_ctrl ****
+13:42:22 **** Incremental Build of configuration Debug for project test_proj_pulse_ctrl ****
 make all 
 'Building file: ../src/helloworld.c'
 'Invoking: ARM v8 gcc compiler'
-aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -D __BAREMETAL__ -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
 'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v8 gcc compiler'
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -D __BAREMETAL__ -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building file: ../drivers/uart.c'
+'Invoking: ARM v8 gcc compiler'
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"drivers/uart.o" -D __BAREMETAL__ -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"drivers/uart.d" -MT"drivers/uart.o" -o "drivers/uart.o" "../drivers/uart.c"
+'Finished building: ../drivers/uart.c'
 ' '
 'Building target: test_proj_pulse_ctrl.elf'
 'Invoking: ARM v8 gcc linker'
-aarch64-none-elf-gcc -Wl,-T -Wl,../src/lscript.ld -LC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bsplib/lib -o "test_proj_pulse_ctrl.elf"  ./src/helloworld.o ./src/platform.o  ./drivers/uart.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+aarch64-none-elf-gcc -Wl,-T -Wl,../src/lscript.ld -LC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bsplib/lib -o "test_proj_pulse_ctrl.elf"  ./src/helloworld.o ./src/platform.o  ./drivers/uart.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-lgcc,-lc,-lmetal,--end-group
 'Finished building target: test_proj_pulse_ctrl.elf'
 ' '
 'Invoking: ARM v8 Print Size'
@@ -17,5 +27,5 @@ aarch64-none-elf-size test_proj_pulse_ctrl.elf  |tee "test_proj_pulse_ctrl.elf.s
 'Finished building: test_proj_pulse_ctrl.elf.size'
 ' '
 
-20:53:00 Build Finished (took 1s.486ms)
+13:42:25 Build Finished (took 2s.503ms)
 

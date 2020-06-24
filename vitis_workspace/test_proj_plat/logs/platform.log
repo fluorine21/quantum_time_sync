@@ -18179,3 +18179,1585 @@ C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|s
 C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_1||
 
 TRACE::2020-06-23.14:23:21::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:38:42::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:38:42::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:38:42::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:38:45::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:38:45::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:38:45::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:38:45::SCWPlatform::Do not have an existing db opened. 
+TRACE::2020-06-24.13:39:02::SCWPlatform::Opened new HwDB with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:02::SCWReader::Active system found as  test_proj_plat
+TRACE::2020-06-24.13:39:02::SCWReader::Handling sysconfig test_proj_plat
+TRACE::2020-06-24.13:39:02::SCWDomain::checking for install qemu data   : 
+TRACE::2020-06-24.13:39:02::SCWDomain:: Using the QEMU Data from install at  : C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/
+TRACE::2020-06-24.13:39:02::SCWDomain:: Using the QEMU args  from install at  : C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/qemu_args.txt
+TRACE::2020-06-24.13:39:02::SCWDomain:: Using the PMUQEMU args from install at  : C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/pmu_args.txt
+TRACE::2020-06-24.13:39:02::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:02::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:02::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:02::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:02::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:02::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:02::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:02::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:02::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:02::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:02::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:02::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:02::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:02::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:02::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:02::SCWReader::Boot application domain added for zynqmp_fsbl
+TRACE::2020-06-24.13:39:02::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:02::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:02::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:02::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:02::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:02::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:02::SCWMssOS::DEBUG:  swdes dump  
+TRACE::2020-06-24.13:39:02::SCWMssOS::No sw design opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:02::SCWMssOS::mss exists loading the mss file  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:02::SCWMssOS::Opened the sw design from mss  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:02::SCWMssOS::Adding the swdes entry C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss with des name system
+TRACE::2020-06-24.13:39:02::SCWMssOS::updating the scw layer about changes
+TRACE::2020-06-24.13:39:02::SCWMssOS::Opened the sw design.  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:02::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:02::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:02::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:02::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:02::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:02::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:02::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+
+TRACE::2020-06-24.13:39:02::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:02::SCWMssOS:: library already available in sw design:  xilffs:4.3
+TRACE::2020-06-24.13:39:02::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:02::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:02::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:02::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:02::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:02::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:02::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+
+TRACE::2020-06-24.13:39:02::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:02::SCWMssOS:: library already available in sw design:  xilsecure:4.2
+TRACE::2020-06-24.13:39:02::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:02::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:02::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:02::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:02::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:02::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:02::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+
+TRACE::2020-06-24.13:39:02::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:02::SCWMssOS:: library already available in sw design:  xilpm:3.1
+TRACE::2020-06-24.13:39:02::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:02::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:02::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:02::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:02::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:02::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:02::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+
+TRACE::2020-06-24.13:39:02::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:02::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:02::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:02::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:02::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:02::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:02::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:02::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+
+TRACE::2020-06-24.13:39:02::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:02::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:02::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:02::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:02::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:02::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:02::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:02::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+
+TRACE::2020-06-24.13:39:02::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:02::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:02::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:02::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:02::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:02::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:02::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:02::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+
+TRACE::2020-06-24.13:39:02::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:02::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:02::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:02::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:02::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:02::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:02::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:02::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+
+TRACE::2020-06-24.13:39:02::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:02::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:02::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:02::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:02::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:02::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:02::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:02::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+
+TRACE::2020-06-24.13:39:02::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:02::SCWMssOS::Saving the mss changes C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:02::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2020-06-24.13:39:02::SCWMssOS::Completed writemss as part of save.
+TRACE::2020-06-24.13:39:02::SCWMssOS::Commit changes completed.
+TRACE::2020-06-24.13:39:02::SCWReader::Adding prebuilt librarypaths as   
+TRACE::2020-06-24.13:39:02::SCWReader::Adding prebuilt incpaths  as   
+TRACE::2020-06-24.13:39:02::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:02::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:02::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:02::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:02::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:02::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:02::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+
+TRACE::2020-06-24.13:39:02::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:02::SCWReader::No isolation master present  
+TRACE::2020-06-24.13:39:02::SCWDomain::checking for install qemu data   : 
+TRACE::2020-06-24.13:39:02::SCWDomain:: Using the QEMU Data from install at  : C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/
+TRACE::2020-06-24.13:39:02::SCWDomain:: Using the QEMU args  from install at  : C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/qemu_args.txt
+TRACE::2020-06-24.13:39:02::SCWDomain:: Using the PMUQEMU args from install at  : C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/pmu_args.txt
+TRACE::2020-06-24.13:39:02::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:02::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:02::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:02::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:02::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:02::SCWReader::Boot application domain added for zynqmp_pmufw
+TRACE::2020-06-24.13:39:02::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:02::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:02::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:02::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:02::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:02::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:02::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-06-24.13:39:02::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+
+TRACE::2020-06-24.13:39:02::SCWMssOS::No sw design opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-06-24.13:39:02::SCWMssOS::mss exists loading the mss file  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-06-24.13:39:02::SCWMssOS::Opened the sw design from mss  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-06-24.13:39:02::SCWMssOS::Adding the swdes entry C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss with des name system_0
+TRACE::2020-06-24.13:39:02::SCWMssOS::updating the scw layer about changes
+TRACE::2020-06-24.13:39:03::SCWMssOS::Opened the sw design.  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-06-24.13:39:03::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:03::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:03::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:03::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:03::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:03::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-06-24.13:39:03::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-06-24.13:39:03::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-06-24.13:39:03::SCWMssOS:: library already available in sw design:  xilfpga:5.2
+TRACE::2020-06-24.13:39:03::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:03::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:03::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:03::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:03::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:03::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-06-24.13:39:03::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-06-24.13:39:03::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-06-24.13:39:03::SCWMssOS:: library already available in sw design:  xilsecure:4.2
+TRACE::2020-06-24.13:39:03::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:03::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:03::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:03::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:03::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:03::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-06-24.13:39:03::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-06-24.13:39:03::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-06-24.13:39:03::SCWMssOS:: library already available in sw design:  xilskey:6.9
+TRACE::2020-06-24.13:39:03::SCWMssOS::Saving the mss changes C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-06-24.13:39:03::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2020-06-24.13:39:03::SCWMssOS::Completed writemss as part of save.
+TRACE::2020-06-24.13:39:03::SCWMssOS::Commit changes completed.
+TRACE::2020-06-24.13:39:03::SCWReader::Adding prebuilt librarypaths as   
+TRACE::2020-06-24.13:39:03::SCWReader::Adding prebuilt incpaths  as   
+TRACE::2020-06-24.13:39:03::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:03::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:03::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:03::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:03::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:03::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-06-24.13:39:03::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-06-24.13:39:03::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-06-24.13:39:03::SCWReader::No isolation master present  
+TRACE::2020-06-24.13:39:03::SCWDomain::checking for install qemu data   : 
+TRACE::2020-06-24.13:39:03::SCWDomain:: Using the QEMU Data from install at  : C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/
+TRACE::2020-06-24.13:39:03::SCWDomain:: Using the QEMU args  from install at  : C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/qemu_args.txt
+TRACE::2020-06-24.13:39:03::SCWDomain:: Using the PMUQEMU args from install at  : C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/pmu_args.txt
+TRACE::2020-06-24.13:39:03::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:03::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:03::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:03::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:03::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:03::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:03::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:03::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:03::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:03::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:03::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:03::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:03::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:03::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:03::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:03::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:39:03::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-06-24.13:39:03::SCWMssOS::No sw design opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:39:03::SCWMssOS::mss exists loading the mss file  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:39:03::SCWMssOS::Opened the sw design from mss  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:39:03::SCWMssOS::Adding the swdes entry C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss with des name system_1
+TRACE::2020-06-24.13:39:03::SCWMssOS::updating the scw layer about changes
+TRACE::2020-06-24.13:39:03::SCWMssOS::Opened the sw design.  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:39:03::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:03::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:03::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:03::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:03::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:03::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:39:03::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-06-24.13:39:03::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:39:03::SCWMssOS:: library already available in sw design:  lwip211:1.2
+TRACE::2020-06-24.13:39:03::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:03::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:03::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:03::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:03::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:03::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:39:03::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-06-24.13:39:03::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:39:03::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:03::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:03::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:03::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:03::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:03::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:39:03::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-06-24.13:39:03::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:39:03::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:03::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:03::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:03::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:03::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:03::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:39:03::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-06-24.13:39:03::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:39:03::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:03::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:03::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:03::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:03::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:03::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:39:03::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-06-24.13:39:03::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:39:03::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:03::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:03::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:03::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:03::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:03::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:39:03::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-06-24.13:39:03::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:39:03::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:03::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:03::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:03::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:03::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:03::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:39:03::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-06-24.13:39:03::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:39:03::SCWMssOS::Saving the mss changes C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:39:03::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2020-06-24.13:39:03::SCWMssOS::Completed writemss as part of save.
+TRACE::2020-06-24.13:39:03::SCWMssOS::Commit changes completed.
+TRACE::2020-06-24.13:39:03::SCWReader::Adding prebuilt librarypaths as   
+TRACE::2020-06-24.13:39:03::SCWReader::Adding prebuilt incpaths  as   
+TRACE::2020-06-24.13:39:03::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:03::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:03::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:03::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:03::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:03::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:03::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:39:03::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-06-24.13:39:03::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:39:03::SCWReader::No isolation master present  
+TRACE::2020-06-24.13:39:19::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:19::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:19::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:19::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:19::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:19::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:19::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:19::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:19::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:20::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/tempdsa/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:20::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/tempdsa/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:20::SCWPlatform:: Platform location is C:/James/vitis_workspace/test_proj_plat/tempdsa
+TRACE::2020-06-24.13:39:20::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/tempdsa/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:20::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:32::SCWMssOS::Doing hw sync for the mss in domain: zynqmp_fsbl
+TRACE::2020-06-24.13:39:32::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:32::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:32::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:32::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:32::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:32::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:32::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:32::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:32::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:32::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-06-24.13:39:32::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:32::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/tempdsa/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/tempdsa/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/tempdsa/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/tempdsa
+TRACE::2020-06-24.13:39:32::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/tempdsa/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:32::SCWPlatform::update - Opened existing hwdb top_level_block_design_wrapper_0
+TRACE::2020-06-24.13:39:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:32::SCWMssOS::Doing hw sync for the mss in domain: zynqmp_pmufw
+TRACE::2020-06-24.13:39:32::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:32::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:32::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:32::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:32::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:32::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:32::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:32::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:32::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-06-24.13:39:32::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-06-24.13:39:32::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-06-24.13:39:32::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/tempdsa/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/tempdsa/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/tempdsa/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/tempdsa
+TRACE::2020-06-24.13:39:32::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/tempdsa/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:32::SCWPlatform::update - Opened existing hwdb top_level_block_design_wrapper_0
+TRACE::2020-06-24.13:39:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:32::SCWMssOS::Doing hw sync for the mss in domain: standalone_domain
+TRACE::2020-06-24.13:39:32::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:32::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:32::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:32::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:32::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:32::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:32::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:32::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-06-24.13:39:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:32::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:39:32::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-06-24.13:39:32::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:39:32::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/tempdsa/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/tempdsa/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/tempdsa/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/tempdsa
+TRACE::2020-06-24.13:39:32::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/tempdsa/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:32::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:32::SCWPlatform::update - Opened existing hwdb top_level_block_design_wrapper_0
+TRACE::2020-06-24.13:39:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:32::SCWMssOS::Saving the mss changes C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:32::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2020-06-24.13:39:32::SCWMssOS::Completed writemss as part of save.
+TRACE::2020-06-24.13:39:32::SCWMssOS::Commit changes completed.
+TRACE::2020-06-24.13:39:32::SCWMssOS::Completed hw sync for the mss in domain: zynqmp_fsbl
+TRACE::2020-06-24.13:39:32::SCWMssOS::Removing the swdes entry for  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:32::SCWMssOS::Saving the mss changes C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-06-24.13:39:32::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2020-06-24.13:39:32::SCWMssOS::Completed writemss as part of save.
+TRACE::2020-06-24.13:39:32::SCWMssOS::Commit changes completed.
+TRACE::2020-06-24.13:39:32::SCWMssOS::Completed hw sync for the mss in domain: zynqmp_pmufw
+TRACE::2020-06-24.13:39:32::SCWMssOS::Removing the swdes entry for  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-06-24.13:39:32::SCWMssOS::Saving the mss changes C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:39:32::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2020-06-24.13:39:32::SCWMssOS::Completed writemss as part of save.
+TRACE::2020-06-24.13:39:32::SCWMssOS::Commit changes completed.
+TRACE::2020-06-24.13:39:32::SCWMssOS::Completed hw sync for the mss in domain: standalone_domain
+TRACE::2020-06-24.13:39:32::SCWMssOS::Removing the swdes entry for  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:39:33::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:33::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:33::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:33::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:33::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:33::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:33::SCWPlatform::Do not have an existing db opened. 
+TRACE::2020-06-24.13:39:45::SCWPlatform::Opened new HwDB with name top_level_block_design_wrapper_1
+TRACE::2020-06-24.13:39:45::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:45::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:45::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:45::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:45::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:45::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:45::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_1
+TRACE::2020-06-24.13:39:45::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_1
+TRACE::2020-06-24.13:39:45::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:45::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:45::SCWMssOS::DEBUG:  swdes dump  
+TRACE::2020-06-24.13:39:45::SCWMssOS::No sw design opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:45::SCWMssOS::mss exists loading the mss file  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:45::SCWMssOS::Opened the sw design from mss  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:45::SCWMssOS::Adding the swdes entry C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss with des name system
+TRACE::2020-06-24.13:39:45::SCWMssOS::updating the scw layer about changes
+TRACE::2020-06-24.13:39:45::SCWMssOS::Opened the sw design.  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:45::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:45::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:45::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:45::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:45::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:45::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:45::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_1
+TRACE::2020-06-24.13:39:45::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_1
+TRACE::2020-06-24.13:39:45::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:45::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-06-24.13:39:45::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+
+TRACE::2020-06-24.13:39:45::SCWMssOS::No sw design opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-06-24.13:39:45::SCWMssOS::mss exists loading the mss file  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-06-24.13:39:45::SCWMssOS::Opened the sw design from mss  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-06-24.13:39:45::SCWMssOS::Adding the swdes entry C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss with des name system_0
+TRACE::2020-06-24.13:39:45::SCWMssOS::updating the scw layer about changes
+TRACE::2020-06-24.13:39:45::SCWMssOS::Opened the sw design.  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-06-24.13:39:45::SCWMssOS::Saving the mss changes C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:45::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2020-06-24.13:39:45::SCWMssOS::Completed writemss as part of save.
+TRACE::2020-06-24.13:39:45::SCWMssOS::Commit changes completed.
+TRACE::2020-06-24.13:39:45::SCWMssOS::Saving the mss changes C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-06-24.13:39:45::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2020-06-24.13:39:45::SCWMssOS::Completed writemss as part of save.
+TRACE::2020-06-24.13:39:45::SCWMssOS::Commit changes completed.
+TRACE::2020-06-24.13:39:45::SCWMssOS::Saving the mss changes C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:39:45::SCWMssOS::Adding the swdes entry, mss present, able to open swdb C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss with des name system_1
+TRACE::2020-06-24.13:39:45::SCWMssOS::Writing the mss file completed C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:39:45::SCWMssOS::Commit changes completed.
+TRACE::2020-06-24.13:39:45::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:45::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:45::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:45::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:45::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:45::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:45::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_1
+TRACE::2020-06-24.13:39:45::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_1
+TRACE::2020-06-24.13:39:45::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:45::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:45::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-06-24.13:39:45::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:39:45::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:45::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:45::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:45::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:45::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:45::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:45::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_1
+TRACE::2020-06-24.13:39:45::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_1
+TRACE::2020-06-24.13:39:45::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:45::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-06-24.13:39:45::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-06-24.13:39:45::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-06-24.13:39:45::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:45::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:45::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:45::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:39:45::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:39:45::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:39:45::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_1
+TRACE::2020-06-24.13:39:45::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_1
+TRACE::2020-06-24.13:39:45::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:39:45::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:39:45::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-06-24.13:39:45::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:39:45::SCWWriter::formatted JSON is {
+	"platformName":	"test_proj_plat",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"test_proj_plat",
+	"platHandOff":	"C:/James/test_project/top_level_block_design_wrapper.xsa",
+	"platIntHandOff":	"<platformDir>/hw/top_level_block_design_wrapper.xsa",
+	"deviceType":	"zynqMP",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"fsblExtraCompilerFlags":	"-MMD -MP      -Wall -fmessage-length=0 -DARMA53_64 -Os -flto -ffat-lto-objects  ",
+	"pmufwExtraCompilerFlags":	"-MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-objects  ",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"test_proj_plat",
+	"systems":	[{
+			"systemName":	"test_proj_plat",
+			"systemDesc":	"test_proj_plat",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"test_proj_plat",
+			"sysActiveDom":	"standalone_domain",
+			"sysDefaultDom":	"standalone_domain",
+			"domains":	[{
+					"domainName":	"zynqmp_fsbl",
+					"domainDispName":	"zynqmp_fsbl",
+					"domainDesc":	"FSBL Application BSP - Auto Generated.",
+					"processors":	"psu_cortexa53_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.2",
+					"mssFile":	"",
+					"md5Digest":	"7e4e69f5bc036685214a186a94683e98",
+					"compatibleApp":	"zynqmp_fsbl",
+					"domType":	"bootDomain",
+					"arch":	"64-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	["xilffs:4.3", "xilsecure:4.2", "xilpm:3.1"],
+					"libOptions":	{
+						"xilffs":	{
+							"read_only":	"true",
+							"use_mkfs":	"false",
+							"libOptionNames":	["read_only", "use_mkfs"]
+						},
+						"libsContainingOptions":	["xilffs"]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}, {
+					"domainName":	"zynqmp_pmufw",
+					"domainDispName":	"zynqmp_pmufw",
+					"domainDesc":	"PMUFW Application BSP - Auto Generated.",
+					"processors":	"psu_pmu_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.2",
+					"mssFile":	"",
+					"md5Digest":	"67159fb7438f4a345e902a6ed5cc0155",
+					"compatibleApp":	"zynqmp_pmufw",
+					"domType":	"bootDomain",
+					"arch":	"64-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	["xilfpga:5.2", "xilsecure:4.2", "xilskey:6.9"],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}, {
+					"domainName":	"standalone_domain",
+					"domainDispName":	"standalone on psu_cortexa53_0",
+					"domainDesc":	"standalone_domain",
+					"processors":	"psu_cortexa53_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"qemuArgs":	"C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/qemu_args.txt",
+					"qemuData":	"C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/",
+					"pmuQemuArgs":	"C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/pmu_args.txt",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.2",
+					"mssFile":	"",
+					"md5Digest":	"eff8b887f79311fa647849f16d3e586b",
+					"compatibleApp":	"",
+					"domType":	"mssDomain",
+					"arch":	"64-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	["lwip211:1.2"],
+					"libOptions":	{
+						"lwip211":	{
+							"lwip_dhcp":	"true",
+							"libOptionNames":	["lwip_dhcp"]
+						},
+						"standalone":	{
+							"stdin":	"psu_coresight_0",
+							"stdout":	"psu_coresight_0",
+							"libOptionNames":	["stdin", "stdout"]
+						},
+						"libsContainingOptions":	["lwip211", "standalone"]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+LOG::2020-06-24.13:40:28::SCWPlatform::Started generating the artifacts platform test_proj_plat
+TRACE::2020-06-24.13:40:28::SCWPlatform::Sanity checking of platform is completed
+LOG::2020-06-24.13:40:28::SCWPlatform::Started generating the artifacts for system configuration test_proj_plat
+LOG::2020-06-24.13:40:28::SCWSystem::Checking the domain zynqmp_fsbl
+LOG::2020-06-24.13:40:28::SCWSystem::Doing application build for :  zynqmp_fsbl
+TRACE::2020-06-24.13:40:28::SCWBDomain::Not a forced makefile updation, No changes are present. 
+TRACE::2020-06-24.13:40:28::SCWDomain::Skipping the build for domain :  zynqmp_fsbl
+LOG::2020-06-24.13:40:28::SCWSystem::Checking the domain zynqmp_pmufw
+LOG::2020-06-24.13:40:28::SCWSystem::Doing application build for :  zynqmp_pmufw
+TRACE::2020-06-24.13:40:28::SCWBDomain::Not a forced makefile updation, No changes are present. 
+TRACE::2020-06-24.13:40:28::SCWDomain::Skipping the build for domain :  zynqmp_pmufw
+LOG::2020-06-24.13:40:28::SCWSystem::Checking the domain standalone_domain
+LOG::2020-06-24.13:40:28::SCWSystem::Not a boot domain 
+LOG::2020-06-24.13:40:28::SCWSystem::Started Processing the domain standalone_domain
+TRACE::2020-06-24.13:40:28::SCWDomain::Generating domain artifcats
+TRACE::2020-06-24.13:40:28::SCWMssOS::Generating standalone artifcats
+TRACE::2020-06-24.13:40:28::SCWMssOS::Copying the qemu file from  C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/qemu_args.txt To C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/qemu/
+TRACE::2020-06-24.13:40:28::SCWMssOS::Copying the qemu file from  C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/qemu_args.txt To C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/qemu/
+TRACE::2020-06-24.13:40:28::SCWMssOS::Copying the qemu file from  C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/qemu_args.txt To C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/qemu/
+TRACE::2020-06-24.13:40:28::SCWMssOS::Copying the qemu file from  C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/qemu_args.txt To C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/qemu/
+TRACE::2020-06-24.13:40:28::SCWMssOS:: Copying the user libraries. 
+TRACE::2020-06-24.13:40:28::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:40:28::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:40:28::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:40:28::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:40:28::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:40:28::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:40:28::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_1
+TRACE::2020-06-24.13:40:28::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_1
+TRACE::2020-06-24.13:40:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:40:28::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:40:28::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-06-24.13:40:28::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:40:28::SCWMssOS::Completed writing the mss file at C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp
+TRACE::2020-06-24.13:40:28::SCWMssOS::Mss edits present, copying mssfile into export location C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:40:29::SCWMssOS::bsp generated is stale removing and regenerating. 
+TRACE::2020-06-24.13:40:40::SCWMssOS::doing bsp build ... 
+TRACE::2020-06-24.13:40:40::SCWMssOS::System Command Ran  C: & cd  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp & make 
+TRACE::2020-06-24.13:40:40::SCWMssOS::"Running Make include in psu_cortexa53_0/libsrc/avbuf_v2_3/src"
+
+TRACE::2020-06-24.13:40:40::SCWMssOS::make -C psu_cortexa53_0/libsrc/avbuf_v2_3/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-e
+TRACE::2020-06-24.13:40:40::SCWMssOS::lf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:40::SCWMssOS::"Running Make include in psu_cortexa53_0/libsrc/axipmon_v6_8/src"
+
+TRACE::2020-06-24.13:40:40::SCWMssOS::make -C psu_cortexa53_0/libsrc/axipmon_v6_8/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none
+TRACE::2020-06-24.13:40:40::SCWMssOS::-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:41::SCWMssOS::"Running Make include in psu_cortexa53_0/libsrc/clockps_v1_2/src"
+
+TRACE::2020-06-24.13:40:41::SCWMssOS::make -C psu_cortexa53_0/libsrc/clockps_v1_2/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none
+TRACE::2020-06-24.13:40:41::SCWMssOS::-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:41::SCWMssOS::"Running Make include in psu_cortexa53_0/libsrc/coresightps_dcc_v1_7/src"
+
+TRACE::2020-06-24.13:40:41::SCWMssOS::make -C psu_cortexa53_0/libsrc/coresightps_dcc_v1_7/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarc
+TRACE::2020-06-24.13:40:41::SCWMssOS::h64-none-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:41::SCWMssOS::"Running Make include in psu_cortexa53_0/libsrc/cpu_cortexa53_v1_7/src"
+
+TRACE::2020-06-24.13:40:41::SCWMssOS::make -C psu_cortexa53_0/libsrc/cpu_cortexa53_v1_7/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch6
+TRACE::2020-06-24.13:40:41::SCWMssOS::4-none-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:41::SCWMssOS::"Running Make include in psu_cortexa53_0/libsrc/csudma_v1_6/src"
+
+TRACE::2020-06-24.13:40:41::SCWMssOS::make -C psu_cortexa53_0/libsrc/csudma_v1_6/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-
+TRACE::2020-06-24.13:40:41::SCWMssOS::elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:41::SCWMssOS::"Running Make include in psu_cortexa53_0/libsrc/ddrcpsu_v1_2/src"
+
+TRACE::2020-06-24.13:40:41::SCWMssOS::make -C psu_cortexa53_0/libsrc/ddrcpsu_v1_2/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none
+TRACE::2020-06-24.13:40:41::SCWMssOS::-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:41::SCWMssOS::"Running Make include in psu_cortexa53_0/libsrc/dpdma_v1_2/src"
+
+TRACE::2020-06-24.13:40:41::SCWMssOS::make -C psu_cortexa53_0/libsrc/dpdma_v1_2/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-e
+TRACE::2020-06-24.13:40:41::SCWMssOS::lf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:41::SCWMssOS::"Running Make include in psu_cortexa53_0/libsrc/emacps_v3_11/src"
+
+TRACE::2020-06-24.13:40:41::SCWMssOS::make -C psu_cortexa53_0/libsrc/emacps_v3_11/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none
+TRACE::2020-06-24.13:40:41::SCWMssOS::-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:42::SCWMssOS::"Running Make include in psu_cortexa53_0/libsrc/gpiops_v3_7/src"
+
+TRACE::2020-06-24.13:40:42::SCWMssOS::make -C psu_cortexa53_0/libsrc/gpiops_v3_7/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-
+TRACE::2020-06-24.13:40:42::SCWMssOS::elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:42::SCWMssOS::"Running Make include in psu_cortexa53_0/libsrc/iicps_v3_11/src"
+
+TRACE::2020-06-24.13:40:42::SCWMssOS::make -C psu_cortexa53_0/libsrc/iicps_v3_11/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-
+TRACE::2020-06-24.13:40:42::SCWMssOS::elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:42::SCWMssOS::"Running Make include in psu_cortexa53_0/libsrc/ipipsu_v2_6/src"
+
+TRACE::2020-06-24.13:40:42::SCWMssOS::make -C psu_cortexa53_0/libsrc/ipipsu_v2_6/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-
+TRACE::2020-06-24.13:40:42::SCWMssOS::elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:42::SCWMssOS::"Running Make include in psu_cortexa53_0/libsrc/libmetal_v2_1/src"
+
+TRACE::2020-06-24.13:40:42::SCWMssOS::make -C psu_cortexa53_0/libsrc/libmetal_v2_1/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-non
+TRACE::2020-06-24.13:40:42::SCWMssOS::e-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:42::SCWMssOS::"Running Make include in psu_cortexa53_0/libsrc/lwip211_v1_2/src"
+
+TRACE::2020-06-24.13:40:42::SCWMssOS::make -C psu_cortexa53_0/libsrc/lwip211_v1_2/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none
+TRACE::2020-06-24.13:40:42::SCWMssOS::-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:44::SCWMssOS::"Running Make include in psu_cortexa53_0/libsrc/qspipsu_v1_11/src"
+
+TRACE::2020-06-24.13:40:44::SCWMssOS::make -C psu_cortexa53_0/libsrc/qspipsu_v1_11/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-non
+TRACE::2020-06-24.13:40:44::SCWMssOS::e-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:44::SCWMssOS::"Running Make include in psu_cortexa53_0/libsrc/resetps_v1_3/src"
+
+TRACE::2020-06-24.13:40:44::SCWMssOS::make -C psu_cortexa53_0/libsrc/resetps_v1_3/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none
+TRACE::2020-06-24.13:40:44::SCWMssOS::-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:44::SCWMssOS::"Running Make include in psu_cortexa53_0/libsrc/rfdc_v8_0/src"
+
+TRACE::2020-06-24.13:40:44::SCWMssOS::make -C psu_cortexa53_0/libsrc/rfdc_v8_0/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-el
+TRACE::2020-06-24.13:40:44::SCWMssOS::f-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:44::SCWMssOS::"Running Make include in psu_cortexa53_0/libsrc/rtcpsu_v1_9/src"
+
+TRACE::2020-06-24.13:40:44::SCWMssOS::make -C psu_cortexa53_0/libsrc/rtcpsu_v1_9/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-
+TRACE::2020-06-24.13:40:44::SCWMssOS::elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:44::SCWMssOS::"Running Make include in psu_cortexa53_0/libsrc/scugic_v4_2/src"
+
+TRACE::2020-06-24.13:40:44::SCWMssOS::make -C psu_cortexa53_0/libsrc/scugic_v4_2/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-
+TRACE::2020-06-24.13:40:44::SCWMssOS::elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:44::SCWMssOS::"Running Make include in psu_cortexa53_0/libsrc/sdps_v3_9/src"
+
+TRACE::2020-06-24.13:40:44::SCWMssOS::make -C psu_cortexa53_0/libsrc/sdps_v3_9/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-el
+TRACE::2020-06-24.13:40:44::SCWMssOS::f-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:45::SCWMssOS::"Running Make include in psu_cortexa53_0/libsrc/standalone_v7_2/src"
+
+TRACE::2020-06-24.13:40:45::SCWMssOS::make -C psu_cortexa53_0/libsrc/standalone_v7_2/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-n
+TRACE::2020-06-24.13:40:45::SCWMssOS::one-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:45::SCWMssOS::"Running Make include in psu_cortexa53_0/libsrc/sysmonpsu_v2_6/src"
+
+TRACE::2020-06-24.13:40:45::SCWMssOS::make -C psu_cortexa53_0/libsrc/sysmonpsu_v2_6/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-no
+TRACE::2020-06-24.13:40:45::SCWMssOS::ne-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:45::SCWMssOS::"Running Make include in psu_cortexa53_0/libsrc/ttcps_v3_11/src"
+
+TRACE::2020-06-24.13:40:45::SCWMssOS::make -C psu_cortexa53_0/libsrc/ttcps_v3_11/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-
+TRACE::2020-06-24.13:40:45::SCWMssOS::elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:45::SCWMssOS::"Running Make include in psu_cortexa53_0/libsrc/uartps_v3_9/src"
+
+TRACE::2020-06-24.13:40:45::SCWMssOS::make -C psu_cortexa53_0/libsrc/uartps_v3_9/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-
+TRACE::2020-06-24.13:40:45::SCWMssOS::elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:45::SCWMssOS::"Running Make include in psu_cortexa53_0/libsrc/usbpsu_v1_7/src"
+
+TRACE::2020-06-24.13:40:45::SCWMssOS::make -C psu_cortexa53_0/libsrc/usbpsu_v1_7/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-
+TRACE::2020-06-24.13:40:45::SCWMssOS::elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:46::SCWMssOS::"Running Make include in psu_cortexa53_0/libsrc/video_common_v4_9/src"
+
+TRACE::2020-06-24.13:40:46::SCWMssOS::make -C psu_cortexa53_0/libsrc/video_common_v4_9/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64
+TRACE::2020-06-24.13:40:46::SCWMssOS::-none-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:46::SCWMssOS::"Running Make include in psu_cortexa53_0/libsrc/wdtps_v3_3/src"
+
+TRACE::2020-06-24.13:40:46::SCWMssOS::make -C psu_cortexa53_0/libsrc/wdtps_v3_3/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-e
+TRACE::2020-06-24.13:40:46::SCWMssOS::lf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:46::SCWMssOS::"Running Make include in psu_cortexa53_0/libsrc/zdma_v1_9/src"
+
+TRACE::2020-06-24.13:40:46::SCWMssOS::make -C psu_cortexa53_0/libsrc/zdma_v1_9/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-el
+TRACE::2020-06-24.13:40:46::SCWMssOS::f-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:46::SCWMssOS::"Running Make libs in psu_cortexa53_0/libsrc/avbuf_v2_3/src"
+
+TRACE::2020-06-24.13:40:46::SCWMssOS::make -C psu_cortexa53_0/libsrc/avbuf_v2_3/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf-
+TRACE::2020-06-24.13:40:46::SCWMssOS::as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:46::SCWMssOS::"Compiling avbuf"
+
+TRACE::2020-06-24.13:40:47::SCWMssOS::"Running Make libs in psu_cortexa53_0/libsrc/axipmon_v6_8/src"
+
+TRACE::2020-06-24.13:40:47::SCWMssOS::make -C psu_cortexa53_0/libsrc/axipmon_v6_8/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-el
+TRACE::2020-06-24.13:40:47::SCWMssOS::f-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:47::SCWMssOS::"Compiling axipmon"
+
+TRACE::2020-06-24.13:40:49::SCWMssOS::"Running Make libs in psu_cortexa53_0/libsrc/clockps_v1_2/src"
+
+TRACE::2020-06-24.13:40:49::SCWMssOS::make -C psu_cortexa53_0/libsrc/clockps_v1_2/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-el
+TRACE::2020-06-24.13:40:49::SCWMssOS::f-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:49::SCWMssOS::"Compiling clockps"
+
+TRACE::2020-06-24.13:40:51::SCWMssOS::"Running Make libs in psu_cortexa53_0/libsrc/coresightps_dcc_v1_7/src"
+
+TRACE::2020-06-24.13:40:51::SCWMssOS::make -C psu_cortexa53_0/libsrc/coresightps_dcc_v1_7/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64
+TRACE::2020-06-24.13:40:51::SCWMssOS::-none-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:51::SCWMssOS::"Compiling coresightps_dcc"
+
+TRACE::2020-06-24.13:40:52::SCWMssOS::"Running Make libs in psu_cortexa53_0/libsrc/cpu_cortexa53_v1_7/src"
+
+TRACE::2020-06-24.13:40:52::SCWMssOS::make -C psu_cortexa53_0/libsrc/cpu_cortexa53_v1_7/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-n
+TRACE::2020-06-24.13:40:52::SCWMssOS::one-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:52::SCWMssOS::"Compiling cpu_cortexa53"
+
+TRACE::2020-06-24.13:40:52::SCWMssOS::"Running Make libs in psu_cortexa53_0/libsrc/csudma_v1_6/src"
+
+TRACE::2020-06-24.13:40:52::SCWMssOS::make -C psu_cortexa53_0/libsrc/csudma_v1_6/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf
+TRACE::2020-06-24.13:40:52::SCWMssOS::-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:52::SCWMssOS::"Compiling csudma"
+
+TRACE::2020-06-24.13:40:54::SCWMssOS::"Running Make libs in psu_cortexa53_0/libsrc/ddrcpsu_v1_2/src"
+
+TRACE::2020-06-24.13:40:54::SCWMssOS::make -C psu_cortexa53_0/libsrc/ddrcpsu_v1_2/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-el
+TRACE::2020-06-24.13:40:54::SCWMssOS::f-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:54::SCWMssOS::"Compiling ddrcpsu"
+
+TRACE::2020-06-24.13:40:54::SCWMssOS::"Running Make libs in psu_cortexa53_0/libsrc/dpdma_v1_2/src"
+
+TRACE::2020-06-24.13:40:54::SCWMssOS::make -C psu_cortexa53_0/libsrc/dpdma_v1_2/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf-
+TRACE::2020-06-24.13:40:54::SCWMssOS::as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:54::SCWMssOS::"Compiling dpdma"
+
+TRACE::2020-06-24.13:40:55::SCWMssOS::"Running Make libs in psu_cortexa53_0/libsrc/emacps_v3_11/src"
+
+TRACE::2020-06-24.13:40:55::SCWMssOS::make -C psu_cortexa53_0/libsrc/emacps_v3_11/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-el
+TRACE::2020-06-24.13:40:55::SCWMssOS::f-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:55::SCWMssOS::"Compiling emacps"
+
+TRACE::2020-06-24.13:40:57::SCWMssOS::"Running Make libs in psu_cortexa53_0/libsrc/gpiops_v3_7/src"
+
+TRACE::2020-06-24.13:40:57::SCWMssOS::make -C psu_cortexa53_0/libsrc/gpiops_v3_7/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf
+TRACE::2020-06-24.13:40:57::SCWMssOS::-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:57::SCWMssOS::"Compiling gpiops"
+
+TRACE::2020-06-24.13:40:59::SCWMssOS::"Running Make libs in psu_cortexa53_0/libsrc/iicps_v3_11/src"
+
+TRACE::2020-06-24.13:40:59::SCWMssOS::make -C psu_cortexa53_0/libsrc/iicps_v3_11/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf
+TRACE::2020-06-24.13:40:59::SCWMssOS::-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:40:59::SCWMssOS::"Compiling iicps"
+
+TRACE::2020-06-24.13:41:02::SCWMssOS::"Running Make libs in psu_cortexa53_0/libsrc/ipipsu_v2_6/src"
+
+TRACE::2020-06-24.13:41:02::SCWMssOS::make -C psu_cortexa53_0/libsrc/ipipsu_v2_6/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf
+TRACE::2020-06-24.13:41:02::SCWMssOS::-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:41:03::SCWMssOS::"Compiling ipipsu"
+
+TRACE::2020-06-24.13:41:04::SCWMssOS::"Running Make libs in psu_cortexa53_0/libsrc/libmetal_v2_1/src"
+
+TRACE::2020-06-24.13:41:04::SCWMssOS::make -C psu_cortexa53_0/libsrc/libmetal_v2_1/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-e
+TRACE::2020-06-24.13:41:04::SCWMssOS::lf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:41:04::SCWMssOS::Scanning dependencies of target metal-static
+
+TRACE::2020-06-24.13:41:04::SCWMssOS::[  5%] Building C object lib/CMakeFiles/metal-static.dir/dma.c.obj
+
+TRACE::2020-06-24.13:41:05::SCWMssOS::[ 10%] Building C object lib/CMakeFiles/metal-static.dir/device.c.obj
+
+TRACE::2020-06-24.13:41:05::SCWMssOS::[ 15%] Building C object lib/CMakeFiles/metal-static.dir/init.c.obj
+
+TRACE::2020-06-24.13:41:05::SCWMssOS::[ 21%] Building C object lib/CMakeFiles/metal-static.dir/io.c.obj
+
+TRACE::2020-06-24.13:41:06::SCWMssOS::[ 26%] Building C object lib/CMakeFiles/metal-static.dir/irq.c.obj
+
+TRACE::2020-06-24.13:41:06::SCWMssOS::[ 31%] Building C object lib/CMakeFiles/metal-static.dir/log.c.obj
+
+TRACE::2020-06-24.13:41:07::SCWMssOS::[ 36%] Building C object lib/CMakeFiles/metal-static.dir/shmem.c.obj
+
+TRACE::2020-06-24.13:41:07::SCWMssOS::[ 42%] Building C object lib/CMakeFiles/metal-static.dir/shmem-provider.c.obj
+
+TRACE::2020-06-24.13:41:07::SCWMssOS::[ 47%] Building C object lib/CMakeFiles/metal-static.dir/softirq.c.obj
+
+TRACE::2020-06-24.13:41:08::SCWMssOS::[ 52%] Building C object lib/CMakeFiles/metal-static.dir/version.c.obj
+
+TRACE::2020-06-24.13:41:08::SCWMssOS::[ 57%] Building C object lib/CMakeFiles/metal-static.dir/system/generic/condition.c.obj
+
+TRACE::2020-06-24.13:41:08::SCWMssOS::[ 63%] Building C object lib/CMakeFiles/metal-static.dir/system/generic/device.c.obj
+
+TRACE::2020-06-24.13:41:09::SCWMssOS::[ 68%] Building C object lib/CMakeFiles/metal-static.dir/system/generic/init.c.obj
+
+TRACE::2020-06-24.13:41:09::SCWMssOS::[ 73%] Building C object lib/CMakeFiles/metal-static.dir/system/generic/io.c.obj
+
+TRACE::2020-06-24.13:41:10::SCWMssOS::[ 78%] Building C object lib/CMakeFiles/metal-static.dir/system/generic/irq.c.obj
+
+TRACE::2020-06-24.13:41:10::SCWMssOS::[ 84%] Building C object lib/CMakeFiles/metal-static.dir/system/generic/time.c.obj
+
+TRACE::2020-06-24.13:41:10::SCWMssOS::[ 89%] Building C object lib/CMakeFiles/metal-static.dir/system/generic/zynqmp_a53/sys.c.obj
+
+TRACE::2020-06-24.13:41:11::SCWMssOS::[ 94%] Building C object lib/CMakeFiles/metal-static.dir/system/generic/xlnx_common/irq.c.obj
+
+TRACE::2020-06-24.13:41:11::SCWMssOS::[100%] Linking C static library libmetal.a
+
+TRACE::2020-06-24.13:41:11::SCWMssOS::C:/Xilinx/Vitis/2020.1/gnu/aarch64/nt/aarch64-none/bin/aarch64-none-elf-ar.exe cq libmetal.a  CMakeFiles/metal-static.dir/dma.c
+TRACE::2020-06-24.13:41:11::SCWMssOS::.obj CMakeFiles/metal-static.dir/device.c.obj CMakeFiles/metal-static.dir/init.c.obj CMakeFiles/metal-static.dir/io.c.obj CMake
+TRACE::2020-06-24.13:41:11::SCWMssOS::Files/metal-static.dir/irq.c.obj CMakeFiles/metal-static.dir/log.c.obj CMakeFiles/metal-static.dir/shmem.c.obj CMakeFiles/metal
+TRACE::2020-06-24.13:41:11::SCWMssOS::-static.dir/shmem-provider.c.obj CMakeFiles/metal-static.dir/softirq.c.obj CMakeFiles/metal-static.dir/version.c.obj CMakeFiles
+TRACE::2020-06-24.13:41:11::SCWMssOS::/metal-static.dir/system/generic/condition.c.obj CMakeFiles/metal-static.dir/system/generic/device.c.obj CMakeFiles/metal-stati
+TRACE::2020-06-24.13:41:11::SCWMssOS::c.dir/system/generic/init.c.obj CMakeFiles/metal-static.dir/system/generic/io.c.obj CMakeFiles/metal-static.dir/system/generic/
+TRACE::2020-06-24.13:41:11::SCWMssOS::irq.c.obj CMakeFiles/metal-static.dir/system/generic/time.c.obj CMakeFiles/metal-static.dir/system/generic/zynqmp_a53/sys.c.obj
+TRACE::2020-06-24.13:41:11::SCWMssOS:: CMakeFiles/metal-static.dir/system/generic/xlnx_common/irq.c.obj
+
+TRACE::2020-06-24.13:41:11::SCWMssOS::C:/Xilinx/Vitis/2020.1/gnu/aarch64/nt/aarch64-none/bin/aarch64-none-elf-ranlib.exe libmetal.a
+
+TRACE::2020-06-24.13:41:11::SCWMssOS::[100%] Built target metal-static
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::Install the project...
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Install configuration: "Debug"
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/alloc.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/assert.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/atomic.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/cache.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/compiler.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/condition.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/config.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/cpu.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/device.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/dma.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/io.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/irq.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/irq_controller.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/list.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/log.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/mutex.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/scatterlist.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/shmem.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/shmem-provider.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/sleep.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/softirq.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/spinlock.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/sys.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/time.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/utilities.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/version.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/compiler/gcc/atomic.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/compiler/gcc/compiler.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/compiler/iar/compiler.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/processor/arm/atomic.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/processor/arm/cpu.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/system/generic/alloc.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/system/generic/assert.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/system/generic/cache.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/system/generic/condition.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/system/generic/io.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/system/generic/irq.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/system/generic/log.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/system/generic/mutex.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/system/generic/sleep.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/system/generic/sys.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/system/generic/zynqmp_a53/sys.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../include/metal/system/generic/xlnx_common/sys.h
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::-- Installing: ../../../lib/libmetal.a
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::"Running Make libs in psu_cortexa53_0/libsrc/lwip211_v1_2/src"
+
+TRACE::2020-06-24.13:41:14::SCWMssOS::make -C psu_cortexa53_0/libsrc/lwip211_v1_2/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-el
+TRACE::2020-06-24.13:41:14::SCWMssOS::f-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:41:15::SCWMssOS::"Compiling lwip src and adapter files"
+
+TRACE::2020-06-24.13:41:29::SCWMssOS::"Running Make libs in psu_cortexa53_0/libsrc/qspipsu_v1_11/src"
+
+TRACE::2020-06-24.13:41:29::SCWMssOS::make -C psu_cortexa53_0/libsrc/qspipsu_v1_11/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-e
+TRACE::2020-06-24.13:41:29::SCWMssOS::lf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:41:29::SCWMssOS::"Compiling qspipsu"
+
+TRACE::2020-06-24.13:41:31::SCWMssOS::"Running Make libs in psu_cortexa53_0/libsrc/resetps_v1_3/src"
+
+TRACE::2020-06-24.13:41:31::SCWMssOS::make -C psu_cortexa53_0/libsrc/resetps_v1_3/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-el
+TRACE::2020-06-24.13:41:31::SCWMssOS::f-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:41:31::SCWMssOS::"Compiling resetps"
+
+TRACE::2020-06-24.13:41:32::SCWMssOS::"Running Make libs in psu_cortexa53_0/libsrc/rfdc_v8_0/src"
+
+TRACE::2020-06-24.13:41:32::SCWMssOS::make -C psu_cortexa53_0/libsrc/rfdc_v8_0/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf-a
+TRACE::2020-06-24.13:41:32::SCWMssOS::s" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:41:32::SCWMssOS::"Compiling rfdc"
+
+TRACE::2020-06-24.13:41:40::SCWMssOS::"Running Make libs in psu_cortexa53_0/libsrc/rtcpsu_v1_9/src"
+
+TRACE::2020-06-24.13:41:40::SCWMssOS::make -C psu_cortexa53_0/libsrc/rtcpsu_v1_9/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf
+TRACE::2020-06-24.13:41:40::SCWMssOS::-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:41:40::SCWMssOS::"Compiling rtcpsu"
+
+TRACE::2020-06-24.13:41:41::SCWMssOS::"Running Make libs in psu_cortexa53_0/libsrc/scugic_v4_2/src"
+
+TRACE::2020-06-24.13:41:41::SCWMssOS::make -C psu_cortexa53_0/libsrc/scugic_v4_2/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf
+TRACE::2020-06-24.13:41:41::SCWMssOS::-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:41:42::SCWMssOS::"Compiling scugic"
+
+TRACE::2020-06-24.13:41:43::SCWMssOS::"Running Make libs in psu_cortexa53_0/libsrc/sdps_v3_9/src"
+
+TRACE::2020-06-24.13:41:43::SCWMssOS::make -C psu_cortexa53_0/libsrc/sdps_v3_9/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf-a
+TRACE::2020-06-24.13:41:43::SCWMssOS::s" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:41:43::SCWMssOS::"Compiling sdps"
+
+TRACE::2020-06-24.13:41:46::SCWMssOS::"Running Make libs in psu_cortexa53_0/libsrc/standalone_v7_2/src"
+
+TRACE::2020-06-24.13:41:46::SCWMssOS::make -C psu_cortexa53_0/libsrc/standalone_v7_2/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none
+TRACE::2020-06-24.13:41:46::SCWMssOS::-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:41:46::SCWMssOS::"Compiling standalone ARMv8 64 bit"
+
+TRACE::2020-06-24.13:41:52::SCWMssOS::"Running Make libs in psu_cortexa53_0/libsrc/sysmonpsu_v2_6/src"
+
+TRACE::2020-06-24.13:41:52::SCWMssOS::make -C psu_cortexa53_0/libsrc/sysmonpsu_v2_6/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-
+TRACE::2020-06-24.13:41:52::SCWMssOS::elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:41:52::SCWMssOS::"Compiling sysmonpsu"
+
+TRACE::2020-06-24.13:41:54::SCWMssOS::"Running Make libs in psu_cortexa53_0/libsrc/ttcps_v3_11/src"
+
+TRACE::2020-06-24.13:41:54::SCWMssOS::make -C psu_cortexa53_0/libsrc/ttcps_v3_11/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf
+TRACE::2020-06-24.13:41:54::SCWMssOS::-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:41:54::SCWMssOS::"Compiling ttcps"
+
+TRACE::2020-06-24.13:41:56::SCWMssOS::"Running Make libs in psu_cortexa53_0/libsrc/uartps_v3_9/src"
+
+TRACE::2020-06-24.13:41:56::SCWMssOS::make -C psu_cortexa53_0/libsrc/uartps_v3_9/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf
+TRACE::2020-06-24.13:41:56::SCWMssOS::-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:41:56::SCWMssOS::"Compiling uartps"
+
+TRACE::2020-06-24.13:41:58::SCWMssOS::"Running Make libs in psu_cortexa53_0/libsrc/usbpsu_v1_7/src"
+
+TRACE::2020-06-24.13:41:58::SCWMssOS::make -C psu_cortexa53_0/libsrc/usbpsu_v1_7/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf
+TRACE::2020-06-24.13:41:58::SCWMssOS::-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:41:58::SCWMssOS::"Compiling usbpsu"
+
+TRACE::2020-06-24.13:42:02::SCWMssOS::"Running Make libs in psu_cortexa53_0/libsrc/video_common_v4_9/src"
+
+TRACE::2020-06-24.13:42:02::SCWMssOS::make -C psu_cortexa53_0/libsrc/video_common_v4_9/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-no
+TRACE::2020-06-24.13:42:02::SCWMssOS::ne-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:42:02::SCWMssOS::"Compiling video_common"
+
+TRACE::2020-06-24.13:42:04::SCWMssOS::"Running Make libs in psu_cortexa53_0/libsrc/wdtps_v3_3/src"
+
+TRACE::2020-06-24.13:42:04::SCWMssOS::make -C psu_cortexa53_0/libsrc/wdtps_v3_3/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf-
+TRACE::2020-06-24.13:42:04::SCWMssOS::as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:42:04::SCWMssOS::"Compiling wdtps"
+
+TRACE::2020-06-24.13:42:05::SCWMssOS::"Running Make libs in psu_cortexa53_0/libsrc/zdma_v1_9/src"
+
+TRACE::2020-06-24.13:42:05::SCWMssOS::make -C psu_cortexa53_0/libsrc/zdma_v1_9/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf-a
+TRACE::2020-06-24.13:42:05::SCWMssOS::s" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+TRACE::2020-06-24.13:42:06::SCWMssOS::"Compiling zdma"
+
+TRACE::2020-06-24.13:42:07::SCWMssOS::'Finished building libraries'
+
+TRACE::2020-06-24.13:42:08::SCWMssOS:: Checking if to create the Supporting Applications
+TRACE::2020-06-24.13:42:08::SCWMssOS:: No Linux domain exists, trying to generate FSBL 
+LOG::2020-06-24.13:42:08::SCWSystem::Completed Processing the domain standalone_domain
+LOG::2020-06-24.13:42:08::SCWSystem::Completed Processing the sysconfig test_proj_plat
+LOG::2020-06-24.13:42:08::SCWPlatform::Completed generating the artifacts for system configuration test_proj_plat
+TRACE::2020-06-24.13:42:08::SCWPlatform::Started preparing the platform 
+TRACE::2020-06-24.13:42:08::SCWSystem::Writing the bif file for system config test_proj_plat
+TRACE::2020-06-24.13:42:08::SCWSystem::dir created 
+TRACE::2020-06-24.13:42:08::SCWSystem::Writing the bif 
+TRACE::2020-06-24.13:42:08::SCWPlatform::Started writing the spfm file 
+TRACE::2020-06-24.13:42:09::SCWPlatform::Started writing the xpfm file 
+TRACE::2020-06-24.13:42:09::SCWPlatform::Completed generating the platform
+TRACE::2020-06-24.13:42:09::SCWMssOS::Saving the mss changes C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:42:09::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2020-06-24.13:42:09::SCWMssOS::Completed writemss as part of save.
+TRACE::2020-06-24.13:42:09::SCWMssOS::Commit changes completed.
+TRACE::2020-06-24.13:42:09::SCWMssOS::Saving the mss changes C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-06-24.13:42:09::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2020-06-24.13:42:09::SCWMssOS::Completed writemss as part of save.
+TRACE::2020-06-24.13:42:09::SCWMssOS::Commit changes completed.
+TRACE::2020-06-24.13:42:09::SCWMssOS::Saving the mss changes C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:42:09::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2020-06-24.13:42:09::SCWMssOS::Running validate of swdbs.
+KEYINFO::2020-06-24.13:42:09::SCWMssOS::Could not open the swdb for system_1
+KEYINFO::2020-06-24.13:42:09::SCWMssOS::Could not open the sw design at  system_1
+ERROR: [Hsi 55-1558] Software Design system_1 is not found
+
+TRACE::2020-06-24.13:42:09::SCWMssOS::Cleared the swdb table entry
+TRACE::2020-06-24.13:42:09::SCWMssOS::Adding the swdes entry, mss present, able to open swdb C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss with des name system_1
+TRACE::2020-06-24.13:42:09::SCWMssOS::Writing the mss file completed C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:42:09::SCWMssOS::Commit changes completed.
+TRACE::2020-06-24.13:42:09::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:42:09::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:42:09::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:42:09::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:42:09::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:42:09::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:42:09::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_1
+TRACE::2020-06-24.13:42:09::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_1
+TRACE::2020-06-24.13:42:09::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:42:09::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:42:09::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-06-24.13:42:09::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-06-24.13:42:09::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:42:09::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:42:09::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:42:09::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:42:09::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:42:09::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:42:09::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_1
+TRACE::2020-06-24.13:42:09::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_1
+TRACE::2020-06-24.13:42:09::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:42:09::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-06-24.13:42:09::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-06-24.13:42:09::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-06-24.13:42:09::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:42:09::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:42:09::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:42:09::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:42:09::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:42:09::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:42:09::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_1
+TRACE::2020-06-24.13:42:09::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_1
+TRACE::2020-06-24.13:42:09::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:42:09::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:42:09::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-06-24.13:42:09::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:42:09::SCWWriter::formatted JSON is {
+	"platformName":	"test_proj_plat",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"test_proj_plat",
+	"platHandOff":	"C:/James/test_project/top_level_block_design_wrapper.xsa",
+	"platIntHandOff":	"<platformDir>/hw/top_level_block_design_wrapper.xsa",
+	"deviceType":	"zynqMP",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"fsblExtraCompilerFlags":	"-MMD -MP      -Wall -fmessage-length=0 -DARMA53_64 -Os -flto -ffat-lto-objects  ",
+	"pmufwExtraCompilerFlags":	"-MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-objects  ",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"test_proj_plat",
+	"systems":	[{
+			"systemName":	"test_proj_plat",
+			"systemDesc":	"test_proj_plat",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"test_proj_plat",
+			"sysActiveDom":	"standalone_domain",
+			"sysDefaultDom":	"standalone_domain",
+			"domains":	[{
+					"domainName":	"zynqmp_fsbl",
+					"domainDispName":	"zynqmp_fsbl",
+					"domainDesc":	"FSBL Application BSP - Auto Generated.",
+					"processors":	"psu_cortexa53_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.2",
+					"mssFile":	"",
+					"md5Digest":	"7e4e69f5bc036685214a186a94683e98",
+					"compatibleApp":	"zynqmp_fsbl",
+					"domType":	"bootDomain",
+					"arch":	"64-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	["xilffs:4.3", "xilsecure:4.2", "xilpm:3.1"],
+					"libOptions":	{
+						"xilffs":	{
+							"read_only":	"true",
+							"use_mkfs":	"false",
+							"libOptionNames":	["read_only", "use_mkfs"]
+						},
+						"libsContainingOptions":	["xilffs"]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}, {
+					"domainName":	"zynqmp_pmufw",
+					"domainDispName":	"zynqmp_pmufw",
+					"domainDesc":	"PMUFW Application BSP - Auto Generated.",
+					"processors":	"psu_pmu_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.2",
+					"mssFile":	"",
+					"md5Digest":	"67159fb7438f4a345e902a6ed5cc0155",
+					"compatibleApp":	"zynqmp_pmufw",
+					"domType":	"bootDomain",
+					"arch":	"64-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	["xilfpga:5.2", "xilsecure:4.2", "xilskey:6.9"],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}, {
+					"domainName":	"standalone_domain",
+					"domainDispName":	"standalone on psu_cortexa53_0",
+					"domainDesc":	"standalone_domain",
+					"processors":	"psu_cortexa53_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"qemuArgs":	"C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/qemu_args.txt",
+					"qemuData":	"C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/",
+					"pmuQemuArgs":	"C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/pmu_args.txt",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.2",
+					"mssFile":	"",
+					"md5Digest":	"6d2af2ed12c42bdca33aaf4114f33756",
+					"compatibleApp":	"",
+					"domType":	"mssDomain",
+					"arch":	"64-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	["lwip211:1.2"],
+					"libOptions":	{
+						"lwip211":	{
+							"lwip_dhcp":	"true",
+							"libOptionNames":	["lwip_dhcp"]
+						},
+						"standalone":	{
+							"stdin":	"psu_coresight_0",
+							"stdout":	"psu_coresight_0",
+							"libOptionNames":	["stdin", "stdout"]
+						},
+						"libsContainingOptions":	["lwip211", "standalone"]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+KEYINFO::2020-06-24.13:42:09::SCWPlatform::updated the xpfm file.
+TRACE::2020-06-24.13:42:09::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:42:09::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:42:09::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:42:09::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-06-24.13:42:09::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-06-24.13:42:09::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-06-24.13:42:09::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_1
+TRACE::2020-06-24.13:42:09::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_1
+TRACE::2020-06-24.13:42:09::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-06-24.13:42:09::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-06-24.13:42:09::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-06-24.13:42:09::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss

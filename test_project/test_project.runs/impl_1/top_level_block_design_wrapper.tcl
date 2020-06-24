@@ -124,13 +124,11 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param tcl.collectionResultDisplayLimit 0
   set_param power.BramSDPPropagationFix 1
   set_param chipscope.maxJobs 2
   set_param power.enableUnconnectedCarry8PinPower 1
   set_param power.enableCarry8RouteBelPower 1
   set_param power.enableLutRouteBelPower 1
-  set_param xicom.use_bs_reader 1
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xczu28dr-ffvg1517-2-e
   set_property board_part xilinx.com:zcu111:part0:1.2 [current_project]
@@ -142,6 +140,7 @@ OPTRACE "set parameters" START { }
   set_property parent.project_path C:/James/test_project/test_project.xpr [current_project]
   set_property ip_output_repo C:/James/test_project/test_project.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
+  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet C:/James/test_project/test_project.runs/synth_1/top_level_block_design_wrapper.dcp
@@ -317,6 +316,7 @@ set rc [catch {
   create_msg_db write_bitstream.pb
 OPTRACE "read constraints: write_bitstream" START { }
 OPTRACE "read constraints: write_bitstream" END { }
+  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
   catch { write_mem_info -force top_level_block_design_wrapper.mmi }
 OPTRACE "write_bitstream setup" END { }
 OPTRACE "write_bitstream" START { }

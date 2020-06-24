@@ -120,3 +120,9 @@ timestamp=[2020-06-23 20:50:20], mode=BUILD, duration=0:00:01.455, duration_ms=1
 timestamp=[2020-06-23 20:50:37], mode=BUILD, duration=0:00:00.321, duration_ms=321, data={name=test_proj_pulse_ctrl, configuration=Debug, clean_build=false}
 timestamp=[2020-06-23 20:53:00], mode=BUILD, duration=0:00:01.504, duration_ms=1504, data={name=test_proj_pulse_ctrl, configuration=Debug, clean_build=false}
 timestamp=[2020-06-23 20:53:14], mode=BUILD, duration=0:00:13.031, duration_ms=13031, data={name=test_proj_pulse_ctrl_system, configuration=Debug, clean_build=false}
+timestamp=[2020-06-24 13:38:12], mode=WORKBENCH_START, duration=0:00:12.049, duration_ms=12049, data={}
+timestamp=[2020-06-24 13:38:13], mode=WORKBENCH_UI_INIT, duration=0:00:00.938, duration_ms=938, data={editors_count=7, platform_editors_count=2, projects_count=8, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,test_proj_plat,test_proj_pulse_ctrl,test_proj_pulse_ctrl_system,test_proj_tcp_server,test_proj_tcp_server_system,test_proj_uart_test,test_proj_uart_test_system}
+timestamp=[2020-06-24 13:38:14], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.170, duration_ms=170, data={}
+timestamp=[2020-06-24 13:42:09], mode=PLATFORM_GENERATION, duration=0:01:43.945, duration_ms=103945, data={name=test_proj_plat}
+timestamp=[2020-06-24 13:42:25], mode=BUILD, duration=0:00:02.532, duration_ms=2532, data={name=test_proj_pulse_ctrl, configuration=Debug, clean_build=false}
+timestamp=[2020-06-24 13:42:40], mode=BUILD, duration=0:00:13.397, duration_ms=13397, data={name=test_proj_pulse_ctrl_system, configuration=Debug, clean_build=false}

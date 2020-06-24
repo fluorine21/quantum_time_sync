@@ -1,0 +1,181 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x58C48BABC8F5D8F1",
+      "design_src": "SBD",
+      "device": "xczu28dr-ffvg1517-2-e",
+      "name": "bd_1ad1",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "scoped": "true",
+      "synth_flow_mode": "None",
+      "tool_version": "2020.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "ila_lib": ""
+    },
+    "interface_ports": {
+      "SLOT_0_GPIO": {
+        "mode": "Monitor",
+        "vlnv": "xilinx.com:interface:gpio_rtl:1.0",
+        "port_maps": {
+          "TRI_I": {
+            "physical_name": "SLOT_0_GPIO_tri_i",
+            "direction": "I",
+            "left": "39",
+            "right": "0"
+          },
+          "TRI_O": {
+            "physical_name": "SLOT_0_GPIO_tri_o",
+            "direction": "I",
+            "left": "39",
+            "right": "0"
+          },
+          "TRI_T": {
+            "physical_name": "SLOT_0_GPIO_tri_t",
+            "direction": "I",
+            "left": "39",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "ports": {
+      "clk": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "top_level_block_design_zynq_ultra_ps_e_0_3_pl_clk0",
+            "value_src": "default_prop"
+          },
+          "FREQ_HZ": {
+            "value": "99999001",
+            "value_src": "default_prop"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "SLOT_0_GPIO_tri_i": {
+        "direction": "I",
+        "left": "39",
+        "right": "0"
+      },
+      "SLOT_0_GPIO_tri_o": {
+        "direction": "I",
+        "left": "39",
+        "right": "0"
+      },
+      "SLOT_0_GPIO_tri_t": {
+        "direction": "I",
+        "left": "39",
+        "right": "0"
+      }
+    },
+    "components": {
+      "ila_lib": {
+        "vlnv": "xilinx.com:ip:ila:6.2",
+        "xci_name": "bd_1ad1_ila_lib_0",
+        "parameters": {
+          "ALL_PROBE_SAME_MU": {
+            "value": "TRUE"
+          },
+          "ALL_PROBE_SAME_MU_CNT": {
+            "value": "1"
+          },
+          "C_ADV_TRIGGER": {
+            "value": "FALSE"
+          },
+          "C_DATA_DEPTH": {
+            "value": "4096"
+          },
+          "C_EN_STRG_QUAL": {
+            "value": "0"
+          },
+          "C_EN_TIME_TAG": {
+            "value": "0"
+          },
+          "C_ILA_CLK_FREQ": {
+            "value": "99999001"
+          },
+          "C_INPUT_PIPE_STAGES": {
+            "value": "0"
+          },
+          "C_MONITOR_TYPE": {
+            "value": "Native"
+          },
+          "C_NUM_OF_PROBES": {
+            "value": "3"
+          },
+          "C_PROBE0_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE0_WIDTH": {
+            "value": "40"
+          },
+          "C_PROBE1_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE1_WIDTH": {
+            "value": "40"
+          },
+          "C_PROBE2_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE2_WIDTH": {
+            "value": "40"
+          },
+          "C_TIME_TAG_WIDTH": {
+            "value": "32"
+          },
+          "C_TRIGIN_EN": {
+            "value": "false"
+          },
+          "C_TRIGOUT_EN": {
+            "value": "false"
+          },
+          "C_XLNX_HW_PROBE_INFO": {
+            "value": "DEFAULT"
+          }
+        }
+      }
+    },
+    "nets": {
+      "clk_1": {
+        "ports": [
+          "clk",
+          "ila_lib/clk"
+        ]
+      },
+      "SLOT_0_GPIO_tri_i_1": {
+        "ports": [
+          "SLOT_0_GPIO_tri_i",
+          "ila_lib/probe0"
+        ]
+      },
+      "SLOT_0_GPIO_tri_o_1": {
+        "ports": [
+          "SLOT_0_GPIO_tri_o",
+          "ila_lib/probe1"
+        ]
+      },
+      "SLOT_0_GPIO_tri_t_1": {
+        "ports": [
+          "SLOT_0_GPIO_tri_t",
+          "ila_lib/probe2"
+        ]
+      }
+    }
+  }
+}

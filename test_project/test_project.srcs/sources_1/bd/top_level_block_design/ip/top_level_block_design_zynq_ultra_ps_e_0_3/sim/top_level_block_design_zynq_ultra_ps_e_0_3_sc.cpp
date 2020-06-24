@@ -88,7 +88,7 @@ top_level_block_design_zynq_ultra_ps_e_0_3_sc::top_level_block_design_zynq_ultra
     model_param_props.addLong("C_SD1_INTERNAL_BUS_WIDTH", "8");
     model_param_props.addLong("C_NUM_F2P_0_INTR_INPUTS", "1");
     model_param_props.addLong("C_NUM_F2P_1_INTR_INPUTS", "1");
-    model_param_props.addLong("C_EMIO_GPIO_WIDTH", "1");
+    model_param_props.addLong("C_EMIO_GPIO_WIDTH", "40");
     model_param_props.addLong("C_NUM_FABRIC_RESETS", "1");
     model_param_props.addString("C_EN_FIFO_ENET0", "0");
     model_param_props.addString("C_EN_FIFO_ENET1", "0");
@@ -104,8 +104,6 @@ top_level_block_design_zynq_ultra_ps_e_0_3_sc::top_level_block_design_zynq_ultra
   // initialize sockets
   M_AXI_HPM0_FPD_rd_socket = mp_impl->M_AXI_HPM0_FPD_rd_socket;
   M_AXI_HPM0_FPD_wr_socket = mp_impl->M_AXI_HPM0_FPD_wr_socket;
-  M_AXI_HPM1_FPD_rd_socket = mp_impl->M_AXI_HPM1_FPD_rd_socket;
-  M_AXI_HPM1_FPD_wr_socket = mp_impl->M_AXI_HPM1_FPD_wr_socket;
 }
 
 top_level_block_design_zynq_ultra_ps_e_0_3_sc::~top_level_block_design_zynq_ultra_ps_e_0_3_sc()

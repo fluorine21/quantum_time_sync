@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date             : Mon Jun 22 12:00:48 2020
+| Date             : Wed Jun 24 12:50:14 2020
 | Host             : pme10D0025 running 64-bit major release  (build 9200)
 | Command          : report_power -file top_level_block_design_wrapper_power_routed.rpt -pb top_level_block_design_wrapper_power_summary_routed.pb -rpx top_level_block_design_wrapper_power_routed.rpx
 | Design           : top_level_block_design_wrapper
@@ -30,15 +30,15 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 3.490        |
+| Total On-Chip Power (W)  | 3.944        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 2.300        |
-| Device Static (W)        | 1.189        |
+| Dynamic (W)              | 2.749        |
+| Device Static (W)        | 1.195        |
 | Effective TJA (C/W)      | 0.8          |
-| Max Ambient (C)          | 97.1         |
-| Junction Temperature (C) | 27.9         |
-| Confidence Level         | High         |
+| Max Ambient (C)          | 96.7         |
+| Junction Temperature (C) | 28.3         |
+| Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
 | Design Nets Matched      | NA           |
@@ -49,18 +49,30 @@ Table of Contents
 1.1 On-Chip Components
 ----------------------
 
-+--------------+-----------+----------+-----------+-----------------+
-| On-Chip      | Power (W) | Used     | Available | Utilization (%) |
-+--------------+-----------+----------+-----------+-----------------+
-| Clocks       |     0.001 |        3 |       --- |             --- |
-| CLB Logic    |     0.000 |        5 |       --- |             --- |
-|   Others     |     0.000 |        5 |       --- |             --- |
-| PS8          |     2.299 |        1 |       --- |             --- |
-| Static Power |     1.189 |          |           |                 |
-|   PS Static  |     0.097 |          |           |                 |
-|   PL Static  |     1.093 |          |           |                 |
-| Total        |     3.490 |          |           |                 |
-+--------------+-----------+----------+-----------+-----------------+
++--------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
++--------------------------+-----------+----------+-----------+-----------------+
+| Clocks                   |     0.062 |       34 |       --- |             --- |
+| CLB Logic                |     0.012 |    16866 |       --- |             --- |
+|   LUT as Logic           |     0.008 |     5225 |    425280 |            1.23 |
+|   LUT as Shift Register  |     0.003 |      555 |    213600 |            0.26 |
+|   Register               |    <0.001 |     8199 |    850560 |            0.96 |
+|   LUT as Distributed RAM |    <0.001 |       88 |    213600 |            0.04 |
+|   CARRY8                 |    <0.001 |       85 |     53160 |            0.16 |
+|   Others                 |     0.000 |      916 |       --- |             --- |
+|   F7/F8 Muxes            |     0.000 |      101 |    425280 |            0.02 |
+|   BUFG                   |     0.000 |        1 |        64 |            1.56 |
+| Signals                  |     0.024 |    13378 |       --- |             --- |
+| Block RAM                |     0.087 |     43.5 |      1080 |            4.03 |
+| RFAMS                    |     0.268 |        6 |       --- |             --- |
+|   RFDAC                  |     0.268 |        2 |         4 |           50.00 |
+|   RFADC                  |     0.000 |        4 |         4 |          100.00 |
+| PS8                      |     2.297 |        1 |       --- |             --- |
+| Static Power             |     1.195 |          |           |                 |
+|   PS Static              |     0.097 |          |           |                 |
+|   PL Static              |     1.097 |          |           |                 |
+| Total                    |     3.944 |          |           |                 |
++--------------------------+-----------+----------+-----------+-----------------+
 
 
 1.2 Power Supply Summary
@@ -69,9 +81,9 @@ Table of Contents
 +-----------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source          | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint          |       0.850 |     0.299 |       0.001 |      0.298 |       NA    | Unspecified | NA         |
+| Vccint          |       0.850 |     0.505 |       0.202 |      0.303 |       NA    | Unspecified | NA         |
 | Vccint_io       |       0.850 |     0.071 |       0.000 |      0.071 |       NA    | Unspecified | NA         |
-| Vccbram         |       0.850 |     0.004 |       0.000 |      0.004 |       NA    | Unspecified | NA         |
+| Vccbram         |       0.850 |     0.020 |       0.015 |      0.004 |       NA    | Unspecified | NA         |
 | Vccaux          |       1.800 |     0.280 |       0.000 |      0.280 |       NA    | Unspecified | NA         |
 | Vccaux_io       |       1.800 |     0.058 |       0.000 |      0.058 |       NA    | Unspecified | NA         |
 | Vcco33          |       3.300 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -82,8 +94,8 @@ Table of Contents
 | Vcco12          |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco10          |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccadc          |       1.800 |     0.008 |       0.000 |      0.008 |       NA    | Unspecified | NA         |
-| VCC_PSINTFP     |       0.850 |     0.627 |       0.595 |      0.033 |       NA    | Unspecified | NA         |
-| VCC_PSINTLP     |       0.850 |     0.248 |       0.242 |      0.007 |       NA    | Unspecified | NA         |
+| VCC_PSINTFP     |       0.850 |     0.626 |       0.592 |      0.033 |       NA    | Unspecified | NA         |
+| VCC_PSINTLP     |       0.850 |     0.249 |       0.242 |      0.007 |       NA    | Unspecified | NA         |
 | VPS_MGTRAVCC    |       0.850 |     0.139 |       0.138 |      0.001 |       NA    | Unspecified | NA         |
 | VCC_PSINTFP_DDR |       0.850 |     0.730 |       0.726 |      0.004 |       NA    | Unspecified | NA         |
 | VCC_PSPLL       |       1.200 |     0.071 |       0.069 |      0.002 |       NA    | Unspecified | NA         |
@@ -98,9 +110,9 @@ Table of Contents
 | VCCO_PSIO3_503  |       3.300 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
 | VCC_PSADC       |       1.800 |     0.002 |       0.000 |      0.002 |       NA    | Unspecified | NA         |
 | VCCINT_AMS      |       0.850 |     0.010 |       0.000 |      0.010 |       NA    | Unspecified | NA         |
-| DACAVCC         |       0.925 |     0.008 |       0.000 |      0.008 |       NA    | Unspecified | NA         |
-| DACAVCCAUX      |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| DACAVTT         |       2.500 |     0.005 |       0.000 |      0.005 |       NA    | Unspecified | NA         |
+| DACAVCC         |       0.925 |     0.122 |       0.114 |      0.008 |       NA    | Unspecified | NA         |
+| DACAVCCAUX      |       1.800 |     0.056 |       0.056 |      0.000 |       NA    | Unspecified | NA         |
+| DACAVTT         |       2.500 |     0.030 |       0.025 |      0.005 |       NA    | Unspecified | NA         |
 | ADCAVCC         |       0.925 |     0.011 |       0.000 |      0.011 |       NA    | Unspecified | NA         |
 | ADCAVCCAUX      |       1.800 |     0.049 |       0.000 |      0.049 |       NA    | Unspecified | NA         |
 | VCCSDFEC        |       0.850 |     0.029 |       0.000 |      0.029 |       NA    | Unspecified | NA         |
@@ -113,17 +125,17 @@ Table of Contents
 1.3 Confidence Level
 --------------------
 
-+-----------------------------+------------+------------------------------------------------+--------+
-| User Input Data             | Confidence | Details                                        | Action |
-+-----------------------------+------------+------------------------------------------------+--------+
-| Design implementation state | High       | Design is routed                               |        |
-| Clock nodes activity        | High       | User specified more than 95% of clocks         |        |
-| I/O nodes activity          | High       | User specified more than 95% of inputs         |        |
-| Internal nodes activity     | High       | User specified more than 25% of internal nodes |        |
-| Device models               | High       | Device models are Production                   |        |
-|                             |            |                                                |        |
-| Overall confidence level    | High       |                                                |        |
-+-----------------------------+------------+------------------------------------------------+--------+
++-----------------------------+------------+------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                        | Action                                                                                                     |
++-----------------------------+------------+------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                               |                                                                                                            |
+| Clock nodes activity        | High       | User specified more than 95% of clocks         |                                                                                                            |
+| I/O nodes activity          | High       | User specified more than 95% of inputs         |                                                                                                            |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
+| Device models               | High       | Device models are Production                   |                                                                                                            |
+|                             |            |                                                |                                                                                                            |
+| Overall confidence level    | Medium     |                                                |                                                                                                            |
++-----------------------------+------------+------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 
 
 2. Settings
@@ -147,11 +159,13 @@ Table of Contents
 2.2 Clock Constraints
 ---------------------
 
-+----------+----------------------------------------------------------------------+-----------------+
-| Clock    | Domain                                                               | Constraint (ns) |
-+----------+----------------------------------------------------------------------+-----------------+
-| clk_pl_0 | top_level_block_design_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0] |            10.0 |
-+----------+----------------------------------------------------------------------+-----------------+
++-----------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+-----------------+
+| Clock                                                                                               | Domain                                                                                                                         | Constraint (ns) |
++-----------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+-----------------+
+| RFDAC0_CLK                                                                                          | top_level_block_design_i/usp_rf_data_converter_0/inst/top_level_block_design_usp_rf_data_converter_0_0_rf_wrapper_i/clk_dac0_i |             4.0 |
+| clk_pl_0                                                                                            | top_level_block_design_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]                                                           |            10.0 |
+| dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK | dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/in0                                                              |            50.0 |
++-----------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+-----------------+
 
 
 3. Detailed Reports
@@ -163,8 +177,21 @@ Table of Contents
 +--------------------------------+-----------+
 | Name                           | Power (W) |
 +--------------------------------+-----------+
-| top_level_block_design_wrapper |     2.300 |
-|   top_level_block_design_i     |     2.300 |
+| top_level_block_design_wrapper |     2.749 |
+|   dbg_hub                      |     0.005 |
+|     inst                       |     0.005 |
+|       BSCANID.u_xsdbm_id       |     0.005 |
+|   top_level_block_design_i     |     2.744 |
+|     fifo_generator_0           |     0.003 |
+|       U0                       |     0.003 |
+|     ps8_0_axi_periph           |     0.012 |
+|       s00_couplers             |     0.012 |
+|     system_ila_0               |     0.032 |
+|       inst                     |     0.032 |
+|     system_ila_1               |     0.102 |
+|       inst                     |     0.102 |
+|     usp_rf_data_converter_0    |     0.295 |
+|       inst                     |     0.295 |
 |     zynq_ultra_ps_e_0          |     2.300 |
 |       inst                     |     2.300 |
 +--------------------------------+-----------+

@@ -2919,3 +2919,23 @@ con
 ----------------End of Script----------------
 
 20:53:50 INFO  : Launch script is exported to file 'C:\James\vitis_workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_test_proj_pulse_ctrl_system_standalone.tcl'
+22:38:17 INFO  : Disconnected from the channel tcfchan#47.
+13:38:06 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\James\vitis_workspace\temp_xsdb_launch_script.tcl
+13:38:09 INFO  : XSCT server has started successfully.
+13:38:09 INFO  : plnx-install-location is set to ''
+13:38:09 INFO  : Successfully done setting XSCT server connection channel  
+13:38:09 INFO  : Successfully done setting workspace for the tool. 
+13:38:14 INFO  : Registering command handlers for Vitis TCF services
+13:38:14 INFO  : Platform repository initialization has completed.
+13:38:15 INFO  : Successfully done query RDI_DATADIR 
+13:39:46 INFO  : Hardware specification for platform project 'test_proj_plat' is updated.
+13:42:09 INFO  : Result from executing command 'getProjects': test_proj_plat
+13:42:09 INFO  : Result from executing command 'getPlatforms': test_proj_plat|C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm
+13:42:09 INFO  : Checking for BSP changes to sync application flags for project 'test_proj_pulse_ctrl'...
+13:42:22 INFO  : Updating application flags with new BSP settings...
+13:42:22 INFO  : Successfully updated application flags for project test_proj_pulse_ctrl.
+13:42:26 INFO  : The hardware specfication used by project 'test_proj_pulse_ctrl' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+13:42:26 INFO  : The file 'C:\James\vitis_workspace\test_proj_pulse_ctrl\_ide\bitstream\top_level_block_design_wrapper.bit' stored in project is removed.
+13:42:26 INFO  : The updated bitstream files are copied from platform to folder 'C:\James\vitis_workspace\test_proj_pulse_ctrl\_ide\bitstream' in project 'test_proj_pulse_ctrl'.
+13:42:26 INFO  : The file 'C:\James\vitis_workspace\test_proj_pulse_ctrl\_ide\psinit\psu_init.tcl' stored in project is removed.
+13:42:27 INFO  : The updated ps init files are copied from platform to folder 'C:\James\vitis_workspace\test_proj_pulse_ctrl\_ide\psinit' in project 'test_proj_pulse_ctrl'.

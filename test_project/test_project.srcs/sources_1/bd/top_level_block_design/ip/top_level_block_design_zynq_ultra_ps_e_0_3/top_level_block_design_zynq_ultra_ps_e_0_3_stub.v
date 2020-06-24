@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Mon Jun 22 11:57:44 2020
+// Date        : Tue Jun 23 23:24:28 2020
 // Host        : pme10D0025 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_zynq_ultra_ps_e_0_3/top_level_block_design_zynq_ultra_ps_e_0_3_stub.v
@@ -22,16 +22,8 @@ module top_level_block_design_zynq_ultra_ps_e_0_3(maxihpm0_fpd_aclk, maxigp0_awi
   maxigp0_arsize, maxigp0_arburst, maxigp0_arlock, maxigp0_arcache, maxigp0_arprot, 
   maxigp0_arvalid, maxigp0_aruser, maxigp0_arready, maxigp0_rid, maxigp0_rdata, 
   maxigp0_rresp, maxigp0_rlast, maxigp0_rvalid, maxigp0_rready, maxigp0_awqos, maxigp0_arqos, 
-  maxihpm1_fpd_aclk, maxigp1_awid, maxigp1_awaddr, maxigp1_awlen, maxigp1_awsize, 
-  maxigp1_awburst, maxigp1_awlock, maxigp1_awcache, maxigp1_awprot, maxigp1_awvalid, 
-  maxigp1_awuser, maxigp1_awready, maxigp1_wdata, maxigp1_wstrb, maxigp1_wlast, 
-  maxigp1_wvalid, maxigp1_wready, maxigp1_bid, maxigp1_bresp, maxigp1_bvalid, maxigp1_bready, 
-  maxigp1_arid, maxigp1_araddr, maxigp1_arlen, maxigp1_arsize, maxigp1_arburst, 
-  maxigp1_arlock, maxigp1_arcache, maxigp1_arprot, maxigp1_arvalid, maxigp1_aruser, 
-  maxigp1_arready, maxigp1_rid, maxigp1_rdata, maxigp1_rresp, maxigp1_rlast, maxigp1_rvalid, 
-  maxigp1_rready, maxigp1_awqos, maxigp1_arqos, emio_uart1_txd, emio_uart1_rxd, pl_ps_irq0, 
-  pl_resetn0, pl_clk0)
-/* synthesis syn_black_box black_box_pad_pin="maxihpm0_fpd_aclk,maxigp0_awid[15:0],maxigp0_awaddr[39:0],maxigp0_awlen[7:0],maxigp0_awsize[2:0],maxigp0_awburst[1:0],maxigp0_awlock,maxigp0_awcache[3:0],maxigp0_awprot[2:0],maxigp0_awvalid,maxigp0_awuser[15:0],maxigp0_awready,maxigp0_wdata[127:0],maxigp0_wstrb[15:0],maxigp0_wlast,maxigp0_wvalid,maxigp0_wready,maxigp0_bid[15:0],maxigp0_bresp[1:0],maxigp0_bvalid,maxigp0_bready,maxigp0_arid[15:0],maxigp0_araddr[39:0],maxigp0_arlen[7:0],maxigp0_arsize[2:0],maxigp0_arburst[1:0],maxigp0_arlock,maxigp0_arcache[3:0],maxigp0_arprot[2:0],maxigp0_arvalid,maxigp0_aruser[15:0],maxigp0_arready,maxigp0_rid[15:0],maxigp0_rdata[127:0],maxigp0_rresp[1:0],maxigp0_rlast,maxigp0_rvalid,maxigp0_rready,maxigp0_awqos[3:0],maxigp0_arqos[3:0],maxihpm1_fpd_aclk,maxigp1_awid[15:0],maxigp1_awaddr[39:0],maxigp1_awlen[7:0],maxigp1_awsize[2:0],maxigp1_awburst[1:0],maxigp1_awlock,maxigp1_awcache[3:0],maxigp1_awprot[2:0],maxigp1_awvalid,maxigp1_awuser[15:0],maxigp1_awready,maxigp1_wdata[127:0],maxigp1_wstrb[15:0],maxigp1_wlast,maxigp1_wvalid,maxigp1_wready,maxigp1_bid[15:0],maxigp1_bresp[1:0],maxigp1_bvalid,maxigp1_bready,maxigp1_arid[15:0],maxigp1_araddr[39:0],maxigp1_arlen[7:0],maxigp1_arsize[2:0],maxigp1_arburst[1:0],maxigp1_arlock,maxigp1_arcache[3:0],maxigp1_arprot[2:0],maxigp1_arvalid,maxigp1_aruser[15:0],maxigp1_arready,maxigp1_rid[15:0],maxigp1_rdata[127:0],maxigp1_rresp[1:0],maxigp1_rlast,maxigp1_rvalid,maxigp1_rready,maxigp1_awqos[3:0],maxigp1_arqos[3:0],emio_uart1_txd,emio_uart1_rxd,pl_ps_irq0[0:0],pl_resetn0,pl_clk0" */;
+  emio_gpio_i, emio_gpio_o, emio_gpio_t, pl_resetn0, pl_clk0)
+/* synthesis syn_black_box black_box_pad_pin="maxihpm0_fpd_aclk,maxigp0_awid[15:0],maxigp0_awaddr[39:0],maxigp0_awlen[7:0],maxigp0_awsize[2:0],maxigp0_awburst[1:0],maxigp0_awlock,maxigp0_awcache[3:0],maxigp0_awprot[2:0],maxigp0_awvalid,maxigp0_awuser[15:0],maxigp0_awready,maxigp0_wdata[127:0],maxigp0_wstrb[15:0],maxigp0_wlast,maxigp0_wvalid,maxigp0_wready,maxigp0_bid[15:0],maxigp0_bresp[1:0],maxigp0_bvalid,maxigp0_bready,maxigp0_arid[15:0],maxigp0_araddr[39:0],maxigp0_arlen[7:0],maxigp0_arsize[2:0],maxigp0_arburst[1:0],maxigp0_arlock,maxigp0_arcache[3:0],maxigp0_arprot[2:0],maxigp0_arvalid,maxigp0_aruser[15:0],maxigp0_arready,maxigp0_rid[15:0],maxigp0_rdata[127:0],maxigp0_rresp[1:0],maxigp0_rlast,maxigp0_rvalid,maxigp0_rready,maxigp0_awqos[3:0],maxigp0_arqos[3:0],emio_gpio_i[39:0],emio_gpio_o[39:0],emio_gpio_t[39:0],pl_resetn0,pl_clk0" */;
   input maxihpm0_fpd_aclk;
   output [15:0]maxigp0_awid;
   output [39:0]maxigp0_awaddr;
@@ -72,49 +64,9 @@ module top_level_block_design_zynq_ultra_ps_e_0_3(maxihpm0_fpd_aclk, maxigp0_awi
   output maxigp0_rready;
   output [3:0]maxigp0_awqos;
   output [3:0]maxigp0_arqos;
-  input maxihpm1_fpd_aclk;
-  output [15:0]maxigp1_awid;
-  output [39:0]maxigp1_awaddr;
-  output [7:0]maxigp1_awlen;
-  output [2:0]maxigp1_awsize;
-  output [1:0]maxigp1_awburst;
-  output maxigp1_awlock;
-  output [3:0]maxigp1_awcache;
-  output [2:0]maxigp1_awprot;
-  output maxigp1_awvalid;
-  output [15:0]maxigp1_awuser;
-  input maxigp1_awready;
-  output [127:0]maxigp1_wdata;
-  output [15:0]maxigp1_wstrb;
-  output maxigp1_wlast;
-  output maxigp1_wvalid;
-  input maxigp1_wready;
-  input [15:0]maxigp1_bid;
-  input [1:0]maxigp1_bresp;
-  input maxigp1_bvalid;
-  output maxigp1_bready;
-  output [15:0]maxigp1_arid;
-  output [39:0]maxigp1_araddr;
-  output [7:0]maxigp1_arlen;
-  output [2:0]maxigp1_arsize;
-  output [1:0]maxigp1_arburst;
-  output maxigp1_arlock;
-  output [3:0]maxigp1_arcache;
-  output [2:0]maxigp1_arprot;
-  output maxigp1_arvalid;
-  output [15:0]maxigp1_aruser;
-  input maxigp1_arready;
-  input [15:0]maxigp1_rid;
-  input [127:0]maxigp1_rdata;
-  input [1:0]maxigp1_rresp;
-  input maxigp1_rlast;
-  input maxigp1_rvalid;
-  output maxigp1_rready;
-  output [3:0]maxigp1_awqos;
-  output [3:0]maxigp1_arqos;
-  output emio_uart1_txd;
-  input emio_uart1_rxd;
-  input [0:0]pl_ps_irq0;
+  input [39:0]emio_gpio_i;
+  output [39:0]emio_gpio_o;
+  output [39:0]emio_gpio_t;
   output pl_resetn0;
   output pl_clk0;
 endmodule
