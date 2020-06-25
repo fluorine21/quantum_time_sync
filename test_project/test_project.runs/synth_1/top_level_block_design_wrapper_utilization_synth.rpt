@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Wed Jun 24 12:44:15 2020
+| Date         : Thu Jun 25 13:19:42 2020
 | Host         : pme10D0025 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_level_block_design_wrapper_utilization_synth.rpt -pb top_level_block_design_wrapper_utilization_synth.pb
 | Design       : top_level_block_design_wrapper
@@ -15,16 +15,15 @@ Table of Contents
 -----------------
 1. CLB Logic
 1.1 Summary of Registers by Type
-2. CLB Logic Distribution
-3. BLOCKRAM
-4. ARITHMETIC
-5. I/O
-6. CLOCK
-7. ADVANCED
-8. CONFIGURATION
-9. Primitives
-10. Black Boxes
-11. Instantiated Netlists
+2. BLOCKRAM
+3. ARITHMETIC
+4. I/O
+5. CLOCK
+6. ADVANCED
+7. CONFIGURATION
+8. Primitives
+9. Black Boxes
+10. Instantiated Netlists
 
 1. CLB Logic
 ------------
@@ -32,7 +31,7 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| CLB LUTs                |    0 |     0 |    425280 |  0.00 |
+| CLB LUTs*               |    0 |     0 |    425280 |  0.00 |
 |   LUT as Logic          |    0 |     0 |    425280 |  0.00 |
 |   LUT as Memory         |    0 |     0 |    213600 |  0.00 |
 | CLB Registers           |    0 |     0 |    850560 |  0.00 |
@@ -43,6 +42,7 @@ Table of Contents
 | F8 Muxes                |    0 |     0 |    106320 |  0.00 |
 | F9 Muxes                |    0 |     0 |     53160 |  0.00 |
 +-------------------------+------+-------+-----------+-------+
+* Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
 
 1.1 Summary of Registers by Type
@@ -64,28 +64,7 @@ Table of Contents
 +-------+--------------+-------------+--------------+
 
 
-2. CLB Logic Distribution
--------------------------
-
-+----------------------------------------+------+-------+-----------+-------+
-|                Site Type               | Used | Fixed | Available | Util% |
-+----------------------------------------+------+-------+-----------+-------+
-| CLB                                    |    0 |     0 |     53160 |  0.00 |
-|   CLBL                                 |    0 |     0 |           |       |
-|   CLBM                                 |    0 |     0 |           |       |
-| LUT as Logic                           |    0 |     0 |    425280 |  0.00 |
-| LUT as Memory                          |    0 |     0 |    213600 |  0.00 |
-|   LUT as Distributed RAM               |    0 |     0 |           |       |
-|   LUT as Shift Register                |    0 |     0 |           |       |
-| CLB Registers                          |    0 |     0 |    850560 |  0.00 |
-|   Register driven from within the CLB  |    0 |       |           |       |
-|   Register driven from outside the CLB |    0 |       |           |       |
-| Unique Control Sets                    |    0 |       |    106320 |  0.00 |
-+----------------------------------------+------+-------+-----------+-------+
-* * Note: Available Control Sets calculated as Slices * 2, Review the Control Sets Report for more information regarding control sets.
-
-
-3. BLOCKRAM
+2. BLOCKRAM
 -----------
 
 +----------------+------+-------+-----------+-------+
@@ -99,7 +78,7 @@ Table of Contents
 * Note: Each Block RAM Tile only has one FIFO logic available and therefore can accommodate only one FIFO36E2 or one FIFO18E2. However, if a FIFO18E2 occupies a Block RAM Tile, that tile can still accommodate a RAMB18E2
 
 
-4. ARITHMETIC
+3. ARITHMETIC
 -------------
 
 +-----------+------+-------+-----------+-------+
@@ -109,31 +88,19 @@ Table of Contents
 +-----------+------+-------+-----------+-------+
 
 
-5. I/O
+4. I/O
 ------
 
-+------------------+------+-------+-----------+-------+
-|     Site Type    | Used | Fixed | Available | Util% |
-+------------------+------+-------+-----------+-------+
-| Bonded IOB       |    0 |     0 |       347 |  0.00 |
-| HPIOB_M          |    0 |     0 |       138 |  0.00 |
-| HPIOB_S          |    0 |     0 |       138 |  0.00 |
-| HDIOB_M          |    0 |     0 |        24 |  0.00 |
-| HDIOB_S          |    0 |     0 |        24 |  0.00 |
-| HPIOB_SNGL       |    0 |     0 |        23 |  0.00 |
-| HPIOBDIFFINBUF   |    0 |     0 |       192 |  0.00 |
-| HPIOBDIFFOUTBUF  |    0 |     0 |       192 |  0.00 |
-| HDIOBDIFFINBUF   |    0 |     0 |        72 |  0.00 |
-| BITSLICE_CONTROL |    0 |     0 |        64 |  0.00 |
-| BITSLICE_RX_TX   |    0 |     0 |       416 |  0.00 |
-| BITSLICE_TX      |    0 |     0 |        64 |  0.00 |
-| RIU_OR           |    0 |     0 |        32 |  0.00 |
-| HS_ADC           |    0 |     0 |         4 |  0.00 |
-| HS_DAC           |    0 |     0 |         4 |  0.00 |
-+------------------+------+-------+-----------+-------+
++------------+------+-------+-----------+-------+
+|  Site Type | Used | Fixed | Available | Util% |
++------------+------+-------+-----------+-------+
+| Bonded IOB |    1 |     0 |       347 |  0.29 |
+| HS_ADC     |    0 |     0 |         4 |  0.00 |
+| HS_DAC     |    0 |     0 |         4 |  0.00 |
++------------+------+-------+-----------+-------+
 
 
-6. CLOCK
+5. CLOCK
 --------
 
 +----------------------+------+-------+-----------+-------+
@@ -151,7 +118,7 @@ Table of Contents
 * Note: Each used BUFGCTRL counts as two GLOBAL CLOCK BUFFERs. This table does not include global clocking resources, only buffer cell usage. See the Clock Utilization Report (report_clock_utilization) for detailed accounting of global clocking resource availability.
 
 
-7. ADVANCED
+6. ADVANCED
 -----------
 
 +-----------------+------+-------+-----------+-------+
@@ -172,7 +139,7 @@ Table of Contents
 +-----------------+------+-------+-----------+-------+
 
 
-8. CONFIGURATION
+7. CONFIGURATION
 ----------------
 
 +-------------+------+-------+-----------+-------+
@@ -188,35 +155,40 @@ Table of Contents
 +-------------+------+-------+-----------+-------+
 
 
-9. Primitives
+8. Primitives
 -------------
 
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
+| INBUF    |    1 |                 I/O |
+| IBUFCTRL |    1 |              Others |
++----------+------+---------------------+
 
 
-10. Black Boxes
----------------
+9. Black Boxes
+--------------
 
 +--------------------------------------------------+------+
 |                     Ref Name                     | Used |
 +--------------------------------------------------+------+
 | top_level_block_design_zynq_ultra_ps_e_0_3       |    1 |
+| top_level_block_design_xbar_0                    |    1 |
 | top_level_block_design_usp_rf_data_converter_0_0 |    1 |
-| top_level_block_design_system_ila_1_0            |    1 |
-| top_level_block_design_system_ila_0_0            |    1 |
+| top_level_block_design_system_ila_0_1            |    1 |
 | top_level_block_design_rst_ps8_0_99M_0           |    1 |
 | top_level_block_design_pulse_gen_0_0             |    1 |
 | top_level_block_design_proc_sys_reset_0_0        |    1 |
 | top_level_block_design_gpio_to_fifo_0_0          |    1 |
 | top_level_block_design_fifo_generator_0_0        |    1 |
+| top_level_block_design_clk_wiz_0_0               |    1 |
+| top_level_block_design_axi_gpio_0_0              |    1 |
 | top_level_block_design_auto_pc_0                 |    1 |
 | top_level_block_design_auto_ds_0                 |    1 |
 +--------------------------------------------------+------+
 
 
-11. Instantiated Netlists
+10. Instantiated Netlists
 -------------------------
 
 +----------+------+

@@ -50,6 +50,7 @@
 #include "xil_printf.h"
 
 #include "../drivers/uart.h"
+#include "../drivers/gpio.h"
 
 
 int main()
@@ -60,6 +61,16 @@ int main()
 
     print("Hello World\n\r");
 
+    if(gpio_init())
+    {
+    	print("Failed to initialize GPIO!");
+    }
+    else
+    {
+    	print("Successfully initialized GPIO!\r\n");
+    	//gpio_set_pin(1, 1);
+    }
+
     if(uart_init_interrupt() != 0)
     {
     	print("Failed to initialize UART!");
@@ -68,15 +79,23 @@ int main()
     {
     	print("Successfully initialized UART!\r\n");
 
+    	int j = 0;
     	while(1)
     	{
+    		gpio_set_pin(j, 1);
     		//uart_clear_buffer();
-    		xil_printf("Run: %i", r_cnt);
+    		//xil_printf("Run: %i", r_cnt);
     		//print("Waiting to receive 3 bytes...\r\n");
 
-    		while(uart_get_buffer_size() < 3);
-    		r_cnt++;
-    		xil_printf("Got bytes %c, %c, %c\r\n", uart_get_buffer_byte(), uart_get_buffer_byte(),uart_get_buffer_byte());
+    		//while(uart_get_buffer_size() < 3);
+    		//r_cnt++;
+    		//xil_printf("Got bytes %c, %c, %c\r\n", uart_get_buffer_byte(), uart_get_buffer_byte(),uart_get_buffer_byte());
+    		gpio_set_pin(j, 0);
+    		j++;
+    		if(j > 31)
+    		{
+    			j = 0;
+    		}
 
     	}
 

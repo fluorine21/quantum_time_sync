@@ -1,69 +1,0 @@
-2020-06-23T12:41:25.840923200255-12:41:25 **** Build of configuration Debug for project test_proj_tcp_server ****
-000-make all 
-000-'Building file: ../src/i2c_access.c'
-000-'Invoking: ARM v8 gcc compiler'
-000-aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/i2c_access.o" -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"src/i2c_access.d" -MT"src/i2c_access.o" -o "src/i2c_access.o" "../src/i2c_access.c"
-000-'Finished building: ../src/i2c_access.c'
-000-' '
-000-'Building file: ../src/iic_phyreset.c'
-000-'Invoking: ARM v8 gcc compiler'
-000-aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/iic_phyreset.o" -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"src/iic_phyreset.d" -MT"src/iic_phyreset.o" -o "src/iic_phyreset.o" "../src/iic_phyreset.c"
-000-'Finished building: ../src/iic_phyreset.c'
-000-' '
-000-'Building file: ../src/main.c'
-000-'Invoking: ARM v8 gcc compiler'
-000-aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-000-'Finished building: ../src/main.c'
-000-' '
-000-'Building file: ../src/platform_zynqmp.c'
-000-'Invoking: ARM v8 gcc compiler'
-000-aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform_zynqmp.o" -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"src/platform_zynqmp.d" -MT"src/platform_zynqmp.o" -o "src/platform_zynqmp.o" "../src/platform_zynqmp.c"
-000-In file included from ../src/platform_zynqmp.c:49:
-000/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include/xtime_l.h65-1-1#pragma message: For the sleep routines, Global timer is being used0-C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include/xtime_l.h:65:9: note: #pragma message: For the sleep routines, Global timer is being used
-000-   65 | #pragma message ("For the sleep routines, Global timer is being used")
-000-      |         ^~~~~~~
-000-../src/platform_zynqmp.c: In function 'platform_setup_timer':
-000/test_proj_tcp_server/src/platform_zynqmp.c117-1-1passing argument 3 of 'XTtcPs_CalcIntervalFromFreq' from incompatible pointer type [-Wincompatible-pointer-types]1-../src/platform_zynqmp.c:117:66: warning: passing argument 3 of 'XTtcPs_CalcIntervalFromFreq' from incompatible pointer type [-Wincompatible-pointer-types]
-000-  117 |  XTtcPs_CalcIntervalFromFreq(Timer, PLATFORM_TIMER_INTR_RATE_HZ, &Interval, &Prescaler);
-000-      |                                                                  ^~~~~~~~~
-000-      |                                                                  |
-000-      |                                                                  u16 * {aka short unsigned int *}
-000-In file included from ../src/platform_zynqmp.c:48:
-000/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include/xttcps.h495-1-1expected 'XInterval *' {aka 'unsigned int *'} but argument is of type 'u16 *' {aka 'short unsigned int *'}0-C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include/xttcps.h:495:20: note: expected 'XInterval *' {aka 'unsigned int *'} but argument is of type 'u16 *' {aka 'short unsigned int *'}
-000-  495 |         XInterval *Interval, u8 *Prescaler);
-000-      |         ~~~~~~~~~~~^~~~~~~~
-000-../src/platform_zynqmp.c: In function 'platform_clear_interrupt':
-000/test_proj_tcp_server/src/platform_zynqmp.c124-1-1variable 'StatusEvent' set but not used [-Wunused-but-set-variable]1-../src/platform_zynqmp.c:124:6: warning: variable 'StatusEvent' set but not used [-Wunused-but-set-variable]
-000-  124 |  u32 StatusEvent;
-000-      |      ^~~~~~~~~~~
-000-'Finished building: ../src/platform_zynqmp.c'
-000-' '
-000-'Building file: ../src/sfp.c'
-000-'Invoking: ARM v8 gcc compiler'
-000-aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sfp.o" -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"src/sfp.d" -MT"src/sfp.o" -o "src/sfp.o" "../src/sfp.c"
-000-'Finished building: ../src/sfp.c'
-000-' '
-000-'Building file: ../src/si5324.c'
-000-'Invoking: ARM v8 gcc compiler'
-000-aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/si5324.o" -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"src/si5324.d" -MT"src/si5324.o" -o "src/si5324.o" "../src/si5324.c"
-000-'Finished building: ../src/si5324.c'
-000-' '
-000-'Building file: ../src/tcp_perf_server.c'
-000-'Invoking: ARM v8 gcc compiler'
-000-aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/tcp_perf_server.o" -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"src/tcp_perf_server.d" -MT"src/tcp_perf_server.o" -o "src/tcp_perf_server.o" "../src/tcp_perf_server.c"
-000-'Finished building: ../src/tcp_perf_server.c'
-000-' '
-000-'Building target: test_proj_tcp_server.elf'
-000-'Invoking: ARM v8 gcc linker'
-000-aarch64-none-elf-gcc -Wl,-T -Wl,../src/lscript.ld -LC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bsplib/lib -o "test_proj_tcp_server.elf"  ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o ./src/tcp_perf_server.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-000-'Finished building target: test_proj_tcp_server.elf'
-000-' '
-000-'Invoking: ARM v8 Print Size'
-000-aarch64-none-elf-size test_proj_tcp_server.elf  |tee "test_proj_tcp_server.elf.size"
-000-   text	   data	    bss	    dec	    hex	filename
-000- 157108	   7928	4346124	4511160	 44d5b8	test_proj_tcp_server.elf
-000-'Finished building: test_proj_tcp_server.elf.size'
-000-' '
-00255-
-12:41:31 Build Finished (took 5s.554ms)
-

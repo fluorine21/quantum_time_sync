@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="xgpio_example_1" location="C:/James/vitis_workspace/xgpio_example_1" platform="C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm" platformUID="xilinx:zcu111::0.0(custom)" systemProject="xgpio_example_1_system" sysConfig="test_proj_plat" runtime="C/C++" cpu="standalone_domain" cpuInstance="psu_cortexa53_0" os="standalone" mssSignature="84202a13d9a629442bebbdd5fcef0e4f">
+  <configuration name="Debug" id="xilinx.gnu.arm.a53.exe.debug.918742364" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.arm.a53.exe.release.722172922" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="empty_application"/>
+</sdkproject:SdkProject>

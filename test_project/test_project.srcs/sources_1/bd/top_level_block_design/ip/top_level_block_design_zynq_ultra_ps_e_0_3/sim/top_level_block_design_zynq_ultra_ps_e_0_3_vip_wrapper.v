@@ -98,11 +98,7 @@ maxigp0_rvalid,
 maxigp0_rready, 
 maxigp0_awqos, 
 maxigp0_arqos, 
-emio_gpio_i, 
-emio_gpio_o, 
-emio_gpio_t, 
-pl_resetn0, 
-pl_clk0 
+pl_resetn0 
 );
 input maxihpm0_fpd_aclk;
 output [15 : 0] maxigp0_awid;
@@ -144,11 +140,7 @@ input maxigp0_rvalid;
 output maxigp0_rready;
 output [3 : 0] maxigp0_awqos;
 output [3 : 0] maxigp0_arqos;
-input [39 : 0] emio_gpio_i;
-output [39 : 0] emio_gpio_o;
-output [39 : 0] emio_gpio_t;
 output pl_resetn0;
-output pl_clk0;
 wire pl_clk_t[3:0] ;
 
 wire saxihpc0_fpd_rclk_temp;
@@ -167,7 +159,7 @@ wire saxi_lpd_rclk_temp;
 wire saxi_lpd_wclk_temp;
 
 
-assign pl_clk0 = pl_clk_t[0] ;
+ assign pl_clk0 = 1'b0 ;
 
  assign  pl_clk1 = 1'b0 ;
 

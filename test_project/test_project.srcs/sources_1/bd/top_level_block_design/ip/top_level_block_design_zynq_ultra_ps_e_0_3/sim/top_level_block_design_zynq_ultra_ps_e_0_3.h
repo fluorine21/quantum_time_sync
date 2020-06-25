@@ -120,11 +120,7 @@ public:
   sc_core::sc_out< bool > maxigp0_rready;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp0_awqos;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp0_arqos;
-  sc_core::sc_in< sc_dt::sc_bv<40> > emio_gpio_i;
-  sc_core::sc_out< sc_dt::sc_bv<40> > emio_gpio_o;
-  sc_core::sc_out< sc_dt::sc_bv<40> > emio_gpio_t;
   sc_core::sc_out< bool > pl_resetn0;
-  sc_core::sc_out< bool > pl_clk0;
 
 protected:
 
@@ -191,11 +187,7 @@ public:
   sc_core::sc_out< bool > maxigp0_rready;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp0_awqos;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp0_arqos;
-  sc_core::sc_in< sc_dt::sc_bv<40> > emio_gpio_i;
-  sc_core::sc_out< sc_dt::sc_bv<40> > emio_gpio_o;
-  sc_core::sc_out< sc_dt::sc_bv<40> > emio_gpio_t;
   sc_core::sc_out< bool > pl_resetn0;
-  sc_core::sc_out< bool > pl_clk0;
 
 protected:
 
@@ -262,11 +254,7 @@ public:
   sc_core::sc_out< bool > maxigp0_rready;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp0_awqos;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp0_arqos;
-  sc_core::sc_in< sc_dt::sc_bv<40> > emio_gpio_i;
-  sc_core::sc_out< sc_dt::sc_bv<40> > emio_gpio_o;
-  sc_core::sc_out< sc_dt::sc_bv<40> > emio_gpio_t;
   sc_core::sc_out< bool > pl_resetn0;
-  sc_core::sc_out< bool > pl_clk0;
 
 protected:
 
@@ -335,11 +323,7 @@ public:
   sc_core::sc_out< bool > maxigp0_rready;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp0_awqos;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp0_arqos;
-  sc_core::sc_in< sc_dt::sc_bv<40> > emio_gpio_i;
-  sc_core::sc_out< sc_dt::sc_bv<40> > emio_gpio_o;
-  sc_core::sc_out< sc_dt::sc_bv<40> > emio_gpio_t;
   sc_core::sc_out< bool > pl_resetn0;
-  sc_core::sc_out< bool > pl_clk0;
 
 protected:
 
@@ -414,11 +398,7 @@ public:
   sc_core::sc_out< bool > maxigp0_rready;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp0_awqos;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp0_arqos;
-  sc_core::sc_in< sc_dt::sc_bv<40> > emio_gpio_i;
-  sc_core::sc_out< sc_dt::sc_bv<40> > emio_gpio_o;
-  sc_core::sc_out< sc_dt::sc_bv<40> > emio_gpio_t;
   sc_core::sc_out< bool > pl_resetn0;
-  sc_core::sc_out< bool > pl_clk0;
 
 protected:
 

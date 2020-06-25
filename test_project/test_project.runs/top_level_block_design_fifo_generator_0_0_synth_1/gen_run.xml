@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="top_level_block_design_fifo_generator_0_0_synth_1" LaunchPart="xczu28dr-ffvg1517-2-e" LaunchTime="1592972562">
+<GenRun Id="top_level_block_design_fifo_generator_0_0_synth_1" LaunchPart="xczu28dr-ffvg1517-2-e" LaunchTime="1593048241">
   <File Type="PA-TCL" Name="top_level_block_design_fifo_generator_0_0.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="top_level_block_design_fifo_generator_0_0_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="top_level_block_design_fifo_generator_0_0_reports.tcl"/>
@@ -12,9 +12,11 @@
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_block_design_fifo_generator_0_0">
     <File Path="$PSRCDIR/sources_1/bd/top_level_block_design/ip/top_level_block_design_fifo_generator_0_0/top_level_block_design_fifo_generator_0_0.xci">
       <FileInfo>
+        <Attr Name="Library" Val="xil_defaultlib"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="ProcessingOrder" Val="EARLY"/>
       </FileInfo>
     </File>
     <Config>
@@ -25,9 +27,11 @@
   <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_block_design_fifo_generator_0_0">
     <File Path="$PSRCDIR/sources_1/bd/top_level_block_design/ip/top_level_block_design_fifo_generator_0_0/top_level_block_design_fifo_generator_0_0.xci">
       <FileInfo>
+        <Attr Name="Library" Val="xil_defaultlib"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="ProcessingOrder" Val="EARLY"/>
       </FileInfo>
     </File>
     <Config>
@@ -42,9 +46,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

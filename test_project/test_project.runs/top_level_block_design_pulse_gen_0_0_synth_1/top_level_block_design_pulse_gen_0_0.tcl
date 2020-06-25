@@ -96,7 +96,10 @@ set_property ip_output_repo c:/James/test_project/test_project.cache/ip [current
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_verilog -library xil_defaultlib C:/James/verilog_source/pulse_gen.v
+read_verilog -library xil_defaultlib {
+  C:/James/verilog_source/shift_register.v
+  C:/James/verilog_source/pulse_gen.v
+}
 read_ip -quiet c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_pulse_gen_0_0/top_level_block_design_pulse_gen_0_0.xci
 
 OPTRACE "Adding files" END { }

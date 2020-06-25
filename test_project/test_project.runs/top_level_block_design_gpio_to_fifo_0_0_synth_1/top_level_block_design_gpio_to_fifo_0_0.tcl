@@ -70,6 +70,11 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "top_level_block_design_gpio_to_fifo_0_0_synth_1" START { ROLLUP_AUTO }
+set_param power.BramSDPPropagationFix 1
+set_param chipscope.maxJobs 2
+set_param power.enableUnconnectedCarry8PinPower 1
+set_param power.enableCarry8RouteBelPower 1
+set_param power.enableLutRouteBelPower 1
 set_msg_config -id {HDL-1065} -limit 10000
 set_msg_config  -id {[BD 41-1306]}  -suppress 
 set_msg_config  -id {[BD 41-1271]}  -suppress 
@@ -91,7 +96,10 @@ set_property ip_output_repo c:/James/test_project/test_project.cache/ip [current
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_verilog -library xil_defaultlib C:/James/verilog_source/gpio_to_fifo.v
+read_verilog -library xil_defaultlib {
+  C:/James/verilog_source/shift_register.v
+  C:/James/verilog_source/gpio_to_fifo.v
+}
 read_ip -quiet c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_gpio_to_fifo_0_0/top_level_block_design_gpio_to_fifo_0_0.xci
 
 OPTRACE "Adding files" END { }

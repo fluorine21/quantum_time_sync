@@ -88,13 +88,13 @@ top_level_block_design_zynq_ultra_ps_e_0_3_sc::top_level_block_design_zynq_ultra
     model_param_props.addLong("C_SD1_INTERNAL_BUS_WIDTH", "8");
     model_param_props.addLong("C_NUM_F2P_0_INTR_INPUTS", "1");
     model_param_props.addLong("C_NUM_F2P_1_INTR_INPUTS", "1");
-    model_param_props.addLong("C_EMIO_GPIO_WIDTH", "40");
+    model_param_props.addLong("C_EMIO_GPIO_WIDTH", "32");
     model_param_props.addLong("C_NUM_FABRIC_RESETS", "1");
     model_param_props.addString("C_EN_FIFO_ENET0", "0");
     model_param_props.addString("C_EN_FIFO_ENET1", "0");
     model_param_props.addString("C_EN_FIFO_ENET2", "0");
     model_param_props.addString("C_EN_FIFO_ENET3", "0");
-    model_param_props.addString("C_PL_CLK0_BUF", "TRUE");
+    model_param_props.addString("C_PL_CLK0_BUF", "FALSE");
     model_param_props.addString("C_PL_CLK1_BUF", "FALSE");
     model_param_props.addString("C_PL_CLK2_BUF", "FALSE");
     model_param_props.addString("C_PL_CLK3_BUF", "FALSE");

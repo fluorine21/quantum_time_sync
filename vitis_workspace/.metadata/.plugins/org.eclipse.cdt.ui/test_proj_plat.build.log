@@ -1,20 +1,2341 @@
-13:40:26 **** Incremental Build of project test_proj_plat ****
-buildplatform.bat 52914 test_proj_plat no_domain_build 
-XSDB Server Channel: tcfchan#1
+13:29:50 **** Build of project test_proj_plat ****
+buildplatform.bat 61579 test_proj_plat  
+XSDB Server Channel: tcfchan#10
+Building the zynqmp_fsbl application.
+make -C zynqmp_fsbl_bsp
 
-C:\James\vitis_workspace\test_proj_plat\psu_cortexa53_0\standalone_domain\bsp\psu_cortexa53_0\libsrc\libmetal_v2_1\build_libmetal>if not "C:/Xilinx/Vitis/2020.1" == "" (C:/Xilinx/Vitis/2020.1\tps\win64\cmake-3.3.2\bin\cmake.exe ../src/libmetal -G "Unix Makefiles" -DCMAKE_TOOLCHAIN_FILE=toolchain -DCMAKE_INSTALL_PREFIX=/ -DCMAKE_VERBOSE_MAKEFILE=on -DWITH_DEFAULT_LOGGER=off -DWITH_DOC=off  2>&1 )  else (if "C:/Xilinx/Vitis/2020.1" == "" (C:/Xilinx/Vitis/2020.1\tps\win64\cmake-3.3.2\bin\cmake.exe ../src/libmetal -G "Unix Makefiles" -DCMAKE_TOOLCHAIN_FILE=toolchain -DCMAKE_INSTALL_PREFIX=/ -DCMAKE_VERBOSE_MAKEFILE=on -DWITH_DEFAULT_LOGGER=off -DWITH_DOC=off  2>&1 )  else (C:/Xilinx/Vitis/2020.1\tps\win64\cmake-3.3.2\bin\cmake.exe ../src/libmetal -G "Unix Makefiles" -DCMAKE_TOOLCHAIN_FILE=toolchain -DCMAKE_INSTALL_PREFIX=/ -DCMAKE_VERBOSE_MAKEFILE=on -DWITH_DEFAULT_LOGGER=off -DWITH_DOC=off  2>&1 ) ) 
--- Build type:  Debug
--- Host:    Windows/AMD64
--- Target:  Generic/arm
--- Machine: zynqmp_a53
--- Looking for include file xintc.h
--- Looking for include file xintc.h - found
--- Could NOT find Doxygen (missing:  DOXYGEN_EXECUTABLE) 
--- Looking for include file stdatomic.h
--- Looking for include file stdatomic.h - found
--- Configuring done
--- Generating done
--- Build files have been written to: C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/psu_cortexa53_0/libsrc/libmetal_v2_1/build_libmetal
+make[1]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp'
+
+"Running Make include in psu_cortexa53_0/libsrc/avbuf_v2_3/src"
+
+make -C psu_cortexa53_0/libsrc/avbuf_v2_3/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-e
+lf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-obje
+cts"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/avbuf_v
+2_3/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/avbuf_v2
+_3/src'
+
+"Running Make include in psu_cortexa53_0/libsrc/axipmon_v6_8/src"
+
+make -C psu_cortexa53_0/libsrc/axipmon_v6_8/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none
+-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-ob
+jects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/axipmon
+_v6_8/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/axipmon_
+v6_8/src'
+
+"Running Make include in psu_cortexa53_0/libsrc/clockps_v1_2/src"
+
+make -C psu_cortexa53_0/libsrc/clockps_v1_2/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none
+-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-ob
+jects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/clockps
+_v1_2/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/clockps_
+v1_2/src'
+
+"Running Make include in psu_cortexa53_0/libsrc/coresightps_dcc_v1_7/src"
+
+make -C psu_cortexa53_0/libsrc/coresightps_dcc_v1_7/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarc
+h64-none-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffa
+t-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/coresig
+htps_dcc_v1_7/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/coresigh
+tps_dcc_v1_7/src'
+
+"Running Make include in psu_cortexa53_0/libsrc/cpu_cortexa53_v1_7/src"
+
+make -C psu_cortexa53_0/libsrc/cpu_cortexa53_v1_7/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch6
+4-none-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-
+lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/cpu_cor
+texa53_v1_7/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/cpu_cort
+exa53_v1_7/src'
+
+"Running Make include in psu_cortexa53_0/libsrc/csudma_v1_6/src"
+
+make -C psu_cortexa53_0/libsrc/csudma_v1_6/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-
+elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-obj
+ects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/csudma_
+v1_6/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/csudma_v
+1_6/src'
+
+"Running Make include in psu_cortexa53_0/libsrc/ddrcpsu_v1_2/src"
+
+make -C psu_cortexa53_0/libsrc/ddrcpsu_v1_2/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none
+-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-ob
+jects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/ddrcpsu
+_v1_2/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/ddrcpsu_
+v1_2/src'
+
+"Running Make include in psu_cortexa53_0/libsrc/dpdma_v1_2/src"
+
+make -C psu_cortexa53_0/libsrc/dpdma_v1_2/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-e
+lf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-obje
+cts"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/dpdma_v
+1_2/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/dpdma_v1
+_2/src'
+
+"Running Make include in psu_cortexa53_0/libsrc/emacps_v3_11/src"
+
+make -C psu_cortexa53_0/libsrc/emacps_v3_11/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none
+-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-ob
+jects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/emacps_
+v3_11/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/emacps_v
+3_11/src'
+
+"Running Make include in psu_cortexa53_0/libsrc/gpiops_v3_7/src"
+
+make -C psu_cortexa53_0/libsrc/gpiops_v3_7/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-
+elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-obj
+ects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/gpiops_
+v3_7/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/gpiops_v
+3_7/src'
+
+"Running Make include in psu_cortexa53_0/libsrc/gpio_v4_6/src"
+
+make -C psu_cortexa53_0/libsrc/gpio_v4_6/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-el
+f-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-objec
+ts"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/gpio_v4
+_6/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/gpio_v4_
+6/src'
+
+"Running Make include in psu_cortexa53_0/libsrc/iicps_v3_11/src"
+
+make -C psu_cortexa53_0/libsrc/iicps_v3_11/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-
+elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-obj
+ects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/iicps_v
+3_11/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/iicps_v3
+_11/src'
+
+"Running Make include in psu_cortexa53_0/libsrc/ipipsu_v2_6/src"
+
+make -C psu_cortexa53_0/libsrc/ipipsu_v2_6/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-
+elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-obj
+ects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/ipipsu_
+v2_6/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/ipipsu_v
+2_6/src'
+
+"Running Make include in psu_cortexa53_0/libsrc/libmetal_v2_1/src"
+
+make -C psu_cortexa53_0/libsrc/libmetal_v2_1/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-non
+e-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-o
+bjects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/libmeta
+l_v2_1/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/libmetal
+_v2_1/src'
+
+"Running Make include in psu_cortexa53_0/libsrc/qspipsu_v1_11/src"
+
+make -C psu_cortexa53_0/libsrc/qspipsu_v1_11/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-non
+e-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-o
+bjects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/qspipsu
+_v1_11/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/qspipsu_
+v1_11/src'
+
+"Running Make include in psu_cortexa53_0/libsrc/resetps_v1_3/src"
+
+make -C psu_cortexa53_0/libsrc/resetps_v1_3/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none
+-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-ob
+jects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/resetps
+_v1_3/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/resetps_
+v1_3/src'
+
+"Running Make include in psu_cortexa53_0/libsrc/rfdc_v8_0/src"
+
+make -C psu_cortexa53_0/libsrc/rfdc_v8_0/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-el
+f-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-objec
+ts"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/rfdc_v8
+_0/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/rfdc_v8_
+0/src'
+
+"Running Make include in psu_cortexa53_0/libsrc/rtcpsu_v1_9/src"
+
+make -C psu_cortexa53_0/libsrc/rtcpsu_v1_9/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-
+elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-obj
+ects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/rtcpsu_
+v1_9/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/rtcpsu_v
+1_9/src'
+
+"Running Make include in psu_cortexa53_0/libsrc/scugic_v4_2/src"
+
+make -C psu_cortexa53_0/libsrc/scugic_v4_2/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-
+elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-obj
+ects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/scugic_
+v4_2/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/scugic_v
+4_2/src'
+
+"Running Make include in psu_cortexa53_0/libsrc/sdps_v3_9/src"
+
+make -C psu_cortexa53_0/libsrc/sdps_v3_9/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-el
+f-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-objec
+ts"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/sdps_v3
+_9/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/sdps_v3_
+9/src'
+
+"Running Make include in psu_cortexa53_0/libsrc/standalone_v7_2/src"
+
+make -C psu_cortexa53_0/libsrc/standalone_v7_2/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-n
+one-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto
+-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/standal
+one_v7_2/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/standalo
+ne_v7_2/src'
+
+"Running Make include in psu_cortexa53_0/libsrc/sysmonpsu_v2_6/src"
+
+make -C psu_cortexa53_0/libsrc/sysmonpsu_v2_6/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-no
+ne-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-
+objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/sysmonp
+su_v2_6/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/sysmonps
+u_v2_6/src'
+
+"Running Make include in psu_cortexa53_0/libsrc/ttcps_v3_11/src"
+
+make -C psu_cortexa53_0/libsrc/ttcps_v3_11/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-
+elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-obj
+ects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/ttcps_v
+3_11/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/ttcps_v3
+_11/src'
+
+"Running Make include in psu_cortexa53_0/libsrc/uartps_v3_9/src"
+
+make -C psu_cortexa53_0/libsrc/uartps_v3_9/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-
+elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-obj
+ects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/uartps_
+v3_9/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/uartps_v
+3_9/src'
+
+"Running Make include in psu_cortexa53_0/libsrc/usbpsu_v1_7/src"
+
+make -C psu_cortexa53_0/libsrc/usbpsu_v1_7/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-
+elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-obj
+ects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/usbpsu_
+v1_7/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/usbpsu_v
+1_7/src'
+
+"Running Make include in psu_cortexa53_0/libsrc/video_common_v4_9/src"
+
+make -C psu_cortexa53_0/libsrc/video_common_v4_9/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64
+-none-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-l
+to-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/video_c
+ommon_v4_9/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/video_co
+mmon_v4_9/src'
+
+"Running Make include in psu_cortexa53_0/libsrc/wdtps_v3_3/src"
+
+make -C psu_cortexa53_0/libsrc/wdtps_v3_3/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-e
+lf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-obje
+cts"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/wdtps_v
+3_3/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/wdtps_v3
+_3/src'
+
+"Running Make include in psu_cortexa53_0/libsrc/xilffs_v4_3/src"
+
+make -C psu_cortexa53_0/libsrc/xilffs_v4_3/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-
+elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-obj
+ects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/xilffs_
+v4_3/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/xilffs_v
+4_3/src'
+
+"Running Make include in psu_cortexa53_0/libsrc/xilpm_v3_1/src"
+
+make -C psu_cortexa53_0/libsrc/xilpm_v3_1/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-e
+lf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-obje
+cts"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/xilpm_v
+3_1/src'
+
+"Include files for this library have already been copied."
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/xilpm_v3
+_1/src'
+
+"Running Make include in psu_cortexa53_0/libsrc/xilsecure_v4_2/src"
+
+make -C psu_cortexa53_0/libsrc/xilsecure_v4_2/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-no
+ne-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-
+objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/xilsecu
+re_v4_2/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/xilsecur
+e_v4_2/src'
+
+"Running Make include in psu_cortexa53_0/libsrc/zdma_v1_9/src"
+
+make -C psu_cortexa53_0/libsrc/zdma_v1_9/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-el
+f-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-objec
+ts"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/zdma_v1
+_9/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/zdma_v1_
+9/src'
+
+"Running Make libs in psu_cortexa53_0/libsrc/avbuf_v2_3/src"
+
+make -C psu_cortexa53_0/libsrc/avbuf_v2_3/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf-
+as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-objects
+"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/avbuf_v
+2_3/src'
+
+"Compiling avbuf"
+
+aarch64-none-elf-ar: creating ../../../lib/libxil.a
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/avbuf_v2
+_3/src'
+
+"Running Make libs in psu_cortexa53_0/libsrc/axipmon_v6_8/src"
+
+make -C psu_cortexa53_0/libsrc/axipmon_v6_8/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-el
+f-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-objec
+ts"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/axipmon
+_v6_8/src'
+
+"Compiling axipmon"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/axipmon_
+v6_8/src'
+
+"Running Make libs in psu_cortexa53_0/libsrc/clockps_v1_2/src"
+
+make -C psu_cortexa53_0/libsrc/clockps_v1_2/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-el
+f-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-objec
+ts"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/clockps
+_v1_2/src'
+
+"Compiling clockps"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/clockps_
+v1_2/src'
+
+"Running Make libs in psu_cortexa53_0/libsrc/coresightps_dcc_v1_7/src"
+
+make -C psu_cortexa53_0/libsrc/coresightps_dcc_v1_7/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64
+-none-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-l
+to-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/coresig
+htps_dcc_v1_7/src'
+
+"Compiling coresightps_dcc"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/coresigh
+tps_dcc_v1_7/src'
+
+"Running Make libs in psu_cortexa53_0/libsrc/cpu_cortexa53_v1_7/src"
+
+make -C psu_cortexa53_0/libsrc/cpu_cortexa53_v1_7/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-n
+one-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto
+-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/cpu_cor
+texa53_v1_7/src'
+
+"Compiling cpu_cortexa53"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/cpu_cort
+exa53_v1_7/src'
+
+"Running Make libs in psu_cortexa53_0/libsrc/csudma_v1_6/src"
+
+make -C psu_cortexa53_0/libsrc/csudma_v1_6/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf
+-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-object
+s"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/csudma_
+v1_6/src'
+
+"Compiling csudma"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/csudma_v
+1_6/src'
+
+"Running Make libs in psu_cortexa53_0/libsrc/ddrcpsu_v1_2/src"
+
+make -C psu_cortexa53_0/libsrc/ddrcpsu_v1_2/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-el
+f-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-objec
+ts"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/ddrcpsu
+_v1_2/src'
+
+"Compiling ddrcpsu"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/ddrcpsu_
+v1_2/src'
+
+"Running Make libs in psu_cortexa53_0/libsrc/dpdma_v1_2/src"
+
+make -C psu_cortexa53_0/libsrc/dpdma_v1_2/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf-
+as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-objects
+"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/dpdma_v
+1_2/src'
+
+"Compiling dpdma"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/dpdma_v1
+_2/src'
+
+"Running Make libs in psu_cortexa53_0/libsrc/emacps_v3_11/src"
+
+make -C psu_cortexa53_0/libsrc/emacps_v3_11/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-el
+f-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-objec
+ts"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/emacps_
+v3_11/src'
+
+"Compiling emacps"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/emacps_v
+3_11/src'
+
+"Running Make libs in psu_cortexa53_0/libsrc/gpiops_v3_7/src"
+
+make -C psu_cortexa53_0/libsrc/gpiops_v3_7/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf
+-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-object
+s"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/gpiops_
+v3_7/src'
+
+"Compiling gpiops"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/gpiops_v
+3_7/src'
+
+"Running Make libs in psu_cortexa53_0/libsrc/gpio_v4_6/src"
+
+make -C psu_cortexa53_0/libsrc/gpio_v4_6/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf-a
+s" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/gpio_v4
+_6/src'
+
+"Compiling gpio"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/gpio_v4_
+6/src'
+
+"Running Make libs in psu_cortexa53_0/libsrc/iicps_v3_11/src"
+
+make -C psu_cortexa53_0/libsrc/iicps_v3_11/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf
+-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-object
+s"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/iicps_v
+3_11/src'
+
+"Compiling iicps"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/iicps_v3
+_11/src'
+
+"Running Make libs in psu_cortexa53_0/libsrc/ipipsu_v2_6/src"
+
+make -C psu_cortexa53_0/libsrc/ipipsu_v2_6/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf
+-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-object
+s"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/ipipsu_
+v2_6/src'
+
+"Compiling ipipsu"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/ipipsu_v
+2_6/src'
+
+"Running Make libs in psu_cortexa53_0/libsrc/libmetal_v2_1/src"
+
+make -C psu_cortexa53_0/libsrc/libmetal_v2_1/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-e
+lf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-obje
+cts"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/libmeta
+l_v2_1/src'
+
+make[3]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/libmeta
+l_v2_1/build_libmetal'
+
+make[4]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/libmeta
+l_v2_1/build_libmetal'
+
+make[5]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/libmeta
+l_v2_1/build_libmetal'
+
+Scanning dependencies of target metal-static
+
+make[5]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/libmetal
+_v2_1/build_libmetal'
+
+make[5]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/libmeta
+l_v2_1/build_libmetal'
+
+[  5%] Building C object lib/CMakeFiles/metal-static.dir/dma.c.obj
+
+[ 10%] Building C object lib/CMakeFiles/metal-static.dir/device.c.obj
+
+[ 15%] Building C object lib/CMakeFiles/metal-static.dir/init.c.obj
+
+[ 21%] Building C object lib/CMakeFiles/metal-static.dir/io.c.obj
+
+[ 26%] Building C object lib/CMakeFiles/metal-static.dir/irq.c.obj
+
+[ 31%] Building C object lib/CMakeFiles/metal-static.dir/log.c.obj
+
+[ 36%] Building C object lib/CMakeFiles/metal-static.dir/shmem.c.obj
+
+[ 42%] Building C object lib/CMakeFiles/metal-static.dir/shmem-provider.c.obj
+
+[ 47%] Building C object lib/CMakeFiles/metal-static.dir/softirq.c.obj
+
+[ 52%] Building C object lib/CMakeFiles/metal-static.dir/version.c.obj
+
+[ 57%] Building C object lib/CMakeFiles/metal-static.dir/system/generic/condition.c.obj
+
+[ 63%] Building C object lib/CMakeFiles/metal-static.dir/system/generic/device.c.obj
+
+[ 68%] Building C object lib/CMakeFiles/metal-static.dir/system/generic/init.c.obj
+
+[ 73%] Building C object lib/CMakeFiles/metal-static.dir/system/generic/io.c.obj
+
+[ 78%] Building C object lib/CMakeFiles/metal-static.dir/system/generic/irq.c.obj
+
+[ 84%] Building C object lib/CMakeFiles/metal-static.dir/system/generic/time.c.obj
+
+[ 89%] Building C object lib/CMakeFiles/metal-static.dir/system/generic/zynqmp_a53/sys.c.obj
+
+[ 94%] Building C object lib/CMakeFiles/metal-static.dir/system/generic/xlnx_common/irq.c.obj
+
+[100%] Linking C static library libmetal.a
+
+C:/Xilinx/Vitis/2020.1/gnu/aarch64/nt/aarch64-none/bin/aarch64-none-elf-ar.exe cq libmetal.a  CMakeFiles/metal-static.dir/dma.c
+.obj CMakeFiles/metal-static.dir/device.c.obj CMakeFiles/metal-static.dir/init.c.obj CMakeFiles/metal-static.dir/io.c.obj CMake
+Files/metal-static.dir/irq.c.obj CMakeFiles/metal-static.dir/log.c.obj CMakeFiles/metal-static.dir/shmem.c.obj CMakeFiles/metal
+-static.dir/shmem-provider.c.obj CMakeFiles/metal-static.dir/softirq.c.obj CMakeFiles/metal-static.dir/version.c.obj CMakeFiles
+/metal-static.dir/system/generic/condition.c.obj CMakeFiles/metal-static.dir/system/generic/device.c.obj CMakeFiles/metal-stati
+c.dir/system/generic/init.c.obj CMakeFiles/metal-static.dir/system/generic/io.c.obj CMakeFiles/metal-static.dir/system/generic/
+irq.c.obj CMakeFiles/metal-static.dir/system/generic/time.c.obj CMakeFiles/metal-static.dir/system/generic/zynqmp_a53/sys.c.obj
+ CMakeFiles/metal-static.dir/system/generic/xlnx_common/irq.c.obj
+
+C:/Xilinx/Vitis/2020.1/gnu/aarch64/nt/aarch64-none/bin/aarch64-none-elf-ranlib.exe libmetal.a
+
+make[5]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/libmetal
+_v2_1/build_libmetal'
+
+[100%] Built target metal-static
+
+make[4]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/libmetal
+_v2_1/build_libmetal'
+
+Install the project...
+
+-- Install configuration: "Debug"
+
+-- Installing: ../../../include/metal/alloc.h
+
+-- Installing: ../../../include/metal/assert.h
+
+-- Installing: ../../../include/metal/atomic.h
+
+-- Installing: ../../../include/metal/cache.h
+
+-- Installing: ../../../include/metal/compiler.h
+
+-- Installing: ../../../include/metal/condition.h
+
+-- Installing: ../../../include/metal/config.h
+
+-- Installing: ../../../include/metal/cpu.h
+
+-- Installing: ../../../include/metal/device.h
+
+-- Installing: ../../../include/metal/dma.h
+
+-- Installing: ../../../include/metal/io.h
+
+-- Installing: ../../../include/metal/irq.h
+
+-- Installing: ../../../include/metal/irq_controller.h
+
+-- Installing: ../../../include/metal/list.h
+
+-- Installing: ../../../include/metal/log.h
+
+-- Installing: ../../../include/metal/mutex.h
+
+-- Installing: ../../../include/metal/scatterlist.h
+
+-- Installing: ../../../include/metal/shmem.h
+
+-- Installing: ../../../include/metal/shmem-provider.h
+
+-- Installing: ../../../include/metal/sleep.h
+
+-- Installing: ../../../include/metal/softirq.h
+
+-- Installing: ../../../include/metal/spinlock.h
+
+-- Installing: ../../../include/metal/sys.h
+
+-- Installing: ../../../include/metal/time.h
+
+-- Installing: ../../../include/metal/utilities.h
+
+-- Installing: ../../../include/metal/version.h
+
+-- Installing: ../../../include/metal/compiler/gcc/atomic.h
+
+-- Installing: ../../../include/metal/compiler/gcc/compiler.h
+
+-- Installing: ../../../include/metal/compiler/iar/compiler.h
+
+-- Installing: ../../../include/metal/processor/arm/atomic.h
+
+-- Installing: ../../../include/metal/processor/arm/cpu.h
+
+-- Installing: ../../../include/metal/system/generic/alloc.h
+
+-- Installing: ../../../include/metal/system/generic/assert.h
+
+-- Installing: ../../../include/metal/system/generic/cache.h
+
+-- Installing: ../../../include/metal/system/generic/condition.h
+
+-- Installing: ../../../include/metal/system/generic/io.h
+
+-- Installing: ../../../include/metal/system/generic/irq.h
+
+-- Installing: ../../../include/metal/system/generic/log.h
+
+-- Installing: ../../../include/metal/system/generic/mutex.h
+
+-- Installing: ../../../include/metal/system/generic/sleep.h
+
+-- Installing: ../../../include/metal/system/generic/sys.h
+
+-- Installing: ../../../include/metal/system/generic/zynqmp_a53/sys.h
+
+-- Installing: ../../../include/metal/system/generic/xlnx_common/sys.h
+
+-- Installing: ../../../lib/libmetal.a
+
+make[3]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/libmetal
+_v2_1/build_libmetal'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/libmetal
+_v2_1/src'
+
+"Running Make libs in psu_cortexa53_0/libsrc/qspipsu_v1_11/src"
+
+make -C psu_cortexa53_0/libsrc/qspipsu_v1_11/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-e
+lf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-obje
+cts"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/qspipsu
+_v1_11/src'
+
+"Compiling qspipsu"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/qspipsu_
+v1_11/src'
+
+"Running Make libs in psu_cortexa53_0/libsrc/resetps_v1_3/src"
+
+make -C psu_cortexa53_0/libsrc/resetps_v1_3/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-el
+f-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-objec
+ts"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/resetps
+_v1_3/src'
+
+"Compiling resetps"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/resetps_
+v1_3/src'
+
+"Running Make libs in psu_cortexa53_0/libsrc/rfdc_v8_0/src"
+
+make -C psu_cortexa53_0/libsrc/rfdc_v8_0/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf-a
+s" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/rfdc_v8
+_0/src'
+
+"Compiling rfdc"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/rfdc_v8_
+0/src'
+
+"Running Make libs in psu_cortexa53_0/libsrc/rtcpsu_v1_9/src"
+
+make -C psu_cortexa53_0/libsrc/rtcpsu_v1_9/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf
+-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-object
+s"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/rtcpsu_
+v1_9/src'
+
+"Compiling rtcpsu"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/rtcpsu_v
+1_9/src'
+
+"Running Make libs in psu_cortexa53_0/libsrc/scugic_v4_2/src"
+
+make -C psu_cortexa53_0/libsrc/scugic_v4_2/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf
+-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-object
+s"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/scugic_
+v4_2/src'
+
+"Compiling scugic"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/scugic_v
+4_2/src'
+
+"Running Make libs in psu_cortexa53_0/libsrc/sdps_v3_9/src"
+
+make -C psu_cortexa53_0/libsrc/sdps_v3_9/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf-a
+s" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/sdps_v3
+_9/src'
+
+"Compiling sdps"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/sdps_v3_
+9/src'
+
+"Running Make libs in psu_cortexa53_0/libsrc/standalone_v7_2/src"
+
+make -C psu_cortexa53_0/libsrc/standalone_v7_2/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none
+-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-ob
+jects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/standal
+one_v7_2/src'
+
+"Compiling standalone ARMv8 64 bit"
+
+In file included from xil_sleeptimer.c:32:
+xtime_l.h:65:9: note: #pragma message: For the sleep routines, Global timer is being used
+   65 | #pragma message ("For the sleep routines, Global timer is being used")
+      |         ^~~~~~~
+In file included from xtime_l.c:30:
+xtime_l.h:65:9: note: #pragma message: For the sleep routines, Global timer is being used
+   65 | #pragma message ("For the sleep routines, Global timer is being used")
+      |         ^~~~~~~
+In file included from sleep.c:37:
+xtime_l.h:65:9: note: #pragma message: For the sleep routines, Global timer is being used
+   65 | #pragma message ("For the sleep routines, Global timer is being used")
+      |         ^~~~~~~
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/standalo
+ne_v7_2/src'
+
+"Running Make libs in psu_cortexa53_0/libsrc/sysmonpsu_v2_6/src"
+
+make -C psu_cortexa53_0/libsrc/sysmonpsu_v2_6/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-
+elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-obj
+ects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/sysmonp
+su_v2_6/src'
+
+"Compiling sysmonpsu"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/sysmonps
+u_v2_6/src'
+
+"Running Make libs in psu_cortexa53_0/libsrc/ttcps_v3_11/src"
+
+make -C psu_cortexa53_0/libsrc/ttcps_v3_11/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf
+-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-object
+s"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/ttcps_v
+3_11/src'
+
+"Compiling ttcps"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/ttcps_v3
+_11/src'
+
+"Running Make libs in psu_cortexa53_0/libsrc/uartps_v3_9/src"
+
+make -C psu_cortexa53_0/libsrc/uartps_v3_9/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf
+-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-object
+s"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/uartps_
+v3_9/src'
+
+"Compiling uartps"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/uartps_v
+3_9/src'
+
+"Running Make libs in psu_cortexa53_0/libsrc/usbpsu_v1_7/src"
+
+make -C psu_cortexa53_0/libsrc/usbpsu_v1_7/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf
+-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-object
+s"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/usbpsu_
+v1_7/src'
+
+"Compiling usbpsu"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/usbpsu_v
+1_7/src'
+
+"Running Make libs in psu_cortexa53_0/libsrc/video_common_v4_9/src"
+
+make -C psu_cortexa53_0/libsrc/video_common_v4_9/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-no
+ne-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-
+objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/video_c
+ommon_v4_9/src'
+
+"Compiling video_common"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/video_co
+mmon_v4_9/src'
+
+"Running Make libs in psu_cortexa53_0/libsrc/wdtps_v3_3/src"
+
+make -C psu_cortexa53_0/libsrc/wdtps_v3_3/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf-
+as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-objects
+"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/wdtps_v
+3_3/src'
+
+"Compiling wdtps"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/wdtps_v3
+_3/src'
+
+"Running Make libs in psu_cortexa53_0/libsrc/xilffs_v4_3/src"
+
+make -C psu_cortexa53_0/libsrc/xilffs_v4_3/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf
+-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-object
+s"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/xilffs_
+v4_3/src'
+
+"Compiling XilFFs Library"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/xilffs_v
+4_3/src'
+
+"Running Make libs in psu_cortexa53_0/libsrc/xilpm_v3_1/src"
+
+make -C psu_cortexa53_0/libsrc/xilpm_v3_1/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf-
+as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-objects
+"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/xilpm_v
+3_1/src'
+
+"Compiling xilpm library"
+
+pm_api_sys.c: In function 'XPm_ClockSetRate':
+pm_api_sys.c:1751:46: warning: unused parameter 'clock' [-Wunused-parameter]
+ 1751 | XStatus XPm_ClockSetRate(const enum XPmClock clock, const u32 rate)
+      |                          ~~~~~~~~~~~~~~~~~~~~^~~~~
+pm_api_sys.c:1751:63: warning: unused parameter 'rate' [-Wunused-parameter]
+ 1751 | XStatus XPm_ClockSetRate(const enum XPmClock clock, const u32 rate)
+      |                                                     ~~~~~~~~~~^~~~
+pm_api_sys.c: In function 'XPm_ClockGetRate':
+pm_api_sys.c:1768:46: warning: unused parameter 'clock' [-Wunused-parameter]
+ 1768 | XStatus XPm_ClockGetRate(const enum XPmClock clock, u32 *const rate)
+      |                          ~~~~~~~~~~~~~~~~~~~~^~~~~
+pm_api_sys.c:1768:64: warning: unused parameter 'rate' [-Wunused-parameter]
+ 1768 | XStatus XPm_ClockGetRate(const enum XPmClock clock, u32 *const rate)
+      |                                                     ~~~~~~~~~~~^~~~
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/xilpm_v3
+_1/src'
+
+"Running Make libs in psu_cortexa53_0/libsrc/xilsecure_v4_2/src"
+
+make -C psu_cortexa53_0/libsrc/xilsecure_v4_2/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-
+elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-obj
+ects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/xilsecu
+re_v4_2/src'
+
+"Compiling XilSecure Library"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/xilsecur
+e_v4_2/src'
+
+"Running Make libs in psu_cortexa53_0/libsrc/zdma_v1_9/src"
+
+make -C psu_cortexa53_0/libsrc/zdma_v1_9/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf-a
+s" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/zdma_v1
+_9/src'
+
+"Compiling zdma"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/zdma_v1_
+9/src'
+
+'Finished building libraries'
+
+make[1]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp'
+
+aarch64-none-elf-gcc -MMD -MP      -Wall -fmessage-length=0 -DARMA53_64 -Os -flto -ffat-lto-objects    -O2 -c -c xfsbl_qspi.c -
+o xfsbl_qspi.o -Izynqmp_fsbl_bsp/psu_cortexa53_0/include -I.
+
+aarch64-none-elf-gcc -MMD -MP      -Wall -fmessage-length=0 -DARMA53_64 -Os -flto -ffat-lto-objects    -O2 -c -c xfsbl_csu_dma.
+c -o xfsbl_csu_dma.o -Izynqmp_fsbl_bsp/psu_cortexa53_0/include -I.
+
+aarch64-none-elf-gcc -MMD -MP      -Wall -fmessage-length=0 -DARMA53_64 -Os -flto -ffat-lto-objects    -O2 -c -c xfsbl_nand.c -
+o xfsbl_nand.o -Izynqmp_fsbl_bsp/psu_cortexa53_0/include -I.
+
+aarch64-none-elf-gcc -MMD -MP      -Wall -fmessage-length=0 -DARMA53_64 -Os -flto -ffat-lto-objects    -O2 -c -c xfsbl_sd.c -o 
+xfsbl_sd.o -Izynqmp_fsbl_bsp/psu_cortexa53_0/include -I.
+
+In file included from xfsbl_main.h:41,
+                 from xfsbl_sd.c:29:
+zynqmp_fsbl_bsp/psu_cortexa53_0/include/xtime_l.h:65:9: note: #pragma message: For the sleep routines, Global timer is being used
+   65 | #pragma message ("For the sleep routines, Global timer is being used")
+      |         ^~~~~~~
+aarch64-none-elf-gcc -MMD -MP      -Wall -fmessage-length=0 -DARMA53_64 -Os -flto -ffat-lto-objects    -O2 -c -c xfsbl_usb.c -o
+ xfsbl_usb.o -Izynqmp_fsbl_bsp/psu_cortexa53_0/include -I.
+
+aarch64-none-elf-gcc -MMD -MP      -Wall -fmessage-length=0 -DARMA53_64 -Os -flto -ffat-lto-objects    -O2 -c -c xfsbl_hooks.c 
+-o xfsbl_hooks.o -Izynqmp_fsbl_bsp/psu_cortexa53_0/include -I.
+
+aarch64-none-elf-gcc -MMD -MP      -Wall -fmessage-length=0 -DARMA53_64 -Os -flto -ffat-lto-objects    -O2 -c -c xfsbl_main.c -
+o xfsbl_main.o -Izynqmp_fsbl_bsp/psu_cortexa53_0/include -I.
+
+In file included from xfsbl_main.h:41,
+                 from xfsbl_main.c:32:
+zynqmp_fsbl_bsp/psu_cortexa53_0/include/xtime_l.h:65:9: note: #pragma message: For the sleep routines, Global timer is being used
+   65 | #pragma message ("For the sleep routines, Global timer is being used")
+      |         ^~~~~~~
+aarch64-none-elf-gcc -MMD -MP      -Wall -fmessage-length=0 -DARMA53_64 -Os -flto -ffat-lto-objects    -O2 -c -c xfsbl_dfu_util
+.c -o xfsbl_dfu_util.o -Izynqmp_fsbl_bsp/psu_cortexa53_0/include -I.
+
+aarch64-none-elf-gcc -MMD -MP      -Wall -fmessage-length=0 -DARMA53_64 -Os -flto -ffat-lto-objects    -O2 -c -c xfsbl_partitio
+n_load.c -o xfsbl_partition_load.o -Izynqmp_fsbl_bsp/psu_cortexa53_0/include -I.
+
+In file included from xfsbl_main.h:41,
+                 from xfsbl_partition_load.c:50:
+zynqmp_fsbl_bsp/psu_cortexa53_0/include/xtime_l.h:65:9: note: #pragma message: For the sleep routines, Global timer is being used
+   65 | #pragma message ("For the sleep routines, Global timer is being used")
+      |         ^~~~~~~
+aarch64-none-elf-gcc -MMD -MP      -Wall -fmessage-length=0 -DARMA53_64 -Os -flto -ffat-lto-objects    -O2 -c -c xfsbl_initiali
+zation.c -o xfsbl_initialization.o -Izynqmp_fsbl_bsp/psu_cortexa53_0/include -I.
+
+In file included from xfsbl_main.h:41,
+                 from xfsbl_initialization.c:49:
+zynqmp_fsbl_bsp/psu_cortexa53_0/include/xtime_l.h:65:9: note: #pragma message: For the sleep routines, Global timer is being used
+   65 | #pragma message ("For the sleep routines, Global timer is being used")
+      |         ^~~~~~~
+aarch64-none-elf-gcc -MMD -MP      -Wall -fmessage-length=0 -DARMA53_64 -Os -flto -ffat-lto-objects    -O2 -c -c xfsbl_ddr_init
+.c -o xfsbl_ddr_init.o -Izynqmp_fsbl_bsp/psu_cortexa53_0/include -I.
+
+aarch64-none-elf-gcc -MMD -MP      -Wall -fmessage-length=0 -DARMA53_64 -Os -flto -ffat-lto-objects    -O2 -c -c xfsbl_handoff.
+c -o xfsbl_handoff.o -Izynqmp_fsbl_bsp/psu_cortexa53_0/include -I.
+
+In file included from xfsbl_main.h:41,
+                 from xfsbl_handoff.c:37:
+zynqmp_fsbl_bsp/psu_cortexa53_0/include/xtime_l.h:65:9: note: #pragma message: For the sleep routines, Global timer is being used
+   65 | #pragma message ("For the sleep routines, Global timer is being used")
+      |         ^~~~~~~
+aarch64-none-elf-gcc -MMD -MP      -Wall -fmessage-length=0 -DARMA53_64 -Os -flto -ffat-lto-objects    -O2 -c -c psu_init.c -o 
+psu_init.o -Izynqmp_fsbl_bsp/psu_cortexa53_0/include -I.
+
+aarch64-none-elf-gcc -MMD -MP      -Wall -fmessage-length=0 -DARMA53_64 -Os -flto -ffat-lto-objects    -O2 -c -c xfsbl_board.c 
+-o xfsbl_board.o -Izynqmp_fsbl_bsp/psu_cortexa53_0/include -I.
+
+aarch64-none-elf-gcc -MMD -MP      -Wall -fmessage-length=0 -DARMA53_64 -Os -flto -ffat-lto-objects    -O2 -c -c xfsbl_misc_dri
+vers.c -o xfsbl_misc_drivers.o -Izynqmp_fsbl_bsp/psu_cortexa53_0/include -I.
+
+aarch64-none-elf-gcc -MMD -MP      -Wall -fmessage-length=0 -DARMA53_64 -Os -flto -ffat-lto-objects    -O2 -c -c xfsbl_bs.c -o 
+xfsbl_bs.o -Izynqmp_fsbl_bsp/psu_cortexa53_0/include -I.
+
+In file included from xfsbl_main.h:41,
+                 from xfsbl_bs.h:38,
+                 from xfsbl_bs.c:32:
+zynqmp_fsbl_bsp/psu_cortexa53_0/include/xtime_l.h:65:9: note: #pragma message: For the sleep routines, Global timer is being used
+   65 | #pragma message ("For the sleep routines, Global timer is being used")
+      |         ^~~~~~~
+aarch64-none-elf-gcc -MMD -MP      -Wall -fmessage-length=0 -DARMA53_64 -Os -flto -ffat-lto-objects    -O2 -c -c xfsbl_rsa_sha.
+c -o xfsbl_rsa_sha.o -Izynqmp_fsbl_bsp/psu_cortexa53_0/include -I.
+
+In file included from xfsbl_main.h:41,
+                 from xfsbl_authentication.h:41,
+                 from xfsbl_rsa_sha.c:32:
+zynqmp_fsbl_bsp/psu_cortexa53_0/include/xtime_l.h:65:9: note: #pragma message: For the sleep routines, Global timer is being used
+   65 | #pragma message ("For the sleep routines, Global timer is being used")
+      |         ^~~~~~~
+aarch64-none-elf-gcc -MMD -MP      -Wall -fmessage-length=0 -DARMA53_64 -Os -flto -ffat-lto-objects    -O2 -c -c xfsbl_plpartit
+ion_valid.c -o xfsbl_plpartition_valid.o -Izynqmp_fsbl_bsp/psu_cortexa53_0/include -I.
+
+In file included from xfsbl_main.h:41,
+                 from xfsbl_authentication.h:41,
+                 from xfsbl_plpartition_valid.h:38,
+                 from xfsbl_plpartition_valid.c:55:
+zynqmp_fsbl_bsp/psu_cortexa53_0/include/xtime_l.h:65:9: note: #pragma message: For the sleep routines, Global timer is being used
+   65 | #pragma message ("For the sleep routines, Global timer is being used")
+      |         ^~~~~~~
+aarch64-none-elf-gcc -MMD -MP      -Wall -fmessage-length=0 -DARMA53_64 -Os -flto -ffat-lto-objects    -O2 -c -c xfsbl_image_he
+ader.c -o xfsbl_image_header.o -Izynqmp_fsbl_bsp/psu_cortexa53_0/include -I.
+
+aarch64-none-elf-gcc -MMD -MP      -Wall -fmessage-length=0 -DARMA53_64 -Os -flto -ffat-lto-objects    -O2 -c -c xfsbl_misc.c -
+o xfsbl_misc.o -Izynqmp_fsbl_bsp/psu_cortexa53_0/include -I.
+
+In file included from xfsbl_main.h:41,
+                 from xfsbl_misc.c:31:
+zynqmp_fsbl_bsp/psu_cortexa53_0/include/xtime_l.h:65:9: note: #pragma message: For the sleep routines, Global timer is being used
+   65 | #pragma message ("For the sleep routines, Global timer is being used")
+      |         ^~~~~~~
+aarch64-none-elf-gcc -MMD -MP      -Wall -fmessage-length=0 -DARMA53_64 -Os -flto -ffat-lto-objects    -O2 -c -c xfsbl_authenti
+cation.c -o xfsbl_authentication.o -Izynqmp_fsbl_bsp/psu_cortexa53_0/include -I.
+
+In file included from xfsbl_main.h:41,
+                 from xfsbl_bs.h:38,
+                 from xfsbl_authentication.c:44:
+zynqmp_fsbl_bsp/psu_cortexa53_0/include/xtime_l.h:65:9: note: #pragma message: For the sleep routines, Global timer is being used
+   65 | #pragma message ("For the sleep routines, Global timer is being used")
+      |         ^~~~~~~
+aarch64-none-elf-gcc -MMD -MP      -Wall -fmessage-length=0 -DARMA53_64 -Os -flto -ffat-lto-objects    -O2 -c -c xfsbl_translat
+ion_table.S -o xfsbl_translation_table.o -Izynqmp_fsbl_bsp/psu_cortexa53_0/include -I.
+
+aarch64-none-elf-gcc -MMD -MP      -Wall -fmessage-length=0 -DARMA53_64 -Os -flto -ffat-lto-objects    -O2 -c -c xfsbl_exit.S -
+o xfsbl_exit.o -Izynqmp_fsbl_bsp/psu_cortexa53_0/include -I.
+
+aarch64-none-elf-gcc -o executable.elf  xfsbl_qspi.o  xfsbl_csu_dma.o  xfsbl_nand.o  xfsbl_sd.o  xfsbl_usb.o  xfsbl_hooks.o  xf
+sbl_main.o  xfsbl_dfu_util.o  xfsbl_partition_load.o  xfsbl_initialization.o  xfsbl_ddr_init.o  xfsbl_handoff.o  psu_init.o  xf
+sbl_board.o  xfsbl_misc_drivers.o  xfsbl_bs.o  xfsbl_rsa_sha.o  xfsbl_plpartition_valid.o  xfsbl_image_header.o  xfsbl_misc.o  
+xfsbl_authentication.o  xfsbl_translation_table.o  xfsbl_exit.o -MMD -MP      -Wall -fmessage-length=0 -DARMA53_64 -Os -flto -f
+fat-lto-objects    -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group -Wl,--s
+tart-group,-lxilsecure,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilpm,-lxil,-lgcc,-lc,--end-group                       
+                                                                                 -Wl,--start-group,-lxil,-lgcc,-lc,-lmetal,--en
+d-group -n  -Wl,--gc-sections -Lzynqmp_fsbl_bsp/psu_cortexa53_0/lib -Tlscript.ld
+
+Building the zynqmp_pmufw application.
+make -C zynqmp_pmufw_bsp
+
+make[1]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp'
+
+"Running Make include in psu_pmu_0/libsrc/avbuf_v2_3/src"
+
+make -C psu_pmu_0/libsrc/avbuf_v2_3/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_
+FLAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunc
+tion-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/avbuf_v2_3/
+src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/avbuf_v2_3/s
+rc'
+
+"Running Make include in psu_pmu_0/libsrc/axipmon_v6_8/src"
+
+make -C psu_pmu_0/libsrc/axipmon_v6_8/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILE
+R_FLAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffu
+nction-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/axipmon_v6_
+8/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/axipmon_v6_8
+/src'
+
+"Running Make include in psu_pmu_0/libsrc/clockps_v1_2/src"
+
+make -C psu_pmu_0/libsrc/clockps_v1_2/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILE
+R_FLAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffu
+nction-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/clockps_v1_
+2/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/clockps_v1_2
+/src'
+
+"Running Make include in psu_pmu_0/libsrc/cpu_v2_11/src"
+
+make -C psu_pmu_0/libsrc/cpu_v2_11/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_F
+LAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunct
+ion-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/cpu_v2_11/s
+rc'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/cpu_v2_11/sr
+c'
+
+"Running Make include in psu_pmu_0/libsrc/csudma_v1_6/src"
+
+make -C psu_pmu_0/libsrc/csudma_v1_6/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER
+_FLAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffun
+ction-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/csudma_v1_6
+/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/csudma_v1_6/
+src'
+
+"Running Make include in psu_pmu_0/libsrc/ddrcpsu_v1_2/src"
+
+make -C psu_pmu_0/libsrc/ddrcpsu_v1_2/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILE
+R_FLAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffu
+nction-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/ddrcpsu_v1_
+2/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/ddrcpsu_v1_2
+/src'
+
+"Running Make include in psu_pmu_0/libsrc/dpdma_v1_2/src"
+
+make -C psu_pmu_0/libsrc/dpdma_v1_2/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_
+FLAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunc
+tion-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/dpdma_v1_2/
+src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/dpdma_v1_2/s
+rc'
+
+"Running Make include in psu_pmu_0/libsrc/emacps_v3_11/src"
+
+make -C psu_pmu_0/libsrc/emacps_v3_11/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILE
+R_FLAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffu
+nction-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/emacps_v3_1
+1/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/emacps_v3_11
+/src'
+
+"Running Make include in psu_pmu_0/libsrc/gpiops_v3_7/src"
+
+make -C psu_pmu_0/libsrc/gpiops_v3_7/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER
+_FLAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffun
+ction-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/gpiops_v3_7
+/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/gpiops_v3_7/
+src'
+
+"Running Make include in psu_pmu_0/libsrc/gpio_v4_6/src"
+
+make -C psu_pmu_0/libsrc/gpio_v4_6/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_F
+LAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunct
+ion-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/gpio_v4_6/s
+rc'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/gpio_v4_6/sr
+c'
+
+"Running Make include in psu_pmu_0/libsrc/iicps_v3_11/src"
+
+make -C psu_pmu_0/libsrc/iicps_v3_11/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER
+_FLAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffun
+ction-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/iicps_v3_11
+/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/iicps_v3_11/
+src'
+
+"Running Make include in psu_pmu_0/libsrc/ipipsu_v2_6/src"
+
+make -C psu_pmu_0/libsrc/ipipsu_v2_6/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER
+_FLAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffun
+ction-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/ipipsu_v2_6
+/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/ipipsu_v2_6/
+src'
+
+"Running Make include in psu_pmu_0/libsrc/libmetal_v2_1/src"
+
+make -C psu_pmu_0/libsrc/libmetal_v2_1/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPIL
+ER_FLAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ff
+unction-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/libmetal_v2
+_1/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/libmetal_v2_
+1/src'
+
+"Running Make include in psu_pmu_0/libsrc/qspipsu_v1_11/src"
+
+make -C psu_pmu_0/libsrc/qspipsu_v1_11/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPIL
+ER_FLAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ff
+unction-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/qspipsu_v1_
+11/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/qspipsu_v1_1
+1/src'
+
+"Running Make include in psu_pmu_0/libsrc/resetps_v1_3/src"
+
+make -C psu_pmu_0/libsrc/resetps_v1_3/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILE
+R_FLAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffu
+nction-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/resetps_v1_
+3/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/resetps_v1_3
+/src'
+
+"Running Make include in psu_pmu_0/libsrc/rfdc_v8_0/src"
+
+make -C psu_pmu_0/libsrc/rfdc_v8_0/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_F
+LAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunct
+ion-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/rfdc_v8_0/s
+rc'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/rfdc_v8_0/sr
+c'
+
+"Running Make include in psu_pmu_0/libsrc/rtcpsu_v1_9/src"
+
+make -C psu_pmu_0/libsrc/rtcpsu_v1_9/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER
+_FLAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffun
+ction-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/rtcpsu_v1_9
+/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/rtcpsu_v1_9/
+src'
+
+"Running Make include in psu_pmu_0/libsrc/sdps_v3_9/src"
+
+make -C psu_pmu_0/libsrc/sdps_v3_9/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_F
+LAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunct
+ion-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/sdps_v3_9/s
+rc'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/sdps_v3_9/sr
+c'
+
+"Running Make include in psu_pmu_0/libsrc/standalone_v7_2/src"
+
+make -C psu_pmu_0/libsrc/standalone_v7_2/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMP
+ILER_FLAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -
+ffunction-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/standalone_
+v7_2/src'
+
+make[3]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/standalone_
+v7_2/src/profile'
+
+make[3]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/standalone_v
+7_2/src/profile'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/standalone_v
+7_2/src'
+
+"Running Make include in psu_pmu_0/libsrc/sysmonpsu_v2_6/src"
+
+make -C psu_pmu_0/libsrc/sysmonpsu_v2_6/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPI
+LER_FLAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -f
+function-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/sysmonpsu_v
+2_6/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/sysmonpsu_v2
+_6/src'
+
+"Running Make include in psu_pmu_0/libsrc/ttcps_v3_11/src"
+
+make -C psu_pmu_0/libsrc/ttcps_v3_11/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER
+_FLAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffun
+ction-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/ttcps_v3_11
+/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/ttcps_v3_11/
+src'
+
+"Running Make include in psu_pmu_0/libsrc/uartps_v3_9/src"
+
+make -C psu_pmu_0/libsrc/uartps_v3_9/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER
+_FLAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffun
+ction-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/uartps_v3_9
+/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/uartps_v3_9/
+src'
+
+"Running Make include in psu_pmu_0/libsrc/usbpsu_v1_7/src"
+
+make -C psu_pmu_0/libsrc/usbpsu_v1_7/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER
+_FLAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffun
+ction-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/usbpsu_v1_7
+/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/usbpsu_v1_7/
+src'
+
+"Running Make include in psu_pmu_0/libsrc/video_common_v4_9/src"
+
+make -C psu_pmu_0/libsrc/video_common_v4_9/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "CO
+MPILER_FLAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g
+ -ffunction-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/video_commo
+n_v4_9/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/video_common
+_v4_9/src'
+
+"Running Make include in psu_pmu_0/libsrc/wdtps_v3_3/src"
+
+make -C psu_pmu_0/libsrc/wdtps_v3_3/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_
+FLAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunc
+tion-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/wdtps_v3_3/
+src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/wdtps_v3_3/s
+rc'
+
+"Running Make include in psu_pmu_0/libsrc/xilfpga_v5_2/src"
+
+make -C psu_pmu_0/libsrc/xilfpga_v5_2/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILE
+R_FLAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffu
+nction-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/xilfpga_v5_
+2/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/xilfpga_v5_2
+/src'
+
+"Running Make include in psu_pmu_0/libsrc/xilsecure_v4_2/src"
+
+make -C psu_pmu_0/libsrc/xilsecure_v4_2/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPI
+LER_FLAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -f
+function-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/xilsecure_v
+4_2/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/xilsecure_v4
+_2/src'
+
+"Running Make include in psu_pmu_0/libsrc/xilskey_v6_9/src"
+
+make -C psu_pmu_0/libsrc/xilskey_v6_9/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILE
+R_FLAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffu
+nction-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/xilskey_v6_
+9/src'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/xilskey_v6_9
+/src'
+
+"Running Make include in psu_pmu_0/libsrc/zdma_v1_9/src"
+
+make -C psu_pmu_0/libsrc/zdma_v1_9/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_F
+LAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunct
+ion-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/zdma_v1_9/s
+rc'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/zdma_v1_9/sr
+c'
+
+"Running Make libs in psu_pmu_0/libsrc/avbuf_v2_3/src"
+
+make -C psu_pmu_0/libsrc/avbuf_v2_3/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_FLA
+GS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunctio
+n-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/avbuf_v2_3/
+src'
+
+"Compiling avbuf"
+
+mb-ar: creating ../../../lib/libxil.a
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/avbuf_v2_3/s
+rc'
+
+"Running Make libs in psu_pmu_0/libsrc/axipmon_v6_8/src"
+
+make -C psu_pmu_0/libsrc/axipmon_v6_8/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_F
+LAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunct
+ion-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/axipmon_v6_
+8/src'
+
+"Compiling axipmon"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/axipmon_v6_8
+/src'
+
+"Running Make libs in psu_pmu_0/libsrc/clockps_v1_2/src"
+
+make -C psu_pmu_0/libsrc/clockps_v1_2/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_F
+LAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunct
+ion-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/clockps_v1_
+2/src'
+
+"Compiling clockps"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/clockps_v1_2
+/src'
+
+"Running Make libs in psu_pmu_0/libsrc/cpu_v2_11/src"
+
+make -C psu_pmu_0/libsrc/cpu_v2_11/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_FLAG
+S=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction
+-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/cpu_v2_11/s
+rc'
+
+"Compiling cpu"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/cpu_v2_11/sr
+c'
+
+"Running Make libs in psu_pmu_0/libsrc/csudma_v1_6/src"
+
+make -C psu_pmu_0/libsrc/csudma_v1_6/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_FL
+AGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffuncti
+on-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/csudma_v1_6
+/src'
+
+"Compiling csudma"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/csudma_v1_6/
+src'
+
+"Running Make libs in psu_pmu_0/libsrc/ddrcpsu_v1_2/src"
+
+make -C psu_pmu_0/libsrc/ddrcpsu_v1_2/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_F
+LAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunct
+ion-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/ddrcpsu_v1_
+2/src'
+
+"Compiling ddrcpsu"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/ddrcpsu_v1_2
+/src'
+
+"Running Make libs in psu_pmu_0/libsrc/dpdma_v1_2/src"
+
+make -C psu_pmu_0/libsrc/dpdma_v1_2/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_FLA
+GS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunctio
+n-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/dpdma_v1_2/
+src'
+
+"Compiling dpdma"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/dpdma_v1_2/s
+rc'
+
+"Running Make libs in psu_pmu_0/libsrc/emacps_v3_11/src"
+
+make -C psu_pmu_0/libsrc/emacps_v3_11/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_F
+LAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunct
+ion-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/emacps_v3_1
+1/src'
+
+"Compiling emacps"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/emacps_v3_11
+/src'
+
+"Running Make libs in psu_pmu_0/libsrc/gpiops_v3_7/src"
+
+make -C psu_pmu_0/libsrc/gpiops_v3_7/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_FL
+AGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffuncti
+on-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/gpiops_v3_7
+/src'
+
+"Compiling gpiops"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/gpiops_v3_7/
+src'
+
+"Running Make libs in psu_pmu_0/libsrc/gpio_v4_6/src"
+
+make -C psu_pmu_0/libsrc/gpio_v4_6/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_FLAG
+S=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction
+-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/gpio_v4_6/s
+rc'
+
+"Compiling gpio"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/gpio_v4_6/sr
+c'
+
+"Running Make libs in psu_pmu_0/libsrc/iicps_v3_11/src"
+
+make -C psu_pmu_0/libsrc/iicps_v3_11/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_FL
+AGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffuncti
+on-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/iicps_v3_11
+/src'
+
+"Compiling iicps"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/iicps_v3_11/
+src'
+
+"Running Make libs in psu_pmu_0/libsrc/ipipsu_v2_6/src"
+
+make -C psu_pmu_0/libsrc/ipipsu_v2_6/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_FL
+AGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffuncti
+on-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/ipipsu_v2_6
+/src'
+
+"Compiling ipipsu"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/ipipsu_v2_6/
+src'
+
+"Running Make libs in psu_pmu_0/libsrc/libmetal_v2_1/src"
+
+make -C psu_pmu_0/libsrc/libmetal_v2_1/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_
+FLAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunc
+tion-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/libmetal_v2
+_1/src'
+
+make[3]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/libmetal_v2
+_1/build_libmetal'
+
+make[4]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/libmetal_v2
+_1/build_libmetal'
+
+make[5]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/libmetal_v2
+_1/build_libmetal'
+
+Scanning dependencies of target metal-static
+
+make[5]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/libmetal_v2_
+1/build_libmetal'
+
+make[5]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/libmetal_v2
+_1/build_libmetal'
+
+[  5%] Building C object lib/CMakeFiles/metal-static.dir/dma.c.obj
+
+[ 10%] Building C object lib/CMakeFiles/metal-static.dir/device.c.obj
+
+[ 15%] Building C object lib/CMakeFiles/metal-static.dir/init.c.obj
+
+[ 21%] Building C object lib/CMakeFiles/metal-static.dir/io.c.obj
+
+[ 26%] Building C object lib/CMakeFiles/metal-static.dir/irq.c.obj
+
+[ 31%] Building C object lib/CMakeFiles/metal-static.dir/log.c.obj
+
+[ 36%] Building C object lib/CMakeFiles/metal-static.dir/shmem.c.obj
+
+[ 42%] Building C object lib/CMakeFiles/metal-static.dir/shmem-provider.c.obj
+
+[ 47%] Building C object lib/CMakeFiles/metal-static.dir/softirq.c.obj
+
+[ 52%] Building C object lib/CMakeFiles/metal-static.dir/version.c.obj
+
+[ 57%] Building C object lib/CMakeFiles/metal-static.dir/system/generic/condition.c.obj
+
+[ 63%] Building C object lib/CMakeFiles/metal-static.dir/system/generic/device.c.obj
+
+[ 68%] Building C object lib/CMakeFiles/metal-static.dir/system/generic/init.c.obj
+
+[ 73%] Building C object lib/CMakeFiles/metal-static.dir/system/generic/io.c.obj
+
+[ 78%] Building C object lib/CMakeFiles/metal-static.dir/system/generic/irq.c.obj
+
+[ 84%] Building C object lib/CMakeFiles/metal-static.dir/system/generic/time.c.obj
+
+[ 89%] Building C object lib/CMakeFiles/metal-static.dir/system/generic/microblaze_generic/sys.c.obj
+
+[ 94%] Building C object lib/CMakeFiles/metal-static.dir/system/generic/xlnx_common/irq.c.obj
+
+[100%] Linking C static library libmetal.a
+
+C:/Xilinx/Vitis/2020.1/gnu/microblaze/nt/bin/mb-ar.exe cq libmetal.a  CMakeFiles/metal-static.dir/dma.c.obj CMakeFiles/metal-st
+atic.dir/device.c.obj CMakeFiles/metal-static.dir/init.c.obj CMakeFiles/metal-static.dir/io.c.obj CMakeFiles/metal-static.dir/i
+rq.c.obj CMakeFiles/metal-static.dir/log.c.obj CMakeFiles/metal-static.dir/shmem.c.obj CMakeFiles/metal-static.dir/shmem-provid
+er.c.obj CMakeFiles/metal-static.dir/softirq.c.obj CMakeFiles/metal-static.dir/version.c.obj CMakeFiles/metal-static.dir/system
+/generic/condition.c.obj CMakeFiles/metal-static.dir/system/generic/device.c.obj CMakeFiles/metal-static.dir/system/generic/ini
+t.c.obj CMakeFiles/metal-static.dir/system/generic/io.c.obj CMakeFiles/metal-static.dir/system/generic/irq.c.obj CMakeFiles/met
+al-static.dir/system/generic/time.c.obj CMakeFiles/metal-static.dir/system/generic/microblaze_generic/sys.c.obj CMakeFiles/meta
+l-static.dir/system/generic/xlnx_common/irq.c.obj
+
+C:/Xilinx/Vitis/2020.1/gnu/microblaze/nt/bin/mb-ranlib.exe libmetal.a
+
+make[5]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/libmetal_v2_
+1/build_libmetal'
+
+[100%] Built target metal-static
+
+make[4]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/libmetal_v2_
+1/build_libmetal'
+
+Install the project...
+
+-- Install configuration: "Debug"
+
+-- Installing: ../../../include/metal/alloc.h
+
+-- Installing: ../../../include/metal/assert.h
+
+-- Installing: ../../../include/metal/atomic.h
+
+-- Installing: ../../../include/metal/cache.h
+
+-- Installing: ../../../include/metal/compiler.h
+
+-- Installing: ../../../include/metal/condition.h
+
+-- Installing: ../../../include/metal/config.h
+
+-- Installing: ../../../include/metal/cpu.h
+
+-- Installing: ../../../include/metal/device.h
+
+-- Installing: ../../../include/metal/dma.h
+
+-- Installing: ../../../include/metal/io.h
+
+-- Installing: ../../../include/metal/irq.h
+
+-- Installing: ../../../include/metal/irq_controller.h
+
+-- Installing: ../../../include/metal/list.h
+
+-- Installing: ../../../include/metal/log.h
+
+-- Installing: ../../../include/metal/mutex.h
+
+-- Installing: ../../../include/metal/scatterlist.h
+
+-- Installing: ../../../include/metal/shmem.h
+
+-- Installing: ../../../include/metal/shmem-provider.h
+
+-- Installing: ../../../include/metal/sleep.h
+
+-- Installing: ../../../include/metal/softirq.h
+
+-- Installing: ../../../include/metal/spinlock.h
+
+-- Installing: ../../../include/metal/sys.h
+
+-- Installing: ../../../include/metal/time.h
+
+-- Installing: ../../../include/metal/utilities.h
+
+-- Installing: ../../../include/metal/version.h
+
+-- Installing: ../../../include/metal/compiler/gcc/atomic.h
+
+-- Installing: ../../../include/metal/compiler/gcc/compiler.h
+
+-- Installing: ../../../include/metal/compiler/iar/compiler.h
+
+-- Installing: ../../../include/metal/processor/microblaze/atomic.h
+
+-- Installing: ../../../include/metal/processor/microblaze/cpu.h
+
+-- Installing: ../../../include/metal/system/generic/alloc.h
+
+-- Installing: ../../../include/metal/system/generic/assert.h
+
+-- Installing: ../../../include/metal/system/generic/cache.h
+
+-- Installing: ../../../include/metal/system/generic/condition.h
+
+-- Installing: ../../../include/metal/system/generic/io.h
+
+-- Installing: ../../../include/metal/system/generic/irq.h
+
+-- Installing: ../../../include/metal/system/generic/log.h
+
+-- Installing: ../../../include/metal/system/generic/mutex.h
+
+-- Installing: ../../../include/metal/system/generic/sleep.h
+
+-- Installing: ../../../include/metal/system/generic/sys.h
+
+-- Installing: ../../../include/metal/system/generic/microblaze_generic/sys.h
+
+-- Installing: ../../../include/metal/system/generic/xlnx_common/sys.h
+
+-- Installing: ../../../lib/libmetal.a
+
+make[3]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/libmetal_v2_
+1/build_libmetal'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/libmetal_v2_
+1/src'
+
+"Running Make libs in psu_pmu_0/libsrc/qspipsu_v1_11/src"
+
+make -C psu_pmu_0/libsrc/qspipsu_v1_11/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_
+FLAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunc
+tion-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/qspipsu_v1_
+11/src'
+
+"Compiling qspipsu"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/qspipsu_v1_1
+1/src'
+
+"Running Make libs in psu_pmu_0/libsrc/resetps_v1_3/src"
+
+make -C psu_pmu_0/libsrc/resetps_v1_3/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_F
+LAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunct
+ion-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/resetps_v1_
+3/src'
+
+"Compiling resetps"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/resetps_v1_3
+/src'
+
+"Running Make libs in psu_pmu_0/libsrc/rfdc_v8_0/src"
+
+make -C psu_pmu_0/libsrc/rfdc_v8_0/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_FLAG
+S=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction
+-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/rfdc_v8_0/s
+rc'
+
+"Compiling rfdc"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/rfdc_v8_0/sr
+c'
+
+"Running Make libs in psu_pmu_0/libsrc/rtcpsu_v1_9/src"
+
+make -C psu_pmu_0/libsrc/rtcpsu_v1_9/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_FL
+AGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffuncti
+on-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/rtcpsu_v1_9
+/src'
+
+"Compiling rtcpsu"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/rtcpsu_v1_9/
+src'
+
+"Running Make libs in psu_pmu_0/libsrc/sdps_v3_9/src"
+
+make -C psu_pmu_0/libsrc/sdps_v3_9/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_FLAG
+S=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction
+-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/sdps_v3_9/s
+rc'
+
+"Compiling sdps"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/sdps_v3_9/sr
+c'
+
+"Running Make libs in psu_pmu_0/libsrc/standalone_v7_2/src"
+
+make -C psu_pmu_0/libsrc/standalone_v7_2/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILE
+R_FLAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffu
+nction-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/standalone_
+v7_2/src'
+
+"Compiling standalone";
+
+microblaze_sleep.c:55:9: note: #pragma message: For the sleep routines, assembly instructions are used
+   55 | #pragma message ("For the sleep routines, assembly instructions are used")
+      |         ^~~~~~~
+make[3]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/standalone_
+v7_2/src/profile'
+
+make[3]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/standalone_v
+7_2/src/profile'
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/standalone_v
+7_2/src'
+
+"Running Make libs in psu_pmu_0/libsrc/sysmonpsu_v2_6/src"
+
+make -C psu_pmu_0/libsrc/sysmonpsu_v2_6/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER
+_FLAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffun
+ction-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/sysmonpsu_v
+2_6/src'
+
+"Compiling sysmonpsu"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/sysmonpsu_v2
+_6/src'
+
+"Running Make libs in psu_pmu_0/libsrc/ttcps_v3_11/src"
+
+make -C psu_pmu_0/libsrc/ttcps_v3_11/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_FL
+AGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffuncti
+on-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/ttcps_v3_11
+/src'
+
+"Compiling ttcps"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/ttcps_v3_11/
+src'
+
+"Running Make libs in psu_pmu_0/libsrc/uartps_v3_9/src"
+
+make -C psu_pmu_0/libsrc/uartps_v3_9/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_FL
+AGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffuncti
+on-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/uartps_v3_9
+/src'
+
+"Compiling uartps"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/uartps_v3_9/
+src'
+
+"Running Make libs in psu_pmu_0/libsrc/usbpsu_v1_7/src"
+
+make -C psu_pmu_0/libsrc/usbpsu_v1_7/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_FL
+AGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffuncti
+on-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/usbpsu_v1_7
+/src'
+
+"Compiling usbpsu"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/usbpsu_v1_7/
+src'
+
+"Running Make libs in psu_pmu_0/libsrc/video_common_v4_9/src"
+
+make -C psu_pmu_0/libsrc/video_common_v4_9/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPI
+LER_FLAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -f
+function-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/video_commo
+n_v4_9/src'
+
+"Compiling video_common"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/video_common
+_v4_9/src'
+
+"Running Make libs in psu_pmu_0/libsrc/wdtps_v3_3/src"
+
+make -C psu_pmu_0/libsrc/wdtps_v3_3/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_FLA
+GS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunctio
+n-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/wdtps_v3_3/
+src'
+
+"Compiling wdtps"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/wdtps_v3_3/s
+rc'
+
+"Running Make libs in psu_pmu_0/libsrc/xilfpga_v5_2/src"
+
+make -C psu_pmu_0/libsrc/xilfpga_v5_2/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_F
+LAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunct
+ion-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/xilfpga_v5_
+2/src'
+
+"Compiling xilfpga Library"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/xilfpga_v5_2
+/src'
+
+"Running Make libs in psu_pmu_0/libsrc/xilsecure_v4_2/src"
+
+make -C psu_pmu_0/libsrc/xilsecure_v4_2/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER
+_FLAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffun
+ction-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/xilsecure_v
+4_2/src'
+
+"Compiling XilSecure Library"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/xilsecure_v4
+_2/src'
+
+"Running Make libs in psu_pmu_0/libsrc/xilskey_v6_9/src"
+
+make -C psu_pmu_0/libsrc/xilskey_v6_9/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_F
+LAGS=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunct
+ion-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/xilskey_v6_
+9/src'
+
+"Compiling Xilskey Library"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/xilskey_v6_9
+/src'
+
+"Running Make libs in psu_pmu_0/libsrc/zdma_v1_9/src"
+
+make -C psu_pmu_0/libsrc/zdma_v1_9/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_FLAG
+S=  -O2 -c -mcpu=v9.2 -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction
+-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects"
+
+make[2]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/zdma_v1_9/s
+rc'
+
+"Compiling zdma"
+
+make[2]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/zdma_v1_9/sr
+c'
+
+'Finished building libraries'
+
+make[1]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp'
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c pm_clock.c -o pm_clock.o -Izynqmp_pmufw
+_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c pm_proc.c -o pm_proc.o -Izynqmp_pmufw_b
+sp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c pm_csudma.c -o pm_csudma.o -Izynqmp_pmu
+fw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c xpfw_mod_em.c -o xpfw_mod_em.o -Izynqmp
+_pmufw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c xpfw_main.c -o xpfw_main.o -Izynqmp_pmu
+fw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c pm_power.c -o pm_power.o -Izynqmp_pmufw
+_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c xpfw_mod_rpu.c -o xpfw_mod_rpu.o -Izynq
+mp_pmufw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c pm_gpp.c -o pm_gpp.o -Izynqmp_pmufw_bsp
+/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c pm_hooks.c -o pm_hooks.o -Izynqmp_pmufw
+_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c xpfw_util.c -o xpfw_util.o -Izynqmp_pmu
+fw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c pm_pll.c -o pm_pll.o -Izynqmp_pmufw_bsp
+/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c xpfw_mod_common.c -o xpfw_mod_common.o 
+-Izynqmp_pmufw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c pm_periph.c -o pm_periph.o -Izynqmp_pmu
+fw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c idle_hooks.c -o idle_hooks.o -Izynqmp_p
+mufw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c xpfw_resets.c -o xpfw_resets.o -Izynqmp
+_pmufw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c xpfw_core.c -o xpfw_core.o -Izynqmp_pmu
+fw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c pm_node.c -o pm_node.o -Izynqmp_pmufw_b
+sp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c pm_extern.c -o pm_extern.o -Izynqmp_pmu
+fw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c pm_usb.c -o pm_usb.o -Izynqmp_pmufw_bsp
+/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c xpfw_mod_ultra96.c -o xpfw_mod_ultra96.
+o -Izynqmp_pmufw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c xpfw_mod_dap.c -o xpfw_mod_dap.o -Izynq
+mp_pmufw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c xpfw_interrupts.c -o xpfw_interrupts.o 
+-Izynqmp_pmufw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c xpfw_ipi_manager.c -o xpfw_ipi_manager.
+o -Izynqmp_pmufw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c xpfw_crc.c -o xpfw_crc.o -Izynqmp_pmufw
+_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c xpfw_user_startup.c -o xpfw_user_startu
+p.o -Izynqmp_pmufw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c xpfw_mod_stl.c -o xpfw_mod_stl.o -Izynq
+mp_pmufw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c pm_callbacks.c -o pm_callbacks.o -Izynq
+mp_pmufw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c pm_reset.c -o pm_reset.o -Izynqmp_pmufw
+_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c xpfw_mod_wdt.c -o xpfw_mod_wdt.o -Izynq
+mp_pmufw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c xpfw_rom_interface.c -o xpfw_rom_interf
+ace.o -Izynqmp_pmufw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c xpfw_mod_rtc.c -o xpfw_mod_rtc.o -Izynq
+mp_pmufw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c xpfw_mod_sched.c -o xpfw_mod_sched.o -I
+zynqmp_pmufw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c pm_sram.c -o pm_sram.o -Izynqmp_pmufw_b
+sp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c pm_qspi.c -o pm_qspi.o -Izynqmp_pmufw_b
+sp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c pm_ddr.c -o pm_ddr.o -Izynqmp_pmufw_bsp
+/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c xpfw_mod_pm.c -o xpfw_mod_pm.o -Izynqmp
+_pmufw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c xpfw_platform.c -o xpfw_platform.o -Izy
+nqmp_pmufw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c pm_pinctrl.c -o pm_pinctrl.o -Izynqmp_p
+mufw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c pm_slave.c -o pm_slave.o -Izynqmp_pmufw
+_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c xpfw_scheduler.c -o xpfw_scheduler.o -I
+zynqmp_pmufw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c pm_binding.c -o pm_binding.o -Izynqmp_p
+mufw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c xpfw_events.c -o xpfw_events.o -Izynqmp
+_pmufw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c xpfw_aib.c -o xpfw_aib.o -Izynqmp_pmufw
+_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c pm_notifier.c -o pm_notifier.o -Izynqmp
+_pmufw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c pm_gic_proxy.c -o pm_gic_proxy.o -Izynq
+mp_pmufw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c xpfw_xpu.c -o xpfw_xpu.o -Izynqmp_pmufw
+_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c pm_core.c -o pm_core.o -Izynqmp_pmufw_b
+sp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c pm_config.c -o pm_config.o -Izynqmp_pmu
+fw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c pm_system.c -o pm_system.o -Izynqmp_pmu
+fw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c pm_mmio_access.c -o pm_mmio_access.o -I
+zynqmp_pmufw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c pm_node_reset.c -o pm_node_reset.o -Izy
+nqmp_pmufw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c pm_requirement.c -o pm_requirement.o -I
+zynqmp_pmufw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c xpfw_module.c -o xpfw_module.o -Izynqmp
+_pmufw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c xpfw_restart.c -o xpfw_restart.o -Izynq
+mp_pmufw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c xpfw_error_manager.c -o xpfw_error_mana
+ger.o -Izynqmp_pmufw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c xpfw_mod_legacy.c -o xpfw_mod_legacy.o 
+-Izynqmp_pmufw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c pm_master.c -o pm_master.o -Izynqmp_pmu
+fw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-object
+s    -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2 -c xpfw_start.S -o xpfw_start.o -Izynqmp_p
+mufw_bsp/psu_pmu_0/include -I.
+
+mb-gcc -o executable.elf  pm_clock.o  pm_proc.o  pm_csudma.o  xpfw_mod_em.o  xpfw_main.o  pm_power.o  xpfw_mod_rpu.o  pm_gpp.o 
+ pm_hooks.o  xpfw_util.o  pm_pll.o  xpfw_mod_common.o  pm_periph.o  idle_hooks.o  xpfw_resets.o  xpfw_core.o  pm_node.o  pm_ext
+ern.o  pm_usb.o  xpfw_mod_ultra96.o  xpfw_mod_dap.o  xpfw_interrupts.o  xpfw_ipi_manager.o  xpfw_crc.o  xpfw_user_startup.o  xp
+fw_mod_stl.o  pm_callbacks.o  pm_reset.o  xpfw_mod_wdt.o  xpfw_rom_interface.o  xpfw_mod_rtc.o  xpfw_mod_sched.o  pm_sram.o  pm
+_qspi.o  pm_ddr.o  xpfw_mod_pm.o  xpfw_platform.o  pm_pinctrl.o  pm_slave.o  xpfw_scheduler.o  pm_binding.o  xpfw_events.o  xpf
+w_aib.o  pm_notifier.o  pm_gic_proxy.o  xpfw_xpu.o  pm_core.o  pm_config.o  pm_system.o  pm_mmio_access.o  pm_node_reset.o  pm_
+requirement.o  xpfw_module.o  xpfw_restart.o  xpfw_error_manager.o  xpfw_mod_legacy.o  pm_master.o  xpfw_start.o -MMD -MP      
+-mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-objects    -Wl,--start-grou
+p,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilfpga,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilsecure,-lxil,-lgcc
+,-lc,--end-group -Wl,--start-group,-lxilskey,-lxil,-lgcc,-lc,--end-group                                                       
+                                                    -Wl,--start-group,-lxil,-lgcc,-lc,-lmetal,--end-group -nostartfiles -Wl,--n
+o-relax -Wl,--gc-sections -Lzynqmp_pmufw_bsp/psu_pmu_0/lib -Tlscript.ld
+
 Building the BSP Library for domain  - standalone_domain on processor psu_cortexa53_0
 "Running Make include in psu_cortexa53_0/libsrc/avbuf_v2_3/src"
 
@@ -66,6 +2387,11 @@ make -C psu_cortexa53_0/libsrc/emacps_v3_11/src -s include  "SHELL=CMD" "COMPILE
 make -C psu_cortexa53_0/libsrc/gpiops_v3_7/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-
 elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
 
+"Running Make include in psu_cortexa53_0/libsrc/gpio_v4_6/src"
+
+make -C psu_cortexa53_0/libsrc/gpio_v4_6/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-el
+f-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
 "Running Make include in psu_cortexa53_0/libsrc/iicps_v3_11/src"
 
 make -C psu_cortexa53_0/libsrc/iicps_v3_11/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-
@@ -80,11 +2406,6 @@ elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER
 
 make -C psu_cortexa53_0/libsrc/libmetal_v2_1/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-non
 e-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
-
-"Running Make include in psu_cortexa53_0/libsrc/lwip211_v1_2/src"
-
-make -C psu_cortexa53_0/libsrc/lwip211_v1_2/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none
--elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
 
 "Running Make include in psu_cortexa53_0/libsrc/qspipsu_v1_11/src"
 
@@ -226,6 +2547,13 @@ make -C psu_cortexa53_0/libsrc/gpiops_v3_7/src -s libs  "SHELL=CMD" "COMPILER=aa
 -as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
 
 "Compiling gpiops"
+
+"Running Make libs in psu_cortexa53_0/libsrc/gpio_v4_6/src"
+
+make -C psu_cortexa53_0/libsrc/gpio_v4_6/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf-a
+s" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+"Compiling gpio"
 
 "Running Make libs in psu_cortexa53_0/libsrc/iicps_v3_11/src"
 
@@ -391,32 +2719,6 @@ Install the project...
 
 -- Installing: ../../../lib/libmetal.a
 
-"Running Make libs in psu_cortexa53_0/libsrc/lwip211_v1_2/src"
-
-make -C psu_cortexa53_0/libsrc/lwip211_v1_2/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-el
-f-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
-
-"Compiling lwip src and adapter files"
-
-In file included from ../../../include/xemacps.h:329,
-                 from ../../../include/netif/xemacpsif.h:56,
-                 from contrib/ports/xilinx/netif/xemacpsif_dma.c:37:
-contrib/ports/xilinx/netif/xemacpsif_dma.c: In function 'init_dma':
-../../../include/xemacps_bd.h:139:62: warning: 'bdrxterminate' may be used uninitialized in this function [-Wmaybe-uninitialized]
-  139 |     (*(u32 *)((UINTPTR)(void*)(BaseAddress) + (u32)(Offset)) = (u32)(Data))
-      |                                                              ^
-contrib/ports/xilinx/netif/xemacpsif_dma.c:561:14: note: 'bdrxterminate' was declared here
-  561 |  XEmacPs_Bd *bdrxterminate;
-      |              ^~~~~~~~~~~~~
-In file included from ../../../include/xemacps.h:329,
-                 from ../../../include/netif/xemacpsif.h:56,
-                 from contrib/ports/xilinx/netif/xemacpsif_dma.c:37:
-../../../include/xemacps_bd.h:120:12: warning: 'bdtxterminate' may be used uninitialized in this function [-Wmaybe-uninitialized]
-  120 |  (*(u32 *)((UINTPTR)((void*)(BaseAddress)) + (u32)(Offset)))
-      |            ^
-contrib/ports/xilinx/netif/xemacpsif_dma.c:560:14: note: 'bdtxterminate' was declared here
-  560 |  XEmacPs_Bd *bdtxterminate;
-      |              ^~~~~~~~~~~~~
 "Running Make libs in psu_cortexa53_0/libsrc/qspipsu_v1_11/src"
 
 make -C psu_cortexa53_0/libsrc/qspipsu_v1_11/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-e
@@ -530,5 +2832,5 @@ s" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAG
 'Finished building libraries'
 
 
-13:42:09 Build Finished (took 1m:43s.209ms)
+13:34:11 Build Finished (took 4m:20s.664ms)
 

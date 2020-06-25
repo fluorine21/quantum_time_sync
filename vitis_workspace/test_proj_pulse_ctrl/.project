@@ -3,7 +3,6 @@
 	<name>test_proj_pulse_ctrl</name>
 	<comment>Created by Vitis v2020.1</comment>
 	<projects>
-		<project>test_proj_plat</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
@@ -24,4 +23,11 @@
 		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
 		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>drivers</name>
+			<type>2</type>
+			<location>C:/James/c_drivers/drivers</location>
+		</link>
+	</linkedResources>
 </projectDescription>

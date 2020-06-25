@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xczu28dr-ffvg1517-2-e" LaunchTime="1593020529">
+<GenRun Id="synth_1" LaunchPart="xczu28dr-ffvg1517-2-e" LaunchTime="1593109108">
   <File Type="PA-TCL" Name="top_level_block_design_wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="top_level_block_design_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="top_level_block_design_wrapper_reports.tcl"/>
@@ -20,6 +20,14 @@
     </File>
     <File Path="$PPRDIR/../verilog_source/pulse_gen.v">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../verilog_source/shift_register.v">
+      <FileInfo>
+        <Attr Name="IsGlobalInclude" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -69,10 +77,13 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="top_level_block_design_fifo_generator_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="top_level_block_design_gpio_to_fifo_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="top_level_block_design_fifo_generator_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="top_level_block_design_zynq_ultra_ps_e_0_3"/>
+  <BlockFileSet Type="BlockSrcs" Name="top_level_block_design_axi_gpio_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="top_level_block_design_proc_sys_reset_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="top_level_block_design_usp_rf_data_converter_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="top_level_block_design_pulse_gen_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="top_level_block_design_clk_wiz_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="top_level_block_design_xbar_0"/>
 </GenRun>

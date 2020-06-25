@@ -1,0 +1,67 @@
+
+
+#include "gpio.h"
+#include "xgpio.h"
+
+#define PULSE_GEN_CHANNEL 1
+#define GPIO_BITWIDTH	16	/* This is the width of the GPIO */
+#define GPIO_OUTPUT_DEVICE_ID	XPAR_GPIO_0_DEVICE_ID
+
+XGpio GpioOutput; /* The driver instance for GPIO Device configured as O/P */
+
+uint32_t gpio_state;//Current state of the GPIO output
+
+#define RST_BIT 3
+#define WRITE_BIT 2
+#define SCLK_BIT 0
+#define SDATA_BIT 1
+
+uint8_t gpio_init()
+{
+	/*
+	 * Initialize the GPIO driver so that it's ready to use,
+	 * specify the device ID that is generated in xparameters.h
+	 */
+	Status = XGpio_Initialize(&GpioOutput, GPIO_OUTPUT_DEVICE_ID);
+	if (Status != XST_SUCCESS)  {
+		return XST_FAILURE;
+	}
+
+	/* Set the direction for all signals to be outputs */
+	XGpio_SetDataDirection(&GpioOutput, PULSE_GEN_CHANNEL, 0x0);
+
+	/* Set the GPIO outputs to low */
+	XGpio_DiscreteWrite(&GpioOutput, PULSE_GEN_CHANNEL, 0x0);
+
+	gpio_state = 0;
+
+	//Reset the fabric
+	gpio_reset_pulse_gen();
+
+	return XST_SUCCESS;
+
+}
+
+void gpio_update_state()
+{
+	XGpio_DiscreteWrite(&GpioOutput, LED_CHANNEL, gpio_state);
+}
+
+void gpio_reset_pulse_gen()
+{
+	//Mask out the reset bit (active low)
+	gpio_state &= ~(1 << RST_BIT);
+	gpio_update_state();
+
+	gpio_state |= (1 << RST_BIT);
+	gpio_update_state();
+
+}
+
+//Sends a command to the pulse generator RTL via FIFO
+void gpio_send_commnd()
+{
+
+}
+
+

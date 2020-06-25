@@ -1,0 +1,12 @@
+
+#ifndef _GPIO_H_
+#define _GPIO_H_
+
+#include "xgpiops.h"
+
+void gpio_reset_pulse_gen();
+void gpio_send_commnd(uint32_t command);
+
+
+
+#endif

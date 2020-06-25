@@ -7,5 +7,6 @@
 # of Vivado)
 ################################################################################
 create_clock -name dac0_clk_clk_p -period 4 [get_ports dac0_clk_clk_p]
+create_clock -name default_sysclk3_100mhz_clk_p -period 10 [get_ports default_sysclk3_100mhz_clk_p]
 
 ################################################################################

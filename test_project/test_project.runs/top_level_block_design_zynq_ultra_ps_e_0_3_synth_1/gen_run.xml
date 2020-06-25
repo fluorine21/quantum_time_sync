@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="top_level_block_design_zynq_ultra_ps_e_0_3_synth_1" LaunchPart="xczu28dr-ffvg1517-2-e" LaunchTime="1592972560">
+<GenRun Id="top_level_block_design_zynq_ultra_ps_e_0_3_synth_1" LaunchPart="xczu28dr-ffvg1517-2-e" LaunchTime="1593106263">
   <File Type="PA-TCL" Name="top_level_block_design_zynq_ultra_ps_e_0_3.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="top_level_block_design_zynq_ultra_ps_e_0_3_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="top_level_block_design_zynq_ultra_ps_e_0_3_reports.tcl"/>

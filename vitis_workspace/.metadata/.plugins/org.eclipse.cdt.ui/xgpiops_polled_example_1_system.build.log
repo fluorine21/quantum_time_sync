@@ -1,0 +1,10 @@
+12:14:56 **** Build of configuration Debug for project xgpiops_polled_example_1_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 59433 C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm standalone_domain C:/James/vitis_workspace/xgpiops_polled_example_1_system/Debug/system.bif
+sdcard_gen --xpfm C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm --sys_config test_proj_plat --bif C:/James/vitis_workspace/xgpiops_polled_example_1_system/Debug/system.bif --bitstream C:/James/vitis_workspace/xgpiops_polled_example_1/_ide/bitstream/top_level_block_design_wrapper.bit --elf C:/James/vitis_workspace/xgpiops_polled_example_1/Debug/xgpiops_polled_example_1.elf,psu_cortexa53_0
+creating BOOT.BIN using C:/James/vitis_workspace/xgpiops_polled_example_1/_ide/bitstream/top_level_block_design_wrapper.bit
+Running C:/Xilinx/Vitis/2020.1/bin/bootgen -arch zynqmp -image C:/James/vitis_workspace/xgpiops_polled_example_1_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+
+12:15:10 Build Finished (took 13s.744ms)
+

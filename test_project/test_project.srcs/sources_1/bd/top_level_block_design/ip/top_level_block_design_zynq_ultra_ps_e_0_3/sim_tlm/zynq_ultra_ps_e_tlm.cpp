@@ -143,13 +143,8 @@ void add_extensions_to_tlm(const xtlm::aximm_payload* xtlm_pay, tlm::tlm_generic
     zynq_ultra_ps_e_tlm :: zynq_ultra_ps_e_tlm (sc_core::sc_module_name name,
     xsc::common_cpp::properties&): sc_module(name)//registering module name with parent
         ,maxihpm0_fpd_aclk("maxihpm0_fpd_aclk")
-        ,emio_gpio_i("emio_gpio_i")
-        ,emio_gpio_o("emio_gpio_o")
-        ,emio_gpio_t("emio_gpio_t")
         ,pl_resetn0("pl_resetn0")
-        ,pl_clk0("pl_clk0")
     ,m_rp_bridge_M_AXI_HPM0_FPD("m_rp_bridge_M_AXI_HPM0_FPD")
-        ,pl_clk0_clk("pl_clk0_clk", sc_time(10.000099900998011,sc_core::SC_NS))//clock period in nanoseconds = 1000/freq(in MZ)
     {
         //creating instances of xtlm slave sockets
 
@@ -175,9 +170,6 @@ void add_extensions_to_tlm(const xtlm::aximm_payload* xtlm_pay, tlm::tlm_generic
 
         m_zynqmp_tlm_model->tie_off();
 
-        SC_METHOD(trigger_pl_clk0_pin);
-        sensitive << pl_clk0_clk;
-        dont_initialize();
         
         m_rp_bridge_M_AXI_HPM0_FPD.registerUserExtensionHandlerCallback(&get_extensions_from_tlm);
 
@@ -191,11 +183,6 @@ void add_extensions_to_tlm(const xtlm::aximm_payload* xtlm_pay, tlm::tlm_generic
         delete M_AXI_HPM0_FPD_rd_socket;
     }
     
-    //Method which is sentive to pl_clk0_clk sc_clock object
-    //pl_clk0 pin written based on pl_clk0_clk clock value 
-    void zynq_ultra_ps_e_tlm ::trigger_pl_clk0_pin()    {
-        pl_clk0.write(pl_clk0_clk.read());
-    }
 
     //pl_resetn0 output reset pin get toggle when emio bank 2's 31th signal gets toggled
     //EMIO[2] bank 31th(GPIO[95] signal)acts as reset signal to the PL(refer Zynq UltraScale+ TRM, page no:761)

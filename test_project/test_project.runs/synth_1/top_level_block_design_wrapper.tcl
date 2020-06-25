@@ -70,12 +70,9 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param power.BramSDPPropagationFix 1
+set_param tcl.collectionResultDisplayLimit 0
 set_param chipscope.maxJobs 2
-set_param power.enableUnconnectedCarry8PinPower 1
-set_param power.enableCarry8RouteBelPower 1
-set_param power.enableLutRouteBelPower 1
-set_msg_config -id {HDL-1065} -limit 10000
+set_param xicom.use_bs_reader 1
 set_msg_config  -id {[BD 41-1306]}  -suppress 
 set_msg_config  -id {[BD 41-1271]}  -suppress 
 OPTRACE "Creating in-memory project" START { }
@@ -95,7 +92,10 @@ set_property ip_output_repo c:/James/test_project/test_project.cache/ip [current
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_verilog -library xil_defaultlib C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/hdl/top_level_block_design_wrapper.v
+read_verilog -library xil_defaultlib {
+  C:/James/verilog_source/shift_register.v
+  C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/hdl/top_level_block_design_wrapper.v
+}
 add_files C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/top_level_block_design.bd
 set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_zynq_ultra_ps_e_0_3/top_level_block_design_zynq_ultra_ps_e_0_3_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_zynq_ultra_ps_e_0_3/top_level_block_design_zynq_ultra_ps_e_0_3.xdc]
@@ -105,24 +105,25 @@ set_property used_in_implementation false [get_files -all c:/James/test_project/
 set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_rst_ps8_0_99M_0/top_level_block_design_rst_ps8_0_99M_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_rst_ps8_0_99M_0/top_level_block_design_rst_ps8_0_99M_0.xdc]
 set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_rst_ps8_0_99M_0/top_level_block_design_rst_ps8_0_99M_0_ooc.xdc]
-set_property used_in_synthesis false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_system_ila_0_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_system_ila_0_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_system_ila_0_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc]
-set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_system_ila_0_0/bd_0/ip/ip_0/bd_1ad1_ila_lib_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_system_ila_0_0/bd_0/bd_1ad1_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_system_ila_0_0/top_level_block_design_system_ila_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_fifo_generator_0_0/top_level_block_design_fifo_generator_0_0.xdc]
 set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_fifo_generator_0_0/top_level_block_design_fifo_generator_0_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_fifo_generator_0_0/top_level_block_design_fifo_generator_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_proc_sys_reset_0_0/top_level_block_design_proc_sys_reset_0_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_proc_sys_reset_0_0/top_level_block_design_proc_sys_reset_0_0.xdc]
 set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_proc_sys_reset_0_0/top_level_block_design_proc_sys_reset_0_0_ooc.xdc]
-set_property used_in_synthesis false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_system_ila_1_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_system_ila_1_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_system_ila_1_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc]
-set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_system_ila_1_0/bd_0/ip/ip_0/bd_da80_ila_lib_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_system_ila_1_0/bd_0/bd_da80_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_system_ila_1_0/top_level_block_design_system_ila_1_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_clk_wiz_0_0/top_level_block_design_clk_wiz_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_clk_wiz_0_0/top_level_block_design_clk_wiz_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_clk_wiz_0_0/top_level_block_design_clk_wiz_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_xbar_0/top_level_block_design_xbar_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_axi_gpio_0_0/top_level_block_design_axi_gpio_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_axi_gpio_0_0/top_level_block_design_axi_gpio_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_axi_gpio_0_0/top_level_block_design_axi_gpio_0_0.xdc]
+set_property used_in_synthesis false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_system_ila_0_1/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_system_ila_0_1/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_system_ila_0_1/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_system_ila_0_1/bd_0/ip/ip_0/bd_da10_ila_lib_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_system_ila_0_1/bd_0/bd_da10_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_system_ila_0_1/top_level_block_design_system_ila_0_1_ooc.xdc]
 set_property used_in_synthesis false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_auto_ds_0/top_level_block_design_auto_ds_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_auto_ds_0/top_level_block_design_auto_ds_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_auto_ds_0/top_level_block_design_auto_ds_0_ooc.xdc]
