@@ -78,6 +78,7 @@ begin
     state <= state_idle;
     fifo_read <= 0;
     m_axis_tdata_int <= 0;
+	is_phase_meas_mode <= 0;
 
 end
 endtask
@@ -133,6 +134,14 @@ always @ (posedge clk or negedge rst) begin
 							//Just set the clock period
 							clock_period <= fifo_data[23:0];
 						
+						end
+						
+						command_set_phase_meas_mode: begin
+							is_phase_meas_mode <= 1;
+						end
+						
+						command_reset_phase_meas_mode: begin
+							is_phase_meas_mode <= 0;
 						end
 					
 						default begin

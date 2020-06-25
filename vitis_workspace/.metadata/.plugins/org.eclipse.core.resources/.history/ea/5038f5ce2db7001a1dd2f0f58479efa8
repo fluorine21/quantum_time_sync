@@ -1,0 +1,36 @@
+
+#include "cmd_handler.h"
+#include "uart.h"
+#include "gpio.h"
+
+
+//Initializes UART, GPIO and RFSOC
+void cmd_init()
+{
+	print("Initializing peripherals...\r\n");
+
+    if(gpio_init())
+    {
+    	print("Failed to initialize GPIO!\r\n");
+    }
+    else
+    {
+    	print("Successfully initialized GPIO!\r\n");
+    }
+
+    if(uart_init_interrupt() != 0)
+    {
+    	print("Failed to initialize UART!");
+    }
+    else
+    {
+    	print("Successfully initialized UART!");
+    }
+}
+
+#define STATE_WAIT_PREAMBLE 0
+#define STATE_WAIT_CMD 1
+#define STATE_WAIT_PAYLOAD 2
+
+
+

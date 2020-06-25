@@ -1,6 +1,6 @@
-2020-06-25T13:29:50.974836200255-13:29:50 **** Build of project test_proj_plat ****
+2020-06-25T15:03:09.961311100255-15:03:09 **** Build of project test_proj_plat ****
 000-buildplatform.bat 61579 test_proj_plat  
-000-XSDB Server Channel: tcfchan#10
+000-XSDB Server Channel: tcfchan#22
 000-Building the zynqmp_fsbl application.
 000-make -C zynqmp_fsbl_bsp
 000-
@@ -2832,5 +2832,5 @@
 000-'Finished building libraries'
 000-
 00255-
-13:34:11 Build Finished (took 4m:20s.664ms)
+15:07:29 Build Finished (took 4m:19s.388ms)
 

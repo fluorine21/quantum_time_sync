@@ -251,8 +251,10 @@ proc create_root_design { parentCell } {
   set system_ila_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_0 ]
   set_property -dict [ list \
    CONFIG.C_MON_TYPE {NATIVE} \
-   CONFIG.C_NUM_OF_PROBES {1} \
+   CONFIG.C_NUM_OF_PROBES {3} \
    CONFIG.C_PROBE0_TYPE {0} \
+   CONFIG.C_PROBE1_TYPE {0} \
+   CONFIG.C_PROBE2_TYPE {0} \
  ] $system_ila_0
 
   # Create instance: usp_rf_data_converter_0, and set properties
@@ -976,8 +978,11 @@ proc create_root_design { parentCell } {
   connect_bd_net -net fifo_generator_0_dout [get_bd_pins fifo_generator_0/dout] [get_bd_pins pulse_gen_0/fifo_data]
   connect_bd_net -net fifo_generator_0_empty [get_bd_pins fifo_generator_0/empty] [get_bd_pins pulse_gen_0/fifo_empty]
   connect_bd_net -net fifo_generator_0_full [get_bd_pins fifo_generator_0/full] [get_bd_pins gpio_to_fifo_0/fifo_full]
-  connect_bd_net -net gpio_to_fifo_0_dout [get_bd_pins fifo_generator_0/din] [get_bd_pins gpio_to_fifo_0/fifo_dout]
-  connect_bd_net -net gpio_to_fifo_0_fifo_write [get_bd_pins fifo_generator_0/wr_en] [get_bd_pins gpio_to_fifo_0/fifo_wr_en]
+  connect_bd_net -net gpio_to_fifo_0_dout [get_bd_pins fifo_generator_0/din] [get_bd_pins gpio_to_fifo_0/fifo_dout] [get_bd_pins system_ila_0/probe1]
+  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets gpio_to_fifo_0_dout]
+  connect_bd_net -net gpio_to_fifo_0_fifo_write [get_bd_pins fifo_generator_0/wr_en] [get_bd_pins gpio_to_fifo_0/fifo_wr_en] [get_bd_pins system_ila_0/probe2]
+  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets gpio_to_fifo_0_fifo_write]
+  connect_bd_net -net gpio_to_fifo_0_rst_pl [get_bd_pins gpio_to_fifo_0/rst_pl] [get_bd_pins proc_sys_reset_0/aux_reset_in]
   connect_bd_net -net proc_sys_reset_0_peripheral_aresetn [get_bd_pins proc_sys_reset_0/peripheral_aresetn] [get_bd_pins pulse_gen_0/rst] [get_bd_pins usp_rf_data_converter_0/s0_axis_aresetn]
   connect_bd_net -net pulse_gen_0_fifo_read [get_bd_pins fifo_generator_0/rd_en] [get_bd_pins pulse_gen_0/fifo_read]
   connect_bd_net -net reset_1 [get_bd_ports reset] [get_bd_pins rst_ps8_0_99M/ext_reset_in]

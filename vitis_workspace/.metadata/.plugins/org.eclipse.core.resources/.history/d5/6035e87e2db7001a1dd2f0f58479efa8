@@ -1,0 +1,10 @@
+
+
+
+
+
+//Initializes UART, GPIO and RFSOC
+void cmd_init()
+{
+
+}

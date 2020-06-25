@@ -3,18 +3,18 @@ The host system is: Windows - 6.2 - AMD64
 Determining if files xintc.h exist passed with the following output:
 Change Dir: C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/psu_cortexa53_0/libsrc/libmetal_v2_1/build_libmetal/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/Xilinx/Vitis/2020.1/gnuwin/bin/make.exe" "cmTC_1e3d2/fast"
-C:/Xilinx/Vitis/2020.1/gnuwin/bin/make.exe -f CMakeFiles/cmTC_1e3d2.dir/build.make CMakeFiles/cmTC_1e3d2.dir/build
+Run Build Command:"C:/Xilinx/Vitis/2020.1/gnuwin/bin/make.exe" "cmTC_e5504/fast"
+C:/Xilinx/Vitis/2020.1/gnuwin/bin/make.exe -f CMakeFiles/cmTC_e5504.dir/build.make CMakeFiles/cmTC_e5504.dir/build
 make.exe[1]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/psu_cortexa53_0/libsrc/libmetal_v2_1/build_libmetal/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_1e3d2.dir/CheckIncludeFiles.c.obj
-C:/Xilinx/Vitis/2020.1/gnu/aarch64/nt/aarch64-none/bin/aarch64-none-elf-gcc.exe   -O2 -c -g -Wall -Wextra -IC:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/psu_cortexa53_0/include    -o CMakeFiles/cmTC_1e3d2.dir/CheckIncludeFiles.c.obj   -c C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/psu_cortexa53_0/libsrc/libmetal_v2_1/build_libmetal/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Building C object CMakeFiles/cmTC_e5504.dir/CheckIncludeFiles.c.obj
+C:/Xilinx/Vitis/2020.1/gnu/aarch64/nt/aarch64-none/bin/aarch64-none-elf-gcc.exe   -O2 -c -g -Wall -Wextra -IC:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/psu_cortexa53_0/include    -o CMakeFiles/cmTC_e5504.dir/CheckIncludeFiles.c.obj   -c C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/psu_cortexa53_0/libsrc/libmetal_v2_1/build_libmetal/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
 C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/psu_cortexa53_0/libsrc/libmetal_v2_1/build_libmetal/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:2:10: fatal error: xintc.h: No such file or directory
     2 | #include <xintc.h>
       |          ^~~~~~~~~
 compilation terminated.
-Linking C executable cmTC_1e3d2
-C:/Xilinx/Vitis/2020.1/gnu/aarch64/nt/aarch64-none/bin/aarch64-none-elf-gcc.exe  -O2 -c -g -Wall -Wextra -IC:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/psu_cortexa53_0/include     "CMakeFiles/cmTC_1e3d2.dir/CheckIncludeFiles.c.obj"   -o cmTC_1e3d2  
-aarch64-xilinx-elf-gcc.exe: error: CMakeFiles/cmTC_1e3d2.dir/CheckIncludeFiles.c.obj: No such file or directory
+Linking C executable cmTC_e5504
+C:/Xilinx/Vitis/2020.1/gnu/aarch64/nt/aarch64-none/bin/aarch64-none-elf-gcc.exe  -O2 -c -g -Wall -Wextra -IC:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/psu_cortexa53_0/include     "CMakeFiles/cmTC_e5504.dir/CheckIncludeFiles.c.obj"   -o cmTC_e5504  
+aarch64-xilinx-elf-gcc.exe: error: CMakeFiles/cmTC_e5504.dir/CheckIncludeFiles.c.obj: No such file or directory
 aarch64-xilinx-elf-gcc.exe: fatal error: no input files
 compilation terminated.
 make.exe[1]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/psu_cortexa53_0/libsrc/libmetal_v2_1/build_libmetal/CMakeFiles/CMakeTmp'
@@ -23,14 +23,14 @@ make.exe[1]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/psu_cort
 Determining if files stdatomic.h exist passed with the following output:
 Change Dir: C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/psu_cortexa53_0/libsrc/libmetal_v2_1/build_libmetal/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/Xilinx/Vitis/2020.1/gnuwin/bin/make.exe" "cmTC_33728/fast"
-C:/Xilinx/Vitis/2020.1/gnuwin/bin/make.exe -f CMakeFiles/cmTC_33728.dir/build.make CMakeFiles/cmTC_33728.dir/build
+Run Build Command:"C:/Xilinx/Vitis/2020.1/gnuwin/bin/make.exe" "cmTC_440e4/fast"
+C:/Xilinx/Vitis/2020.1/gnuwin/bin/make.exe -f CMakeFiles/cmTC_440e4.dir/build.make CMakeFiles/cmTC_440e4.dir/build
 make.exe[1]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/psu_cortexa53_0/libsrc/libmetal_v2_1/build_libmetal/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_33728.dir/CheckIncludeFiles.c.obj
-C:/Xilinx/Vitis/2020.1/gnu/aarch64/nt/aarch64-none/bin/aarch64-none-elf-gcc.exe   -O2 -c -g -Wall -Wextra -IC:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/psu_cortexa53_0/include -c   -o CMakeFiles/cmTC_33728.dir/CheckIncludeFiles.c.obj   -c C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/psu_cortexa53_0/libsrc/libmetal_v2_1/build_libmetal/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
-Linking C executable cmTC_33728
-C:/Xilinx/Vitis/2020.1/gnu/aarch64/nt/aarch64-none/bin/aarch64-none-elf-gcc.exe  -O2 -c -g -Wall -Wextra -IC:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/psu_cortexa53_0/include -c    "CMakeFiles/cmTC_33728.dir/CheckIncludeFiles.c.obj"   -o cmTC_33728  
-aarch64-xilinx-elf-gcc.exe: warning: CMakeFiles/cmTC_33728.dir/CheckIncludeFiles.c.obj: linker input file unused because linking not done
+Building C object CMakeFiles/cmTC_440e4.dir/CheckIncludeFiles.c.obj
+C:/Xilinx/Vitis/2020.1/gnu/aarch64/nt/aarch64-none/bin/aarch64-none-elf-gcc.exe   -O2 -c -g -Wall -Wextra -IC:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/psu_cortexa53_0/include -c   -o CMakeFiles/cmTC_440e4.dir/CheckIncludeFiles.c.obj   -c C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/psu_cortexa53_0/libsrc/libmetal_v2_1/build_libmetal/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTC_440e4
+C:/Xilinx/Vitis/2020.1/gnu/aarch64/nt/aarch64-none/bin/aarch64-none-elf-gcc.exe  -O2 -c -g -Wall -Wextra -IC:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/psu_cortexa53_0/include -c    "CMakeFiles/cmTC_440e4.dir/CheckIncludeFiles.c.obj"   -o cmTC_440e4  
+aarch64-xilinx-elf-gcc.exe: warning: CMakeFiles/cmTC_440e4.dir/CheckIncludeFiles.c.obj: linker input file unused because linking not done
 make.exe[1]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/psu_cortexa53_0/libsrc/libmetal_v2_1/build_libmetal/CMakeFiles/CMakeTmp'
 
 

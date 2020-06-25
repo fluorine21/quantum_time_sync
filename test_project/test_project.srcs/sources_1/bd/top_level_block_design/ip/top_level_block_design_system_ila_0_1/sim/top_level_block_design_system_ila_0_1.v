@@ -55,16 +55,22 @@
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module top_level_block_design_system_ila_0_1 (
   clk,
-  probe0
+  probe0,
+  probe1,
+  probe2
 );
 
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN top_level_block_design_clk_wiz_0_0_clk_out1, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.clk CLK" *)
 input wire clk;
 input wire [31 : 0] probe0;
+input wire [31 : 0] probe1;
+input wire [0 : 0] probe2;
 
   bd_da10 inst (
     .clk(clk),
-    .probe0(probe0)
+    .probe0(probe0),
+    .probe1(probe1),
+    .probe2(probe2)
   );
 endmodule

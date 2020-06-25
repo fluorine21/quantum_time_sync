@@ -1,6 +1,6 @@
-13:29:50 **** Build of project test_proj_plat ****
+15:03:09 **** Build of project test_proj_plat ****
 buildplatform.bat 61579 test_proj_plat  
-XSDB Server Channel: tcfchan#10
+XSDB Server Channel: tcfchan#22
 Building the zynqmp_fsbl application.
 make -C zynqmp_fsbl_bsp
 
@@ -2832,5 +2832,5 @@ s" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAG
 'Finished building libraries'
 
 
-13:34:11 Build Finished (took 4m:20s.664ms)
+15:07:29 Build Finished (took 4m:19s.388ms)
 

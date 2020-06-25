@@ -1,0 +1,63 @@
+
+#include "cmd_handler.h"
+#include "uart.h"
+#include "gpio.h"
+
+//Handler function states
+#define STATE_WAIT_PREAMBLE 0
+#define STATE_WAIT_CMD 1
+#define STATE_WAIT_PAYLOAD 2
+u8 cmd_state;
+
+
+//Initializes UART, GPIO and RFSOC
+//Returns 0 on success
+u8 cmd_init()
+{
+	cmd_state = 0;
+
+	print("Initializing peripherals...\r\n");
+
+	if(gpio_init())
+	{
+		print("Failed to initialize GPIO!\r\n");
+		return 1;
+	}
+	else
+	{
+		print("Successfully initialized GPIO!\r\n");
+	}
+
+	if(uart_init_interrupt() != 0)
+	{
+		print("Failed to initialize UART!");
+		return 1;
+	}
+	else
+	{
+		print("Successfully initialized UART!");
+	}
+
+	print("Finished initializing peripherals");
+	//Clear the buffer once
+	uart_clear_buffer();
+
+}
+
+//Main command handler function
+void cmd_update_state()
+{
+	switch(cmd_state)
+	{
+
+	case STATE_WAIT_PREAMBLE:
+
+
+		break;
+	}
+}
+
+
+
+
+

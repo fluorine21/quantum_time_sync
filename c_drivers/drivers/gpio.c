@@ -4,10 +4,8 @@
 #include "xgpio.h"
 
 
-//#define GPIO_OUTPUT_DEVICE_ID	XPAR_XGPIOPS_0_DEVICE_ID
 #define GPIO_EXAMPLE_DEVICE_ID  XPAR_GPIO_0_DEVICE_ID
 
-//XGpioPs GpioInst; /* The driver instance for GPIO Device configured as O/P */
 XGpio Gpio; /* The Instance of the GPIO Driver */
 
 #define RST_BIT 3
@@ -38,38 +36,8 @@ uint8_t gpio_init()
 	//Turn all outputs off by default
 	XGpio_DiscreteWrite(&Gpio, 1, 0);
 
-	//	int Status;
-	//	XGpioPs_Config *ConfigPtr;
-	//
-	//
-	//	/* Initialize the GPIO driver. */
-	//	ConfigPtr = XGpioPs_LookupConfig(GPIO_OUTPUT_DEVICE_ID);
-	//	if(!ConfigPtr)
-	//	{
-	//		return XST_FAILURE;
-	//	}
-	//
-	//	Status = XGpioPs_CfgInitialize(&GpioInst, ConfigPtr,
-	//					ConfigPtr->BaseAddr);
-	//	if (Status != XST_SUCCESS) {
-	//		return XST_FAILURE;
-	//	}
-	//
-	//	//Set all pins to be outputs
-	//	for(int i = 0; i < 32; i++){
-	//		XGpioPs_SetDirectionPin(&GpioInst, i, 1);
-	//		XGpioPs_SetOutputEnablePin(&GpioInst, i, 1);
-	//
-	//		//Check to make sure direction was set
-	//		if(!XGpioPs_GetDirectionPin(&GpioInst, i))
-	//		{
-	//			xil_printf("Unable to set pin direction to output!");
-	//		}
-	//
-	//	}
-	//
-	//
-
+	//Put the reset line in the correct state
+	gpio_reset_pulse_gen();
 
 	return XST_SUCCESS;
 
@@ -77,21 +45,6 @@ uint8_t gpio_init()
 
 void gpio_set_pin(u8 bit, u8 value)
 {
-	//	if(value){
-	//		XGpioPs_WritePin(&GpioInst, pin_num, 0x1);
-	//	}
-	//	else
-	//	{
-	//		XGpioPs_WritePin(&GpioInst, pin_num, 0x0);
-	//	}
-	//
-	//	u8 Data = XGpioPs_ReadPin(&GpioInst, pin_num);
-	//
-	//	if(Data != (value & 0x01))
-	//	{
-	//		xil_printf("Error, could not write GPIO pin!");
-	//	}
-
 
 	u32 new_gpio_state;
 	if(value){
@@ -110,10 +63,8 @@ void gpio_set_pin(u8 bit, u8 value)
 //Resets the fabric in the 250MHz clock domain
 void gpio_reset_pulse_gen()
 {
-	//Mask out the reset bit (active low)
 	gpio_set_pin(RST_BIT, 0);
 	gpio_set_pin(RST_BIT, 1);
-
 }
 
 

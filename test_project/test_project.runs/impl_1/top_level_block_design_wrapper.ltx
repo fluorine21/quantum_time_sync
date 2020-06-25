@@ -138,6 +138,136 @@
                                         ]
                                     }
                                 ]
+                            },
+                            {
+                                "name": "probe1",
+                                "id": 1,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "top_level_block_design_i/system_ila_0/inst/probe1_1",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "top_level_block_design_i/system_ila_0/inst/probe1_1[31]"
+                                            },
+                                            {
+                                                "name": "top_level_block_design_i/system_ila_0/inst/probe1_1[30]"
+                                            },
+                                            {
+                                                "name": "top_level_block_design_i/system_ila_0/inst/probe1_1[29]"
+                                            },
+                                            {
+                                                "name": "top_level_block_design_i/system_ila_0/inst/probe1_1[28]"
+                                            },
+                                            {
+                                                "name": "top_level_block_design_i/system_ila_0/inst/probe1_1[27]"
+                                            },
+                                            {
+                                                "name": "top_level_block_design_i/system_ila_0/inst/probe1_1[26]"
+                                            },
+                                            {
+                                                "name": "top_level_block_design_i/system_ila_0/inst/probe1_1[25]"
+                                            },
+                                            {
+                                                "name": "top_level_block_design_i/system_ila_0/inst/probe1_1[24]"
+                                            },
+                                            {
+                                                "name": "top_level_block_design_i/system_ila_0/inst/probe1_1[23]"
+                                            },
+                                            {
+                                                "name": "top_level_block_design_i/system_ila_0/inst/probe1_1[22]"
+                                            },
+                                            {
+                                                "name": "top_level_block_design_i/system_ila_0/inst/probe1_1[21]"
+                                            },
+                                            {
+                                                "name": "top_level_block_design_i/system_ila_0/inst/probe1_1[20]"
+                                            },
+                                            {
+                                                "name": "top_level_block_design_i/system_ila_0/inst/probe1_1[19]"
+                                            },
+                                            {
+                                                "name": "top_level_block_design_i/system_ila_0/inst/probe1_1[18]"
+                                            },
+                                            {
+                                                "name": "top_level_block_design_i/system_ila_0/inst/probe1_1[17]"
+                                            },
+                                            {
+                                                "name": "top_level_block_design_i/system_ila_0/inst/probe1_1[16]"
+                                            },
+                                            {
+                                                "name": "top_level_block_design_i/system_ila_0/inst/probe1_1[15]"
+                                            },
+                                            {
+                                                "name": "top_level_block_design_i/system_ila_0/inst/probe1_1[14]"
+                                            },
+                                            {
+                                                "name": "top_level_block_design_i/system_ila_0/inst/probe1_1[13]"
+                                            },
+                                            {
+                                                "name": "top_level_block_design_i/system_ila_0/inst/probe1_1[12]"
+                                            },
+                                            {
+                                                "name": "top_level_block_design_i/system_ila_0/inst/probe1_1[11]"
+                                            },
+                                            {
+                                                "name": "top_level_block_design_i/system_ila_0/inst/probe1_1[10]"
+                                            },
+                                            {
+                                                "name": "top_level_block_design_i/system_ila_0/inst/probe1_1[9]"
+                                            },
+                                            {
+                                                "name": "top_level_block_design_i/system_ila_0/inst/probe1_1[8]"
+                                            },
+                                            {
+                                                "name": "top_level_block_design_i/system_ila_0/inst/probe1_1[7]"
+                                            },
+                                            {
+                                                "name": "top_level_block_design_i/system_ila_0/inst/probe1_1[6]"
+                                            },
+                                            {
+                                                "name": "top_level_block_design_i/system_ila_0/inst/probe1_1[5]"
+                                            },
+                                            {
+                                                "name": "top_level_block_design_i/system_ila_0/inst/probe1_1[4]"
+                                            },
+                                            {
+                                                "name": "top_level_block_design_i/system_ila_0/inst/probe1_1[3]"
+                                            },
+                                            {
+                                                "name": "top_level_block_design_i/system_ila_0/inst/probe1_1[2]"
+                                            },
+                                            {
+                                                "name": "top_level_block_design_i/system_ila_0/inst/probe1_1[1]"
+                                            },
+                                            {
+                                                "name": "top_level_block_design_i/system_ila_0/inst/probe1_1[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe2",
+                                "id": 2,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "top_level_block_design_i/system_ila_0/inst/probe2_1",
+                                        "isBus": false
+                                    }
+                                ]
                             }
                         ],
                         "native_ports": [
@@ -153,6 +283,38 @@
                                             "name": "probe0",
                                             "leftBit": 0,
                                             "width": 32
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe1",
+                                "connectedBus": "gpio_to_fifo_0_dout",
+                                "protocol": "PROBE",
+                                "port_maps": [
+                                    {
+                                        "logical_port": "probe1",
+                                        "physical_pin": {
+                                            "id": 1,
+                                            "name": "probe1",
+                                            "leftBit": 0,
+                                            "width": 32
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe2",
+                                "connectedBus": "gpio_to_fifo_0_fifo_write",
+                                "protocol": "PROBE",
+                                "port_maps": [
+                                    {
+                                        "logical_port": "probe2",
+                                        "physical_pin": {
+                                            "id": 2,
+                                            "name": "probe2",
+                                            "leftBit": 0,
+                                            "width": 1
                                         }
                                     }
                                 ]

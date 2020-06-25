@@ -244,3 +244,10 @@ timestamp=[2020-06-25 14:06:07], mode=BUILD, duration=0:00:01.661, duration_ms=1
 timestamp=[2020-06-25 14:06:20], mode=BUILD, duration=0:00:13.272, duration_ms=13272, data={name=test_proj_pulse_ctrl_system, configuration=Debug, clean_build=false}
 timestamp=[2020-06-25 14:07:35], mode=BUILD, duration=0:00:01.498, duration_ms=1498, data={name=test_proj_pulse_ctrl, configuration=Debug, clean_build=false}
 timestamp=[2020-06-25 14:07:49], mode=BUILD, duration=0:00:13.242, duration_ms=13242, data={name=test_proj_pulse_ctrl_system, configuration=Debug, clean_build=false}
+timestamp=[2020-06-25 14:16:44], mode=BUILD, duration=0:00:01.606, duration_ms=1606, data={name=test_proj_pulse_ctrl, configuration=Debug, clean_build=false}
+timestamp=[2020-06-25 14:16:58], mode=BUILD, duration=0:00:13.487, duration_ms=13487, data={name=test_proj_pulse_ctrl_system, configuration=Debug, clean_build=false}
+timestamp=[2020-06-25 15:02:07], mode=PLATFORM_CREATION, duration=0:00:42.516, duration_ms=42516, data={platform_source=dsa, os=standalone, processor=psu_cortexa53, platform=null}
+timestamp=[2020-06-25 15:07:30], mode=PLATFORM_GENERATION, duration=0:04:20.173, duration_ms=260173, data={name=test_proj_plat}
+timestamp=[2020-06-25 15:07:59], mode=BUILD, duration=0:00:00.338, duration_ms=338, data={name=test_proj_pulse_ctrl, configuration=Debug, clean_build=true}
+timestamp=[2020-06-25 15:08:02], mode=BUILD, duration=0:00:03.421, duration_ms=3421, data={name=test_proj_pulse_ctrl, configuration=Debug, clean_build=false}
+timestamp=[2020-06-25 15:08:18], mode=BUILD, duration=0:00:13.735, duration_ms=13735, data={name=test_proj_pulse_ctrl_system, configuration=Debug, clean_build=false}

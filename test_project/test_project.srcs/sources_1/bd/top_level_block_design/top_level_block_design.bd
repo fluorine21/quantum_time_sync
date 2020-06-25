@@ -25,10 +25,10 @@
       "fifo_generator_0": "",
       "proc_sys_reset_0": "",
       "gpio_to_fifo_0": "",
-      "pulse_gen_0": "",
       "clk_wiz_0": "",
       "axi_gpio_0": "",
-      "system_ila_0": ""
+      "system_ila_0": "",
+      "pulse_gen_0": ""
     },
     "interface_ports": {
       "sysref_in": {
@@ -1303,16 +1303,16 @@
                   "auto_ds/S_AXI"
                 ]
               },
-              "auto_ds_to_auto_pc": {
-                "interface_ports": [
-                  "auto_ds/M_AXI",
-                  "auto_pc/S_AXI"
-                ]
-              },
               "auto_pc_to_s00_couplers": {
                 "interface_ports": [
                   "M_AXI",
                   "auto_pc/M_AXI"
+                ]
+              },
+              "auto_ds_to_auto_pc": {
+                "interface_ports": [
+                  "auto_ds/M_AXI",
+                  "auto_pc/S_AXI"
                 ]
               }
             },
@@ -1443,24 +1443,6 @@
           }
         },
         "interface_nets": {
-          "s00_couplers_to_xbar": {
-            "interface_ports": [
-              "s00_couplers/M_AXI",
-              "xbar/S00_AXI"
-            ]
-          },
-          "xbar_to_m00_couplers": {
-            "interface_ports": [
-              "xbar/M00_AXI",
-              "m00_couplers/S_AXI"
-            ]
-          },
-          "m00_couplers_to_ps8_0_axi_periph": {
-            "interface_ports": [
-              "M00_AXI",
-              "m00_couplers/M_AXI"
-            ]
-          },
           "xbar_to_m01_couplers": {
             "interface_ports": [
               "xbar/M01_AXI",
@@ -1471,6 +1453,24 @@
             "interface_ports": [
               "M01_AXI",
               "m01_couplers/M_AXI"
+            ]
+          },
+          "s00_couplers_to_xbar": {
+            "interface_ports": [
+              "s00_couplers/M_AXI",
+              "xbar/S00_AXI"
+            ]
+          },
+          "m00_couplers_to_ps8_0_axi_periph": {
+            "interface_ports": [
+              "M00_AXI",
+              "m00_couplers/M_AXI"
+            ]
+          },
+          "xbar_to_m00_couplers": {
+            "interface_ports": [
+              "xbar/M00_AXI",
+              "m00_couplers/S_AXI"
             ]
           },
           "ps8_0_axi_periph_to_s00_couplers": {
@@ -1603,6 +1603,54 @@
           }
         }
       },
+      "clk_wiz_0": {
+        "vlnv": "xilinx.com:ip:clk_wiz:6.0",
+        "xci_name": "top_level_block_design_clk_wiz_0_0",
+        "parameters": {
+          "CLK_IN1_BOARD_INTERFACE": {
+            "value": "default_sysclk3_100mhz"
+          },
+          "USE_BOARD_FLOW": {
+            "value": "true"
+          },
+          "USE_LOCKED": {
+            "value": "false"
+          },
+          "USE_RESET": {
+            "value": "false"
+          }
+        }
+      },
+      "axi_gpio_0": {
+        "vlnv": "xilinx.com:ip:axi_gpio:2.0",
+        "xci_name": "top_level_block_design_axi_gpio_0_0",
+        "parameters": {
+          "C_ALL_OUTPUTS": {
+            "value": "1"
+          }
+        }
+      },
+      "system_ila_0": {
+        "vlnv": "xilinx.com:ip:system_ila:1.1",
+        "xci_name": "top_level_block_design_system_ila_0_1",
+        "parameters": {
+          "C_MON_TYPE": {
+            "value": "NATIVE"
+          },
+          "C_NUM_OF_PROBES": {
+            "value": "3"
+          },
+          "C_PROBE0_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE1_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE2_TYPE": {
+            "value": "0"
+          }
+        }
+      },
       "pulse_gen_0": {
         "vlnv": "xilinx.com:module_ref:pulse_gen:1.0",
         "xci_name": "top_level_block_design_pulse_gen_0_0",
@@ -1720,48 +1768,6 @@
             "direction": "O"
           }
         }
-      },
-      "clk_wiz_0": {
-        "vlnv": "xilinx.com:ip:clk_wiz:6.0",
-        "xci_name": "top_level_block_design_clk_wiz_0_0",
-        "parameters": {
-          "CLK_IN1_BOARD_INTERFACE": {
-            "value": "default_sysclk3_100mhz"
-          },
-          "USE_BOARD_FLOW": {
-            "value": "true"
-          },
-          "USE_LOCKED": {
-            "value": "false"
-          },
-          "USE_RESET": {
-            "value": "false"
-          }
-        }
-      },
-      "axi_gpio_0": {
-        "vlnv": "xilinx.com:ip:axi_gpio:2.0",
-        "xci_name": "top_level_block_design_axi_gpio_0_0",
-        "parameters": {
-          "C_ALL_OUTPUTS": {
-            "value": "1"
-          }
-        }
-      },
-      "system_ila_0": {
-        "vlnv": "xilinx.com:ip:system_ila:1.1",
-        "xci_name": "top_level_block_design_system_ila_0_1",
-        "parameters": {
-          "C_MON_TYPE": {
-            "value": "NATIVE"
-          },
-          "C_NUM_OF_PROBES": {
-            "value": "1"
-          },
-          "C_PROBE0_TYPE": {
-            "value": "0"
-          }
-        }
       }
     },
     "interface_nets": {
@@ -1855,14 +1861,32 @@
       "gpio_to_fifo_0_fifo_write": {
         "ports": [
           "gpio_to_fifo_0/fifo_wr_en",
-          "fifo_generator_0/wr_en"
-        ]
+          "fifo_generator_0/wr_en",
+          "system_ila_0/probe2"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
       },
       "gpio_to_fifo_0_dout": {
         "ports": [
           "gpio_to_fifo_0/fifo_dout",
-          "fifo_generator_0/din"
-        ]
+          "fifo_generator_0/din",
+          "system_ila_0/probe1"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
       },
       "fifo_generator_0_full": {
         "ports": [
@@ -1926,6 +1950,12 @@
         "ports": [
           "reset",
           "rst_ps8_0_99M/ext_reset_in"
+        ]
+      },
+      "gpio_to_fifo_0_rst_pl": {
+        "ports": [
+          "gpio_to_fifo_0/rst_pl",
+          "proc_sys_reset_0/aux_reset_in"
         ]
       }
     },

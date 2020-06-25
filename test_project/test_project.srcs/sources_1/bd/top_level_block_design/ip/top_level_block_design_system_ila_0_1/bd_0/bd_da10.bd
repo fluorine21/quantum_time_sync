@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xA168BBF860ECBF1E",
+      "boundary_crc": "0x7A21A5EBD047D296",
       "design_src": "SBD",
       "device": "xczu28dr-ffvg1517-2-e",
       "name": "bd_da10",
@@ -45,6 +45,16 @@
         "direction": "I",
         "left": "31",
         "right": "0"
+      },
+      "probe1": {
+        "direction": "I",
+        "left": "31",
+        "right": "0"
+      },
+      "probe2": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
       }
     },
     "components": {
@@ -80,7 +90,7 @@
             "value": "Native"
           },
           "C_NUM_OF_PROBES": {
-            "value": "1"
+            "value": "3"
           },
           "C_PROBE0_MU_CNT": {
             "value": "1"
@@ -90,6 +100,24 @@
           },
           "C_PROBE0_WIDTH": {
             "value": "32"
+          },
+          "C_PROBE1_MU_CNT": {
+            "value": "1"
+          },
+          "C_PROBE1_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE1_WIDTH": {
+            "value": "32"
+          },
+          "C_PROBE2_MU_CNT": {
+            "value": "1"
+          },
+          "C_PROBE2_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE2_WIDTH": {
+            "value": "1"
           },
           "C_TIME_TAG_WIDTH": {
             "value": "32"
@@ -117,6 +145,18 @@
         "ports": [
           "probe0",
           "ila_lib/probe0"
+        ]
+      },
+      "probe1_1": {
+        "ports": [
+          "probe1",
+          "ila_lib/probe1"
+        ]
+      },
+      "probe2_1": {
+        "ports": [
+          "probe2",
+          "ila_lib/probe2"
         ]
       }
     }

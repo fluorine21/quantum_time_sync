@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-//Date        : Thu Jun 25 13:18:12 2020
+//Date        : Thu Jun 25 14:45:04 2020
 //Host        : pme10D0025 running 64-bit major release  (build 9200)
 //Command     : generate_target top_level_block_design.bd
 //Design      : top_level_block_design
@@ -712,8 +712,9 @@ module top_level_block_design
   wire [31:0]fifo_generator_0_dout;
   wire fifo_generator_0_empty;
   wire fifo_generator_0_full;
-  wire [31:0]gpio_to_fifo_0_dout;
-  wire gpio_to_fifo_0_fifo_write;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire [31:0]gpio_to_fifo_0_dout;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire gpio_to_fifo_0_fifo_write;
+  wire gpio_to_fifo_0_rst_pl;
   wire [0:0]proc_sys_reset_0_peripheral_aresetn;
   wire [39:0]ps8_0_axi_periph_M00_AXI_ARADDR;
   wire ps8_0_axi_periph_M00_AXI_ARREADY;
@@ -851,9 +852,10 @@ module top_level_block_design
         .fifo_dout(gpio_to_fifo_0_dout),
         .fifo_full(fifo_generator_0_full),
         .fifo_wr_en(gpio_to_fifo_0_fifo_write),
-        .rst(rst_ps8_0_99M_peripheral_aresetn));
+        .rst(rst_ps8_0_99M_peripheral_aresetn),
+        .rst_pl(gpio_to_fifo_0_rst_pl));
   top_level_block_design_proc_sys_reset_0_0 proc_sys_reset_0
-       (.aux_reset_in(1'b1),
+       (.aux_reset_in(gpio_to_fifo_0_rst_pl),
         .dcm_locked(1'b1),
         .ext_reset_in(rst_ps8_0_99M_interconnect_aresetn),
         .mb_debug_sys_rst(1'b0),
@@ -959,7 +961,9 @@ module top_level_block_design
         .slowest_sync_clk(zynq_ultra_ps_e_0_pl_clk0));
   top_level_block_design_system_ila_0_1 system_ila_0
        (.clk(zynq_ultra_ps_e_0_pl_clk0),
-        .probe0(axi_gpio_0_gpio_io_o));
+        .probe0(axi_gpio_0_gpio_io_o),
+        .probe1(gpio_to_fifo_0_dout),
+        .probe2(gpio_to_fifo_0_fifo_write));
   top_level_block_design_usp_rf_data_converter_0_0 usp_rf_data_converter_0
        (.clk_dac0(usp_rf_data_converter_0_clk_dac0),
         .dac0_clk_n(dac0_clk_1_CLK_N),
