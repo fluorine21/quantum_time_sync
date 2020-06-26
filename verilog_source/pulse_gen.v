@@ -199,7 +199,7 @@ always @ (posedge clk or negedge rst) begin
 		//Otherwise just increment the clock
 		else begin
 		    //If we're about to hit the clock period
-		    if(main_clock >= clock_period) begin
+		    if(main_clock >= (clock_period - 1)) begin
 			     main_clock <= 0;//Reset the clock
 			end
 			else begin

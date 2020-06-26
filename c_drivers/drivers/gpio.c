@@ -21,13 +21,9 @@ uint8_t gpio_init()
 
 	gpio_state = 0;
 
-	if (XGpio_Initialize(&Gpio, GPIO_EXAMPLE_DEVICE_ID) == XST_SUCCESS)
+	if (XGpio_Initialize(&Gpio, GPIO_EXAMPLE_DEVICE_ID) != XST_SUCCESS)
 	{
-		xil_printf("GPIO init success!\r\n");
-	}
-	else
-	{
-		xil_printf("GPIO init failed!\r\n");
+		return 1;
 	}
 
 	//set channel 1 to be all outputs
@@ -70,7 +66,7 @@ void gpio_reset_pulse_gen()
 
 
 //Sends a command to the pulse generator RTL via FIFO
-void gpio_send_commnd(uint32_t value)
+void gpio_send_command(uint32_t value)
 {
 	//First shift the command into the register
 	for(int i = 0; i < 32; i++)

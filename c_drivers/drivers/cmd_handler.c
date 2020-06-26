@@ -3,6 +3,15 @@
 #include "uart.h"
 #include "gpio.h"
 
+#define DEBUG_PRINT
+
+//localparam [7:0] command_reset_clock = 0,
+///				 command_send_pulse = 1,
+//				 command_set_period = 2,
+//				 command_set_phase_meas_mode = 3,
+//				 command_reset_phase_meas_mode = 4;
+
+
 //Command definitions for this code and the RTL module
 #define CMD_PREAMBLE 0xAA
 #define CMD_RST_CLK 0x00
@@ -10,6 +19,7 @@
 #define CMD_SET_PERIOD 0x02
 #define CMD_PHASE_MEAS_ON 0x03
 #define CMD_PHASE_MEAS_OFF 0x04
+#define CMD_PING_BOARD 0x05
 
 //Handler function states
 #define STATE_WAIT_PREAMBLE 0
@@ -38,19 +48,23 @@ u8 cmd_init()
 
 	if(uart_init_interrupt() != 0)
 	{
-		print("Failed to initialize UART!");
+		print("Failed to initialize UART!\r\n");
 		return 1;
 	}
 	else
 	{
-		print("Successfully initialized UART!");
+		print("Successfully initialized UART!\r\n");
 	}
 
-	print("Finished initializing peripherals");
+	print("Finished initializing peripherals\r\n");
 	//Clear the buffer once
 	uart_clear_buffer();
 
+	return 0;
+
 }
+
+void debug_print(char* str);
 
 //Main command handler function
 void cmd_update_state()
@@ -89,8 +103,10 @@ void cmd_update_state()
 			{
 			case CMD_RST_CLK:
 				//Send the clock reset command
-				gpio_send_commnd( ((u32)CMD_RST_CLK) << 24);
+				gpio_send_command( ((u32)CMD_RST_CLK) << 24);
+				uart_send_byte(0);//Send an ACK
 				cmd_state = STATE_WAIT_PREAMBLE;
+				debug_print("Resetting the clock");
 				break;
 
 				//These two are handled in the same manner
@@ -103,13 +119,27 @@ void cmd_update_state()
 
 			case CMD_PHASE_MEAS_ON:
 				//Send the set phase meas command
-				gpio_send_commnd( ((u32)CMD_PHASE_MEAS_ON) << 24);
+				gpio_send_command( ((u32)CMD_PHASE_MEAS_ON) << 24);
+				uart_send_byte(0);//Send an ACK
 				cmd_state = STATE_WAIT_PREAMBLE;
+
+				debug_print("Turning on phase measurement mode");
+
 				break;
 
 			case CMD_PHASE_MEAS_OFF:
 				//Send the set phase meas command
-				gpio_send_commnd( ((u32)CMD_PHASE_MEAS_OFF) << 24);
+				gpio_send_command( ((u32)CMD_PHASE_MEAS_OFF) << 24);
+				uart_send_byte(0);//Send an ACK
+				cmd_state = STATE_WAIT_PREAMBLE;
+
+				debug_print("Turning off phase measurement mode");
+
+				break;
+
+			case CMD_PING_BOARD:
+				uart_send_byte(0);//Send an ACK
+				debug_print("Responding to ping");
 				cmd_state = STATE_WAIT_PREAMBLE;
 				break;
 			default:
@@ -124,7 +154,7 @@ void cmd_update_state()
 	case STATE_WAIT_PAYLOAD:
 
 		//Check if we have 3 payload bytes yet
-		if(uart_get_buffer_size >= 3)
+		if(uart_get_buffer_size() >= 3)
 		{
 			u32 b0, b1, b2;
 			b0 = uart_get_buffer_byte();
@@ -132,15 +162,26 @@ void cmd_update_state()
 			b2 = uart_get_buffer_byte();
 
 			u32 cmd_f = (((u32)curr_cmd) << 24) | (b0 << 16) | (b1 << 8) | b2;
-			gpio_send_commnd(cmd_f);
+			gpio_send_command(cmd_f);//Send the command to the fifo
+			uart_send_byte(0);//Send an ACK
 			cmd_state = STATE_WAIT_PREAMBLE;
+
+			#ifdef DEBUG_PRINT
+			xil_printf("Executing: 0x%x, with args 0x%x, 0x%x, 0x%x", curr_cmd, b0, b1, b2);
+			#endif
 
 		}
 		break;
 	}
 }
 
-
+void debug_print(char* str)
+{
+#ifdef DEBUG_PRINT
+	print(str);
+	print("\r\n");
+#endif
+}
 
 
 

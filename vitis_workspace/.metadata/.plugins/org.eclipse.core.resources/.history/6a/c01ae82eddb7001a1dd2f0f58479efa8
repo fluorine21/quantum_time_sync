@@ -1,0 +1,14 @@
+
+#ifndef _CMD_HANDLER_H_
+#define _CMD_HANDLER_H_
+
+//localparam [7:0] command_reset_clock = 0,
+///				 command_send_pulse = 1,
+//				 command_set_period = 2,
+//				 command_set_phase_meas_mode = 3,
+//				 command_reset_phase_meas_mode = 4;
+
+u8 cmd_init();
+
+
+#endif

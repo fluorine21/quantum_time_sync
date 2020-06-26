@@ -1,34 +1,3 @@
-/******************************************************************************
-*
-* Copyright (C) 2009 - 2014 Xilinx, Inc.  All rights reserved.
-*
-* Permission is hereby granted, free of charge, to any person obtaining a copy
-* of this software and associated documentation files (the "Software"), to deal
-* in the Software without restriction, including without limitation the rights
-* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-* copies of the Software, and to permit persons to whom the Software is
-* furnished to do so, subject to the following conditions:
-*
-* The above copyright notice and this permission notice shall be included in
-* all copies or substantial portions of the Software.
-*
-* Use of the Software is limited solely to applications:
-* (a) running on a Xilinx device, or
-* (b) that interact with a Xilinx device through a bus or interconnect.
-*
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
-* XILINX  BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-* WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF
-* OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-* SOFTWARE.
-*
-* Except as contained in this notice, the name of the Xilinx shall not be used
-* in advertising or otherwise to promote the sale, use or other dealings in
-* this Software without prior written authorization from Xilinx.
-*
-******************************************************************************/
 
 /*
  * helloworld.c: simple test application
@@ -49,57 +18,33 @@
 #include "platform.h"
 #include "xil_printf.h"
 
-#include "../drivers/uart.h"
-#include "../drivers/gpio.h"
+#include "../drivers/cmd_handler.h"
+
 
 
 int main()
 {
 
-	int r_cnt = 0;
     init_platform();
 
-    print("Hello World\n\r");
+    print("Initializing board...\n\r");
 
-    if(gpio_init())
+    if(cmd_init())
     {
-    	print("Failed to initialize GPIO!");
+    	print("Failed to initialize board!\r\n");
     }
     else
     {
-    	print("Successfully initialized GPIO!\r\n");
-    	//gpio_set_pin(1, 1);
+    	print("Successfully initialized board!\r\n");
     }
 
-    if(uart_init_interrupt() != 0)
+    print("Waiting for command...\r\n");
+
+    while(1)
     {
-    	print("Failed to initialize UART!");
+    	cmd_update_state();
     }
-    else
-    {
-    	print("Successfully initialized UART!\r\n");
 
-    	int j = 0;
-    	while(1)
-    	{
-    		gpio_set_pin(j, 1);
-    		//uart_clear_buffer();
-    		//xil_printf("Run: %i", r_cnt);
-    		//print("Waiting to receive 3 bytes...\r\n");
-
-    		//while(uart_get_buffer_size() < 3);
-    		//r_cnt++;
-    		//xil_printf("Got bytes %c, %c, %c\r\n", uart_get_buffer_byte(), uart_get_buffer_byte(),uart_get_buffer_byte());
-    		gpio_set_pin(j, 0);
-    		j++;
-    		if(j > 31)
-    		{
-    			j = 0;
-    		}
-
-    	}
-
-    }
 
     cleanup_platform();
     return 0;

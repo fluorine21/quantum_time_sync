@@ -1,23 +1,5 @@
-15:07:58 **** Clean-only build of configuration Debug for project test_proj_pulse_ctrl ****
-make clean 
-rm -rf  ./src/helloworld.o ./src/platform.o  ./drivers/gpio.o ./drivers/test_main.o ./drivers/uart.o  ./src/helloworld.d ./src/platform.d  ./drivers/gpio.d ./drivers/test_main.d ./drivers/uart.d  test_proj_pulse_ctrl.elf.size  test_proj_pulse_ctrl.elf
-' '
-15:07:59 **** Incremental Build of configuration Debug for project test_proj_pulse_ctrl ****
+14:09:33 **** Incremental Build of configuration Debug for project test_proj_pulse_ctrl ****
 make all 
-'Building file: ../src/helloworld.c'
-'Invoking: ARM v8 gcc compiler'
-aarch64-none-elf-gcc -Wall -O0 -g3 -I"C:\James\c_drivers\drivers" -I"C:\James\vitis_workspace\test_proj_pulse_ctrl\src" -c -fmessage-length=0 -MT"src/helloworld.o" -D __BAREMETAL__ -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
-../src/helloworld.c: In function 'main':
-../src/helloworld.c:59:6: warning: unused variable 'r_cnt' [-Wunused-variable]
-   59 |  int r_cnt = 0;
-      |      ^~~~~
-'Finished building: ../src/helloworld.c'
-' '
-'Building file: ../src/platform.c'
-'Invoking: ARM v8 gcc compiler'
-aarch64-none-elf-gcc -Wall -O0 -g3 -I"C:\James\c_drivers\drivers" -I"C:\James\vitis_workspace\test_proj_pulse_ctrl\src" -c -fmessage-length=0 -MT"src/platform.o" -D __BAREMETAL__ -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
-'Finished building: ../src/platform.c'
-' '
 'Building file: C:/James/c_drivers/drivers/cmd_handler.c'
 'Invoking: ARM v8 gcc compiler'
 aarch64-none-elf-gcc -Wall -O0 -g3 -I"C:\James\c_drivers\drivers" -I"C:\James\vitis_workspace\test_proj_pulse_ctrl\src" -c -fmessage-length=0 -MT"drivers/cmd_handler.o" -D __BAREMETAL__ -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"drivers/cmd_handler.d" -MT"drivers/cmd_handler.o" -o "drivers/cmd_handler.o" "C:/James/c_drivers/drivers/cmd_handler.c"
@@ -28,11 +10,6 @@ aarch64-none-elf-gcc -Wall -O0 -g3 -I"C:\James\c_drivers\drivers" -I"C:\James\vi
 aarch64-none-elf-gcc -Wall -O0 -g3 -I"C:\James\c_drivers\drivers" -I"C:\James\vitis_workspace\test_proj_pulse_ctrl\src" -c -fmessage-length=0 -MT"drivers/gpio.o" -D __BAREMETAL__ -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"drivers/gpio.d" -MT"drivers/gpio.o" -o "drivers/gpio.o" "C:/James/c_drivers/drivers/gpio.c"
 'Finished building: C:/James/c_drivers/drivers/gpio.c'
 ' '
-'Building file: C:/James/c_drivers/drivers/uart.c'
-'Invoking: ARM v8 gcc compiler'
-aarch64-none-elf-gcc -Wall -O0 -g3 -I"C:\James\c_drivers\drivers" -I"C:\James\vitis_workspace\test_proj_pulse_ctrl\src" -c -fmessage-length=0 -MT"drivers/uart.o" -D __BAREMETAL__ -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"drivers/uart.d" -MT"drivers/uart.o" -o "drivers/uart.o" "C:/James/c_drivers/drivers/uart.c"
-'Finished building: C:/James/c_drivers/drivers/uart.c'
-' '
 'Building target: test_proj_pulse_ctrl.elf'
 'Invoking: ARM v8 gcc linker'
 aarch64-none-elf-gcc -L"C:\James\c_drivers\drivers" -Wl,-T -Wl,../src/lscript.ld -LC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bsplib/lib -o "test_proj_pulse_ctrl.elf"  ./src/helloworld.o ./src/platform.o  ./drivers/cmd_handler.o ./drivers/gpio.o ./drivers/uart.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-lgcc,-lc,-lmetal,--end-group
@@ -41,10 +18,10 @@ aarch64-none-elf-gcc -L"C:\James\c_drivers\drivers" -Wl,-T -Wl,../src/lscript.ld
 'Invoking: ARM v8 Print Size'
 aarch64-none-elf-size test_proj_pulse_ctrl.elf  |tee "test_proj_pulse_ctrl.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  43612	   5264	  21900	  70776	  11478	test_proj_pulse_ctrl.elf
+  44756	   5264	  21900	  71920	  118f0	test_proj_pulse_ctrl.elf
 'Finished building: test_proj_pulse_ctrl.elf.size'
 ' '
-15:08:04 **** Incremental Build of configuration Debug for project test_proj_pulse_ctrl_system ****
+14:09:35 **** Incremental Build of configuration Debug for project test_proj_pulse_ctrl_system ****
 make all 
 Generating bif file for the system project
 generate_system_bif.bat 61579 C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm standalone_domain C:/James/vitis_workspace/test_proj_pulse_ctrl_system/Debug/system.bif
