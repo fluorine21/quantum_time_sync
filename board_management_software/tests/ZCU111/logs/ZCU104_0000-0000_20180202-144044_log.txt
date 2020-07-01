@@ -1,0 +1,201 @@
+Board: ZCU104
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: Ethernet, SD, USB, SATA Test test started...
+
+Info: The test will take 0 hours, 05 minutes, and 47 seconds. 0:05:47
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-02 14:40:48
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-02 14:40:48
+
+User has confirmed: "Insert SD card with contents of SATA_SD folder.
+Connect USB3 thumbdrive and SATA drive. Cycle ZCU102 Board Power and then click OK"
+
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-02 14:44:57
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+attempting to launch hw_server
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:08:27
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+INFO: hw_server application started
+INFO: Use Ctrl-C to exit hw_server application
+
+
+
+****** Xilinx hw_server v2017.4
+
+  **** Build date : Dec 15 2017-21:08:27
+
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+
+INFO: hw_server application started
+
+INFO: Use Ctrl-C to exit hw_server application
+
+
+
+
+INFO: To connect to this hw_server instance use url: TCP:127.0.0.1:3121
+
+
+
+tcfchan#0
+targets -set -filter {name =~ "PSU" || name =~ "PS8"}
+
+mwr 0xffca0038 0x1FF
+
+targets -set -filter {name =~ "MicroBlaze PMU"}
+
+dow -force C:/zcu104_bit/tests/ZCU104/tcl/video_image/pmufw.elf
+Downloading Program -- C:/zcu104_bit/tests/ZCU104/tcl/video_image/pmufw.elf
+	section, .vectors.reset: 0xffdc0000 - 0xffdc0007
+	section, .vectors.sw_exception: 0xffdc0008 - 0xffdc000f
+	section, .vectors.interrupt: 0xffdc0010 - 0xffdc0017
+	section, .vectors.hw_exception: 0xffdc0020 - 0xffdc0027
+	section, .text: 0xffdc0050 - 0xffdcc6f3
+	section, .rodata: 0xffdcc6f4 - 0xffdcd6d7
+	section, .data: 0xffdcd6d8 - 0xffdd112b
+	section, .sdata2: 0xffdd112c - 0xffdd112f
+	section, .sdata: 0xffdd1130 - 0xffdd112f
+	section, .sbss: 0xffdd1130 - 0xffdd112f
+	section, .bss: 0xffdd1130 - 0xffdd327b
+	section, .stack: 0xffdd327c - 0xffdd427f
+	section, .xpbr_serv_ext_tbl: 0xffddf6e0 - 0xffddfadf
+  0%    0MB   0.0MB/s  ??:?? ETA 69%    0MB   0.1MB/s  ??:?? ETA100%    0MB   0.1MB/s  00:00    
+Setting PC to Program Start Address 0xffdc79ac
+Successfully downloaded C:/zcu104_bit/tests/ZCU104/tcl/video_image/pmufw.elf
+
+con
+
+after 2000
+
+Load FSBL
+targets -set -filter {name =~ "PSU" || name =~ "PS8"}
+
+mwr 0xffff0000 0x14000000
+
+mwr 0xFD1A0104 0x380E
+
+targets -set -filter {name =~ "Cortex-A53 #0"}
+
+stop
+
+dow -force C:/zcu104_bit/tests/ZCU104/tcl/video_image/zynqmp_fsbl.elf
+Downloading Program -- C:/zcu104_bit/tests/ZCU104/tcl/video_image/zynqmp_fsbl.elf
+	section, .text: 0xfffc0000 - 0xfffcef37
+	section, .init: 0xfffcef40 - 0xfffcef73
+	section, .fini: 0xfffcef80 - 0xfffcefb3
+	section, .note.gnu.build-id: 0xfffcefb4 - 0xfffcefd7
+	section, .rodata: 0xfffcf000 - 0xfffcf437
+	section, .sys_cfg_data: 0xfffcf440 - 0xfffcfbef
+	section, .eh_frame: 0xfffcfbf0 - 0xfffcfbf3
+	section, .mmu_tbl0: 0xfffd0000 - 0xfffd000f
+	section, .mmu_tbl1: 0xfffd1000 - 0xfffd2fff
+	section, .mmu_tbl2: 0xfffd3000 - 0xfffd6fff
+	section, .data: 0xfffd7000 - 0xfffd82ff
+	section, .init_array: 0xfffd8300 - 0xfffd8307
+	section, .fini_array: 0xfffd8340 - 0xfffd8347
+	section, .sbss: 0xfffd8348 - 0xfffd837f
+	section, .bss: 0xfffd8380 - 0xfffd9ebf
+	section, .heap: 0xfffd9ec0 - 0xfffda2bf
+	section, .stack: 0xfffda2c0 - 0xfffdc2bf
+	section, .dup_data: 0xfffdc2c0 - 0xfffdd5bf
+	section, .handoff_params: 0xfffe9e00 - 0xfffe9e87
+	section, .bitstream_buffer: 0xffff0040 - 0xfffffc3f
+  0%    0MB   0.0MB/s  ??:?? ETA 99%    0MB   0.2MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0xfffc0000
+Successfully downloaded C:/zcu104_bit/tests/ZCU104/tcl/video_image/zynqmp_fsbl.elf
+
+con
+
+after 2000
+Xilinx Zynq MP First Stage Boot Loader 
+Release 2017.1   Apr 17 2017  -  15:02:34
+
+stop
+
+after 2000
+
+targets -set -filter {name =~"*APU*"}
+
+source C:/zcu104_bit/tests/ZCU104/tcl/video_image/psu_init.tcl
+
+after 2000
+
+psu_ps_pl_isolation_removal
+
+after 2000
+
+psu_ps_pl_reset_config
+
+fpga -file C:/zcu104_bit/tests/ZCU104/tcl/video_image/design_1_wrapper.bit
+
+step finished 
+
+Error: Could not find regular expression in step 2 of test 17 - "(.*)jtag_boot_video.tcl\s+finished"
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-02 14:45:24
+step finished 
+
+Error: Could not find regular expression in step 3 of test 17 - "(.*)thirty_second_delay.tcl\s+finished"
+
+Entering step: 4
+
+
+Info: This step started at: 2018-02-02 14:45:25
+
+Stopping all tests...
+
+step finished 
+the expression:(.*)reboot:\s+Power\s+down
+
+Error: Could not find regular expression in step 0 of test 17 - "(.*)new\s+SuperSpeed\s+USB\s+device"
+
+Error: Could not find regular expression in step 0 of test 17 - "(.*)SATA\s+link\s+up\s+6.0\s+Gbps"
+
+Error: Could not find regular expression in step 0 of test 17 - "(.*)ethernet\s+eth0:\s+link\s+up\s+\(1000/Full\)"
+
+Error: Could not find regular expression in step 0 of test 17 - "(.*)USB\s+Read/Write Test\s+\-\s+PASSED"
+
+Error: Could not find regular expression in step 0 of test 17 - "(.*)SATA\s+Disk\s+Read/Write\s+Test\s+\-\s+PASSED"
+
+Error: Could not find regular expression in step 0 of test 17 - "(.*)/run/media/mmcblk0p1"
+
+Error: Could not find regular expression in step 0 of test 17 - "(.*)/run/media/sda1"
+
+Error: Could not find regular expression in step 0 of test 17 - "(.*)/run/media/sdb1"
+
+Error: Could not find regular expression in step 0 of test 17 - "(.*)Disk\s+Read/Write\s+Test\s+Start"
+
+Error: Could not find regular expression in step 0 of test 17 - "(.*)reboot:\s+Power\s+down"
+
+Info: Result for step 0: Fail
+Info: Result for step 1: Pass
+Info: Result for step 2: Fail
+Info: Result for step 3: Fail
+Info: The test took 0 hours, 01 minutes, and 29 seconds. 0:01:29

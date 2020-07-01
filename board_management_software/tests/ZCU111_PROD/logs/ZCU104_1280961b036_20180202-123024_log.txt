@@ -1,0 +1,3688 @@
+Board: ZCU104
+Serial Number: 1280961b036
+Mac Address: 01:02:03:04:05:06
+
+
+Info: WRITE EEPROM test started...
+
+Info: The test will take 0 hours, 01 minutes, and 52 seconds. 0:01:52
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-02 12:30:27
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-02 12:30:27
+
+C:\zcu104_bit\tests\ZCU104>cd bat\ 
+
+C:\zcu104_bit\tests\ZCU104\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-02 12:30:31
+
+catch { disconnect }
+
+
+connect -url tcp:127.0.0.1:3121
+attempting to launch hw_server
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:08:27
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+INFO: hw_server application started
+INFO: Use Ctrl-C to exit hw_server application
+
+
+
+****** Xilinx hw_server v2017.4
+
+  **** Build date : Dec 15 2017-21:08:27
+
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+
+INFO: hw_server application started
+
+INFO: Use Ctrl-C to exit hw_server application
+
+
+
+
+INFO: To connect to this hw_server instance use url: TCP:127.0.0.1:3121
+
+
+
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+fpga -state
+FPGA is not configured
+after 2000
+
+fpga -file {C:/zcu104_bit/tests/ZCU104/../bitstream/sc.bit}
+initializing  0%    0MB   0.0MB/s  ??:?? ETA  3%    0MB   0.4MB/s  ??:?? ETA  7%    1MB   0.7MB/s  ??:?? ETA 12%    2MB   0.9MB/s  ??:?? ETA 16%    3MB   1.0MB/s  ??:?? ETA 21%    3MB   1.1MB/s  00:12 ETA 25%    4MB   0.9MB/s  00:14 ETA 30%    5MB   1.0MB/s  00:12 ETA 35%    6MB   1.0MB/s  00:11 ETA 39%    7MB   1.1MB/s  00:10 ETA 44%    8MB   1.1MB/s  00:09 ETA 48%    8MB   1.2MB/s  00:08 ETA 48%    8MB   1.0MB/s  00:09 ETA 52%    9MB   1.0MB/s  00:08 ETA 57%   10MB   1.1MB/s  00:07 ETA 62%   11MB   1.1MB/s  00:06 ETA 66%   12MB   1.1MB/s  00:05 ETA 71%   13MB   1.1MB/s  00:04 ETA 75%   13MB   1.2MB/s  00:03 ETA 80%   14MB   1.2MB/s  00:03 ETA 85%   15MB   1.2MB/s  00:02 ETA 89%   16MB   1.2MB/s  00:01 ETA 94%   17MB   1.2MB/s  00:00 ETA 98%   18MB   1.3MB/s  00:00 ETA100%   18MB   1.3MB/s  00:14    
+
+after 2000
+
+fpga -state
+FPGA is configured
+after 2000
+
+fpga -ir-status
+IR STATUS: 117
+     Always One (Bits [0]): 1
+    Always Zero (Bits [1]): 0
+       ISC_Done (Bits [2]): 1
+    ISC_Enabled (Bits [3]): 0
+  Init Complete (Bits [4]): 1
+           DONE (Bits [5]): 1
+             (Bits [11:6]): 1
+after 2000
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/zcu104_bit/tests/ZCU104/../tcl/sc_psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/zcu104_bit/tests/ZCU104/../elf/SC.elf}
+Downloading Program -- C:/zcu104_bit/tests/ZCU104/elf/SC.elf
+	section, .text: 0x00000000 - 0x0000556b
+	section, .init: 0x00005580 - 0x000055b3
+	section, .fini: 0x000055c0 - 0x000055f3
+	section, .note.gnu.build-id: 0x000055f4 - 0x00005617
+	section, .rodata: 0x00005618 - 0x00005927
+	section, .rodata1: 0x00005928 - 0x0000593f
+	section, .sdata2: 0x00005940 - 0x0000593f
+	section, .sbss2: 0x00005940 - 0x0000593f
+	section, .data: 0x00005940 - 0x00006a67
+	section, .data1: 0x00006a68 - 0x00006a7f
+	section, .ctors: 0x00006a80 - 0x00006a7f
+	section, .dtors: 0x00006a80 - 0x00006a7f
+	section, .eh_frame: 0x00006a80 - 0x00006a83
+	section, .mmu_tbl0: 0x00007000 - 0x0000700f
+	section, .mmu_tbl1: 0x00008000 - 0x00009fff
+	section, .mmu_tbl2: 0x0000a000 - 0x0000dfff
+	section, .preinit_array: 0x0000e000 - 0x0000dfff
+	section, .init_array: 0x0000e000 - 0x0000e007
+	section, .fini_array: 0x0000e008 - 0x0000e047
+	section, .sdata: 0x0000e048 - 0x0000e07f
+	section, .sbss: 0x0000e080 - 0x0000e07f
+	section, .tdata: 0x0000e080 - 0x0000e07f
+	section, .tbss: 0x0000e080 - 0x0000e07f
+	section, .bss: 0x0000e080 - 0x0000e17f
+	section, .heap: 0x0000e180 - 0x0001017f
+	section, .stack: 0x00010180 - 0x0001317f
+  0%    0MB   0.0MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu104_bit/tests/ZCU104/elf/SC.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 2000
+
+Starting System Controller...
+
+System Controller Initialization Finished...
+
+disconnect
+
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-02 12:31:10
+Writing: '\x1b'
+Writing: '\x08'
+[(u'<setmux:0:74:01>', u'', u'', u''), (u'<writeeeprom:0:54:20:FFFFFFFFFFFF>', u'', u'', u''), (u'<writeeeprom:0:54:20:010203040506>', u'', u'', u''), (u'<setmux:0:74:00>', u'', u'', u'')]:RWriting: '\t'
+:RWriting: 'IW0\r74\r01\r\t'
+IW07401:PWriting: 'IW0\r54\r20FFFFFFFFFFFF\r\t'
+IW05420FFFFFFFFFFFF:PWriting: 'IW0\r54\r20010203040506\r\t'
+IW05420010203040506:PWriting: 'IW0\r74\r00\r\t'
+IW07400:P'\r\nStarting System Controller...\r\n\r\nSystem Controller Initialization Finished...\r\n\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\r20FFFFFFFFFFFF\r:P\rIW0\r54\r20010203040506\r:P\rIW0\r74\r00\r:P\r'
+Entering step: 4
+
+
+Info: This step started at: 2018-02-02 12:31:23
+Writing: '\x1b'
+Writing: '\x08'
+[('<setmux:0:74:01>', '', '', ''), ('<writeeeprom:0:54:00:FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF>', '', '', ''), ('<writeeeprom:0:54:00:3132383039363162303336>', '', '', ''), ('<setmux:0:74:00>', '', '', '')]:RWriting: '\t'
+:RWriting: 'IW0\r74\r01\r\t'
+IW07401:PWriting: 'IW0\r54\r00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r\tIW0\r54\r10FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r\t'
+IW05400FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF:PIW05410FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF:PWriting: 'IW0\r54\r003132383039363162303336\r\t'
+IW054003132383039363162303336:PWriting: 'IW0\r74\r00\r\t'
+'\r\nStarting System Controller...\r\n\r\nSystem Controller Initialization Finished...\r\n\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\r20FFFFFFFFFFFF\r:P\rIW0\r54\r20010203040506\r:P\rIW0\r74\r00\r:P\r\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\r00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r:P\rIW0\r54\r10FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r:P\rIW0\r54\r003132383039363162303336\r:P\r'IW07400:P
+Entering step: 5
+
+
+Info: This step started at: 2018-02-02 12:31:37
+Writing: '\x1b'
+Writing: '\x08'
+[('<setmux:0:74:01>', '', '', ''), ('<writeeeprom:0:54:E0:FFFFFFFFFFFF>', '', '', ''), ('<writeeeprom:0:54:E0:432020>', '', '', ''), ('<setmux:0:74:00>', '', '', '')]:RWriting: '\t'
+:RWriting: 'IW0\r74\r01\r\t'
+IW07401:PWriting: 'IW0\r54\re0FFFFFFFFFFFF\r\t'
+IW054e0FFFFFFFFFFFF:PWriting: 'IW0\r54\re0432020\r\t'
+IW054e0432020:PWriting: 'IW0\r74\r00\r\t'
+IW07400:P'\r\nStarting System Controller...\r\n\r\nSystem Controller Initialization Finished...\r\n\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\r20FFFFFFFFFFFF\r:P\rIW0\r54\r20010203040506\r:P\rIW0\r74\r00\r:P\r\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\r00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r:P\rIW0\r54\r10FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r:P\rIW0\r54\r003132383039363162303336\r:P\rIW0\r74\r00\r:P\r\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\re0FFFFFFFFFFFF\r:P\rIW0\r54\re0432020\r:P\rIW0\r74\r00\r:P\r'
+Entering step: 6
+
+
+Info: This step started at: 2018-02-02 12:31:50
+Writing: '\x1b'
+Writing: '\x08'
+[('<setmux:0:74:01>', '', '', ''), ('<writeeeprom:0:54:D0:FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF>', '', '', ''), ('<writeeeprom:0:54:D0:5a43553130342020202020>', '', '', ''), ('<setmux:0:74:00>', '', '', '')]:RWriting: '\t'
+:RWriting: 'IW0\r74\r01\r\t'
+IW07401:PWriting: 'IW0\r54\rd0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r\t'
+IW054d0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF:PWriting: 'IW0\r54\rd05a43553130342020202020\r\t'
+IW054d05a43553130342020202020:PWriting: 'IW0\r74\r00\r\t'
+'\r\nStarting System Controller...\r\n\r\nSystem Controller Initialization Finished...\r\n\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\r20FFFFFFFFFFFF\r:P\rIW0\r54\r20010203040506\r:P\rIW0\r74\r00\r:P\r\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\r00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r:P\rIW0\r54\r10FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r:P\rIW0\r54\r003132383039363162303336\r:P\rIW0\r74\r00\r:P\r\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\re0FFFFFFFFFFFF\r:P\rIW0\r54\re0432020\r:P\rIW0\r74\r00\r:P\r\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\rd0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r:P\rIW0\r54\rd05a43553130342020202020\r:P\r'IW07400:P
+Entering step: 7
+
+
+Info: This step started at: 2018-02-02 12:32:04
+Writing: '\x1b'
+Writing: '\x08'
+[('<setmux:0:74:01>', '', '', ''), ('<readeeprom:0:54:D0:10>', '', '', ''), ('<wait:0.3>', '', '', ''), ('<interpeeprom>', '', '', ''), ('<setmux:0:74:00>', '', '', '')]:RWriting: '\t'
+:RWriting: 'IW0\r74\r01\r\t'
+IW07401:PWriting: 'IW0\r54\rd0\r\tIR0\r54\r10\r\t'
+IW054d0:PIR05410:P5A43553130342020202020FFFFFFFFFFWriting: 'IW0\r74\r00\r\t'
+IW07400:Pu'\r\nStarting System Controller...\r\n\r\nSystem Controller Initialization Finished...\r\n\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\r20FFFFFFFFFFFF\r:P\rIW0\r54\r20010203040506\r:P\rIW0\r74\r00\r:P\r\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\r00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r:P\rIW0\r54\r10FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r:P\rIW0\r54\r003132383039363162303336\r:P\rIW0\r74\r00\r:P\r\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\re0FFFFFFFFFFFF\r:P\rIW0\r54\re0432020\r:P\rIW0\r74\r00\r:P\r\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\rd0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r:P\rIW0\r54\rd05a43553130342020202020\r:P\rIW0\r74\r00\r:P\r\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\rd0\r:P\rIR0\r54\r10\r:P\r5A43553130342020202020FFFFFFFFFF\rINTERP[ZCU104     ]IW0\r74\r00\r:P\r'
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+Info: Result for step 4: Pass
+Info: Result for step 5: Pass
+Info: Result for step 6: Pass
+Info: Result for step 7: Pass
+
+Info: The test took 0 hours, 01 minutes, and 53 seconds. 0:01:53
+
+Info: Run All button pressed, running through all of the checked tests 1 time.
+
+Info: The runall will take 0 hours, 22 minutes, and 56 seconds. 0:22:56
+
+Info: ZCU104 IDCODE Check test started...
+
+Info: The test will take 0 hours, 00 minutes, and 52 seconds. 0:00:52
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-02 12:36:44
+
+User has confirmed: "Set mode switch SW6 to "0000" (Up,Up,Up,Up)"
+
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-02 12:36:48
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Fri Feb  2 12:37:11 2018...
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-02 12:37:11
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_rev_b_idcode_check.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:08:27
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:14 . Memory (MB): peak = 305.855 ; gain = 2.410
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 MIG core(s).
+# set IDCODE [get_property IDCODE_HEX [lindex [get_hw_device] 0]]
+# puts $IDCODE
+14730093
+# if { $IDCODE == "14730093"} {
+#    puts "IDCODE check PASSED"
+# } else {
+#    puts "IDCODE check FAILED" 
+# }
+IDCODE check PASSED
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Fri Feb  2 12:37:53 2018...
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+
+Info: The test took 0 hours, 01 minutes, and 05 seconds. 0:01:05
+
+Info: XM107 CARD TEST test started...
+
+Info: The test will take 0 hours, 00 minutes, and 55 seconds. 0:00:55
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-02 12:37:54
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-02 12:37:54
+
+C:\zcu104_bit\tests\ZCU104>cd bat\ 
+
+C:\zcu104_bit\tests\ZCU104\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-02 12:37:58
+
+catch { disconnect }
+
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+fpga -state
+FPGA is not configured
+after 2000
+
+fpga -file {C:/zcu104_bit/tests/ZCU104/../bitstream/sc.bit}
+initializing  0%    0MB   0.0MB/s  ??:?? ETA  5%    1MB   2.2MB/s  ??:?? ETA 10%    1MB   1.8MB/s  ??:?? ETA 14%    2MB   1.8MB/s  ??:?? ETA 19%    3MB   1.8MB/s  ??:?? ETA 23%    4MB   1.7MB/s  ??:?? ETA 28%    5MB   1.7MB/s  00:07 ETA 33%    6MB   1.7MB/s  00:07 ETA 37%    6MB   1.7MB/s  00:06 ETA 42%    7MB   1.7MB/s  00:06 ETA 46%    8MB   1.7MB/s  00:05 ETA 51%    9MB   1.7MB/s  00:05 ETA 56%   10MB   1.7MB/s  00:04 ETA 60%   11MB   1.7MB/s  00:04 ETA 65%   12MB   1.7MB/s  00:03 ETA 69%   12MB   1.7MB/s  00:03 ETA 74%   13MB   1.7MB/s  00:02 ETA 79%   14MB   1.7MB/s  00:02 ETA 83%   15MB   1.7MB/s  00:01 ETA 87%   16MB   1.7MB/s  00:01 ETA 92%   17MB   1.7MB/s  00:00 ETA 97%   17MB   1.7MB/s  00:00 ETA100%   18MB   1.7MB/s  00:10    
+
+after 2000
+
+fpga -state
+FPGA is configured
+after 2000
+
+fpga -ir-status
+IR STATUS: 117
+     Always One (Bits [0]): 1
+    Always Zero (Bits [1]): 0
+       ISC_Done (Bits [2]): 1
+    ISC_Enabled (Bits [3]): 0
+  Init Complete (Bits [4]): 1
+           DONE (Bits [5]): 1
+             (Bits [11:6]): 1
+after 2000
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/zcu104_bit/tests/ZCU104/../tcl/sc_psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/zcu104_bit/tests/ZCU104/../elf/SC.elf}
+Downloading Program -- C:/zcu104_bit/tests/ZCU104/elf/SC.elf
+	section, .text: 0x00000000 - 0x0000556b
+	section, .init: 0x00005580 - 0x000055b3
+	section, .fini: 0x000055c0 - 0x000055f3
+	section, .note.gnu.build-id: 0x000055f4 - 0x00005617
+	section, .rodata: 0x00005618 - 0x00005927
+	section, .rodata1: 0x00005928 - 0x0000593f
+	section, .sdata2: 0x00005940 - 0x0000593f
+	section, .sbss2: 0x00005940 - 0x0000593f
+	section, .data: 0x00005940 - 0x00006a67
+	section, .data1: 0x00006a68 - 0x00006a7f
+	section, .ctors: 0x00006a80 - 0x00006a7f
+	section, .dtors: 0x00006a80 - 0x00006a7f
+	section, .eh_frame: 0x00006a80 - 0x00006a83
+	section, .mmu_tbl0: 0x00007000 - 0x0000700f
+	section, .mmu_tbl1: 0x00008000 - 0x00009fff
+	section, .mmu_tbl2: 0x0000a000 - 0x0000dfff
+	section, .preinit_array: 0x0000e000 - 0x0000dfff
+	section, .init_array: 0x0000e000 - 0x0000e007
+	section, .fini_array: 0x0000e008 - 0x0000e047
+	section, .sdata: 0x0000e048 - 0x0000e07f
+	section, .sbss: 0x0000e080 - 0x0000e07f
+	section, .tdata: 0x0000e080 - 0x0000e07f
+	section, .tbss: 0x0000e080 - 0x0000e07f
+	section, .bss: 0x0000e080 - 0x0000e17f
+	section, .heap: 0x0000e180 - 0x0001017f
+	section, .stack: 0x00010180 - 0x0001317f
+  0%    0MB   0.0MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu104_bit/tests/ZCU104/elf/SC.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 2000
+
+Starting System Controller...
+
+System Controller Initialization Finished...
+
+disconnect
+
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-02 12:38:29
+Writing: '\x1b'
+Writing: '\x08'
+[('<setmux:0:74:20>', '', '', ''), ('<readeeprom:0:50:00:FF>', '', '', ''), ('<wait:0.3>', '', '', ''), ('<interpeeprom>', '', '', ''), ('<setmux:0:74:00>', '', '', '')]:RWriting: '\t'
+:RWriting: 'IW0\r74\r20\r\t'
+IW07420:PWriting: 'IW0\r50\r00\r\tIR0\r50\rFF\r\t'
+IW05000:PIR050FF:P01000001000800F601071980E17FCA5768697A7A2020496E63C5584D313037C83134313932333900CE57485A20584D3130372020202020C0C55265762031C100FA020B7089A21200001C742C0000A08002020D30BF00FA006E005E0132000000D00702020D10DF014A013B015E0132000000D00702020DD91602B0047404EC0432000000D00701020D826E03FA006E005E01320000007E0401020DFCF40400000000000000000000000001820DFB750500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Writing: 'IW0\r74\r00\r\t'
+IW07400:Pu'\r\nStarting System Controller...\r\n\r\nSystem Controller Initialization Finished...\r\n\x1b:R\r:R\rIW0\r74\r20\r:P\rIW0\r50\r00\r:P\rIR0\r50\rFF\r:P\r01000001000800F601071980E17FCA5768697A7A2020496E63C5584D313037C83134313932333900CE57485A20584D3130372020202020C0C55265762031C100FA020B7089A21200001C742C0000A08002020D30BF00FA006E005E0132000000D00702020D10DF014A013B015E0132000000D00702020DD91602B0047404EC0432000000D00701020D826E03FA006E005E01320000007E0401020DFCF40400000000000000000000000001820DFB750500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\rINTERP[\x01\x00\x00\x01\x00\x08\x00\x01\x07\x19\x7fWhizz  IncXM1071419239\x00WHZ XM107     Rev 1\x00\x02\x0bp\x12\x00\x00\x1ct,\x00\x00\x02\x02\r0\x00\x00n\x00^\x012\x00\x00\x00\x07\x02\x02\r\x10\x01J\x01;\x01^\x012\x00\x00\x00\x07\x02\x02\r\x16\x02\x04t\x04\x042\x00\x00\x00\x07\x01\x02\rn\x03\x00n\x00^\x012\x00\x00\x00~\x04\x01\x02\r\x04\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\ru\x05\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00]IW0\r74\r00\r:P\r'
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+
+Info: The test took 0 hours, 00 minutes, and 49 seconds. 0:00:49
+
+Info: ZCU104 EFUSE test started...
+
+Info: The test will take 0 hours, 01 minutes, and 11 seconds. 0:01:11
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-02 12:38:43
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Fri Feb  2 12:39:07 2018...
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-02 12:39:07
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\vivado_read_fpga_efuse_status.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:08:27
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:14 . Memory (MB): peak = 306.289 ; gain = 2.539
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 MIG core(s).
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 MIG core(s).
+# report_property [lindex [get_hw_device] 0] REGISTER.EFUSE.FUSE_DNA
+Property                 Type    Read-only  Value
+REGISTER.EFUSE.FUSE_DNA  string  true       40000000011378622C71A145
+# report_property [lindex [get_hw_device] 1] REGISTER.EFUSE.FUSE_DNA
+INFO: [Common 17-206] Exiting Vivado at Fri Feb  2 12:39:51 2018...
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+
+Info: The test took 0 hours, 01 minutes, and 28 seconds. 0:01:28
+
+Info: ZCU104 RTC test started...
+
+Info: The test will take 0 hours, 00 minutes, and 32 seconds. 0:00:32
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-02 12:40:11
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-02 12:40:11
+
+C:\zcu104_bit\tests\ZCU104>cd bat\ 
+
+C:\zcu104_bit\tests\ZCU104\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-02 12:40:15
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+fpga -state
+FPGA is not configured
+
+fpga -no-revision-check -file {C:/zcu104_bit/tests/ZCU104/../bitstream/zcu104_ipi.bit}
+initializing  0%    0MB   0.0MB/s  ??:?? ETA  5%    1MB   2.1MB/s  ??:?? ETA 10%    1MB   1.9MB/s  ??:?? ETA 14%    2MB   1.8MB/s  ??:?? ETA 19%    3MB   1.8MB/s  ??:?? ETA 23%    4MB   1.7MB/s  ??:?? ETA 28%    5MB   1.7MB/s  00:07 ETA 33%    6MB   1.7MB/s  00:07 ETA 37%    6MB   1.7MB/s  00:06 ETA 42%    7MB   1.7MB/s  00:06 ETA 46%    8MB   1.7MB/s  00:05 ETA 51%    9MB   1.7MB/s  00:05 ETA 56%   10MB   1.7MB/s  00:04 ETA 60%   11MB   1.7MB/s  00:04 ETA 65%   12MB   1.7MB/s  00:03 ETA 69%   12MB   1.7MB/s  00:03 ETA 74%   13MB   1.7MB/s  00:02 ETA 79%   14MB   1.7MB/s  00:02 ETA 83%   15MB   1.7MB/s  00:01 ETA 88%   16MB   1.7MB/s  00:01 ETA 92%   17MB   1.7MB/s  00:00 ETA 97%   17MB   1.7MB/s  00:00 ETA100%   18MB   1.7MB/s  00:10    
+
+fpga -ir-status
+IR STATUS: 117
+     Always One (Bits [0]): 1
+    Always Zero (Bits [1]): 0
+       ISC_Done (Bits [2]): 1
+    ISC_Enabled (Bits [3]): 0
+  Init Complete (Bits [4]): 1
+           DONE (Bits [5]): 1
+             (Bits [11:6]): 1
+targets -set -filter {name =~"*APU*"}
+
+source {C:/zcu104_bit/tests/ZCU104/../tcl/psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/zcu104_bit/tests/ZCU104/../elf/hello_rtc.elf}
+Downloading Program -- C:/zcu104_bit/tests/ZCU104/elf/hello_rtc.elf
+	section, .text: 0x00000000 - 0x0000322b
+	section, .init: 0x00003240 - 0x00003273
+	section, .fini: 0x00003280 - 0x000032b3
+	section, .note.gnu.build-id: 0x000032b4 - 0x000032d7
+	section, .rodata: 0x000032d8 - 0x0000362f
+	section, .rodata1: 0x00003630 - 0x0000363f
+	section, .sdata2: 0x00003640 - 0x0000363f
+	section, .sbss2: 0x00003640 - 0x0000363f
+	section, .data: 0x00003640 - 0x00003f3f
+	section, .data1: 0x00003f40 - 0x00003f3f
+	section, .ctors: 0x00003f40 - 0x00003f3f
+	section, .dtors: 0x00003f40 - 0x00003f3f
+	section, .eh_frame: 0x00003f40 - 0x00003f43
+	section, .mmu_tbl0: 0x00004000 - 0x0000400f
+	section, .mmu_tbl1: 0x00005000 - 0x00006fff
+	section, .mmu_tbl2: 0x00007000 - 0x0000afff
+	section, .preinit_array: 0x0000b000 - 0x0000afff
+	section, .init_array: 0x0000b000 - 0x0000b007
+	section, .fini_array: 0x0000b008 - 0x0000b047
+	section, .sdata: 0x0000b048 - 0x0000b07f
+	section, .sbss: 0x0000b080 - 0x0000b07f
+	section, .tdata: 0x0000b080 - 0x0000b07f
+	section, .tbss: 0x0000b080 - 0x0000b07f
+	section, .bss: 0x0000b080 - 0x0000b13f
+	section, .heap: 0x0000b140 - 0x0000d13f
+	section, .stack: 0x0000d140 - 0x0001013f
+  0%    0MB   0.0MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu104_bit/tests/ZCU104/elf/hello_rtc.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 2000
+
+Day Convention : 0-Fri, 1-Sat, 2-Sun, 3-Mon, 4-Tue, 5-Wed, 6-Thur
+Last set time for RTC is..
+YEAR:MM:DD HR:MM:SS 	 2016:10:17 00:00:01	 Day = 3
+
+Current RTC time is..
+YEAR:MM:DD HR:MM:SS 	 2016:10:23 19:13:03	 Day = 2
+
+Setting Time = 2016:10:17 00:00:00
+RTC time after set is..
+YEAR:MM:DD HR:MM:SS 	 2016:10:17 00:00:00	 Day = 3
+
+disconnect
+
+
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+
+Info: The test took 0 hours, 00 minutes, and 31 seconds. 0:00:31
+
+Info: ZCU104 SETUP test started...
+
+Info: The test will take 0 hours, 01 minutes, and 00 seconds. 0:01:00
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-02 12:40:43
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-02 12:40:43
+
+C:\zcu104_bit\tests\ZCU104>cd bat\ 
+
+C:\zcu104_bit\tests\ZCU104\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-02 12:40:47
+
+catch { disconnect }
+
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+fpga -state
+FPGA is not configured
+after 2000
+
+fpga -file {C:/zcu104_bit/tests/ZCU104/../bitstream/sc.bit}
+initializing  0%    0MB   0.0MB/s  ??:?? ETA  5%    1MB   2.1MB/s  ??:?? ETA 10%    1MB   1.9MB/s  ??:?? ETA 14%    2MB   1.8MB/s  ??:?? ETA 19%    3MB   1.7MB/s  ??:?? ETA 23%    4MB   1.7MB/s  ??:?? ETA 28%    5MB   1.7MB/s  00:07 ETA 33%    6MB   1.7MB/s  00:07 ETA 37%    6MB   1.7MB/s  00:06 ETA 42%    7MB   1.7MB/s  00:06 ETA 46%    8MB   1.7MB/s  00:05 ETA 51%    9MB   1.7MB/s  00:05 ETA 56%   10MB   1.7MB/s  00:04 ETA 60%   11MB   1.7MB/s  00:04 ETA 65%   12MB   1.7MB/s  00:03 ETA 69%   12MB   1.7MB/s  00:03 ETA 74%   13MB   1.7MB/s  00:02 ETA 78%   14MB   1.7MB/s  00:02 ETA 83%   15MB   1.7MB/s  00:01 ETA 88%   16MB   1.7MB/s  00:01 ETA 91%   16MB   1.7MB/s  00:00 ETA 96%   17MB   1.7MB/s  00:00 ETA100%   18MB   1.7MB/s  00:10    
+
+after 2000
+
+fpga -state
+FPGA is configured
+after 2000
+
+fpga -ir-status
+IR STATUS: 117
+     Always One (Bits [0]): 1
+    Always Zero (Bits [1]): 0
+       ISC_Done (Bits [2]): 1
+    ISC_Enabled (Bits [3]): 0
+  Init Complete (Bits [4]): 1
+           DONE (Bits [5]): 1
+             (Bits [11:6]): 1
+after 2000
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/zcu104_bit/tests/ZCU104/../tcl/sc_psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/zcu104_bit/tests/ZCU104/../elf/SC.elf}
+Downloading Program -- C:/zcu104_bit/tests/ZCU104/elf/SC.elf
+	section, .text: 0x00000000 - 0x0000556b
+	section, .init: 0x00005580 - 0x000055b3
+	section, .fini: 0x000055c0 - 0x000055f3
+	section, .note.gnu.build-id: 0x000055f4 - 0x00005617
+	section, .rodata: 0x00005618 - 0x00005927
+	section, .rodata1: 0x00005928 - 0x0000593f
+	section, .sdata2: 0x00005940 - 0x0000593f
+	section, .sbss2: 0x00005940 - 0x0000593f
+	section, .data: 0x00005940 - 0x00006a67
+	section, .data1: 0x00006a68 - 0x00006a7f
+	section, .ctors: 0x00006a80 - 0x00006a7f
+	section, .dtors: 0x00006a80 - 0x00006a7f
+	section, .eh_frame: 0x00006a80 - 0x00006a83
+	section, .mmu_tbl0: 0x00007000 - 0x0000700f
+	section, .mmu_tbl1: 0x00008000 - 0x00009fff
+	section, .mmu_tbl2: 0x0000a000 - 0x0000dfff
+	section, .preinit_array: 0x0000e000 - 0x0000dfff
+	section, .init_array: 0x0000e000 - 0x0000e007
+	section, .fini_array: 0x0000e008 - 0x0000e047
+	section, .sdata: 0x0000e048 - 0x0000e07f
+	section, .sbss: 0x0000e080 - 0x0000e07f
+	section, .tdata: 0x0000e080 - 0x0000e07f
+	section, .tbss: 0x0000e080 - 0x0000e07f
+	section, .bss: 0x0000e080 - 0x0000e17f
+	section, .heap: 0x0000e180 - 0x0001017f
+	section, .stack: 0x00010180 - 0x0001317f
+  0%    0MB   0.0MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu104_bit/tests/ZCU104/elf/SC.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 2000
+
+Starting System Controller...
+
+System Controller Initialization Finished...
+
+disconnect
+
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-02 12:41:19
+Writing: '\x1b'
+Writing: '\x08'
+[('', 'IW0\r74\r04', '', ''), ('', 'IW0\r44\r0003', '', ''), ('', 'IW0\r44\r2014', '', ''), ('', 'IW0\r44\r24FFFF', '', ''), ('', 'IW0\r44\r0140', '', ''), ('', 'DLY\rC350', '', ''), ('', 'IW0\r44\r21cd1c', '', ''), ('', 'DLY\rC350', '', ''), ('', 'IW0\r44\r0180', '', ''), ('', 'DLY\rC350', '', ''), ('', 'IW0\r74\r00', '', '')]:RWriting: '\t'
+:RWriting: 'IW0\r74\r04\r\t'
+IW07404:PWriting: 'IW0\r44\r0003\r\t'
+IW0440003:PWriting: 'IW0\r44\r2014\r\t'
+IW0442014:PWriting: 'IW0\r44\r24FFFF\r\t'
+IW04424FFFF:PWriting: 'IW0\r44\r0140\r\t'
+IW0440140:PWriting: 'DLY\rC350\r\t'
+DLYC350!:RWriting: 'IW0\r44\r21cd1c\r\t'
+IW04421cd1c:PWriting: 'DLY\rC350\r\t'
+DLYC350!:RWriting: 'IW0\r44\r0180\r\t'
+IW0440180:PWriting: 'DLY\rC350\r\t'
+DLYC350!:RWriting: 'IW0\r74\r00\r\t'
+'\r\nStarting System Controller...\r\n\r\nSystem Controller Initialization Finished...\r\n\x1b:R\r:R\rIW0\r74\r04\r:P\rIW0\r44\r0003\r:P\rIW0\r44\r2014\r:P\rIW0\r44\r24FFFF\r:P\rIW0\r44\r0140\r:P\rDLY\rC350!\r:R\rIW0\r44\r21cd1c\r:P\rDLY\rC350!\r:R\rIW0\r44\r0180\r:P\rDLY\rC350!\r:R\r'IW07400:P
+Entering step: 4
+
+
+Info: This step started at: 2018-02-02 12:41:39
+Writing: '\x1b'
+Writing: '\x08'
+[('', 'VRN', '', '')]:RWriting: '\t'
+:RWriting: 'VRN\r\t'
+'\r\nStarting System Controller...\r\n\r\nSystem Controller Initialization Finished...\r\n\x1b:R\r:R\rIW0\r74\r04\r:P\rIW0\r44\r0003\r:P\rIW0\r44\r2014\r:P\rIW0\r44\r24FFFF\r:P\rIW0\r44\r0140\r:P\rDLY\rC350!\r:R\rIW0\r44\r21cd1c\r:P\rDLY\rC350!\r:R\rIW0\r44\r0180\r:P\rDLY\rC350!\r:R\rIW0\r74\r00\r:P\r\x1b:R\r:R\r'VRN:PZynq v2.30
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+Info: Result for step 4: Pass
+
+Info: The test took 0 hours, 01 minutes, and 02 seconds. 0:01:02
+
+Info: WRITE EEPROM test started...
+
+Info: The test will take 0 hours, 01 minutes, and 53 seconds. 0:01:53
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-02 12:41:45
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-02 12:41:45
+
+C:\zcu104_bit\tests\ZCU104>cd bat\ 
+
+C:\zcu104_bit\tests\ZCU104\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-02 12:41:50
+
+catch { disconnect }
+
+
+connect -url tcp:127.0.0.1:3121
+attempting to launch hw_server
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:08:27
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+INFO: hw_server application started
+INFO: Use Ctrl-C to exit hw_server application
+
+
+
+****** Xilinx hw_server v2017.4
+
+  **** Build date : Dec 15 2017-21:08:27
+
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+
+INFO: hw_server application started
+
+INFO: Use Ctrl-C to exit hw_server application
+
+
+
+
+INFO: To connect to this hw_server instance use url: TCP:127.0.0.1:3121
+
+
+
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+fpga -state
+FPGA is not configured
+after 2000
+
+fpga -file {C:/zcu104_bit/tests/ZCU104/../bitstream/sc.bit}
+initializing  0%    0MB   0.0MB/s  ??:?? ETA  3%    0MB   0.4MB/s  ??:?? ETA  8%    1MB   0.8MB/s  ??:?? ETA 12%    2MB   0.9MB/s  ??:?? ETA 17%    3MB   1.1MB/s  ??:?? ETA 21%    4MB   1.2MB/s  00:12 ETA 26%    4MB   1.2MB/s  00:11 ETA 27%    4MB   0.9MB/s  00:14 ETA 31%    5MB   1.0MB/s  00:12 ETA 36%    6MB   1.1MB/s  00:11 ETA 40%    7MB   1.1MB/s  00:09 ETA 45%    8MB   1.1MB/s  00:08 ETA 50%    9MB   1.2MB/s  00:07 ETA 52%    9MB   1.2MB/s  00:07 ETA 56%   10MB   1.2MB/s  00:06 ETA 60%   11MB   1.2MB/s  00:05 ETA 65%   12MB   1.2MB/s  00:05 ETA 69%   12MB   1.2MB/s  00:04 ETA 74%   13MB   1.3MB/s  00:03 ETA 79%   14MB   1.3MB/s  00:03 ETA 83%   15MB   1.3MB/s  00:02 ETA 88%   16MB   1.3MB/s  00:01 ETA 92%   17MB   1.3MB/s  00:00 ETA 97%   17MB   1.3MB/s  00:00 ETA100%   18MB   1.4MB/s  00:13    
+
+after 2000
+
+fpga -state
+FPGA is configured
+after 2000
+
+fpga -ir-status
+IR STATUS: 117
+     Always One (Bits [0]): 1
+    Always Zero (Bits [1]): 0
+       ISC_Done (Bits [2]): 1
+    ISC_Enabled (Bits [3]): 0
+  Init Complete (Bits [4]): 1
+           DONE (Bits [5]): 1
+             (Bits [11:6]): 1
+after 2000
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/zcu104_bit/tests/ZCU104/../tcl/sc_psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/zcu104_bit/tests/ZCU104/../elf/SC.elf}
+Downloading Program -- C:/zcu104_bit/tests/ZCU104/elf/SC.elf
+	section, .text: 0x00000000 - 0x0000556b
+	section, .init: 0x00005580 - 0x000055b3
+	section, .fini: 0x000055c0 - 0x000055f3
+	section, .note.gnu.build-id: 0x000055f4 - 0x00005617
+	section, .rodata: 0x00005618 - 0x00005927
+	section, .rodata1: 0x00005928 - 0x0000593f
+	section, .sdata2: 0x00005940 - 0x0000593f
+	section, .sbss2: 0x00005940 - 0x0000593f
+	section, .data: 0x00005940 - 0x00006a67
+	section, .data1: 0x00006a68 - 0x00006a7f
+	section, .ctors: 0x00006a80 - 0x00006a7f
+	section, .dtors: 0x00006a80 - 0x00006a7f
+	section, .eh_frame: 0x00006a80 - 0x00006a83
+	section, .mmu_tbl0: 0x00007000 - 0x0000700f
+	section, .mmu_tbl1: 0x00008000 - 0x00009fff
+	section, .mmu_tbl2: 0x0000a000 - 0x0000dfff
+	section, .preinit_array: 0x0000e000 - 0x0000dfff
+	section, .init_array: 0x0000e000 - 0x0000e007
+	section, .fini_array: 0x0000e008 - 0x0000e047
+	section, .sdata: 0x0000e048 - 0x0000e07f
+	section, .sbss: 0x0000e080 - 0x0000e07f
+	section, .tdata: 0x0000e080 - 0x0000e07f
+	section, .tbss: 0x0000e080 - 0x0000e07f
+	section, .bss: 0x0000e080 - 0x0000e17f
+	section, .heap: 0x0000e180 - 0x0001017f
+	section, .stack: 0x00010180 - 0x0001317f
+  0%    0MB   0.0MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu104_bit/tests/ZCU104/elf/SC.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 2000
+
+Starting System Controller...
+
+System Controller Initialization Finished...
+
+disconnect
+
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-02 12:42:27
+Writing: '\x1b'
+Writing: '\x08'
+[(u'<setmux:0:74:01>', u'', u'', u''), (u'<writeeeprom:0:54:20:FFFFFFFFFFFF>', u'', u'', u''), (u'<writeeeprom:0:54:20:010203040506>', u'', u'', u''), (u'<setmux:0:74:00>', u'', u'', u'')]:RWriting: '\t'
+:RWriting: 'IW0\r74\r01\r\t'
+IW07401:PWriting: 'IW0\r54\r20FFFFFFFFFFFF\r\t'
+IW05420FFFFFFFFFFFF:PWriting: 'IW0\r54\r20010203040506\r\t'
+IW05420010203040506:PWriting: 'IW0\r74\r00\r\t'
+IW07400:P'\r\nStarting System Controller...\r\n\r\nSystem Controller Initialization Finished...\r\n\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\r20FFFFFFFFFFFF\r:P\rIW0\r54\r20010203040506\r:P\rIW0\r74\r00\r:P\r'
+Entering step: 4
+
+
+Info: This step started at: 2018-02-02 12:42:41
+Writing: '\x1b'
+Writing: '\x08'
+[('<setmux:0:74:01>', '', '', ''), ('<writeeeprom:0:54:00:FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF>', '', '', ''), ('<writeeeprom:0:54:00:3132383039363162303336>', '', '', ''), ('<setmux:0:74:00>', '', '', '')]:RWriting: '\t'
+:RWriting: 'IW0\r74\r01\r\t'
+IW07401:PWriting: 'IW0\r54\r00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r\tIW0\r54\r10FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r\t'
+IW05400FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF:PIW05410FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF:PWriting: 'IW0\r54\r003132383039363162303336\r\t'
+IW054003132383039363162303336:PWriting: 'IW0\r74\r00\r\t'
+'\r\nStarting System Controller...\r\n\r\nSystem Controller Initialization Finished...\r\n\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\r20FFFFFFFFFFFF\r:P\rIW0\r54\r20010203040506\r:P\rIW0\r74\r00\r:P\r\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\r00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r:P\rIW0\r54\r10FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r:P\rIW0\r54\r003132383039363162303336\r:P\r'IW07400:P
+Entering step: 5
+
+
+Info: This step started at: 2018-02-02 12:42:55
+Writing: '\x1b'
+Writing: '\x08'
+[('<setmux:0:74:01>', '', '', ''), ('<writeeeprom:0:54:E0:FFFFFFFFFFFF>', '', '', ''), ('<writeeeprom:0:54:E0:432020>', '', '', ''), ('<setmux:0:74:00>', '', '', '')]:RWriting: '\t'
+:RWriting: 'IW0\r74\r01\r\t'
+IW07401:PWriting: 'IW0\r54\re0FFFFFFFFFFFF\r\t'
+IW054e0FFFFFFFFFFFF:PWriting: 'IW0\r54\re0432020\r\t'
+IW054e0432020:PWriting: 'IW0\r74\r00\r\t'
+IW07400:P'\r\nStarting System Controller...\r\n\r\nSystem Controller Initialization Finished...\r\n\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\r20FFFFFFFFFFFF\r:P\rIW0\r54\r20010203040506\r:P\rIW0\r74\r00\r:P\r\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\r00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r:P\rIW0\r54\r10FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r:P\rIW0\r54\r003132383039363162303336\r:P\rIW0\r74\r00\r:P\r\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\re0FFFFFFFFFFFF\r:P\rIW0\r54\re0432020\r:P\rIW0\r74\r00\r:P\r'
+Entering step: 6
+
+
+Info: This step started at: 2018-02-02 12:43:08
+Writing: '\x1b'
+Writing: '\x08'
+[('<setmux:0:74:01>', '', '', ''), ('<writeeeprom:0:54:D0:FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF>', '', '', ''), ('<writeeeprom:0:54:D0:5a43553130342020202020>', '', '', ''), ('<setmux:0:74:00>', '', '', '')]:RWriting: '\t'
+:RWriting: 'IW0\r74\r01\r\t'
+IW07401:PWriting: 'IW0\r54\rd0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r\t'
+IW054d0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF:PWriting: 'IW0\r54\rd05a43553130342020202020\r\t'
+IW054d05a43553130342020202020:PWriting: 'IW0\r74\r00\r\t'
+'\r\nStarting System Controller...\r\n\r\nSystem Controller Initialization Finished...\r\n\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\r20FFFFFFFFFFFF\r:P\rIW0\r54\r20010203040506\r:P\rIW0\r74\r00\r:P\r\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\r00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r:P\rIW0\r54\r10FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r:P\rIW0\r54\r003132383039363162303336\r:P\rIW0\r74\r00\r:P\r\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\re0FFFFFFFFFFFF\r:P\rIW0\r54\re0432020\r:P\rIW0\r74\r00\r:P\r\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\rd0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r:P\rIW0\r54\rd05a43553130342020202020\r:P\r'IW07400:P
+Entering step: 7
+
+
+Info: This step started at: 2018-02-02 12:43:22
+Writing: '\x1b'
+Writing: '\x08'
+[('<setmux:0:74:01>', '', '', ''), ('<readeeprom:0:54:D0:10>', '', '', ''), ('<wait:0.3>', '', '', ''), ('<interpeeprom>', '', '', ''), ('<setmux:0:74:00>', '', '', '')]:RWriting: '\t'
+:RWriting: 'IW0\r74\r01\r\t'
+IW07401:PWriting: 'IW0\r54\rd0\r\tIR0\r54\r10\r\t'
+IW054d0:PIR05410:P5A43553130342020202020FFFFFFFFFFWriting: 'IW0\r74\r00\r\t'
+IW07400:Pu'\r\nStarting System Controller...\r\n\r\nSystem Controller Initialization Finished...\r\n\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\r20FFFFFFFFFFFF\r:P\rIW0\r54\r20010203040506\r:P\rIW0\r74\r00\r:P\r\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\r00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r:P\rIW0\r54\r10FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r:P\rIW0\r54\r003132383039363162303336\r:P\rIW0\r74\r00\r:P\r\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\re0FFFFFFFFFFFF\r:P\rIW0\r54\re0432020\r:P\rIW0\r74\r00\r:P\r\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\rd0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r:P\rIW0\r54\rd05a43553130342020202020\r:P\rIW0\r74\r00\r:P\r\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\rd0\r:P\rIR0\r54\r10\r:P\r5A43553130342020202020FFFFFFFFFF\rINTERP[ZCU104     ]IW0\r74\r00\r:P\r'
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+Info: Result for step 4: Pass
+Info: Result for step 5: Pass
+Info: Result for step 6: Pass
+Info: Result for step 7: Pass
+
+Info: The test took 0 hours, 01 minutes, and 54 seconds. 0:01:54
+
+Info: READ BOARD NAME test started...
+
+Info: The test will take 0 hours, 00 minutes, and 59 seconds. 0:00:59
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-02 12:43:39
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-02 12:43:39
+
+C:\zcu104_bit\tests\ZCU104>cd bat\ 
+
+C:\zcu104_bit\tests\ZCU104\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-02 12:43:43
+
+catch { disconnect }
+
+
+connect -url tcp:127.0.0.1:3121
+attempting to launch hw_server
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:08:27
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+INFO: hw_server application started
+INFO: Use Ctrl-C to exit hw_server application
+
+
+
+****** Xilinx hw_server v2017.4
+
+  **** Build date : Dec 15 2017-21:08:27
+
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+
+INFO: hw_server application started
+
+INFO: Use Ctrl-C to exit hw_server application
+
+
+
+
+INFO: To connect to this hw_server instance use url: TCP:127.0.0.1:3121
+
+
+
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+fpga -state
+FPGA is not configured
+after 2000
+
+fpga -file {C:/zcu104_bit/tests/ZCU104/../bitstream/sc.bit}
+initializing  0%    0MB   0.0MB/s  ??:?? ETA  3%    0MB   0.4MB/s  ??:?? ETA  8%    1MB   0.8MB/s  ??:?? ETA 12%    2MB   0.9MB/s  ??:?? ETA 17%    3MB   1.1MB/s  00:14 ETA 22%    4MB   1.1MB/s  00:12 ETA 26%    4MB   0.9MB/s  00:14 ETA 31%    5MB   1.0MB/s  00:12 ETA 36%    6MB   1.1MB/s  00:11 ETA 40%    7MB   1.1MB/s  00:09 ETA 45%    8MB   1.1MB/s  00:08 ETA 49%    9MB   1.0MB/s  00:09 ETA 54%   10MB   1.0MB/s  00:08 ETA 58%   10MB   1.1MB/s  00:07 ETA 63%   11MB   1.1MB/s  00:06 ETA 67%   12MB   1.1MB/s  00:05 ETA 72%   13MB   1.2MB/s  00:04 ETA 77%   14MB   1.2MB/s  00:03 ETA 81%   15MB   1.2MB/s  00:02 ETA 86%   15MB   1.2MB/s  00:02 ETA 90%   16MB   1.2MB/s  00:01 ETA 95%   17MB   1.2MB/s  00:00 ETA100%   18MB   1.3MB/s  00:14    
+
+after 2000
+
+fpga -state
+FPGA is configured
+after 2000
+
+fpga -ir-status
+IR STATUS: 117
+     Always One (Bits [0]): 1
+    Always Zero (Bits [1]): 0
+       ISC_Done (Bits [2]): 1
+    ISC_Enabled (Bits [3]): 0
+  Init Complete (Bits [4]): 1
+           DONE (Bits [5]): 1
+             (Bits [11:6]): 1
+after 2000
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/zcu104_bit/tests/ZCU104/../tcl/sc_psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/zcu104_bit/tests/ZCU104/../elf/SC.elf}
+Downloading Program -- C:/zcu104_bit/tests/ZCU104/elf/SC.elf
+	section, .text: 0x00000000 - 0x0000556b
+	section, .init: 0x00005580 - 0x000055b3
+	section, .fini: 0x000055c0 - 0x000055f3
+	section, .note.gnu.build-id: 0x000055f4 - 0x00005617
+	section, .rodata: 0x00005618 - 0x00005927
+	section, .rodata1: 0x00005928 - 0x0000593f
+	section, .sdata2: 0x00005940 - 0x0000593f
+	section, .sbss2: 0x00005940 - 0x0000593f
+	section, .data: 0x00005940 - 0x00006a67
+	section, .data1: 0x00006a68 - 0x00006a7f
+	section, .ctors: 0x00006a80 - 0x00006a7f
+	section, .dtors: 0x00006a80 - 0x00006a7f
+	section, .eh_frame: 0x00006a80 - 0x00006a83
+	section, .mmu_tbl0: 0x00007000 - 0x0000700f
+	section, .mmu_tbl1: 0x00008000 - 0x00009fff
+	section, .mmu_tbl2: 0x0000a000 - 0x0000dfff
+	section, .preinit_array: 0x0000e000 - 0x0000dfff
+	section, .init_array: 0x0000e000 - 0x0000e007
+	section, .fini_array: 0x0000e008 - 0x0000e047
+	section, .sdata: 0x0000e048 - 0x0000e07f
+	section, .sbss: 0x0000e080 - 0x0000e07f
+	section, .tdata: 0x0000e080 - 0x0000e07f
+	section, .tbss: 0x0000e080 - 0x0000e07f
+	section, .bss: 0x0000e080 - 0x0000e17f
+	section, .heap: 0x0000e180 - 0x0001017f
+	section, .stack: 0x00010180 - 0x0001317f
+  0%    0MB   0.0MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu104_bit/tests/ZCU104/elf/SC.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 2000
+
+Starting System Controller...
+
+System Controller Initialization Finished...
+
+disconnect
+
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-02 12:44:21
+Writing: '\x1b'
+Writing: '\x08'
+[('<setmux:0:74:01>', '', '', ''), ('<readeeprom:0:54:00:FF>', '', '', ''), ('<wait:0.3>', '', '', ''), ('<interpeeprom>', '', '', ''), ('<setmux:0:74:00>', '', '', '')]:RWriting: '\t'
+:RWriting: 'IW0\r74\r01\r\t'
+IW07401:PWriting: 'IW0\r54\r00\r\tIR0\r54\rFF\r\t'
+IW05400:PIR054FF:P3132383039363162303336FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF010203040506FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5A43553130342020202020FFFFFFFFFF432020FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFWriting: 'IW0\r74\r00\r\t'
+IW07400:Pu'\r\nStarting System Controller...\r\n\r\nSystem Controller Initialization Finished...\r\n\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\r00\r:P\rIR0\r54\rFF\r:P\r3132383039363162303336FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF010203040506FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5A43553130342020202020FFFFFFFFFF432020FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\rINTERP[1280961b036\x01\x02\x03\x04\x05\x06ZCU104     C  ]IW0\r74\r00\r:P\r'
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+
+Info: The test took 0 hours, 00 minutes, and 59 seconds. 0:00:59
+
+Info: IPI Test test started...
+
+Info: The test will take 0 hours, 01 minutes, and 13 seconds. 0:01:13
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-02 12:44:39
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-02 12:44:39
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+attempting to launch hw_server
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:08:27
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+INFO: hw_server application started
+INFO: Use Ctrl-C to exit hw_server application
+
+
+
+****** Xilinx hw_server v2017.4
+
+  **** Build date : Dec 15 2017-21:08:27
+
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+
+INFO: hw_server application started
+
+INFO: Use Ctrl-C to exit hw_server application
+
+
+
+
+INFO: To connect to this hw_server instance use url: TCP:127.0.0.1:3121
+
+
+
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+fpga -state
+FPGA is not configured
+after 2000
+
+fpga -no-revision-check -file {C:/zcu104_bit/tests/ZCU104/../bitstream/zcu104_ipi.bit}
+initializing  0%    0MB   0.0MB/s  ??:?? ETA  2%    0MB   0.4MB/s  ??:?? ETA  7%    1MB   0.7MB/s  ??:?? ETA 11%    2MB   0.9MB/s  ??:?? ETA 16%    3MB   1.0MB/s  ??:?? ETA 21%    3MB   1.1MB/s  00:12 ETA 25%    4MB   1.2MB/s  00:11 ETA 25%    4MB   0.9MB/s  00:14 ETA 30%    5MB   1.0MB/s  00:12 ETA 35%    6MB   1.1MB/s  00:11 ETA 39%    7MB   1.1MB/s  00:10 ETA 44%    8MB   1.1MB/s  00:08 ETA 48%    9MB   1.2MB/s  00:07 ETA 53%    9MB   1.2MB/s  00:07 ETA 58%   10MB   1.2MB/s  00:06 ETA 62%   11MB   1.3MB/s  00:05 ETA 67%   12MB   1.3MB/s  00:04 ETA 71%   13MB   1.3MB/s  00:03 ETA 76%   14MB   1.3MB/s  00:03 ETA 81%   14MB   1.3MB/s  00:02 ETA 85%   15MB   1.3MB/s  00:01 ETA 90%   16MB   1.4MB/s  00:01 ETA 95%   17MB   1.4MB/s  00:00 ETA 99%   18MB   1.4MB/s  00:00 ETA100%   18MB   1.4MB/s  00:13    
+
+after 2000
+
+fpga -state
+FPGA is configured
+after 2000
+
+fpga -ir-status
+IR STATUS: 117
+     Always One (Bits [0]): 1
+    Always Zero (Bits [1]): 0
+       ISC_Done (Bits [2]): 1
+    ISC_Enabled (Bits [3]): 0
+  Init Complete (Bits [4]): 1
+           DONE (Bits [5]): 1
+             (Bits [11:6]): 1
+after 2000
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/zcu104_bit/tests/ZCU104/../tcl/ipi_psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/zcu104_bit/tests/ZCU104/../elf/ipi_app.elf}
+Downloading Program -- C:/zcu104_bit/tests/ZCU104/elf/ipi_app.elf
+	section, .text: 0xfffc0000 - 0xfffdeacb
+	section, .init: 0xfffdeb00 - 0xfffdeb33
+	section, .fini: 0xfffdeb40 - 0xfffdeb73
+	section, .note.gnu.build-id: 0xfffdeb74 - 0xfffdeb97
+	section, .rodata: 0xfffdeb98 - 0xfffe2c37
+	section, .rodata1: 0xfffe2c38 - 0xfffe2c3f
+	section, .sdata2: 0xfffe2c40 - 0xfffe2c3f
+	section, .sbss2: 0xfffe2c40 - 0xfffe2c3f
+	section, .data: 0xfffe2c40 - 0xfffe4df7
+	section, .data1: 0xfffe4df8 - 0xfffe4dff
+	section, .ctors: 0xfffe4e00 - 0xfffe4dff
+	section, .dtors: 0xfffe4e00 - 0xfffe4dff
+	section, .eh_frame: 0xfffe4e00 - 0xfffe4e03
+	section, .mmu_tbl0: 0xfffe5000 - 0xfffe500f
+	section, .mmu_tbl1: 0xfffe6000 - 0xfffe7fff
+	section, .mmu_tbl2: 0xfffe8000 - 0xfffebfff
+	section, .preinit_array: 0xfffec000 - 0xfffebfff
+	section, .init_array: 0xfffec000 - 0xfffec007
+	section, .fini_array: 0xfffec008 - 0xfffec047
+	section, .sdata: 0xfffec048 - 0xfffec07f
+	section, .sbss: 0xfffec080 - 0xfffec07f
+	section, .tdata: 0xfffec080 - 0xfffec07f
+	section, .tbss: 0xfffec080 - 0xfffec07f
+	section, .bss: 0xfffec080 - 0xffff173f
+	section, .heap: 0xffff1740 - 0xffff373f
+	section, .stack: 0xffff3740 - 0xffff673f
+  0%    0MB   0.0MB/s  ??:?? ETA 54%    0MB   0.1MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0xfffc0000
+Successfully downloaded C:/zcu104_bit/tests/ZCU104/elf/ipi_app.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 2000
+***********************************************************
+***********************************************************
+** Zynq UltraScale+ MPSoC ZCU104 Evaluation Kit IPI Test **
+***********************************************************
+***********************************************************
+
+Choose Feature to Test:
+1: UART Test
+2: LED Test
+3: IIC Test
+5: TIMER/SCUGIC Test
+6: CAN Bus Test
+7: SWITCH Test
+8: PS DDR4 External Memory Test
+9: DDR4 External Memory Test
+A: BRAM Internal Memory Test
+B: BUTTON Test
+C: Clocking Test
+D: PMOD Test
+G: System Monitor Test
+H: ETHERNET Loopback Test
+0: Exit
+
+disconnect
+
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-02 12:45:16
+Writing: '33'
+3
+
+*************************************************************
+** ZCU104 EEPROM IIC EEPROM Test
+*************************************************************
+Calling iic_read
+
+Reading EEPROM data from EEPROM
+
+ReadBuffer[00] = 0xFF
+ReadBuffer[01] = 0xFF
+ReadBuffer[02] = 0xFF
+ReadBuffer[03] = 0xFF
+ReadBuffer[04] = 0xFF
+ReadBuffer[05] = 0xFF
+ReadBuffer[06] = 0xFF
+ReadBuffer[07] = 0xFF
+ReadBuffer[08] = 0xFF
+ReadBuffer[09] = 0xFF
+ReadBuffer[10] = 0xFF
+ReadBuffer[11] = 0xFF
+ReadBuffer[12] = 0xFF
+ReadBuffer[13] = 0xFF
+ReadBuffer[14] = 0xFF
+ReadBuffer[15] = 0xFF
+
+
+ZCU104 EEPROM IIC EEPROM Test PASSED
+
+*************************************************************
+** ZCU104 FMC_LPC IIC EEPROM Test
+*************************************************************
+Calling iic_read
+
+Reading EEPROM data from FMC_LPC
+
+ReadBuffer[00] = 0x01
+ReadBuffer[01] = 0x00
+ReadBuffer[02] = 0x00
+ReadBuffer[03] = 0x01
+ReadBuffer[04] = 0x00
+ReadBuffer[05] = 0x08
+ReadBuffer[06] = 0x00
+ReadBuffer[07] = 0xF6
+ReadBuffer[08] = 0x01
+ReadBuffer[09] = 0x07
+ReadBuffer[10] = 0x19
+ReadBuffer[11] = 0x80
+ReadBuffer[12] = 0xE1
+ReadBuffer[13] = 0x7F
+ReadBuffer[14] = 0xCA
+ReadBuffer[15] = 0x57
+
+
+ZCU104 FMC_LPC IIC EEPROM Test PASSED
+
+*************************************************************
+** ZCU104 DDR4_SODIMM IIC EEPROM Test
+*************************************************************
+Calling iic_read
+
+Reading EEPROM data from DDR4_SODIMM
+
+ReadBuffer[00] = 0x0F
+ReadBuffer[01] = 0x11
+ReadBuffer[02] = 0x03
+ReadBuffer[03] = 0x00
+ReadBuffer[04] = 0x00
+ReadBuffer[05] = 0x00
+ReadBuffer[06] = 0x00
+ReadBuffer[07] = 0x00
+ReadBuffer[08] = 0x00
+ReadBuffer[09] = 0x00
+ReadBuffer[10] = 0x00
+ReadBuffer[11] = 0x00
+ReadBuffer[12] = 0x00
+ReadBuffer[13] = 0x00
+ReadBuffer[14] = 0x00
+ReadBuffer[15] = 0x00
+
+
+ZCU104 DDR4_SODIMM IIC EEPROM Test PASSED
+All Tests Complete: IIC PASSED
+Press any key to return to main menu
+Choose Feature to Test:
+1: UART Test
+2: LED Test
+3: IIC Test
+5: TIMER/SCUGIC Test
+6: CAN Bus Test
+7: SWITCH Test
+8: PS DDR4 External Memory Test
+9: DDR4 External Memory Test
+A: BRAM Internal Memory Test
+B: BUTTON Test
+C: Clocking Test
+D: PMOD Test
+G: System Monitor Test
+H: ETHERNET Loopback Test
+0: Exit
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-02 12:45:21
+Writing: '99'
+9
+
+********************************************************
+********************************************************
+**                ZCU104 - PL DDR4 TEST               **
+********************************************************
+********************************************************
+
+
+Zynq UltraScale+ MPSoC MIG Memory Test
+Testing address range 0x500000000-0x500800000.
+Iteration 1 of 1
+Pass A) ICache:  On, DCache:  On
+	TEST0: Write all memory to 0x00000000 and check
+		Writing...
+		Reading...
+	Test Complete Status = SUCCESS
+	TEST1: Write all memory to 0xFFFFFFFF and check
+		Writing...
+		Reading...
+	Test Complete Status = SUCCESS 
+
+	TEST2: Testing for stuck together bank/row/col bits
+		Clearing memory to zeros...
+		Writing and Reading...
+	Test Complete Status = SUCCESS 
+
+	TEST3: Testing for maximum ba/row/col noise
+		This test performs 16 word writes followed by 16 word reads
+		Each 64 bytes inverts the ba/row/col address
+		Initializing Memory to 0xA5A5A5A5...
+		Writing and Reading...
+	Test Complete Status = SUCCESS
+	TEST4: Testing for Inverse Data at Address
+		Writing...
+		Reading...
+	Test Complete Status = SUCCESS 
+
+		Number of errors in this pass = 0
+
+Pass B) ICache: Off, DCache: Off
+	TEST0: Write all memory to 0x00000000 and check
+		Writing...
+		Reading...
+	Test Complete Status = SUCCESS
+	TEST1: Write all memory to 0xFFFFFFFF and check
+		Writing...
+		Reading...
+	Test Complete Status = SUCCESS 
+
+	TEST2: Testing for stuck together bank/row/col bits
+		Clearing memory to zeros...
+		Writing and Reading...
+	Test Complete Status = SUCCESS 
+
+	TEST3: Testing for maximum ba/row/col noise
+		This test performs 16 word writes followed by 16 word reads
+		Each 64 bytes inverts the ba/row/col address
+		Initializing Memory to 0xA5A5A5A5...
+		Writing and Reading...
+	Test Complete Status = SUCCESS
+	TEST4: Testing for Inverse Data at Address
+		Writing...
+		Reading...
+Entering step: 4
+
+
+Info: This step started at: 2018-02-02 12:45:36
+
+	Test Complete Status = SUCCESS 
+
+		Number of errors in this pass = 0
+
+Zynq UltraScale+ MPSoC MIG Memory Test iteration #1 has PASSED!
+Total number of errors for all iterations = 0
+### PL DDR4 Memory Test finished successfully ###
+Press any key to return to main menu
+Choose Feature to Test:
+1: UART Test
+2: LED Test
+3: IIC Test
+5: TIMER/SCUGIC Test
+6: CAN Bus Test
+7: SWITCH Test
+8: PS DDR4 External Memory Test
+9: DDR4 External Memory Test
+A: BRAM Internal Memory Test
+B: BUTTON Test
+C: Clocking Test
+D: PMOD Test
+G: System Monitor Test
+H: ETHERNET Loopback Test
+0: Exit
+Writing: 'AA'
+A
+
+********************************************************
+********************************************************
+**                ZCU104 - PL BRAM TEST               **
+********************************************************
+********************************************************
+
+
+PL BRAM Memory Test
+Testing address range 0xB0000000-0xB00FFFFF.
+Iteration 1 of 1
+Pass A) ICache:  On, DCache:  On
+	TEST0: Write all memory to 0x00000000 and check
+		Writing...
+		Reading...
+	Test Complete Status = SUCCESS
+	TEST1: Write all memory to 0xFFFFFFFF and check
+		Writing...
+		Reading...
+	Test Complete Status = SUCCESS 
+
+	TEST2: Testing for stuck together bank/row/col bits
+		Clearing memory to zeros...
+		Writing and Reading...
+	Test Complete Status = SUCCESS 
+
+	TEST3: Testing for maximum ba/row/col noise
+		This test performs 16 word writes followed by 16 word reads
+		Each 64 bytes inverts the ba/row/col address
+		Initializing Memory to 0xA5A5A5A5...
+		Writing and Reading...
+	Test Complete Status = SUCCESS
+	TEST4: Testing for Inverse Data at Address
+		Writing...
+		Reading...
+	Test Complete Status = SUCCESS 
+
+		Number of errors in this pass = 0
+
+Pass B) ICache: Off, DCache: Off
+	TEST0: Write all memory to 0x00000000 and check
+		Writing...
+		Reading...
+	Test Complete Status = SUCCESS
+	TEST1: Write all memory to 0xFFFFFFFF and check
+		Writing...
+		Reading...
+	Test Complete Status = SUCCESS 
+
+	TEST2: Testing for stuck together bank/row/col bits
+		Clearing memory to zeros...
+		Writing and Reading...
+	Test Complete Status = SUCCESS 
+
+	TEST3: Testing for maximum ba/row/col noise
+		This test performs 16 word writes followed by 16 word reads
+		Each 64 bytes inverts the ba/row/col address
+		Initializing Memory to 0xA5A5A5A5...
+		Writing and Reading...
+	Test Complete Status = SUCCESS
+	TEST4: Testing for Inverse Data at Address
+		Writing...
+		Reading...
+	Test Complete Status = SUCCESS 
+
+		Number of errors in this pass = 0
+
+PL BRAM test iteration #1 has PASSED!
+Total number of errors for all iterations = 0
+### PL BRAM Memory Test finished successfully ###
+Press any key to return to main menu
+Choose Feature to Test:
+1: UART Test
+2: LED Test
+3: IIC Test
+5: TIMER/SCUGIC Test
+6: CAN Bus Test
+7: SWITCH Test
+8: PS DDR4 External Memory Test
+9: DDR4 External Memory Test
+A: BRAM Internal Memory Test
+B: BUTTON Test
+C: Clocking Test
+D: PMOD Test
+G: System Monitor Test
+H: ETHERNET Loopback Test
+0: Exit
+
+Entering step: 5
+
+
+Info: This step started at: 2018-02-02 12:45:41
+Writing: 'CC'
+
+Entering step: 6
+
+
+Info: This step started at: 2018-02-02 12:45:42
+C
+
+********************************************************
+********************************************************
+**             ZCU104 - Clock Frequencies             **
+********************************************************
+********************************************************
+
+CLK_125                 =  125.031 
+FMC_LPC_CLK0            =  156.288 
+FMC_LPC_CLK1            =  156.288 
+FMC_LPC_GBTCLK0         =  156.288 
+HDMI_DRU_CLOCK          =  156.288 
+
+
+Clocking Test Passed
+
+Press any key to return to main menu
+Choose Feature to Test:
+1: UART Test
+2: LED Test
+3: IIC Test
+5: TIMER/SCUGIC Test
+6: CAN Bus Test
+7: SWITCH Test
+8: PS DDR4 External Memory Test
+9: DDR4 External Memory Test
+A: BRAM Internal Memory Test
+B: BUTTON Test
+C: Clocking Test
+D: PMOD Test
+G: System Monitor Test
+H: ETHERNET Loopback Test
+0: Exit
+Writing: 'DD'
+D
+
+********************************************************
+********************************************************
+**     ZCU104 - PMOD Loopback Write and Read Tests    **
+********************************************************
+********************************************************
+
+Testing PMOD 
+PMOD: Writing and Reading all 0's            - PASSED
+PMOD: Writing and Reading all 1's            - PASSED
+PMOD: Writing and Reading 0x55555555 pattern - PASSED
+PMOD: Writing and Reading 0xAAAAAAAA pattern - PASSED
+
+Completed PMOD Loopback Write and Read Tests
+
+PMOD Test passed
+
+Press any key to return to main menu
+Choose Feature to Test:
+1: UART Test
+2: LED Test
+3: IIC Test
+5: TIMER/SCUGIC Test
+6: CAN Bus Test
+7: SWITCH Test
+8: PS DDR4 External Memory Test
+9: DDR4 External Memory Test
+A: BRAM Internal Memory Test
+B: BUTTON Test
+C: Clocking Test
+D: PMOD Test
+G: System Monitor Test
+H: ETHERNET Loopback Test
+0: Exit
+
+Entering step: 7
+
+
+Info: This step started at: 2018-02-02 12:45:47
+Writing: 'GG'
+G
+
+********************************************************
+********************************************************
+**            ZCU104 - System Monitor Test            **
+********************************************************
+********************************************************
+Starting System Monitor Example
+
+The Current Temperature is 35.006 Centigrades.
+The Maximum Temperature is 35.006 Centigrades. 
+The Minimum Temperature is 35.006 Centigrades. 
+
+The Current VCCINT is 0.847 Volts. 
+The Maximum VCCINT is 0.848 Volts. 
+The Minimum VCCINT is 0.847 Volts. 
+
+The Current VCCAUX is 1.798 Volts. 
+The Maximum VCCAUX is 1.799 Volts. 
+The Minimum VCCAUX is 1.797 Volts. 
+
+
+The Current VPVN   is 0.005 Volts.
+The Current VREFP  is 1.250 Volts.
+The Current VREFN  is 0.000 Volts.
+
+System Monitor Example passed!
+
+Press any key to return to main menu
+Choose Feature to Test:
+1: UART Test
+2: LED Test
+3: IIC Test
+5: TIMER/SCUGIC Test
+6: CAN Bus Test
+7: SWITCH Test
+8: PS DDR4 External Memory Test
+9: DDR4 External Memory Test
+A: BRAM Internal Memory Test
+B: BUTTON Test
+C: Clocking Test
+D: PMOD Test
+G: System Monitor Test
+H: ETHERNET Loopback Test
+0: Exit
+
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+Info: Result for step 4: Pass
+Info: Result for step 5: Pass
+Info: Result for step 6: Pass
+Info: Result for step 7: Pass
+
+Info: The test took 0 hours, 01 minutes, and 15 seconds. 0:01:15
+
+Info: MIG PS DDR4 test started...
+
+Info: The test will take 0 hours, 00 minutes, and 35 seconds. 0:00:35
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-02 12:45:54
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-02 12:45:54
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+attempting to launch hw_server
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:08:27
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+INFO: hw_server application started
+INFO: Use Ctrl-C to exit hw_server application
+
+
+
+****** Xilinx hw_server v2017.4
+
+  **** Build date : Dec 15 2017-21:08:27
+
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+
+INFO: hw_server application started
+
+INFO: Use Ctrl-C to exit hw_server application
+
+
+
+
+INFO: To connect to this hw_server instance use url: TCP:127.0.0.1:3121
+
+
+
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -system
+
+after 1000
+
+source {C:/zcu104_bit/tests/ZCU104/../tcl/ipi_psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+after 1000
+
+dow {C:/zcu104_bit/tests/ZCU104/../elf/zynq_mp_dram_test.elf}
+Downloading Program -- C:/zcu104_bit/tests/ZCU104/elf/zynq_mp_dram_test.elf
+	section, .text: 0xfffc0000 - 0xfffdc4cf
+	section, .boot: 0xffff0000 - 0xffff0b87
+	section, .init: 0xffff0bc0 - 0xffff0bf3
+	section, .fini: 0xffff0c00 - 0xffff0c33
+	section, .note.gnu.build-id: 0xfffdc4d0 - 0xfffdc4f3
+	section, .rodata: 0xfffdc4f8 - 0xfffdee1f
+	section, .rodata1: 0xfffdee20 - 0xfffdee3f
+	section, .sdata2: 0xfffdee40 - 0xfffdee3f
+	section, .sbss2: 0xfffdee40 - 0xfffdee3f
+	section, .data: 0xfffdee40 - 0xfffe09f7
+	section, .data1: 0xfffe09f8 - 0xfffe09ff
+	section, .ctors: 0xfffe0a00 - 0xfffe09ff
+	section, .dtors: 0xfffe0a00 - 0xfffe09ff
+	section, .eh_frame: 0xfffe0a00 - 0xfffe0a03
+	section, .mmu_tbl0: 0xfffe1000 - 0xfffe100f
+	section, .mmu_tbl1: 0xfffe2000 - 0xfffe3fff
+	section, .mmu_tbl2: 0xfffe4000 - 0xfffe7fff
+	section, .preinit_array: 0xfffe8000 - 0xfffe7fff
+	section, .init_array: 0xfffe8000 - 0xfffe8007
+	section, .fini_array: 0xfffe8008 - 0xfffe8047
+	section, .sdata: 0xfffe8048 - 0xfffe807f
+	section, .sbss: 0xfffe8080 - 0xfffe807f
+	section, .tdata: 0xfffe8080 - 0xfffe807f
+	section, .tbss: 0xfffe8080 - 0xfffe807f
+	section, .bss: 0xfffe8080 - 0xfffe963f
+	section, .heap: 0xffff0c34 - 0xffff2c3f
+	section, .stack: 0xffff2c40 - 0xffff5c3f
+  0%    0MB   0.0MB/s  ??:?? ETA 29%    0MB   0.0MB/s  ??:?? ETA 88%    0MB   0.1MB/s  ??:?? ETA100%    0MB   0.1MB/s  00:02    
+Setting PC to Program Start Address 0xffff0000
+Successfully downloaded C:/zcu104_bit/tests/ZCU104/elf/zynq_mp_dram_test.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 2000
+
+********************************************************************************
+   Zynq MPSoC
+   DRAM Diagnostics Test (A53) 
+********************************************************************************
+   Select one of the options below:
+   +--------------------------------------------------------------------+
+   |  Memory Tests                                                      |
+   +-----+--------------------------------------------------------------+
+   | '0' | Test first 2MB region of DDR                                 |
+   | '1' | Test first 32MB region of DDR                                |
+   | '2' | Test first 64MB region of DDR                                |
+   | '3' | Test first 128MB region of DDR                               |
+   | '4' | Test first 256MB region of DDR                               |
+   | '5' | Test first 512MB region of DDR                               |
+   | '6' | Test first 1GB region of DDR                                 |
+   | '7' | Test first 2GB region of DDR                                 |
+   | '8' | Test first 4GB region of DDR                                 |
+   | '9' | Test first 8GB region of DDR                                 |
+   +-----+--------------------------------------------------------------+
+   |  Eye Tests                                                         |
+   +-----+--------------------------------------------------------------+
+   | 'r' | Perform a read eye analysis test                             |
+   | 'w' | Perform a write eye analysis test                            |
+   | 'a' | Print test start address                                     |
+   | 't' | Specify test start address (default=0x0)                     |
+   | 's' | Select the DRAM rank (default=1)                             |
+   +-----+--------------------------------------------------------------+
+   |  Miscellaneous options                                             |
+   +-----+--------------------------------------------------------------+
+   | 'i' | Print DDR information                                        |
+   | 'v' | Verbose Mode ON/OFF                                          |
+   | 'o' | Toggle cache enable/disable                                  |
+   | 'b' | Toggle between 32/64-bit bus widths                          |
+   | 'h' | Print this help menu                                         |
+   +-----+--------------------------------------------------------------+
+    Bus Width = 64,   D-cache is enable,   Verbose Mode is OFF
+
+ Enter 'h' to print help menu
+ Enter Test Option: 
+
+disconnect
+
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-02 12:46:16
+Writing: '2\n'
+2
+Starting Memory Test '2' - Testing 64MB length from address 0x0...
+---------+--------+------------------------------------------------+-----------
+  TEST   | ERROR  |          PER-BYTE-LANE ERROR COUNT             |  TIME
+         | COUNT  | LANES [ #0,  #1,  #2,  #3,  #4,  #5,  #6,  #7] |  (sec)
+---------+--------+------------------------------------------------+-----------
+MT0(1: 0)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 1.33838
+---------+--------+------------------------------------------------+-----------
+MTS(1: 1)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.666568
+---------+--------+------------------------------------------------+-----------
+MTS(1: 2)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.667223
+---------+--------+------------------------------------------------+-----------
+MTS(1: 3)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.666568
+---------+--------+------------------------------------------------+-----------
+MTS(1: 4)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.666568
+---------+--------+------------------------------------------------+-----------
+MTS(1: 5)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.667223
+---------+--------+------------------------------------------------+-----------
+MTS(1: 6)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.666568
+---------+--------+------------------------------------------------+-----------
+MTS(1: 7)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.667223
+---------+--------+------------------------------------------------+-----------
+MTS(1: 8)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.666568
+---------+--------+------------------------------------------------+-----------
+MTP(1: 9)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 1.07949
+---------+--------+------------------------------------------------+-----------
+MTP(1:10)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 1.07949
+---------+--------+------------------------------------------------+-----------
+MTL(1:11)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 1.166
+---------+--------+------------------------------------------------+-----------
+MTL(1:12)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 1.166
+---------+--------+------------------------------------------------+-----------
+MTL(1:13)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 1.166
+---------+--------+------------------------------------------------+-----------
+MTL(1:14)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 1.166
+---------+--------+------------------------------------------------+-----------
+
+memtest_all: PASSED
+error_counter = 0x0000000000000000
+
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+
+Info: The test took 0 hours, 00 minutes, and 43 seconds. 0:00:43
+
+Info: MIG PL DDR4 test started...
+
+Info: The test will take 0 hours, 03 minutes, and 51 seconds. 0:03:51
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-02 12:46:38
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_mig_pl_ddr4.tcl}
+# set_param xicom.use_bitstream_version_check false
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:08:27
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:13 . Memory (MB): peak = 306.285 ; gain = 2.516
+# current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Xilinx/*]
+# open_hw_target -jtag_mode 1
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+INFO: [Labtoolstcl 44-467] Setting hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A into jtag_mode
+# scan_ir_hw_jtag 12 -tdi 0x90B
+# close_hw_target
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1435] Device xczu7 (JTAG device index = 0) is not programmed (DONE status = 0).
+# current_hw_device [lindex [get_hw_devices] 1]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 1]
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/zcu104_mig_pl_ddr4.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 883.488 ; gain = 1.242
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# disconnect_hw_server
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Fri Feb  2 12:47:33 2018...
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-02 12:47:33
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_mig_pl_ddr4_status.tcl}
+# set TEST_DELAY 120
+# disconnect_hw_server -quiet
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:08:27
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:14 . Memory (MB): peak = 305.617 ; gain = 2.402
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 MIG core(s).
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+# set_property PROBES.FILE {[pwd]/../bitstream/zcu104_mig_pl_ddr4.ltx} [lindex [get_hw_devices] 0]
+# puts "\n    10 second delay for UltraScale MIG calibration\n"
+
+    10 second delay for UltraScale MIG calibration
+
+# after 10000
+# refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 MIG core(s).
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+INFO: [Labtools 27-1889] Uploading output probe values for VIO core [hw_vio_1]
+# puts "\n    Refreshing VIO\n"
+
+    Refreshing VIO
+
+# refresh_hw_vio [get_hw_vios hw_vio_*]
+# puts "\n    Reading LED Status Before Resetting\n"
+
+    Reading LED Status Before Resetting
+
+# set leds [get_property INPUT_VALUE [get_hw_probes -filter {NAME =~ */led || NAME =~ */out}]]
+# if {${leds} == "9" || ${leds} == "b"} {
+#     set pass_1 true
+# } else {
+#     set pass_1 false
+# }
+# puts "\n    Info:VIO Core Read LED Data Pass 1:_________${leds}_________\n"
+
+    Info:VIO Core Read LED Data Pass 1:_________9_________
+
+# puts "\n    Reset the design\n"
+
+    Reset the design
+
+# set_property OUTPUT_VALUE 1 [get_hw_probes u_led_display_driver/reset_in -of_objects [get_hw_vios hw_vio_*]]
+# commit_hw_vio [get_hw_probes {u_led_display_driver/reset_in} -of_objects [get_hw_vios hw_vio_*]]
+# after 5000
+# set_property OUTPUT_VALUE 0 [get_hw_probes u_led_display_driver/reset_in -of_objects [get_hw_vios hw_vio_*]]
+# commit_hw_vio [get_hw_probes {u_led_display_driver/reset_in} -of_objects [get_hw_vios hw_vio_*]]
+# puts "\n    Waiting $TEST_DELAY seconds for test to run\n"
+
+    Waiting 120 seconds for test to run
+
+# after [expr $TEST_DELAY * 1000]
+# puts "\n    Refreshing VIO\n"
+
+    Refreshing VIO
+
+# refresh_hw_vio [get_hw_vios hw_vio_*]
+# puts "\n    Reading LED Status"
+
+    Reading LED Status
+# set leds [get_property INPUT_VALUE [get_hw_probes -filter {NAME =~ */led || NAME =~ */out}]]
+# if {${leds} == "9" || ${leds} == "b"} {
+#     set pass_2 true
+# } else {
+#     set pass_2 false
+# }
+# puts "\nInfo:VIO Core Read LED Data Pass 2:_________${leds}_________\n"
+
+Info:VIO Core Read LED Data Pass 2:_________b_________
+
+# if {$pass_1 == true && $pass_2 == true} {
+#     puts "\n[lindex $argv 1] TEST PASSED\n"
+# } else  {
+#     puts "\n[lindex $argv 1] TEST FAILED\n"
+# }
+
+ TEST PASSED
+
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Fri Feb  2 12:50:28 2018...
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-02 12:50:28
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Fri Feb  2 12:50:50 2018...
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+
+Info: The test took 0 hours, 04 minutes, and 12 seconds. 0:04:12
+
+Info: PING test started...
+
+Info: The test will take 0 hours, 00 minutes, and 54 seconds. 0:00:54
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-02 12:50:50
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-02 12:50:50
+
+C:\zcu104_bit\tests\ZCU104>cd bat\ 
+
+C:\zcu104_bit\tests\ZCU104\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-02 12:50:54
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+attempting to launch hw_server
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:08:27
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+INFO: hw_server application started
+INFO: Use Ctrl-C to exit hw_server application
+
+
+
+****** Xilinx hw_server v2017.4
+
+  **** Build date : Dec 15 2017-21:08:27
+
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+
+INFO: hw_server application started
+
+INFO: Use Ctrl-C to exit hw_server application
+
+
+
+
+INFO: To connect to this hw_server instance use url: TCP:127.0.0.1:3121
+
+
+
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+fpga -state
+FPGA is not configured
+after 2000
+
+fpga -no-revision-check -file {C:/zcu104_bit/tests/ZCU104/../bitstream/zcu104_ipi.bit}
+initializing  0%    0MB   0.0MB/s  ??:?? ETA  3%    0MB   0.4MB/s  ??:?? ETA  8%    1MB   0.7MB/s  ??:?? ETA 12%    2MB   0.9MB/s  ??:?? ETA 17%    3MB   1.1MB/s  00:14 ETA 21%    4MB   1.2MB/s  00:12 ETA 26%    4MB   0.9MB/s  00:14 ETA 31%    5MB   1.0MB/s  00:12 ETA 35%    6MB   1.0MB/s  00:11 ETA 40%    7MB   1.1MB/s  00:10 ETA 44%    8MB   1.1MB/s  00:08 ETA 49%    9MB   1.2MB/s  00:07 ETA 49%    9MB   1.0MB/s  00:09 ETA 54%   10MB   1.0MB/s  00:08 ETA 58%   10MB   1.1MB/s  00:07 ETA 63%   11MB   1.1MB/s  00:06 ETA 67%   12MB   1.1MB/s  00:05 ETA 72%   13MB   1.2MB/s  00:04 ETA 77%   14MB   1.2MB/s  00:03 ETA 81%   15MB   1.2MB/s  00:02 ETA 86%   15MB   1.2MB/s  00:02 ETA 90%   16MB   1.2MB/s  00:01 ETA 95%   17MB   1.2MB/s  00:00 ETA 99%   18MB   1.3MB/s  00:00 ETA100%   18MB   1.3MB/s  00:14    
+
+after 2000
+
+fpga -state
+FPGA is configured
+after 2000
+
+fpga -ir-status
+IR STATUS: 117
+     Always One (Bits [0]): 1
+    Always Zero (Bits [1]): 0
+       ISC_Done (Bits [2]): 1
+    ISC_Enabled (Bits [3]): 0
+  Init Complete (Bits [4]): 1
+           DONE (Bits [5]): 1
+             (Bits [11:6]): 1
+after 2000
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/zcu104_bit/tests/ZCU104/../tcl/ipi_psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/zcu104_bit/tests/ZCU104/../elf/lwip_echo_server.elf}
+Downloading Program -- C:/zcu104_bit/tests/ZCU104/elf/lwip_echo_server.elf
+	section, .text: 0x00000000 - 0x00015e77
+	section, .init: 0x00015e80 - 0x00015eb3
+	section, .fini: 0x00015ec0 - 0x00015ef3
+	section, .note.gnu.build-id: 0x00015ef4 - 0x00015f17
+	section, .rodata: 0x00015f18 - 0x000169ef
+	section, .rodata1: 0x000169f0 - 0x000169ff
+	section, .sdata2: 0x00016a00 - 0x000169ff
+	section, .sbss2: 0x00016a00 - 0x000169ff
+	section, .data: 0x00016a00 - 0x00018837
+	section, .data1: 0x00018838 - 0x0001883f
+	section, .ctors: 0x00018840 - 0x0001883f
+	section, .dtors: 0x00018840 - 0x0001883f
+	section, .eh_frame: 0x00018840 - 0x00018843
+	section, .mmu_tbl0: 0x00019000 - 0x0001900f
+	section, .mmu_tbl1: 0x0001a000 - 0x0001bfff
+	section, .mmu_tbl2: 0x0001c000 - 0x0001ffff
+	section, .preinit_array: 0x00020000 - 0x0001ffff
+	section, .init_array: 0x00020000 - 0x00020007
+	section, .fini_array: 0x00020008 - 0x00020047
+	section, .sdata: 0x00020048 - 0x0002007f
+	section, .sbss: 0x00020080 - 0x0002007f
+	section, .tdata: 0x00020080 - 0x0002007f
+	section, .tbss: 0x00020080 - 0x0002007f
+	section, .bss: 0x00200000 - 0x0061013f
+	section, .heap: 0x00610140 - 0x0061a13f
+	section, .stack: 0x0061a140 - 0x0062513f
+  0%    0MB   0.0MB/s  ??:?? ETA 74%    0MB   0.2MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu104_bit/tests/ZCU104/elf/lwip_echo_server.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 2000
+
+
+-----lwIP TCP echo server ------
+TCP packets sent to port 6001 will be echoed back
+Start PHY autonegotiation 
+Waiting for PHY to complete autonegotiation.
+
+disconnect
+
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-02 12:51:33
+autonegotiation complete 
+link speed for phy address 12: 1000
+DHCP Timeout
+Configuring default IP of 192.168.1.10
+Board IP: 192.168.1.10
+Netmask : 255.255.255.0
+Gateway : 192.168.1.1
+TCP echo server started @ port 7
+
+Entering step: 4
+
+
+Info: This step started at: 2018-02-02 12:51:49
+
+Pinging 192.168.1.10 with 32 bytes of data:
+Reply from 192.168.1.10: bytes=32 time<1ms TTL=64
+Reply from 192.168.1.10: bytes=32 time<1ms TTL=64
+Reply from 192.168.1.10: bytes=32 time<1ms TTL=64
+Reply from 192.168.1.10: bytes=32 time<1ms TTL=64
+
+Ping statistics for 192.168.1.10:
+
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+Info: Result for step 4: Pass
+
+Info: The test took 0 hours, 01 minutes, and 03 seconds. 0:01:03
+
+Info: UART 01/02 TEST test started...
+
+Info: The test will take 0 hours, 00 minutes, and 53 seconds. 0:00:53
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-02 12:51:54
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-02 12:51:54
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-02 12:51:54
+
+C:\zcu104_bit\tests\ZCU104>cd bat\ 
+
+C:\zcu104_bit\tests\ZCU104\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-02 12:51:58
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+attempting to launch hw_server
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:08:27
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+INFO: hw_server application started
+INFO: Use Ctrl-C to exit hw_server application
+
+
+
+****** Xilinx hw_server v2017.4
+
+  **** Build date : Dec 15 2017-21:08:27
+
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+
+INFO: hw_server application started
+
+INFO: Use Ctrl-C to exit hw_server application
+
+
+
+
+INFO: To connect to this hw_server instance use url: TCP:127.0.0.1:3121
+
+
+
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+
+fpga -state
+FPGA is not configured
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/zcu104_bit/tests/ZCU104/../tcl/psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/zcu104_bit/tests/ZCU104/../elf/hello_uart_1.elf}
+Downloading Program -- C:/zcu104_bit/tests/ZCU104/elf/hello_uart_1.elf
+	section, .text: 0x00000000 - 0x0000266b
+	section, .init: 0x00002680 - 0x000026b3
+	section, .fini: 0x000026c0 - 0x000026f3
+	section, .note.gnu.build-id: 0x000026f4 - 0x00002717
+	section, .rodata: 0x00002718 - 0x00002977
+	section, .rodata1: 0x00002978 - 0x0000297f
+	section, .sdata2: 0x00002980 - 0x0000297f
+	section, .sbss2: 0x00002980 - 0x0000297f
+	section, .data: 0x00002980 - 0x0000326f
+	section, .data1: 0x00003270 - 0x0000327f
+	section, .ctors: 0x00003280 - 0x0000327f
+	section, .dtors: 0x00003280 - 0x0000327f
+	section, .eh_frame: 0x00003280 - 0x00003283
+	section, .mmu_tbl0: 0x00004000 - 0x0000400f
+	section, .mmu_tbl1: 0x00005000 - 0x00006fff
+	section, .mmu_tbl2: 0x00007000 - 0x0000afff
+	section, .preinit_array: 0x0000b000 - 0x0000afff
+	section, .init_array: 0x0000b000 - 0x0000b007
+	section, .fini_array: 0x0000b008 - 0x0000b047
+	section, .sdata: 0x0000b048 - 0x0000b07f
+	section, .sbss: 0x0000b080 - 0x0000b07f
+	section, .tdata: 0x0000b080 - 0x0000b07f
+	section, .tbss: 0x0000b080 - 0x0000b07f
+	section, .bss: 0x0000b080 - 0x0000b0bf
+	section, .heap: 0x0000b0c0 - 0x0000d0bf
+	section, .stack: 0x0000d0c0 - 0x000100bf
+  0%    0MB   0.0MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu104_bit/tests/ZCU104/elf/hello_uart_1.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 2000
+
+********************************************************
+********************************************************
+**                ZCU104 - UART 01 Test               **
+********************************************************
+********************************************************
+Testing UART
+115200,8,N,1
+Hello world!
+UART 01 Test Passed
+
+
+disconnect
+
+step finished 
+
+Entering step: 4
+
+
+Info: This step started at: 2018-02-02 12:52:18
+
+C:\zcu104_bit\tests\ZCU104>cd bat\ 
+
+C:\zcu104_bit\tests\ZCU104\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 5
+
+
+Info: This step started at: 2018-02-02 12:52:22
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+
+fpga -state
+FPGA is not configured
+
+fpga -no-revision-check -file {C:/zcu104_bit/tests/ZCU104/../bitstream/zcu104_ipi.bit}
+initializing  0%    0MB   0.0MB/s  ??:?? ETA  5%    1MB   2.1MB/s  ??:?? ETA 10%    1MB   1.9MB/s  ??:?? ETA 15%    2MB   1.8MB/s  ??:?? ETA 19%    3MB   1.8MB/s  ??:?? ETA 24%    4MB   1.8MB/s  ??:?? ETA 28%    5MB   1.7MB/s  00:07 ETA 33%    6MB   1.7MB/s  00:07 ETA 37%    6MB   1.7MB/s  00:06 ETA 42%    7MB   1.7MB/s  00:06 ETA 47%    8MB   1.7MB/s  00:05 ETA 51%    9MB   1.7MB/s  00:05 ETA 56%   10MB   1.7MB/s  00:04 ETA 61%   11MB   1.7MB/s  00:04 ETA 65%   12MB   1.7MB/s  00:03 ETA 70%   12MB   1.7MB/s  00:03 ETA 74%   13MB   1.7MB/s  00:02 ETA 79%   14MB   1.7MB/s  00:02 ETA 83%   15MB   1.7MB/s  00:01 ETA 88%   16MB   1.7MB/s  00:01 ETA 92%   17MB   1.7MB/s  00:00 ETA 97%   17MB   1.7MB/s  00:00 ETA100%   18MB   1.7MB/s  00:10    
+
+fpga -ir-status
+IR STATUS: 117
+     Always One (Bits [0]): 1
+    Always Zero (Bits [1]): 0
+       ISC_Done (Bits [2]): 1
+    ISC_Enabled (Bits [3]): 0
+  Init Complete (Bits [4]): 1
+           DONE (Bits [5]): 1
+             (Bits [11:6]): 1
+targets -set -filter {name =~"*APU*"}
+
+source {C:/zcu104_bit/tests/ZCU104/../tcl/psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/zcu104_bit/tests/ZCU104/../elf/hello_uart_2.elf}
+Downloading Program -- C:/zcu104_bit/tests/ZCU104/elf/hello_uart_2.elf
+	section, .text: 0x00000000 - 0x000026ab
+	section, .init: 0x000026c0 - 0x000026f3
+	section, .fini: 0x00002700 - 0x00002733
+	section, .note.gnu.build-id: 0x00002734 - 0x00002757
+	section, .rodata: 0x00002758 - 0x000029b7
+	section, .rodata1: 0x000029b8 - 0x000029bf
+	section, .sdata2: 0x000029c0 - 0x000029bf
+	section, .sbss2: 0x000029c0 - 0x000029bf
+	section, .data: 0x000029c0 - 0x000032af
+	section, .data1: 0x000032b0 - 0x000032bf
+	section, .ctors: 0x000032c0 - 0x000032bf
+	section, .dtors: 0x000032c0 - 0x000032bf
+	section, .eh_frame: 0x000032c0 - 0x000032c3
+	section, .mmu_tbl0: 0x00004000 - 0x0000400f
+	section, .mmu_tbl1: 0x00005000 - 0x00006fff
+	section, .mmu_tbl2: 0x00007000 - 0x0000afff
+	section, .preinit_array: 0x0000b000 - 0x0000afff
+	section, .init_array: 0x0000b000 - 0x0000b007
+	section, .fini_array: 0x0000b008 - 0x0000b047
+	section, .sdata: 0x0000b048 - 0x0000b07f
+	section, .sbss: 0x0000b080 - 0x0000b07f
+	section, .tdata: 0x0000b080 - 0x0000b07f
+	section, .tbss: 0x0000b080 - 0x0000b07f
+	section, .bss: 0x0000b080 - 0x0000b0bf
+	section, .heap: 0x0000b0c0 - 0x0000d0bf
+	section, .stack: 0x0000d0c0 - 0x000100bf
+  0%    0MB   0.0MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu104_bit/tests/ZCU104/elf/hello_uart_2.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 2000
+
+********************************************************
+********************************************************
+**                ZCU106 - UART 02 Test               **
+********************************************************
+********************************************************
+Testing UART
+115200,8,N,1
+Hello world!
+UART 02 Test Passed
+
+
+disconnect
+
+step finished 
+
+step finished 
+
+Info: Result for step 0: Pass
+step finished 
+
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+Info: Result for step 4: Pass
+Info: Result for step 5: Pass
+
+Info: The test took 0 hours, 00 minutes, and 57 seconds. 0:00:57
+
+Info: PMOD Loopback test started...
+
+Info: The test will take 0 hours, 01 minutes, and 00 seconds. 0:01:00
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-02 12:52:52
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-02 12:52:52
+
+C:\zcu104_bit\tests\ZCU104>cd bat\ 
+
+C:\zcu104_bit\tests\ZCU104\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-02 12:52:56
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_pl_pmod_loop_bit.tcl}
+# set_param xicom.use_bitstream_version_check false
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:08:27
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 306.250 ; gain = 2.383
+# current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Xilinx/*]
+# open_hw_target -jtag_mode 1
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+INFO: [Labtoolstcl 44-467] Setting hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A into jtag_mode
+open_hw_target: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 306.512 ; gain = 0.262
+# scan_ir_hw_jtag 12 -tdi 0x90B
+# close_hw_target
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/pmod_loop.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+WARNING: [Xicom 50-99] Incorrect bitstream assigned to device. Bitstream was generated for part xczu7ev-ffvc1156-2-i-es2, target device (with IDCODE revision 1) is compatible with production revision bitstreams.
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 307.078 ; gain = 0.012
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Fri Feb  2 12:53:43 2018...
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-02 12:53:44
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+fpga -state
+FPGA is configured
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/zcu104_bit/tests/ZCU104/../tcl/psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/zcu104_bit/tests/ZCU104/../elf/pmod_loop.elf}
+Downloading Program -- C:/zcu104_bit/tests/ZCU104/elf/pmod_loop.elf
+	section, .text: 0x00000000 - 0x0000c51b
+	section, .init: 0x0000c540 - 0x0000c573
+	section, .fini: 0x0000c580 - 0x0000c5b3
+	section, .note.gnu.build-id: 0x0000c5b4 - 0x0000c5d7
+	section, .rodata: 0x0000c5d8 - 0x0000cc07
+	section, .rodata1: 0x0000cc08 - 0x0000cc3f
+	section, .sdata2: 0x0000cc40 - 0x0000cc3f
+	section, .sbss2: 0x0000cc40 - 0x0000cc3f
+	section, .data: 0x0000cc40 - 0x0000de0f
+	section, .data1: 0x0000de10 - 0x0000de3f
+	section, .ctors: 0x0000de40 - 0x0000de3f
+	section, .dtors: 0x0000de40 - 0x0000de3f
+	section, .eh_frame: 0x0000de40 - 0x0000de43
+	section, .mmu_tbl0: 0x0000e000 - 0x0000e00f
+	section, .mmu_tbl1: 0x0000f000 - 0x00010fff
+	section, .mmu_tbl2: 0x00011000 - 0x00014fff
+	section, .preinit_array: 0x00015000 - 0x00014fff
+	section, .init_array: 0x00015000 - 0x00015007
+	section, .fini_array: 0x00015008 - 0x00015047
+	section, .sdata: 0x00015048 - 0x0001507f
+	section, .sbss: 0x00015080 - 0x0001507f
+	section, .tdata: 0x00015080 - 0x0001507f
+	section, .tbss: 0x00015080 - 0x0001507f
+	section, .bss: 0x00015080 - 0x0001513f
+	section, .heap: 0x00015140 - 0x0001713f
+	section, .stack: 0x00017140 - 0x0001a13f
+  0%    0MB   0.0MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu104_bit/tests/ZCU104/elf/pmod_loop.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 5000
+
+****************************************
+         PMOD0 LOOPBACK TEST
+****************************************
+PMOD0 Loopback Test: Pattern = 0xFFFFFFFF, PASSED
+Data In = 0x0000000F
+PMOD0 Loopback Test: Pattern = 0x00000000, PASSED
+Data In = 0x00000000
+PMOD0 Loopback Test: Pattern = 0xAAAAAAAA, PASSED
+Data In = 0x0000000A
+PMOD0 Loopback Test: Pattern = 0x55555555, PASSED
+Data In = 0x00000005
+
+****************************************
+         PMOD1 LOOPBACK TEST
+****************************************
+PMOD1 Loopback Test: Pattern = 0xFFFFFFFF, PASSED
+Data In = 0x0000000F
+PMOD1 Loopback Test: Pattern = 0x00000000, PASSED
+Data In = 0x00000000
+PMOD1 Loopback Test: Pattern = 0xAAAAAAAA, PASSED
+Data In = 0x0000000A
+PMOD1 Loopback Test: Pattern = 0x55555555, PASSED
+Data In = 0x00000005
+
+PMOD Loopback: Test passed
+
+disconnect
+
+step finished 
+
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+
+Info: The test took 0 hours, 01 minutes, and 10 seconds. 0:01:10
+
+Info: IBERT ALL test started...
+
+Info: The test will take 0 hours, 03 minutes, and 58 seconds. 0:03:58
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-02 12:54:03
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_ibert_bank_all.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:08:27
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:14 . Memory (MB): peak = 305.801 ; gain = 2.410
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# current_hw_device [lindex [get_hw_devices xczu7_0] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xczu7_0] 0]
+INFO: [Labtools 27-1434] Device xczu7 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+# current_hw_device [lindex [get_hw_devices arm_dap_1] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices arm_dap_1] 0]
+# current_hw_device [lindex [get_hw_devices xczu7_0] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/zcu104_ibert_bank_all.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices xczu7_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 881.797 ; gain = 1.125
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Fri Feb  2 12:54:58 2018...
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-02 12:54:58
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\vivado_ibert_reset.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:08:27
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:14 . Memory (MB): peak = 305.227 ; gain = 2.406
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# current_hw_device [lindex [get_hw_devices xczu7_0] 0]
+# refresh_hw_device -quiet [lindex [get_hw_devices] 0]
+# set_property PORT.QPLL0RESET 1 [get_hw_sio_commons *];
+# commit_hw_sio [list [get_hw_sio_commons {*}] ]
+# set_property PORT.QPLL0RESET 0 [get_hw_sio_commons *];
+# commit_hw_sio [list [get_hw_sio_commons {*}] ]
+# set_property PORT.QPLL1RESET 1 [get_hw_sio_commons *];
+# commit_hw_sio [list [get_hw_sio_commons {*}] ]
+# set_property PORT.QPLL1RESET 0 [get_hw_sio_commons *];
+# commit_hw_sio [list [get_hw_sio_commons {*}] ]
+# set_property PORT.CPLLRESET 1 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# set_property PORT.CPLLRESET 0 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# set_property PORT.GTRXRESET 1 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# set_property PORT.GTRXRESET 0 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# set_property PORT.GTTXRESET 1 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# set_property PORT.GTTXRESET 0 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# refresh_hw_sio [get_hw_sio_gts *]
+# refresh_hw_sio [get_hw_sio_commons *]
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+close_hw_target: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 899.617 ; gain = 0.000
+# disconnect_hw_server
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Fri Feb  2 12:55:52 2018...
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-02 12:55:52
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_ibert_bank_all_status.tcl}
+# open_hw
+# catch {disconnect_hw_server localhost:3121}
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:08:27
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:14 . Memory (MB): peak = 305.879 ; gain = 1.414
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# current_hw_device [lindex [get_hw_devices xczu7_0] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xczu7_0] 0]
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 IBERT core(s).
+# set xil_newLinks [list]
+# set xil_newLink [create_hw_sio_link -description {Link 0} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/*/*/0_1_0_0/IBERT/Quad_226/MGT_X0Y15/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/*/*/0_1_0_0/IBERT/Quad_226/MGT_X0Y15/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLinkGroup [create_hw_sio_linkgroup -description {Link Group 0} [get_hw_sio_links $xil_newLinks]]
+# unset xil_newLinks
+# set_property TX_PATTERN {PRBS 31-bit} [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property RX_PATTERN {PRBS 31-bit} [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.TX_RESET_DATAPATH 1 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.TX_RESET_DATAPATH 0 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.RX_RESET_DATAPATH 1 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.RX_RESET_DATAPATH 0 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.MGT_ERRCNT_RESET_CTRL 1 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.MGT_ERRCNT_RESET_CTRL 0 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/*/*/0_1_0_0/IBERT/Quad_226/MGT_X0Y15/TX->localhost:3121/xilinx_tcf/*/*/0_1_0_0/IBERT/Quad_226/MGT_X0Y15/RX}] ]
+# puts "Waiting 120 seconds for test to run."
+Waiting 120 seconds for test to run.
+# after [expr 120 * 1000]
+# set offset 3
+# set initial_links 0
+# for {set i $offset} {$i <= 3} {incr i} {
+#   set j [expr {$i - $offset + $initial_links}]
+#   set display_name [get_property {DISPLAY_NAME} [lindex [get_hw_sio_gts] $i]]
+#   set quad_name [lindex [split [get_property {NAME} [lindex [get_hw_sio_gts] $i]] /] 6]
+#   set qpll0 [expr [expr $i / 4] * 6]
+#   #set qpll1 [expr [expr [expr $i / 4] * 6] + 1]
+#   #set cpll0 [expr $qpll0 + 2 + [expr $i%4]]
+#   puts "$quad_name:$display_name: DESCRIPTION=[get_property {DESCRIPTION} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: STATUS=[get_property {STATUS} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: QPLL0_STATUS=[get_property {QPLL0_STATUS} [lindex [get_hw_sio_plls] $qpll0]]"
+#   #puts "$quad_name:$display_name: QPLL1_STATUS=[get_property {QPLL1_STATUS} [lindex [get_hw_sio_plls] $qpll1]]"
+#   #puts "$quad_name:$display_name: CPLL_STATUS=[get_property {PLL_STATUS} [lindex [get_hw_sio_plls] $cpll0]]"
+#   puts "$quad_name:$display_name: LINE_RATE=[get_property {LINE_RATE} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: LOGIC.ERRBIT_COUNT=[get_property {LOGIC.ERRBIT_COUNT} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: RX_RECEIVED_BIT_COUNT=[get_property {RX_RECEIVED_BIT_COUNT} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: TX_PATTERN=[get_property {TX_PATTERN} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: RX_PATTERN=[get_property {RX_PATTERN} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: LOOPBACK=[get_property {LOOPBACK} [lindex [get_hw_sio_links] $j]]"
+#   # Debug lines to insure the correct alignment of the get_hw_sio_gts, get_hw_sio_links, and get_hw_sio_plls numbering
+#   puts "$quad_name:$display_name: TX_ENDPOINT=[get_property {TX_ENDPOINT} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: RX_ENDPOINT=[get_property {RX_ENDPOINT} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: NAME=[get_property {NAME} [lindex [get_hw_sio_gts] $i]]"
+#   puts "$quad_name:$display_name: get_hw_sio_plls=[lindex [get_hw_sio_plls] $qpll0]"
+#   #puts "$quad_name:$display_name: get_hw_sio_plls=[lindex [get_hw_sio_plls] $qpll1]"
+#   #puts "$quad_name:$display_name: get_hw_sio_plls=[lindex [get_hw_sio_plls] $cpll0]"
+# }
+Quad_226:MGT_X0Y15: DESCRIPTION=Link 0
+Quad_226:MGT_X0Y15: STATUS=15.630 Gbps
+Quad_226:MGT_X0Y15: QPLL0_STATUS=LOCKED
+Quad_226:MGT_X0Y15: LINE_RATE=15.630
+Quad_226:MGT_X0Y15: LOGIC.ERRBIT_COUNT=000000000000
+Quad_226:MGT_X0Y15: RX_RECEIVED_BIT_COUNT=270589440
+Quad_226:MGT_X0Y15: TX_PATTERN=PRBS 31-bit
+Quad_226:MGT_X0Y15: RX_PATTERN=PRBS 31-bit
+Quad_226:MGT_X0Y15: LOOPBACK=None
+Quad_226:MGT_X0Y15: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280961B036A/0_1_0_0/IBERT/Quad_226/MGT_X0Y15/TX
+Quad_226:MGT_X0Y15: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280961B036A/0_1_0_0/IBERT/Quad_226/MGT_X0Y15/RX
+Quad_226:MGT_X0Y15: NAME=localhost:3121/xilinx_tcf/Xilinx/1280961B036A/0_1_0_0/IBERT/Quad_226/MGT_X0Y15
+Quad_226:MGT_X0Y15: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280961B036A/0_1_0_0/IBERT/Quad_226/COMMON_X0Y3/QPLL0
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+close_hw_target: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 900.695 ; gain = 0.000
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Fri Feb  2 12:58:43 2018...
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+
+Info: The test took 0 hours, 04 minutes, and 40 seconds. 0:04:40
+
+Info: LED & DIP test started...
+
+Info: The test will take 0 hours, 01 minutes, and 06 seconds. 0:01:06
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-02 12:58:44
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-02 12:58:44
+
+C:\zcu104_bit\tests\ZCU104>cd bat\ 
+
+C:\zcu104_bit\tests\ZCU104\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-02 12:58:48
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_pl_pmod_loop_bit.tcl}
+# set_param xicom.use_bitstream_version_check false
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:08:27
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 306.168 ; gain = 2.355
+# current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Xilinx/*]
+# open_hw_target -jtag_mode 1
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+INFO: [Labtoolstcl 44-467] Setting hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A into jtag_mode
+open_hw_target: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 306.992 ; gain = 0.824
+# scan_ir_hw_jtag 12 -tdi 0x90B
+# close_hw_target
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/pmod_loop.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+WARNING: [Xicom 50-99] Incorrect bitstream assigned to device. Bitstream was generated for part xczu7ev-ffvc1156-2-i-es2, target device (with IDCODE revision 1) is compatible with production revision bitstreams.
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 307.750 ; gain = 0.391
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Fri Feb  2 12:59:36 2018...
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-02 12:59:37
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+fpga -state
+FPGA is configured
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/zcu104_bit/tests/ZCU104/../tcl/psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/zcu104_bit/tests/ZCU104/../elf/pb_dip_led.elf}
+Downloading Program -- C:/zcu104_bit/tests/ZCU104/elf/pb_dip_led.elf
+	section, .text: 0x00000000 - 0x0000c4db
+	section, .init: 0x0000c500 - 0x0000c533
+	section, .fini: 0x0000c540 - 0x0000c573
+	section, .note.gnu.build-id: 0x0000c574 - 0x0000c597
+	section, .rodata: 0x0000c598 - 0x0000cb0f
+	section, .rodata1: 0x0000cb10 - 0x0000cb3f
+	section, .sdata2: 0x0000cb40 - 0x0000cb3f
+	section, .sbss2: 0x0000cb40 - 0x0000cb3f
+	section, .data: 0x0000cb40 - 0x0000dcff
+	section, .data1: 0x0000dd00 - 0x0000dcff
+	section, .ctors: 0x0000dd00 - 0x0000dcff
+	section, .dtors: 0x0000dd00 - 0x0000dcff
+	section, .eh_frame: 0x0000dd00 - 0x0000dd03
+	section, .mmu_tbl0: 0x0000e000 - 0x0000e00f
+	section, .mmu_tbl1: 0x0000f000 - 0x00010fff
+	section, .mmu_tbl2: 0x00011000 - 0x00014fff
+	section, .preinit_array: 0x00015000 - 0x00014fff
+	section, .init_array: 0x00015000 - 0x00015007
+	section, .fini_array: 0x00015008 - 0x00015047
+	section, .sdata: 0x00015048 - 0x0001507f
+	section, .sbss: 0x00015080 - 0x0001507f
+	section, .tdata: 0x00015080 - 0x0001507f
+	section, .tbss: 0x00015080 - 0x0001507f
+	section, .bss: 0x00015080 - 0x0001513f
+	section, .heap: 0x00015140 - 0x0001713f
+	section, .stack: 0x00017140 - 0x0001a13f
+  0%    0MB   0.0MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu104_bit/tests/ZCU104/elf/pb_dip_led.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 10000
+
+****************************************
+         LED TEST
+****************************************
+
+****************************************
+         DIP SWITCH AND PUSH-BUTTON TEST
+****************************************
+
+DIP switch and Push-button changes shown on GPIO LEDs
+
+disconnect
+
+step finished 
+
+Entering step: 4
+
+
+Info: This step started at: 2018-02-02 12:59:59
+
+User has responded "Yes": "Push each of the buttons and make sure the LEDs turn on
+Toggle each of the DIP switches and make sure the LEDs toggle as well."
+
+step finished 
+
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+Info: Result for step 4: Pass
+
+Info: The test took 0 hours, 01 minutes, and 17 seconds. 0:01:17
+
+Info: XM107 LVDS test started...
+
+Info: The test will take 0 hours, 01 minutes, and 27 seconds. 0:01:27
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-02 13:01:22
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-02 13:01:22
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-02 13:01:23
+
+C:\zcu104_bit\tests\ZCU104>cd bat\ 
+
+C:\zcu104_bit\tests\ZCU104\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-02 13:01:27
+
+catch { disconnect }
+
+
+connect -url tcp:127.0.0.1:3121
+attempting to launch hw_server
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:08:27
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+INFO: hw_server application started
+INFO: Use Ctrl-C to exit hw_server application
+
+
+
+****** Xilinx hw_server v2017.4
+
+  **** Build date : Dec 15 2017-21:08:27
+
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+
+INFO: hw_server application started
+
+INFO: Use Ctrl-C to exit hw_server application
+
+
+
+
+INFO: To connect to this hw_server instance use url: TCP:127.0.0.1:3121
+
+
+
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+fpga -state
+FPGA is not configured
+after 2000
+
+fpga -file {C:/zcu104_bit/tests/ZCU104/../bitstream/sc.bit}
+initializing  0%    0MB   0.0MB/s  ??:?? ETA  3%    0MB   0.8MB/s  ??:?? ETA  8%    1MB   1.2MB/s  ??:?? ETA 13%    2MB   1.3MB/s  ??:?? ETA 17%    3MB   1.4MB/s  ??:?? ETA 22%    4MB   1.4MB/s  ??:?? ETA 26%    4MB   1.5MB/s  00:09 ETA 27%    5MB   1.3MB/s  00:10 ETA 31%    5MB   1.3MB/s  00:09 ETA 36%    6MB   1.3MB/s  00:08 ETA 41%    7MB   1.4MB/s  00:07 ETA 45%    8MB   1.4MB/s  00:07 ETA 50%    9MB   1.4MB/s  00:06 ETA 50%    9MB   1.3MB/s  00:06 ETA 55%   10MB   1.3MB/s  00:06 ETA 60%   11MB   1.4MB/s  00:05 ETA 64%   11MB   1.4MB/s  00:04 ETA 69%   12MB   1.4MB/s  00:04 ETA 74%   13MB   1.4MB/s  00:03 ETA 78%   14MB   1.4MB/s  00:02 ETA 83%   15MB   1.4MB/s  00:02 ETA 87%   16MB   1.4MB/s  00:01 ETA 91%   16MB   1.4MB/s  00:01 ETA 96%   17MB   1.5MB/s  00:00 ETA100%   18MB   1.5MB/s  00:12    
+
+after 2000
+
+fpga -state
+FPGA is configured
+after 2000
+
+fpga -ir-status
+IR STATUS: 117
+     Always One (Bits [0]): 1
+    Always Zero (Bits [1]): 0
+       ISC_Done (Bits [2]): 1
+    ISC_Enabled (Bits [3]): 0
+  Init Complete (Bits [4]): 1
+           DONE (Bits [5]): 1
+             (Bits [11:6]): 1
+after 2000
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/zcu104_bit/tests/ZCU104/../tcl/sc_psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/zcu104_bit/tests/ZCU104/../elf/SC.elf}
+Downloading Program -- C:/zcu104_bit/tests/ZCU104/elf/SC.elf
+	section, .text: 0x00000000 - 0x0000556b
+	section, .init: 0x00005580 - 0x000055b3
+	section, .fini: 0x000055c0 - 0x000055f3
+	section, .note.gnu.build-id: 0x000055f4 - 0x00005617
+	section, .rodata: 0x00005618 - 0x00005927
+	section, .rodata1: 0x00005928 - 0x0000593f
+	section, .sdata2: 0x00005940 - 0x0000593f
+	section, .sbss2: 0x00005940 - 0x0000593f
+	section, .data: 0x00005940 - 0x00006a67
+	section, .data1: 0x00006a68 - 0x00006a7f
+	section, .ctors: 0x00006a80 - 0x00006a7f
+	section, .dtors: 0x00006a80 - 0x00006a7f
+	section, .eh_frame: 0x00006a80 - 0x00006a83
+	section, .mmu_tbl0: 0x00007000 - 0x0000700f
+	section, .mmu_tbl1: 0x00008000 - 0x00009fff
+	section, .mmu_tbl2: 0x0000a000 - 0x0000dfff
+	section, .preinit_array: 0x0000e000 - 0x0000dfff
+	section, .init_array: 0x0000e000 - 0x0000e007
+	section, .fini_array: 0x0000e008 - 0x0000e047
+	section, .sdata: 0x0000e048 - 0x0000e07f
+	section, .sbss: 0x0000e080 - 0x0000e07f
+	section, .tdata: 0x0000e080 - 0x0000e07f
+	section, .tbss: 0x0000e080 - 0x0000e07f
+	section, .bss: 0x0000e080 - 0x0000e17f
+	section, .heap: 0x0000e180 - 0x0001017f
+	section, .stack: 0x00010180 - 0x0001317f
+  0%    0MB   0.0MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu104_bit/tests/ZCU104/elf/SC.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 2000
+
+Starting System Controller...
+
+System Controller Initialization Finished...
+
+disconnect
+
+step finished 
+
+Entering step: 4
+
+
+Info: This step started at: 2018-02-02 13:02:02
+Writing: '\x1b'
+Writing: '\x08'
+[('', 'IW0\r74\r04', '', ''), ('', 'IW0\r44\r0003', '', ''), ('', 'IW0\r44\r2014', '', ''), ('', 'IW0\r44\r24FFFF', '', ''), ('', 'IW0\r44\r0140', '', ''), ('', 'DLY\rC350', '', ''), ('', 'IW0\r44\r21cd1c', '', ''), ('', 'DLY\rC350', '', ''), ('', 'IW0\r44\r0180', '', ''), ('', 'DLY\rC350', '', ''), ('', 'IW0\r74\r00', '', '')]:RWriting: '\t'
+:RWriting: 'IW0\r74\r04\r\t'
+IW07404:PWriting: 'IW0\r44\r0003\r\t'
+IW0440003:PWriting: 'IW0\r44\r2014\r\t'
+IW0442014:PWriting: 'IW0\r44\r24FFFF\r\t'
+IW04424FFFF:PWriting: 'IW0\r44\r0140\r\t'
+IW0440140:PWriting: 'DLY\rC350\r\t'
+DLYC350!:RWriting: 'IW0\r44\r21cd1c\r\t'
+IW04421cd1c:PWriting: 'DLY\rC350\r\t'
+DLYC350!:RWriting: 'IW0\r44\r0180\r\t'
+IW0440180:PWriting: 'DLY\rC350\r\t'
+DLYC350!:RWriting: 'IW0\r74\r00\r\t'
+'\r\nStarting System Controller...\r\n\r\nSystem Controller Initialization Finished...\r\n\x1b:R\r:R\rIW0\r74\r04\r:P\rIW0\r44\r0003\r:P\rIW0\r44\r2014\r:P\rIW0\r44\r24FFFF\r:P\rIW0\r44\r0140\r:P\rDLY\rC350!\r:R\rIW0\r44\r21cd1c\r:P\rDLY\rC350!\r:R\rIW0\r44\r0180\r:P\rDLY\rC350!\r:R\r'IW07400:P
+Entering step: 5
+
+
+Info: This step started at: 2018-02-02 13:02:21
+Writing: '\x1b'
+Writing: '\x08'
+[('', 'VRN', '', '')]:RWriting: '\t'
+:RWriting: 'VRN\r\t'
+'\r\nStarting System Controller...\r\n\r\nSystem Controller Initialization Finished...\r\n\x1b:R\r:R\rIW0\r74\r04\r:P\rIW0\r44\r0003\r:P\rIW0\r44\r2014\r:P\rIW0\r44\r24FFFF\r:P\rIW0\r44\r0140\r:P\rDLY\rC350!\r:R\rIW0\r44\r21cd1c\r:P\rDLY\rC350!\r:R\rIW0\r44\r0180\r:P\rDLY\rC350!\r:R\rIW0\r74\r00\r:P\r\x1b:R\r:R\r'VRN:PZynq v2.30
+Entering step: 6
+
+
+Info: This step started at: 2018-02-02 13:02:26
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_xm107_lvds.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:08:27
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target -jtag_mode 1
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+INFO: [Labtoolstcl 44-467] Setting hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A into jtag_mode
+# scan_ir_hw_jtag 12 -tdi 0x90B
+# close_hw_target
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/zcu104_xm107_lvds.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 307.117 ; gain = 0.039
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Fri Feb  2 13:03:08 2018...
+step finished 
+
+***********************************************************
+***********************************************************
+** ZCU104 - FMC XM107 LVDS Loopback Write and Read Tests **
+***********************************************************
+***********************************************************
+
+Testing LPC_LA 
+LPC_LA: Writing and Reading all 0's            - PASSED
+LPC_LA: Writing and Reading all 1's            - PASSED
+LPC_LA: Writing and Reading 0xFEDCBA98 pattern - PASSED
+LPC_LA: Writing and Reading 0x01234567 pattern - PASSED
+
+
+Completed FMC XM107 LVDS Loopback Write and Read Tests
+
+FMC XM107 LVDS Test passed
+
+
+step finished 
+
+Info: Result for step 0: Pass
+step finished 
+
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+Info: Result for step 4: Pass
+Info: Result for step 5: Pass
+Info: Result for step 6: Pass
+
+Info: The test took 0 hours, 01 minutes, and 48 seconds. 0:01:48
+
+Info: SD BOOT and UART test started...
+
+Info: The test will take 0 hours, 00 minutes, and 29 seconds. 0:00:29
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-02 13:03:11
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-02 13:03:11
+Xilinx Zynq MP First Stage Boot Loader 
+Release 2017.3   Oct 10 2017  -  17:24:52
+
+
+--------------------------------------
+---  HDMI SS + VPhy Example v2.0   ---
+---  (c) 2017 by Xilinx, Inc.      ---
+--------------------------------------
+Build Oct 11 2017 - 13:16:02
+--------------------------------------
+IDT_8T49N241 device ID 0x606
+---------------------------------
+
+---------------------
+---   MAIN MENU   ---
+---------------------
+i - Info
+       => Shows information about the HDMI RX stream, HDMI TX stream, 
+          GT transceivers and PLL settings.
+c - Colorbar
+       => Displays the colorbar on the source output.
+r - Resolution
+       => Change the video resolution of the colorbar.
+f - Frame rate
+       => Change the frame rate of the colorbar.
+d - Color depth
+       => Change the color depth of the colorbar.
+s - Color space
+       => Change the color space of the colorbar.
+p - Pass-through
+       => Passes the sink input to source output.
+z - GT & HDMI TX/RX log
+       => Shows log information for GT & HDMI TX/RX.
+e - Edid
+       => Display and set edid.
+a - Audio
+       => Audio options.
+v - Video
+       => Video pattern options.
+m - Set HDMI Mode
+n - Set DVI Mode
+
+
+Starting colorbar
+TX stream is up
+--------
+Colorbar :
+	Color Format:     RGB
+	Color Depth:      8
+	Pixels Per Clock: 2
+	Mode:             Progressive
+	Frame Rate:       60Hz
+	Resolution:       1920x1080@60Hz
+	Pixel Clock:      148500000
+--------
+
+User has confirmed: "Set mode switch SW6 to "0111" (Up,Down,Down,Down)
+Insert the SD BOOT micro-SD card"
+
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-02 13:04:09
+
+C:\zcu104_bit\tests\ZCU104>cd bat\ 
+
+C:\zcu104_bit\tests\ZCU104\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-02 13:04:13
+Xilinx Zynq MP First Stage Boot Loader 
+Release 2017.3   Oct 10 2017  -  17:24:52
+
+
+--------------------------------------
+---  HDMI SS + VPhy Example v2.0   ---
+---  (c) 2017 by Xilinx, Inc.      ---
+--------------------------------------
+Build Oct 11 2017 - 13:16:02
+--------------------------------------
+IDT_8T49N241 device ID 0x606
+---------------------------------
+
+---------------------
+---   MAIN MENU   ---
+---------------------
+i - Info
+       => Shows information about the HDMI RX stream, HDMI TX stream, 
+          GT transceivers and PLL settings.
+c - Colorbar
+       => Displays the colorbar on the source output.
+r - Resolution
+       => Change the video resolution of the colorbar.
+f - Frame rate
+       => Change the frame rate of the colorbar.
+d - Color depth
+       => Change the color depth of the colorbar.
+s - Color space
+       => Change the color space of the colorbar.
+p - Pass-through
+       => Passes the sink input to source output.
+z - GT & HDMI TX/RX log
+       => Shows log information for GT & HDMI TX/RX.
+e - Edid
+       => Display and set edid.
+a - Audio
+       => Audio options.
+v - Video
+       => Video pattern options.
+m - Set HDMI Mode
+n - Set DVI Mode
+
+
+Starting colorbar
+TX stream is up
+--------
+Colorbar :
+	Color Format:     RGB
+	Color Depth:      8
+	Pixels Per Clock: 2
+	Mode:             Progressive
+	Frame Rate:       60Hz
+	Resolution:       1920x1080@60Hz
+	Pixel Clock:      148500000
+--------
+RX stream is up
+TX stream is down
+TX stream is up
+--------
+Pass-Through :
+	Color Format:     RGB
+	Color Depth:      8
+	Pixels Per Clock: 2
+	Mode:             Progressive
+	Frame Rate:       60Hz
+	Resolution:       3840x2160@60Hz
+	Pixel Clock:      594000000
+--------
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Fri Feb  2 13:04:35 2018...
+step finished 
+
+Entering step: 4
+
+
+Info: This step started at: 2018-02-02 13:04:35
+
+User has responded "Yes": "Do you see the input test pattern on the output Monitor? 
+The test passed if you see the pattern on the output monitor."
+
+step finished 
+
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+Info: Result for step 4: Pass
+
+Info: The test took 0 hours, 00 minutes, and 28 seconds. 0:00:28

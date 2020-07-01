@@ -1,0 +1,163 @@
+Board: ZCU104
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: ZCU104 IDCODE Check test started...
+
+Info: The test will take 0 hours, 00 minutes, and 37 seconds. 0:00:37
+
+Entering step: 0
+
+
+Info: This step started at: 2017-10-10 15:14:06
+
+****** Vivado v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+couldn't read file "tcl\five_second_delay.tcl": no such file or directory
+INFO: [Common 17-206] Exiting Vivado at Tue Oct 10 15:14:21 2017...
+
+Entering step: 1
+
+
+Info: This step started at: 2017-10-10 15:14:21
+
+****** Vivado v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_rev_b_idcode_check.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1435] Device xczu7 (JTAG device index = 0) is not programmed (DONE status = 0).
+# set IDCODE [get_property IDCODE_HEX [lindex [get_hw_device] 0]]
+# puts $IDCODE
+14730093
+# if { $IDCODE == "14730093"} {
+#    puts "IDCODE check PASSED"
+# } else {
+#    puts "IDCODE check FAILED" 
+# }
+IDCODE check PASSED
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Tue Oct 10 15:14:45 2017...
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+
+Info: The test took 0 hours, 00 minutes, and 39 seconds. 0:00:39
+
+Info: ZCU104 IDCODE Check test started...
+
+Info: The test will take 0 hours, 00 minutes, and 39 seconds. 0:00:39
+
+Entering step: 0
+
+
+Info: This step started at: 2017-10-10 15:15:06
+
+****** Vivado v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Tue Oct 10 15:15:27 2017...
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2017-10-10 15:15:27
+
+****** Vivado v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_rev_b_idcode_check.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1435] Device xczu7 (JTAG device index = 0) is not programmed (DONE status = 0).
+# set IDCODE [get_property IDCODE_HEX [lindex [get_hw_device] 0]]
+# puts $IDCODE
+14730093
+# if { $IDCODE == "14730093"} {
+#    puts "IDCODE check PASSED"
+# } else {
+#    puts "IDCODE check FAILED" 
+# }
+IDCODE check PASSED
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Tue Oct 10 15:15:50 2017...
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+
+Info: The test took 0 hours, 00 minutes, and 43 seconds. 0:00:43
+
+Info: FTDI UART flashing test started...
+
+Info: The test will take 0 hours, 00 minutes, and 03 seconds. 0:00:03
+
+Entering step: 0
+
+
+Info: This step started at: 2017-10-10 15:15:54
+Location   Description                    SerialNumber        
+0          Xilinx MPSoC ZCU104 Eval Kit B 1280961B036B        
+0
+1280961B036
+program_eeprom 0 openjtag3 1280961B036
+step finished 
+
+Info: Result for step 0: Pass
+
+Info: The test took 0 hours, 00 minutes, and 01 seconds. 0:00:01
+
+Info: FTDI UART flashing test started...
+
+Info: The test will take 0 hours, 00 minutes, and 01 seconds. 0:00:01
+
+Entering step: 0
+
+
+Info: This step started at: 2017-10-10 15:17:32
+Location   Description                    SerialNumber        
+0          Xilinx MPSoC ZCU104 Eval Kit B 1280961B036B        
+0
+1280961B036
+program_eeprom 0 openjtag3 1280961B036
+step finished 
+
+Info: Result for step 0: Pass
+
+Info: The test took 0 hours, 00 minutes, and 01 seconds. 0:00:01

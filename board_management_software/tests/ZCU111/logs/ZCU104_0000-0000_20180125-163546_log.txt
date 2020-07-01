@@ -1,0 +1,161 @@
+Board: ZCU104
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: UART 01/02 TEST test started...
+
+Info: The test will take 0 hours, 00 minutes, and 21 seconds. 0:00:21
+
+Entering step: 0
+
+
+Info: This step started at: 2018-01-25 16:36:09
+
+Entering step: 1
+
+
+Info: This step started at: 2018-01-25 16:36:10
+
+Entering step: 2
+
+
+Info: This step started at: 2018-01-25 16:36:10
+
+C:\zcu104_bit\tests\ZCU104>cd bat\ 
+
+C:\zcu104_bit\tests\ZCU104\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-01-25 16:36:13
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+
+fpga -state
+FPGA is not configured
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/zcu104_bit/tests/ZCU104/../tcl/psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/zcu104_bit/tests/ZCU104/../elf/hello_uart_1.elf}
+Downloading Program -- C:/zcu104_bit/tests/ZCU104/elf/hello_uart_1.elf
+	section, .text: 0x00000000 - 0x0000266b
+	section, .init: 0x00002680 - 0x000026b3
+	section, .fini: 0x000026c0 - 0x000026f3
+	section, .note.gnu.build-id: 0x000026f4 - 0x00002717
+	section, .rodata: 0x00002718 - 0x00002977
+	section, .rodata1: 0x00002978 - 0x0000297f
+	section, .sdata2: 0x00002980 - 0x0000297f
+	section, .sbss2: 0x00002980 - 0x0000297f
+	section, .data: 0x00002980 - 0x0000326f
+	section, .data1: 0x00003270 - 0x0000327f
+	section, .ctors: 0x00003280 - 0x0000327f
+	section, .dtors: 0x00003280 - 0x0000327f
+	section, .eh_frame: 0x00003280 - 0x00003283
+	section, .mmu_tbl0: 0x00004000 - 0x0000400f
+	section, .mmu_tbl1: 0x00005000 - 0x00006fff
+	section, .mmu_tbl2: 0x00007000 - 0x0000afff
+	section, .preinit_array: 0x0000b000 - 0x0000afff
+	section, .init_array: 0x0000b000 - 0x0000b007
+	section, .fini_array: 0x0000b008 - 0x0000b047
+	section, .sdata: 0x0000b048 - 0x0000b07f
+	section, .sbss: 0x0000b080 - 0x0000b07f
+	section, .tdata: 0x0000b080 - 0x0000b07f
+	section, .tbss: 0x0000b080 - 0x0000b07f
+	section, .bss: 0x0000b080 - 0x0000b0bf
+	section, .heap: 0x0000b0c0 - 0x0000d0bf
+	section, .stack: 0x0000d0c0 - 0x000100bf
+  0%    0MB   0.0MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu104_bit/tests/ZCU104/elf/hello_uart_1.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 2000
+
+disconnect
+
+step finished 
+
+Entering step: 4
+
+
+Info: This step started at: 2018-01-25 16:36:28
+
+C:\zcu104_bit\tests\ZCU104>cd bat\ 
+
+C:\zcu104_bit\tests\ZCU104\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 5
+
+
+Info: This step started at: 2018-01-25 16:36:32
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+
+fpga -state
+FPGA is not configured
+
+fpga -no-revision-check -file {C:/zcu104_bit/tests/ZCU104/../bitstream/zcu106_ipi.bit}
+
+step finished 
+
+Error: Could not find regular expression in step 5 of test 6 - "(.*)Successfully\s+downloaded"
+
+step finished 
+the expression:(.*)UART\s+01\s+Test\s+Passed
+
+Error: Could not find regular expression in step 0 of test 6 - "(.*)UART\s+01\s+Test\s+Passed"
+
+Info: Result for step 0: Fail
+step finished 
+the expression:(.*)UART\s+02\s+Test\s+Passed
+
+Error: Could not find regular expression in step 1 of test 6 - "(.*)UART\s+02\s+Test\s+Passed"
+
+Info: Result for step 1: Fail
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+Info: Result for step 4: Pass
+Info: Result for step 5: Fail
+
+Info: The test took 0 hours, 00 minutes, and 34 seconds. 0:00:34

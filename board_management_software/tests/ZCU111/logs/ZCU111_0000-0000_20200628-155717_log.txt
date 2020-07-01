@@ -1,0 +1,220 @@
+Board: ZCU111
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: Run All button pressed, running through all of the checked tests 1 time.
+
+Info: The runall will take 0 hours, 40 minutes, and 26 seconds. 0:40:26
+
+Info: SYS_CTLR RESTORE test started...
+
+Info: The test will take 0 hours, 02 minutes, and 26 seconds. 0:02:26
+
+Entering step: 0
+
+
+Info: This step started at: 2020-06-28 15:58:00
+
+User has confirmed: "Set mode switch SW6 to "0" (Up,Up,Up,Up)
+Remove any jumpers on PMOD1, J49
+Attach jumpers:
+J164 Pin 1 to Pin 2 (MSP430_RST_B)
+J164 Pin 3 to Pin 4 (MSP430_TEST)
+Note: Pins 1 & 2 are closest to the edge of the board."
+
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2020-06-28 15:58:03
+
+C:\James\board_management_software\tests\ZCU111>cd bat\ 
+
+C:\James\board_management_software\tests\ZCU111\bat>ezoutlet.exe reset 192.168.0.12 
+
+Entering step: 2
+
+
+Info: This step started at: 2020-06-28 15:58:17
+
+****** Vivado v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+  **** IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Sun Jun 28 15:58:31 2020...
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2020-06-28 15:58:31
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+WARNING: If the reset is being triggered after powering on the device,
+          write bootloop at reset vector address (0xffff0000), or use
+          -clear-registers option, to avoid unpredictable behavior.
+          Further warnings will be suppressed
+step finished 
+
+Entering step: 4
+
+
+Info: This step started at: 2020-06-28 15:59:05
+Error: Invalid input for COM port
+
+Error: Found regular expression in step 4 of test 0 - "(.*)Error(.*)"
+
+Error: Could not find regular expression in step 4 of test 0 - "(.*)File\s+sent\s+successfully"
+
+Entering step: 5
+
+
+Info: This step started at: 2020-06-28 15:59:06
+
+Error: Stopped because step 4 failed in test 0
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+Info: Result for step 4: Fail
+Info: The test took 0 hours, 01 minutes, and 02 seconds. 0:01:02
+
+Info: ZCU111 IDCODE Check test started...
+
+Info: The test will take 0 hours, 00 minutes, and 36 seconds. 0:00:36
+
+Entering step: 0
+
+
+Info: This step started at: 2020-06-28 15:59:06
+
+User has confirmed: "Set mode switch SW6 to "0000" (Up,Up,Up,Up)"
+
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2020-06-28 15:59:20
+
+****** Vivado v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+  **** IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Sun Jun 28 15:59:34 2020...
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2020-06-28 15:59:34
+
+****** Vivado v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+  **** IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu111_rev_b_idcode_check.tcl}
+# open_hw
+WARNING: 'open_hw' is deprecated, please use 'open_hw_manager' instead.
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3414] Connected to existing cs_server.
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/19395A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xczu28dr (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+refresh_hw_device: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1838.094 ; gain = 777.051
+# set IDCODE [get_property IDCODE_HEX [lindex [get_hw_device] 0]]
+# puts $IDCODE
+147E0093
+# if { $IDCODE == "147E0093"} {
+#    puts "IDCODE check PASSED"
+# } else {
+#    puts "IDCODE check FAILED" 
+# }
+IDCODE check PASSED
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/19395A
+# disconnect_hw_server localhost:3121
+# close_hw
+WARNING: 'close_hw' is deprecated, please use 'close_hw_manager' instead.
+****** Webtalk v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+  **** IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source C:/James/board_management_software/tests/ZCU111/.Xil/Vivado-20776-pme10D0025/webtalk/labtool_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Sun Jun 28 15:59:56 2020...
+INFO: [Common 17-206] Exiting Vivado at Sun Jun 28 15:59:56 2020...
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+
+Info: The test took 0 hours, 00 minutes, and 36 seconds. 0:00:36
+
+Info: XM107 CARD TEST test started...
+
+Info: The test will take 0 hours, 00 minutes, and 30 seconds. 0:00:30
+
+Entering step: 0
+
+
+Info: This step started at: 2020-06-28 15:59:57
+
+step finished 
+Exception in thread :
+Traceback (most recent call last):
+  File "threading.py", line 801, in __bootstrap_inner
+  File "com.py", line 156, in run
+UnboundLocalError: local variable 'expression' referenced before assignment
+
+
+Error: 'comm' type in step 0 never found a serial port to connect to in test 2
+
+Entering step: 1
+
+
+Info: This step started at: 2020-06-28 15:59:57
+
+Error: Stopped because step 0 failed in test 2
+
+Info: Result for step 0: Fail
+Info: The test took 0 hours, 00 minutes, and 00 seconds. 0:00:00
+
+Info: ZCU111 EFUSE test started...
+
+Info: The test will take 0 hours, 00 minutes, and 44 seconds. 0:00:44
+
+Entering step: 0
+
+
+Info: This step started at: 2020-06-28 15:59:57
+
+Stopping all tests...
+
+Error: Step 0 timed out in test number 3
+
+Info: Result for step 0: Pass
+Info: The test took 0 hours, 00 minutes, and 09 seconds. 0:00:09

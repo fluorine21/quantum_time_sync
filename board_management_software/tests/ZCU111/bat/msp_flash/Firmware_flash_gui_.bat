@@ -1,0 +1,7 @@
+::@ECHO OFF
+cd bat\msp_flash\
+powershell -Command "$msp_com = \"COM Port B = COM\";$msp_comb = Get-WMIObject Win32_PnPEntity | where {$_.DeviceID -match \"FTDIBUS\\VID_[0-9][0-9][0-9][0-9]\+PID_[0-9][0-9][0-9][0-9]\+1280[0-9][0-9][0-9][A-E][0-9][0-9][0-9][B]\"} | select Caption | select-string -pattern \"USB Serial Port\" | ForEach-Object {$_ -match \"COM[0-9]+\" > $null; $matches[0]} | ForEach-Object {$_ -match \"[0-9]+\" > $null; $matches[0]} | Select-Object -First 1;$msp_comb = $msp_com + $msp_comb;echo $msp_comb;"
+:: Note: to run this next command directly by pasting, you must remove the extra percent sign before the two i variables
+for /F "usebackq tokens=1" %%i in (`powershell -Command "$msp_com = \"COM\";$msp_comb = Get-WMIObject Win32_PnPEntity | where {$_.DeviceID -match \"FTDIBUS\\VID_[0-9][0-9][0-9][0-9]\+PID_[0-9][0-9][0-9][0-9]\+1280[0-9][0-9][0-9][A-E][0-9][0-9][0-9][B]\"} | select Caption | select-string -pattern \"USB Serial Port\" | ForEach-Object {$_ -match \"COM[0-9]+\" > $null; $matches[0]} | ForEach-Object {$_ -match \"[0-9]+\" > $null; $matches[0]} | Select-Object -First 1;$msp_comb = $msp_com + $msp_comb;echo $msp_comb;"`) do set MSP_COM=%%i
+echo "BSL Flasher COM Port is set to %MSP_COM%"
+MSP_BSL_Flasher.exe -f ".\MSP_code.txt" -c "%MSP_COM%" -v -p

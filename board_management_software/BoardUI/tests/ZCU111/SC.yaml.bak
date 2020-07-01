@@ -1,0 +1,1740 @@
+tabs:
+  Clocks:
+    tabs:
+      Set:
+        buttons:
+          Set Si570 User Frequency:
+            steps:
+            - command: '{path to user si570}<readsi570:{main iic port}:5d><calcsi570:{main
+                iic port}:5d:300:<1>:00>{reset mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 3
+              content:
+              - label_right: 'Frequency: '
+              - input: ^((10)|(810)|((([1-7][0-9][0-9])|([1-9][0-9])|(80[0-9]))(\.[0-9]*)?))$
+              - label_left: (between 10 and 810 MHz)
+          Set Si570 MGT Frequency:
+            steps:
+            - command: '{path to mgt si570}<readsi570:{main iic port}:5d><calcsi570:{main
+                iic port}:5d:300:<1>:01>{reset mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 3
+              content:
+              - label_right: 'Frequency: '
+              - input: ^((10)|(810)|((([1-7][0-9][0-9])|([1-9][0-9])|(80[0-9]))(\.[0-9]*)?))$
+              - label_left: (between 10 and 810 MHz)
+          Set Si5382 Frequency:
+            steps:
+            - command: '{path to si5382}<writeSIClockFromFile:{main iic port}:68:clockFiles:<1>>{reset
+                mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 3
+              content:
+              - label_right: 'Type in the file name located in the clockFiles folder:'
+              - input: ^(.*)$
+          Set LMK04208 Frequency:
+            steps:
+            - command: '{path to i2c spi bridge}<writeTIClockFromFile:{main iic port}:2F:02:clockFiles:<1>>{reset
+                mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 3
+              content:
+              - label_right: 'Type in the file name located in the clockFiles folder:'
+              - input: ^(.*)$
+          Set LMX2594_A Frequency:
+            steps:
+            - command: '{path to i2c spi bridge}<resetTIClock:{main iic port}:2F:08><writeTIClockFromFile:{main
+                iic port}:2F:08:clockFiles:<1>>{reset mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 3
+              content:
+              - label_right: 'Type in the file name located in the clockFiles folder:'
+              - input: ^(.*)$
+          Set LMX2594_B Frequency:
+            steps:
+            - command: '{path to i2c spi bridge}<resetTIClock:{main iic port}:2F:04><writeTIClockFromFile:{main
+                iic port}:2F:04:clockFiles:<1>>{reset mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 3
+              content:
+              - label_right: 'Type in the file name located in the clockFiles folder:'
+              - input: ^(.*)$
+          Set LMX2594_C Frequency:
+            steps:
+            - command: '{path to i2c spi bridge}<resetTIClock:{main iic port}:2F:01><writeTIClockFromFile:{main
+                iic port}:2F:01:clockFiles:<1>>{reset mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 3
+              content:
+              - label_right: 'Type in the file name located in the clockFiles folder:'
+              - input: ^(.*)$
+      Read:
+        buttons:
+          Read Si570 User Frequency:
+            steps:
+            - command: '{path to user si570}<recallsi570:{main iic port}:5d:10><interpsi570:300>{reset
+                mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 2
+              content:
+              - label_right: 'Frequency: '
+              - output_left_large: .*FREQUENCY\[(.*)\]
+          Read Si570 MGT Frequency:
+            steps:
+            - command: '{path to mgt si570}<recallsi570:{main iic port}:5d:11><interpsi570:300>{reset
+                mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 2
+              content:
+              - label_right: 'Frequency: '
+              - output_left_large: .*FREQUENCY\[(.*)\]
+      Set Boot Frequency:
+        buttons:
+          Set Si570 User Boot Frequency:
+            steps:
+            - command: '{path to user si570}<readsi570:{main iic port}:5d><recordrunonboot:00>{path
+                to user si570}<calcsi570:{main iic port}:5d:300:<1>>{reset mux}<stoprecord><calcsi570:{main
+                iic port}:5d:300:<1>:00>'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 3
+              content:
+              - label_right: 'Frequency: '
+              - input: ^((10)|(810)|((([1-7][0-9][0-9])|([1-9][0-9])|(80[0-9]))(\.[0-9]*)?))$
+              - label_left: (between 10 and 810 MHz)
+          Set Si570 MGT Boot Frequency:
+            steps:
+            - command: '{path to mgt si570}<readsi570:{main iic port}:5d><recordrunonboot:01>{path
+                to mgt si570}<calcsi570:{main iic port}:5d:300:<1>>{reset mux}<stoprecord><calcsi570:{main
+                iic port}:5d:300:<1>:01>'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 3
+              content:
+              - label_right: 'Frequency: '
+              - input: ^((10)|(810)|((([1-7][0-9][0-9])|([1-9][0-9])|(80[0-9]))(\.[0-9]*)?))$
+              - label_left: (between 10 and 810 MHz)
+          Set Si5382 Boot Frequency:
+            steps:
+            - command: <recordrunonboot:02>{path to si5382}<writeSIClockFromFile:{main
+                iic port}:68:clockBuilder:<1>>{reset mux}<stoprecord>
+              type: sysc
+            ui:
+              rows: 1
+              columns: 3
+              content:
+              - label_right: 'Type in the file name located in the clockBuilder folder:'
+              - input: ^(.*)$
+      Restore Device Defaults:
+        buttons:
+          Restore Si570 User:
+            steps:
+            - command: "MDB\r00\r\t{path to user si570}<readsi570:{main iic port}:5d><calcsi570:{main\
+                \ iic port}:5d:300:300:00>{reset mux}"
+              type: sysc
+            ui:
+              rows: 1
+              columns: 1
+          Restore Si570 MGT:
+            steps:
+            - command: "MDB\r01\r\t{path to mgt si570}<readsi570:{main iic port}:5d><calcsi570:{main\
+                \ iic port}:5d:300:300:01>{reset mux}"
+              type: sysc
+            ui:
+              rows: 1
+              columns: 1
+          Restore Si5382:
+            steps:
+            - command: '{path to si5382}<writeSIClockFromFile:{main iic port}:68:clockBuilder:Si5382A-RevE-ZCU111-Registers-156m25.txt>{reset
+                mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 1
+  Voltages:
+    buttons:
+      Run All:
+        runchecked: true
+      Get VCC PSINT Voltage:
+        steps:
+        - command: '{path to pmbus}<PMBUSSetPage:{secondary iic port}:43:00><PMBUSGetVoltage:{secondary
+            iic port}:43>{reset secondary mux}<calcvoltage>'
+          type: sysc
+        ui:
+          rows: 1
+          columns: 2
+          content:
+          - label_right: 'Voltage: '
+          - output_left_large: .*VOLTAGE\[(.*)\]
+      Get VCC1V8 Voltage:
+        steps:
+        - command: '{path to pmbus}<PMBUSSetPage:{secondary iic port}:43:01><PMBUSGetVoltage:{secondary
+            iic port}:43>{reset secondary mux}<calcvoltage>'
+          type: sysc
+        ui:
+          rows: 1
+          columns: 2
+          content:
+          - label_right: 'Voltage: '
+          - output_left_large: .*VOLTAGE\[(.*)\]
+      Get VCCINT AMS Voltage:
+        steps:
+        - command: '{path to pmbus}<PMBUSSetPage:{secondary iic port}:43:02><PMBUSGetVoltage:{secondary
+            iic port}:43>{reset secondary mux}<calcvoltage>'
+          type: sysc
+        ui:
+          rows: 1
+          columns: 2
+          content:
+          - label_right: 'Voltage: '
+          - output_left_large: .*VOLTAGE\[(.*)\]
+      Get UTIL 3V3 Voltage:
+        steps:
+        - command: '{path to pmbus}<PMBUSSetPage:{secondary iic port}:44:00><PMBUSGetVoltage:{secondary
+            iic port}:44>{reset secondary mux}<calcvoltage>'
+          type: sysc
+        ui:
+          rows: 1
+          columns: 2
+          content:
+          - label_right: 'Voltage: '
+          - output_left_large: .*VOLTAGE\[(.*)\]
+      Get UTIL 2V5 Voltage:
+        steps:
+        - command: '{path to pmbus}<PMBUSSetPage:{secondary iic port}:44:01><PMBUSGetVoltage:{secondary
+            iic port}:44>{reset secondary mux}<calcvoltage>'
+          type: sysc
+        ui:
+          rows: 1
+          columns: 2
+          content:
+          - label_right: 'Voltage: '
+          - output_left_large: .*VOLTAGE\[(.*)\]
+      Get MGT1V2 Voltage:
+        steps:
+        - command: '{path to pmbus}<PMBUSSetPage:{secondary iic port}:44:02><PMBUSGetVoltage:{secondary
+            iic port}:44>{reset secondary mux}<calcvoltage>'
+          type: sysc
+        ui:
+          rows: 1
+          columns: 2
+          content:
+          - label_right: 'Voltage: '
+          - output_left_large: .*VOLTAGE\[(.*)\]
+      Get VCC1V2 Voltage:
+        steps:
+        - command: '{path to pmbus}<PMBUSSetPage:{secondary iic port}:45:00><PMBUSGetVoltage:{secondary
+            iic port}:45>{reset secondary mux}<calcvoltage>'
+          type: sysc
+        ui:
+          rows: 1
+          columns: 2
+          content:
+          - label_right: 'Voltage: '
+          - output_left_large: .*VOLTAGE\[(.*)\]
+      Get DAC AVTT Voltage:
+        steps:
+        - command: '{path to pmbus}<PMBUSSetPage:{secondary iic port}:45:01><PMBUSGetVoltage:{secondary
+            iic port}:45>{reset secondary mux}<calcvoltage>'
+          type: sysc
+        ui:
+          rows: 1
+          columns: 2
+          content:
+          - label_right: 'Voltage: '
+          - output_left_large: .*VOLTAGE\[(.*)\]
+      Get FMC VADJ Voltage:
+        steps:
+        - command: '{path to pmbus}<PMBUSSetPage:{secondary iic port}:45:02><PMBUSGetVoltage:{secondary
+            iic port}:45>{reset secondary mux}<calcvoltage>'
+          type: sysc
+        ui:
+          rows: 1
+          columns: 2
+          content:
+          - label_right: 'Voltage: '
+          - output_left_large: .*VOLTAGE\[(.*)\]
+  Power:
+    tabs:
+      Use Default Calibration:
+        buttons:
+          Run All:
+            runchecked: true
+          VCCINT_IO_BRAM_PS_SDFEC:
+            steps:
+            - command: '{path to ina226}<calINA226:{secondary iic port}:41:10:0.005:00><getINA226:{secondary
+                iic port}:41:00><interpINA226:0.005>{reset secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 6
+              content:
+              - label_right: 'Power: '
+              - output_large_left: .*\[power:([0-9]*(\.[0-9]*)?\sWatts\s)volts:.*amps:.*\].*
+              - label_right: '  Voltage (0.85): '
+              - output_large_left: .*\[power:.*volts:([0-9]*(\.[0-9]*)?\sVolts\s)amps:.*\].*
+              - label_right: '  Current (10 max): '
+              - output_large_left: .*\[power:.*volts:.*amps:(?:-)?([0-9]*(\.[0-9]*)?\sAmps\s)\].*
+          VCC1V8:
+            steps:
+            - command: '{path to ina226}<calINA226:{secondary iic port}:42:2:0.005:00><getINA226:{secondary
+                iic port}:42:00><interpINA226:0.005>{reset secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 6
+              content:
+              - label_right: 'Power: '
+              - output_large_left: .*\[power:([0-9]*(\.[0-9]*)?\sWatts\s)volts:.*amps:.*\].*
+              - label_right: '  Voltage (1.8): '
+              - output_large_left: .*\[power:.*volts:([0-9]*(\.[0-9]*)?\sVolts\s)amps:.*\].*
+              - label_right: '  Current (2 max): '
+              - output_large_left: .*\[power:.*volts:.*amps:(?:-)?([0-9]*(\.[0-9]*)?\sAmps\s)\].*
+          VCCINT_AMS:
+            steps:
+            - command: '{path to ina226}<calINA226:{secondary iic port}:49:7:0.005:00><getINA226:{secondary
+                iic port}:49:00><interpINA226:0.005>{reset secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 6
+              content:
+              - label_right: 'Power: '
+              - output_large_left: .*\[power:([0-9]*(\.[0-9]*)?\sWatts\s)volts:.*amps:.*\].*
+              - label_right: '  Voltage (0.85): '
+              - output_large_left: .*\[power:.*volts:([0-9]*(\.[0-9]*)?\sVolts\s)amps:.*\].*
+              - label_right: '  Current (7 max): '
+              - output_large_left: .*\[power:.*volts:.*amps:(?:-)?([0-9]*(\.[0-9]*)?\sAmps\s)\].*
+          MGT1V2:
+            steps:
+            - command: '{path to ina226}<calINA226:{secondary iic port}:47:6:0.005:00><getINA226:{secondary
+                iic port}:47:00><interpINA226:0.005>{reset secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 6
+              content:
+              - label_right: 'Power: '
+              - output_large_left: .*\[power:([0-9]*(\.[0-9]*)?\sWatts\s)volts:.*amps:.*\].*
+              - label_right: '  Voltage (1.2): '
+              - output_large_left: .*\[power:.*volts:([0-9]*(\.[0-9]*)?\sVolts\s)amps:.*\].*
+              - label_right: '  Current (6 max): '
+              - output_large_left: .*\[power:.*volts:.*amps:(?:-)?([0-9]*(\.[0-9]*)?\sAmps\s)\].*
+          VCC1V2:
+            steps:
+            - command: '{path to ina226}<calINA226:{secondary iic port}:43:6:0.005:00><getINA226:{secondary
+                iic port}:43:00><interpINA226:0.005>{reset secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 6
+              content:
+              - label_right: 'Power: '
+              - output_large_left: .*\[power:([0-9]*(\.[0-9]*)?\sWatts\s)volts:.*amps:.*\].*
+              - label_right: '  Voltage (1.2): '
+              - output_large_left: .*\[power:.*volts:([0-9]*(\.[0-9]*)?\sVolts\s)amps:.*\].*
+              - label_right: '  Current (6 max): '
+              - output_large_left: .*\[power:.*volts:.*amps:(?:-)?([0-9]*(\.[0-9]*)?\sAmps\s)\].*
+          DAC_AVTT:
+            steps:
+            - command: '{path to ina226}<calINA226:{secondary iic port}:4a:0.5:0.005:00><getINA226:{secondary
+                iic port}:4a:00><interpINA226:0.005>{reset secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 6
+              content:
+              - label_right: 'Power: '
+              - output_large_left: .*\[power:([0-9]*(\.[0-9]*)?\sWatts\s)volts:.*amps:.*\].*
+              - label_right: '  Voltage (2.5 ÷ 2): '
+              - output_large_left: .*\[power:.*volts:([0-9]*(\.[0-9]*)?\sVolts\s)amps:.*\].*
+              - label_right: '  Current ((0.5 max): '
+              - output_large_left: .*\[power:.*volts:.*amps:(?:-)?([0-9]*(\.[0-9]*)?\sAmps\s)\].*
+          VADJ_FMC:
+            steps:
+            - command: '{path to ina226}<calINA226:{secondary iic port}:45:5:0.005:00><getINA226:{secondary
+                iic port}:45:00><interpINA226:0.005>{reset secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 6
+              content:
+              - label_right: 'Power: '
+              - output_large_left: .*\[power:([0-9]*(\.[0-9]*)?\sWatts\s)volts:.*amps:.*\].*
+              - label_right: '  Voltage (1.8): '
+              - output_large_left: .*\[power:.*volts:([0-9]*(\.[0-9]*)?\sVolts\s)amps:.*\].*
+              - label_right: '  Current (5 max): '
+              - output_large_left: .*\[power:.*volts:.*amps:(?:-)?([0-9]*(\.[0-9]*)?\sAmps\s)\].*
+          MGT1V8:
+            steps:
+            - command: '{path to ina226}<calINA226:{secondary iic port}:48:0.5:0.005:00><getINA226:{secondary
+                iic port}:48:00><interpINA226:0.005>{reset secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 6
+              content:
+              - label_right: 'Power: '
+              - output_large_left: .*\[power:([0-9]*(\.[0-9]*)?\sWatts\s)volts:.*amps:.*\].*
+              - label_right: '  Voltage (1.8): '
+              - output_large_left: .*\[power:.*volts:([0-9]*(\.[0-9]*)?\sVolts\s)amps:.*\].*
+              - label_right: '  Current (0.5 max): '
+              - output_large_left: .*\[power:.*volts:.*amps:(?:-)?([0-9]*(\.[0-9]*)?\sAmps\s)\].*
+          VCCINT:
+            steps:
+            - command: '{path to ina226}<calINA226:{secondary iic port}:40:30:0.002:00><getINA226:{secondary
+                iic port}:40:00><interpINA226:0.002>{reset secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 6
+              content:
+              - label_right: 'Power: '
+              - output_large_left: .*\[power:([0-9]*(\.[0-9]*)?\sWatts\s)volts:.*amps:.*\].*
+              - label_right: '  Voltage (0.85): '
+              - output_large_left: .*\[power:.*volts:([0-9]*(\.[0-9]*)?\sVolts\s)amps:.*\].*
+              - label_right: '  Current (30 max): '
+              - output_large_left: .*\[power:.*volts:.*amps:(?:-)?([0-9]*(\.[0-9]*)?\sAmps\s)\].*
+          MGTAVCC:
+            steps:
+            - command: '{path to ina226}<calINA226:{secondary iic port}:46:3:0.002:00><getINA226:{secondary
+                iic port}:46:00><interpINA226:0.002>{reset secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 6
+              content:
+              - label_right: 'Power: '
+              - output_large_left: .*\[power:([0-9]*(\.[0-9]*)?\sWatts\s)volts:.*amps:.*\].*
+              - label_right: '  Voltage (0.9): '
+              - output_large_left: .*\[power:.*volts:([0-9]*(\.[0-9]*)?\sVolts\s)amps:.*\].*
+              - label_right: '  Current (3 max): '
+              - output_large_left: .*\[power:.*volts:.*amps:(?:-)?([0-9]*(\.[0-9]*)?\sAmps\s)\].*
+          DAC_AVCCAUX:
+            steps:
+            - command: '{path to ina226}<calINA226:{secondary iic port}:4b:0.5:0.005:00><getINA226:{secondary
+                iic port}:4b:00><interpINA226:0.005>{reset secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 6
+              content:
+              - label_right: 'Power: '
+              - output_large_left: .*\[power:([0-9]*(\.[0-9]*)?\sWatts\s)volts:.*amps:.*\].*
+              - label_right: '  Voltage (1.8): '
+              - output_large_left: .*\[power:.*volts:([0-9]*(\.[0-9]*)?\sVolts\s)amps:.*\].*
+              - label_right: '  Current (0.5 max): '
+              - output_large_left: .*\[power:.*volts:.*amps:(?:-)?([0-9]*(\.[0-9]*)?\sAmps\s)\].*
+          ADC_AVCCAUX:
+            steps:
+            - command: '{path to ina226}<calINA226:{secondary iic port}:4d:2:0.005:00><getINA226:{secondary
+                iic port}:4d:00><interpINA226:0.005>{reset secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 6
+              content:
+              - label_right: 'Power: '
+              - output_large_left: .*\[power:([0-9]*(\.[0-9]*)?\sWatts\s)volts:.*amps:.*\].*
+              - label_right: '  Voltage (1.8): '
+              - output_large_left: .*\[power:.*volts:([0-9]*(\.[0-9]*)?\sVolts\s)amps:.*\].*
+              - label_right: '  Current (2 max): '
+              - output_large_left: .*\[power:.*volts:.*amps:(?:-)?([0-9]*(\.[0-9]*)?\sAmps\s)\].*
+          ADC_AVCC:
+            steps:
+            - command: '{path to ina226}<calINA226:{secondary iic port}:4c:2:0.005:00><getINA226:{secondary
+                iic port}:4c:00><interpINA226:0.005>{reset secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 6
+              content:
+              - label_right: 'Power: '
+              - output_large_left: .*\[power:([0-9]*(\.[0-9]*)?\sWatts\s)volts:.*amps:.*\].*
+              - label_right: '  Voltage (0.925): '
+              - output_large_left: .*\[power:.*volts:([0-9]*(\.[0-9]*)?\sVolts\s)amps:.*\].*
+              - label_right: '  Current (2 max): '
+              - output_large_left: .*\[power:.*volts:.*amps:(?:-)?([0-9]*(\.[0-9]*)?\sAmps\s)\].*
+          DAC_AVCC:
+            steps:
+            - command: '{path to ina226}<calINA226:{secondary iic port}:4e:{main iic
+                port}:0.005:00><getINA226:{secondary iic port}:4e:00><interpINA226:0.005>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 6
+              content:
+              - label_right: 'Power: '
+              - output_large_left: .*\[power:([0-9]*(\.[0-9]*)?\sWatts\s)volts:.*amps:.*\].*
+              - label_right: '  Voltage (0.925): '
+              - output_large_left: .*\[power:.*volts:([0-9]*(\.[0-9]*)?\sVolts\s)amps:.*\].*
+              - label_right: '  Current (1 max): '
+              - output_large_left: .*\[power:.*volts:.*amps:(?:-)?([0-9]*(\.[0-9]*)?\sAmps\s)\].*
+      Use Custom Calibration:
+        buttons:
+          Run All:
+            runchecked: true
+          VCCINT_IO_BRAM_PS_SDFEC:
+            steps:
+            - command: '{path to ina226}<getINA226:{secondary iic port}:41:00><interpINA226:0.002>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 6
+              content:
+              - label_right: 'Power: '
+              - output_large_left: .*\[power:([0-9]*(\.[0-9]*)?\sWatts\s)volts:.*amps:.*\].*
+              - label_right: '  Voltage (0.85): '
+              - output_large_left: .*\[power:.*volts:([0-9]*(\.[0-9]*)?\sVolts\s)amps:.*\].*
+              - label_right: '  Current (10 max): '
+              - output_large_left: .*\[power:.*volts:.*amps:(?:-)?([0-9]*(\.[0-9]*)?\sAmps\s)\].*
+          VCC1V8:
+            steps:
+            - command: '{path to ina226}<getINA226:{secondary iic port}:42:00><interpINA226:0.005>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 6
+              content:
+              - label_right: 'Power: '
+              - output_large_left: .*\[power:([0-9]*(\.[0-9]*)?\sWatts\s)volts:.*amps:.*\].*
+              - label_right: '  Voltage (1.8): '
+              - output_large_left: .*\[power:.*volts:([0-9]*(\.[0-9]*)?\sVolts\s)amps:.*\].*
+              - label_right: '  Current (2 max): '
+              - output_large_left: .*\[power:.*volts:.*amps:(?:-)?([0-9]*(\.[0-9]*)?\sAmps\s)\].*
+          VCCINT_AMS:
+            steps:
+            - command: '{path to ina226}<getINA226:{secondary iic port}:49:00><interpINA226:0.005>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 6
+              content:
+              - label_right: 'Power: '
+              - output_large_left: .*\[power:([0-9]*(\.[0-9]*)?\sWatts\s)volts:.*amps:.*\].*
+              - label_right: '  Voltage (0.85): '
+              - output_large_left: .*\[power:.*volts:([0-9]*(\.[0-9]*)?\sVolts\s)amps:.*\].*
+              - label_right: '  Current (7 max): '
+              - output_large_left: .*\[power:.*volts:.*amps:(?:-)?([0-9]*(\.[0-9]*)?\sAmps\s)\].*
+          MGT1V2:
+            steps:
+            - command: '{path to ina226}<getINA226:{secondary iic port}:47:00><interpINA226:0.005>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 6
+              content:
+              - label_right: 'Power: '
+              - output_large_left: .*\[power:([0-9]*(\.[0-9]*)?\sWatts\s)volts:.*amps:.*\].*
+              - label_right: '  Voltage (1.2): '
+              - output_large_left: .*\[power:.*volts:([0-9]*(\.[0-9]*)?\sVolts\s)amps:.*\].*
+              - label_right: '  Current (6 max): '
+              - output_large_left: .*\[power:.*volts:.*amps:(?:-)?([0-9]*(\.[0-9]*)?\sAmps\s)\].*
+          VCC1V2:
+            steps:
+            - command: '{path to ina226}<getINA226:{secondary iic port}:43:00><interpINA226:0.005>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 6
+              content:
+              - label_right: 'Power: '
+              - output_large_left: .*\[power:([0-9]*(\.[0-9]*)?\sWatts\s)volts:.*amps:.*\].*
+              - label_right: '  Voltage (1.2): '
+              - output_large_left: .*\[power:.*volts:([0-9]*(\.[0-9]*)?\sVolts\s)amps:.*\].*
+              - label_right: '  Current (6 max): '
+              - output_large_left: .*\[power:.*volts:.*amps:(?:-)?([0-9]*(\.[0-9]*)?\sAmps\s)\].*
+          DAC_AVTT:
+            steps:
+            - command: '{path to ina226}<getINA226:{secondary iic port}:4a:00><interpINA226:0.005>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 6
+              content:
+              - label_right: 'Power: '
+              - output_large_left: .*\[power:([0-9]*(\.[0-9]*)?\sWatts\s)volts:.*amps:.*\].*
+              - label_right: '  Voltage (2.5 ÷ 2): '
+              - output_large_left: .*\[power:.*volts:([0-9]*(\.[0-9]*)?\sVolts\s)amps:.*\].*
+              - label_right: '  Current ((0.5 max): '
+              - output_large_left: .*\[power:.*volts:.*amps:(?:-)?([0-9]*(\.[0-9]*)?\sAmps\s)\].*
+          VADJ_FMC:
+            steps:
+            - command: '{path to ina226}<getINA226:{secondary iic port}:45:00><interpINA226:0.005>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 6
+              content:
+              - label_right: 'Power: '
+              - output_large_left: .*\[power:([0-9]*(\.[0-9]*)?\sWatts\s)volts:.*amps:.*\].*
+              - label_right: '  Voltage (1.8): '
+              - output_large_left: .*\[power:.*volts:([0-9]*(\.[0-9]*)?\sVolts\s)amps:.*\].*
+              - label_right: '  Current (5 max): '
+              - output_large_left: .*\[power:.*volts:.*amps:(?:-)?([0-9]*(\.[0-9]*)?\sAmps\s)\].*
+          MGT1V8:
+            steps:
+            - command: '{path to ina226}<getINA226:{secondary iic port}:48:00><interpINA226:0.005>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 6
+              content:
+              - label_right: 'Power: '
+              - output_large_left: .*\[power:([0-9]*(\.[0-9]*)?\sWatts\s)volts:.*amps:.*\].*
+              - label_right: '  Voltage (1.8): '
+              - output_large_left: .*\[power:.*volts:([0-9]*(\.[0-9]*)?\sVolts\s)amps:.*\].*
+              - label_right: '  Current (0.5 max): '
+              - output_large_left: .*\[power:.*volts:.*amps:(?:-)?([0-9]*(\.[0-9]*)?\sAmps\s)\].*
+          VCCINT:
+            steps:
+            - command: '{path to ina226}<getINA226:{secondary iic port}:40:00><interpINA226:0.002>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 6
+              content:
+              - label_right: 'Power: '
+              - output_large_left: .*\[power:([0-9]*(\.[0-9]*)?\sWatts\s)volts:.*amps:.*\].*
+              - label_right: '  Voltage (0.85): '
+              - output_large_left: .*\[power:.*volts:([0-9]*(\.[0-9]*)?\sVolts\s)amps:.*\].*
+              - label_right: '  Current (30 max): '
+              - output_large_left: .*\[power:.*volts:.*amps:(?:-)?([0-9]*(\.[0-9]*)?\sAmps\s)\].*
+          MGTAVCC:
+            steps:
+            - command: '{path to ina226}<getINA226:{secondary iic port}:46:00><interpINA226:0.002>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 6
+              content:
+              - label_right: 'Power: '
+              - output_large_left: .*\[power:([0-9]*(\.[0-9]*)?\sWatts\s)volts:.*amps:.*\].*
+              - label_right: '  Voltage (0.9): '
+              - output_large_left: .*\[power:.*volts:([0-9]*(\.[0-9]*)?\sVolts\s)amps:.*\].*
+              - label_right: '  Current (3 max): '
+              - output_large_left: .*\[power:.*volts:.*amps:(?:-)?([0-9]*(\.[0-9]*)?\sAmps\s)\].*
+          DAC_AVCCAUX:
+            steps:
+            - command: '{path to ina226}<getINA226:{secondary iic port}:4b:00><interpINA226:0.005>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 6
+              content:
+              - label_right: 'Power: '
+              - output_large_left: .*\[power:([0-9]*(\.[0-9]*)?\sWatts\s)volts:.*amps:.*\].*
+              - label_right: '  Voltage (1.8): '
+              - output_large_left: .*\[power:.*volts:([0-9]*(\.[0-9]*)?\sVolts\s)amps:.*\].*
+              - label_right: '  Current (0.5 max): '
+              - output_large_left: .*\[power:.*volts:.*amps:(?:-)?([0-9]*(\.[0-9]*)?\sAmps\s)\].*
+          ADC_AVCCAUX:
+            steps:
+            - command: '{path to ina226}<getINA226:{secondary iic port}:4d:00><interpINA226:0.005>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 6
+              content:
+              - label_right: 'Power: '
+              - output_large_left: .*\[power:([0-9]*(\.[0-9]*)?\sWatts\s)volts:.*amps:.*\].*
+              - label_right: '  Voltage (1.8): '
+              - output_large_left: .*\[power:.*volts:([0-9]*(\.[0-9]*)?\sVolts\s)amps:.*\].*
+              - label_right: '  Current (2 max): '
+              - output_large_left: .*\[power:.*volts:.*amps:(?:-)?([0-9]*(\.[0-9]*)?\sAmps\s)\].*
+          ADC_AVCC:
+            steps:
+            - command: '{path to ina226}<getINA226:{secondary iic port}:4c:00><interpINA226:0.005>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 6
+              content:
+              - label_right: 'Power: '
+              - output_large_left: .*\[power:([0-9]*(\.[0-9]*)?\sWatts\s)volts:.*amps:.*\].*
+              - label_right: '  Voltage (0.925): '
+              - output_large_left: .*\[power:.*volts:([0-9]*(\.[0-9]*)?\sVolts\s)amps:.*\].*
+              - label_right: '  Current (2 max): '
+              - output_large_left: .*\[power:.*volts:.*amps:(?:-)?([0-9]*(\.[0-9]*)?\sAmps\s)\].*
+          DAC_AVCC:
+            steps:
+            - command: '{path to ina226}<calINA226:{secondary iic port}:4e:{main iic
+                port}:0.005:00><getINA226:{secondary iic port}:4e:00><interpINA226:0.005>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 6
+              content:
+              - label_right: 'Power: '
+              - output_large_left: .*\[power:([0-9]*(\.[0-9]*)?\sWatts\s)volts:.*amps:.*\].*
+              - label_right: '  Voltage (0.925): '
+              - output_large_left: .*\[power:.*volts:([0-9]*(\.[0-9]*)?\sVolts\s)amps:.*\].*
+              - label_right: '  Current (1 max): '
+              - output_large_left: .*\[power:.*volts:.*amps:(?:-)?([0-9]*(\.[0-9]*)?\sAmps\s)\].*
+      Get INA226 Registers:
+        buttons:
+          Run All:
+            runchecked: true
+          VCCINT_IO_BRAM_PS_SDFEC:
+            steps:
+            - command: '{path to ina226}<getINA226:{secondary iic port}:41:00><interpINA226:0.005>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 3
+              columns: 6
+              content:
+              - label_right: 'Configuration: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4})\].*
+              - label_right: 'Shunt Voltage: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4}\].*
+              - label_right: 'Bus Voltage: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Power: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Current: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Calibration: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Mask/Enable: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Alert Limit: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Die ID: '
+              - output_medium_left: .*\[REGISTERS:([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+          VCC1V8:
+            steps:
+            - command: '{path to ina226}<getINA226:{secondary iic port}:42:00><interpINA226:0.005>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 3
+              columns: 6
+              content:
+              - label_right: 'Configuration: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4})\].*
+              - label_right: 'Shunt Voltage: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4}\].*
+              - label_right: 'Bus Voltage: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Power: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Current: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Calibration: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Mask/Enable: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Alert Limit: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Die ID: '
+              - output_medium_left: .*\[REGISTERS:([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+          VCCINT_AMS:
+            steps:
+            - command: '{path to ina226}<getINA226:{secondary iic port}:49:00><interpINA226:0.005>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 3
+              columns: 6
+              content:
+              - label_right: 'Configuration: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4})\].*
+              - label_right: 'Shunt Voltage: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4}\].*
+              - label_right: 'Bus Voltage: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Power: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Current: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Calibration: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Mask/Enable: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Alert Limit: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Die ID: '
+              - output_medium_left: .*\[REGISTERS:([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+          MGT1V2:
+            steps:
+            - command: '{path to ina226}<getINA226:{secondary iic port}:47:00><interpINA226:0.005>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 3
+              columns: 6
+              content:
+              - label_right: 'Configuration: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4})\].*
+              - label_right: 'Shunt Voltage: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4}\].*
+              - label_right: 'Bus Voltage: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Power: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Current: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Calibration: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Mask/Enable: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Alert Limit: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Die ID: '
+              - output_medium_left: .*\[REGISTERS:([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+          VCC1V2:
+            steps:
+            - command: '{path to ina226}<getINA226:{secondary iic port}:43:00><interpINA226:0.005>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 3
+              columns: 6
+              content:
+              - label_right: 'Configuration: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4})\].*
+              - label_right: 'Shunt Voltage: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4}\].*
+              - label_right: 'Bus Voltage: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Power: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Current: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Calibration: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Mask/Enable: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Alert Limit: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Die ID: '
+              - output_medium_left: .*\[REGISTERS:([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+          DAC_AVTT:
+            steps:
+            - command: '{path to ina226}<getINA226:{secondary iic port}:4a:00><interpINA226:0.005>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 3
+              columns: 6
+              content:
+              - label_right: 'Configuration: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4})\].*
+              - label_right: 'Shunt Voltage: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4}\].*
+              - label_right: 'Bus Voltage: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Power: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Current: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Calibration: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Mask/Enable: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Alert Limit: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Die ID: '
+              - output_medium_left: .*\[REGISTERS:([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+          VADJ_FMC:
+            steps:
+            - command: '{path to ina226}<getINA226:{secondary iic port}:45:00><interpINA226:0.005>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 3
+              columns: 6
+              content:
+              - label_right: 'Configuration: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4})\].*
+              - label_right: 'Shunt Voltage: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4}\].*
+              - label_right: 'Bus Voltage: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Power: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Current: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Calibration: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Mask/Enable: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Alert Limit: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Die ID: '
+              - output_medium_left: .*\[REGISTERS:([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+          MGT1V8:
+            steps:
+            - command: '{path to ina226}<getINA226:{secondary iic port}:48:00><interpINA226:0.005>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 3
+              columns: 6
+              content:
+              - label_right: 'Configuration: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4})\].*
+              - label_right: 'Shunt Voltage: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4}\].*
+              - label_right: 'Bus Voltage: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Power: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Current: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Calibration: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Mask/Enable: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Alert Limit: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Die ID: '
+              - output_medium_left: .*\[REGISTERS:([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+          VCCINT:
+            steps:
+            - command: '{path to ina226}<getINA226:{secondary iic port}:40:00><interpINA226:0.002>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 3
+              columns: 6
+              content:
+              - label_right: 'Configuration: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4})\].*
+              - label_right: 'Shunt Voltage: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4}\].*
+              - label_right: 'Bus Voltage: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Power: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Current: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Calibration: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Mask/Enable: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Alert Limit: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Die ID: '
+              - output_medium_left: .*\[REGISTERS:([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+          MGTAVCC:
+            steps:
+            - command: '{path to ina226}<getINA226:{secondary iic port}:46:00><interpINA226:0.002>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 3
+              columns: 6
+              content:
+              - label_right: 'Configuration: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4})\].*
+              - label_right: 'Shunt Voltage: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4}\].*
+              - label_right: 'Bus Voltage: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Power: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Current: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Calibration: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Mask/Enable: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Alert Limit: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Die ID: '
+              - output_medium_left: .*\[REGISTERS:([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+          DAC_AVCCAUX:
+            steps:
+            - command: '{path to ina226}<getINA226:{secondary iic port}:4b:00><interpINA226:0.005>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 3
+              columns: 6
+              content:
+              - label_right: 'Configuration: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4})\].*
+              - label_right: 'Shunt Voltage: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4}\].*
+              - label_right: 'Bus Voltage: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Power: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Current: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Calibration: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Mask/Enable: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Alert Limit: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Die ID: '
+              - output_medium_left: .*\[REGISTERS:([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+          ADC_AVCCAUX:
+            steps:
+            - command: '{path to ina226}<getINA226:{secondary iic port}:4d:00><interpINA226:0.005>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 3
+              columns: 6
+              content:
+              - label_right: 'Configuration: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4})\].*
+              - label_right: 'Shunt Voltage: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4}\].*
+              - label_right: 'Bus Voltage: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Power: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Current: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Calibration: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Mask/Enable: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Alert Limit: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Die ID: '
+              - output_medium_left: .*\[REGISTERS:([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+          ADC_AVCC:
+            steps:
+            - command: '{path to ina226}<getINA226:{secondary iic port}:4c:00><interpINA226:0.005>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 3
+              columns: 6
+              content:
+              - label_right: 'Configuration: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4})\].*
+              - label_right: 'Shunt Voltage: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4}\].*
+              - label_right: 'Bus Voltage: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Power: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Current: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Calibration: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Mask/Enable: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Alert Limit: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Die ID: '
+              - output_medium_left: .*\[REGISTERS:([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+          DAC_AVCC:
+            steps:
+            - command: '{path to ina226}<calINA226:{secondary iic port}:4e:{main iic
+                port}:0.005:00><getINA226:{secondary iic port}:4e:00><interpINA226:0.005>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 3
+              columns: 6
+              content:
+              - label_right: 'Configuration: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4})\].*
+              - label_right: 'Shunt Voltage: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4}\].*
+              - label_right: 'Bus Voltage: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Power: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Current: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Calibration: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Mask/Enable: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Alert Limit: '
+              - output_medium_left: .*\[REGISTERS:[0-9a-fA-f]{4},[0-9a-fA-f]{4},([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+              - label_right: 'Die ID: '
+              - output_medium_left: .*\[REGISTERS:([0-9a-fA-f]{4}),[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4},[0-9a-fA-f]{4}\].*
+      Set INA226 Registers:
+        buttons:
+          Run All:
+            runchecked: true
+          VCCINT_IO_BRAM_PS_SDFEC:
+            steps:
+            - command: '{path to ina226}<setINA226:{secondary iic port}:41:<1>:<3>:<5>:<7>:00:0.005>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 2
+              columns: 4
+              content:
+              - label_right: 'Configuration: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right: '  Calibration: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right": 'Mask/Enable: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right: '  Alert Limit: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+          VCC1V8:
+            steps:
+            - command: '{path to ina226}<setINA226:{secondary iic port}:42:<1>:<3>:<5>:<7>:00:0.005:00>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 2
+              columns: 4
+              content:
+              - label_right: 'Configuration: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right: '  Calibration: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right": 'Mask/Enable: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right: '  Alert Limit: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+          VCCINT_AMS:
+            steps:
+            - command: '{path to ina226}<setINA226:{secondary iic port}:49:<1>:<3>:<5>:<7>:00:0.005:00>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 2
+              columns: 4
+              content:
+              - label_right: 'Configuration: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right: '  Calibration: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right": 'Mask/Enable: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right: '  Alert Limit: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+          MGT1V2:
+            steps:
+            - command: '{path to ina226}<setINA226:{secondary iic port}:47:<1>:<3>:<5>:<7>:00:0.005:00>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 2
+              columns: 4
+              content:
+              - label_right: 'Configuration: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right: '  Calibration: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right": 'Mask/Enable: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right: '  Alert Limit: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+          VCC1V2:
+            steps:
+            - command: '{path to ina226}<setINA226:{secondary iic port}:43:<1>:<3>:<5>:<7>:00:0.005:00>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 2
+              columns: 4
+              content:
+              - label_right: 'Configuration: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right: '  Calibration: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right": 'Mask/Enable: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right: '  Alert Limit: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+          DAC_AVTT:
+            steps:
+            - command: '{path to ina226}<setINA226:{secondary iic port}:4a:<1>:<3>:<5>:<7>:00:0.005:00>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 2
+              columns: 4
+              content:
+              - label_right: 'Configuration: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right: '  Calibration: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right": 'Mask/Enable: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right: '  Alert Limit: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+          VADJ_FMC:
+            steps:
+            - command: '{path to ina226}<setINA226:{secondary iic port}:45:<1>:<3>:<5>:<7>:00:0.005:00>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 2
+              columns: 4
+              content:
+              - label_right: 'Configuration: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right: '  Calibration: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right": 'Mask/Enable: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right: '  Alert Limit: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+          MGT1V8:
+            steps:
+            - command: '{path to ina226}<setINA226:{secondary iic port}:48:<1>:<3>:<5>:<7>:00:0.005:00>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 2
+              columns: 4
+              content:
+              - label_right: 'Configuration: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right: '  Calibration: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right": 'Mask/Enable: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right: '  Alert Limit: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+          VCCINT:
+            steps:
+            - command: '{path to ina226}<setINA226:{secondary iic port}:40:<1>:<3>:<5>:<7>:00:0.002:00>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 2
+              columns: 4
+              content:
+              - label_right: 'Configuration: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right: '  Calibration: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right": 'Mask/Enable: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right: '  Alert Limit: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+          MGTAVCC:
+            steps:
+            - command: '{path to ina226}<setINA226:{secondary iic port}:46:<1>:<3>:<5>:<7>:00:0.002:00>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 2
+              columns: 4
+              content:
+              - label_right: 'Configuration: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right: '  Calibration: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right": 'Mask/Enable: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right: '  Alert Limit: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+          DAC_AVCCAUX:
+            steps:
+            - command: '{path to ina226}<setINA226:{secondary iic port}:4b:<1>:<3>:<5>:<7>:00:0.005:00>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 2
+              columns: 4
+              content:
+              - label_right: 'Configuration: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right: '  Calibration: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right": 'Mask/Enable: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right: '  Alert Limit: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+          ADC_AVCCAUX:
+            steps:
+            - command: '{path to ina226}<setINA226:{secondary iic port}:4d:<1>:<3>:<5>:<7>:00:0.005:00>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 2
+              columns: 4
+              content:
+              - label_right: 'Configuration: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right: '  Calibration: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right": 'Mask/Enable: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right: '  Alert Limit: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+          ADC_AVCC:
+            steps:
+            - command: '{path to ina226}<setINA226:{secondary iic port}:4c:<1>:<3>:<5>:<7>:00:0.005:00>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 2
+              columns: 4
+              content:
+              - label_right: 'Configuration: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right: '  Calibration: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right": 'Mask/Enable: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right: '  Alert Limit: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+          DAC_AVCC:
+            steps:
+            - command: '{path to ina226}<setINA226:{secondary iic port}:4e:<1>:<3>:<5>:<7>:00:0.005:00>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 2
+              columns: 4
+              content:
+              - label_right: 'Configuration: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right: '  Calibration: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right": 'Mask/Enable: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+              - label_right: '  Alert Limit: '
+              - input: (^[0-9a-fA-F]{4}$)|(^$)
+  FMC:
+    tabs:
+      Set VADJ:
+        tabs:
+          Current:
+            buttons:
+              Set VADJ to 0.0 V:
+                steps:
+                - command: '{path to pmbus}<setIRPS5401Mvoltage:{secondary iic port}:45:02:2.0:0>{reset
+                    secondary mux}'
+                  type: sysc
+                ui:
+                  rows: 1
+                  columns: 1
+              Set VADJ to 1.2 V:
+                steps:
+                - command: '{path to pmbus}<setIRPS5401Mvoltage:{secondary iic port}:45:02:2.0:1.2>{reset
+                    secondary mux}'
+                  type: sysc
+                ui:
+                  rows: 1
+                  columns: 1
+              Set VADJ to 1.5 V:
+                steps:
+                - command: '{path to pmbus}<setIRPS5401Mvoltage:{secondary iic port}:45:02:2.0:1.5>{reset
+                    secondary mux}'
+                  type: sysc
+                ui:
+                  rows: 1
+                  columns: 1
+              Set VADJ to 1.8 V:
+                steps:
+                - command: '{path to pmbus}<setIRPS5401Mvoltage:{secondary iic port}:45:02:2.0:1.8>{reset
+                    secondary mux}'
+                  type: sysc
+                ui:
+                  rows: 1
+                  columns: 1
+          Boot Up:
+            buttons:
+              Set On-Boot VADJ to 0.0 V:
+                steps:
+                - command: <recordrunonboot:EF>{path to pmbus}<setIRPS5401Mvoltage:{secondary
+                    iic port}:45:02:2.0:0>{reset secondary mux}<stoprecord>
+                  type: sysc
+                ui:
+                  rows: 1
+                  columns: 1
+              Set On-Boot VADJ to 1.2 V:
+                steps:
+                - command: <recordrunonboot:EF>{path to pmbus}<setIRPS5401Mvoltage:{secondary
+                    iic port}:45:02:2.0:1.2>{reset secondary mux}<stoprecord>
+                  type: sysc
+                ui:
+                  rows: 1
+                  columns: 1
+              Set On-Boot VADJ to 1.5 V:
+                steps:
+                - command: <recordrunonboot:EF>{path to pmbus}<setIRPS5401Mvoltage:{secondary
+                    iic port}:45:02:2.0:1.5>{reset secondary mux}<stoprecord>
+                  type: sysc
+                ui:
+                  rows: 1
+                  columns: 1
+              Set On-Boot VADJ to 1.8 V:
+                steps:
+                - command: <recordrunonboot:EF>{path to pmbus}<setIRPS5401Mvoltage:{secondary
+                    iic port}:45:02:2.0:1.8>{reset secondary mux}<stoprecord>
+                  type: sysc
+                ui:
+                  rows: 1
+                  columns: 1
+              Use FMC EEPROM Voltage:
+                steps:
+                - command: <recordrunonboot:EF>{path to pmbus}<setIRPS5401Mvoltage:{secondary
+                    iic port}:45:02:2.0:1.8>{reset secondary mux}<stoprecord>
+                - command: "MDB\rEF\r\tMWB\rF2\r\tIW0\r75\r06\r\tIR0\r45\r01\r\t\b\
+                    MWB\rF1\r\tIW1\r74\r01\r\tIR1\r50\r01\r\t\bMWB\rF0\r\tIW1\r74\r\
+                    01\r\tIR1\r50\r01\r\t\b"
+                  type: sysc
+      HSPC:
+        tabs:
+          EEPROM:
+            buttons:
+              Get EEPROM Data:
+                steps:
+                - command: '{path to fmc}<readeeprom:{main iic port}:50:00:FF><literaleeprom:T><interpeeprom>{reset
+                    mux}'
+                  type: sysc
+                ui:
+                  rows: 1
+                  columns: 1
+          Clock:
+            buttons:
+              Set SI570:
+                steps:
+                - command: '{path to fmc}<setmux:{main iic port}:70:01><readsi570:{main
+                    iic port}:5d><calcsi570:{main iic port}:5d:156.25:<1>><setmux:1:70:00>{reset
+                    mux}'
+                  type: sysc
+                ui:
+                  rows: 1
+                  columns: 2
+                  content:
+                  - label_right: 'Frequency (10-800MHz): '
+                  - input: ^((10)|(810)|((([1-7][0-9][0-9])|([1-9][0-9])|(80[0-9]))(\.[0-9]*)?))$
+  EEPROM Data:
+    buttons:
+      Run All:
+        runchecked: true
+      Get Board Name:
+        steps:
+        - command: <setmux:1:74:01><readeeprom:{main iic port}:54:D0:10><interpeeprom>{reset
+            mux}
+          type: sysc
+        ui:
+          rows: 1
+          columns: 2
+          content:
+          - label_right: 'Board Name: '
+          - output_huge_left: .*INTERP\[([\x00-\x7F]*).*?\]L
+      Get Board Revision:
+        steps:
+        - command: <setmux:1:74:01><readeeprom:{main iic port}:54:E0:03><interpeeprom>{reset
+            mux}
+          type: sysc
+        ui:
+          rows: 1
+          columns: 2
+          content:
+          - label_right: 'Board Revision: '
+          - output_huge_left: .*INTERP\[([\x00-\x7F]*).*?\]L
+      Get Board Serial Number:
+        steps:
+        - command: <setmux:1:74:01><readeeprom:{main iic port}:54:00:20><interpeeprom>{reset
+            mux}
+          type: sysc
+        ui:
+          rows: 1
+          columns: 2
+          content:
+          - label_right: 'Board Serial Number: '
+          - output_huge_left: .*INTERP\[([\x00-\x7F]*).*?\]L
+      Get Board MAC Address:
+        steps:
+        - command: <setmux:1:74:01><readeeprom:{main iic port}:54:20:06><literaleeprom:F>{reset
+            mux}
+          type: sysc
+        ui:
+          rows: 1
+          columns: 2
+          content:
+          - label_right: 'Board MAC Address: '
+          - output_huge_left: .*LITERAL\[(.*?)\]
+  GPIO Commands:
+    buttons:
+      Blink LEDs:
+        steps:
+        - command: <mspblinkled:6>
+          type: sysc
+        ui:
+          rows: 1
+          columns: 1
+      Get DIP Switch:
+        steps:
+        - command: <mspgpiostate:10><mspinterpstate>
+          type: sysc
+        ui:
+          rows: 1
+          columns: 2
+          content:
+          - label_right: 'State: '
+          - output_large_left: .*GPIO\[...(.....)\]
+      Get PMU Bits:
+        steps:
+        - command: <mspgpiostate:11><mspinterpstate>
+          type: sysc
+        ui:
+          rows: 1
+          columns: 2
+          content:
+          - label_right: 'State: '
+          - output_large_left: .*GPIO\[..(......)\]
+      Get PS GPIO:
+        steps:
+        - command: <mspgpioset:24:00><mspgpioset:25:00><mspgpiostate:24><mspgpiostate:25>
+          type: sysc
+        ui:
+          rows: 1
+          columns: 4
+          content:
+          - label_right: 'PS_0 State: '
+          - output_medium_left: ".*GPR\r..\r:P\r.(.)\r.*GPR"
+          - label_right: 'PS_1 State: '
+          - output_medium_left: ".*GPR.*GPR\r..\r:P\r.(.)\r"
+      Get PL GPIO:
+        steps:
+        - command: <mspgpioset:20:00><mspgpioset:21:00><mspgpioset:22:00><mspgpioset:23:00><mspgpiostate:20><mspgpiostate:21><mspgpiostate:22><mspgpiostate:23>
+          type: sysc
+        ui:
+          rows: 2
+          columns: 4
+          content:
+          - label_right: 'PL_0 State: '
+          - output_medium_left: ".*GPR\r..\r:P\r.(.)\r.*GPR.*GPR.*GPR"
+          - label_right: 'PL_1 State: '
+          - output_medium_left: ".*GPR.*GPR\r..\r:P\r.(.)\r.*GPR.*GPR"
+          - label_right: 'PL_2 State: '
+          - output_medium_left: ".*GPR.*GPR.*GPR\r..\r:P\r.(.)\r.*GPR"
+          - label_right: 'PL_4 State: '
+          - output_medium_left: ".*GPR.*GPR.*GPR.*GPR\r..\r:P\r.(.)\r"
+      Set I/O Expander P0.1 to GND \r\nand the rest to VCC:
+        steps:
+        - command: "IW0\r20\r02BF\r\t"
+          type: sysc
+        ui:
+          hidden: true
+
+  System Monitor:
+    tabs:
+      Temperatures:
+        buttons:
+          Run All:
+            runchecked: true
+          Get Current Temp:
+            steps:
+            - command: '{path to system monitor}<sysmoninit:1:32><sysmonget:1:32:00><sysmoninterptemp>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 2
+              content:
+              - output_medium_right: .*TEMP\[(.*)\]
+              - label_left: ' °C'
+          Get Max Temp:
+            steps:
+            - command: '{path to system monitor}<sysmoninit:1:32><sysmonget:1:32:20><sysmoninterptemp>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 2
+              content:
+              - output_medium_right: .*TEMP\[(.*)\]
+              - label_left: ' °C'
+          Get Min Temp:
+            steps:
+            - command: '{path to system monitor}<sysmoninit:1:32><sysmonget:1:32:24><sysmoninterptemp>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 2
+              content:
+              - output_medium_right: .*TEMP\[(.*)\]
+              - label_left: ' °C'
+      Voltages:
+        buttons:
+          Run All:
+            runchecked: true
+          Get Current VCCINT:
+            steps:
+            - command: '{path to system monitor}<sysmoninit:1:32><sysmonget:1:32:01><sysmoninterpvolt>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 2
+              content:
+              - output_medium_right: .*VOLTS\[(.*)\]
+              - label_left: ' Volts'
+          Get Max VCCINT:
+            steps:
+            - command: '{path to system monitor}<sysmoninit:1:32><sysmonget:1:32:21><sysmoninterpvolt>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 2
+              content:
+              - output_medium_right: .*VOLTS\[(.*)\]
+              - label_left: ' Volts'
+          Get Min VCCINT:
+            steps:
+            - command: '{path to system monitor}<sysmoninit:1:32><sysmonget:1:32:25><sysmoninterpvolt>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 2
+              content:
+              - output_medium_right: .*VOLTS\[(.*)\]
+              - label_left: ' Volts'
+          Get Current VCCBRAM:
+            steps:
+            - command: '{path to system monitor}<sysmoninit:1:32><sysmonget:1:32:06><sysmoninterpvolt>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 2
+              content:
+              - output_medium_right: .*VOLTS\[(.*)\]
+              - label_left: ' Volts'
+          Get Max VCCBRAM:
+            steps:
+            - command: '{path to system monitor}<sysmoninit:1:32><sysmonget:1:32:23><sysmoninterpvolt>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 2
+              content:
+              - output_medium_right: .*VOLTS\[(.*)\]
+              - label_left: ' Volts'
+          Get Min VCCBRAM:
+            steps:
+            - command: <setmux:1:75:07><sysmoninit:1:32><sysmonget:1:32:27><sysmoninterpvolt>{reset
+                secondary mux}
+              type: sysc
+            ui:
+              rows: 1
+              columns: 2
+              content:
+              - output_medium_right: .*VOLTS\[(.*)\]
+              - label_left: ' Volts'
+          Get Current VCCAUX:
+            steps:
+            - command: '{path to system monitor}<sysmoninit:1:32><sysmonget:1:32:02><sysmoninterpvolt>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 2
+              content:
+              - output_medium_right: .*VOLTS\[(.*)\]
+              - label_left: ' Volts'
+          Get Max VCCAUX:
+            steps:
+            - command: '{path to system monitor}<sysmoninit:1:32><sysmonget:1:32:22><sysmoninterpvolt>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 2
+              content:
+              - output_medium_right: .*VOLTS\[(.*)\]
+              - label_left: ' Volts'
+          Get Min VCCAUX:
+            steps:
+            - command: '{path to system monitor}<sysmoninit:1:32><sysmonget:1:32:26><sysmoninterpvolt>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 2
+              content:
+              - output_medium_right: .*VOLTS\[(.*)\]
+              - label_left: ' Volts'
+          Get VPVN:
+            steps:
+            - command: '{path to system monitor}<sysmoninit:1:32><sysmonget:1:32:03><sysmoninterpvolt>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 2
+              content:
+              - output_medium_right: .*VOLTS\[(.*)\]
+              - label_left: ' Volts'
+          Get VREFP:
+            steps:
+            - command: '{path to system monitor}<sysmoninit:1:32><sysmonget:1:32:04><sysmoninterpvolt>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 2
+              content:
+              - output_medium_right: .*VOLTS\[(.*)\]
+              - label_left: ' Volts'
+          Get VREFN:
+            steps:
+            - command: '{path to system monitor}<sysmoninit:1:32><sysmonget:1:32:05><sysmoninterpvolt>{reset
+                secondary mux}'
+              type: sysc
+            ui:
+              rows: 1
+              columns: 2
+              content:
+              - output_medium_right: .*VOLTS\[(.*)\]
+              - label_left: ' Volts'
+  About:
+    buttons:
+      Get Version:
+        steps:
+        - command: "VRN\r\t"
+          type: sysc
+        ui:
+          rows: 2
+          columns: 2
+          content:
+          - label_right: Firmware Version
+          - output_huge_left: ".*VRN\r:P\r(.*?)\r"
+          - label_right: 'UI Version: '
+          - label_left: SCUI v1.1

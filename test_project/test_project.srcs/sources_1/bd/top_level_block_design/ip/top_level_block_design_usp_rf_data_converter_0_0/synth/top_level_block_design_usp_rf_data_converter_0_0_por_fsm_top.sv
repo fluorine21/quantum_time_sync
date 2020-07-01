@@ -1349,9 +1349,8 @@ module top_level_block_design_usp_rf_data_converter_0_0_por_fsm_top (
     // DAC0
     //-------------------------------------------------------------------------
     // Instruction sequence for DAC0
-    reg [0:41][32:0] instr_dac0 = '{
+    reg [0:9][32:0] instr_dac0 = '{
     // Reset digital clocks
-    {4'h1, 2'b11, 11'h000, 16'h000F},
     // Clear HSCOM_PWR[15]
     {4'h1, 2'b11, 11'h725, 16'h8000},
     // Wait for external supplies
@@ -1370,59 +1369,6 @@ module top_level_block_design_usp_rf_data_converter_0_0_por_fsm_top (
     {4'h3, 2'b00, 11'h72B, 16'h0000},
     // Wait for 500 ns
     {4'h3, 2'b01, 3'b000, start_val_500_nanosecs},
-    // Write trim code to CLK_NETWORK_CTRL0
-    {4'h4, 2'b00, 11'h723, 16'h0000},
-    // Enable DAC biasing
-    {4'h4, 2'b00, 11'h070, 16'h0001},
-    {4'h4, 2'b00, 11'h072, 16'h0100},
-    // Write to HSCOM_PWR[13:10]
-    {4'h5, 2'b00, 11'h725, 16'h3C00},
-    // Wait for 2 ms
-    {4'h5, 2'b01, 3'b000, 24'h000000},
-    // Wait for clock detection
-    {4'h6, 2'b01, 3'b011, 24'h000000},
-    // Write to HSCOM_PWR[9]
-    {4'h6, 2'b00, 11'h725, 16'h0200},
-    // Write to PLL_CRS1
-    {4'h7, 2'b00, 11'h70A, 16'h8000},
-    // Write to HSCOM_PWR[8:7]
-    {4'h7, 2'b00, 11'h725, 16'h0180},
-    // Wait for PLL lock
-    {4'h7, 2'b01, 3'b100, 24'h000000},
-    // Read from PLL_SPARE_OUT0
-    {4'h7, 2'b00, 11'h740, 16'h0000},
-    // Write to PLL_CRS1
-    {4'h7, 2'b00, 11'h70A, 16'h8001},
-    // Toggle HSCOM_PWR[7]
-    {4'h7, 2'b00, 11'h725, 16'h0080},
-    {4'h7, 2'b00, 11'h725, 16'h0080},
-    // Wait for PLL lock
-    {4'h7, 2'b01, 3'b100, 24'h000000},
-    // Write to PLL_VREG[7]
-    {4'h7, 2'b00, 11'h711, 16'h0080},
-    // Write to HSCOM_PWR[6]
-    {4'h8, 2'b00, 11'h725, 16'h0040},
-    // Write to DAC_MC_CONFIG
-    {4'h8, 2'b00, 11'h071, 16'h0014},
-    // Startup delay
-    {4'h8, 2'b01, 3'b000, 24'h000000},
-    // Digital clock release
-    {4'h9, 2'b00, 11'h000, 16'h000F},
-    // Wait for 20 cycles
-    {4'h9, 2'b01, 3'b000, 24'h000014},
-    {4'h9, 2'b00, 11'h000, 16'h0000},
-    // Tile sync
-    {4'hA, 2'b00, 11'h724, 16'h1000},
-    {4'hA, 2'b00, 11'h724, 16'h1000},
-    {4'hA, 2'b00, 11'h000, 16'h0000},
-    {4'hA, 2'b00, 11'h000, 16'h0000},
-    // Update the NCO values
-    {4'hA, 2'b00, 11'h023, 16'h0002},
-    {4'hA, 2'b11, 11'h005, 16'h000F},
-    {4'hA, 2'b11, 11'h00E, 16'h0FFF},
-    {4'hA, 2'b00, 11'h72E, 16'h0001},
-    // Wait for clocks to be OK
-    {4'hE, 2'b01, 3'b111, 24'h000000},
     {4'hF, 2'b10, 27'h0000000}};
 
     always @(posedge aux_clk)
@@ -1432,7 +1378,7 @@ module top_level_block_design_usp_rf_data_converter_0_0_por_fsm_top (
 
     // DAC0 POR State machine
     top_level_block_design_usp_rf_data_converter_0_0_por_fsm #(.ADC(0),
-                               .PLL(1))
+                               .PLL(0))
     por_fsm_dac0 (
       .reset(dac0_reset_i),
       .aux_clk(aux_clk),
@@ -1465,7 +1411,7 @@ module top_level_block_design_usp_rf_data_converter_0_0_por_fsm_top (
       .start_stage(dac0_start_stage_r),
       .end_stage(dac0_end_stage_r),
       .done(dac0_done),
-      .fabricclk_val(dac0_fabricclk_val),
+      .fabricclk_val(1'b1),
       .status(dac0_status),
       .pll_error(dac0_pll_error),
       .adc0_status(16'h0000),
@@ -1550,13 +1496,105 @@ module top_level_block_design_usp_rf_data_converter_0_0_por_fsm_top (
     //-------------------------------------------------------------------------
     // DAC1
     //-------------------------------------------------------------------------
+    // Instruction sequence for DAC1
+    reg [0:41][32:0] instr_dac1 = '{
+    // Reset digital clocks
+    {4'h1, 2'b11, 11'h000, 16'h000F},
+    // Clear HSCOM_PWR[15]
+    {4'h1, 2'b11, 11'h725, 16'h8000},
+    // Wait for external supplies
+    {4'h2, 2'b01, 3'b010, 24'h000000},
+    // Wait for 25 ms
+    {4'h2, 2'b01, 3'b000, 24'h000000},
+    // Write to HSCOM_PWR[15]
+    {4'h2, 2'b00, 11'h725, 16'h8000},
+    // Write to HSCOM_PWR[14]
+    {4'h3, 2'b00, 11'h725, 16'h4000},
+    // Wait for 20 us
+    {4'h3, 2'b01, 3'b000, start_val_20_microsecs},
+    // Wait for the bandgap trim state machine
+    {4'h3, 2'b01, 3'b001, 24'h000000},
+    // Return the trim code (code will be inserted by BGT state machine)
+    {4'h3, 2'b00, 11'h72B, 16'h0000},
+    // Wait for 500 ns
+    {4'h3, 2'b01, 3'b000, start_val_500_nanosecs},
+    // Write trim code to CLK_NETWORK_CTRL0
+    {4'h4, 2'b00, 11'h723, 16'h0000},
+    // Enable DAC biasing
+    {4'h4, 2'b00, 11'h070, 16'h0001},
+    {4'h4, 2'b00, 11'h072, 16'h0100},
+    // Write to HSCOM_PWR[13:10]
+    {4'h5, 2'b00, 11'h725, 16'h3C00},
+    // Wait for 2 ms
+    {4'h5, 2'b01, 3'b000, 24'h000000},
+    // Wait for clock detection
+    {4'h6, 2'b01, 3'b011, 24'h000000},
+    // Write to HSCOM_PWR[9]
+    {4'h6, 2'b00, 11'h725, 16'h0200},
+    // Write to PLL_CRS1
+    {4'h7, 2'b00, 11'h70A, 16'h8000},
+    // Write to HSCOM_PWR[8:7]
+    {4'h7, 2'b00, 11'h725, 16'h0180},
+    // Wait for PLL lock
+    {4'h7, 2'b01, 3'b100, 24'h000000},
+    // Read from PLL_SPARE_OUT0
+    {4'h7, 2'b00, 11'h740, 16'h0000},
+    // Write to PLL_CRS1
+    {4'h7, 2'b00, 11'h70A, 16'h8001},
+    // Toggle HSCOM_PWR[7]
+    {4'h7, 2'b00, 11'h725, 16'h0080},
+    {4'h7, 2'b00, 11'h725, 16'h0080},
+    // Wait for PLL lock
+    {4'h7, 2'b01, 3'b100, 24'h000000},
+    // Write to PLL_VREG[7]
+    {4'h7, 2'b00, 11'h711, 16'h0080},
+    // Write to HSCOM_PWR[6]
+    {4'h8, 2'b00, 11'h725, 16'h0040},
+    // Write to DAC_MC_CONFIG
+    {4'h8, 2'b00, 11'h071, 16'h0014},
+    // Startup delay
+    {4'h8, 2'b01, 3'b000, 24'h000000},
+    // Digital clock release
+    {4'h9, 2'b00, 11'h000, 16'h000F},
+    // Wait for 20 cycles
+    {4'h9, 2'b01, 3'b000, 24'h000014},
+    {4'h9, 2'b00, 11'h000, 16'h0000},
+    // Tile sync
+    {4'hA, 2'b00, 11'h724, 16'h1000},
+    {4'hA, 2'b00, 11'h724, 16'h1000},
+    {4'hA, 2'b00, 11'h000, 16'h0000},
+    {4'hA, 2'b00, 11'h000, 16'h0000},
+    // Update the NCO values
+    {4'hA, 2'b00, 11'h023, 16'h0002},
+    {4'hA, 2'b11, 11'h005, 16'h000F},
+    {4'hA, 2'b11, 11'h00E, 16'h0FFF},
+    {4'hA, 2'b00, 11'h72E, 16'h0001},
+    // Wait for clocks to be OK
+    {4'hE, 2'b01, 3'b111, 24'h000000},
+    {4'hF, 2'b10, 27'h0000000}};
+
+    always @(posedge aux_clk)
+    begin
+      mem_data_dac1 <= instr_dac1[mem_addr_dac1];
+    end
 
     // DAC1 POR State machine
-    top_level_block_design_usp_rf_data_converter_0_0_por_fsm_disabled #(.ADC(0))
-    por_fsm_disabled_dac1 (
+    top_level_block_design_usp_rf_data_converter_0_0_por_fsm #(.ADC(0),
+                               .PLL(1))
+    por_fsm_dac1 (
       .reset(dac1_reset_i),
       .aux_clk(aux_clk),
+      .mem_addr(mem_addr_dac1),
+      .mem_data(mem_data_dac1),
       .tile_enable(1'b1),
+      .drpaddr_status(dac1_drpaddr_status),
+      .drpen_status(dac1_drpen_status),
+      .drpdi_status(dac1_drpdi_status),
+      .drpdo_status(dac1_drpdo_status),
+      .drpwe_status(dac1_drpwe_status),
+      .drprdy_status(dac1_drprdy_status),
+      .status_req(dac1_status_req),
+      .status_gnt(dac1_status_gnt),
       .drpaddr_por(dac1_drpaddr_por),
       .drpen_por(dac1_drpen_por),
       .drpdi_por(dac1_drpdi_por),
@@ -1565,11 +1603,38 @@ module top_level_block_design_usp_rf_data_converter_0_0_por_fsm_top (
       .drprdy_por(dac1_drprdy_por),
       .por_req(dac1_por_req),
       .por_gnt(dac1_por_gnt),
-      .config_done(tile_config_done),
+      .config_done(dac1_tile_config_done),
+      .bgt_sm_start(),
+      .bgt_sm_done(bgt_sm_done_dac),
+      .sm_reset(dac1_sm_reset),
+      .cal_const_start(),
+      .cal_const_done(1'b0),
+      .trim_code(trim_code_dac),
+      .start_stage(dac1_start_stage_r),
+      .end_stage(dac1_end_stage_r),
       .done(dac1_done),
+      .fabricclk_val(dac1_fabricclk_val),
       .status(dac1_status),
+      .pll_error(dac1_pll_error),
+      .adc0_status(16'h0000),
+      .adc1_status(16'h0000),
+      .adc2_status(16'h0000),
+      .adc3_status(16'h0000),
+      .bg_cal_en_written(),
+      .const_operation(),
       .supply_timer(dac1_supply_timer),
-      .status_bits(dac1_status_bits)
+      .regulator_timer(dac1_regulator_timer),
+      .calibration_timer(24'h000000),
+      .startup_delay(dac1_startup_delay),
+      .status_bits(dac1_status_bits),
+      .signal_lost(4'b0000),
+      .signal_lost_out(),
+      .rts_drp_req(1'b0),
+      .rts_drp_addr(12'h000),
+      .rts_drp_data(16'h0000),
+      .rts_drp_mask(16'h0000),
+      .rts_drp_busy(),
+      .powerup_state(dac1_powerup_state)
     );
 
     //DAC1 DRP Arbiter
@@ -1595,14 +1660,14 @@ module top_level_block_design_usp_rf_data_converter_0_0_por_fsm_top (
       .tile_config_drp_din(dac1_drpdo_tc),
       .tile_config_drp_den(dac1_drpen_tc),
       .tile_config_drp_drdy(dac1_drprdy_tc),
-      .status_drp_arb_req(1'b0),
-      .status_drp_arb_gnt(),
-      .status_drp_dout(16'h0000),
-      .status_drp_daddr(12'h000),
-      .status_drp_dwe(1'b0),
-      .status_drp_din(),
-      .status_drp_den(1'b0),
-      .status_drp_drdy(),
+      .status_drp_arb_req(dac1_status_req),
+      .status_drp_arb_gnt(dac1_status_gnt),
+      .status_drp_dout(dac1_drpdi_status),
+      .status_drp_daddr(dac1_drpaddr_status),
+      .status_drp_dwe(dac1_drpwe_status),
+      .status_drp_din(dac1_drpdo_status),
+      .status_drp_den(dac1_drpen_status),
+      .status_drp_drdy(dac1_drprdy_status),
       .por_drp_arb_req(dac1_por_req),
       .por_drp_arb_gnt(dac1_por_gnt),
       .por_drp_dout(dac1_drpdi_por),

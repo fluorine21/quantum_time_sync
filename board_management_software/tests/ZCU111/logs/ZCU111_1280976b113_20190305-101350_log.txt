@@ -1,0 +1,220 @@
+Board: ZCU111
+Serial Number: 1280976b113
+Mac Address: 01:02:03:04:05:06
+
+
+Info: XM500 DAC IO test started...
+
+Info: The test will take 0 hours, 00 minutes, and 59 seconds. 0:00:59
+
+Entering step: 0
+
+
+Info: This step started at: 2019-03-05 12:32:01
+
+Entering step: 1
+
+
+Info: This step started at: 2019-03-05 12:32:01
+
+C:\zcu111_bit\tests\ZCU111>cd bat\ 
+
+C:\zcu111_bit\tests\ZCU111\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2019-03-05 12:32:05
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Tue Mar  5 12:32:15 2019...
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2019-03-05 12:32:15
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu111_xm500_dacio.tcl}
+# open_hw
+WARNING: [Board 49-69] Validation failed for board file C:/Xilinx/Vivado/2018.3/data/boards/board_files/vcu128/1.0/board.xml:
+ Polarity Parameter not provided for dummy_port_in
+
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.3
+  **** Build date : Dec  7 2018-00:40:27
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:12 . Memory (MB): peak = 334.410 ; gain = 3.418
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280976B113A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1435] Device xczu28dr (JTAG device index = 0) is not programmed (DONE status = 0).
+# current_hw_device [lindex [get_hw_devices arm_dap_1] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 1]
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/zcu111_xm500_dacio.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1270.582 ; gain = 1.262
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280976B113A
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Tue Mar  5 12:33:04 2019...
+step finished 
+
+***********************************************************
+***********************************************************
+**    ZCU111 - XM505 IO Loopback Write and Read Tests    **
+***********************************************************
+***********************************************************
+
+Testing DAC_IO 
+DAC_IO: Writing and Reading all 0's            - PASSED
+DAC_IO: Writing and Reading all 1's            - PASSED
+DAC_IO: Writing and Reading 0xFEDCBA98 pattern - PASSED
+DAC_IO: Writing and Reading 0x01234567 pattern - PASSED
+
+
+Completed FMC DAC IO Loopback Write and Read Tests
+
+FMC DAC IO Test passed
+
+
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+
+Info: The test took 0 hours, 01 minutes, and 04 seconds. 0:01:04
+
+Info: XM500 DAC IO test started...
+
+Info: The test will take 0 hours, 01 minutes, and 04 seconds. 0:01:04
+
+Entering step: 0
+
+
+Info: This step started at: 2019-03-05 12:39:41
+
+Entering step: 1
+
+
+Info: This step started at: 2019-03-05 12:39:41
+
+C:\zcu111_bit\tests\ZCU111>cd bat\ 
+
+C:\zcu111_bit\tests\ZCU111\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2019-03-05 12:39:44
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Tue Mar  5 12:39:54 2019...
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2019-03-05 12:39:54
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu111_xm500_dacio.tcl}
+# open_hw
+WARNING: [Board 49-69] Validation failed for board file C:/Xilinx/Vivado/2018.3/data/boards/board_files/vcu128/1.0/board.xml:
+ Polarity Parameter not provided for dummy_port_in
+
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.3
+  **** Build date : Dec  7 2018-00:40:27
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:12 . Memory (MB): peak = 333.484 ; gain = 3.070
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280976B113A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xczu28dr (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+# current_hw_device [lindex [get_hw_devices arm_dap_1] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 1]
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/zcu111_xm500_dacio.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1270.277 ; gain = 1.285
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280976B113A
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Tue Mar  5 12:40:42 2019...
+step finished 
+
+***********************************************************
+***********************************************************
+**    ZCU111 - XM500 IO Loopback Write and Read Tests    **
+***********************************************************
+***********************************************************
+
+Testing DAC_IO 
+DAC_IO: Writing and Reading all 0's            - PASSED
+DAC_IO: Writing and Reading all 1's            - PASSED
+DAC_IO: Writing and Reading 0xFEDCBA98 pattern - PASSED
+DAC_IO: Writing and Reading 0x01234567 pattern - PASSED
+
+
+Completed FMC DAC IO Loopback Write and Read Tests
+
+FMC DAC IO Test passed
+
+
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+
+Info: The test took 0 hours, 01 minutes, and 02 seconds. 0:01:02

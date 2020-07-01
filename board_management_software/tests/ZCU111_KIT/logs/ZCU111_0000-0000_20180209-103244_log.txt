@@ -1,0 +1,930 @@
+Board: ZCU111
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: IPI Test test started...
+
+Info: The test will take 0 hours, 01 minutes, and 15 seconds. 0:01:15
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-09 10:32:54
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-09 10:32:54
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+fpga -state
+FPGA is not configured
+after 2000
+
+fpga -no-revision-check -file {C:/zcu111_bit/tests/ZCU111/../bitstream/zcu111_ipi.bit}
+initializing
+step finished 
+
+Error: Could not find regular expression in step 1 of test 9 - "(.*)FPGA\s+is\s+configured"
+
+Error: Could not find regular expression in step 1 of test 9 - "(.*)DONE\s+\(Bits \[5\]\)\:\s+1"
+
+Error: Could not find regular expression in step 1 of test 9 - "(.*)Successfully\s+downloaded"
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-09 10:33:04
+Writing: '33'
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-09 10:33:09
+Writing: 'AA'
+
+Entering step: 4
+
+
+Info: This step started at: 2018-02-09 10:33:14
+Writing: 'CC'
+
+Entering step: 5
+
+
+Info: This step started at: 2018-02-09 10:33:15
+Writing: 'DD'
+
+Entering step: 6
+
+
+Info: This step started at: 2018-02-09 10:33:20
+Writing: 'GG'
+
+step finished 
+the expression:(.*)The\s+Current\s+Temperature\s+is\s+[3-6]\d.\d\d\d\s+Centigrades
+
+Error: Could not find regular expression in step 0 of test 9 - "(.*)All\s+Tests\s+Complete:\s+IIC\s+PASSED"
+
+Error: Could not find regular expression in step 0 of test 9 - "(.*)###\s+PL\s+BRAM\s+Memory\s+Test\s+finished\s+successfully\s+###"
+
+Error: Could not find regular expression in step 0 of test 9 - "(.*)Clocking\s+Test\s+Passed"
+
+Error: Could not find regular expression in step 0 of test 9 - "(.*)PMOD\s+Test\s+passed"
+
+Error: Could not find regular expression in step 0 of test 9 - "(.*)System\s+Monitor\s+Example\s+passed!"
+
+Error: Could not find regular expression in step 0 of test 9 - "(.*)The\s+Current\s+Temperature\s+is\s+[3-6]\d.\d\d\d\s+Centigrades"
+
+Info: Result for step 0: Fail
+Info: Result for step 1: Fail
+Info: Result for step 2: Fail
+Info: Result for step 3: Fail
+Info: Result for step 4: Fail
+Info: Result for step 5: Fail
+Info: Result for step 6: Fail
+
+Info: The test took 0 hours, 00 minutes, and 32 seconds. 0:00:32
+
+Info: IPI Test test started...
+
+Info: The test will take 0 hours, 01 minutes, and 15 seconds. 0:01:15
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-09 10:35:29
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-09 10:35:29
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+fpga -state
+FPGA is not configured
+after 2000
+
+fpga -no-revision-check -file {C:/zcu111_bit/tests/ZCU111/../bitstream/zcu111_ipi.bit}
+initializing  0%    0MB   0.0MB/s  ??:?? ETA  3%    1MB   2.1MB/s  ??:?? ETA  5%    1MB   1.9MB/s  ??:?? ETA  8%    2MB   1.8MB/s  ??:?? ETA 10%    3MB   1.8MB/s  ??:?? ETA 13%    4MB   1.8MB/s  ??:?? ETA 16%    5MB   1.8MB/s  00:15 ETA 18%    6MB   1.7MB/s  00:15 ETA 21%    7MB   1.7MB/s  00:14 ETA 23%    7MB   1.7MB/s  00:14 ETA 26%    8MB   1.7MB/s  00:14 ETA 29%    9MB   1.7MB/s  00:13 ETA 31%   10MB   1.7MB/s  00:13 ETA 34%   11MB   1.7MB/s  00:12 ETA 36%   12MB   1.7MB/s  00:12 ETA 39%   12MB   1.7MB/s  00:11 ETA 41%   13MB   1.7MB/s  00:11 ETA 44%   14MB   1.7MB/s  00:10 ETA 47%   15MB   1.7MB/s  00:10 ETA 49%   16MB   1.7MB/s  00:09 ETA 52%   17MB   1.7MB/s  00:09 ETA 54%   18MB   1.7MB/s  00:08 ETA 57%   18MB   1.7MB/s  00:08 ETA 59%   19MB   1.7MB/s  00:07 ETA 62%   20MB   1.7MB/s  00:07 ETA 65%   21MB   1.7MB/s  00:06 ETA 67%   22MB   1.7MB/s  00:06 ETA 70%   23MB   1.7MB/s  00:05 ETA 72%   23MB   1.7MB/s  00:05 ETA 75%   24MB   1.7MB/s  00:04 ETA 78%   25MB   1.7MB/s  00:04 ETAaborting, 15 pending requests... aborting, 14 pending requests... aborting, 13 pending requests... aborting, 12 pending requests... aborting, 11 pending requests... aborting, 10 pending requests... aborting, 9 pending requests... aborting, 8 pending requests... aborting, 7 pending requests... aborting, 6 pending requests... aborting, 5 pending requests... aborting, 4 pending requests... aborting, 3 pending requests... aborting, 2 pending requests... aborting, 1 pending requests... 
+step finished 
+
+Error: Could not find regular expression in step 1 of test 9 - "(.*)FPGA\s+is\s+configured"
+
+Error: Could not find regular expression in step 1 of test 9 - "(.*)DONE\s+\(Bits \[5\]\)\:\s+1"
+
+Error: Could not find regular expression in step 1 of test 9 - "(.*)Successfully\s+downloaded"
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-09 10:35:52
+Writing: '33'
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-09 10:35:57
+Writing: 'AA'
+
+Entering step: 4
+
+
+Info: This step started at: 2018-02-09 10:36:02
+Writing: 'CC'
+
+Entering step: 5
+
+
+Info: This step started at: 2018-02-09 10:36:03
+Writing: 'DD'
+
+Stopping all tests...
+
+step finished 
+the expression:(.*)The\s+Current\s+Temperature\s+is\s+[3-6]\d.\d\d\d\s+Centigrades
+
+Error: Could not find regular expression in step 0 of test 9 - "(.*)All\s+Tests\s+Complete:\s+IIC\s+PASSED"
+
+Error: Could not find regular expression in step 0 of test 9 - "(.*)###\s+PL\s+BRAM\s+Memory\s+Test\s+finished\s+successfully\s+###"
+
+Error: Could not find regular expression in step 0 of test 9 - "(.*)Clocking\s+Test\s+Passed"
+
+Error: Could not find regular expression in step 0 of test 9 - "(.*)PMOD\s+Test\s+passed"
+
+Error: Could not find regular expression in step 0 of test 9 - "(.*)System\s+Monitor\s+Example\s+passed!"
+
+Error: Could not find regular expression in step 0 of test 9 - "(.*)The\s+Current\s+Temperature\s+is\s+[3-6]\d.\d\d\d\s+Centigrades"
+
+Info: Result for step 0: Fail
+Info: Result for step 1: Fail
+Info: Result for step 2: Fail
+Info: Result for step 3: Fail
+Info: Result for step 4: Fail
+Info: Result for step 5: Fail
+Info: The test took 0 hours, 00 minutes, and 38 seconds. 0:00:38
+
+Info: IPI Test test started...
+
+Info: The test will take 0 hours, 01 minutes, and 15 seconds. 0:01:15
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-09 10:36:16
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-09 10:36:16
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+fpga -state
+FPGA is not configured
+after 2000
+
+fpga -no-revision-check -file {C:/zcu111_bit/tests/ZCU111/../bitstream/zcu111_ipi.bit}
+initializing  0%    0MB   0.0MB/s  ??:?? ETA  3%    1MB   2.1MB/s  ??:?? ETA  5%    1MB   1.9MB/s  ??:?? ETA  8%    2MB   1.8MB/s  ??:?? ETA 11%    3MB   1.8MB/s  ??:?? ETA 13%    4MB   1.8MB/s  ??:?? ETA 16%    5MB   1.8MB/s  00:15 ETA 18%    6MB   1.7MB/s  00:15 ETA 21%    7MB   1.7MB/s  00:14 ETA 24%    7MB   1.7MB/s  00:14 ETA 26%    8MB   1.7MB/s  00:14 ETA 29%    9MB   1.7MB/s  00:13 ETA 31%   10MB   1.7MB/s  00:13 ETA 34%   11MB   1.7MB/s  00:12 ETA 36%   12MB   1.7MB/s  00:12 ETA 39%   12MB   1.7MB/s  00:11 ETA 42%   13MB   1.7MB/s  00:11 ETA 44%   14MB   1.7MB/s  00:10 ETA 47%   15MB   1.7MB/s  00:10 ETA 49%   16MB   1.7MB/s  00:09 ETA 52%   17MB   1.7MB/s  00:09 ETA 54%   18MB   1.7MB/s  00:08 ETA 57%   18MB   1.7MB/s  00:08 ETA 60%   19MB   1.7MB/s  00:07 ETA 62%   20MB   1.7MB/s  00:07 ETA 65%   21MB   1.7MB/s  00:06 ETA 67%   22MB   1.7MB/s  00:06 ETA 70%   23MB   1.7MB/s  00:05 ETA 72%   23MB   1.7MB/s  00:05 ETA 75%   24MB   1.7MB/s  00:04 ETA 77%   25MB   1.7MB/s  00:04 ETA 80%   26MB   1.7MB/s  00:03 ETA 83%   27MB   1.7MB/s  00:03 ETA 85%   28MB   1.7MB/s  00:02 ETA 88%   29MB   1.7MB/s  00:02 ETA 91%   29MB   1.7MB/s  00:01 ETA 93%   30MB   1.7MB/s  00:01 ETA 96%   31MB   1.7MB/s  00:00 ETA 98%   32MB   1.7MB/s  00:00 ETA100%   32MB   1.7MB/s  00:19    
+
+after 2000
+
+fpga -state
+FPGA is configured
+after 2000
+
+fpga -ir-status
+IR STATUS: 117
+     Always One (Bits [0]): 1
+    Always Zero (Bits [1]): 0
+       ISC_Done (Bits [2]): 1
+    ISC_Enabled (Bits [3]): 0
+  Init Complete (Bits [4]): 1
+           DONE (Bits [5]): 1
+             (Bits [11:6]): 1
+after 2000
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/zcu111_bit/tests/ZCU111/../tcl/ipi_psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/zcu111_bit/tests/ZCU111/../elf/ipi_app.elf}
+Downloading Program -- C:/zcu111_bit/tests/ZCU111/elf/ipi_app.elf
+	section, .text: 0x00000000 - 0x0001f0cb
+	section, .init: 0x0001f100 - 0x0001f133
+	section, .fini: 0x0001f140 - 0x0001f173
+	section, .note.gnu.build-id: 0x0001f174 - 0x0001f197
+	section, .rodata: 0x0001f198 - 0x00023577
+	section, .rodata1: 0x00023578 - 0x0002357f
+	section, .sdata2: 0x00023580 - 0x0002357f
+	section, .sbss2: 0x00023580 - 0x0002357f
+	section, .data: 0x00023580 - 0x0002596f
+	section, .data1: 0x00025970 - 0x0002597f
+	section, .ctors: 0x00025980 - 0x0002597f
+	section, .dtors: 0x00025980 - 0x0002597f
+	section, .eh_frame: 0x00025980 - 0x00025983
+	section, .mmu_tbl0: 0x00026000 - 0x0002600f
+	section, .mmu_tbl1: 0x00027000 - 0x00028fff
+	section, .mmu_tbl2: 0x00029000 - 0x0002cfff
+	section, .preinit_array: 0x0002d000 - 0x0002cfff
+	section, .init_array: 0x0002d000 - 0x0002d007
+	section, .fini_array: 0x0002d008 - 0x0002d047
+	section, .sdata: 0x0002d048 - 0x0002d07f
+	section, .sbss: 0x0002d080 - 0x0002d07f
+	section, .tdata: 0x0002d080 - 0x0002d07f
+	section, .tbss: 0x0002d080 - 0x0002d07f
+	section, .bss: 0x0002d080 - 0x0003263f
+	section, .heap: 0x00032640 - 0x0003463f
+	section, .stack: 0x00034640 - 0x0003763f
+  0%    0MB   0.0MB/s  ??:?? ETA 53%    0MB   0.2MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu111_bit/tests/ZCU111/elf/ipi_app.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 2000
+***********************************************************
+***********************************************************
+**   Zynq UltraScale+ MB ZCU111 Evaluation Kit IPI Test  **
+***********************************************************
+***********************************************************
+
+Choose Feature to Test:
+1: UART Test
+2: LED Test
+3: IIC Test
+5: TIMER/SCUGIC Test
+7: SWITCH Test
+8: PS DDR4 External Memory Test
+9: DDR4 External Memory Test
+A: BRAM Internal Memory Test
+B: BUTTON Test
+C: Clocking Test
+D: PMOD Test
+E: PS Pushbutton Test
+F: PS LED Test
+G: System Monitor Test
+H: ETHERNET Loopback Test
+0: Exit
+
+disconnect
+
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-09 10:36:56
+Writing: '33'
+3
+
+*************************************************************
+** ZCU111 EEPROM IIC EEPROM Test
+*************************************************************
+Calling iic_read
+
+Reading EEPROM data from EEPROM
+
+ReadBuffer[00] = 0xFF
+ReadBuffer[01] = 0xFF
+ReadBuffer[02] = 0xFF
+ReadBuffer[03] = 0xFF
+ReadBuffer[04] = 0xFF
+ReadBuffer[05] = 0xFF
+ReadBuffer[06] = 0xFF
+ReadBuffer[07] = 0xFF
+ReadBuffer[08] = 0xFF
+ReadBuffer[09] = 0xFF
+ReadBuffer[10] = 0xFF
+ReadBuffer[11] = 0xFF
+ReadBuffer[12] = 0xFF
+ReadBuffer[13] = 0xFF
+ReadBuffer[14] = 0xFF
+ReadBuffer[15] = 0xFF
+
+
+ZCU111 EEPROM IIC EEPROM Test PASSED
+
+*************************************************************
+** ZCU111 USER Si570 IIC EEPROM Test
+*************************************************************
+Calling iic_read
+
+Reading EEPROM data from USER Si570
+
+ReadBuffer[00] = 0xA0
+ReadBuffer[01] = 0x42
+ReadBuffer[02] = 0xF4
+ReadBuffer[03] = 0x00
+ReadBuffer[04] = 0x7B
+ReadBuffer[05] = 0x18
+ReadBuffer[06] = 0x07
+ReadBuffer[07] = 0xC2
+ReadBuffer[08] = 0xC0
+ReadBuffer[09] = 0x00
+ReadBuffer[10] = 0x00
+ReadBuffer[11] = 0x00
+ReadBuffer[12] = 0x00
+ReadBuffer[13] = 0xC2
+ReadBuffer[14] = 0xC0
+ReadBuffer[15] = 0x00
+
+
+ZCU111 USER Si570 IIC EEPROM Test PASSED
+
+*************************************************************
+** ZCU111 MGT Si570 IIC EEPROM Test
+*************************************************************
+Calling iic_read
+
+Reading EEPROM data from MGT Si570
+
+ReadBuffer[00] = 0x01
+ReadBuffer[01] = 0xC2
+ReadBuffer[02] = 0xBC
+ReadBuffer[03] = 0x4D
+ReadBuffer[04] = 0x87
+ReadBuffer[05] = 0x51
+ReadBuffer[06] = 0x07
+ReadBuffer[07] = 0xC2
+ReadBuffer[08] = 0xC0
+ReadBuffer[09] = 0x00
+ReadBuffer[10] = 0x00
+ReadBuffer[11] = 0x00
+ReadBuffer[12] = 0x00
+ReadBuffer[13] = 0xC2
+ReadBuffer[14] = 0xC0
+ReadBuffer[15] = 0x00
+
+
+ZCU111 MGT Si570 IIC EEPROM Test PASSED
+
+*************************************************************
+** ZCU111 Si5382 IIC EEPROM Test
+*************************************************************
+Calling iic_read
+
+Reading EEPROM data from Si5382
+
+ReadBuffer[00] = 0x00
+ReadBuffer[01] = 0x00
+ReadBuffer[02] = 0x00
+ReadBuffer[03] = 0x00
+ReadBuffer[04] = 0x00
+ReadBuffer[05] = 0x00
+ReadBuffer[06] = 0x00
+ReadBuffer[07] = 0x00
+ReadBuffer[08] = 0x00
+ReadBuffer[09] = 0x00
+ReadBuffer[10] = 0x00
+ReadBuffer[11] = 0x00
+ReadBuffer[12] = 0x00
+ReadBuffer[13] = 0x00
+ReadBuffer[14] = 0x00
+ReadBuffer[15] = 0x00
+
+
+ZCU111 Si5382 IIC EEPROM Test PASSED
+
+*************************************************************
+** ZCU111 FMCP HPSC IIC EEPROM Test
+*************************************************************
+Calling iic_read
+
+Reading EEPROM data from FMCP HPSC
+
+ReadBuffer[00] = 0x01
+ReadBuffer[01] = 0x00
+ReadBuffer[02] = 0x00
+ReadBuffer[03] = 0x01
+ReadBuffer[04] = 0x00
+ReadBuffer[05] = 0x0A
+ReadBuffer[06] = 0x00
+ReadBuffer[07] = 0xF4
+ReadBuffer[08] = 0x01
+ReadBuffer[09] = 0x09
+ReadBuffer[10] = 0x00
+ReadBuffer[11] = 0x40
+ReadBuffer[12] = 0xEC
+ReadBuffer[13] = 0x87
+ReadBuffer[14] = 0xC6
+ReadBuffer[15] = 0x53
+
+
+ZCU111 FMCP HPSC IIC EEPROM Test PASSED
+
+*************************************************************
+** ZCU111 DDR4 SPD IIC EEPROM Test
+*************************************************************
+Calling iic_read
+
+Reading EEPROM data from DDR4 SPD
+
+ReadBuffer[00] = 0x0F
+ReadBuffer[01] = 0x01
+ReadBuffer[02] = 0x02
+ReadBuffer[03] = 0x00
+ReadBuffer[04] = 0x00
+ReadBuffer[05] = 0x00
+ReadBuffer[06] = 0x00
+ReadBuffer[07] = 0x00
+ReadBuffer[08] = 0x00
+ReadBuffer[09] = 0x00
+ReadBuffer[10] = 0x00
+ReadBuffer[11] = 0x00
+ReadBuffer[12] = 0x00
+ReadBuffer[13] = 0x00
+ReadBuffer[14] = 0x00
+ReadBuffer[15] = 0x00
+
+
+ZCU111 DDR4 SPD IIC EEPROM Test PASSED
+
+*************************************************************
+** ZCU111 SFP IIC EEPROM Test
+*************************************************************
+Calling iic_read
+
+Reading EEPROM data from SFP
+
+ReadBuffer[00] = 0x4D
+ReadBuffer[01] = 0x6F
+ReadBuffer[02] = 0x6C
+ReadBuffer[03] = 0x65
+ReadBuffer[04] = 0x78
+ReadBuffer[05] = 0x20
+ReadBuffer[06] = 0x49
+ReadBuffer[07] = 0x6E
+ReadBuffer[08] = 0x63
+ReadBuffer[09] = 0x2E
+ReadBuffer[10] = 0x20
+ReadBuffer[11] = 0x20
+ReadBuffer[12] = 0x20
+ReadBuffer[13] = 0x20
+ReadBuffer[14] = 0x20
+ReadBuffer[15] = 0x20
+
+
+ZCU111 SFP IIC EEPROM Test PASSED
+
+*************************************************************
+** ZCU111 SFP IIC EEPROM Test
+*************************************************************
+Calling iic_read
+
+Reading EEPROM data from SFP
+
+ReadBuffer[00] = 0x4D
+ReadBuffer[01] = 0x6F
+ReadBuffer[02] = 0x6C
+ReadBuffer[03] = 0x65
+ReadBuffer[04] = 0x78
+ReadBuffer[05] = 0x20
+ReadBuffer[06] = 0x49
+ReadBuffer[07] = 0x6E
+ReadBuffer[08] = 0x63
+ReadBuffer[09] = 0x2E
+ReadBuffer[10] = 0x20
+ReadBuffer[11] = 0x20
+ReadBuffer[12] = 0x20
+ReadBuffer[13] = 0x20
+ReadBuffer[14] = 0x20
+ReadBuffer[15] = 0x20
+
+
+ZCU111 SFP IIC EEPROM Test PASSED
+
+*************************************************************
+** ZCU111 SFP IIC EEPROM Test
+*************************************************************
+Calling iic_read
+
+Reading EEPROM data from SFP
+
+ReadBuffer[00] = 0x4D
+ReadBuffer[01] = 0x6F
+ReadBuffer[02] = 0x6C
+ReadBuffer[03] = 0x65
+ReadBuffer[04] = 0x78
+ReadBuffer[05] = 0x20
+ReadBuffer[06] = 0x49
+ReadBuffer[07] = 0x6E
+ReadBuffer[08] = 0x63
+ReadBuffer[09] = 0x2E
+ReadBuffer[10] = 0x20
+ReadBuffer[11] = 0x20
+ReadBuffer[12] = 0x20
+ReadBuffer[13] = 0x20
+ReadBuffer[14] = 0x20
+ReadBuffer[15] = 0x20
+
+
+ZCU111 SFP IIC EEPROM Test PASSED
+
+*************************************************************
+** ZCU111 SFP IIC EEPROM Test
+*************************************************************
+Calling iic_read
+
+Reading EEPROM data from SFP
+
+ReadBuffer[00] = 0x4D
+ReadBuffer[01] = 0x6F
+ReadBuffer[02] = 0x6C
+ReadBuffer[03] = 0x65
+ReadBuffer[04] = 0x78
+ReadBuffer[05] = 0x20
+ReadBuffer[06] = 0x49
+ReadBuffer[07] = 0x6E
+ReadBuffer[08] = 0x63
+ReadBuffer[09] = 0x2E
+ReadBuffer[10] = 0x20
+ReadBuffer[11] = 0x20
+ReadBuffer[12] = 0x20
+ReadBuffer[13] = 0x20
+ReadBuffer[14] = 0x20
+ReadBuffer[15] = 0x20
+
+
+ZCU111 SFP IIC EEPROM Test PASSED
+All Tests Complete: IIC PASSED
+Press any key to return to main menu
+Choose Feature to Test:
+1: UART Test
+2: LED Test
+3: IIC Test
+5: TIMER/SCUGIC Test
+7: SWITCH Test
+8: PS DDR4 External Memory Test
+9: DDR4 External Memory Test
+A: BRAM Internal Memory Test
+B: BUTTON Test
+C: Clocking Test
+D: PMOD Test
+E: PS Pushbutton Test
+F: PS LED Test
+G: System Monitor Test
+H: ETHERNET Loopback Test
+0: Exit
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-09 10:37:01
+Writing: 'AA'
+A
+
+********************************************************
+********************************************************
+**                ZCU111 - PL BRAM TEST               **
+********************************************************
+********************************************************
+
+
+PL BRAM Memory Test
+Testing address range 0xB0000000-0xB01FFFFF.
+Iteration 1 of 1
+Pass A) ICache:  On, DCache:  On
+	TEST0: Write all memory to 0x00000000 and check
+		Writing...
+		Reading...
+	Test Complete Status = SUCCESS
+	TEST1: Write all memory to 0xFFFFFFFF and check
+		Writing...
+		Reading...
+	Test Complete Status = SUCCESS 
+
+	TEST2: Testing for stuck together bank/row/col bits
+		Clearing memory to zeros...
+		Writing and Reading...
+	Test Complete Status = SUCCESS 
+
+	TEST3: Testing for maximum ba/row/col noise
+		This test performs 16 word writes followed by 16 word reads
+		Each 64 bytes inverts the ba/row/col address
+		Initializing Memory to 0xA5A5A5A5...
+		Writing and Reading...
+	Test Complete Status = SUCCESS
+	TEST4: Testing for Inverse Data at Address
+		Writing...
+		Reading...
+	Test Complete Status = SUCCESS 
+
+		Number of errors in this pass = 0
+
+Pass B) ICache: Off, DCache: Off
+	TEST0: Write all memory to 0x00000000 and check
+		Writing...
+		Reading...
+	Test Complete Status = SUCCESS
+	TEST1: Write all memory to 0xFFFFFFFF and check
+		Writing...
+		Reading...
+	Test Complete Status = SUCCESS 
+
+	TEST2: Testing for stuck together bank/row/col bits
+		Clearing memory to zeros...
+		Writing and Reading...
+	Test Complete Status = SUCCESS 
+
+	TEST3: Testing for maximum ba/row/col noise
+		This test performs 16 word writes followed by 16 word reads
+		Each 64 bytes inverts the ba/row/col address
+		Initializing Memory to 0xA5A5A5A5...
+		Writing and Reading...
+	Test Complete Status = SUCCESS
+	TEST4: Testing for Inverse Data at Address
+		Writing...
+		Reading...
+	Test Complete Status = SUCCESS 
+
+		Number of errors in this pass = 0
+
+PL BRAM test iteration #1 has PASSED!
+Total number of errors for all iterations = 0
+### PL BRAM Memory Test finished successfully ###
+Press any key to return to main menu
+Choose Feature to Test:
+1: UART Test
+2: LED Test
+3: IIC Test
+5: TIMER/SCUGIC Test
+7: SWITCH Test
+8: PS DDR4 External Memory Test
+9: DDR4 External Memory Test
+A: BRAM Internal Memory Test
+B: BUTTON Test
+C: Clocking Test
+D: PMOD Test
+E: PS Pushbutton Test
+F: PS LED Test
+G: System Monitor Test
+H: ETHERNET Loopback Test
+0: Exit
+
+Entering step: 4
+
+
+Info: This step started at: 2018-02-09 10:37:06
+Writing: 'CC'
+
+Entering step: 5
+
+
+Info: This step started at: 2018-02-09 10:37:07
+C
+
+********************************************************
+********************************************************
+**             ZCU111 - Clock Frequencies             **
+********************************************************
+********************************************************
+
+FMCP_HSPC_REFCLK            failed 
+SFP_SI5382_IN1              failed 
+SFP_SI5382_OUT              failed 
+USER_SMA_MGT_CLOCK          failed 
+AMS_REF_CLK                 failed 
+CLK_100                      =  100.024 
+CLK_125                      =  125.031 
+FMCP_HSPC_REFCLK             =    0.000 
+FMCP_HSPC_CLK0               =  156.313 
+FMCP_HSPC_CLK1               =  156.313 
+SFP_SI5382_IN1               =    5.543 
+SFP_SI5382_OUT               =    2.125 
+FMCP_HSPC_GBTCLK1            =  156.313 
+USER_SMA_MGT_CLOCK           =    0.000 
+FMCP_HSPC_GBTCLK0            =  156.313 
+USER_MGT_SI570_CLOCK         =  156.313 
+FMCP_HSPC_GBTCLK2            =  156.313 
+AMS_REF_CLK                  =    0.000 
+
+5 Clocks Failed
+
+Clocking Test Failed
+
+Press any key to return to main menu
+Choose Feature to Test:
+1: UART Test
+2: LED Test
+3: IIC Test
+5: TIMER/SCUGIC Test
+7: SWITCH Test
+8: PS DDR4 External Memory Test
+9: DDR4 External Memory Test
+A: BRAM Internal Memory Test
+B: BUTTON Test
+C: Clocking Test
+D: PMOD Test
+E: PS Pushbutton Test
+F: PS LED Test
+G: System Monitor Test
+H: ETHERNET Loopback Test
+0: Exit
+Writing: 'DD'
+D
+
+********************************************************
+********************************************************
+**     ZCU111 - PMOD Loopback Write and Read Tests    **
+********************************************************
+********************************************************
+
+Testing PMOD 
+PMOD: Writing and Reading all 0's            - FAILED
+Data read back = 000000FF
+PMOD: Writing and Reading all 1's            - PASSED
+PMOD: Writing and Reading 0x55555555 pattern - FAILED
+Data read back = 000000FF
+PMOD: Writing and Reading 0xAAAAAAAA pattern - FAILED
+Data read back = 000000FF
+
+Completed PMOD Loopback Write and Read Tests
+
+PMOD Test failed
+
+Press any key to return to main menu
+Choose Feature to Test:
+1: UART Test
+2: LED Test
+3: IIC Test
+5: TIMER/SCUGIC Test
+7: SWITCH Test
+8: PS DDR4 External Memory Test
+9: DDR4 External Memory Test
+A: BRAM Internal Memory Test
+B: BUTTON Test
+C: Clocking Test
+D: PMOD Test
+E: PS Pushbutton Test
+F: PS LED Test
+G: System Monitor Test
+H: ETHERNET Loopback Test
+0: Exit
+
+Entering step: 6
+
+
+Info: This step started at: 2018-02-09 10:37:12
+Writing: 'GG'
+G
+
+********************************************************
+********************************************************
+**            ZCU111 - System Monitor Test            **
+********************************************************
+********************************************************
+Starting System Monitor Example
+
+The Current Temperature is 33.224 Centigrades.
+The Maximum Temperature is 33.224 Centigrades. 
+The Minimum Temperature is 33.155 Centigrades. 
+
+The Current VCCINT is 0.848 Volts. 
+The Maximum VCCINT is 0.849 Volts. 
+The Minimum VCCINT is 0.848 Volts. 
+
+The Current VCCAUX is 1.791 Volts. 
+The Maximum VCCAUX is 1.792 Volts. 
+The Minimum VCCAUX is 1.791 Volts. 
+
+The Current VPVN   is 0.000 Volts.
+The Current VREFP  is 1.249 Volts.
+The Current VREFN  is 0.000 Volts.
+
+System Monitor Example passed!
+
+Press any key to return to main menu
+Choose Feature to Test:
+1: UART Test
+2: LED Test
+3: IIC Test
+5: TIMER/SCUGIC Test
+7: SWITCH Test
+8: PS DDR4 External Memory Test
+9: DDR4 External Memory Test
+A: BRAM Internal Memory Test
+B: BUTTON Test
+C: Clocking Test
+D: PMOD Test
+E: PS Pushbutton Test
+F: PS LED Test
+G: System Monitor Test
+H: ETHERNET Loopback Test
+0: Exit
+
+step finished 
+the expression:(.*)The\s+Current\s+Temperature\s+is\s+[3-6]\d.\d\d\d\s+Centigrades
+
+Error: Could not find regular expression in step 0 of test 9 - "(.*)Clocking\s+Test\s+Passed"
+
+Error: Could not find regular expression in step 0 of test 9 - "(.*)PMOD\s+Test\s+passed"
+
+Info: Result for step 0: Fail
+Info: Result for step 1: Pass
+Info: Result for step 2: Fail
+Info: Result for step 3: Fail
+Info: Result for step 4: Fail
+Info: Result for step 5: Fail
+Info: Result for step 6: Fail
+
+Info: The test took 0 hours, 01 minutes, and 02 seconds. 0:01:02
+
+Info: ZCU111 RTC test started...
+
+Info: The test will take 0 hours, 00 minutes, and 31 seconds. 0:00:31
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-09 10:38:15
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-09 10:38:16
+
+C:\zcu111_bit\tests\ZCU111>cd bat\ 
+
+C:\zcu111_bit\tests\ZCU111\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-09 10:38:19
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+fpga -state
+FPGA is not configured
+
+fpga -no-revision-check -file {C:/zcu111_bit/tests/ZCU111/../bitstream/zcu104_ipi.bit}
+
+step finished 
+
+Error: Could not find regular expression in step 2 of test 4 - "(.*)Successfully\s+downloaded"
+
+step finished 
+the expression:(.*)YEAR\:MM\:DD\s+HR\:MM\:SS
+
+Error: Could not find regular expression in step 0 of test 4 - "(.*)Last\s+set\s+time\s+for\s+RTC\s+is"
+
+Error: Could not find regular expression in step 0 of test 4 - "(.*)RTC\s+time\s+after\s+set\s+is"
+
+Error: Could not find regular expression in step 0 of test 4 - "(.*)YEAR\:MM\:DD\s+HR\:MM\:SS"
+
+Info: Result for step 0: Fail
+Info: Result for step 1: Pass
+Info: Result for step 2: Fail
+
+Info: The test took 0 hours, 00 minutes, and 12 seconds. 0:00:12

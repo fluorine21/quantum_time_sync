@@ -1,0 +1,129 @@
+Board: ZCU104
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: Run All button pressed, running through all of the checked tests 1 time.
+
+Info: The runall will take 0 hours, 05 minutes, and 01 seconds. 0:05:01
+
+Info: MIG PL DDR4 test started...
+
+Info: The test will take 0 hours, 00 minutes, and 42 seconds. 0:00:42
+
+Entering step: 0
+
+
+Info: This step started at: 2017-10-02 11:17:41
+
+User has confirmed: "Turn off the ZCU102 Board Power.
+Set mode switch SW6 to "0000" (Up,Up,Up,Up)
+Turn on the ZCU102 Board Power."
+
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2017-10-02 11:17:57
+
+****** Vivado v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_mig_pl_ddr4.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.2
+  **** Build date : Jun 15 2017-18:53:26
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+ERROR: [Common 17-39] 'get_hw_targets' failed due to earlier errors.
+
+    while executing
+"get_hw_targets */xilinx_tcf/Xilinx/*"
+    invoked from within
+"current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]"
+    (file "tcl\zcu104_mig_pl_ddr4.tcl" line 3)
+INFO: [Common 17-206] Exiting Vivado at Mon Oct  2 11:18:28 2017...
+
+Error: Could not find regular expression in step 1 of test 1 - "(.*)INFO:\s+\[Labtools\s+27\-3164\]\s+End\s+of\s+startup\s+status:\s+HIGH"
+
+Entering step: 2
+
+
+Info: This step started at: 2017-10-02 11:18:28
+
+****** Vivado v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_mig_pl_ddr4_status.tcl}
+# set TEST_DELAY 120
+# disconnect_hw_server -quiet
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+ERROR: [Common 17-39] 'get_hw_targets' failed due to earlier errors.
+
+    while executing
+"get_hw_targets */xilinx_tcf/Xilinx/*"
+    invoked from within
+"current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]"
+    (file "tcl\zcu104_mig_pl_ddr4_status.tcl" line 13)
+INFO: [Common 17-206] Exiting Vivado at Mon Oct  2 11:18:47 2017...
+
+Error: Could not find regular expression in step 2 of test 1 - "(.*)^\s+TEST\s+PASSED"
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Fail
+Info: Result for step 2: Fail
+
+Info: The test took 0 hours, 00 minutes, and 50 seconds. 0:00:50
+
+Info: PMOD Loopback test started...
+
+Info: The test will take 0 hours, 00 minutes, and 48 seconds. 0:00:48
+
+Entering step: 0
+
+
+Info: This step started at: 2017-10-02 11:18:47
+Exception in thread :
+Traceback (most recent call last):
+  File "threading.py", line 801, in __bootstrap_inner
+  File "com.py", line 100, in run
+AttributeError: 'NoneType' object has no attribute 'read'
+
+
+Error: 'comm' type in step 0 never found a serial port to connect to in test 3
+
+Entering step: 1
+
+
+Info: This step started at: 2017-10-02 11:18:47
+
+User has confirmed: "Turn off the ZCU102 Board Power.
+Set mode switch SW6 to "0000" (Up,Up,Up,Up)
+Turn on the ZCU102 Board Power."
+
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2017-10-02 11:19:00
+
+Stopping all tests...
+
+Error: Step 2 timed out in test number 3
+
+Info: Result for step 0: Fail
+Info: Result for step 1: Pass

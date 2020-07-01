@@ -1,0 +1,60 @@
+Board: ZCU104
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: SD BOOT and UART test started...
+
+Info: The test will take 0 hours, 00 minutes, and 01 seconds. 0:00:01
+
+Entering step: 0
+
+
+Info: This step started at: 2017-10-10 15:55:27
+
+Entering step: 1
+
+
+Info: This step started at: 2017-10-10 15:55:27
+
+User has confirmed: "Set mode switch SW6 to "1010" (Down,Up,Down,Up)
+Insert the SD BOOT micro-SD card"
+
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2017-10-10 15:55:29
+
+C:\zcu104_bit\tests\ZCU104>cd bat\ 
+
+C:\zcu104_bit\tests\ZCU104\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2017-10-10 15:55:33
+Xilinx Zynq MP First Stage Boot Loader 
+Release 2017.1   Jun 18 2017  -  17:37:04
+Hello World
+
+****** Vivado v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Tue Oct 10 15:55:53 2017...
+step finished 
+
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+
+Info: The test took 0 hours, 00 minutes, and 25 seconds. 0:00:25

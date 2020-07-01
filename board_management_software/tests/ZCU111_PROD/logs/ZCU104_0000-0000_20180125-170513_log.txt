@@ -1,0 +1,274 @@
+Board: ZCU104
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: UART 01/02 TEST test started...
+
+Info: The test will take 0 hours, 01 minutes, and 31 seconds. 0:01:31
+
+Entering step: 0
+
+
+Info: This step started at: 2018-01-25 17:05:18
+
+Entering step: 1
+
+
+Info: This step started at: 2018-01-25 17:05:18
+
+Entering step: 2
+
+
+Info: This step started at: 2018-01-25 17:05:18
+
+C:\zcu104_bit\tests\ZCU104>cd bat\ 
+
+C:\zcu104_bit\tests\ZCU104\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-01-25 17:05:21
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+
+fpga -state
+FPGA is not configured
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/zcu104_bit/tests/ZCU104/../tcl/psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/zcu104_bit/tests/ZCU104/../elf/hello_uart_1.elf}
+Downloading Program -- C:/zcu104_bit/tests/ZCU104/elf/hello_uart_1.elf
+	section, .text: 0x00000000 - 0x0000266b
+	section, .init: 0x00002680 - 0x000026b3
+	section, .fini: 0x000026c0 - 0x000026f3
+	section, .note.gnu.build-id: 0x000026f4 - 0x00002717
+	section, .rodata: 0x00002718 - 0x00002977
+	section, .rodata1: 0x00002978 - 0x0000297f
+	section, .sdata2: 0x00002980 - 0x0000297f
+	section, .sbss2: 0x00002980 - 0x0000297f
+	section, .data: 0x00002980 - 0x0000326f
+	section, .data1: 0x00003270 - 0x0000327f
+	section, .ctors: 0x00003280 - 0x0000327f
+	section, .dtors: 0x00003280 - 0x0000327f
+	section, .eh_frame: 0x00003280 - 0x00003283
+	section, .mmu_tbl0: 0x00004000 - 0x0000400f
+	section, .mmu_tbl1: 0x00005000 - 0x00006fff
+	section, .mmu_tbl2: 0x00007000 - 0x0000afff
+	section, .preinit_array: 0x0000b000 - 0x0000afff
+	section, .init_array: 0x0000b000 - 0x0000b007
+	section, .fini_array: 0x0000b008 - 0x0000b047
+	section, .sdata: 0x0000b048 - 0x0000b07f
+	section, .sbss: 0x0000b080 - 0x0000b07f
+	section, .tdata: 0x0000b080 - 0x0000b07f
+	section, .tbss: 0x0000b080 - 0x0000b07f
+	section, .bss: 0x0000b080 - 0x0000b0bf
+	section, .heap: 0x0000b0c0 - 0x0000d0bf
+	section, .stack: 0x0000d0c0 - 0x000100bf
+  0%    0MB   0.0MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu104_bit/tests/ZCU104/elf/hello_uart_1.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 2000
+
+********************************************************
+********************************************************
+**                ZCU104 - UART 01 Test               **
+********************************************************
+********************************************************
+Testing UART
+115200,8,N,1
+Hello world!
+UART 01 Test Passed
+
+
+disconnect
+
+step finished 
+
+Entering step: 4
+
+
+Info: This step started at: 2018-01-25 17:05:36
+
+C:\zcu104_bit\tests\ZCU104>cd bat\ 
+
+C:\zcu104_bit\tests\ZCU104\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 5
+
+
+Info: This step started at: 2018-01-25 17:05:40
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+
+fpga -state
+FPGA is not configured
+
+fpga -no-revision-check -file {C:/zcu104_bit/tests/ZCU104/../bitstream/zcu104_ipi.bit}
+initializing  0%    0MB   0.0MB/s  ??:?? ETA  5%    1MB   2.1MB/s  ??:?? ETA 10%    1MB   1.9MB/s  ??:?? ETA 14%    2MB   1.8MB/s  ??:?? ETA 19%    3MB   1.8MB/s  ??:?? ETA 24%    4MB   1.8MB/s  ??:?? ETA 28%    5MB   1.7MB/s  00:07 ETA 33%    6MB   1.7MB/s  00:07 ETA 37%    6MB   1.7MB/s  00:06 ETA 42%    7MB   1.7MB/s  00:06 ETA 47%    8MB   1.7MB/s  00:05 ETA 51%    9MB   1.7MB/s  00:05 ETA 56%   10MB   1.7MB/s  00:04 ETA 60%   11MB   1.7MB/s  00:04 ETA 65%   12MB   1.7MB/s  00:03 ETA 69%   12MB   1.7MB/s  00:03 ETA 74%   13MB   1.7MB/s  00:02 ETA 78%   14MB   1.7MB/s  00:02 ETA 83%   15MB   1.7MB/s  00:01 ETA 87%   16MB   1.7MB/s  00:01 ETA 92%   17MB   1.7MB/s  00:00 ETA 97%   17MB   1.7MB/s  00:00 ETA100%   18MB   1.7MB/s  00:10    
+
+fpga -ir-status
+IR STATUS: 117
+     Always One (Bits [0]): 1
+    Always Zero (Bits [1]): 0
+       ISC_Done (Bits [2]): 1
+    ISC_Enabled (Bits [3]): 0
+  Init Complete (Bits [4]): 1
+           DONE (Bits [5]): 1
+             (Bits [11:6]): 1
+targets -set -filter {name =~"*APU*"}
+
+source {C:/zcu104_bit/tests/ZCU104/../tcl/psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/zcu104_bit/tests/ZCU104/../elf/hello_uart_2.elf}
+Downloading Program -- C:/zcu104_bit/tests/ZCU104/elf/hello_uart_2.elf
+	section, .text: 0x00000000 - 0x000026ab
+	section, .init: 0x000026c0 - 0x000026f3
+	section, .fini: 0x00002700 - 0x00002733
+	section, .note.gnu.build-id: 0x00002734 - 0x00002757
+	section, .rodata: 0x00002758 - 0x000029b7
+	section, .rodata1: 0x000029b8 - 0x000029bf
+	section, .sdata2: 0x000029c0 - 0x000029bf
+	section, .sbss2: 0x000029c0 - 0x000029bf
+	section, .data: 0x000029c0 - 0x000032af
+	section, .data1: 0x000032b0 - 0x000032bf
+	section, .ctors: 0x000032c0 - 0x000032bf
+	section, .dtors: 0x000032c0 - 0x000032bf
+	section, .eh_frame: 0x000032c0 - 0x000032c3
+	section, .mmu_tbl0: 0x00004000 - 0x0000400f
+	section, .mmu_tbl1: 0x00005000 - 0x00006fff
+	section, .mmu_tbl2: 0x00007000 - 0x0000afff
+	section, .preinit_array: 0x0000b000 - 0x0000afff
+	section, .init_array: 0x0000b000 - 0x0000b007
+	section, .fini_array: 0x0000b008 - 0x0000b047
+	section, .sdata: 0x0000b048 - 0x0000b07f
+	section, .sbss: 0x0000b080 - 0x0000b07f
+	section, .tdata: 0x0000b080 - 0x0000b07f
+	section, .tbss: 0x0000b080 - 0x0000b07f
+	section, .bss: 0x0000b080 - 0x0000b0bf
+	section, .heap: 0x0000b0c0 - 0x0000d0bf
+	section, .stack: 0x0000d0c0 - 0x000100bf
+  0%    0MB   0.0MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu104_bit/tests/ZCU104/elf/hello_uart_2.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 2000
+
+********************************************************
+********************************************************
+**                ZCU106 - UART 02 Test               **
+********************************************************
+********************************************************
+Testing UART
+115200,8,N,1
+Hello world!
+UART 02 Test Passed
+
+
+disconnect
+
+step finished 
+
+step finished 
+
+Info: Result for step 0: Pass
+step finished 
+
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+Info: Result for step 4: Pass
+Info: Result for step 5: Pass
+
+Info: The test took 0 hours, 00 minutes, and 51 seconds. 0:00:51
+
+Info: PING test started...
+
+Info: The test will take 0 hours, 00 minutes, and 59 seconds. 0:00:59
+
+Entering step: 0
+
+
+Info: This step started at: 2018-01-25 17:06:20
+
+step finished 
+Exception in thread :
+Traceback (most recent call last):
+  File "threading.py", line 801, in __bootstrap_inner
+  File "com.py", line 156, in run
+UnboundLocalError: local variable 'expression' referenced before assignment
+
+
+Error: 'comm' type in step 0 never found a serial port to connect to in test 6
+
+Entering step: 1
+
+
+Info: This step started at: 2018-01-25 17:06:20
+
+Error: Stopped because step 0 failed in test 6
+
+Info: Result for step 0: Fail
+Info: The test took 0 hours, 00 minutes, and 00 seconds. 0:00:00

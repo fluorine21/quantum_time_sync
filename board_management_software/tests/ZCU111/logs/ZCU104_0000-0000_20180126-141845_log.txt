@@ -1,0 +1,152 @@
+Board: ZCU104
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: FMC Loopback test started...
+
+Info: The test will take 0 hours, 01 minutes, and 13 seconds. 0:01:13
+
+Entering step: 0
+
+
+Info: This step started at: 2018-01-26 14:18:47
+
+Entering step: 1
+
+
+Info: This step started at: 2018-01-26 14:18:47
+
+C:\zcu104_bit\tests\ZCU104>cd bat\ 
+
+C:\zcu104_bit\tests\ZCU104\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-01-26 14:18:51
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_xm107_lvds.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target -jtag_mode 1
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961c005A
+INFO: [Labtoolstcl 44-467] Setting hw_target localhost:3121/xilinx_tcf/Xilinx/1280961c005A into jtag_mode
+# scan_ir_hw_jtag 12 -tdi 0x90B
+# close_hw_target
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961c005A
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961c005A
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/zcu104_xm107_lvds.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 306.250 ; gain = 0.000
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961c005A
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Fri Jan 26 14:19:18 2018...
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-01-26 14:19:18
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+fpga -state
+FPGA is configured
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/zcu104_bit/tests/ZCU104/../tcl/psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/zcu104_bit/tests/ZCU104/../elf/xm105_loop.elf}
+Downloading Program -- C:/zcu104_bit/tests/ZCU104/elf/xm105_loop.elf
+	section, .text: 0x00000000 - 0x0000c51b
+	section, .init: 0x0000c540 - 0x0000c573
+	section, .fini: 0x0000c580 - 0x0000c5b3
+	section, .note.gnu.build-id: 0x0000c5b4 - 0x0000c5d7
+	section, .rodata: 0x0000c5d8 - 0x0000cc57
+	section, .rodata1: 0x0000cc58 - 0x0000cc7f
+	section, .sdata2: 0x0000cc80 - 0x0000cc7f
+	section, .sbss2: 0x0000cc80 - 0x0000cc7f
+	section, .data: 0x0000cc80 - 0x0000de4f
+	section, .data1: 0x0000de50 - 0x0000de7f
+	section, .ctors: 0x0000de80 - 0x0000de7f
+	section, .dtors: 0x0000de80 - 0x0000de7f
+	section, .eh_frame: 0x0000de80 - 0x0000de83
+	section, .mmu_tbl0: 0x0000e000 - 0x0000e00f
+	section, .mmu_tbl1: 0x0000f000 - 0x00010fff
+	section, .mmu_tbl2: 0x00011000 - 0x00014fff
+	section, .preinit_array: 0x00015000 - 0x00014fff
+	section, .init_array: 0x00015000 - 0x00015007
+	section, .fini_array: 0x00015008 - 0x00015047
+	section, .sdata: 0x00015048 - 0x0001507f
+	section, .sbss: 0x00015080 - 0x0001507f
+	section, .tdata: 0x00015080 - 0x0001507f
+	section, .tbss: 0x00015080 - 0x0001507f
+	section, .bss: 0x00015080 - 0x0001513f
+	section, .heap: 0x00015140 - 0x0001713f
+	section, .stack: 0x00017140 - 0x0001a13f
+  0%    0MB   0.0MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu104_bit/tests/ZCU104/elf/xm105_loop.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 5000
+
+****************************************
+         HPC0 LA00 - LA31
+****************************************
+
+disconnect
+
+step finished 
+
+step finished 
+the expression:(.*)FMC XM107 LVDS Test passed
+
+Error: Could not find regular expression in step 0 of test 10 - "(.*)FMC XM107 LVDS Test passed"
+
+Info: Result for step 0: Fail
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+
+Info: The test took 0 hours, 00 minutes, and 48 seconds. 0:00:48

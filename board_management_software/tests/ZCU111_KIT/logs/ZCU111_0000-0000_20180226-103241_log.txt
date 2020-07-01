@@ -1,0 +1,1611 @@
+Board: ZCU111
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: SYS_CTLR RESTORE test started...
+
+Info: The test will take 0 hours, 02 minutes, and 34 seconds. 0:02:34
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-26 10:32:43
+
+User has confirmed: "Turn ZCU111 Board Power Off.
+Set mode switch SW6 to "0" (Up,Up,Up,Up)
+Attach jumpers:
+J25(MSP430_RST_B) Pin 1 to Pin 2
+J25(MSP430_TEST), Pin 3 to Pin 4
+Turn ZCU111 Power On"
+
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-26 10:32:49
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+initializing  0%    0MB   0.0MB/s  ??:?? ETA  3%    1MB   2.1MB/s  ??:?? ETA  5%    1MB   1.9MB/s  ??:?? ETA  8%    2MB   1.8MB/s  ??:?? ETA 11%    3MB   1.8MB/s  ??:?? ETA 13%    4MB   1.8MB/s  ??:?? ETA 16%    5MB   1.8MB/s  00:15 ETA 18%    6MB   1.7MB/s  00:15 ETA 21%    7MB   1.7MB/s  00:14 ETA 23%    7MB   1.7MB/s  00:14 ETA 26%    8MB   1.7MB/s  00:13 ETA 29%    9MB   1.7MB/s  00:13 ETA 31%   10MB   1.7MB/s  00:13 ETA 34%   11MB   1.7MB/s  00:12 ETA 36%   12MB   1.7MB/s  00:12 ETA 39%   12MB   1.7MB/s  00:11 ETA 41%   13MB   1.7MB/s  00:11 ETA 44%   14MB   1.7MB/s  00:10 ETA 47%   15MB   1.7MB/s  00:10 ETA 49%   16MB   1.7MB/s  00:09 ETA 52%   17MB   1.7MB/s  00:09 ETA 54%   18MB   1.7MB/s  00:08 ETA 57%   18MB   1.7MB/s  00:08 ETA 59%   19MB   1.7MB/s  00:07 ETA 62%   20MB   1.7MB/s  00:07 ETA 65%   21MB   1.7MB/s  00:06 ETA 67%   22MB   1.7MB/s  00:06 ETA 70%   23MB   1.7MB/s  00:05 ETA 72%   23MB   1.7MB/s  00:05 ETA 75%   24MB   1.7MB/s  00:04 ETA 78%   25MB   1.7MB/s  00:04 ETA 80%   26MB   1.7MB/s  00:03 ETA 83%   27MB   1.7MB/s  00:03 ETA 85%   28MB   1.7MB/s  00:02 ETA 88%   29MB   1.7MB/s  00:02 ETA 90%   29MB   1.7MB/s  00:01 ETA 93%   30MB   1.7MB/s  00:01 ETA 96%   31MB   1.7MB/s  00:00 ETA 98%   32MB   1.7MB/s  00:00 ETA100%   32MB   1.7MB/s  00:19    
+Downloading Program -- C:/zcu111_bit/tests/ZCU111/elf/boot_strap_loader.elf
+	section, .text: 0x00000000 - 0x0001442f
+	section, .init: 0x00014440 - 0x00014473
+	section, .fini: 0x00014480 - 0x000144b3
+	section, .note.gnu.build-id: 0x000144b4 - 0x000144d7
+	section, .rodata: 0x000144d8 - 0x00014dcf
+	section, .rodata1: 0x00014dd0 - 0x00014dff
+	section, .sdata2: 0x00014e00 - 0x00014dff
+	section, .sbss2: 0x00014e00 - 0x00014dff
+	section, .data: 0x00014e00 - 0x00015fe7
+	section, .data1: 0x00015fe8 - 0x00015fff
+	section, .ctors: 0x00016000 - 0x00015fff
+	section, .dtors: 0x00016000 - 0x00015fff
+	section, .eh_frame: 0x00016000 - 0x00016003
+	section, .mmu_tbl0: 0x00017000 - 0x0001700f
+	section, .mmu_tbl1: 0x00018000 - 0x00019fff
+	section, .mmu_tbl2: 0x0001a000 - 0x0001dfff
+	section, .preinit_array: 0x0001e000 - 0x0001dfff
+	section, .init_array: 0x0001e000 - 0x0001e007
+	section, .fini_array: 0x0001e008 - 0x0001e047
+	section, .sdata: 0x0001e048 - 0x0001e07f
+	section, .sbss: 0x0001e080 - 0x0001e07f
+	section, .tdata: 0x0001e080 - 0x0001e07f
+	section, .tbss: 0x0001e080 - 0x0001e07f
+	section, .bss: 0x0001e080 - 0x0011e2bf
+	section, .heap: 0x0011e2c0 - 0x001262bf
+	section, .stack: 0x001262c0 - 0x0012f2bf
+  0%    0MB   0.0MB/s  ??:?? ETA 79%    0MB   0.2MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu111_bit/tests/ZCU111/elf/boot_strap_loader.elf
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-26 10:33:22
+Error: Invalid input for COM port
+
+Error: Found regular expression in step 2 of test 1 - "(.*)Error(.*)"
+
+Error: Could not find regular expression in step 2 of test 1 - "(.*)File\s+sent\s+successfully"
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-26 10:33:22
+
+Error: Stopped because step 2 failed in test 1
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Fail
+Info: The test took 0 hours, 00 minutes, and 32 seconds. 0:00:32
+
+Info: SYS_CTLR RESTORE test started...
+
+Info: The test will take 0 hours, 02 minutes, and 34 seconds. 0:02:34
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-26 10:34:42
+
+User has confirmed: "Turn ZCU111 Board Power Off.
+Set mode switch SW6 to "0" (Up,Up,Up,Up)
+Attach jumpers:
+J25(MSP430_RST_B) Pin 1 to Pin 2
+J25(MSP430_TEST), Pin 3 to Pin 4
+Turn ZCU111 Power On"
+
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-26 10:34:45
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+initializing  0%    0MB   0.0MB/s  ??:?? ETA  3%    1MB   2.1MB/s  ??:?? ETA  5%    1MB   1.9MB/s  ??:?? ETA  8%    2MB   1.8MB/s  ??:?? ETA 10%    3MB   1.8MB/s  ??:?? ETA 13%    4MB   1.8MB/s  ??:?? ETA 16%    5MB   1.8MB/s  00:15 ETA 18%    6MB   1.7MB/s  00:15 ETA 21%    6MB   1.7MB/s  00:14 ETA 23%    7MB   1.7MB/s  00:14 ETA 26%    8MB   1.7MB/s  00:14 ETA 29%    9MB   1.7MB/s  00:13 ETA 31%   10MB   1.7MB/s  00:13 ETA 34%   11MB   1.7MB/s  00:12 ETA 36%   12MB   1.7MB/s  00:12 ETA 39%   12MB   1.7MB/s  00:11 ETA 41%   13MB   1.7MB/s  00:11 ETA 44%   14MB   1.7MB/s  00:10 ETA 47%   15MB   1.7MB/s  00:10 ETA 49%   16MB   1.7MB/s  00:09 ETA 52%   17MB   1.7MB/s  00:09 ETA 54%   17MB   1.7MB/s  00:08 ETA 57%   18MB   1.7MB/s  00:08 ETA 59%   19MB   1.7MB/s  00:07 ETA 62%   20MB   1.7MB/s  00:07 ETA 64%   21MB   1.7MB/s  00:06 ETA 67%   22MB   1.7MB/s  00:06 ETA 70%   23MB   1.7MB/s  00:05 ETA 72%   23MB   1.7MB/s  00:05 ETA 75%   24MB   1.7MB/s  00:04 ETA 77%   25MB   1.7MB/s  00:04 ETA 80%   26MB   1.7MB/s  00:03 ETA 83%   27MB   1.7MB/s  00:03 ETA 85%   28MB   1.7MB/s  00:02 ETA 88%   28MB   1.7MB/s  00:02 ETA 90%   29MB   1.7MB/s  00:01 ETA 93%   30MB   1.7MB/s  00:01 ETA 95%   31MB   1.7MB/s  00:00 ETA 98%   32MB   1.7MB/s  00:00 ETA100%   32MB   1.7MB/s  00:19    
+Downloading Program -- C:/zcu111_bit/tests/ZCU111/elf/boot_strap_loader.elf
+	section, .text: 0x00000000 - 0x0001442f
+	section, .init: 0x00014440 - 0x00014473
+	section, .fini: 0x00014480 - 0x000144b3
+	section, .note.gnu.build-id: 0x000144b4 - 0x000144d7
+	section, .rodata: 0x000144d8 - 0x00014dcf
+	section, .rodata1: 0x00014dd0 - 0x00014dff
+	section, .sdata2: 0x00014e00 - 0x00014dff
+	section, .sbss2: 0x00014e00 - 0x00014dff
+	section, .data: 0x00014e00 - 0x00015fe7
+	section, .data1: 0x00015fe8 - 0x00015fff
+	section, .ctors: 0x00016000 - 0x00015fff
+	section, .dtors: 0x00016000 - 0x00015fff
+	section, .eh_frame: 0x00016000 - 0x00016003
+	section, .mmu_tbl0: 0x00017000 - 0x0001700f
+	section, .mmu_tbl1: 0x00018000 - 0x00019fff
+	section, .mmu_tbl2: 0x0001a000 - 0x0001dfff
+	section, .preinit_array: 0x0001e000 - 0x0001dfff
+	section, .init_array: 0x0001e000 - 0x0001e007
+	section, .fini_array: 0x0001e008 - 0x0001e047
+	section, .sdata: 0x0001e048 - 0x0001e07f
+	section, .sbss: 0x0001e080 - 0x0001e07f
+	section, .tdata: 0x0001e080 - 0x0001e07f
+	section, .tbss: 0x0001e080 - 0x0001e07f
+	section, .bss: 0x0001e080 - 0x0011e2bf
+	section, .heap: 0x0011e2c0 - 0x001262bf
+	section, .stack: 0x001262c0 - 0x0012f2bf
+  0%    0MB   0.0MB/s  ??:?? ETA 79%    0MB   0.2MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu111_bit/tests/ZCU111/elf/boot_strap_loader.elf
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-26 10:35:17
+||||||||||||||||||||
+File sent successfully
+
+Error: BSL Flashing Failed
+
+Error: Found regular expression in step 2 of test 1 - "(.*)Error(.*)"
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-26 10:35:49
+
+Error: Stopped because step 2 failed in test 1
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Fail
+Info: The test took 0 hours, 01 minutes, and 04 seconds. 0:01:04
+
+Info: SYS_CTLR RESTORE test started...
+
+Info: The test will take 0 hours, 02 minutes, and 34 seconds. 0:02:34
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-26 10:47:07
+
+User has confirmed: "Turn ZCU111 Board Power Off.
+Set mode switch SW6 to "0" (Up,Up,Up,Up)
+Attach jumpers:
+J25(MSP430_RST_B) Pin 1 to Pin 2
+J25(MSP430_TEST), Pin 3 to Pin 4
+Turn ZCU111 Power On"
+
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-26 10:47:17
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+initializing  0%    0MB   0.0MB/s  ??:?? ETA  3%    1MB   2.1MB/s  ??:?? ETA  5%    1MB   1.9MB/s  ??:?? ETA  8%    2MB   1.8MB/s  ??:?? ETA 11%    3MB   1.8MB/s  ??:?? ETA 13%    4MB   1.8MB/s  ??:?? ETA 16%    5MB   1.8MB/s  00:15 ETA 18%    6MB   1.8MB/s  00:15 ETA 21%    7MB   1.7MB/s  00:14 ETA 23%    7MB   1.7MB/s  00:14 ETA 26%    8MB   1.7MB/s  00:13 ETA 29%    9MB   1.7MB/s  00:13 ETA 31%   10MB   1.7MB/s  00:13 ETA 34%   11MB   1.7MB/s  00:12 ETA 36%   12MB   1.7MB/s  00:12 ETA 39%   12MB   1.7MB/s  00:11 ETA 42%   13MB   1.7MB/s  00:11 ETA 44%   14MB   1.7MB/s  00:10 ETA 47%   15MB   1.7MB/s  00:10 ETA 49%   16MB   1.7MB/s  00:09 ETA 52%   17MB   1.7MB/s  00:09 ETA 54%   18MB   1.7MB/s  00:08 ETA 57%   18MB   1.7MB/s  00:08 ETA 60%   19MB   1.7MB/s  00:07 ETA 62%   20MB   1.7MB/s  00:07 ETA 65%   21MB   1.7MB/s  00:06 ETA 67%   22MB   1.7MB/s  00:06 ETA 70%   23MB   1.7MB/s  00:05 ETA 73%   23MB   1.7MB/s  00:05 ETA 75%   24MB   1.7MB/s  00:04 ETA 78%   25MB   1.7MB/s  00:04 ETA 80%   26MB   1.7MB/s  00:03 ETA 83%   27MB   1.7MB/s  00:03 ETA 85%   28MB   1.7MB/s  00:02 ETA 88%   29MB   1.7MB/s  00:02 ETA 90%   29MB   1.7MB/s  00:01 ETA 93%   30MB   1.7MB/s  00:01 ETA 96%   31MB   1.7MB/s  00:00 ETA 98%   32MB   1.7MB/s  00:00 ETA100%   32MB   1.7MB/s  00:19    
+Downloading Program -- C:/zcu111_bit/tests/ZCU111/elf/boot_strap_loader.elf
+	section, .text: 0x00000000 - 0x0001442f
+	section, .init: 0x00014440 - 0x00014473
+	section, .fini: 0x00014480 - 0x000144b3
+	section, .note.gnu.build-id: 0x000144b4 - 0x000144d7
+	section, .rodata: 0x000144d8 - 0x00014dcf
+	section, .rodata1: 0x00014dd0 - 0x00014dff
+	section, .sdata2: 0x00014e00 - 0x00014dff
+	section, .sbss2: 0x00014e00 - 0x00014dff
+	section, .data: 0x00014e00 - 0x00015fe7
+	section, .data1: 0x00015fe8 - 0x00015fff
+	section, .ctors: 0x00016000 - 0x00015fff
+	section, .dtors: 0x00016000 - 0x00015fff
+	section, .eh_frame: 0x00016000 - 0x00016003
+	section, .mmu_tbl0: 0x00017000 - 0x0001700f
+	section, .mmu_tbl1: 0x00018000 - 0x00019fff
+	section, .mmu_tbl2: 0x0001a000 - 0x0001dfff
+	section, .preinit_array: 0x0001e000 - 0x0001dfff
+	section, .init_array: 0x0001e000 - 0x0001e007
+	section, .fini_array: 0x0001e008 - 0x0001e047
+	section, .sdata: 0x0001e048 - 0x0001e07f
+	section, .sbss: 0x0001e080 - 0x0001e07f
+	section, .tdata: 0x0001e080 - 0x0001e07f
+	section, .tbss: 0x0001e080 - 0x0001e07f
+	section, .bss: 0x0001e080 - 0x0011e2bf
+	section, .heap: 0x0011e2c0 - 0x001262bf
+	section, .stack: 0x001262c0 - 0x0012f2bf
+  0%    0MB   0.0MB/s  ??:?? ETA 66%    0MB   0.1MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu111_bit/tests/ZCU111/elf/boot_strap_loader.elf
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-26 10:47:50
+||||||||||||||||||||
+File sent successfully
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-26 10:48:22
+
+User has confirmed: "Cycle ZCU111 Board Power.
+Remove the J25 jumpers.
+"
+
+step finished 
+
+Entering step: 4
+
+
+Info: This step started at: 2018-02-26 10:48:44
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+
+disconnect
+
+step finished 
+
+Entering step: 5
+
+
+Info: This step started at: 2018-02-26 10:48:51
+
+Entering step: 6
+
+
+Info: This step started at: 2018-02-26 10:48:51
+Writing: '\x1b'
+:RWriting: '\x08'
+[('', 'MDB\rEF', '', ''), ('', 'MWB\rF2', '', ''), ('<setmux:0:75:06>', '', '', ''), ('', 'IR0\r18\r01', '', ''), ('', '\x08MWB\rF1', '', ''), ('<setmux:0:75:02>', '', '', ''), ('', 'IR1\r50\r01', '', ''), ('', '\x08MWB\rF0', '', ''), ('', 'IW1\r75\r01', '', ''), ('', 'IR1\r50\r01', '', '')]Writing: '\t'
+:RWriting: 'MDB\rEF\r\t'
+MDBEF:PWriting: 'MWB\rF2\r\t'
+MWBF2:PWriting: 'IW0\r75\r06\r\t'
+IW07506:PWriting: 'IR0\r18\r01\r\t'
+IR01801:PWriting: '\x08MWB\rF1\r\t'
+}:PMWBF1:PWriting: 'IW0\r75\r02\r\t'
+IW07502:PWriting: 'IR1\r50\r01\r\t'
+IR15001	Writing: '\x08MWB\rF0\r\t'
+:RMWBF0:PWriting: 'IW1\r75\r01\r\t'
+IW17501:PWriting: 'IR1\r50\r01\r\t'
+':R\r\x08:R\rMDB\rEF\r:P\rMWB\rF2\r:P\rIW0\r75\r06\r:P\rIR0\r18\r01\r:P\r}:P\rMWB\rF1\r:P\rIW0\r75\r02\r:P\rIR1\r50\r01\r\t:R\rMWB\rF0\r:P\rIW1\r75\r01\r:P\r'IR15001:P
+Entering step: 7
+
+
+Info: This step started at: 2018-02-26 10:49:09
+Writing: '\x1b'
+Writing: '\x08'
+[('<setmux:1:74:04>', '', '', ''), ('<readsi570:1:5d>', '', '', ''), ('<calcsi570:1:5d:300:300:00>', '', '', ''), ('<setmux:1:74:00>', '', '', '')]:RWriting: '\t'
+:RWriting: 'IW1\r74\r04\r\t'
+IW17404:PERROR: rfreq_cal for si570 = 0. The chip is most likely not powered
+Writing: 'IW1\r5d\r8701\r\tIW1\r5d\r07\r\tIR1\r5d\r1\r\tIW1\r5d\r08\r\tIR1\r5d\r1\r\tIW1\r5d\r09\r\tIR1\r5d\r1\r\tIW1\r5d\r0a\r\tIR1\r5d\r1\r\tIW1\r5d\r0b\r\tIR1\r5d\r1\r\tIW1\r5d\r0c\r\tIR1\r5d\r1\r\tIW1\r5d\r8700\r\t'
+IW15d8701:PIW15d07:PIR15d1:PA0IW15d08:PIR15d1:P42IW15d09:PIR15d1:PF4IW15d0a:PIR15d1:P00IW15d0b:PIR15d1:P93IW15d0c:PIR15d1:P15IW15d8700:PWriting: 'IW1\r5d\r8910\r\tIW1\r5d\r07a0\r\tIW1\r5d\r0840\r\tIW1\r5d\r0900\r\tIW1\r5d\r0a00\r\tIW1\r5d\r0b00\r\tIW1\r5d\r0c00\r\tIC1\r5d\r2\r8900\r8740\r\tMWS\r00\r42a5d3ef79800000\r\t'
+IW15d8910:PIW15d07a0:PIW15d0840:PIW15d0900:PIW15d0a00:PIW15d0b00:PIW15d0c00:PIC15d289008740:PMWS0042a5d3ef79800000:PWriting: 'IW1\r74\r00\r\t'
+':R\r\x08:R\rMDB\rEF\r:P\rMWB\rF2\r:P\rIW0\r75\r06\r:P\rIR0\r18\r01\r:P\r}:P\rMWB\rF1\r:P\rIW0\r75\r02\r:P\rIR1\r50\r01\r\t:R\rMWB\rF0\r:P\rIW1\r75\r01\r:P\rIR1\r50\r01\r:P\r\x1b:R\r:R\rIW1\r74\r04\r:P\rIW1\r5d\r8701\r:P\rIW1\r5d\r07\r:P\rIR1\r5d\r1\r:P\rA0\rIW1\r5d\r08\r:P\rIR1\r5d\r1\r:P\r42\rIW1\r5d\r09\r:P\rIR1\r5d\r1\r:P\rF4\rIW1\r5d\r0a\r:P\rIR1\r5d\r1\r:P\r00\rIW1\r5d\r0b\r:P\rIR1\r5d\r1\r:P\r93\rIW1\r5d\r0c\r:P\rIR1\r5d\r1\r:P\r15\rIW1\r5d\r8700\r:P\rIW1\r5d\r8910\r:P\rIW1\r5d\r07a0\r:P\rIW1\r5d\r0840\r:P\rIW1\r5d\r0900\r:P\rIW1\r5d\r0a00\r:P\rIW1\r5d\r0b00\r:P\rIW1\r5d\r0c00\r:P\rIC1\r5d\r2\r8900\r8740\r:P\rMWS\r00\r42a5d3ef79800000\r:P\r'IW17400:P
+Entering step: 8
+
+
+Info: This step started at: 2018-02-26 10:49:20
+Writing: '\x1b'
+Writing: '\x08'
+[('<setmux:1:74:08>', '', '', ''), ('<readsi570:1:5d>', '', '', ''), ('<calcsi570:1:5d:156.25:156.25:01>', '', '', ''), ('<setmux:1:74:00>', '', '', '')]Writing: '\t'
+:RWriting: 'IW1\r74\r08\r\t'
+IW17408:PWriting: 'IW1\r5d\r8701\r\tIW1\r5d\r07\r\tIR1\r5d\r1\r\tIW1\r5d\r08\r\tIR1\r5d\r1\r\tIW1\r5d\r09\r\tIR1\r5d\r1\r\tIW1\r5d\r0a\r\tIR1\r5d\r1\r\tIW1\r5d\r0b\r\tIR1\r5d\r1\r\tIW1\r5d\r0c\r\tIR1\r5d\r1\r\tIW1\r5d\r8700\r\t'
+IW15d8701:PIW15d07:PIR15d1:P01IW15d08:PIR15d1:PC2IW15d09:PIR15d1:PBCIW15d0a:PIR15d1:P17IW15d0b:PIR15d1:PF0IW15d0c:PIR15d1:PE2IW15d8700:PWriting: 'IW1\r5d\r8910\r\tIW1\r5d\r0701\r\tIW1\r5d\r08c5\r\tIW1\r5d\r0940\r\tIW1\r5d\r0a01\r\tIW1\r5d\r0b05\r\tIW1\r5d\r0c7a\r\tIC1\r5d\r2\r8900\r8740\r\tMWS\r01\r404dc30666754650\r\t'
+IW15d8910:PIW15d0701:PIW15d08c5:PIW15d0940:PIW15d0a01:PIW15d0b05:PIW15d0c7a:PIC15d289008740:PMWS01404dc30666754650:PWriting: 'IW1\r74\r00\r\t'
+':R\r\x08:R\rMDB\rEF\r:P\rMWB\rF2\r:P\rIW0\r75\r06\r:P\rIR0\r18\r01\r:P\r}:P\rMWB\rF1\r:P\rIW0\r75\r02\r:P\rIR1\r50\r01\r\t:R\rMWB\rF0\r:P\rIW1\r75\r01\r:P\rIR1\r50\r01\r:P\r\x1b:R\r:R\rIW1\r74\r04\r:P\rIW1\r5d\r8701\r:P\rIW1\r5d\r07\r:P\rIR1\r5d\r1\r:P\rA0\rIW1\r5d\r08\r:P\rIR1\r5d\r1\r:P\r42\rIW1\r5d\r09\r:P\rIR1\r5d\r1\r:P\rF4\rIW1\r5d\r0a\r:P\rIR1\r5d\r1\r:P\r00\rIW1\r5d\r0b\r:P\rIR1\r5d\r1\r:P\r93\rIW1\r5d\r0c\r:P\rIR1\r5d\r1\r:P\r15\rIW1\r5d\r8700\r:P\rIW1\r5d\r8910\r:P\rIW1\r5d\r07a0\r:P\rIW1\r5d\r0840\r:P\rIW1\r5d\r0900\r:P\rIW1\r5d\r0a00\r:P\rIW1\r5d\r0b00\r:P\rIW1\r5d\r0c00\r:P\rIC1\r5d\r2\r8900\r8740\r:P\rMWS\r00\r42a5d3ef79800000\r:P\rIW1\r74\r00\r:P\r\x08:R\rIW1\r74\r08\r:P\rIW1\r5d\r8701\r:P\rIW1\r5d\r07\r:P\rIR1\r5d\r1\r:P\r01\rIW1\r5d\r08\r:P\rIR1\r5d\r1\r:P\rC2\rIW1\r5d\r09\r:P\rIR1\r5d\r1\r:P\rBC\rIW1\r5d\r0a\r:P\rIR1\r5d\r1\r:P\r17\rIW1\r5d\r0b\r:P\rIR1\r5d\r1\r:P\rF0\rIW1\r5d\r0c\r:P\rIR1\r5d\r1\r:P\rE2\rIW1\r5d\r8700\r:P\rIW1\r5d\r8910\r:P\rIW1\r5d\r0701\r:P\rIW1\r5d\r08c5\r:P\rIW1\r5d\r0940\r:P\rIW1\r5d\r0a01\r:P\rIW1\r5d\r0b05\r:P\rIW1\r5d\r0c7a\r:P\rIC1\r5d\r2\r8900\r8740\r:P\rMWS\r01\r404dc30666754650\r:P\r'IW17400:P
+Entering step: 9
+
+
+Info: This step started at: 2018-02-26 10:49:32
+Writing: '\x1b'
+Writing: '\x08'
+[('', 'MDB\r02', '', ''), ('<savefreq:02:0.0000001>', '', '', '')]Writing: '\t'
+:RWriting: 'MDB\r02\r\t'
+MDB02:PWriting: 'MWS\r02\r3e7ad7f29abcaf48\r\t'
+':R\r\x08:R\rMDB\rEF\r:P\rMWB\rF2\r:P\rIW0\r75\r06\r:P\rIR0\r18\r01\r:P\r}:P\rMWB\rF1\r:P\rIW0\r75\r02\r:P\rIR1\r50\r01\r\t:R\rMWB\rF0\r:P\rIW1\r75\r01\r:P\rIR1\r50\r01\r:P\r\x1b:R\r:R\rIW1\r74\r04\r:P\rIW1\r5d\r8701\r:P\rIW1\r5d\r07\r:P\rIR1\r5d\r1\r:P\rA0\rIW1\r5d\r08\r:P\rIR1\r5d\r1\r:P\r42\rIW1\r5d\r09\r:P\rIR1\r5d\r1\r:P\rF4\rIW1\r5d\r0a\r:P\rIR1\r5d\r1\r:P\r00\rIW1\r5d\r0b\r:P\rIR1\r5d\r1\r:P\r93\rIW1\r5d\r0c\r:P\rIR1\r5d\r1\r:P\r15\rIW1\r5d\r8700\r:P\rIW1\r5d\r8910\r:P\rIW1\r5d\r07a0\r:P\rIW1\r5d\r0840\r:P\rIW1\r5d\r0900\r:P\rIW1\r5d\r0a00\r:P\rIW1\r5d\r0b00\r:P\rIW1\r5d\r0c00\r:P\rIC1\r5d\r2\r8900\r8740\r:P\rMWS\r00\r42a5d3ef79800000\r:P\rIW1\r74\r00\r:P\r\x08:R\rIW1\r74\r08\r:P\rIW1\r5d\r8701\r:P\rIW1\r5d\r07\r:P\rIR1\r5d\r1\r:P\r01\rIW1\r5d\r08\r:P\rIR1\r5d\r1\r:P\rC2\rIW1\r5d\r09\r:P\rIR1\r5d\r1\r:P\rBC\rIW1\r5d\r0a\r:P\rIR1\r5d\r1\r:P\r17\rIW1\r5d\r0b\r:P\rIR1\r5d\r1\r:P\rF0\rIW1\r5d\r0c\r:P\rIR1\r5d\r1\r:P\rE2\rIW1\r5d\r8700\r:P\rIW1\r5d\r8910\r:P\rIW1\r5d\r0701\r:P\rIW1\r5d\r08c5\r:P\rIW1\r5d\r0940\r:P\rIW1\r5d\r0a01\r:P\rIW1\r5d\r0b05\r:P\rIW1\r5d\r0c7a\r:P\rIC1\r5d\r2\r8900\r8740\r:P\rMWS\r01\r404dc30666754650\r:P\rIW1\r74\r00\r:P\r\x08:R\rMDB\r02\r:P\r'MWS023e7ad7f29abcaf48:P
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+Info: Result for step 4: Pass
+step finished 
+
+Info: Result for step 5: Pass
+Info: Result for step 6: Pass
+Info: Result for step 7: Pass
+Info: Result for step 8: Pass
+Info: Result for step 9: Pass
+
+Info: The test took 0 hours, 02 minutes, and 00 seconds. 0:02:00
+
+Info: Run All button pressed, running through all of the checked tests 1 time.
+
+Info: The runall will take 0 hours, 18 minutes, and 01 seconds. 0:18:01
+
+Info: ZCU111 IDCODE Check test started...
+
+Info: The test will take 0 hours, 00 minutes, and 45 seconds. 0:00:45
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-26 10:55:13
+
+User has confirmed: "Set mode switch SW6 to "0000" (Up,Up,Up,Up)"
+
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-26 10:55:15
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Mon Feb 26 10:55:30 2018...
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-26 10:55:30
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu111_rev_b_idcode_check.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280976A040A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1435] Device xczu28dr (JTAG device index = 0) is not programmed (DONE status = 0).
+# set IDCODE [get_property IDCODE_HEX [lindex [get_hw_device] 0]]
+# puts $IDCODE
+047E0093
+# if { $IDCODE == "047E0093"} {
+#    puts "IDCODE check PASSED"
+# } else {
+#    puts "IDCODE check FAILED" 
+# }
+IDCODE check PASSED
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280976A040A
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Mon Feb 26 10:55:47 2018...
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+
+Info: The test took 0 hours, 00 minutes, and 31 seconds. 0:00:31
+
+Info: XM107 CARD TEST test started...
+
+Info: The test will take 0 hours, 00 minutes, and 20 seconds. 0:00:20
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-26 10:55:47
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-26 10:55:48
+
+C:\zcu111_bit\tests\ZCU111>cd bat\ 
+
+C:\zcu111_bit\tests\ZCU111\bat>ezoutlet.exe reset 192.168.0.12 
+ step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-26 10:55:51
+Writing: '\x1b'
+
+!! Press ESC to enter System Controller mode.ý:RWriting: '\x08'
+[('<setmux:1:75:01>', '', '', ''), ('<readeeprom:1:50:00:40>', '', '', ''), ('<wait:0.3>', '', '', ''), ('<interpeeprom>', '', '', ''), ('<setmux:1:74:00>', '', '', '')]Writing: '\t'
+:RWriting: 'IW1\r75\r01\r\t'
+IW17501:PWriting: 'IW1\r50\r00\r\tIR1\r50\r40\r\t'
+IW15000:PIR15040:P01000001000A00F401090040EC87C653616D746563CD464D432B204C6F6F706261636BC0CE504342412D3139343139352D3031DA323031362D31312D30392031Exception in thread Thread-21:
+Traceback (most recent call last):
+  File "threading.py", line 801, in __bootstrap_inner
+  File "testthread.py", line 62, in run
+  File "testthread.py", line 322, in testfunc
+  File "testthread.py", line 151, in sysctrl
+  File "config.py", line 300, in interpeeprom
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xfd in position 48: ordinal not in range(128)
+
+
+Info: ZCU111 EFUSE test started...
+
+Info: The test will take 0 hours, 00 minutes, and 53 seconds. 0:00:53
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-26 10:55:58
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Mon Feb 26 10:56:13 2018...
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-26 10:56:14
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\vivado_read_fpga_efuse_status.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280976A040A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1435] Device xczu28dr (JTAG device index = 0) is not programmed (DONE status = 0).
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1435] Device xczu28dr (JTAG device index = 0) is not programmed (DONE status = 0).
+# report_property [lindex [get_hw_device] 0] REGISTER.EFUSE.FUSE_DNA
+Property                 Type    Read-only  Value
+REGISTER.EFUSE.FUSE_DNA  string  true       40000000011802010540A385
+# report_property [lindex [get_hw_device] 1] REGISTER.EFUSE.FUSE_DNA
+INFO: [Common 17-206] Exiting Vivado at Mon Feb 26 10:56:30 2018...
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+
+Info: The test took 0 hours, 00 minutes, and 51 seconds. 0:00:51
+
+Info: ZCU111 RTC test started...
+
+Info: The test will take 0 hours, 00 minutes, and 59 seconds. 0:00:59
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-26 10:56:50
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-26 10:56:50
+
+C:\zcu111_bit\tests\ZCU111>cd bat\ 
+
+C:\zcu111_bit\tests\ZCU111\bat>ezoutlet.exe reset 192.168.0.12 
+ step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-26 10:56:54
+ÿ
+!! Press ESC to enter System Controller mode.
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+fpga -state
+FPGA is not configured
+after 2000
+
+fpga -no-revision-check -file {C:/zcu111_bit/tests/ZCU111/../bitstream/zcu111_ipi.bit}
+initializing  0%    0MB   0.0MB/s  ??:?? ETA  3%    1MB   2.2MB/s  ??:?? ETA  5%    1MB   1.9MB/s  ??:?? ETA  8%    2MB   1.8MB/s  ??:?? ETA 11%    3MB   1.8MB/s  ??:?? ETA 13%    4MB   1.8MB/s  ??:?? ETA 16%    5MB   1.7MB/s  00:15 ETA 18%    6MB   1.7MB/s  00:15 ETA 21%    6MB   1.7MB/s  00:15 ETA 23%    7MB   1.7MB/s  00:14 ETA 26%    8MB   1.7MB/s  00:14 ETA 28%    9MB   1.7MB/s  00:13 ETA 31%   10MB   1.7MB/s  00:13 ETA 33%   11MB   1.7MB/s  00:12 ETA 36%   12MB   1.7MB/s  00:12 ETA 39%   12MB   1.7MB/s  00:11 ETA 41%   13MB   1.7MB/s  00:11 ETA 44%   14MB   1.7MB/s  00:10 ETA 46%   15MB   1.7MB/s  00:10 ETA 49%   16MB   1.7MB/s  00:09 ETA 52%   17MB   1.7MB/s  00:09 ETA 54%   17MB   1.7MB/s  00:08 ETA 56%   18MB   1.7MB/s  00:08 ETA 59%   19MB   1.7MB/s  00:07 ETA 61%   20MB   1.7MB/s  00:07 ETA 64%   21MB   1.7MB/s  00:06 ETA 67%   22MB   1.7MB/s  00:06 ETA 69%   22MB   1.7MB/s  00:05 ETA 72%   23MB   1.7MB/s  00:05 ETA 74%   24MB   1.7MB/s  00:04 ETA 77%   25MB   1.7MB/s  00:04 ETA 80%   26MB   1.7MB/s  00:03 ETA 82%   27MB   1.7MB/s  00:03 ETA 85%   27MB   1.7MB/s  00:02 ETA 87%   28MB   1.7MB/s  00:02 ETA 90%   29MB   1.7MB/s  00:01 ETA 92%   30MB   1.7MB/s  00:01 ETA 95%   31MB   1.7MB/s  00:00 ETA 97%   32MB   1.7MB/s  00:00 ETA100%   32MB   1.7MB/s  00:19    
+
+after 2000
+
+fpga -state
+FPGA is configured
+after 2000
+
+fpga -ir-status
+IR STATUS: 117
+     Always One (Bits [0]): 1
+    Always Zero (Bits [1]): 0
+       ISC_Done (Bits [2]): 1
+    ISC_Enabled (Bits [3]): 0
+  Init Complete (Bits [4]): 1
+           DONE (Bits [5]): 1
+             (Bits [11:6]): 1
+after 2000
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/zcu111_bit/tests/ZCU111/../tcl/ipi_psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/zcu111_bit/tests/ZCU111/../elf/hello_rtc.elf}
+Downloading Program -- C:/zcu111_bit/tests/ZCU111/elf/hello_rtc.elf
+	section, .text: 0x00000000 - 0x0000322b
+	section, .init: 0x00003240 - 0x00003273
+	section, .fini: 0x00003280 - 0x000032b3
+	section, .note.gnu.build-id: 0x000032b4 - 0x000032d7
+	section, .rodata: 0x000032d8 - 0x0000362f
+	section, .rodata1: 0x00003630 - 0x0000363f
+	section, .sdata2: 0x00003640 - 0x0000363f
+	section, .sbss2: 0x00003640 - 0x0000363f
+	section, .data: 0x00003640 - 0x00003f3f
+	section, .data1: 0x00003f40 - 0x00003f3f
+	section, .ctors: 0x00003f40 - 0x00003f3f
+	section, .dtors: 0x00003f40 - 0x00003f3f
+	section, .eh_frame: 0x00003f40 - 0x00003f43
+	section, .mmu_tbl0: 0x00004000 - 0x0000400f
+	section, .mmu_tbl1: 0x00005000 - 0x00006fff
+	section, .mmu_tbl2: 0x00007000 - 0x0000afff
+	section, .preinit_array: 0x0000b000 - 0x0000afff
+	section, .init_array: 0x0000b000 - 0x0000b007
+	section, .fini_array: 0x0000b008 - 0x0000b047
+	section, .sdata: 0x0000b048 - 0x0000b07f
+	section, .sbss: 0x0000b080 - 0x0000b07f
+	section, .tdata: 0x0000b080 - 0x0000b07f
+	section, .tbss: 0x0000b080 - 0x0000b07f
+	section, .bss: 0x0000b080 - 0x0000b13f
+	section, .heap: 0x0000b140 - 0x0000d13f
+	section, .stack: 0x0000d140 - 0x0001013f
+  0%    0MB   0.0MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu111_bit/tests/ZCU111/elf/hello_rtc.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 2000
+
+Day Convention : 0-Fri, 1-Sat, 2-Sun, 3-Mon, 4-Tue, 5-Wed, 6-Thur
+Last set time for RTC is..
+YEAR:MM:DD HR:MM:SS 	 2016:10:17 00:00:01	 Day = 3
+
+Current RTC time is..
+YEAR:MM:DD HR:MM:SS 	 2016:10:19 19:48:59	 Day = 5
+
+Setting Time = 2016:10:17 00:00:00
+RTC time after set is..
+YEAR:MM:DD HR:MM:SS 	 2016:10:17 00:00:00	 Day = 3
+
+disconnect
+
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-26 10:57:33
+
+RTC time after delay_1 is..
+YEAR:MM:DD HR:MM:SS 	 2016:10:17 00:00:02	 Day = 3
+
+RTC time after delay_2 is..
+YEAR:MM:DD HR:MM:SS 	 2016:10:17 00:00:04	 Day = 3
+Successfully ran RTC Set time Example Test
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Mon Feb 26 10:57:48 2018...
+step finished 
+
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+
+Info: The test took 0 hours, 00 minutes, and 59 seconds. 0:00:59
+
+Info: Test Level Shifters test started...
+
+Info: The test will take 0 hours, 01 minutes, and 02 seconds. 0:01:02
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-26 10:57:50
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-26 10:57:50
+
+Error: Failed to connect to Serial port in step 1 of test 6
+
+step finished 
+Exception in thread :
+Traceback (most recent call last):
+  File "threading.py", line 801, in __bootstrap_inner
+  File "com.py", line 156, in run
+UnboundLocalError: local variable 'expression' referenced before assignment
+
+
+Error: 'comm' type in step 1 never found a serial port to connect to in test 6
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-26 10:57:50
+
+Error: Stopped because step 1 failed in test 6
+
+step finished 
+the expression:(.*)320 - Success(\r\n|\r|\n)331 - Success(\r\n|\r|\n)340 - Success(\r\n|\r|\n)351 - Success(\r\n|\r|\n)360 - Success(\r\n|\r|\n)371 - Success(\r\n|\r|\n)380 - Success(\r\n|\r|\n)131 - Success(\r\n|\r|\n)321 - Success(\r\n|\r|\n)330 - Success(\r\n|\r|\n)341 - Success(\r\n|\r|\n)350 - Success(\r\n|\r|\n)361 - Success(\r\n|\r|\n)370 - Success(\r\n|\r|\n)381 - Success(\r\n|\r|\n)130 - Success
+
+Error: Could not find regular expression in step 0 of test 6 - "(.*)320 - Success(\r\n|\r|\n)331 - Success(\r\n|\r|\n)340 - Success(\r\n|\r|\n)351 - Success(\r\n|\r|\n)360 - Success(\r\n|\r|\n)371 - Success(\r\n|\r|\n)380 - Success(\r\n|\r|\n)131 - Success(\r\n|\r|\n)321 - Success(\r\n|\r|\n)330 - Success(\r\n|\r|\n)341 - Success(\r\n|\r|\n)350 - Success(\r\n|\r|\n)361 - Success(\r\n|\r|\n)370 - Success(\r\n|\r|\n)381 - Success(\r\n|\r|\n)130 - Success"
+
+Info: Result for step 0: Fail
+Info: Result for step 1: Fail
+Info: The test took 0 hours, 00 minutes, and 02 seconds. 0:00:02
+
+Info: ZCU111 SETUP test started...
+
+Info: The test will take 0 hours, 00 minutes, and 30 seconds. 0:00:30
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-26 10:57:52
+
+Error: Failed to connect to Serial port in step 0 of test 7
+
+step finished 
+Exception in thread :
+Traceback (most recent call last):
+  File "threading.py", line 801, in __bootstrap_inner
+  File "com.py", line 156, in run
+UnboundLocalError: local variable 'expression' referenced before assignment
+
+
+Error: 'comm' type in step 0 never found a serial port to connect to in test 7
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-26 10:57:52
+
+Error: Stopped because step 0 failed in test 7
+
+Info: Result for step 0: Fail
+Info: The test took 0 hours, 00 minutes, and 00 seconds. 0:00:00
+
+Info: WRITE EEPROM test started...
+
+Info: The test will take 0 hours, 01 minutes, and 15 seconds. 0:01:15
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-26 10:57:52
+
+Error: Failed to connect to Serial port in step 0 of test 8
+
+step finished 
+Exception in thread :
+Traceback (most recent call last):
+  File "threading.py", line 801, in __bootstrap_inner
+  File "com.py", line 156, in run
+UnboundLocalError: local variable 'expression' referenced before assignment
+
+
+Error: 'comm' type in step 0 never found a serial port to connect to in test 8
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-26 10:57:52
+
+Error: Stopped because step 0 failed in test 8
+
+Info: Result for step 0: Fail
+Info: The test took 0 hours, 00 minutes, and 00 seconds. 0:00:00
+
+Info: READ BOARD NAME test started...
+
+Info: The test will take 0 hours, 00 minutes, and 16 seconds. 0:00:16
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-26 10:57:52
+
+Error: Failed to connect to Serial port in step 0 of test 9
+
+step finished 
+Exception in thread :
+Traceback (most recent call last):
+  File "threading.py", line 801, in __bootstrap_inner
+  File "com.py", line 156, in run
+UnboundLocalError: local variable 'expression' referenced before assignment
+
+
+Error: 'comm' type in step 0 never found a serial port to connect to in test 9
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-26 10:57:52
+
+Error: Stopped because step 0 failed in test 9
+
+Info: Result for step 0: Fail
+Info: The test took 0 hours, 00 minutes, and 00 seconds. 0:00:00
+
+Info: IPI Test test started...
+
+Info: The test will take 0 hours, 01 minutes, and 07 seconds. 0:01:07
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-26 10:57:52
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-26 10:57:52
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+fpga -state
+FPGA is not configured
+after 2000
+
+fpga -no-revision-check -file {C:/zcu111_bit/tests/ZCU111/../bitstream/zcu111_ipi.bit}
+initializing  0%    0MB   0.0MB/s  ??:?? ETA  3%    1MB   2.0MB/s  ??:?? ETA  5%    1MB   1.8MB/s  ??:?? ETA  8%    2MB   1.7MB/s  ??:?? ETA 10%    3MB   1.7MB/s  ??:?? ETA 13%    4MB   1.7MB/s  ??:?? ETA 15%    5MB   1.7MB/s  00:16 ETA 18%    6MB   1.7MB/s  00:15 ETA 20%    6MB   1.7MB/s  00:15 ETA 23%    7MB   1.7MB/s  00:14 ETA 26%    8MB   1.7MB/s  00:14 ETA 28%    9MB   1.7MB/s  00:13 ETA 31%   10MB   1.7MB/s  00:13 ETA 33%   11MB   1.7MB/s  00:12 ETA 36%   11MB   1.7MB/s  00:12 ETA 38%   12MB   1.7MB/s  00:11 ETA 41%   13MB   1.7MB/s  00:11 ETA 43%   14MB   1.7MB/s  00:10 ETA 46%   15MB   1.7MB/s  00:10 ETA 49%   16MB   1.7MB/s  00:09 ETA 51%   16MB   1.7MB/s  00:09 ETA 54%   17MB   1.7MB/s  00:08 ETA 56%   18MB   1.7MB/s  00:08 ETA 59%   19MB   1.7MB/s  00:07 ETA 61%   20MB   1.7MB/s  00:07 ETA 64%   21MB   1.7MB/s  00:06 ETA 67%   22MB   1.7MB/s  00:06 ETA 69%   22MB   1.7MB/s  00:05 ETA 72%   23MB   1.7MB/s  00:05 ETA 74%   24MB   1.7MB/s  00:04 ETA 77%   25MB   1.7MB/s  00:04 ETA 79%   26MB   1.7MB/s  00:03 ETA 82%   27MB   1.7MB/s  00:03 ETA 84%   27MB   1.7MB/s  00:02 ETA 87%   28MB   1.7MB/s  00:02 ETA 90%   29MB   1.7MB/s  00:01 ETA 92%   30MB   1.7MB/s  00:01 ETA 95%   31MB   1.7MB/s  00:00 ETA 97%   32MB   1.7MB/s  00:00 ETA100%   32MB   1.7MB/s  00:19    
+
+after 2000
+
+fpga -state
+FPGA is configured
+after 2000
+
+fpga -ir-status
+IR STATUS: 117
+     Always One (Bits [0]): 1
+    Always Zero (Bits [1]): 0
+       ISC_Done (Bits [2]): 1
+    ISC_Enabled (Bits [3]): 0
+  Init Complete (Bits [4]): 1
+           DONE (Bits [5]): 1
+             (Bits [11:6]): 1
+after 2000
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/zcu111_bit/tests/ZCU111/../tcl/ipi_psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/zcu111_bit/tests/ZCU111/../elf/ipi_app.elf}
+Downloading Program -- C:/zcu111_bit/tests/ZCU111/elf/ipi_app.elf
+	section, .text: 0x00000000 - 0x0001f0cb
+	section, .init: 0x0001f100 - 0x0001f133
+	section, .fini: 0x0001f140 - 0x0001f173
+	section, .note.gnu.build-id: 0x0001f174 - 0x0001f197
+	section, .rodata: 0x0001f198 - 0x00023577
+	section, .rodata1: 0x00023578 - 0x0002357f
+	section, .sdata2: 0x00023580 - 0x0002357f
+	section, .sbss2: 0x00023580 - 0x0002357f
+	section, .data: 0x00023580 - 0x0002596f
+	section, .data1: 0x00025970 - 0x0002597f
+	section, .ctors: 0x00025980 - 0x0002597f
+	section, .dtors: 0x00025980 - 0x0002597f
+	section, .eh_frame: 0x00025980 - 0x00025983
+	section, .mmu_tbl0: 0x00026000 - 0x0002600f
+	section, .mmu_tbl1: 0x00027000 - 0x00028fff
+	section, .mmu_tbl2: 0x00029000 - 0x0002cfff
+	section, .preinit_array: 0x0002d000 - 0x0002cfff
+	section, .init_array: 0x0002d000 - 0x0002d007
+	section, .fini_array: 0x0002d008 - 0x0002d047
+	section, .sdata: 0x0002d048 - 0x0002d07f
+	section, .sbss: 0x0002d080 - 0x0002d07f
+	section, .tdata: 0x0002d080 - 0x0002d07f
+	section, .tbss: 0x0002d080 - 0x0002d07f
+	section, .bss: 0x0002d080 - 0x0003263f
+	section, .heap: 0x00032640 - 0x0003463f
+	section, .stack: 0x00034640 - 0x0003763f
+  0%    0MB   0.0MB/s  ??:?? ETA 53%    0MB   0.2MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:01    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu111_bit/tests/ZCU111/elf/ipi_app.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 2000
+***********************************************************
+***********************************************************
+** Zynq UltraScale+ MPSoC ZCU111 Evaluation Kit IPI Test **
+***********************************************************
+***********************************************************
+
+Choose Feature to Test:
+1: UART Test
+2: LED Test
+3: IIC Test
+5: TIMER/SCUGIC Test
+7: SWITCH Test
+8: PS DDR4 External Memory Test
+9: DDR4 External Memory Test
+A: BRAM Internal Memory Test
+B: BUTTON Test
+C: Clocking Test
+D: PMOD Test
+E: PS Pushbutton Test
+F: PS LED Test
+G: System Monitor Test
+H: ETHERNET Loopback Test
+0: Exit
+
+disconnect
+
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-26 10:58:32
+Writing: '33'
+3
+
+*************************************************************
+** ZCU111 EEPROM IIC EEPROM Test
+*************************************************************
+Calling iic_read
+
+Reading EEPROM data from EEPROM
+
+ReadBuffer[00] = 0xFF
+ReadBuffer[01] = 0xFF
+ReadBuffer[02] = 0xFF
+ReadBuffer[03] = 0xFF
+ReadBuffer[04] = 0xFF
+ReadBuffer[05] = 0xFF
+ReadBuffer[06] = 0xFF
+ReadBuffer[07] = 0xFF
+ReadBuffer[08] = 0xFF
+ReadBuffer[09] = 0xFF
+ReadBuffer[10] = 0xFF
+ReadBuffer[11] = 0xFF
+ReadBuffer[12] = 0xFF
+ReadBuffer[13] = 0xFF
+ReadBuffer[14] = 0xFF
+ReadBuffer[15] = 0xFF
+
+
+ZCU111 EEPROM IIC EEPROM Test PASSED
+
+*************************************************************
+** ZCU111 USER Si570 IIC EEPROM Test
+*************************************************************
+Calling iic_read
+
+Reading EEPROM data from USER Si570
+
+ReadBuffer[00] = 0xA0
+ReadBuffer[01] = 0x42
+ReadBuffer[02] = 0xF4
+ReadBuffer[03] = 0x00
+ReadBuffer[04] = 0x93
+ReadBuffer[05] = 0x15
+ReadBuffer[06] = 0x07
+ReadBuffer[07] = 0xC2
+ReadBuffer[08] = 0xC0
+ReadBuffer[09] = 0x00
+ReadBuffer[10] = 0x00
+ReadBuffer[11] = 0x00
+ReadBuffer[12] = 0x00
+ReadBuffer[13] = 0xC2
+ReadBuffer[14] = 0xC0
+ReadBuffer[15] = 0x00
+
+
+ZCU111 USER Si570 IIC EEPROM Test PASSED
+
+*************************************************************
+** ZCU111 MGT Si570 IIC EEPROM Test
+*************************************************************
+Calling iic_read
+
+Reading EEPROM data from MGT Si570
+
+ReadBuffer[00] = 0x01
+ReadBuffer[01] = 0xC2
+ReadBuffer[02] = 0xBC
+ReadBuffer[03] = 0x17
+ReadBuffer[04] = 0xF0
+ReadBuffer[05] = 0xE2
+ReadBuffer[06] = 0x07
+ReadBuffer[07] = 0xC2
+ReadBuffer[08] = 0xC0
+ReadBuffer[09] = 0x00
+ReadBuffer[10] = 0x00
+ReadBuffer[11] = 0x00
+ReadBuffer[12] = 0x00
+ReadBuffer[13] = 0xC2
+ReadBuffer[14] = 0xC0
+ReadBuffer[15] = 0x00
+
+
+ZCU111 MGT Si570 IIC EEPROM Test PASSED
+
+*************************************************************
+** ZCU111 Si5382 IIC EEPROM Test
+*************************************************************
+Calling iic_read
+
+Reading EEPROM data from Si5382
+
+ReadBuffer[00] = 0x00
+ReadBuffer[01] = 0x00
+ReadBuffer[02] = 0x00
+ReadBuffer[03] = 0x00
+ReadBuffer[04] = 0x00
+ReadBuffer[05] = 0x00
+ReadBuffer[06] = 0x00
+ReadBuffer[07] = 0x00
+ReadBuffer[08] = 0x00
+ReadBuffer[09] = 0x00
+ReadBuffer[10] = 0x00
+ReadBuffer[11] = 0x00
+ReadBuffer[12] = 0x00
+ReadBuffer[13] = 0x00
+ReadBuffer[14] = 0x00
+ReadBuffer[15] = 0x00
+
+
+ZCU111 Si5382 IIC EEPROM Test PASSED
+
+*************************************************************
+** ZCU111 FMCP HPSC IIC EEPROM Test
+*************************************************************
+Calling iic_read
+
+Reading EEPROM data from FMCP HPSC
+
+ReadBuffer[00] = 0x01
+ReadBuffer[01] = 0x00
+ReadBuffer[02] = 0x00
+ReadBuffer[03] = 0x01
+ReadBuffer[04] = 0x00
+ReadBuffer[05] = 0x0A
+ReadBuffer[06] = 0x00
+ReadBuffer[07] = 0xF4
+ReadBuffer[08] = 0x01
+ReadBuffer[09] = 0x09
+ReadBuffer[10] = 0x00
+ReadBuffer[11] = 0x40
+ReadBuffer[12] = 0xEC
+ReadBuffer[13] = 0x87
+ReadBuffer[14] = 0xC6
+ReadBuffer[15] = 0x53
+
+
+ZCU111 FMCP HPSC IIC EEPROM Test PASSED
+
+*************************************************************
+** ZCU111 DDR4 SPD IIC EEPROM Test
+*************************************************************
+Calling iic_read
+
+Reading EEPROM data from DDR4 SPD
+
+ReadBuffer[00] = 0x0F
+ReadBuffer[01] = 0x01
+ReadBuffer[02] = 0x02
+ReadBuffer[03] = 0x00
+ReadBuffer[04] = 0x00
+ReadBuffer[05] = 0x00
+ReadBuffer[06] = 0x00
+ReadBuffer[07] = 0x00
+ReadBuffer[08] = 0x00
+ReadBuffer[09] = 0x00
+ReadBuffer[10] = 0x00
+ReadBuffer[11] = 0x00
+ReadBuffer[12] = 0x00
+ReadBuffer[13] = 0x00
+ReadBuffer[14] = 0x00
+ReadBuffer[15] = 0x00
+
+
+ZCU111 DDR4 SPD IIC EEPROM Test PASSED
+
+*************************************************************
+** ZCU111 SFP IIC EEPROM Test
+*************************************************************
+Calling iic_read
+
+Reading EEPROM data from SFP
+
+ReadBuffer[00] = 0x4D
+ReadBuffer[01] = 0x6F
+ReadBuffer[02] = 0x6C
+ReadBuffer[03] = 0x65
+ReadBuffer[04] = 0x78
+ReadBuffer[05] = 0x20
+ReadBuffer[06] = 0x49
+ReadBuffer[07] = 0x6E
+ReadBuffer[08] = 0x63
+ReadBuffer[09] = 0x2E
+ReadBuffer[10] = 0x20
+ReadBuffer[11] = 0x20
+ReadBuffer[12] = 0x20
+ReadBuffer[13] = 0x20
+ReadBuffer[14] = 0x20
+ReadBuffer[15] = 0x20
+
+
+ZCU111 SFP IIC EEPROM Test PASSED
+
+*************************************************************
+** ZCU111 SFP IIC EEPROM Test
+*************************************************************
+Calling iic_read
+
+Reading EEPROM data from SFP
+
+ReadBuffer[00] = 0x4D
+ReadBuffer[01] = 0x6F
+ReadBuffer[02] = 0x6C
+ReadBuffer[03] = 0x65
+ReadBuffer[04] = 0x78
+ReadBuffer[05] = 0x20
+ReadBuffer[06] = 0x49
+ReadBuffer[07] = 0x6E
+ReadBuffer[08] = 0x63
+ReadBuffer[09] = 0x2E
+ReadBuffer[10] = 0x20
+ReadBuffer[11] = 0x20
+ReadBuffer[12] = 0x20
+ReadBuffer[13] = 0x20
+ReadBuffer[14] = 0x20
+ReadBuffer[15] = 0x20
+
+
+ZCU111 SFP IIC EEPROM Test PASSED
+
+*************************************************************
+** ZCU111 SFP IIC EEPROM Test
+*************************************************************
+Calling iic_read
+
+Reading EEPROM data from SFP
+
+ReadBuffer[00] = 0x4D
+ReadBuffer[01] = 0x6F
+ReadBuffer[02] = 0x6C
+ReadBuffer[03] = 0x65
+ReadBuffer[04] = 0x78
+ReadBuffer[05] = 0x20
+ReadBuffer[06] = 0x49
+ReadBuffer[07] = 0x6E
+ReadBuffer[08] = 0x63
+ReadBuffer[09] = 0x2E
+ReadBuffer[10] = 0x20
+ReadBuffer[11] = 0x20
+ReadBuffer[12] = 0x20
+ReadBuffer[13] = 0x20
+ReadBuffer[14] = 0x20
+ReadBuffer[15] = 0x20
+
+
+ZCU111 SFP IIC EEPROM Test PASSED
+
+*************************************************************
+** ZCU111 SFP IIC EEPROM Test
+*************************************************************
+Calling iic_read
+
+Reading EEPROM data from SFP
+
+ReadBuffer[00] = 0x4D
+ReadBuffer[01] = 0x6F
+ReadBuffer[02] = 0x6C
+ReadBuffer[03] = 0x65
+ReadBuffer[04] = 0x78
+ReadBuffer[05] = 0x20
+ReadBuffer[06] = 0x49
+ReadBuffer[07] = 0x6E
+ReadBuffer[08] = 0x63
+ReadBuffer[09] = 0x2E
+ReadBuffer[10] = 0x20
+ReadBuffer[11] = 0x20
+ReadBuffer[12] = 0x20
+ReadBuffer[13] = 0x20
+ReadBuffer[14] = 0x20
+ReadBuffer[15] = 0x20
+
+
+ZCU111 SFP IIC EEPROM Test PASSED
+All Tests Complete: IIC PASSED
+Press any key to return to main menu
+Choose Feature to Test:
+1: UART Test
+2: LED Test
+3: IIC Test
+5: TIMER/SCUGIC Test
+7: SWITCH Test
+8: PS DDR4 External Memory Test
+9: DDR4 External Memory Test
+A: BRAM Internal Memory Test
+B: BUTTON Test
+C: Clocking Test
+D: PMOD Test
+E: PS Pushbutton Test
+F: PS LED Test
+G: System Monitor Test
+H: ETHERNET Loopback Test
+0: Exit
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-26 10:58:37
+Writing: 'AA'
+A
+
+********************************************************
+********************************************************
+**                ZCU111 - PL BRAM TEST               **
+********************************************************
+********************************************************
+
+
+PL BRAM Memory Test
+Testing address range 0xB0000000-0xB01FFFFF.
+Iteration 1 of 1
+Pass A) ICache:  On, DCache:  On
+	TEST0: Write all memory to 0x00000000 and check
+		Writing...
+		Reading...
+	Test Complete Status = SUCCESS
+	TEST1: Write all memory to 0xFFFFFFFF and check
+		Writing...
+		Reading...
+	Test Complete Status = SUCCESS 
+
+	TEST2: Testing for stuck together bank/row/col bits
+		Clearing memory to zeros...
+		Writing and Reading...
+	Test Complete Status = SUCCESS 
+
+	TEST3: Testing for maximum ba/row/col noise
+		This test performs 16 word writes followed by 16 word reads
+		Each 64 bytes inverts the ba/row/col address
+		Initializing Memory to 0xA5A5A5A5...
+		Writing and Reading...
+	Test Complete Status = SUCCESS
+	TEST4: Testing for Inverse Data at Address
+		Writing...
+		Reading...
+	Test Complete Status = SUCCESS 
+
+		Number of errors in this pass = 0
+
+Pass B) ICache: Off, DCache: Off
+	TEST0: Write all memory to 0x00000000 and check
+		Writing...
+		Reading...
+	Test Complete Status = SUCCESS
+	TEST1: Write all memory to 0xFFFFFFFF and check
+		Writing...
+		Reading...
+	Test Complete Status = SUCCESS 
+
+	TEST2: Testing for stuck together bank/row/col bits
+		Clearing memory to zeros...
+		Writing and Reading...
+	Test Complete Status = SUCCESS 
+
+	TEST3: Testing for maximum ba/row/col noise
+		This test performs 16 word writes followed by 16 word reads
+		Each 64 bytes inverts the ba/row/col address
+		Initializing Memory to 0xA5A5A5A5...
+		Writing and Reading...
+	Test Complete Status = SUCCESS
+	TEST4: Testing for Inverse Data at Address
+		Writing...
+Entering step: 4
+
+
+Info: This step started at: 2018-02-26 10:58:42
+
+		Reading...
+	Test Complete Status = SUCCESS 
+
+		Number of errors in this pass = 0
+
+PL BRAM test iteration #1 has PASSED!
+Total number of errors for all iterations = 0
+### PL BRAM Memory Test finished successfully ###
+Press any key to return to main menu
+Choose Feature to Test:
+1: UART Test
+2: LED Test
+3: IIC Test
+5: TIMER/SCUGIC Test
+7: SWITCH Test
+8: PS DDR4 External Memory Test
+9: DDR4 External Memory Test
+A: BRAM Internal Memory Test
+B: BUTTON Test
+C: Clocking Test
+D: PMOD Test
+E: PS Pushbutton Test
+F: PS LED Test
+G: System Monitor Test
+H: ETHERNET Loopback Test
+0: Exit
+Writing: 'DD'
+D
+
+********************************************************
+********************************************************
+**     ZCU111 - PMOD Loopback Write and Read Tests    **
+********************************************************
+********************************************************
+
+Testing PMOD 
+PMOD: Writing and Reading all 0's            - PASSED
+PMOD: Writing and Reading all 1's            - PASSED
+PMOD: Writing and Reading 0x55555555 pattern - PASSED
+PMOD: Writing and Reading 0xAAAAAAAA pattern - PASSED
+
+Completed PMOD Loopback Write and Read Tests
+
+PMOD Test passed
+
+Press any key to return to main menu
+Choose Feature to Test:
+1: UART Test
+2: LED Test
+3: IIC Test
+5: TIMER/SCUGIC Test
+7: SWITCH Test
+8: PS DDR4 External Memory Test
+9: DDR4 External Memory Test
+A: BRAM Internal Memory Test
+B: BUTTON Test
+C: Clocking Test
+D: PMOD Test
+E: PS Pushbutton Test
+F: PS LED Test
+G: System Monitor Test
+H: ETHERNET Loopback Test
+0: Exit
+
+Entering step: 5
+
+
+Info: This step started at: 2018-02-26 10:58:47
+Writing: 'GG'
+G
+
+********************************************************
+********************************************************
+**            ZCU111 - System Monitor Test            **
+********************************************************
+********************************************************
+Starting System Monitor Example
+
+The Current Temperature is 26.308 Centigrades.
+The Maximum Temperature is 26.308 Centigrades. 
+The Minimum Temperature is 26.078 Centigrades. 
+
+The Current VCCINT is 0.852 Volts. 
+The Maximum VCCINT is 0.852 Volts. 
+The Minimum VCCINT is 0.851 Volts. 
+
+The Current VCCAUX is 1.801 Volts. 
+The Maximum VCCAUX is 1.801 Volts. 
+The Minimum VCCAUX is 1.800 Volts. 
+
+The Current VPVN   is 0.001 Volts.
+The Current VREFP  is 1.250 Volts.
+The Current VREFN  is 0.000 Volts.
+
+System Monitor Example passed!
+
+Press any key to return to main menu
+Choose Feature to Test:
+1: UART Test
+2: LED Test
+3: IIC Test
+5: TIMER/SCUGIC Test
+7: SWITCH Test
+8: PS DDR4 External Memory Test
+9: DDR4 External Memory Test
+A: BRAM Internal Memory Test
+B: BUTTON Test
+C: Clocking Test
+D: PMOD Test
+E: PS Pushbutton Test
+F: PS LED Test
+G: System Monitor Test
+H: ETHERNET Loopback Test
+0: Exit
+
+step finished 
+the expression:(.*)The\s+Current\s+Temperature\s+is\s+[3-6]\d.\d\d\d\s+Centigrades
+
+Error: Could not find regular expression in step 0 of test 10 - "(.*)The\s+Current\s+Temperature\s+is\s+[3-6]\d.\d\d\d\s+Centigrades"
+
+Info: Result for step 0: Fail
+Info: Result for step 1: Pass
+Info: Result for step 2: Fail
+Info: Result for step 3: Fail
+Info: Result for step 4: Fail
+Info: Result for step 5: Fail
+
+Info: The test took 0 hours, 01 minutes, and 01 seconds. 0:01:01
+
+Info: PS DDR4 test started...
+
+Info: The test will take 0 hours, 00 minutes, and 35 seconds. 0:00:35
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-26 10:58:53
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-26 10:58:53
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -system
+
+after 1000
+
+source {C:/zcu111_bit/tests/ZCU111/../tcl/ipi_psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+after 1000
+
+dow {C:/zcu111_bit/tests/ZCU111/../elf/zynq_mp_dram_test.elf}
+Downloading Program -- C:/zcu111_bit/tests/ZCU111/elf/zynq_mp_dram_test.elf
+	section, .text: 0xfffc0000 - 0xfffdc4cf
+	section, .boot: 0xffff0000 - 0xffff0b87
+	section, .init: 0xffff0bc0 - 0xffff0bf3
+	section, .fini: 0xffff0c00 - 0xffff0c33
+	section, .note.gnu.build-id: 0xfffdc4d0 - 0xfffdc4f3
+	section, .rodata: 0xfffdc4f8 - 0xfffdee1f
+	section, .rodata1: 0xfffdee20 - 0xfffdee3f
+	section, .sdata2: 0xfffdee40 - 0xfffdee3f
+	section, .sbss2: 0xfffdee40 - 0xfffdee3f
+	section, .data: 0xfffdee40 - 0xfffe09f7
+	section, .data1: 0xfffe09f8 - 0xfffe09ff
+	section, .ctors: 0xfffe0a00 - 0xfffe09ff
+	section, .dtors: 0xfffe0a00 - 0xfffe09ff
+	section, .eh_frame: 0xfffe0a00 - 0xfffe0a03
+	section, .mmu_tbl0: 0xfffe1000 - 0xfffe100f
+	section, .mmu_tbl1: 0xfffe2000 - 0xfffe3fff
+	section, .mmu_tbl2: 0xfffe4000 - 0xfffe7fff
+	section, .preinit_array: 0xfffe8000 - 0xfffe7fff
+	section, .init_array: 0xfffe8000 - 0xfffe8007
+	section, .fini_array: 0xfffe8008 - 0xfffe8047
+	section, .sdata: 0xfffe8048 - 0xfffe807f
+	section, .sbss: 0xfffe8080 - 0xfffe807f
+	section, .tdata: 0xfffe8080 - 0xfffe807f
+	section, .tbss: 0xfffe8080 - 0xfffe807f
+	section, .bss: 0xfffe8080 - 0xfffe963f
+	section, .heap: 0xffff0c34 - 0xffff2c3f
+	section, .stack: 0xffff2c40 - 0xffff5c3f
+  0%    0MB   0.0MB/s  ??:?? ETA 49%    0MB   0.1MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0xffff0000
+Successfully downloaded C:/zcu111_bit/tests/ZCU111/elf/zynq_mp_dram_test.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 2000
+
+********************************************************************************
+   Zynq MPSoC
+   DRAM Diagnostics Test (A53) 
+********************************************************************************
+   Select one of the options below:
+   +--------------------------------------------------------------------+
+   |  Memory Tests                                                      |
+   +-----+--------------------------------------------------------------+
+   | '0' | Test first 2MB region of DDR                                 |
+   | '1' | Test first 32MB region of DDR                                |
+   | '2' | Test first 64MB region of DDR                                |
+   | '3' | Test first 128MB region of DDR                               |
+   | '4' | Test first 256MB region of DDR                               |
+   | '5' | Test first 512MB region of DDR                               |
+   | '6' | Test first 1GB region of DDR                                 |
+   | '7' | Test first 2GB region of DDR                                 |
+   | '8' | Test first 4GB region of DDR                                 |
+   | '9' | Test first 8GB region of DDR                                 |
+   +-----+--------------------------------------------------------------+
+   |  Eye Tests                                                         |
+   +-----+--------------------------------------------------------------+
+   | 'r' | Perform a read eye analysis test                             |
+   | 'w' | Perform a write eye analysis test                            |
+   | 'a' | Print test start address                                     |
+   | 't' | Specify test start address (default=0x0)                     |
+   | 's' | Select the DRAM rank (default=1)                             |
+   +-----+--------------------------------------------------------------+
+   |  Miscellaneous options                                             |
+   +-----+--------------------------------------------------------------+
+   | 'i' | Print DDR information                                        |
+   | 'v' | Verbose Mode ON/OFF                                          |
+   | 'o' | Toggle cache enable/disable                                  |
+   | 'b' | Toggle between 32/64-bit bus widths                          |
+   | 'h' | Print this help menu                                         |
+   +-----+--------------------------------------------------------------+
+    Bus Width = 64,   D-cache is enable,   Verbose Mode is OFF
+
+ Enter 'h' to print help menu
+ Enter Test Option: 
+
+disconnect
+
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-26 10:59:08
+Writing: '2\n'
+2
+Starting Memory Test '2' - Testing 64MB length from address 0x0...
+---------+--------+------------------------------------------------+-----------
+  TEST   | ERROR  |          PER-BYTE-LANE ERROR COUNT             |  TIME
+         | COUNT  | LANES [ #0,  #1,  #2,  #3,  #4,  #5,  #6,  #7] |  (sec)
+---------+--------+------------------------------------------------+-----------
+MT0(1: 0)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 1.33838
+---------+--------+------------------------------------------------+-----------
+MTS(1: 1)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.667223
+---------+--------+------------------------------------------------+-----------
+MTS(1: 2)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.667223
+---------+--------+------------------------------------------------+-----------
+MTS(1: 3)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.667223
+---------+--------+------------------------------------------------+-----------
+MTS(1: 4)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.667
+Stopping all tests...
+223
+---------+--------+------------------------------------------------+-----------
+MTS(1: 5)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.667223
+---------+--------+------------------------------------------------+-----------
+MTS(1: 6)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.667223
+---------+--------+------------------------------------------------+-----------
+MTS(1: 7)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.667223
+---------+--------+------------------------------------------------+-----------
+
+step finished 
+the expression:(.*)error_counter\s+=\s+0x0000000000000000
+
+Error: Could not find regular expression in step 0 of test 11 - "(.*)memtest_all:\s+PASSED"
+
+Error: Could not find regular expression in step 0 of test 11 - "(.*)error_counter\s+=\s+0x0000000000000000"
+
+Info: Result for step 0: Fail
+Info: Result for step 1: Pass
+Info: Result for step 2: Fail
+Info: The test took 0 hours, 00 minutes, and 22 seconds. 0:00:22

@@ -47,21 +47,21 @@
 //***********************************Entity Declaration************************
 (* DowngradeIPIdentifiedWarnings="yes" *)
 module top_level_block_design_usp_rf_data_converter_0_0_bufg_gt_ctrl (
-  // DAC Fabric Feedback Clock for Tile 0
-  input    clk_dac0,
-  output   clk_dac0_buf
+  // DAC Fabric Feedback Clock for Tile 1
+  input    clk_dac1,
+  output   clk_dac1_buf
       
 );
 
-  BUFG_GT dac0_bufg_gt
+  BUFG_GT dac1_bufg_gt
   (
-    .I       (clk_dac0),
+    .I       (clk_dac1),
     .CE      (1'b1),
     .CEMASK  (1'b1),
     .CLR     (1'b0),
     .CLRMASK (1'b1),
     .DIV     (3'b000),
-    .O       (clk_dac0_buf)
+    .O       (clk_dac1_buf)
   );  
 
  

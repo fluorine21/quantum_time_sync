@@ -1,0 +1,435 @@
+Board: ZCU111
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: Run All button pressed, running through all of the checked tests 1 time.
+
+Info: The runall will take 0 hours, 40 minutes, and 12 seconds. 0:40:12
+
+Info: ZCU111 IDCODE Check test started...
+
+Info: The test will take 0 hours, 00 minutes, and 33 seconds. 0:00:33
+
+Entering step: 0
+
+
+Info: This step started at: 2018-05-30 18:07:44
+
+User has confirmed: "Set mode switch SW6 to "0000" (Up,Up,Up,Up)"
+
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-05-30 18:07:48
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Wed May 30 18:08:05 2018...
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-05-30 18:08:05
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu111_rev_b_idcode_check.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:08:27
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+
+Stopping all tests...
+
+Error: Could not find regular expression in step 2 of test 2 - "(.*)[^"]IDCODE check PASSED"
+
+Error: Step 2 timed out in test number 2
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Fail
+Info: The test took 0 hours, 00 minutes, and 45 seconds. 0:00:45
+
+Info: Run All button pressed, running through all of the checked tests 1 time.
+
+Info: The runall will take 0 hours, 40 minutes, and 12 seconds. 0:40:12
+
+Info: ZCU111 IDCODE Check test started...
+
+Info: The test will take 0 hours, 00 minutes, and 33 seconds. 0:00:33
+
+Entering step: 0
+
+
+Info: This step started at: 2018-05-30 18:08:48
+
+User has confirmed: "Set mode switch SW6 to "0000" (Up,Up,Up,Up)"
+
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-05-30 18:08:50
+
+****** Vivado v2018.1 (64-bit)
+  **** SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+  **** IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Wed May 30 18:09:11 2018...
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-05-30 18:09:11
+
+****** Vivado v2018.1 (64-bit)
+  **** SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+  **** IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu111_rev_b_idcode_check.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.1
+  **** Build date : Apr  4 2018-19:32:53
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:15 . Memory (MB): peak = 323.496 ; gain = 2.441
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280976b003A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1435] Device xczu28dr (JTAG device index = 0) is not programmed (DONE status = 0).
+# set IDCODE [get_property IDCODE_HEX [lindex [get_hw_device] 0]]
+# puts $IDCODE
+147E0093
+# if { $IDCODE == "047E0093"} {
+#    puts "IDCODE check PASSED"
+# } else {
+#    puts "IDCODE check FAILED" 
+# }
+IDCODE check FAILED
+
+Error: Found regular expression in step 2 of test 2 - "(.*)[^"]IDCODE check FAILED"
+
+Error: Could not find regular expression in step 2 of test 2 - "(.*)[^"]IDCODE check PASSED"
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Fail
+
+Info: The test took 0 hours, 00 minutes, and 57 seconds. 0:00:57
+
+Info: XM107 CARD TEST test started...
+
+Info: The test will take 0 hours, 00 minutes, and 36 seconds. 0:00:36
+
+Entering step: 0
+
+
+Info: This step started at: 2018-05-30 18:09:48
+
+step finished 
+Exception in thread :
+Traceback (most recent call last):
+  File "threading.py", line 801, in __bootstrap_inner
+  File "com.py", line 156, in run
+UnboundLocalError: local variable 'expression' referenced before assignment
+
+
+Error: 'comm' type in step 0 never found a serial port to connect to in test 3
+
+Entering step: 1
+
+
+Info: This step started at: 2018-05-30 18:09:48
+
+Error: Stopped because step 0 failed in test 3
+
+Info: Result for step 0: Fail
+Info: The test took 0 hours, 00 minutes, and 00 seconds. 0:00:00
+
+Info: ZCU111 EFUSE test started...
+
+Info: The test will take 0 hours, 00 minutes, and 52 seconds. 0:00:52
+
+Entering step: 0
+
+
+Info: This step started at: 2018-05-30 18:09:48
+
+****** Vivado v2018.1 (64-bit)
+  **** SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+  **** IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Wed May 30 18:10:08 2018...
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-05-30 18:10:08
+
+****** Vivado v2018.1 (64-bit)
+  **** SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+  **** IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\vivado_read_fpga_efuse_status.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.1
+  **** Build date : Apr  4 2018-19:32:53
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:15 . Memory (MB): peak = 324.059 ; gain = 2.734
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280976b003A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1435] Device xczu28dr (JTAG device index = 0) is not programmed (DONE status = 0).
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1435] Device xczu28dr (JTAG device index = 0) is not programmed (DONE status = 0).
+# report_property [lindex [get_hw_device] 0] REGISTER.EFUSE.FUSE_DNA
+Property                 Type    Read-only  Value
+REGISTER.EFUSE.FUSE_DNA  string  true       40000000012302282CB022C5
+# report_property [lindex [get_hw_device] 1] REGISTER.EFUSE.FUSE_DNA
+INFO: [Common 17-206] Exiting Vivado at Wed May 30 18:10:45 2018...
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+
+Info: The test took 0 hours, 01 minutes, and 37 seconds. 0:01:37
+
+Info: ZCU111 RTC test started...
+
+Info: The test will take 0 hours, 01 minutes, and 13 seconds. 0:01:13
+
+Entering step: 0
+
+
+Info: This step started at: 2018-05-30 18:11:26
+
+step finished 
+Exception in thread :
+Traceback (most recent call last):
+  File "threading.py", line 801, in __bootstrap_inner
+  File "com.py", line 156, in run
+UnboundLocalError: local variable 'expression' referenced before assignment
+
+
+Error: 'comm' type in step 0 never found a serial port to connect to in test 5
+
+Entering step: 1
+
+
+Info: This step started at: 2018-05-30 18:11:26
+
+Error: Stopped because step 0 failed in test 5
+
+Info: Result for step 0: Fail
+Info: The test took 0 hours, 00 minutes, and 00 seconds. 0:00:00
+
+Info: Test Level Shifters test started...
+
+Info: The test will take 0 hours, 01 minutes, and 17 seconds. 0:01:17
+
+Entering step: 0
+
+
+Info: This step started at: 2018-05-30 18:11:26
+
+step finished 
+Exception in thread :
+Traceback (most recent call last):
+  File "threading.py", line 801, in __bootstrap_inner
+  File "com.py", line 156, in run
+UnboundLocalError: local variable 'expression' referenced before assignment
+
+
+Error: 'comm' type in step 0 never found a serial port to connect to in test 6
+
+Entering step: 1
+
+
+Info: This step started at: 2018-05-30 18:11:26
+
+Error: Stopped because step 0 failed in test 6
+
+Info: Result for step 0: Fail
+Info: The test took 0 hours, 00 minutes, and 00 seconds. 0:00:00
+
+Info: ZCU111 SETUP test started...
+
+Info: The test will take 0 hours, 06 minutes, and 55 seconds. 0:06:55
+
+Entering step: 0
+
+
+Info: This step started at: 2018-05-30 18:11:26
+
+step finished 
+Exception in thread :
+Traceback (most recent call last):
+  File "threading.py", line 801, in __bootstrap_inner
+  File "com.py", line 156, in run
+UnboundLocalError: local variable 'expression' referenced before assignment
+
+
+Error: 'comm' type in step 0 never found a serial port to connect to in test 7
+
+Entering step: 1
+
+
+Info: This step started at: 2018-05-30 18:11:26
+
+Error: Stopped because step 0 failed in test 7
+
+Info: Result for step 0: Fail
+Info: The test took 0 hours, 00 minutes, and 00 seconds. 0:00:00
+
+Info: WRITE EEPROM test started...
+
+Info: The test will take 0 hours, 01 minutes, and 30 seconds. 0:01:30
+
+Entering step: 0
+
+
+Info: This step started at: 2018-05-30 18:11:26
+
+step finished 
+Exception in thread :
+Traceback (most recent call last):
+  File "threading.py", line 801, in __bootstrap_inner
+  File "com.py", line 156, in run
+UnboundLocalError: local variable 'expression' referenced before assignment
+
+
+Error: 'comm' type in step 0 never found a serial port to connect to in test 8
+
+Entering step: 1
+
+
+Info: This step started at: 2018-05-30 18:11:26
+
+Error: Stopped because step 0 failed in test 8
+
+Info: Result for step 0: Fail
+Info: The test took 0 hours, 00 minutes, and 00 seconds. 0:00:00
+
+Info: IPI Test test started...
+
+Info: The test will take 0 hours, 01 minutes, and 00 seconds. 0:01:00
+
+Entering step: 0
+
+
+Info: This step started at: 2018-05-30 18:11:26
+
+step finished 
+Exception in thread :
+Traceback (most recent call last):
+  File "threading.py", line 801, in __bootstrap_inner
+  File "com.py", line 156, in run
+UnboundLocalError: local variable 'expression' referenced before assignment
+
+
+Error: 'comm' type in step 0 never found a serial port to connect to in test 9
+
+Entering step: 1
+
+
+Info: This step started at: 2018-05-30 18:11:26
+
+Error: Stopped because step 0 failed in test 9
+
+Info: Result for step 0: Fail
+Info: The test took 0 hours, 00 minutes, and 00 seconds. 0:00:00
+
+Info: PS DDR4 test started...
+
+Info: The test will take 0 hours, 00 minutes, and 35 seconds. 0:00:35
+
+Entering step: 0
+
+
+Info: This step started at: 2018-05-30 18:11:26
+
+step finished 
+Exception in thread :
+Traceback (most recent call last):
+  File "threading.py", line 801, in __bootstrap_inner
+  File "com.py", line 156, in run
+UnboundLocalError: local variable 'expression' referenced before assignment
+
+
+Error: 'comm' type in step 0 never found a serial port to connect to in test 10
+
+Entering step: 1
+
+
+Info: This step started at: 2018-05-30 18:11:26
+
+Error: Stopped because step 0 failed in test 10
+
+Info: Result for step 0: Fail
+Info: The test took 0 hours, 00 minutes, and 00 seconds. 0:00:00
+
+Info: MIG DDR4 test started...
+
+Info: The test will take 0 hours, 03 minutes, and 28 seconds. 0:03:28
+
+Entering step: 0
+
+
+Info: This step started at: 2018-05-30 18:11:27
+
+Stopping all tests...
+
+Error: Step 0 timed out in test number 11
+
+Error: Could not find regular expression in step 0 of test 11 - "(.*)INFO:\s+\[Labtools\s+27\-3164\]\s+End\s+of\s+startup\s+status:\s+HIGH"
+
+Info: Result for step 0: Fail
+Info: The test took 0 hours, 00 minutes, and 15 seconds. 0:00:15

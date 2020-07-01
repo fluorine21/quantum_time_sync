@@ -1,0 +1,4 @@
+Board: ZCU111
+Serial Number: 881415021737-71788
+Mac Address: 00:0A:35:04:8C:86
+

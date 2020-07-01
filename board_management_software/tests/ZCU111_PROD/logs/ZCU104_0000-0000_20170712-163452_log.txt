@@ -1,0 +1,238 @@
+Board: ZCU104
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: Zynq Memory test started...
+
+Info: The test will take 0 hours, 00 minutes, and 37 seconds. 0:00:37
+
+Entering step: 0
+
+
+Info: This step started at: 2017-07-12 16:34:54
+
+Entering step: 1
+
+
+Info: This step started at: 2017-07-12 16:34:54
+
+User has confirmed: "Turn off the ZCU102 Board Power.
+Set mode switch SW6 to "0000" (Up,Up,Up,Up)
+Turn on the ZCU102 Board Power."
+
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2017-07-12 16:34:59
+
+****** Vivado Lab Edition v2017.2 (64-bit)
+  **** SW Build 1894441 on Mon May 29 16:52:06 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_pl_pmod_loop_bit.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+# current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Xilinx/*]
+# open_hw_target -jtag_mode 1
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A023A
+INFO: [Labtoolstcl 44-467] Setting hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A023A into jtag_mode
+# scan_ir_hw_jtag 12 -tdi 0x90B
+# close_hw_target
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A023A
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A023A
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/pmod_loop.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 324.461 ; gain = 0.000
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A023A
+# disconnect_hw_server localhost:3121
+
+Entering step: 3
+
+
+Info: This step started at: 2017-07-12 16:35:18
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+fpga -state
+FPGA is configured
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/../tcl/psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/../elf/zynqmp_memtest.elf}
+Downloading Program -- C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/elf/zynqmp_memtest.elf
+	section, .text: 0xfffc0000 - 0xfffdc38f
+	section, .boot: 0xffff0000 - 0xffff0b8f
+	section, .init: 0xffff0bc0 - 0xffff0bf3
+	section, .fini: 0xffff0c00 - 0xffff0c33
+	section, .note.gnu.build-id: 0xfffdc390 - 0xfffdc3b3
+	section, .rodata: 0xfffdc3b8 - 0xfffdec8f
+	section, .rodata1: 0xfffdec90 - 0xfffdecbf
+	section, .sdata2: 0xfffdecc0 - 0xfffdecbf
+	section, .sbss2: 0xfffdecc0 - 0xfffdecbf
+	section, .data: 0xfffdecc0 - 0xfffe0877
+	section, .data1: 0xfffe0878 - 0xfffe087f
+	section, .ctors: 0xfffe0880 - 0xfffe087f
+	section, .dtors: 0xfffe0880 - 0xfffe087f
+	section, .eh_frame: 0xfffe0880 - 0xfffe0883
+	section, .mmu_tbl0: 0xfffe1000 - 0xfffe100f
+	section, .mmu_tbl1: 0xfffe2000 - 0xfffe3fff
+	section, .mmu_tbl2: 0xfffe4000 - 0xfffe7fff
+	section, .preinit_array: 0xfffe8000 - 0xfffe7fff
+
+********************************************************************************
+   Zynq MPSoC
+   DRAM Diagnostics Test (A53) 
+********************************************************************************
+   Select one of the options below:
+   +------------------------------------------	section, .init_array: 0xfffe8000 - 0xfffe8007
+	section, .fini_array: 0xfffe8008 - 0xfffe8047
+	section, .sdata: 0xfffe8048 - 0xfffe807f
+	section, .sbss: 0xfffe8080 - 0xfffe807f
+	section, .tdata: 0xfffe8080 - 0xfffe807f
+	section, .tbss: 0xfffe8080 - 0xfffe807f
+	section, .bss: 0xfffe8080 - 0xfffe963f
+	section, .heap: 0xffff0c34 - 0xffff2c3f
+	section, .stack: 0xffff2c40 - 0xffff5c3f
+  0%    0MB   0.0MB/s  ??:?? ETA 68%    0MB   0.2MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0xffff0000
+Successfully downloaded C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/elf/zynqmp_memtest.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 3000
+--------------------------+
+   |  Memory Tests                                                      |
+   +-----+--------------------------------------------------------------+
+   | '0' | Test first 2MB region of DDR                                 |
+   | '1' | Test first 32MB region of DDR                                |
+   | '2' | Test first 64MB region of DDR                                |
+   | '3' | Test first 128MB region of DDR                               |
+   | '4' | Test first 256MB region of DDR                               |
+   | '5' | Test first 512MB region of DDR                               |
+   | '6' | Test first 1GB region of DDR                                 |
+   | '7' | Test first 2GB region of DDR                                 |
+   | '8' | Test first 4GB region of DDR                                 |
+   | '9' | Test first 8GB region of DDR                                 |
+   +-----+--------------------------------------------------------------+
+   |  Eye Tests                                                         |
+   +-----+--------------------------------------------------------------+
+   | 'r' | Perform a read eye analysis test                             |
+   | 'w' | Perform a write eye analysis test                            |
+   | 'a' | Print test start address                                     |
+   | 't' | Specify test start address (default=0x0)                     |
+   | 's' | Select the DRAM rank (default=1)                             |
+   +-----+--------------------------------------------------------------+
+   |  Miscellaneous options                                             |
+   +-----+--------------------------------------------------------------+
+   | 'i' | Print DDR information                                        |
+   | 'v' | Verbose Mode ON/OFF                                          |
+   | 'o' | Toggle cache enable/disable                                  |
+   | 'b' | Toggle between 32/64-bit bus widths                          |
+   | 'h' | Print this help menu                                         |
+   +-----+--------------------------------------------------------------+
+    Bus Width = 64,   D-cache is enable,   Verbose Mode is OFF
+
+ Enter 'h' to print help menu
+ Enter Test Option: 
+
+disconnect
+
+Entering step: 4
+
+
+Info: This step started at: 2017-07-12 16:35:32
+Writing: '0\r\n'
+0
+Starting Memory Test '0' - Testing 2MB length from address 0x0...
+---------+--------+------------------------------------------------+-----------
+  TEST   | ERROR  |          PER-BYTE-LANE ERROR COUNT             |  TIME
+         | COUNT  | LANES [ #0,  #1,  #2,  #3,  #4,  #5,  #6,  #7] |  (sec)
+---------+--------+------------------------------------------------+-----------
+MT0(1: 0)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.0419472
+---------+--------+------------------------------------------------+-----------
+MTS(1: 1)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.0209736
+---------+--------+------------------------------------------------+-----------
+MTS(1: 2)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.0209736
+---------+--------+------------------------------------------------+-----------
+MTS(1: 3)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.0209736
+---------+--------+------------------------------------------------+-----------
+MTS(1: 4)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.0209736
+---------+--------+------------------------------------------------+-----------
+MTS(1: 5)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.0209736
+---------+--------+------------------------------------------------+-----------
+MTS(1: 6)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.0209736
+---------+--------+------------------------------------------------+-----------
+MTS(1: 7)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.0209736
+---------+--------+------------------------------------------------+-----------
+MTS(1: 8)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.0209736
+---------+--------+------------------------------------------------+-----------
+MTP(1: 9)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.0334267
+---------+--------+------------------------------------------------+-----------
+MTP(1:10)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.0334267
+---------+--------+------------------------------------------------+-----------
+MTL(1:11)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.0360484
+---------+--------+------------------------------------------------+-----------
+MTL(1:12)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.0360484
+---------+--------+------------------------------------------------+-----------
+MTL(1:13)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.0360484
+---------+--------+------------------------------------------------+-----------
+MTL(1:14)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.0360484
+---------+--------+------------------------------------------------+-----------
+    Bus Width = 64,   D-cache is enable,   Verbose Mode is OFF
+
+ Enter 'h' to print help menu
+ Enter Test Option: 
+
+    Bus Width = 64,   D-cache is enable,   Verbose Mode is OFF
+
+ Enter 'h' to print help menu
+ Enter Test Option: 
+
+    Bus Width = 64,   D-cache is enable,   Verbose Mode is OFF
+
+ Enter 'h' to print help menu
+ Enter Test Option: 
+
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+Info: Result for step 4: Pass
+
+Info: The test took 0 hours, 00 minutes, and 45 seconds. 0:00:45

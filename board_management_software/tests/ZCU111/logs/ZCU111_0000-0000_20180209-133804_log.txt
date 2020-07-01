@@ -1,0 +1,129 @@
+Board: ZCU111
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: ZCU111 RTC test started...
+
+Info: The test will take 0 hours, 00 minutes, and 31 seconds. 0:00:31
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-09 13:38:07
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-09 13:38:07
+
+C:\zcu111_bit\tests\ZCU111>cd bat\ 
+
+C:\zcu111_bit\tests\ZCU111\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-09 13:38:11
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+fpga -state
+FPGA is not configured
+
+fpga -no-revision-check -file {C:/zcu111_bit/tests/ZCU111/../bitstream/zcu111_ipi.bit}
+initializing  0%    0MB   0.0MB/s  ??:?? ETA  3%    1MB   2.2MB/s  ??:?? ETA  5%    1MB   1.9MB/s  ??:?? ETA  8%    2MB   1.8MB/s  ??:?? ETA 11%    3MB   1.8MB/s  ??:?? ETA 13%    4MB   1.8MB/s  ??:?? ETA 16%    5MB   1.8MB/s  00:15 ETA 18%    6MB   1.7MB/s  00:15 ETA 21%    7MB   1.7MB/s  00:14 ETA 23%    7MB   1.7MB/s  00:14 ETA 26%    8MB   1.7MB/s  00:14 ETA 28%    9MB   1.7MB/s  00:13 ETA 31%   10MB   1.7MB/s  00:13 ETA 34%   11MB   1.7MB/s  00:12 ETA 36%   12MB   1.7MB/s  00:12 ETA 39%   12MB   1.7MB/s  00:11 ETA 41%   13MB   1.7MB/s  00:11 ETA 44%   14MB   1.7MB/s  00:10 ETA 47%   15MB   1.7MB/s  00:10 ETA 49%   16MB   1.7MB/s  00:09 ETA 52%   17MB   1.7MB/s  00:09 ETA 54%   17MB   1.7MB/s  00:08 ETA 57%   18MB   1.7MB/s  00:08 ETA 59%   19MB   1.7MB/s  00:07 ETA 62%   20MB   1.7MB/s  00:07 ETA 65%   21MB   1.7MB/s  00:06 ETA 67%   22MB   1.7MB/s  00:06 ETA 70%   23MB   1.7MB/s  00:05 ETA 72%   23MB   1.7MB/s  00:05 ETA 75%   24MB   1.7MB/s  00:04 ETA 77%   25MB   1.7MB/s  00:04 ETA 80%   26MB   1.7MB/s  00:03 ETA 82%   27MB   1.7MB/s  00:03 ETA 85%   28MB   1.7MB/s  00:02 ETA 87%   28MB   1.7MB/s  00:02 ETA 90%   29MB   1.7MB/s  00:01 ETA 93%   30MB   1.7MB/s  00:01 ETA 95%   31MB   1.7MB/s  00:00 ETA 98%   32MB   1.7MB/s  00:00 ETA100%   32MB   1.7MB/s  00:19    
+
+fpga -ir-status
+IR STATUS: 117
+     Always One (Bits [0]): 1
+    Always Zero (Bits [1]): 0
+       ISC_Done (Bits [2]): 1
+    ISC_Enabled (Bits [3]): 0
+  Init Complete (Bits [4]): 1
+           DONE (Bits [5]): 1
+             (Bits [11:6]): 1
+targets -set -filter {name =~"*APU*"}
+
+source {C:/zcu111_bit/tests/ZCU111/../tcl/psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/zcu111_bit/tests/ZCU111/../elf/hello_rtc.elf}
+Downloading Program -- C:/zcu111_bit/tests/ZCU111/elf/hello_rtc.elf
+	section, .text: 0x00000000 - 0x0000322b
+	section, .init: 0x00003240 - 0x00003273
+	section, .fini: 0x00003280 - 0x000032b3
+	section, .note.gnu.build-id: 0x000032b4 - 0x000032d7
+	section, .rodata: 0x000032d8 - 0x0000362f
+	section, .rodata1: 0x00003630 - 0x0000363f
+	section, .sdata2: 0x00003640 - 0x0000363f
+	section, .sbss2: 0x00003640 - 0x0000363f
+	section, .data: 0x00003640 - 0x00003f3f
+	section, .data1: 0x00003f40 - 0x00003f3f
+	section, .ctors: 0x00003f40 - 0x00003f3f
+	section, .dtors: 0x00003f40 - 0x00003f3f
+	section, .eh_frame: 0x00003f40 - 0x00003f43
+	section, .mmu_tbl0: 0x00004000 - 0x0000400f
+	section, .mmu_tbl1: 0x00005000 - 0x00006fff
+	section, .mmu_tbl2: 0x00007000 - 0x0000afff
+	section, .preinit_array: 0x0000b000 - 0x0000afff
+	section, .init_array: 0x0000b000 - 0x0000b007
+	section, .fini_array: 0x0000b008 - 0x0000b047
+	section, .sdata: 0x0000b048 - 0x0000b07f
+	section, .sbss: 0x0000b080 - 0x0000b07f
+	section, .tdata: 0x0000b080 - 0x0000b07f
+	section, .tbss: 0x0000b080 - 0x0000b07f
+	section, .bss: 0x0000b080 - 0x0000b13f
+	section, .heap: 0x0000b140 - 0x0000d13f
+	section, .stack: 0x0000d140 - 0x0001013f
+  0%    0MB   0.0MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu111_bit/tests/ZCU111/elf/hello_rtc.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 2000
+
+disconnect
+
+step finished 
+
+step finished 
+the expression:(.*)YEAR\:MM\:DD\s+HR\:MM\:SS
+
+Error: Could not find regular expression in step 0 of test 4 - "(.*)Last\s+set\s+time\s+for\s+RTC\s+is"
+
+Error: Could not find regular expression in step 0 of test 4 - "(.*)RTC\s+time\s+after\s+set\s+is"
+
+Error: Could not find regular expression in step 0 of test 4 - "(.*)YEAR\:MM\:DD\s+HR\:MM\:SS"
+
+Info: Result for step 0: Fail
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+
+Info: The test took 0 hours, 00 minutes, and 37 seconds. 0:00:37

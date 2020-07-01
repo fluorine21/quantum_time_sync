@@ -1,0 +1,150 @@
+Board: ZCU104
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: XM107 CARD TEST test started...
+
+Info: The test will take 0 hours, 00 minutes, and 19 seconds. 0:00:19
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-02 11:16:29
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-02 11:16:29
+
+C:\zcu104_bit\tests\ZCU104>cd bat\ 
+
+C:\zcu104_bit\tests\ZCU104\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-02 11:16:33
+
+catch { disconnect }
+
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+fpga -state
+FPGA is not configured
+after 2000
+
+fpga -file {C:/zcu104_bit/tests/ZCU104/../bitstream/sc.bit}
+initializing  0%    0MB   0.0MB/s  ??:?? ETA  5%    1MB   2.1MB/s  ??:?? ETA 10%    1MB   1.9MB/s  ??:?? ETA 14%    2MB   1.8MB/s  ??:?? ETA 19%    3MB   1.8MB/s  ??:?? ETA 24%    4MB   1.8MB/s  ??:?? ETA 28%    5MB   1.7MB/s  00:07 ETA 32%    6MB   1.7MB/s  00:07 ETA 37%    6MB   1.7MB/s  00:06 ETA 42%    7MB   1.7MB/s  00:06 ETA 46%    8MB   1.7MB/s  00:05 ETA 51%    9MB   1.7MB/s  00:05 ETA 55%   10MB   1.7MB/s  00:04 ETA 60%   11MB   1.7MB/s  00:04 ETA 65%   11MB   1.7MB/s  00:03 ETA 69%   12MB   1.7MB/s  00:03 ETA 74%   13MB   1.7MB/s  00:02 ETA 78%   14MB   1.7MB/s  00:02 ETA 83%   15MB   1.7MB/s  00:01 ETA 88%   16MB   1.7MB/s  00:01 ETA 92%   17MB   1.7MB/s  00:00 ETA 97%   17MB   1.7MB/s  00:00 ETA100%   18MB   1.7MB/s  00:10    
+
+after 2000
+
+fpga -state
+FPGA is configured
+after 2000
+
+fpga -ir-status
+IR STATUS: 117
+     Always One (Bits [0]): 1
+    Always Zero (Bits [1]): 0
+       ISC_Done (Bits [2]): 1
+    ISC_Enabled (Bits [3]): 0
+  Init Complete (Bits [4]): 1
+           DONE (Bits [5]): 1
+             (Bits [11:6]): 1
+after 2000
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/zcu104_bit/tests/ZCU104/../tcl/sc_psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/zcu104_bit/tests/ZCU104/../elf/SC.elf}
+Downloading Program -- C:/zcu104_bit/tests/ZCU104/elf/SC.elf
+	section, .text: 0x00000000 - 0x0000556b
+	section, .init: 0x00005580 - 0x000055b3
+	section, .fini: 0x000055c0 - 0x000055f3
+	section, .note.gnu.build-id: 0x000055f4 - 0x00005617
+	section, .rodata: 0x00005618 - 0x00005927
+	section, .rodata1: 0x00005928 - 0x0000593f
+	section, .sdata2: 0x00005940 - 0x0000593f
+	section, .sbss2: 0x00005940 - 0x0000593f
+	section, .data: 0x00005940 - 0x00006a67
+	section, .data1: 0x00006a68 - 0x00006a7f
+	section, .ctors: 0x00006a80 - 0x00006a7f
+	section, .dtors: 0x00006a80 - 0x00006a7f
+	section, .eh_frame: 0x00006a80 - 0x00006a83
+	section, .mmu_tbl0: 0x00007000 - 0x0000700f
+	section, .mmu_tbl1: 0x00008000 - 0x00009fff
+	section, .mmu_tbl2: 0x0000a000 - 0x0000dfff
+	section, .preinit_array: 0x0000e000 - 0x0000dfff
+	section, .init_array: 0x0000e000 - 0x0000e007
+	section, .fini_array: 0x0000e008 - 0x0000e047
+	section, .sdata: 0x0000e048 - 0x0000e07f
+	section, .sbss: 0x0000e080 - 0x0000e07f
+	section, .tdata: 0x0000e080 - 0x0000e07f
+	section, .tbss: 0x0000e080 - 0x0000e07f
+	section, .bss: 0x0000e080 - 0x0000e17f
+	section, .heap: 0x0000e180 - 0x0001017f
+	section, .stack: 0x00010180 - 0x0001317f
+  0%    0MB   0.0MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu104_bit/tests/ZCU104/elf/SC.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 2000
+
+Starting System Controller...
+
+System Controller Initialization Finished...
+
+disconnect
+
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-02 11:17:03
+
+step finished 
+Exception in thread :
+Traceback (most recent call last):
+  File "threading.py", line 801, in __bootstrap_inner
+  File "com.py", line 156, in run
+UnboundLocalError: local variable 'expression' referenced before assignment
+
+
+Error: 'coms' type in step 3 never found a serial port to connect to in test 2
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "threading.py", line 801, in __bootstrap_inner
+  File "testthread.py", line 62, in run
+  File "testthread.py", line 411, in testfunc
+  File "testthread.py", line 113, in sysctrl
+AttributeError: 'winCmd' object has no attribute 'Write'
+

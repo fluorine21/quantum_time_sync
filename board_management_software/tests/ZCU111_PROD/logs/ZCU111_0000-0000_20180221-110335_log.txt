@@ -1,0 +1,945 @@
+Board: ZCU111
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: MIG DDR4 test started...
+
+Info: The test will take 0 hours, 04 minutes, and 12 seconds. 0:04:12
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-21 11:03:51
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu111_mig_pl_ddr4.tcl}
+# set_param xicom.use_bitstream_version_check false
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:08:27
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:14 . Memory (MB): peak = 306.055 ; gain = 2.387
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target -jtag_mode 1
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280976A038A
+INFO: [Labtoolstcl 44-467] Setting hw_target localhost:3121/xilinx_tcf/Xilinx/1280976A038A into jtag_mode
+# scan_ir_hw_jtag 12 -tdi 0x90B
+# close_hw_target
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280976A038A
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280976A038A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1435] Device xczu28dr (JTAG device index = 0) is not programmed (DONE status = 0).
+# current_hw_device [lindex [get_hw_devices] 1]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 1]
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/zcu111_mig_pl_ddr4.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 882.473 ; gain = 1.129
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280976A038A
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 21 11:04:41 2018...
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-21 11:04:42
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu111_mig_pl_ddr4_status.tcl}
+# set TEST_DELAY 120
+# disconnect_hw_server -quiet
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280976A038A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+WARNING: [Labtools 27-3410] Calibration Failed.
+Resolution: For further debugging information, please refer to the Debug Guide that can be found from the following URL - https://www.xilinx.com/support/answers/68937.html
+INFO: [Labtools 27-2302] Device xczu28dr (JTAG device index = 0) is programmed with a design that has 1 MIG core(s).
+# set_property PROBES.FILE {[pwd]/../bitstream/zcu111_mig_pl_ddr4.ltx} [lindex [get_hw_devices] 0]
+# puts "\n    10 second delay for UltraScale MIG calibration\n"
+
+    10 second delay for UltraScale MIG calibration
+
+# after 10000
+# refresh_hw_device [lindex [get_hw_devices] 0]
+WARNING: [Labtools 27-3410] Calibration Failed.
+Resolution: For further debugging information, please refer to the Debug Guide that can be found from the following URL - https://www.xilinx.com/support/answers/68937.html
+INFO: [Labtools 27-2302] Device xczu28dr (JTAG device index = 0) is programmed with a design that has 1 MIG core(s).
+# puts "\n    Refreshing VIO\n"
+
+    Refreshing VIO
+
+WARNING: [Labtoolstcl 44-169] No matching hw_vios were found.
+# refresh_hw_vio [get_hw_vios hw_vio_*]
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 21 11:05:10 2018...
+
+Error: Could not find regular expression in step 1 of test 11 - "(.*)Info:VIO\s+Core\s+Read\s+LED\s+Data\s+Pass\s+1:_________[b9]_________"
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-21 11:05:30
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 21 11:05:45 2018...
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Fail
+Info: Result for step 2: Pass
+
+Info: The test took 0 hours, 01 minutes, and 54 seconds. 0:01:54
+
+Info: PMOD Loopback test started...
+
+Info: The test will take 0 hours, 01 minutes, and 10 seconds. 0:01:10
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-21 11:12:53
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-21 11:12:53
+
+C:\zcu111_bit\tests\ZCU111>cd bat\ 
+
+C:\zcu111_bit\tests\ZCU111\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-21 11:12:57
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu111_pl_pmod_loop_bit.tcl}
+# set_param xicom.use_bitstream_version_check false
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+ERROR: [Common 17-39] 'connect_hw_server' failed due to earlier errors.
+
+    while executing
+"connect_hw_server -url localhost:3121"
+    (file "tcl\zcu111_pl_pmod_loop_bit.tcl" line 3)
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 21 11:13:09 2018...
+
+Error: Could not find regular expression in step 2 of test 14 - "(.*)End of startup status: HIGH"
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-21 11:13:09
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+fpga -state
+FPGA is not configured
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/zcu111_bit/tests/ZCU111/../tcl/psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/zcu111_bit/tests/ZCU111/../elf/pmod_loop.elf}
+Downloading Program -- C:/zcu111_bit/tests/ZCU111/elf/pmod_loop.elf
+	section, .text: 0x00000000 - 0x0000c51b
+	section, .init: 0x0000c540 - 0x0000c573
+	section, .fini: 0x0000c580 - 0x0000c5b3
+	section, .note.gnu.build-id: 0x0000c5b4 - 0x0000c5d7
+	section, .rodata: 0x0000c5d8 - 0x0000cc07
+	section, .rodata1: 0x0000cc08 - 0x0000cc3f
+	section, .sdata2: 0x0000cc40 - 0x0000cc3f
+	section, .sbss2: 0x0000cc40 - 0x0000cc3f
+	section, .data: 0x0000cc40 - 0x0000de0f
+	section, .data1: 0x0000de10 - 0x0000de3f
+	section, .ctors: 0x0000de40 - 0x0000de3f
+	section, .dtors: 0x0000de40 - 0x0000de3f
+	section, .eh_frame: 0x0000de40 - 0x0000de43
+	section, .mmu_tbl0: 0x0000e000 - 0x0000e00f
+	section, .mmu_tbl1: 0x0000f000 - 0x00010fff
+	section, .mmu_tbl2: 0x00011000 - 0x00014fff
+	section, .preinit_array: 0x00015000 - 0x00014fff
+	section, .init_array: 0x00015000 - 0x00015007
+	section, .fini_array: 0x00015008 - 0x00015047
+	section, .sdata: 0x00015048 - 0x0001507f
+	section, .sbss: 0x00015080 - 0x0001507f
+	section, .tdata: 0x00015080 - 0x0001507f
+	section, .tbss: 0x00015080 - 0x0001507f
+	section, .bss: 0x00015080 - 0x0001513f
+	section, .heap: 0x00015140 - 0x0001713f
+	section, .stack: 0x00017140 - 0x0001a13f
+  0%    0MB   0.0MB/s  ??:?? ETA 95%    0MB   0.1MB/s  ??:?? ETA100%    0MB   0.1MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu111_bit/tests/ZCU111/elf/pmod_loop.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 5000
+
+disconnect
+
+step finished 
+
+step finished 
+the expression:(.*)PMOD Loopback: Test passed
+
+Error: Could not find regular expression in step 0 of test 14 - "(.*)PMOD Loopback: Test passed"
+
+Info: Result for step 0: Fail
+Info: Result for step 1: Pass
+Info: Result for step 2: Fail
+Info: Result for step 3: Pass
+
+Info: The test took 0 hours, 00 minutes, and 36 seconds. 0:00:36
+
+Info: IPI Test test started...
+
+Info: The test will take 0 hours, 01 minutes, and 01 seconds. 0:01:01
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-21 11:16:04
+
+Error: Failed to connect to Serial port in step 0 of test 9
+
+step finished 
+Exception in thread :
+Traceback (most recent call last):
+  File "threading.py", line 801, in __bootstrap_inner
+  File "com.py", line 156, in run
+UnboundLocalError: local variable 'expression' referenced before assignment
+
+
+Error: 'comm' type in step 0 never found a serial port to connect to in test 9
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-21 11:16:04
+
+Error: Stopped because step 0 failed in test 9
+
+Info: Result for step 0: Fail
+Info: The test took 0 hours, 00 minutes, and 00 seconds. 0:00:00
+
+Info: IPI Test test started...
+
+Info: The test will take 0 hours, 01 minutes, and 01 seconds. 0:01:01
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-21 11:16:25
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-21 11:16:25
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+attempting to launch hw_server
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:08:27
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+INFO: hw_server application started
+INFO: Use Ctrl-C to exit hw_server application
+
+
+
+****** Xilinx hw_server v2017.4
+
+  **** Build date : Dec 15 2017-21:08:27
+
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+
+INFO: hw_server application started
+
+INFO: Use Ctrl-C to exit hw_server application
+
+
+
+
+INFO: To connect to this hw_server instance use url: TCP:127.0.0.1:3121
+
+
+
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+fpga -state
+FPGA is not configured
+after 2000
+
+fpga -no-revision-check -file {C:/zcu111_bit/tests/ZCU111/../bitstream/zcu111_ipi.bit}
+initializing  0%    0MB   0.0MB/s  ??:?? ETA  1%    0MB   0.4MB/s  ??:?? ETA  4%    1MB   0.7MB/s  ??:?? ETA  7%    2MB   1.0MB/s  ??:?? ETA 10%    3MB   1.1MB/s  00:27 ETA 12%    4MB   1.1MB/s  00:24 ETA 15%    5MB   1.2MB/s  00:23 ETA 18%    5MB   1.3MB/s  00:21 ETA 19%    6MB   1.0MB/s  00:25 ETA 22%    7MB   1.1MB/s  00:23 ETA 25%    8MB   1.1MB/s  00:21 ETA 27%    9MB   1.2MB/s  00:20 ETA 30%   10MB   1.2MB/s  00:18 ETA 33%   10MB   1.2MB/s  00:17 ETA 36%   11MB   1.3MB/s  00:16 ETA 38%   12MB   1.3MB/s  00:15 ETA 41%   13MB   1.3MB/s  00:14 ETA 44%   14MB   1.3MB/s  00:13 ETA 46%   15MB   1.3MB/s  00:13 ETA 49%   16MB   1.3MB/s  00:12 ETA 52%   17MB   1.4MB/s  00:11 ETA 55%   18MB   1.4MB/s  00:10 ETA 57%   18MB   1.4MB/s  00:10 ETA 60%   19MB   1.4MB/s  00:09 ETA 63%   20MB   1.4MB/s  00:08 ETA 65%   21MB   1.4MB/s  00:08 ETA 68%   22MB   1.4MB/s  00:07 ETA 71%   23MB   1.4MB/s  00:06 ETA 74%   24MB   1.4MB/s  00:05 ETA 76%   25MB   1.4MB/s  00:05 ETA 79%   26MB   1.4MB/s  00:04 ETA 82%   27MB   1.5MB/s  00:03 ETA 84%   27MB   1.5MB/s  00:03 ETA 87%   28MB   1.5MB/s  00:02 ETA 90%   29MB   1.5MB/s  00:02 ETA 92%   30MB   1.5MB/s  00:01 ETA 95%   31MB   1.5MB/s  00:01 ETA 98%   32MB   1.5MB/s  00:00 ETA100%   32MB   1.5MB/s  00:21    
+
+after 2000
+
+fpga -state
+FPGA is configured
+after 2000
+
+fpga -ir-status
+IR STATUS: 117
+     Always One (Bits [0]): 1
+    Always Zero (Bits [1]): 0
+       ISC_Done (Bits [2]): 1
+    ISC_Enabled (Bits [3]): 0
+  Init Complete (Bits [4]): 1
+           DONE (Bits [5]): 1
+             (Bits [11:6]): 1
+after 2000
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/zcu111_bit/tests/ZCU111/../tcl/ipi_psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/zcu111_bit/tests/ZCU111/../elf/ipi_app.elf}
+Downloading Program -- C:/zcu111_bit/tests/ZCU111/elf/ipi_app.elf
+	section, .text: 0x00000000 - 0x0001f0cb
+	section, .init: 0x0001f100 - 0x0001f133
+	section, .fini: 0x0001f140 - 0x0001f173
+	section, .note.gnu.build-id: 0x0001f174 - 0x0001f197
+	section, .rodata: 0x0001f198 - 0x00023577
+	section, .rodata1: 0x00023578 - 0x0002357f
+	section, .sdata2: 0x00023580 - 0x0002357f
+	section, .sbss2: 0x00023580 - 0x0002357f
+	section, .data: 0x00023580 - 0x0002596f
+	section, .data1: 0x00025970 - 0x0002597f
+	section, .ctors: 0x00025980 - 0x0002597f
+	section, .dtors: 0x00025980 - 0x0002597f
+	section, .eh_frame: 0x00025980 - 0x00025983
+	section, .mmu_tbl0: 0x00026000 - 0x0002600f
+	section, .mmu_tbl1: 0x00027000 - 0x00028fff
+	section, .mmu_tbl2: 0x00029000 - 0x0002cfff
+	section, .preinit_array: 0x0002d000 - 0x0002cfff
+	section, .init_array: 0x0002d000 - 0x0002d007
+	section, .fini_array: 0x0002d008 - 0x0002d047
+	section, .sdata: 0x0002d048 - 0x0002d07f
+	section, .sbss: 0x0002d080 - 0x0002d07f
+	section, .tdata: 0x0002d080 - 0x0002d07f
+	section, .tbss: 0x0002d080 - 0x0002d07f
+	section, .bss: 0x0002d080 - 0x0003263f
+	section, .heap: 0x00032640 - 0x0003463f
+	section, .stack: 0x00034640 - 0x0003763f
+  0%    0MB   0.0MB/s  ??:?? ETA 44%    0MB   0.1MB/s  ??:?? ETA 97%    0MB   0.1MB/s  ??:?? ETA100%    0MB   0.1MB/s  00:01    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu111_bit/tests/ZCU111/elf/ipi_app.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 2000
+***********************************************************
+***********************************************************
+**   Zynq UltraScale+ MB ZCU111 Evaluation Kit IPI Test  **
+***********************************************************
+***********************************************************
+
+Choose Feature to Test:
+1: UART Test
+2: LED Test
+3: IIC Test
+5: TIMER/SCUGIC Test
+7: SWITCH Test
+8: PS DDR4 External Memory Test
+9: DDR4 External Memory Test
+A: BRAM Internal Memory Test
+B: BUTTON Test
+C: Clocking Test
+D: PMOD Test
+E: PS Pushbutton Test
+F: PS LED Test
+G: System Monitor Test
+H: ETHERNET Loopback Test
+0: Exit
+
+disconnect
+
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-21 11:17:10
+Writing: '33'
+3
+
+*************************************************************
+** ZCU111 EEPROM IIC EEPROM Test
+*************************************************************
+Calling iic_read
+
+Reading EEPROM data from EEPROM
+
+ReadBuffer[00] = 0xFF
+ReadBuffer[01] = 0xFF
+ReadBuffer[02] = 0xFF
+ReadBuffer[03] = 0xFF
+ReadBuffer[04] = 0xFF
+ReadBuffer[05] = 0xFF
+ReadBuffer[06] = 0xFF
+ReadBuffer[07] = 0xFF
+ReadBuffer[08] = 0xFF
+ReadBuffer[09] = 0xFF
+ReadBuffer[10] = 0xFF
+ReadBuffer[11] = 0xFF
+ReadBuffer[12] = 0xFF
+ReadBuffer[13] = 0xFF
+ReadBuffer[14] = 0xFF
+ReadBuffer[15] = 0xFF
+
+
+ZCU111 EEPROM IIC EEPROM Test PASSED
+
+*************************************************************
+** ZCU111 USER Si570 IIC EEPROM Test
+*************************************************************
+Calling iic_read
+
+Reading EEPROM data from USER Si570
+
+ReadBuffer[00] = 0xA0
+ReadBuffer[01] = 0x42
+ReadBuffer[02] = 0xF4
+ReadBuffer[03] = 0x00
+ReadBuffer[04] = 0x7B
+ReadBuffer[05] = 0x18
+ReadBuffer[06] = 0x07
+ReadBuffer[07] = 0xC2
+ReadBuffer[08] = 0xC0
+ReadBuffer[09] = 0x00
+ReadBuffer[10] = 0x00
+ReadBuffer[11] = 0x00
+ReadBuffer[12] = 0x00
+ReadBuffer[13] = 0xC2
+ReadBuffer[14] = 0xC0
+ReadBuffer[15] = 0x00
+
+
+ZCU111 USER Si570 IIC EEPROM Test PASSED
+
+*************************************************************
+** ZCU111 MGT Si570 IIC EEPROM Test
+*************************************************************
+Calling iic_read
+
+Reading EEPROM data from MGT Si570
+
+ReadBuffer[00] = 0x01
+ReadBuffer[01] = 0xC2
+ReadBuffer[02] = 0xBC
+ReadBuffer[03] = 0x4D
+ReadBuffer[04] = 0x87
+ReadBuffer[05] = 0x51
+ReadBuffer[06] = 0x07
+ReadBuffer[07] = 0xC2
+ReadBuffer[08] = 0xC0
+ReadBuffer[09] = 0x00
+ReadBuffer[10] = 0x00
+ReadBuffer[11] = 0x00
+ReadBuffer[12] = 0x00
+ReadBuffer[13] = 0xC2
+ReadBuffer[14] = 0xC0
+ReadBuffer[15] = 0x00
+
+
+ZCU111 MGT Si570 IIC EEPROM Test PASSED
+
+*************************************************************
+** ZCU111 Si5382 IIC EEPROM Test
+*************************************************************
+Calling iic_read
+
+Reading EEPROM data from Si5382
+
+ReadBuffer[00] = 0x00
+ReadBuffer[01] = 0x00
+ReadBuffer[02] = 0x00
+ReadBuffer[03] = 0x00
+ReadBuffer[04] = 0x00
+ReadBuffer[05] = 0x00
+ReadBuffer[06] = 0x00
+ReadBuffer[07] = 0x00
+ReadBuffer[08] = 0x00
+ReadBuffer[09] = 0x00
+ReadBuffer[10] = 0x00
+ReadBuffer[11] = 0x00
+ReadBuffer[12] = 0x00
+ReadBuffer[13] = 0x00
+ReadBuffer[14] = 0x00
+ReadBuffer[15] = 0x00
+
+
+ZCU111 Si5382 IIC EEPROM Test PASSED
+
+*************************************************************
+** ZCU111 FMCP HPSC IIC EEPROM Test
+*************************************************************
+Calling iic_read
+
+Reading EEPROM data from FMCP HPSC
+
+ReadBuffer[00] = 0x01
+ReadBuffer[01] = 0x00
+ReadBuffer[02] = 0x00
+ReadBuffer[03] = 0x01
+ReadBuffer[04] = 0x00
+ReadBuffer[05] = 0x0A
+ReadBuffer[06] = 0x00
+ReadBuffer[07] = 0xF4
+ReadBuffer[08] = 0x01
+ReadBuffer[09] = 0x09
+ReadBuffer[10] = 0x00
+ReadBuffer[11] = 0x40
+ReadBuffer[12] = 0xEC
+ReadBuffer[13] = 0x87
+ReadBuffer[14] = 0xC6
+ReadBuffer[15] = 0x53
+
+
+ZCU111 FMCP HPSC IIC EEPROM Test PASSED
+
+*************************************************************
+** ZCU111 DDR4 SPD IIC EEPROM Test
+*************************************************************
+Calling iic_read
+
+Reading EEPROM data from DDR4 SPD
+
+ReadBuffer[00] = 0x0F
+ReadBuffer[01] = 0x01
+ReadBuffer[02] = 0x02
+ReadBuffer[03] = 0x00
+ReadBuffer[04] = 0x00
+ReadBuffer[05] = 0x00
+ReadBuffer[06] = 0x00
+ReadBuffer[07] = 0x00
+ReadBuffer[08] = 0x00
+ReadBuffer[09] = 0x00
+ReadBuffer[10] = 0x00
+ReadBuffer[11] = 0x00
+ReadBuffer[12] = 0x00
+ReadBuffer[13] = 0x00
+ReadBuffer[14] = 0x00
+ReadBuffer[15] = 0x00
+
+
+ZCU111 DDR4 SPD IIC EEPROM Test PASSED
+
+*************************************************************
+** ZCU111 SFP IIC EEPROM Test
+*************************************************************
+Calling iic_read
+
+Reading EEPROM data from SFP
+
+ReadBuffer[00] = 0x4D
+ReadBuffer[01] = 0x6F
+ReadBuffer[02] = 0x6C
+ReadBuffer[03] = 0x65
+ReadBuffer[04] = 0x78
+ReadBuffer[05] = 0x20
+ReadBuffer[06] = 0x49
+ReadBuffer[07] = 0x6E
+ReadBuffer[08] = 0x63
+ReadBuffer[09] = 0x2E
+ReadBuffer[10] = 0x20
+ReadBuffer[11] = 0x20
+ReadBuffer[12] = 0x20
+ReadBuffer[13] = 0x20
+ReadBuffer[14] = 0x20
+ReadBuffer[15] = 0x20
+
+
+ZCU111 SFP IIC EEPROM Test PASSED
+
+*************************************************************
+** ZCU111 SFP IIC EEPROM Test
+*************************************************************
+Calling iic_read
+
+Reading EEPROM data from SFP
+
+ReadBuffer[00] = 0x4D
+ReadBuffer[01] = 0x6F
+ReadBuffer[02] = 0x6C
+ReadBuffer[03] = 0x65
+ReadBuffer[04] = 0x78
+ReadBuffer[05] = 0x20
+ReadBuffer[06] = 0x49
+ReadBuffer[07] = 0x6E
+ReadBuffer[08] = 0x63
+ReadBuffer[09] = 0x2E
+ReadBuffer[10] = 0x20
+ReadBuffer[11] = 0x20
+ReadBuffer[12] = 0x20
+ReadBuffer[13] = 0x20
+ReadBuffer[14] = 0x20
+ReadBuffer[15] = 0x20
+
+
+ZCU111 SFP IIC EEPROM Test PASSED
+
+*************************************************************
+** ZCU111 SFP IIC EEPROM Test
+*************************************************************
+Calling iic_read
+
+Reading EEPROM data from SFP
+
+ReadBuffer[00] = 0x4D
+ReadBuffer[01] = 0x6F
+ReadBuffer[02] = 0x6C
+ReadBuffer[03] = 0x65
+ReadBuffer[04] = 0x78
+ReadBuffer[05] = 0x20
+ReadBuffer[06] = 0x49
+ReadBuffer[07] = 0x6E
+ReadBuffer[08] = 0x63
+ReadBuffer[09] = 0x2E
+ReadBuffer[10] = 0x20
+ReadBuffer[11] = 0x20
+ReadBuffer[12] = 0x20
+ReadBuffer[13] = 0x20
+ReadBuffer[14] = 0x20
+ReadBuffer[15] = 0x20
+
+
+ZCU111 SFP IIC EEPROM Test PASSED
+
+*************************************************************
+** ZCU111 SFP IIC EEPROM Test
+*************************************************************
+Calling iic_read
+
+Reading EEPROM data from SFP
+
+ReadBuffer[00] = 0x4D
+ReadBuffer[01] = 0x6F
+ReadBuffer[02] = 0x6C
+ReadBuffer[03] = 0x65
+ReadBuffer[04] = 0x78
+ReadBuffer[05] = 0x20
+ReadBuffer[06] = 0x49
+ReadBuffer[07] = 0x6E
+ReadBuffer[08] = 0x63
+ReadBuffer[09] = 0x2E
+ReadBuffer[10] = 0x20
+ReadBuffer[11] = 0x20
+ReadBuffer[12] = 0x20
+ReadBuffer[13] = 0x20
+ReadBuffer[14] = 0x20
+ReadBuffer[15] = 0x20
+
+
+ZCU111 SFP IIC EEPROM Test PASSED
+All Tests Complete: IIC PASSED
+Press any key to return to main menu
+Choose Feature to Test:
+1: UART Test
+2: LED Test
+3: IIC Test
+5: TIMER/SCUGIC Test
+7: SWITCH Test
+8: PS DDR4 External Memory Test
+9: DDR4 External Memory Test
+A: BRAM Internal Memory Test
+B: BUTTON Test
+C: Clocking Test
+D: PMOD Test
+E: PS Pushbutton Test
+F: PS LED Test
+G: System Monitor Test
+H: ETHERNET Loopback Test
+0: Exit
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-21 11:17:15
+Writing: 'AA'
+A
+
+********************************************************
+********************************************************
+**                ZCU111 - PL BRAM TEST               **
+********************************************************
+********************************************************
+
+
+PL BRAM Memory Test
+Testing address range 0xB0000000-0xB01FFFFF.
+Iteration 1 of 1
+Pass A) ICache:  On, DCache:  On
+	TEST0: Write all memory to 0x00000000 and check
+		Writing...
+		Reading...
+	Test Complete Status = SUCCESS
+	TEST1: Write all memory to 0xFFFFFFFF and check
+		Writing...
+		Reading...
+	Test Complete Status = SUCCESS 
+
+	TEST2: Testing for stuck together bank/row/col bits
+		Clearing memory to zeros...
+		Writing and Reading...
+	Test Complete Status = SUCCESS 
+
+	TEST3: Testing for maximum ba/row/col noise
+		This test performs 16 word writes followed by 16 word reads
+		Each 64 bytes inverts the ba/row/col address
+		Initializing Memory to 0xA5A5A5A5...
+		Writing and Reading...
+	Test Complete Status = SUCCESS
+	TEST4: Testing for Inverse Data at Address
+		Writing...
+		Reading...
+	Test Complete Status = SUCCESS 
+
+		Number of errors in this pass = 0
+
+Pass B) ICache: Off, DCache: Off
+	TEST0: Write all memory to 0x00000000 and check
+		Writing...
+		Reading...
+	Test Complete Status = SUCCESS
+	TEST1: Write all memory to 0xFFFFFFFF and check
+		Writing...
+		Reading...
+	Test Complete Status = SUCCESS 
+
+	TEST2: Testing for stuck together bank/row/col bits
+		Clearing memory to zeros...
+		Writing and Reading...
+	Test Complete Status = SUCCESS 
+
+	TEST3: Testing for maximum ba/row/col noise
+		This test performs 16 word writes followed by 16 word reads
+		Each 64 bytes inverts the ba/row/col address
+		Initializing Memory to 0xA5A5A5A5...
+		Writing and Reading...
+	Test Complete Status = SUCCESS
+	TEST4: Testing for Inverse Data at Address
+		Writing...
+		Reading...
+	Test Complete Status = SUCCESS 
+
+		Number of errors in this pass = 0
+
+PL BRAM test iteration #1 has PASSED!
+Total number of errors for all iterations = 0
+### PL BRAM Memory Test finished successfully ###
+Press any key to return to main menu
+Choose Feature to Test:
+1: UART Test
+2: LED Test
+3: IIC Test
+5: TIMER/SCUGIC Test
+7: SWITCH Test
+8: PS DDR4 External Memory Test
+9: DDR4 External Memory Test
+A: BRAM Internal Memory Test
+B: BUTTON Test
+C: Clocking Test
+D: PMOD Test
+E: PS Pushbutton Test
+F: PS LED Test
+G: System Monitor Test
+H: ETHERNET Loopback Test
+0: Exit
+
+Entering step: 4
+
+
+Info: This step started at: 2018-02-21 11:17:20
+Writing: 'DD'
+D
+
+********************************************************
+********************************************************
+**     ZCU111 - PMOD Loopback Write and Read Tests    **
+********************************************************
+********************************************************
+
+Testing PMOD 
+PMOD: Writing and Reading all 0's            - PASSED
+PMOD: Writing and Reading all 1's            - PASSED
+PMOD: Writing and Reading 0x55555555 pattern - PASSED
+PMOD: Writing and Reading 0xAAAAAAAA pattern - PASSED
+
+Completed PMOD Loopback Write and Read Tests
+
+PMOD Test passed
+
+Press any key to return to main menu
+Choose Feature to Test:
+1: UART Test
+2: LED Test
+3: IIC Test
+5: TIMER/SCUGIC Test
+7: SWITCH Test
+8: PS DDR4 External Memory Test
+9: DDR4 External Memory Test
+A: BRAM Internal Memory Test
+B: BUTTON Test
+C: Clocking Test
+D: PMOD Test
+E: PS Pushbutton Test
+F: PS LED Test
+G: System Monitor Test
+H: ETHERNET Loopback Test
+0: Exit
+
+Entering step: 5
+
+
+Info: This step started at: 2018-02-21 11:17:25
+Writing: 'GG'
+G
+
+********************************************************
+********************************************************
+**            ZCU111 - System Monitor Test            **
+********************************************************
+********************************************************
+Starting System Monitor Example
+
+The Current Temperature is 35.611 Centigrades.
+The Maximum Temperature is 35.611 Centigrades. 
+The Minimum Temperature is 35.397 Centigrades. 
+
+The Current VCCINT is 0.848 Volts. 
+The Maximum VCCINT is 0.848 Volts. 
+The Minimum VCCINT is 0.848 Volts. 
+
+The Current VCCAUX is 1.792 Volts. 
+The Maximum VCCAUX is 1.792 Volts. 
+The Minimum VCCAUX is 1.791 Volts. 
+
+The Current VPVN   is 0.000 Volts.
+The Current VREFP  is 1.249 Volts.
+The Current VREFN  is 0.000 Volts.
+
+System Monitor Example passed!
+
+Press any key to return to main menu
+Choose Feature to Test:
+1: UART Test
+2: LED Test
+3: IIC Test
+5: TIMER/SCUGIC Test
+7: SWITCH Test
+8: PS DDR4 External Memory Test
+9: DDR4 External Memory Test
+A: BRAM Internal Memory Test
+B: BUTTON Test
+C: Clocking Test
+D: PMOD Test
+E: PS Pushbutton Test
+F: PS LED Test
+G: System Monitor Test
+H: ETHERNET Loopback Test
+0: Exit
+
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+Info: Result for step 4: Pass
+Info: Result for step 5: Pass
+
+Info: The test took 0 hours, 01 minutes, and 06 seconds. 0:01:06

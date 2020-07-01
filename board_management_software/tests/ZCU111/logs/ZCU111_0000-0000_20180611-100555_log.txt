@@ -1,0 +1,216 @@
+Board: ZCU111
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: Run All button pressed, running through all of the checked tests 1 time.
+
+Info: The runall will take 0 hours, 50 minutes, and 13 seconds. 0:50:13
+
+Info: SYS_CTLR RESTORE test started...
+
+Info: The test will take 0 hours, 02 minutes, and 38 seconds. 0:02:38
+
+Entering step: 0
+
+
+Info: This step started at: 2018-06-11 10:06:19
+
+User has confirmed: "Set mode switch SW6 to "0" (Up,Up,Up,Up)
+Remove any jumpers on PMOD1, J49
+Attach jumpers:
+J25 Pin 1 to Pin 2 (MSP430_RST_B)
+J25 Pin 3 to Pin 4 (MSP430_TEST)
+Note: Pins 1 & 2 are closest to the edge of the board."
+
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-06-11 10:09:09
+
+C:\zcu111_bit\tests\ZCU111>cd bat\ 
+
+C:\zcu111_bit\tests\ZCU111\bat>ezoutlet.exe reset 192.168.0.12 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-06-11 10:09:20
+
+****** Vivado v2018.1 (64-bit)
+  **** SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+  **** IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Mon Jun 11 10:09:38 2018...
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-06-11 10:09:39
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+attempting to launch hw_server
+
+****** Xilinx hw_server v2018.1
+  **** Build date : Apr  4 2018-19:32:53
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+INFO: hw_server application started
+INFO: Use Ctrl-C to exit hw_server application
+
+
+
+****** Xilinx hw_server v2018.1
+
+  **** Build date : Apr  4 2018-19:32:53
+
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+
+INFO: hw_server application started
+
+INFO: Use Ctrl-C to exit hw_server application
+
+
+
+
+INFO: To connect to this hw_server instance use url: TCP:127.0.0.1:3121
+
+
+
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+initializing  0%    0MB   0.0MB/s  ??:?? ETA  3%    1MB   2.1MB/s  ??:?? ETA  5%    1MB   1.9MB/s  ??:?? ETA  8%    2MB   1.8MB/s  ??:?? ETA 11%    3MB   1.8MB/s  ??:?? ETA 13%    4MB   1.8MB/s  ??:?? ETA 16%    5MB   1.8MB/s  00:15 ETA 18%    6MB   1.7MB/s  00:15 ETA 21%    7MB   1.7MB/s  00:14 ETA 23%    7MB   1.7MB/s  00:14 ETA 26%    8MB   1.7MB/s  00:14 ETA 28%    9MB   1.7MB/s  00:13 ETA 31%   10MB   1.7MB/s  00:13 ETA 34%   11MB   1.7MB/s  00:12 ETA 36%   12MB   1.7MB/s  00:12 ETA 39%   12MB   1.7MB/s  00:11 ETA 41%   13MB   1.7MB/s  00:11 ETA 44%   14MB   1.7MB/s  00:10 ETA 47%   15MB   1.7MB/s  00:10 ETA 49%   16MB   1.7MB/s  00:09 ETA 52%   17MB   1.7MB/s  00:09 ETA 54%   17MB   1.7MB/s  00:08 ETA 57%   18MB   1.7MB/s  00:08 ETA 59%   19MB   1.7MB/s  00:07 ETA 62%   20MB   1.7MB/s  00:07 ETA 65%   21MB   1.7MB/s  00:06 ETA 67%   22MB   1.7MB/s  00:06 ETA 70%   23MB   1.7MB/s  00:05 ETA 72%   23MB   1.7MB/s  00:05 ETA 75%   24MB   1.7MB/s  00:04 ETA 77%   25MB   1.7MB/s  00:04 ETA 80%   26MB   1.7MB/s  00:03 ETA 82%   27MB   1.7MB/s  00:03 ETA 85%   28MB   1.7MB/s  00:02 ETA 88%   28MB   1.7MB/s  00:02 ETA 90%   29MB   1.7MB/s  00:01 ETA 93%   30MB   1.7MB/s  00:01 ETA 95%   31MB   1.7MB/s  00:00 ETA 98%   32MB   1.7MB/s  00:00 ETA100%   32MB   1.7MB/s  00:19    
+Downloading Program -- C:/zcu111_bit/tests/ZCU111/elf/boot_strap_loader.elf
+	section, .text: 0x00000000 - 0x000146ab
+	section, .init: 0x000146c0 - 0x000146f3
+	section, .fini: 0x00014700 - 0x00014733
+	section, .note.gnu.build-id: 0x00014734 - 0x00014757
+	section, .rodata: 0x00014758 - 0x0001504f
+	section, .rodata1: 0x00015050 - 0x0001507f
+	section, .sdata2: 0x00015080 - 0x0001507f
+	section, .sbss2: 0x00015080 - 0x0001507f
+	section, .data: 0x00015080 - 0x0001625f
+	section, .data1: 0x00016260 - 0x0001627f
+	section, .ctors: 0x00016280 - 0x0001627f
+	section, .dtors: 0x00016280 - 0x0001627f
+	section, .eh_frame: 0x00016280 - 0x00016283
+	section, .mmu_tbl0: 0x00017000 - 0x0001700f
+	section, .mmu_tbl1: 0x00018000 - 0x00019fff
+	section, .mmu_tbl2: 0x0001a000 - 0x0001dfff
+	section, .preinit_array: 0x0001e000 - 0x0001dfff
+	section, .init_array: 0x0001e000 - 0x0001e007
+	section, .fini_array: 0x0001e008 - 0x0001e047
+	section, .sdata: 0x0001e048 - 0x0001e07f
+	section, .sbss: 0x0001e080 - 0x0001e07f
+	section, .tdata: 0x0001e080 - 0x0001e07f
+	section, .tbss: 0x0001e080 - 0x0001e07f
+	section, .bss: 0x0001e080 - 0x0011e2bf
+	section, .heap: 0x0011e2c0 - 0x001262bf
+	section, .stack: 0x001262c0 - 0x0012f2bf
+  0%    0MB   0.0MB/s  ??:?? ETA 79%    0MB   0.2MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu111_bit/tests/ZCU111/elf/boot_strap_loader.elf
+step finished 
+
+Entering step: 4
+
+
+Info: This step started at: 2018-06-11 10:10:20
+Error: Invalid input for COM port
+
+Error: Found regular expression in step 4 of test 1 - "(.*)Error(.*)"
+
+Error: Could not find regular expression in step 4 of test 1 - "(.*)File\s+sent\s+successfully"
+
+Entering step: 5
+
+
+Info: This step started at: 2018-06-11 10:10:21
+
+Error: Stopped because step 4 failed in test 1
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+Info: Result for step 4: Fail
+Info: The test took 0 hours, 01 minutes, and 11 seconds. 0:01:11
+
+Info: ZCU111 IDCODE Check test started...
+
+Info: The test will take 0 hours, 00 minutes, and 56 seconds. 0:00:56
+
+Entering step: 0
+
+
+Info: This step started at: 2018-06-11 10:10:21
+
+User has confirmed: "Set mode switch SW6 to "0000" (Up,Up,Up,Up)"
+
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-06-11 10:11:28
+
+****** Vivado v2018.1 (64-bit)
+  **** SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+  **** IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Mon Jun 11 10:11:46 2018...
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-06-11 10:11:46
+
+****** Vivado v2018.1 (64-bit)
+  **** SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+  **** IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu111_rev_b_idcode_check.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.1
+  **** Build date : Apr  4 2018-19:32:53
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:14 . Memory (MB): peak = 323.918 ; gain = 2.691
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280976b004A
+
+Stopping all tests...
+
+Error: Could not find regular expression in step 2 of test 2 - "(.*)[^"]IDCODE check PASSED"
+
+Error: Step 2 timed out in test number 2
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Fail
+Info: The test took 0 hours, 00 minutes, and 50 seconds. 0:00:50

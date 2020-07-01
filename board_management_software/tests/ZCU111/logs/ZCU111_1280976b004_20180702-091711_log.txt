@@ -1,0 +1,92 @@
+Board: ZCU111
+Serial Number: 1280976b004
+Mac Address: 01:02:03:04:05:06
+
+
+Info: Run All button pressed, running through all of the checked tests 1 time.
+
+Info: The runall will take 0 hours, 51 minutes, and 59 seconds. 0:51:59
+
+Info: SYS_CTLR RESTORE test started...
+
+Info: The test will take 0 hours, 03 minutes, and 00 seconds. 0:03:00
+
+Entering step: 0
+
+
+Info: This step started at: 2018-07-07 12:58:13
+
+User has confirmed: "Set mode switch SW6 to "0" (Up,Up,Up,Up)
+Remove any jumpers on PMOD1, J49
+Attach jumpers:
+J25 Pin 1 to Pin 2 (MSP430_RST_B)
+J25 Pin 3 to Pin 4 (MSP430_TEST)
+Note: Pins 1 & 2 are closest to the edge of the board."
+
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-07-07 12:58:23
+
+Entering step: 2
+
+
+Info: This step started at: 2018-07-07 12:58:23
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+couldn't read file "tcl\five_second_delay.tcl": no such file or directory
+INFO: [Common 17-206] Exiting Vivado at Sat Jul  7 12:58:34 2018...
+
+Entering step: 3
+
+
+Info: This step started at: 2018-07-07 12:58:34
+step finished 
+
+Entering step: 4
+
+
+Info: This step started at: 2018-07-07 12:58:35
+
+Error: Could not find regular expression in step 4 of test 0 - "(.*)File\s+sent\s+successfully"
+
+Entering step: 5
+
+
+Info: This step started at: 2018-07-07 12:58:35
+
+User has confirmed: "Remove the J25 jumpers.
+Replace PMOD1 jumpers"
+
+step finished 
+
+Entering step: 6
+
+
+Info: This step started at: 2018-07-07 12:58:40
+
+Entering step: 7
+
+
+Info: This step started at: 2018-07-07 12:58:40
+
+Stopping all tests...
+
+Error: Step 7 timed out in test number 0
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+Info: Result for step 4: Fail
+Info: Result for step 5: Pass
+Info: Result for step 6: Pass
+Info: Result for step 7: Pass
+Info: The test took 0 hours, 00 minutes, and 21 seconds. 0:00:21

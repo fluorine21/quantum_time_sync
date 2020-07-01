@@ -1,0 +1,352 @@
+Board: ZCU111
+Serial Number: 1280976b088
+Mac Address: 01:02:03:04:05:06
+
+
+Info: Run All button pressed, running through all of the checked tests 1 time.
+
+Info: The runall will take 0 hours, 48 minutes, and 56 seconds. 0:48:56
+
+Info: SYS_CTLR RESTORE test started...
+
+Info: The test will take 0 hours, 03 minutes, and 00 seconds. 0:03:00
+
+Entering step: 0
+
+
+Info: This step started at: 2018-06-26 19:09:18
+
+User has confirmed: "Set mode switch SW6 to "0" (Up,Up,Up,Up)
+Remove any jumpers on PMOD1, J49
+Attach jumpers:
+J25 Pin 1 to Pin 2 (MSP430_RST_B)
+J25 Pin 3 to Pin 4 (MSP430_TEST)
+Note: Pins 1 & 2 are closest to the edge of the board."
+
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-06-26 19:09:35
+
+C:\zcu111_bit\tests\ZCU111>cd bat\ 
+
+C:\zcu111_bit\tests\ZCU111\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-06-26 19:09:42
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Tue Jun 26 19:10:08 2018...
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-06-26 19:10:08
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+step finished 
+
+Entering step: 4
+
+
+Info: This step started at: 2018-06-26 19:10:21
+Error: Invalid input for COM port
+
+Error: Found regular expression in step 4 of test 0 - "(.*)Error(.*)"
+
+Error: Could not find regular expression in step 4 of test 0 - "(.*)File\s+sent\s+successfully"
+
+Entering step: 5
+
+
+Info: This step started at: 2018-06-26 19:10:22
+
+Error: Stopped because step 4 failed in test 0
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+Info: Result for step 4: Fail
+Info: The test took 0 hours, 00 minutes, and 47 seconds. 0:00:47
+
+Info: ZCU111 IDCODE Check test started...
+
+Info: The test will take 0 hours, 00 minutes, and 55 seconds. 0:00:55
+
+Entering step: 0
+
+
+Info: This step started at: 2018-06-26 19:10:22
+
+User has confirmed: "Set mode switch SW6 to "0000" (Up,Up,Up,Up)"
+
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-06-26 19:13:10
+
+Stopping all tests...
+
+Error: Step 1 timed out in test number 1
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Fail
+Info: The test took 0 hours, 00 minutes, and 13 seconds. 0:00:13
+
+Info: SYS_CTLR RESTORE test started...
+
+Info: The test will take 0 hours, 03 minutes, and 00 seconds. 0:03:00
+
+Entering step: 0
+
+
+Info: This step started at: 2018-06-26 19:16:02
+
+User has confirmed: "Set mode switch SW6 to "0" (Up,Up,Up,Up)
+Remove any jumpers on PMOD1, J49
+Attach jumpers:
+J25 Pin 1 to Pin 2 (MSP430_RST_B)
+J25 Pin 3 to Pin 4 (MSP430_TEST)
+Note: Pins 1 & 2 are closest to the edge of the board."
+
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-06-26 19:16:13
+
+C:\zcu111_bit\tests\ZCU111>cd bat\ 
+
+C:\zcu111_bit\tests\ZCU111\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-06-26 19:16:18
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Tue Jun 26 19:16:42 2018...
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-06-26 19:16:42
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+step finished 
+
+Entering step: 4
+
+
+Info: This step started at: 2018-06-26 19:16:51
+Error: Invalid input for COM port
+
+Error: Found regular expression in step 4 of test 0 - "(.*)Error(.*)"
+
+Error: Could not find regular expression in step 4 of test 0 - "(.*)File\s+sent\s+successfully"
+
+Entering step: 5
+
+
+Info: This step started at: 2018-06-26 19:16:52
+
+Error: Stopped because step 4 failed in test 0
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+Info: Result for step 4: Fail
+Info: The test took 0 hours, 00 minutes, and 38 seconds. 0:00:38
+
+Info: SYS_CTLR RESTORE test started...
+
+Info: The test will take 0 hours, 03 minutes, and 00 seconds. 0:03:00
+
+Entering step: 0
+
+
+Info: This step started at: 2018-06-26 19:18:28
+
+User has confirmed: "Set mode switch SW6 to "0" (Up,Up,Up,Up)
+Remove any jumpers on PMOD1, J49
+Attach jumpers:
+J25 Pin 1 to Pin 2 (MSP430_RST_B)
+J25 Pin 3 to Pin 4 (MSP430_TEST)
+Note: Pins 1 & 2 are closest to the edge of the board."
+
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-06-26 19:18:30
+
+C:\zcu111_bit\tests\ZCU111>cd bat\ 
+
+C:\zcu111_bit\tests\ZCU111\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-06-26 19:18:34
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Tue Jun 26 19:18:57 2018...
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-06-26 19:18:58
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+step finished 
+
+Entering step: 4
+
+
+Info: This step started at: 2018-06-26 19:19:06
+COM Port B = COM72
+
+Error: Step 4 timed out in test number 0
+
+Entering step: 5
+
+
+Info: This step started at: 2018-06-26 19:23:44
+
+User has confirmed: "Remove the J25 jumpers.
+Replace PMOD1 jumpers"
+
+step finished 
+
+Entering step: 6
+
+
+Info: This step started at: 2018-06-26 19:23:57
+
+C:\zcu111_bit\tests\ZCU111>cd bat\ 
+
+C:\zcu111_bit\tests\ZCU111\bat>ezoutlet.exe reset 192.168.0.12 
+
+Stopping all tests...
+
+Error: Step 6 timed out in test number 0
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+Info: Result for step 4: Fail
+Info: Result for step 5: Pass
+Info: Result for step 6: Pass
+Info: The test took 0 hours, 05 minutes, and 24 seconds. 0:05:24
+
+Info: SYS_CTLR RESTORE test started...
+
+Info: The test will take 0 hours, 03 minutes, and 00 seconds. 0:03:00
+
+Entering step: 0
+
+
+Info: This step started at: 2018-06-26 19:24:13
+
+User has confirmed: "Set mode switch SW6 to "0" (Up,Up,Up,Up)
+Remove any jumpers on PMOD1, J49
+Attach jumpers:
+J25 Pin 1 to Pin 2 (MSP430_RST_B)
+J25 Pin 3 to Pin 4 (MSP430_TEST)
+Note: Pins 1 & 2 are closest to the edge of the board."
+
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-06-26 19:24:15
+
+C:\zcu111_bit\tests\ZCU111>cd bat\ 
+
+C:\zcu111_bit\tests\ZCU111\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-06-26 19:24:19
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Tue Jun 26 19:24:41 2018...
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-06-26 19:24:41
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+step finished 
+
+Entering step: 4
+
+
+Info: This step started at: 2018-06-26 19:24:50
+COM Port B = COM72

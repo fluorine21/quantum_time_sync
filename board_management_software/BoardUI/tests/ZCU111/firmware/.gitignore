@@ -1,0 +1,4 @@
+# exclude everything except for certain files
+/*
+!/.gitignore
+!/firmware

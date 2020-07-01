@@ -1,0 +1,772 @@
+Board: ZCU104
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: PING test started...
+
+Info: The test will take 0 hours, 00 minutes, and 59 seconds. 0:00:59
+
+Entering step: 0
+
+
+Info: This step started at: 2018-01-25 17:17:30
+
+Entering step: 1
+
+
+Info: This step started at: 2018-01-25 17:17:30
+
+C:\zcu104_bit\tests\ZCU104>cd bat\ 
+
+C:\zcu104_bit\tests\ZCU104\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-01-25 17:17:34
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+fpga -state
+FPGA is not configured
+after 2000
+
+fpga -no-revision-check -file {C:/zcu104_bit/tests/ZCU104/../bitstream/zcu104_ipi.bit}
+initializing  0%    0MB   0.0MB/s  ??:?? ETA  5%    1MB   2.2MB/s  ??:?? ETA 10%    1MB   1.9MB/s  ??:?? ETA 15%    2MB   1.8MB/s  ??:?? ETA 19%    3MB   1.8MB/s  ??:?? ETA 24%    4MB   1.8MB/s  ??:?? ETA 28%    5MB   1.8MB/s  00:07 ETA 33%    6MB   1.7MB/s  00:07 ETA 38%    7MB   1.7MB/s  00:06 ETA 42%    7MB   1.7MB/s  00:06 ETA 47%    8MB   1.7MB/s  00:05 ETA 51%    9MB   1.7MB/s  00:05 ETA 56%   10MB   1.7MB/s  00:04 ETA 60%   11MB   1.7MB/s  00:04 ETA 65%   12MB   1.7MB/s  00:03 ETA 69%   12MB   1.7MB/s  00:03 ETA 74%   13MB   1.7MB/s  00:02 ETA 79%   14MB   1.7MB/s  00:02 ETA 83%   15MB   1.7MB/s  00:01 ETA 88%   16MB   1.7MB/s  00:01 ETA 93%   17MB   1.7MB/s  00:00 ETA 97%   17MB   1.7MB/s  00:00 ETA100%   18MB   1.7MB/s  00:10    
+
+after 2000
+
+fpga -state
+FPGA is configured
+after 2000
+
+fpga -ir-status
+IR STATUS: 117
+     Always One (Bits [0]): 1
+    Always Zero (Bits [1]): 0
+       ISC_Done (Bits [2]): 1
+    ISC_Enabled (Bits [3]): 0
+  Init Complete (Bits [4]): 1
+           DONE (Bits [5]): 1
+             (Bits [11:6]): 1
+after 2000
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/zcu104_bit/tests/ZCU104/../tcl/ipi_psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/zcu104_bit/tests/ZCU104/../elf/lwip_echo_server.elf}
+Downloading Program -- C:/zcu104_bit/tests/ZCU104/elf/lwip_echo_server.elf
+	section, .text: 0x00000000 - 0x00015e77
+	section, .init: 0x00015e80 - 0x00015eb3
+	section, .fini: 0x00015ec0 - 0x00015ef3
+	section, .note.gnu.build-id: 0x00015ef4 - 0x00015f17
+	section, .rodata: 0x00015f18 - 0x000169ef
+	section, .rodata1: 0x000169f0 - 0x000169ff
+	section, .sdata2: 0x00016a00 - 0x000169ff
+	section, .sbss2: 0x00016a00 - 0x000169ff
+	section, .data: 0x00016a00 - 0x00018837
+	section, .data1: 0x00018838 - 0x0001883f
+	section, .ctors: 0x00018840 - 0x0001883f
+	section, .dtors: 0x00018840 - 0x0001883f
+	section, .eh_frame: 0x00018840 - 0x00018843
+	section, .mmu_tbl0: 0x00019000 - 0x0001900f
+	section, .mmu_tbl1: 0x0001a000 - 0x0001bfff
+	section, .mmu_tbl2: 0x0001c000 - 0x0001ffff
+	section, .preinit_array: 0x00020000 - 0x0001ffff
+	section, .init_array: 0x00020000 - 0x00020007
+	section, .fini_array: 0x00020008 - 0x00020047
+	section, .sdata: 0x00020048 - 0x0002007f
+	section, .sbss: 0x00020080 - 0x0002007f
+	section, .tdata: 0x00020080 - 0x0002007f
+	section, .tbss: 0x00020080 - 0x0002007f
+	section, .bss: 0x00200000 - 0x0061013f
+	section, .heap: 0x00610140 - 0x0061a13f
+	section, .stack: 0x0061a140 - 0x0062513f
+  0%    0MB   0.0MB/s  ??:?? ETA 87%    0MB   0.2MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu104_bit/tests/ZCU104/elf/lwip_echo_server.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 2000
+
+
+-----lwIP TCP echo server ------
+TCP packets sent to port 6001 will be echoed back
+Start PHY autonegotiation 
+Waiting for PHY to complete autonegotiation.
+
+disconnect
+
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-01-25 17:18:04
+autonegotiation complete 
+link speed for phy address 12: 1000
+DHCP Timeout
+Configuring default IP of 192.168.1.10
+Board IP: 192.168.1.10
+Netmask : 255.255.255.0
+Gateway : 192.168.1.1
+TCP echo server started @ port 7
+
+Entering step: 4
+
+
+Info: This step started at: 2018-01-25 17:18:20
+
+Pinging 192.168.1.10 with 32 bytes of data:
+Reply from 192.168.1.10: bytes=32 time=1ms TTL=255
+Reply from 192.168.1.10: bytes=32 time<1ms TTL=255
+Reply from 192.168.1.10: bytes=32 time<1ms TTL=255
+Reply from 192.168.1.10: bytes=32 time<1ms TTL=255
+
+Ping statistics for 192.168.1.10:
+
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+Info: Result for step 4: Pass
+
+Info: The test took 0 hours, 00 minutes, and 54 seconds. 0:00:54
+
+Info: MIG PS DDR4 test started...
+
+Info: The test will take 0 hours, 00 minutes, and 35 seconds. 0:00:35
+
+Entering step: 0
+
+
+Info: This step started at: 2018-01-25 17:18:48
+
+Entering step: 1
+
+
+Info: This step started at: 2018-01-25 17:18:48
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -system
+
+after 1000
+
+source {C:/zcu104_bit/tests/ZCU104/../tcl/psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+after 1000
+
+dow {C:/zcu104_bit/tests/ZCU104/../elf/zynqmp_dram_test.elf}
+
+Failed to download C:/zcu104_bit/tests/ZCU104/elf/zynqmp_dram_test.elf
+step finished 
+
+Error: Could not find regular expression in step 1 of test 4 - "(.*)Successfully\s+downloaded"
+
+Entering step: 2
+
+
+Info: This step started at: 2018-01-25 17:18:59
+Writing: '2\n'
+
+step finished 
+the expression:(.*)error_counter\s+=\s+0x0000000000000000
+
+Error: Could not find regular expression in step 0 of test 4 - "(.*)memtest_all:\s+PASSED"
+
+Error: Could not find regular expression in step 0 of test 4 - "(.*)error_counter\s+=\s+0x0000000000000000"
+
+Info: Result for step 0: Fail
+Info: Result for step 1: Fail
+Info: Result for step 2: Fail
+
+Info: The test took 0 hours, 00 minutes, and 32 seconds. 0:00:32
+
+Info: MIG PS DDR4 test started...
+
+Info: The test will take 0 hours, 00 minutes, and 35 seconds. 0:00:35
+
+Entering step: 0
+
+
+Info: This step started at: 2018-01-25 17:19:47
+
+Entering step: 1
+
+
+Info: This step started at: 2018-01-25 17:19:47
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -system
+
+after 1000
+
+source {C:/zcu104_bit/tests/ZCU104/../tcl/psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+after 1000
+
+dow {C:/zcu104_bit/tests/ZCU104/../elf/zynqmp_dram_test.elf}
+
+Failed to download C:/zcu104_bit/tests/ZCU104/elf/zynqmp_dram_test.elf
+step finished 
+
+Error: Could not find regular expression in step 1 of test 4 - "(.*)Successfully\s+downloaded"
+
+Entering step: 2
+
+
+Info: This step started at: 2018-01-25 17:19:58
+Writing: '2\n'
+
+step finished 
+the expression:(.*)error_counter\s+=\s+0x0000000000000000
+
+Error: Could not find regular expression in step 0 of test 4 - "(.*)memtest_all:\s+PASSED"
+
+Error: Could not find regular expression in step 0 of test 4 - "(.*)error_counter\s+=\s+0x0000000000000000"
+
+Info: Result for step 0: Fail
+Info: Result for step 1: Fail
+Info: Result for step 2: Fail
+
+Info: The test took 0 hours, 00 minutes, and 32 seconds. 0:00:32
+
+Info: MIG PS DDR4 test started...
+
+Info: The test will take 0 hours, 00 minutes, and 35 seconds. 0:00:35
+
+Entering step: 0
+
+
+Info: This step started at: 2018-01-25 17:21:42
+
+Entering step: 1
+
+
+Info: This step started at: 2018-01-25 17:21:42
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -system
+
+after 1000
+
+source {C:/zcu104_bit/tests/ZCU104/../tcl/ipi_psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+after 1000
+
+dow {C:/zcu104_bit/tests/ZCU104/../elf/zynq_mp_dram_test.elf}
+Downloading Program -- C:/zcu104_bit/tests/ZCU104/elf/zynq_mp_dram_test.elf
+	section, .text: 0xfffc0000 - 0xfffdc4cf
+	section, .boot: 0xffff0000 - 0xffff0b87
+	section, .init: 0xffff0bc0 - 0xffff0bf3
+	section, .fini: 0xffff0c00 - 0xffff0c33
+	section, .note.gnu.build-id: 0xfffdc4d0 - 0xfffdc4f3
+	section, .rodata: 0xfffdc4f8 - 0xfffdee1f
+	section, .rodata1: 0xfffdee20 - 0xfffdee3f
+	section, .sdata2: 0xfffdee40 - 0xfffdee3f
+	section, .sbss2: 0xfffdee40 - 0xfffdee3f
+	section, .data: 0xfffdee40 - 0xfffe09f7
+	section, .data1: 0xfffe09f8 - 0xfffe09ff
+	section, .ctors: 0xfffe0a00 - 0xfffe09ff
+	section, .dtors: 0xfffe0a00 - 0xfffe09ff
+	section, .eh_frame: 0xfffe0a00 - 0xfffe0a03
+	section, .mmu_tbl0: 0xfffe1000 - 0xfffe100f
+	section, .mmu_tbl1: 0xfffe2000 - 0xfffe3fff
+	section, .mmu_tbl2: 0xfffe4000 - 0xfffe7fff
+	section, .preinit_array: 0xfffe8000 - 0xfffe7fff
+	section, .init_array: 0xfffe8000 - 0xfffe8007
+	section, .fini_array: 0xfffe8008 - 0xfffe8047
+	section, .sdata: 0xfffe8048 - 0xfffe807f
+	section, .sbss: 0xfffe8080 - 0xfffe807f
+	section, .tdata: 0xfffe8080 - 0xfffe807f
+	section, .tbss: 0xfffe8080 - 0xfffe807f
+	section, .bss: 0xfffe8080 - 0xfffe963f
+	section, .heap: 0xffff0c34 - 0xffff2c3f
+	section, .stack: 0xffff2c40 - 0xffff5c3f
+  0%    0MB   0.0MB/s  ??:?? ETA 68%    0MB   0.2MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0xffff0000
+Successfully downloaded C:/zcu104_bit/tests/ZCU104/elf/zynq_mp_dram_test.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 2000
+
+********************************************************************************
+   Zynq MPSoC
+   DRAM Diagnostics Test (A53) 
+********************************************************************************
+   Select one of the options below:
+   +--------------------------------------------------------------------+
+   |  Memory Tests                                                      |
+   +-----+--------------------------------------------------------------+
+   | '0' | Test first 2MB region of DDR                                 |
+   | '1' | Test first 32MB region of DDR                                |
+   | '2' | Test first 64MB region of DDR                                |
+   | '3' | Test first 128MB region of DDR                               |
+   | '4' | Test first 256MB region of DDR                               |
+   | '5' | Test first 512MB region of DDR                               |
+   | '6' | Test first 1GB region of DDR                                 |
+   | '7' | Test first 2GB region of DDR                                 |
+   | '8' | Test first 4GB region of DDR                                 |
+   | '9' | Test first 8GB region of DDR                                 |
+   +-----+--------------------------------------------------------------+
+   |  Eye Tests                                                         |
+   +-----+--------------------------------------------------------------+
+   | 'r' | Perform a read eye analysis test                             |
+   | 'w' | Perform a write eye analysis test                            |
+   | 'a' | Print test start address                                     |
+   | 't' | Specify test start address (default=0x0)                     |
+   | 's' | Select the DRAM rank (default=1)                             |
+   +-----+--------------------------------------------------------------+
+   |  Miscellaneous options                                             |
+   +-----+--------------------------------------------------------------+
+   | 'i' | Print DDR information                                        |
+   | 'v' | Verbose Mode ON/OFF                                          |
+   | 'o' | Toggle cache enable/disable                                  |
+   | 'b' | Toggle between 32/64-bit bus widths                          |
+   | 'h' | Print this help menu                                         |
+   +-----+--------------------------------------------------------------+
+    Bus Width = 64,   D-cache is enable,   Verbose Mode is OFF
+
+ Enter 'h' to print help menu
+ Enter Test Option: 
+
+disconnect
+
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-01-25 17:21:56
+Writing: '2\n'
+2
+Starting Memory Test '2' - Testing 64MB length from address 0x0...
+---------+--------+------------------------------------------------+-----------
+  TEST   | ERROR  |          PER-BYTE-LANE ERROR COUNT             |  TIME
+         | COUNT  | LANES [ #0,  #1,  #2,  #3,  #4,  #5,  #6,  #7] |  (sec)
+---------+--------+------------------------------------------------+-----------
+MT0(1: 0)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 1.33838
+---------+--------+------------------------------------------------+-----------
+MTS(1: 1)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.667223
+---------+--------+------------------------------------------------+-----------
+MTS(1: 2)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.666568
+---------+--------+------------------------------------------------+-----------
+MTS(1: 3)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.667223
+---------+--------+------------------------------------------------+-----------
+MTS(1: 4)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.667223
+---------+--------+------------------------------------------------+-----------
+MTS(1: 5)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.666568
+---------+--------+------------------------------------------------+-----------
+MTS(1: 6)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.666568
+---------+--------+------------------------------------------------+-----------
+MTS(1: 7)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.667223
+---------+--------+------------------------------------------------+-----------
+MTS(1: 8)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.666568
+---------+--------+------------------------------------------------+-----------
+MTP(1: 9)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 1.07949
+---------+--------+------------------------------------------------+-----------
+MTP(1:10)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 1.07949
+---------+--------+------------------------------------------------+-----------
+MTL(1:11)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 1.166
+---------+--------+------------------------------------------------+-----------
+MTL(1:12)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 1.166
+---------+--------+------------------------------------------------+-----------
+MTL(1:13)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 1.166
+---------+--------+------------------------------------------------+-----------
+MTL(1:14)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 1.166
+---------+--------+------------------------------------------------+-----------
+
+memtest_all: PASSED
+error_counter = 0x0000000000000000
+
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+
+Info: The test took 0 hours, 00 minutes, and 35 seconds. 0:00:35
+
+Info: MIG PL DDR4 test started...
+
+Info: The test will take 0 hours, 01 minutes, and 34 seconds. 0:01:34
+
+Entering step: 0
+
+
+Info: This step started at: 2018-01-25 17:22:20
+
+C:\zcu104_bit\tests\ZCU104>cd bat\ 
+
+C:\zcu104_bit\tests\ZCU104\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-01-25 17:22:24
+
+****** Vivado v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_mig_pl_ddr4.tcl}
+# set_param xicom.use_bitstream_version_check false
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+# current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Xilinx/*]
+# open_hw_target -jtag_mode 1
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+INFO: [Labtoolstcl 44-467] Setting hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A into jtag_mode
+# scan_ir_hw_jtag 12 -tdi 0x90B
+# close_hw_target
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1435] Device xczu7 (JTAG device index = 0) is not programmed (DONE status = 0).
+# current_hw_device [lindex [get_hw_devices] 1]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 1]
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/zcu104_mig_pl_ddr4.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:12 ; elapsed = 00:00:11 . Memory (MB): peak = 488.098 ; gain = 1.000
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# disconnect_hw_server
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Thu Jan 25 17:22:49 2018...
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-01-25 17:22:50
+
+****** Vivado v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_mig_pl_ddr4_status.tcl}
+# set TEST_DELAY 120
+# disconnect_hw_server -quiet
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+# current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Xilinx/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 MIG core(s).
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+# set_property PROBES.FILE {[pwd]/../bitstream/zcu104_mig_pl_ddr4.ltx} [lindex [get_hw_devices] 0]
+# refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 MIG core(s).
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+INFO: [Common 17-206] Exiting Vivado at Thu Jan 25 17:23:05 2018...
+
+Error: Could not find regular expression in step 2 of test 5 - "(.*)^\s+TEST\s+PASSED"
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Fail
+
+Info: The test took 0 hours, 01 minutes, and 04 seconds. 0:01:04
+
+Info: MIG PL DDR4 test started...
+
+Info: The test will take 0 hours, 01 minutes, and 34 seconds. 0:01:34
+
+Entering step: 0
+
+
+Info: This step started at: 2018-01-25 17:24:52
+
+C:\zcu104_bit\tests\ZCU104>cd bat\ 
+
+C:\zcu104_bit\tests\ZCU104\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-01-25 17:24:55
+
+****** Vivado v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_mig_pl_ddr4.tcl}
+# set_param xicom.use_bitstream_version_check false
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+# current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Xilinx/*]
+# open_hw_target -jtag_mode 1
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+INFO: [Labtoolstcl 44-467] Setting hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A into jtag_mode
+# scan_ir_hw_jtag 12 -tdi 0x90B
+# close_hw_target
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1435] Device xczu7 (JTAG device index = 0) is not programmed (DONE status = 0).
+# current_hw_device [lindex [get_hw_devices] 1]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 1]
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/zcu104_mig_pl_ddr4.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 487.168 ; gain = 0.000
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# disconnect_hw_server
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Thu Jan 25 17:25:22 2018...
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-01-25 17:25:22
+
+****** Vivado v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_mig_pl_ddr4_status.tcl}
+# set TEST_DELAY 10
+# disconnect_hw_server -quiet
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 MIG core(s).
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+# set_property PROBES.FILE {[pwd]/../bitstream/zcu106_mig_pl_ddr4.ltx} [lindex [get_hw_devices] 0]
+# refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 MIG core(s).
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+WARNING: [Labtools 27-1347] Unable to find Debug Probes file [[pwd]/../bitstream/zcu106_mig_pl_ddr4.ltx]. Please update hw_device property [PROBES.FILE]
+ Update of hw_probe objects, will be skipped.
+INFO: [Common 17-206] Exiting Vivado at Thu Jan 25 17:25:35 2018...
+
+Error: Could not find regular expression in step 2 of test 5 - "(.*)^\s+TEST\s+PASSED"
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Fail
+
+Info: The test took 0 hours, 01 minutes, and 03 seconds. 0:01:03
+
+Info: MIG PL DDR4 test started...
+
+Info: The test will take 0 hours, 01 minutes, and 34 seconds. 0:01:34
+
+Entering step: 0
+
+
+Info: This step started at: 2018-01-25 17:26:46
+
+C:\zcu104_bit\tests\ZCU104>cd bat\ 
+
+C:\zcu104_bit\tests\ZCU104\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-01-25 17:26:49
+
+****** Vivado v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_mig_pl_ddr4.tcl}
+# set_param xicom.use_bitstream_version_check false
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+# current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Xilinx/*]
+# open_hw_target -jtag_mode 1
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+INFO: [Labtoolstcl 44-467] Setting hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A into jtag_mode
+# scan_ir_hw_jtag 12 -tdi 0x90B
+# close_hw_target
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1435] Device xczu7 (JTAG device index = 0) is not programmed (DONE status = 0).
+# current_hw_device [lindex [get_hw_devices] 1]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 1]
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/zcu104_mig_pl_ddr4.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 486.824 ; gain = 1.000
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# disconnect_hw_server
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Thu Jan 25 17:27:15 2018...
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-01-25 17:27:15
+
+****** Vivado v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_mig_pl_ddr4_status.tcl}
+# set TEST_DELAY 10
+# disconnect_hw_server -quiet
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 MIG core(s).
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+# set_property PROBES.FILE {[pwd]/../bitstream/zcu104_mig_pl_ddr4.ltx} [lindex [get_hw_devices] 0]
+# refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 MIG core(s).
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+INFO: [Common 17-206] Exiting Vivado at Thu Jan 25 17:27:29 2018...
+
+Error: Could not find regular expression in step 2 of test 5 - "(.*)^\s+TEST\s+PASSED"
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Fail
+
+Info: The test took 0 hours, 01 minutes, and 03 seconds. 0:01:03

@@ -1,0 +1,569 @@
+Board: ZCU111_PROD
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: XM500 DAC IO test started...
+
+Info: The test will take 0 hours, 01 minutes, and 03 seconds. 0:01:03
+
+Entering step: 0
+
+
+Info: This step started at: 2019-03-05 12:57:39
+
+Entering step: 1
+
+
+Info: This step started at: 2019-03-05 12:57:39
+
+C:\zcu111_bit\tests\ZCU111_PROD>cd bat\ 
+
+C:\zcu111_bit\tests\ZCU111_PROD\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2019-03-05 12:57:43
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Tue Mar  5 12:58:07 2019...
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2019-03-05 12:58:07
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu111_xm500_dacio.tcl}
+# open_hw
+CRITICAL WARNING: [Board 49-56] Problem parsing board file - C:/Xilinx/Vivado/2018.2/data/boards/board_files/kcu105/1.5/board.xml, Invalid xml file C:/Xilinx/Vivado/2018.2/data/boards/board_files/kcu105/1.5/board.xml: expected end of tag 'interface'
+WARNING: [Board 49-69] Validation failed for board file C:/Xilinx/Vivado/2018.2/data/boards/board_files/vcu128/1.0/board.xml:
+ Polarity Parameter not provided for dummy_port_in
+
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.2
+  **** Build date : Jun 14 2018-20:42:52
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:12 . Memory (MB): peak = 347.352 ; gain = 2.617
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280976B113A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xczu28dr (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+# current_hw_device [lindex [get_hw_devices arm_dap_1] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 1]
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/zcu111_xm505_dacio.bit} [lindex [get_hw_devices] 0]
+INFO: [Common 17-206] Exiting Vivado at Tue Mar  5 12:58:46 2019...
+
+step finished 
+the expression:(.*)FMC DAC IO Test passed
+
+Error: Could not find regular expression in step 0 of test 15 - "(.*)FMC DAC IO Test passed"
+
+Info: Result for step 0: Fail
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+
+Info: The test took 0 hours, 01 minutes, and 28 seconds. 0:01:28
+
+Info: XM500 DAC IO test started...
+
+Info: The test will take 0 hours, 01 minutes, and 03 seconds. 0:01:03
+
+Entering step: 0
+
+
+Info: This step started at: 2019-03-05 12:59:33
+
+Entering step: 1
+
+
+Info: This step started at: 2019-03-05 12:59:33
+
+C:\zcu111_bit\tests\ZCU111_PROD>cd bat\ 
+
+C:\zcu111_bit\tests\ZCU111_PROD\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2019-03-05 12:59:37
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Tue Mar  5 12:59:59 2019...
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2019-03-05 12:59:59
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu111_xm500_dacio.tcl}
+# open_hw
+CRITICAL WARNING: [Board 49-56] Problem parsing board file - C:/Xilinx/Vivado/2018.2/data/boards/board_files/kcu105/1.5/board.xml, Invalid xml file C:/Xilinx/Vivado/2018.2/data/boards/board_files/kcu105/1.5/board.xml: expected end of tag 'interface'
+WARNING: [Board 49-69] Validation failed for board file C:/Xilinx/Vivado/2018.2/data/boards/board_files/vcu128/1.0/board.xml:
+ Polarity Parameter not provided for dummy_port_in
+
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.2
+  **** Build date : Jun 14 2018-20:42:52
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 347.348 ; gain = 2.613
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280976B113A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xczu28dr (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+# current_hw_device [lindex [get_hw_devices arm_dap_1] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 1]
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/zcu111_xm500_dacio.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 998.227 ; gain = 1.379
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280976B113A
+# disconnect_hw_server localhost:3121
+# close_hw
+
+***********************************************************
+***********************************************************
+**    ZCU111 - XM500 IO Loopback Write and Read Tests    **
+***********************************************************
+***********************************************************
+
+Testing DAC_IO 
+DAC_IO: Writing and Reading all 0's            - FAILED
+Data read back = 000003FF
+DAC_IO: Writing and Reading all 1's            - PASSED
+DAC_IO: Writing and Reading 0xFEDCBA98 pattern - FAILED
+Data read back = 000CBBFF
+DAC_IO: Writing and Reading 0x01234567 pattern - FAILED
+Data read back = 000347FF
+
+
+Completed FMC DAC IO Loopback Write and Read Tests
+
+FMC DAC IO Test failed
+
+INFO: [Common 17-206] Exiting Vivado at Tue Mar  5 13:01:01 2019...
+step finished 
+
+step finished 
+the expression:(.*)FMC DAC IO Test passed
+
+Error: Could not find regular expression in step 0 of test 15 - "(.*)FMC DAC IO Test passed"
+
+Info: Result for step 0: Fail
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+
+Info: The test took 0 hours, 01 minutes, and 30 seconds. 0:01:30
+
+Info: XM500 DAC IO test started...
+
+Info: The test will take 0 hours, 01 minutes, and 03 seconds. 0:01:03
+
+Entering step: 0
+
+
+Info: This step started at: 2019-03-05 13:18:54
+
+Entering step: 1
+
+
+Info: This step started at: 2019-03-05 13:18:54
+
+C:\zcu111_bit\tests\ZCU111_PROD>cd bat\ 
+
+C:\zcu111_bit\tests\ZCU111_PROD\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2019-03-05 13:18:58
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Tue Mar  5 13:19:21 2019...
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2019-03-05 13:19:21
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu111_xm500_dacio.tcl}
+# open_hw
+CRITICAL WARNING: [Board 49-56] Problem parsing board file - C:/Xilinx/Vivado/2018.2/data/boards/board_files/kcu105/1.5/board.xml, Invalid xml file C:/Xilinx/Vivado/2018.2/data/boards/board_files/kcu105/1.5/board.xml: expected end of tag 'interface'
+WARNING: [Board 49-69] Validation failed for board file C:/Xilinx/Vivado/2018.2/data/boards/board_files/vcu128/1.0/board.xml:
+ Polarity Parameter not provided for dummy_port_in
+
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.2
+  **** Build date : Jun 14 2018-20:42:52
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:12 . Memory (MB): peak = 347.512 ; gain = 2.703
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280976B113A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xczu28dr (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+# current_hw_device [lindex [get_hw_devices arm_dap_1] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 1]
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/zcu111_xm500_dacio.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 998.262 ; gain = 1.273
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280976B113A
+# disconnect_hw_server localhost:3121
+# close_hw
+
+***********************************************************
+***********************************************************
+**    ZCU111 - XM500 IO Loopback Write and Read Tests    **
+***********************************************************
+***********************************************************
+
+Testing DAC_IO 
+DAC_IO: Writing and Reading all 0's            - FAILED
+Data read back = 000FFC00
+DAC_IO: Writing and Reading all 1's            - PASSED
+DAC_IO: Writing and Reading 0xFEDCBA98 pattern - FAILED
+Data read back = 000FFE98
+DAC_IO: Writing and Reading 0x01234567 pattern - FAILED
+Data read back = 000FFD67
+
+
+Completed FMC DAC IO Loopback Write and Read Tests
+
+FMC DAC IO Test failed
+
+INFO: [Common 17-206] Exiting Vivado at Tue Mar  5 13:20:20 2019...
+step finished 
+
+step finished 
+the expression:(.*)FMC DAC IO Test passed
+
+Error: Could not find regular expression in step 0 of test 15 - "(.*)FMC DAC IO Test passed"
+
+Info: Result for step 0: Fail
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+
+Info: The test took 0 hours, 01 minutes, and 28 seconds. 0:01:28
+
+Info: XM500 DAC IO test started...
+
+Info: The test will take 0 hours, 01 minutes, and 03 seconds. 0:01:03
+
+Entering step: 0
+
+
+Info: This step started at: 2019-03-05 14:53:48
+
+Entering step: 1
+
+
+Info: This step started at: 2019-03-05 14:53:48
+
+C:\zcu111_bit\tests\ZCU111_PROD>cd bat\ 
+
+C:\zcu111_bit\tests\ZCU111_PROD\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2019-03-05 14:53:52
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Tue Mar  5 14:54:14 2019...
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2019-03-05 14:54:14
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu111_xm500_dacio.tcl}
+# open_hw
+CRITICAL WARNING: [Board 49-56] Problem parsing board file - C:/Xilinx/Vivado/2018.2/data/boards/board_files/kcu105/1.5/board.xml, Invalid xml file C:/Xilinx/Vivado/2018.2/data/boards/board_files/kcu105/1.5/board.xml: expected end of tag 'interface'
+WARNING: [Board 49-69] Validation failed for board file C:/Xilinx/Vivado/2018.2/data/boards/board_files/vcu128/1.0/board.xml:
+ Polarity Parameter not provided for dummy_port_in
+
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.2
+  **** Build date : Jun 14 2018-20:42:52
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:12 . Memory (MB): peak = 347.543 ; gain = 2.941
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280976B113A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xczu28dr (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+# current_hw_device [lindex [get_hw_devices arm_dap_1] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 1]
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/zcu111_xm500_dacio.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 998.070 ; gain = 1.367
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280976B113A
+# disconnect_hw_server localhost:3121
+# close_hw
+
+***********************************************************
+***********************************************************
+**    ZCU111 - XM500 IO Loopback Write and Read Tests    **
+***********************************************************
+***********************************************************
+
+Testing DAC_IO 
+DAC_IO: Writing and Reading all 0's            - FAILED
+Data read back = 000FFC00
+DAC_IO: Writing and Reading all 1's            - PASSED
+DAC_IO: Writing and Reading 0xFEDCBA98 pattern - FAILED
+Data read back = 000FFE98
+DAC_IO: Writing and Reading 0x01234567 pattern - FAILED
+Data read back = 000FFD67
+
+
+Completed FMC DAC IO Loopback Write and Read Tests
+
+FMC DAC IO Test failed
+
+INFO: [Common 17-206] Exiting Vivado at Tue Mar  5 14:55:10 2019...
+step finished 
+
+step finished 
+the expression:(.*)FMC DAC IO Test passed
+
+Error: Could not find regular expression in step 0 of test 15 - "(.*)FMC DAC IO Test passed"
+
+Info: Result for step 0: Fail
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+
+Info: The test took 0 hours, 01 minutes, and 23 seconds. 0:01:23
+
+Info: XM500 DAC IO test started...
+
+Info: The test will take 0 hours, 01 minutes, and 03 seconds. 0:01:03
+
+Entering step: 0
+
+
+Info: This step started at: 2019-03-05 16:11:16
+
+Entering step: 1
+
+
+Info: This step started at: 2019-03-05 16:11:16
+
+C:\zcu111_bit\tests\ZCU111_PROD>cd bat\ 
+
+C:\zcu111_bit\tests\ZCU111_PROD\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2019-03-05 16:11:20
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Tue Mar  5 16:11:42 2019...
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2019-03-05 16:11:42
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu111_xm500_dacio.tcl}
+# open_hw
+CRITICAL WARNING: [Board 49-56] Problem parsing board file - C:/Xilinx/Vivado/2018.2/data/boards/board_files/kcu105/1.5/board.xml, Invalid xml file C:/Xilinx/Vivado/2018.2/data/boards/board_files/kcu105/1.5/board.xml: expected end of tag 'interface'
+WARNING: [Board 49-69] Validation failed for board file C:/Xilinx/Vivado/2018.2/data/boards/board_files/vcu128/1.0/board.xml:
+ Polarity Parameter not provided for dummy_port_in
+
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.2
+  **** Build date : Jun 14 2018-20:42:52
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:12 . Memory (MB): peak = 347.328 ; gain = 2.703
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280976B113A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xczu28dr (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+# current_hw_device [lindex [get_hw_devices arm_dap_1] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 1]
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/zcu111_xm500_dacio.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 997.770 ; gain = 1.242
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280976B113A
+# disconnect_hw_server localhost:3121
+# close_hw
+
+***********************************************************
+***********************************************************
+**    ZCU111 - XM500 IO Loopback Write and Read Tests    **
+***********************************************************
+***********************************************************
+
+Testing DAC_IO 
+DAC_IO: Writing and Reading all 0's            - PASSED
+DAC_IO: Writing and Reading all 1's            - PASSED
+DAC_IO: Writing and Reading 0xFEDCBA98 pattern - PASSED
+DAC_IO: Writing and Reading 0x01234567 pattern - PASSED
+
+
+Completed FMC DAC IO Loopback Write and Read Tests
+
+FMC DAC IO Test passed
+
+INFO: [Common 17-206] Exiting Vivado at Tue Mar  5 16:12:39 2019...
+step finished 
+
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+
+Info: The test took 0 hours, 01 minutes, and 25 seconds. 0:01:25

@@ -1,0 +1,544 @@
+Board: ZCU111
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: Program QSPI Flash test started...
+
+Info: The test will take 0 hours, 09 minutes, and 29 seconds. 0:09:29
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-28 10:46:36
+
+C:\zcu111_bit\tests\ZCU111>cd bat\ 
+
+C:\zcu111_bit\tests\ZCU111\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-28 10:46:40
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 28 10:46:56 2018...
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-28 10:46:56
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+
+disconnect
+
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-28 10:47:03
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu111_program_qspi.tcl}
+# open_hw
+# catch {disconnect_hw_server localhost:3121}
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+ERROR: [Common 17-39] 'get_hw_targets' failed due to earlier errors.
+
+    while executing
+"get_hw_targets */xilinx_tcf/Digilent/*"
+    invoked from within
+"current_hw_target [get_hw_targets */xilinx_tcf/Digilent/*]"
+    (file "tcl\zcu111_program_qspi.tcl" line 4)
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 28 10:47:14 2018...
+
+Error: Could not find regular expression in step 3 of test 16 - "(.*)Performing\s+Erase\s+Operation"
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Fail
+
+Info: The test took 0 hours, 00 minutes, and 37 seconds. 0:00:37
+
+Info: Program QSPI Flash test started...
+
+Info: The test will take 0 hours, 09 minutes, and 29 seconds. 0:09:29
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-28 10:47:35
+
+C:\zcu111_bit\tests\ZCU111>cd bat\ 
+
+C:\zcu111_bit\tests\ZCU111\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-28 10:47:39
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 28 10:47:54 2018...
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-28 10:47:54
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+
+disconnect
+
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-28 10:48:01
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu111_program_qspi.tcl}
+# open_hw
+# catch {disconnect_hw_server localhost:3121}
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+ERROR: [Common 17-39] 'get_hw_targets' failed due to earlier errors.
+
+    while executing
+"get_hw_targets */xilinx_tcf/Digilent/*"
+    invoked from within
+"current_hw_target [get_hw_targets */xilinx_tcf/Digilent/*]"
+    (file "tcl\zcu111_program_qspi.tcl" line 4)
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 28 10:48:12 2018...
+
+Error: Could not find regular expression in step 3 of test 16 - "(.*)Performing\s+Erase\s+Operation"
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Fail
+
+Info: The test took 0 hours, 00 minutes, and 37 seconds. 0:00:37
+
+Info: Program QSPI Flash test started...
+
+Info: The test will take 0 hours, 09 minutes, and 29 seconds. 0:09:29
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-28 13:56:00
+
+C:\zcu111_bit\tests\ZCU111>cd bat\ 
+
+C:\zcu111_bit\tests\ZCU111\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-28 13:56:04
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 28 13:56:20 2018...
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-28 13:56:20
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+attempting to launch hw_server
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:08:27
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+INFO: hw_server application started
+INFO: Use Ctrl-C to exit hw_server application
+
+
+
+****** Xilinx hw_server v2017.4
+
+  **** Build date : Dec 15 2017-21:08:27
+
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+
+INFO: hw_server application started
+
+INFO: Use Ctrl-C to exit hw_server application
+
+
+
+
+INFO: To connect to this hw_server instance use url: TCP:127.0.0.1:3121
+
+
+
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-28 13:56:34
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu111_program_qspi.tcl}
+# open_hw
+# catch {disconnect_hw_server localhost:3121}
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:08:27
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:14 . Memory (MB): peak = 307.789 ; gain = 1.137
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280970b065A
+WARNING: [Labtoolstcl 44-128] No matching hw_devices were found.
+# current_hw_device [lindex [get_hw_devices xczu28dr_0] 0]
+
+    while executing
+"current_hw_device [lindex [get_hw_devices xczu28dr_0] 0]"
+    (file "tcl\zcu111_program_qspi.tcl" line 7)
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 28 13:57:01 2018...
+
+Error: Could not find regular expression in step 3 of test 16 - "(.*)Performing\s+Erase\s+Operation"
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Fail
+
+Info: The test took 0 hours, 01 minutes, and 00 seconds. 0:01:00
+
+Info: Program QSPI Flash test started...
+
+Info: The test will take 0 hours, 09 minutes, and 29 seconds. 0:09:29
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-28 13:58:08
+
+C:\zcu111_bit\tests\ZCU111>cd bat\ 
+
+C:\zcu111_bit\tests\ZCU111\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-28 13:58:12
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 28 13:58:28 2018...
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-28 13:58:29
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+attempting to launch hw_server
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:08:27
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+INFO: hw_server application started
+INFO: Use Ctrl-C to exit hw_server application
+
+
+
+****** Xilinx hw_server v2017.4
+
+  **** Build date : Dec 15 2017-21:08:27
+
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+
+INFO: hw_server application started
+
+INFO: Use Ctrl-C to exit hw_server application
+
+
+
+
+INFO: To connect to this hw_server instance use url: TCP:127.0.0.1:3121
+
+
+
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+
+disconnect
+
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-28 13:58:42
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu111_program_qspi.tcl}
+# open_hw
+# catch {disconnect_hw_server localhost:3121}
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:08:27
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:13 . Memory (MB): peak = 307.957 ; gain = 1.203
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280976A040A
+# current_hw_device [lindex [get_hw_devices xczu28dr_0] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xczu28dr_0] 0]
+INFO: [Labtools 27-1435] Device xczu28dr (JTAG device index = 0) is not programmed (DONE status = 0).
+# current_hw_device [lindex [get_hw_devices arm_dap_1] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices arm_dap_1] 0]
+# current_hw_device [lindex [get_hw_devices xczu28dr_0] 0]
+# create_hw_cfgmem -hw_device [lindex [get_hw_devices] 0] -mem_dev  [lindex [get_cfgmem_parts {mt25qu02g-qspi-x8-dual_parallel}] 0]
+# set_property PROGRAM.BLANK_CHECK  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices] 0 ]]
+# set_property PROGRAM.ERASE  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices] 0 ]]
+# set_property PROGRAM.CFG_PROGRAM  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices] 0 ]]
+# set_property PROGRAM.VERIFY  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices] 0 ]]
+# set_property PROGRAM.CHECKSUM  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices] 0 ]]
+# refresh_hw_device [lindex [get_hw_devices xczu28dr_0] 0]
+INFO: [Labtools 27-1435] Device xczu28dr (JTAG device index = 0) is not programmed (DONE status = 0).
+# set_property PROGRAM.ADDRESS_RANGE  {use_file} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices] 0 ]]
+# set_property PROGRAM.FILES [list ./bitstream/blinkbist.mcs ] [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices] 0]]
+# set_property PROGRAM.ZYNQ_FSBL {./elf/qspi_zynq_mp_fsbl.elf} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices] 0]]
+# set_property PROGRAM.BLANK_CHECK  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices] 0 ]]
+# set_property PROGRAM.ERASE  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices] 0 ]]
+# set_property PROGRAM.CFG_PROGRAM  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices] 0 ]]
+# set_property PROGRAM.VERIFY  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices] 0 ]]
+# set_property PROGRAM.CHECKSUM  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices] 0 ]]
+# program_hw_cfgmem -hw_cfgmem [get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices] 0 ]]
+BOOT_MODE REG = 0x0000
+f probe 0 0 0
+Performing Erase Operation...
+Erase Operation successful.
+INFO: [Xicom 50-44] Elapsed time = 31 sec.
+Performing Program Operation...
+Program Operation successful.
+INFO: [Xicom 50-44] Elapsed time = 256 sec.
+Performing Verify Operation...
+INFO: [Xicom 50-44] Elapsed time = 342 sec.
+Verify Operation successful.
+INFO: [Labtoolstcl 44-377] Flash programming completed successfully
+program_hw_cfgmem: Time (s): cpu = 00:00:10 ; elapsed = 00:10:44 . Memory (MB): peak = 956.363 ; gain = 72.258
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280976A040A
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 28 14:09:58 2018...
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+
+Info: The test took 0 hours, 11 minutes, and 49 seconds. 0:11:49
+
+Info: Test QSPI Flash test started...
+
+Info: The test will take 0 hours, 00 minutes, and 00 seconds. 0:00:00
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-28 14:15:12
+
+User has confirmed: "Set SW6 to 0100 (Up, Down, Up, Up) for Testing QSPI.
+"
+
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-28 14:15:35
+
+C:\zcu111_bit\tests\ZCU111>cd bat\ 
+
+C:\zcu111_bit\tests\ZCU111\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-28 14:15:38
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 28 14:15:53 2018...
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-28 14:15:53
+
+User has confirmed: "Observe PL LEDs blinking, then PL LED7 through PL LED2 turn on in sequence.
+PL LED1 should be blinking.
+Cycle ZCU111 power if you need to repeat this part of the test.
+Click OK when this is done. "
+
+step finished 
+
+Entering step: 4
+
+
+Info: This step started at: 2018-02-28 14:16:17
+
+User has responded "Yes": "Do you see the PL LEDs 7 through 2 all on?
+This part of the BIST test passed if you saw this."
+
+step finished 
+
+Entering step: 5
+
+
+Info: This step started at: 2018-02-28 14:16:19
+
+User has confirmed: "1. Set PL DIP, SW14 to "11111111" (All Up).
+2. Set PL DIP, SW14 to "00000000" (All Down)
+3. Observe PL LED1 on solid and PL LED0 blinking.
+Click OK when this is done."
+
+step finished 
+
+Entering step: 6
+
+
+Info: This step started at: 2018-02-28 14:16:23
+
+User has confirmed: "Press all the 5 Push buttons in any order.
+
+Click OK when this is done."
+
+step finished 
+
+Entering step: 7
+
+
+Info: This step started at: 2018-02-28 14:16:25
+
+User has responded "Yes": "Do you see the PL LEDs 7 through 0 all on?
+This part of the BIST test passed if you saw this."
+
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+Info: Result for step 4: Pass
+Info: Result for step 5: Pass
+Info: Result for step 6: Pass
+Info: Result for step 7: Pass
+
+Info: The test took 0 hours, 00 minutes, and 18 seconds. 0:00:18

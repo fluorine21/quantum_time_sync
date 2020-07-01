@@ -1,0 +1,20 @@
+system controller port: P:\[24593\]S:\[.*?D\]
+vivado path: none
+EXE Checksum: 0e9d434aed60866ad89529568c6803a9
+BIT Checksum: a8789bc5647dbfc0f7b090e53bc9e341
+SC Checksum: f22ffca8968dd5a0606e850e0f024f9a
+Firmware Checksum: f01cb348c0c13226d110d3498f127719
+Variables:
+  # Reserved Variable names: name, rev, ser, mac, sil, sysc
+  reset mux: <setmux:{main iic port}:74:00>
+  reset secondary mux: <setmux:{main iic port}:75:00>
+  path to system monitor: <setmux:{main iic port}:75:04>
+  path to fmc: <setmux:{main iic port}:75:01>
+  path to user si570: <setmux:{main iic port}:74:04>
+  path to mgt si570: <setmux:{main iic port}:74:08>
+  path to si5382: <setmux:{main iic port}:74:10>
+  path to pmbus: <setmux:{secondary iic port}:75:06>
+  path to ina226: <setmux:{secondary iic port}:75:04>
+  path to i2c spi bridge: <setmux:{main iic port}:74:20>
+  main iic port: '1'
+  secondary iic port: '0'

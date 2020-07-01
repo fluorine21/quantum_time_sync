@@ -1,10 +1,10 @@
-14:09:35 **** Incremental Build of configuration Debug for project test_proj_pulse_ctrl_system ****
+16:05:16 **** Incremental Build of configuration Debug for project test_proj_pulse_ctrl_system ****
 make all 
 Generating bif file for the system project
-generate_system_bif.bat 61579 C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm standalone_domain C:/James/vitis_workspace/test_proj_pulse_ctrl_system/Debug/system.bif
+generate_system_bif.bat 61281 C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm standalone_domain C:/James/vitis_workspace/test_proj_pulse_ctrl_system/Debug/system.bif
 sdcard_gen --xpfm C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm --sys_config test_proj_plat --bif C:/James/vitis_workspace/test_proj_pulse_ctrl_system/Debug/system.bif --bitstream C:/James/vitis_workspace/test_proj_pulse_ctrl/_ide/bitstream/top_level_block_design_wrapper.bit --elf C:/James/vitis_workspace/test_proj_pulse_ctrl/Debug/test_proj_pulse_ctrl.elf,psu_cortexa53_0
 creating BOOT.BIN using C:/James/vitis_workspace/test_proj_pulse_ctrl/_ide/bitstream/top_level_block_design_wrapper.bit
 Running C:/Xilinx/Vitis/2020.1/bin/bootgen -arch zynqmp -image C:/James/vitis_workspace/test_proj_pulse_ctrl_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
 
-14:09:49 Build Finished (took 13s.423ms)
+16:05:33 Build Finished (took 16s.828ms)
 

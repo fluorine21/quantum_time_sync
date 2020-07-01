@@ -1,0 +1,1397 @@
+Board: ZCU111
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: IBERT ALL test started...
+
+Info: The test will take 0 hours, 03 minutes, and 46 seconds. 0:03:46
+
+Entering step: 0
+
+
+Info: This step started at: 2018-07-18 14:52:01
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu111_ibert_bank_all.tcl}
+# open_hw
+open_hw: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 320.266 ; gain = 58.938
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.2
+  **** Build date : Jun 14 2018-20:42:52
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:15 . Memory (MB): peak = 323.016 ; gain = 2.750
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280976B113A
+open_hw_target: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 323.813 ; gain = 0.797
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1435] Device xczu28dr (JTAG device index = 0) is not programmed (DONE status = 0).
+# current_hw_device [lindex [get_hw_devices arm_dap_1] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 1]
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/zcu111_ibert_bank_all.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 973.719 ; gain = 1.254
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280976B113A
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Wed Jul 18 14:53:12 2018...
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-07-18 14:53:12
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\vivado_ibert_reset.tcl}
+# open_hw
+open_hw: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 320.539 ; gain = 59.539
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.2
+  **** Build date : Jun 14 2018-20:42:52
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:15 . Memory (MB): peak = 323.133 ; gain = 2.594
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280976B113A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -quiet [lindex [get_hw_devices] 0]
+# set_property PORT.QPLL0RESET 1 [get_hw_sio_commons *];
+# commit_hw_sio [list [get_hw_sio_commons {*}] ]
+# set_property PORT.QPLL0RESET 0 [get_hw_sio_commons *];
+# commit_hw_sio [list [get_hw_sio_commons {*}] ]
+# set_property PORT.QPLL1RESET 1 [get_hw_sio_commons *];
+# commit_hw_sio [list [get_hw_sio_commons {*}] ]
+# set_property PORT.QPLL1RESET 0 [get_hw_sio_commons *];
+# commit_hw_sio [list [get_hw_sio_commons {*}] ]
+# set_property PORT.CPLLRESET 1 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# set_property PORT.CPLLRESET 0 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# set_property PORT.GTRXRESET 1 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# set_property PORT.GTRXRESET 0 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# set_property PORT.GTTXRESET 1 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# set_property PORT.GTTXRESET 0 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# refresh_hw_sio [get_hw_sio_gts *]
+# refresh_hw_sio [get_hw_sio_commons *]
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280976B113A
+close_hw_target: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 1039.938 ; gain = 0.000
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Wed Jul 18 14:54:08 2018...
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-07-18 14:54:09
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu111_ibert_bank_all_status.tcl}
+# open_hw
+open_hw: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 320.668 ; gain = 59.473
+# catch {disconnect_hw_server localhost:3121}
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.2
+  **** Build date : Jun 14 2018-20:42:52
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:15 . Memory (MB): peak = 323.668 ; gain = 1.500
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280976B113A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-2302] Device xczu28dr (JTAG device index = 0) is programmed with a design that has 1 IBERT core(s).
+# set xil_newLinks [list]
+# set xil_newLink [create_hw_sio_link -description {Link 0} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y4/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y4/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 1} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y5/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y5/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 2} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y6/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y6/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 3} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y7/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y7/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 4} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y8/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y8/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 5} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y9/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y9/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 6} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y10/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y10/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 7} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y11/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y11/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 8} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y12/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y12/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 9} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y13/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y13/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 10} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y14/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y14/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 11} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y15/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y15/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 12} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y16/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y16/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 13} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y17/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y17/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 14} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y18/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y18/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 15} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y19/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y19/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLinkGroup [create_hw_sio_linkgroup -description {Link Group 0} [get_hw_sio_links $xil_newLinks]]
+# unset xil_newLinks
+# set_property TX_PATTERN {PRBS 31-bit} [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property RX_PATTERN {PRBS 31-bit} [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property TXDIFFSWING {499 mV (01010)} [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property TXPRE {2.21 dB (01001)} [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property TXPOST {3.74 dB (01110)} [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.TX_RESET_DATAPATH 1 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.TX_RESET_DATAPATH 0 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.RX_RESET_DATAPATH 1 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.RX_RESET_DATAPATH 0 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.MGT_ERRCNT_RESET_CTRL 1 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.MGT_ERRCNT_RESET_CTRL 0 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y4/TX->localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y4/RX}] ]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y5/TX->localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y5/RX}] ]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y6/TX->localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y6/RX}] ]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y7/TX->localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y7/RX}] ]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y8/TX->localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y8/RX}] ]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y9/TX->localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y9/RX}] ]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y10/TX->localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y10/RX}] ]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y11/TX->localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y11/RX}] ]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y12/TX->localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y12/RX}] ]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y13/TX->localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y13/RX}] ]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y14/TX->localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y14/RX}] ]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y15/TX->localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y15/RX}] ]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y16/TX->localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y16/RX}] ]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y17/TX->localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y17/RX}] ]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y18/TX->localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y18/RX}] ]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y19/TX->localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y19/RX}] ]
+# set offset 0
+# set initial_links 0
+# for {set i $offset} {$i <= 15} {incr i} {
+#   set j [expr {$i - $offset + $initial_links}]
+#   set display_name [get_property {DISPLAY_NAME} [lindex [get_hw_sio_gts] $i]]
+#   set quad_name [lindex [split [get_property {NAME} [lindex [get_hw_sio_gts] $i]] /] 6]
+#   set qpll0 [expr [expr $i / 4] * 6]
+#   #set qpll1 [expr [expr [expr $i / 4] * 6] + 1]
+#   #set cpll0 [expr $qpll0 + 2 + [expr $i%4]]
+#   puts "$quad_name:$display_name: DESCRIPTION=[get_property {DESCRIPTION} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: STATUS=[get_property {STATUS} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: QPLL0_STATUS=[get_property {QPLL0_STATUS} [lindex [get_hw_sio_plls] $qpll0]]"
+#   #puts "$quad_name:$display_name: QPLL1_STATUS=[get_property {QPLL1_STATUS} [lindex [get_hw_sio_plls] $qpll1]]"
+#   #puts "$quad_name:$display_name: CPLL_STATUS=[get_property {PLL_STATUS} [lindex [get_hw_sio_plls] $cpll0]]"
+#   puts "$quad_name:$display_name: LINE_RATE=[get_property {LINE_RATE} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: LOGIC.ERRBIT_COUNT=[get_property {LOGIC.ERRBIT_COUNT} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: RX_RECEIVED_BIT_COUNT=[get_property {RX_RECEIVED_BIT_COUNT} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: TX_PATTERN=[get_property {TX_PATTERN} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: RX_PATTERN=[get_property {RX_PATTERN} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: LOOPBACK=[get_property {LOOPBACK} [lindex [get_hw_sio_links] $j]]"
+#   # Debug lines to insure the correct alignment of the get_hw_sio_gts, get_hw_sio_links, and get_hw_sio_plls numbering
+#   puts "$quad_name:$display_name: TX_ENDPOINT=[get_property {TX_ENDPOINT} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: RX_ENDPOINT=[get_property {RX_ENDPOINT} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: NAME=[get_property {NAME} [lindex [get_hw_sio_gts] $i]]"
+#   puts "$quad_name:$display_name: get_hw_sio_plls=[lindex [get_hw_sio_plls] $qpll0]"
+#   #puts "$quad_name:$display_name: get_hw_sio_plls=[lindex [get_hw_sio_plls] $qpll1]"
+#   #puts "$quad_name:$display_name: get_hw_sio_plls=[lindex [get_hw_sio_plls] $cpll0]"
+# }
+Quad_128:MGT_X0Y4: DESCRIPTION=Link 0
+Quad_128:MGT_X0Y4: STATUS=28.125 Gbps
+Quad_128:MGT_X0Y4: QPLL0_STATUS=LOCKED
+Quad_128:MGT_X0Y4: LINE_RATE=28.125
+Quad_128:MGT_X0Y4: LOGIC.ERRBIT_COUNT=000000000000
+Quad_128:MGT_X0Y4: RX_RECEIVED_BIT_COUNT=1048483600
+Quad_128:MGT_X0Y4: TX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y4: RX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y4: LOOPBACK=None
+Quad_128:MGT_X0Y4: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y4/TX
+Quad_128:MGT_X0Y4: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y4/RX
+Quad_128:MGT_X0Y4: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y4
+Quad_128:MGT_X0Y4: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/COMMON_X0Y1/QPLL0
+Quad_128:MGT_X0Y5: DESCRIPTION=Link 1
+Quad_128:MGT_X0Y5: STATUS=28.131 Gbps
+Quad_128:MGT_X0Y5: QPLL0_STATUS=LOCKED
+Quad_128:MGT_X0Y5: LINE_RATE=28.131
+Quad_128:MGT_X0Y5: LOGIC.ERRBIT_COUNT=000000000000
+Quad_128:MGT_X0Y5: RX_RECEIVED_BIT_COUNT=2026110880
+Quad_128:MGT_X0Y5: TX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y5: RX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y5: LOOPBACK=None
+Quad_128:MGT_X0Y5: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y5/TX
+Quad_128:MGT_X0Y5: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y5/RX
+Quad_128:MGT_X0Y5: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y5
+Quad_128:MGT_X0Y5: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/COMMON_X0Y1/QPLL0
+Quad_128:MGT_X0Y6: DESCRIPTION=Link 2
+Quad_128:MGT_X0Y6: STATUS=28.125 Gbps
+Quad_128:MGT_X0Y6: QPLL0_STATUS=LOCKED
+Quad_128:MGT_X0Y6: LINE_RATE=28.125
+Quad_128:MGT_X0Y6: LOGIC.ERRBIT_COUNT=000000000000
+Quad_128:MGT_X0Y6: RX_RECEIVED_BIT_COUNT=3135466160
+Quad_128:MGT_X0Y6: TX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y6: RX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y6: LOOPBACK=None
+Quad_128:MGT_X0Y6: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y6/TX
+Quad_128:MGT_X0Y6: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y6/RX
+Quad_128:MGT_X0Y6: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y6
+Quad_128:MGT_X0Y6: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/COMMON_X0Y1/QPLL0
+Quad_128:MGT_X0Y7: DESCRIPTION=Link 3
+Quad_128:MGT_X0Y7: STATUS=28.125 Gbps
+Quad_128:MGT_X0Y7: QPLL0_STATUS=LOCKED
+Quad_128:MGT_X0Y7: LINE_RATE=28.125
+Quad_128:MGT_X0Y7: LOGIC.ERRBIT_COUNT=000000000000
+Quad_128:MGT_X0Y7: RX_RECEIVED_BIT_COUNT=4136649760
+Quad_128:MGT_X0Y7: TX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y7: RX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y7: LOOPBACK=None
+Quad_128:MGT_X0Y7: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y7/TX
+Quad_128:MGT_X0Y7: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y7/RX
+Quad_128:MGT_X0Y7: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y7
+Quad_128:MGT_X0Y7: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/COMMON_X0Y1/QPLL0
+Quad_129:MGT_X0Y8: DESCRIPTION=Link 4
+Quad_129:MGT_X0Y8: STATUS=28.137 Gbps
+Quad_129:MGT_X0Y8: QPLL0_STATUS=LOCKED
+Quad_129:MGT_X0Y8: LINE_RATE=28.137
+Quad_129:MGT_X0Y8: LOGIC.ERRBIT_COUNT=000000000000
+Quad_129:MGT_X0Y8: RX_RECEIVED_BIT_COUNT=5102790800
+Quad_129:MGT_X0Y8: TX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y8: RX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y8: LOOPBACK=None
+Quad_129:MGT_X0Y8: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y8/TX
+Quad_129:MGT_X0Y8: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y8/RX
+Quad_129:MGT_X0Y8: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y8
+Quad_129:MGT_X0Y8: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/COMMON_X0Y2/QPLL0
+Quad_129:MGT_X0Y9: DESCRIPTION=Link 5
+Quad_129:MGT_X0Y9: STATUS=28.125 Gbps
+Quad_129:MGT_X0Y9: QPLL0_STATUS=LOCKED
+Quad_129:MGT_X0Y9: LINE_RATE=28.125
+Quad_129:MGT_X0Y9: LOGIC.ERRBIT_COUNT=000000000000
+Quad_129:MGT_X0Y9: RX_RECEIVED_BIT_COUNT=6063598160
+Quad_129:MGT_X0Y9: TX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y9: RX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y9: LOOPBACK=None
+Quad_129:MGT_X0Y9: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y9/TX
+Quad_129:MGT_X0Y9: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y9/RX
+Quad_129:MGT_X0Y9: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y9
+Quad_129:MGT_X0Y9: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/COMMON_X0Y2/QPLL0
+Quad_129:MGT_X0Y10: DESCRIPTION=Link 6
+Quad_129:MGT_X0Y10: STATUS=28.125 Gbps
+Quad_129:MGT_X0Y10: QPLL0_STATUS=LOCKED
+Quad_129:MGT_X0Y10: LINE_RATE=28.125
+Quad_129:MGT_X0Y10: LOGIC.ERRBIT_COUNT=000000000000
+Quad_129:MGT_X0Y10: RX_RECEIVED_BIT_COUNT=6993931440
+Quad_129:MGT_X0Y10: TX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y10: RX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y10: LOOPBACK=None
+Quad_129:MGT_X0Y10: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y10/TX
+Quad_129:MGT_X0Y10: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y10/RX
+Quad_129:MGT_X0Y10: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y10
+Quad_129:MGT_X0Y10: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/COMMON_X0Y2/QPLL0
+Quad_129:MGT_X0Y11: DESCRIPTION=Link 7
+Quad_129:MGT_X0Y11: STATUS=28.125 Gbps
+Quad_129:MGT_X0Y11: QPLL0_STATUS=LOCKED
+Quad_129:MGT_X0Y11: LINE_RATE=28.125
+Quad_129:MGT_X0Y11: LOGIC.ERRBIT_COUNT=000000000000
+Quad_129:MGT_X0Y11: RX_RECEIVED_BIT_COUNT=8014293840
+Quad_129:MGT_X0Y11: TX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y11: RX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y11: LOOPBACK=None
+Quad_129:MGT_X0Y11: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y11/TX
+Quad_129:MGT_X0Y11: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y11/RX
+Quad_129:MGT_X0Y11: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y11
+Quad_129:MGT_X0Y11: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/COMMON_X0Y2/QPLL0
+Quad_130:MGT_X0Y12: DESCRIPTION=Link 8
+Quad_130:MGT_X0Y12: STATUS=28.125 Gbps
+Quad_130:MGT_X0Y12: QPLL0_STATUS=LOCKED
+Quad_130:MGT_X0Y12: LINE_RATE=28.125
+Quad_130:MGT_X0Y12: LOGIC.ERRBIT_COUNT=000000000000
+Quad_130:MGT_X0Y12: RX_RECEIVED_BIT_COUNT=9069198480
+Quad_130:MGT_X0Y12: TX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y12: RX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y12: LOOPBACK=None
+Quad_130:MGT_X0Y12: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y12/TX
+Quad_130:MGT_X0Y12: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y12/RX
+Quad_130:MGT_X0Y12: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y12
+Quad_130:MGT_X0Y12: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/COMMON_X0Y3/QPLL0
+Quad_130:MGT_X0Y13: DESCRIPTION=Link 9
+Quad_130:MGT_X0Y13: STATUS=28.125 Gbps
+Quad_130:MGT_X0Y13: QPLL0_STATUS=LOCKED
+Quad_130:MGT_X0Y13: LINE_RATE=28.125
+Quad_130:MGT_X0Y13: LOGIC.ERRBIT_COUNT=000000000000
+Quad_130:MGT_X0Y13: RX_RECEIVED_BIT_COUNT=9995494720
+Quad_130:MGT_X0Y13: TX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y13: RX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y13: LOOPBACK=None
+Quad_130:MGT_X0Y13: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y13/TX
+Quad_130:MGT_X0Y13: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y13/RX
+Quad_130:MGT_X0Y13: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y13
+Quad_130:MGT_X0Y13: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/COMMON_X0Y3/QPLL0
+Quad_130:MGT_X0Y14: DESCRIPTION=Link 10
+Quad_130:MGT_X0Y14: STATUS=28.125 Gbps
+Quad_130:MGT_X0Y14: QPLL0_STATUS=LOCKED
+Quad_130:MGT_X0Y14: LINE_RATE=28.125
+Quad_130:MGT_X0Y14: LOGIC.ERRBIT_COUNT=000000000000
+Quad_130:MGT_X0Y14: RX_RECEIVED_BIT_COUNT=11003005600
+Quad_130:MGT_X0Y14: TX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y14: RX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y14: LOOPBACK=None
+Quad_130:MGT_X0Y14: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y14/TX
+Quad_130:MGT_X0Y14: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y14/RX
+Quad_130:MGT_X0Y14: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y14
+Quad_130:MGT_X0Y14: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/COMMON_X0Y3/QPLL0
+Quad_130:MGT_X0Y15: DESCRIPTION=Link 11
+Quad_130:MGT_X0Y15: STATUS=28.120 Gbps
+Quad_130:MGT_X0Y15: QPLL0_STATUS=LOCKED
+Quad_130:MGT_X0Y15: LINE_RATE=28.120
+Quad_130:MGT_X0Y15: LOGIC.ERRBIT_COUNT=000000000000
+Quad_130:MGT_X0Y15: RX_RECEIVED_BIT_COUNT=11928888800
+Quad_130:MGT_X0Y15: TX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y15: RX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y15: LOOPBACK=None
+Quad_130:MGT_X0Y15: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y15/TX
+Quad_130:MGT_X0Y15: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y15/RX
+Quad_130:MGT_X0Y15: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y15
+Quad_130:MGT_X0Y15: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/COMMON_X0Y3/QPLL0
+Quad_131:MGT_X0Y16: DESCRIPTION=Link 12
+Quad_131:MGT_X0Y16: STATUS=28.135 Gbps
+Quad_131:MGT_X0Y16: QPLL0_STATUS=LOCKED
+Quad_131:MGT_X0Y16: LINE_RATE=28.135
+Quad_131:MGT_X0Y16: LOGIC.ERRBIT_COUNT=000000000000
+Quad_131:MGT_X0Y16: RX_RECEIVED_BIT_COUNT=12885713760
+Quad_131:MGT_X0Y16: TX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y16: RX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y16: LOOPBACK=None
+Quad_131:MGT_X0Y16: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y16/TX
+Quad_131:MGT_X0Y16: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y16/RX
+Quad_131:MGT_X0Y16: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y16
+Quad_131:MGT_X0Y16: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/COMMON_X0Y4/QPLL0
+Quad_131:MGT_X0Y17: DESCRIPTION=Link 13
+Quad_131:MGT_X0Y17: STATUS=28.125 Gbps
+Quad_131:MGT_X0Y17: QPLL0_STATUS=LOCKED
+Quad_131:MGT_X0Y17: LINE_RATE=28.125
+Quad_131:MGT_X0Y17: LOGIC.ERRBIT_COUNT=000000000000
+Quad_131:MGT_X0Y17: RX_RECEIVED_BIT_COUNT=13742700240
+Quad_131:MGT_X0Y17: TX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y17: RX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y17: LOOPBACK=None
+Quad_131:MGT_X0Y17: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y17/TX
+Quad_131:MGT_X0Y17: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y17/RX
+Quad_131:MGT_X0Y17: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y17
+Quad_131:MGT_X0Y17: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/COMMON_X0Y4/QPLL0
+Quad_131:MGT_X0Y18: DESCRIPTION=Link 14
+Quad_131:MGT_X0Y18: STATUS=28.125 Gbps
+Quad_131:MGT_X0Y18: QPLL0_STATUS=LOCKED
+Quad_131:MGT_X0Y18: LINE_RATE=28.125
+Quad_131:MGT_X0Y18: LOGIC.ERRBIT_COUNT=000000000000
+Quad_131:MGT_X0Y18: RX_RECEIVED_BIT_COUNT=14684403760
+Quad_131:MGT_X0Y18: TX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y18: RX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y18: LOOPBACK=None
+Quad_131:MGT_X0Y18: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y18/TX
+Quad_131:MGT_X0Y18: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y18/RX
+Quad_131:MGT_X0Y18: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y18
+Quad_131:MGT_X0Y18: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/COMMON_X0Y4/QPLL0
+Quad_131:MGT_X0Y19: DESCRIPTION=Link 15
+Quad_131:MGT_X0Y19: STATUS=28.125 Gbps
+Quad_131:MGT_X0Y19: QPLL0_STATUS=LOCKED
+Quad_131:MGT_X0Y19: LINE_RATE=28.125
+Quad_131:MGT_X0Y19: LOGIC.ERRBIT_COUNT=000000000000
+Quad_131:MGT_X0Y19: RX_RECEIVED_BIT_COUNT=15780327120
+Quad_131:MGT_X0Y19: TX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y19: RX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y19: LOOPBACK=None
+Quad_131:MGT_X0Y19: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y19/TX
+Quad_131:MGT_X0Y19: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y19/RX
+Quad_131:MGT_X0Y19: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y19
+Quad_131:MGT_X0Y19: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/COMMON_X0Y4/QPLL0
+# puts "Waiting 120 seconds for test to run."
+Waiting 120 seconds for test to run.
+# after [expr 120 * 1000]
+# set offset 0
+# set initial_links 0
+# for {set i $offset} {$i <= 15} {incr i} {
+#   set j [expr {$i - $offset + $initial_links}]
+#   set display_name [get_property {DISPLAY_NAME} [lindex [get_hw_sio_gts] $i]]
+#   set quad_name [lindex [split [get_property {NAME} [lindex [get_hw_sio_gts] $i]] /] 6]
+#   set qpll0 [expr [expr $i / 4] * 6]
+#   #set qpll1 [expr [expr [expr $i / 4] * 6] + 1]
+#   #set cpll0 [expr $qpll0 + 2 + [expr $i%4]]
+#   puts "$quad_name:$display_name: DESCRIPTION=[get_property {DESCRIPTION} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: STATUS=[get_property {STATUS} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: QPLL0_STATUS=[get_property {QPLL0_STATUS} [lindex [get_hw_sio_plls] $qpll0]]"
+#   #puts "$quad_name:$display_name: QPLL1_STATUS=[get_property {QPLL1_STATUS} [lindex [get_hw_sio_plls] $qpll1]]"
+#   #puts "$quad_name:$display_name: CPLL_STATUS=[get_property {PLL_STATUS} [lindex [get_hw_sio_plls] $cpll0]]"
+#   puts "$quad_name:$display_name: LINE_RATE=[get_property {LINE_RATE} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: LOGIC.ERRBIT_COUNT=[get_property {LOGIC.ERRBIT_COUNT} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: RX_RECEIVED_BIT_COUNT=[get_property {RX_RECEIVED_BIT_COUNT} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: TX_PATTERN=[get_property {TX_PATTERN} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: RX_PATTERN=[get_property {RX_PATTERN} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: LOOPBACK=[get_property {LOOPBACK} [lindex [get_hw_sio_links] $j]]"
+#   # Debug lines to insure the correct alignment of the get_hw_sio_gts, get_hw_sio_links, and get_hw_sio_plls numbering
+#   puts "$quad_name:$display_name: TX_ENDPOINT=[get_property {TX_ENDPOINT} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: RX_ENDPOINT=[get_property {RX_ENDPOINT} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: NAME=[get_property {NAME} [lindex [get_hw_sio_gts] $i]]"
+#   puts "$quad_name:$display_name: get_hw_sio_plls=[lindex [get_hw_sio_plls] $qpll0]"
+#   #puts "$quad_name:$display_name: get_hw_sio_plls=[lindex [get_hw_sio_plls] $qpll1]"
+#   #puts "$quad_name:$display_name: get_hw_sio_plls=[lindex [get_hw_sio_plls] $cpll0]"
+# }
+Quad_128:MGT_X0Y4: DESCRIPTION=Link 0
+Quad_128:MGT_X0Y4: STATUS=28.125 Gbps
+Quad_128:MGT_X0Y4: QPLL0_STATUS=LOCKED
+Quad_128:MGT_X0Y4: LINE_RATE=28.125
+Quad_128:MGT_X0Y4: LOGIC.ERRBIT_COUNT=000000000000
+Quad_128:MGT_X0Y4: RX_RECEIVED_BIT_COUNT=1048483600
+Quad_128:MGT_X0Y4: TX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y4: RX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y4: LOOPBACK=None
+Quad_128:MGT_X0Y4: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y4/TX
+Quad_128:MGT_X0Y4: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y4/RX
+Quad_128:MGT_X0Y4: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y4
+Quad_128:MGT_X0Y4: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/COMMON_X0Y1/QPLL0
+Quad_128:MGT_X0Y5: DESCRIPTION=Link 1
+Quad_128:MGT_X0Y5: STATUS=28.131 Gbps
+Quad_128:MGT_X0Y5: QPLL0_STATUS=LOCKED
+Quad_128:MGT_X0Y5: LINE_RATE=28.131
+Quad_128:MGT_X0Y5: LOGIC.ERRBIT_COUNT=000000000000
+Quad_128:MGT_X0Y5: RX_RECEIVED_BIT_COUNT=2026110880
+Quad_128:MGT_X0Y5: TX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y5: RX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y5: LOOPBACK=None
+Quad_128:MGT_X0Y5: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y5/TX
+Quad_128:MGT_X0Y5: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y5/RX
+Quad_128:MGT_X0Y5: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y5
+Quad_128:MGT_X0Y5: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/COMMON_X0Y1/QPLL0
+Quad_128:MGT_X0Y6: DESCRIPTION=Link 2
+Quad_128:MGT_X0Y6: STATUS=28.125 Gbps
+Quad_128:MGT_X0Y6: QPLL0_STATUS=LOCKED
+Quad_128:MGT_X0Y6: LINE_RATE=28.125
+Quad_128:MGT_X0Y6: LOGIC.ERRBIT_COUNT=000000000000
+Quad_128:MGT_X0Y6: RX_RECEIVED_BIT_COUNT=3135466160
+Quad_128:MGT_X0Y6: TX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y6: RX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y6: LOOPBACK=None
+Quad_128:MGT_X0Y6: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y6/TX
+Quad_128:MGT_X0Y6: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y6/RX
+Quad_128:MGT_X0Y6: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y6
+Quad_128:MGT_X0Y6: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/COMMON_X0Y1/QPLL0
+Quad_128:MGT_X0Y7: DESCRIPTION=Link 3
+Quad_128:MGT_X0Y7: STATUS=28.125 Gbps
+Quad_128:MGT_X0Y7: QPLL0_STATUS=LOCKED
+Quad_128:MGT_X0Y7: LINE_RATE=28.125
+Quad_128:MGT_X0Y7: LOGIC.ERRBIT_COUNT=000000000000
+Quad_128:MGT_X0Y7: RX_RECEIVED_BIT_COUNT=4136649760
+Quad_128:MGT_X0Y7: TX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y7: RX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y7: LOOPBACK=None
+Quad_128:MGT_X0Y7: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y7/TX
+Quad_128:MGT_X0Y7: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y7/RX
+Quad_128:MGT_X0Y7: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y7
+Quad_128:MGT_X0Y7: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/COMMON_X0Y1/QPLL0
+Quad_129:MGT_X0Y8: DESCRIPTION=Link 4
+Quad_129:MGT_X0Y8: STATUS=28.137 Gbps
+Quad_129:MGT_X0Y8: QPLL0_STATUS=LOCKED
+Quad_129:MGT_X0Y8: LINE_RATE=28.137
+Quad_129:MGT_X0Y8: LOGIC.ERRBIT_COUNT=000000000000
+Quad_129:MGT_X0Y8: RX_RECEIVED_BIT_COUNT=5102790800
+Quad_129:MGT_X0Y8: TX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y8: RX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y8: LOOPBACK=None
+Quad_129:MGT_X0Y8: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y8/TX
+Quad_129:MGT_X0Y8: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y8/RX
+Quad_129:MGT_X0Y8: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y8
+Quad_129:MGT_X0Y8: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/COMMON_X0Y2/QPLL0
+Quad_129:MGT_X0Y9: DESCRIPTION=Link 5
+Quad_129:MGT_X0Y9: STATUS=28.125 Gbps
+Quad_129:MGT_X0Y9: QPLL0_STATUS=LOCKED
+Quad_129:MGT_X0Y9: LINE_RATE=28.125
+Quad_129:MGT_X0Y9: LOGIC.ERRBIT_COUNT=000000000000
+Quad_129:MGT_X0Y9: RX_RECEIVED_BIT_COUNT=6063598160
+Quad_129:MGT_X0Y9: TX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y9: RX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y9: LOOPBACK=None
+Quad_129:MGT_X0Y9: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y9/TX
+Quad_129:MGT_X0Y9: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y9/RX
+Quad_129:MGT_X0Y9: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y9
+Quad_129:MGT_X0Y9: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/COMMON_X0Y2/QPLL0
+Quad_129:MGT_X0Y10: DESCRIPTION=Link 6
+Quad_129:MGT_X0Y10: STATUS=28.125 Gbps
+Quad_129:MGT_X0Y10: QPLL0_STATUS=LOCKED
+Quad_129:MGT_X0Y10: LINE_RATE=28.125
+Quad_129:MGT_X0Y10: LOGIC.ERRBIT_COUNT=000000000000
+Quad_129:MGT_X0Y10: RX_RECEIVED_BIT_COUNT=6993931440
+Quad_129:MGT_X0Y10: TX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y10: RX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y10: LOOPBACK=None
+Quad_129:MGT_X0Y10: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y10/TX
+Quad_129:MGT_X0Y10: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y10/RX
+Quad_129:MGT_X0Y10: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y10
+Quad_129:MGT_X0Y10: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/COMMON_X0Y2/QPLL0
+Quad_129:MGT_X0Y11: DESCRIPTION=Link 7
+Quad_129:MGT_X0Y11: STATUS=28.125 Gbps
+Quad_129:MGT_X0Y11: QPLL0_STATUS=LOCKED
+Quad_129:MGT_X0Y11: LINE_RATE=28.125
+Quad_129:MGT_X0Y11: LOGIC.ERRBIT_COUNT=000000000000
+Quad_129:MGT_X0Y11: RX_RECEIVED_BIT_COUNT=8014293840
+Quad_129:MGT_X0Y11: TX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y11: RX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y11: LOOPBACK=None
+Quad_129:MGT_X0Y11: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y11/TX
+Quad_129:MGT_X0Y11: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y11/RX
+Quad_129:MGT_X0Y11: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y11
+Quad_129:MGT_X0Y11: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/COMMON_X0Y2/QPLL0
+Quad_130:MGT_X0Y12: DESCRIPTION=Link 8
+Quad_130:MGT_X0Y12: STATUS=28.125 Gbps
+Quad_130:MGT_X0Y12: QPLL0_STATUS=LOCKED
+Quad_130:MGT_X0Y12: LINE_RATE=28.125
+Quad_130:MGT_X0Y12: LOGIC.ERRBIT_COUNT=000000000000
+Quad_130:MGT_X0Y12: RX_RECEIVED_BIT_COUNT=9069198480
+Quad_130:MGT_X0Y12: TX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y12: RX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y12: LOOPBACK=None
+Quad_130:MGT_X0Y12: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y12/TX
+Quad_130:MGT_X0Y12: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y12/RX
+Quad_130:MGT_X0Y12: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y12
+Quad_130:MGT_X0Y12: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/COMMON_X0Y3/QPLL0
+Quad_130:MGT_X0Y13: DESCRIPTION=Link 9
+Quad_130:MGT_X0Y13: STATUS=28.125 Gbps
+Quad_130:MGT_X0Y13: QPLL0_STATUS=LOCKED
+Quad_130:MGT_X0Y13: LINE_RATE=28.125
+Quad_130:MGT_X0Y13: LOGIC.ERRBIT_COUNT=000000000000
+Quad_130:MGT_X0Y13: RX_RECEIVED_BIT_COUNT=9995494720
+Quad_130:MGT_X0Y13: TX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y13: RX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y13: LOOPBACK=None
+Quad_130:MGT_X0Y13: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y13/TX
+Quad_130:MGT_X0Y13: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y13/RX
+Quad_130:MGT_X0Y13: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y13
+Quad_130:MGT_X0Y13: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/COMMON_X0Y3/QPLL0
+Quad_130:MGT_X0Y14: DESCRIPTION=Link 10
+Quad_130:MGT_X0Y14: STATUS=28.125 Gbps
+Quad_130:MGT_X0Y14: QPLL0_STATUS=LOCKED
+Quad_130:MGT_X0Y14: LINE_RATE=28.125
+Quad_130:MGT_X0Y14: LOGIC.ERRBIT_COUNT=000000000000
+Quad_130:MGT_X0Y14: RX_RECEIVED_BIT_COUNT=11003005600
+Quad_130:MGT_X0Y14: TX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y14: RX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y14: LOOPBACK=None
+Quad_130:MGT_X0Y14: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y14/TX
+Quad_130:MGT_X0Y14: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y14/RX
+Quad_130:MGT_X0Y14: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y14
+Quad_130:MGT_X0Y14: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/COMMON_X0Y3/QPLL0
+Quad_130:MGT_X0Y15: DESCRIPTION=Link 11
+Quad_130:MGT_X0Y15: STATUS=28.120 Gbps
+Quad_130:MGT_X0Y15: QPLL0_STATUS=LOCKED
+Quad_130:MGT_X0Y15: LINE_RATE=28.120
+Quad_130:MGT_X0Y15: LOGIC.ERRBIT_COUNT=000000000000
+Quad_130:MGT_X0Y15: RX_RECEIVED_BIT_COUNT=11928888800
+Quad_130:MGT_X0Y15: TX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y15: RX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y15: LOOPBACK=None
+Quad_130:MGT_X0Y15: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y15/TX
+Quad_130:MGT_X0Y15: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y15/RX
+Quad_130:MGT_X0Y15: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y15
+Quad_130:MGT_X0Y15: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/COMMON_X0Y3/QPLL0
+Quad_131:MGT_X0Y16: DESCRIPTION=Link 12
+Quad_131:MGT_X0Y16: STATUS=28.135 Gbps
+Quad_131:MGT_X0Y16: QPLL0_STATUS=LOCKED
+Quad_131:MGT_X0Y16: LINE_RATE=28.135
+Quad_131:MGT_X0Y16: LOGIC.ERRBIT_COUNT=000000000000
+Quad_131:MGT_X0Y16: RX_RECEIVED_BIT_COUNT=12885713760
+Quad_131:MGT_X0Y16: TX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y16: RX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y16: LOOPBACK=None
+Quad_131:MGT_X0Y16: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y16/TX
+Quad_131:MGT_X0Y16: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y16/RX
+Quad_131:MGT_X0Y16: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y16
+Quad_131:MGT_X0Y16: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/COMMON_X0Y4/QPLL0
+Quad_131:MGT_X0Y17: DESCRIPTION=Link 13
+Quad_131:MGT_X0Y17: STATUS=28.125 Gbps
+Quad_131:MGT_X0Y17: QPLL0_STATUS=LOCKED
+Quad_131:MGT_X0Y17: LINE_RATE=28.125
+Quad_131:MGT_X0Y17: LOGIC.ERRBIT_COUNT=000000000000
+Quad_131:MGT_X0Y17: RX_RECEIVED_BIT_COUNT=13742700240
+Quad_131:MGT_X0Y17: TX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y17: RX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y17: LOOPBACK=None
+Quad_131:MGT_X0Y17: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y17/TX
+Quad_131:MGT_X0Y17: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y17/RX
+Quad_131:MGT_X0Y17: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y17
+Quad_131:MGT_X0Y17: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/COMMON_X0Y4/QPLL0
+Quad_131:MGT_X0Y18: DESCRIPTION=Link 14
+Quad_131:MGT_X0Y18: STATUS=28.125 Gbps
+Quad_131:MGT_X0Y18: QPLL0_STATUS=LOCKED
+Quad_131:MGT_X0Y18: LINE_RATE=28.125
+Quad_131:MGT_X0Y18: LOGIC.ERRBIT_COUNT=000000000000
+Quad_131:MGT_X0Y18: RX_RECEIVED_BIT_COUNT=14684403760
+Quad_131:MGT_X0Y18: TX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y18: RX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y18: LOOPBACK=None
+Quad_131:MGT_X0Y18: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y18/TX
+Quad_131:MGT_X0Y18: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y18/RX
+Quad_131:MGT_X0Y18: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y18
+Quad_131:MGT_X0Y18: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/COMMON_X0Y4/QPLL0
+Quad_131:MGT_X0Y19: DESCRIPTION=Link 15
+Quad_131:MGT_X0Y19: STATUS=28.125 Gbps
+Quad_131:MGT_X0Y19: QPLL0_STATUS=LOCKED
+Quad_131:MGT_X0Y19: LINE_RATE=28.125
+Quad_131:MGT_X0Y19: LOGIC.ERRBIT_COUNT=000000000000
+Quad_131:MGT_X0Y19: RX_RECEIVED_BIT_COUNT=15780327120
+Quad_131:MGT_X0Y19: TX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y19: RX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y19: LOOPBACK=None
+Quad_131:MGT_X0Y19: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y19/TX
+Quad_131:MGT_X0Y19: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y19/RX
+Quad_131:MGT_X0Y19: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y19
+Quad_131:MGT_X0Y19: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/COMMON_X0Y4/QPLL0
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280976B113A
+close_hw_target: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 1063.531 ; gain = 0.000
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Wed Jul 18 14:57:05 2018...
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+
+Info: The test took 0 hours, 05 minutes, and 03 seconds. 0:05:03
+
+Info: IBERT ALL test started...
+
+Info: The test will take 0 hours, 05 minutes, and 03 seconds. 0:05:03
+
+Entering step: 0
+
+
+Info: This step started at: 2018-07-18 14:59:57
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu111_ibert_bank_all.tcl}
+# open_hw
+open_hw: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 320.641 ; gain = 59.531
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.2
+  **** Build date : Jun 14 2018-20:42:52
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:15 . Memory (MB): peak = 323.508 ; gain = 2.867
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280976B113A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-2302] Device xczu28dr (JTAG device index = 0) is programmed with a design that has 1 IBERT core(s).
+# current_hw_device [lindex [get_hw_devices arm_dap_1] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 1]
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/zcu111_ibert_bank_all.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1037.570 ; gain = 0.504
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280976B113A
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Wed Jul 18 15:01:04 2018...
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-07-18 15:01:04
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\vivado_ibert_reset.tcl}
+# open_hw
+open_hw: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 320.023 ; gain = 59.031
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.2
+  **** Build date : Jun 14 2018-20:42:52
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:15 . Memory (MB): peak = 322.773 ; gain = 2.750
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280976B113A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -quiet [lindex [get_hw_devices] 0]
+# set_property PORT.QPLL0RESET 1 [get_hw_sio_commons *];
+# commit_hw_sio [list [get_hw_sio_commons {*}] ]
+# set_property PORT.QPLL0RESET 0 [get_hw_sio_commons *];
+# commit_hw_sio [list [get_hw_sio_commons {*}] ]
+# set_property PORT.QPLL1RESET 1 [get_hw_sio_commons *];
+# commit_hw_sio [list [get_hw_sio_commons {*}] ]
+# set_property PORT.QPLL1RESET 0 [get_hw_sio_commons *];
+# commit_hw_sio [list [get_hw_sio_commons {*}] ]
+# set_property PORT.CPLLRESET 1 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# set_property PORT.CPLLRESET 0 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# set_property PORT.GTRXRESET 1 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# set_property PORT.GTRXRESET 0 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# set_property PORT.GTTXRESET 1 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# set_property PORT.GTTXRESET 0 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# refresh_hw_sio [get_hw_sio_gts *]
+# refresh_hw_sio [get_hw_sio_commons *]
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280976B113A
+close_hw_target: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 1040.629 ; gain = 0.000
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Wed Jul 18 15:02:01 2018...
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-07-18 15:02:02
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu111_ibert_bank_all_status.tcl}
+# open_hw
+open_hw: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 320.941 ; gain = 59.895
+# catch {disconnect_hw_server localhost:3121}
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.2
+  **** Build date : Jun 14 2018-20:42:52
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:14 . Memory (MB): peak = 323.816 ; gain = 1.375
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280976B113A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-2302] Device xczu28dr (JTAG device index = 0) is programmed with a design that has 1 IBERT core(s).
+# set xil_newLinks [list]
+# set xil_newLink [create_hw_sio_link -description {Link 0} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y4/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y4/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 1} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y5/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y5/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 2} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y6/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y6/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 3} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y7/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y7/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 4} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y8/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y8/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 5} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y9/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y9/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 6} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y10/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y10/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 7} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y11/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y11/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 8} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y12/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y12/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 9} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y13/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y13/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 10} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y14/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y14/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 11} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y15/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y15/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 12} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y16/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y16/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 13} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y17/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y17/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 14} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y18/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y18/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 15} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y19/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y19/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLinkGroup [create_hw_sio_linkgroup -description {Link Group 0} [get_hw_sio_links $xil_newLinks]]
+# unset xil_newLinks
+# set_property TX_PATTERN {PRBS 31-bit} [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property RX_PATTERN {PRBS 31-bit} [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property TXDIFFSWING {499 mV (01010)} [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property TXPRE {2.21 dB (01001)} [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property TXPOST {3.74 dB (01110)} [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.TX_RESET_DATAPATH 1 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.TX_RESET_DATAPATH 0 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.RX_RESET_DATAPATH 1 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.RX_RESET_DATAPATH 0 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.MGT_ERRCNT_RESET_CTRL 1 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.MGT_ERRCNT_RESET_CTRL 0 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# refresh_hw_sio [get_hw_sio_links]
+# set offset 0
+# set initial_links 0
+# for {set i $offset} {$i <= 15} {incr i} {
+#   set j [expr {$i - $offset + $initial_links}]
+#   set display_name [get_property {DISPLAY_NAME} [lindex [get_hw_sio_gts] $i]]
+#   set quad_name [lindex [split [get_property {NAME} [lindex [get_hw_sio_gts] $i]] /] 6]
+#   set qpll0 [expr [expr $i / 4] * 6]
+#   #set qpll1 [expr [expr [expr $i / 4] * 6] + 1]
+#   #set cpll0 [expr $qpll0 + 2 + [expr $i%4]]
+#   puts "$quad_name:$display_name: DESCRIPTION=[get_property {DESCRIPTION} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: STATUS=[get_property {STATUS} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: QPLL0_STATUS=[get_property {QPLL0_STATUS} [lindex [get_hw_sio_plls] $qpll0]]"
+#   #puts "$quad_name:$display_name: QPLL1_STATUS=[get_property {QPLL1_STATUS} [lindex [get_hw_sio_plls] $qpll1]]"
+#   #puts "$quad_name:$display_name: CPLL_STATUS=[get_property {PLL_STATUS} [lindex [get_hw_sio_plls] $cpll0]]"
+#   puts "$quad_name:$display_name: LINE_RATE=[get_property {LINE_RATE} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: LOGIC.ERRBIT_COUNT=[get_property {LOGIC.ERRBIT_COUNT} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: RX_RECEIVED_BIT_COUNT=[get_property {RX_RECEIVED_BIT_COUNT} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: TX_PATTERN=[get_property {TX_PATTERN} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: RX_PATTERN=[get_property {RX_PATTERN} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: LOOPBACK=[get_property {LOOPBACK} [lindex [get_hw_sio_links] $j]]"
+#   # Debug lines to insure the correct alignment of the get_hw_sio_gts, get_hw_sio_links, and get_hw_sio_plls numbering
+#   puts "$quad_name:$display_name: TX_ENDPOINT=[get_property {TX_ENDPOINT} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: RX_ENDPOINT=[get_property {RX_ENDPOINT} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: NAME=[get_property {NAME} [lindex [get_hw_sio_gts] $i]]"
+#   puts "$quad_name:$display_name: get_hw_sio_plls=[lindex [get_hw_sio_plls] $qpll0]"
+#   #puts "$quad_name:$display_name: get_hw_sio_plls=[lindex [get_hw_sio_plls] $qpll1]"
+#   #puts "$quad_name:$display_name: get_hw_sio_plls=[lindex [get_hw_sio_plls] $cpll0]"
+# }
+Quad_128:MGT_X0Y4: DESCRIPTION=Link 0
+Quad_128:MGT_X0Y4: STATUS=28.116 Gbps
+Quad_128:MGT_X0Y4: QPLL0_STATUS=LOCKED
+Quad_128:MGT_X0Y4: LINE_RATE=28.116
+Quad_128:MGT_X0Y4: LOGIC.ERRBIT_COUNT=000000000000
+Quad_128:MGT_X0Y4: RX_RECEIVED_BIT_COUNT=4668371120
+Quad_128:MGT_X0Y4: TX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y4: RX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y4: LOOPBACK=None
+Quad_128:MGT_X0Y4: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y4/TX
+Quad_128:MGT_X0Y4: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y4/RX
+Quad_128:MGT_X0Y4: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y4
+Quad_128:MGT_X0Y4: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/COMMON_X0Y1/QPLL0
+Quad_128:MGT_X0Y5: DESCRIPTION=Link 1
+Quad_128:MGT_X0Y5: STATUS=28.127 Gbps
+Quad_128:MGT_X0Y5: QPLL0_STATUS=LOCKED
+Quad_128:MGT_X0Y5: LINE_RATE=28.127
+Quad_128:MGT_X0Y5: LOGIC.ERRBIT_COUNT=000000000000
+Quad_128:MGT_X0Y5: RX_RECEIVED_BIT_COUNT=5371688240
+Quad_128:MGT_X0Y5: TX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y5: RX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y5: LOOPBACK=None
+Quad_128:MGT_X0Y5: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y5/TX
+Quad_128:MGT_X0Y5: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y5/RX
+Quad_128:MGT_X0Y5: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y5
+Quad_128:MGT_X0Y5: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/COMMON_X0Y1/QPLL0
+Quad_128:MGT_X0Y6: DESCRIPTION=Link 2
+Quad_128:MGT_X0Y6: STATUS=28.111 Gbps
+Quad_128:MGT_X0Y6: QPLL0_STATUS=LOCKED
+Quad_128:MGT_X0Y6: LINE_RATE=28.111
+Quad_128:MGT_X0Y6: LOGIC.ERRBIT_COUNT=000000000000
+Quad_128:MGT_X0Y6: RX_RECEIVED_BIT_COUNT=6260011040
+Quad_128:MGT_X0Y6: TX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y6: RX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y6: LOOPBACK=None
+Quad_128:MGT_X0Y6: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y6/TX
+Quad_128:MGT_X0Y6: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y6/RX
+Quad_128:MGT_X0Y6: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y6
+Quad_128:MGT_X0Y6: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/COMMON_X0Y1/QPLL0
+Quad_128:MGT_X0Y7: DESCRIPTION=Link 3
+Quad_128:MGT_X0Y7: STATUS=28.125 Gbps
+Quad_128:MGT_X0Y7: QPLL0_STATUS=LOCKED
+Quad_128:MGT_X0Y7: LINE_RATE=28.125
+Quad_128:MGT_X0Y7: LOGIC.ERRBIT_COUNT=000000000000
+Quad_128:MGT_X0Y7: RX_RECEIVED_BIT_COUNT=7002124320
+Quad_128:MGT_X0Y7: TX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y7: RX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y7: LOOPBACK=None
+Quad_128:MGT_X0Y7: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y7/TX
+Quad_128:MGT_X0Y7: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y7/RX
+Quad_128:MGT_X0Y7: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y7
+Quad_128:MGT_X0Y7: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/COMMON_X0Y1/QPLL0
+Quad_129:MGT_X0Y8: DESCRIPTION=Link 4
+Quad_129:MGT_X0Y8: STATUS=28.125 Gbps
+Quad_129:MGT_X0Y8: QPLL0_STATUS=LOCKED
+Quad_129:MGT_X0Y8: LINE_RATE=28.125
+Quad_129:MGT_X0Y8: LOGIC.ERRBIT_COUNT=000000000000
+Quad_129:MGT_X0Y8: RX_RECEIVED_BIT_COUNT=7886328480
+Quad_129:MGT_X0Y8: TX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y8: RX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y8: LOOPBACK=None
+Quad_129:MGT_X0Y8: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y8/TX
+Quad_129:MGT_X0Y8: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y8/RX
+Quad_129:MGT_X0Y8: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y8
+Quad_129:MGT_X0Y8: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/COMMON_X0Y2/QPLL0
+Quad_129:MGT_X0Y9: DESCRIPTION=Link 5
+Quad_129:MGT_X0Y9: STATUS=28.125 Gbps
+Quad_129:MGT_X0Y9: QPLL0_STATUS=LOCKED
+Quad_129:MGT_X0Y9: LINE_RATE=28.125
+Quad_129:MGT_X0Y9: LOGIC.ERRBIT_COUNT=000000000000
+Quad_129:MGT_X0Y9: RX_RECEIVED_BIT_COUNT=8604580000
+Quad_129:MGT_X0Y9: TX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y9: RX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y9: LOOPBACK=None
+Quad_129:MGT_X0Y9: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y9/TX
+Quad_129:MGT_X0Y9: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y9/RX
+Quad_129:MGT_X0Y9: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y9
+Quad_129:MGT_X0Y9: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/COMMON_X0Y2/QPLL0
+Quad_129:MGT_X0Y10: DESCRIPTION=Link 6
+Quad_129:MGT_X0Y10: STATUS=28.125 Gbps
+Quad_129:MGT_X0Y10: QPLL0_STATUS=LOCKED
+Quad_129:MGT_X0Y10: LINE_RATE=28.125
+Quad_129:MGT_X0Y10: LOGIC.ERRBIT_COUNT=000000000000
+Quad_129:MGT_X0Y10: RX_RECEIVED_BIT_COUNT=9332052160
+Quad_129:MGT_X0Y10: TX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y10: RX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y10: LOOPBACK=None
+Quad_129:MGT_X0Y10: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y10/TX
+Quad_129:MGT_X0Y10: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y10/RX
+Quad_129:MGT_X0Y10: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y10
+Quad_129:MGT_X0Y10: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/COMMON_X0Y2/QPLL0
+Quad_129:MGT_X0Y11: DESCRIPTION=Link 7
+Quad_129:MGT_X0Y11: STATUS=28.110 Gbps
+Quad_129:MGT_X0Y11: QPLL0_STATUS=LOCKED
+Quad_129:MGT_X0Y11: LINE_RATE=28.110
+Quad_129:MGT_X0Y11: LOGIC.ERRBIT_COUNT=000000000000
+Quad_129:MGT_X0Y11: RX_RECEIVED_BIT_COUNT=10056942640
+Quad_129:MGT_X0Y11: TX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y11: RX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y11: LOOPBACK=None
+Quad_129:MGT_X0Y11: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y11/TX
+Quad_129:MGT_X0Y11: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y11/RX
+Quad_129:MGT_X0Y11: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y11
+Quad_129:MGT_X0Y11: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/COMMON_X0Y2/QPLL0
+Quad_130:MGT_X0Y12: DESCRIPTION=Link 8
+Quad_130:MGT_X0Y12: STATUS=28.125 Gbps
+Quad_130:MGT_X0Y12: QPLL0_STATUS=LOCKED
+Quad_130:MGT_X0Y12: LINE_RATE=28.125
+Quad_130:MGT_X0Y12: LOGIC.ERRBIT_COUNT=000000000000
+Quad_130:MGT_X0Y12: RX_RECEIVED_BIT_COUNT=10804970800
+Quad_130:MGT_X0Y12: TX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y12: RX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y12: LOOPBACK=None
+Quad_130:MGT_X0Y12: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y12/TX
+Quad_130:MGT_X0Y12: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y12/RX
+Quad_130:MGT_X0Y12: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y12
+Quad_130:MGT_X0Y12: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/COMMON_X0Y3/QPLL0
+Quad_130:MGT_X0Y13: DESCRIPTION=Link 9
+Quad_130:MGT_X0Y13: STATUS=28.125 Gbps
+Quad_130:MGT_X0Y13: QPLL0_STATUS=LOCKED
+Quad_130:MGT_X0Y13: LINE_RATE=28.125
+Quad_130:MGT_X0Y13: LOGIC.ERRBIT_COUNT=000000000000
+Quad_130:MGT_X0Y13: RX_RECEIVED_BIT_COUNT=11330869360
+Quad_130:MGT_X0Y13: TX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y13: RX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y13: LOOPBACK=None
+Quad_130:MGT_X0Y13: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y13/TX
+Quad_130:MGT_X0Y13: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y13/RX
+Quad_130:MGT_X0Y13: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y13
+Quad_130:MGT_X0Y13: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/COMMON_X0Y3/QPLL0
+Quad_130:MGT_X0Y14: DESCRIPTION=Link 10
+Quad_130:MGT_X0Y14: STATUS=28.125 Gbps
+Quad_130:MGT_X0Y14: QPLL0_STATUS=LOCKED
+Quad_130:MGT_X0Y14: LINE_RATE=28.125
+Quad_130:MGT_X0Y14: LOGIC.ERRBIT_COUNT=000000000000
+Quad_130:MGT_X0Y14: RX_RECEIVED_BIT_COUNT=12060099440
+Quad_130:MGT_X0Y14: TX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y14: RX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y14: LOOPBACK=None
+Quad_130:MGT_X0Y14: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y14/TX
+Quad_130:MGT_X0Y14: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y14/RX
+Quad_130:MGT_X0Y14: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y14
+Quad_130:MGT_X0Y14: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/COMMON_X0Y3/QPLL0
+Quad_130:MGT_X0Y15: DESCRIPTION=Link 11
+Quad_130:MGT_X0Y15: STATUS=28.117 Gbps
+Quad_130:MGT_X0Y15: QPLL0_STATUS=LOCKED
+Quad_130:MGT_X0Y15: LINE_RATE=28.117
+Quad_130:MGT_X0Y15: LOGIC.ERRBIT_COUNT=000000000000
+Quad_130:MGT_X0Y15: RX_RECEIVED_BIT_COUNT=12981364560
+Quad_130:MGT_X0Y15: TX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y15: RX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y15: LOOPBACK=None
+Quad_130:MGT_X0Y15: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y15/TX
+Quad_130:MGT_X0Y15: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y15/RX
+Quad_130:MGT_X0Y15: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y15
+Quad_130:MGT_X0Y15: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/COMMON_X0Y3/QPLL0
+Quad_131:MGT_X0Y16: DESCRIPTION=Link 12
+Quad_131:MGT_X0Y16: STATUS=28.130 Gbps
+Quad_131:MGT_X0Y16: QPLL0_STATUS=LOCKED
+Quad_131:MGT_X0Y16: LINE_RATE=28.130
+Quad_131:MGT_X0Y16: LOGIC.ERRBIT_COUNT=000000000000
+Quad_131:MGT_X0Y16: RX_RECEIVED_BIT_COUNT=13695928720
+Quad_131:MGT_X0Y16: TX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y16: RX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y16: LOOPBACK=None
+Quad_131:MGT_X0Y16: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y16/TX
+Quad_131:MGT_X0Y16: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y16/RX
+Quad_131:MGT_X0Y16: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y16
+Quad_131:MGT_X0Y16: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/COMMON_X0Y4/QPLL0
+Quad_131:MGT_X0Y17: DESCRIPTION=Link 13
+Quad_131:MGT_X0Y17: STATUS=28.125 Gbps
+Quad_131:MGT_X0Y17: QPLL0_STATUS=LOCKED
+Quad_131:MGT_X0Y17: LINE_RATE=28.125
+Quad_131:MGT_X0Y17: LOGIC.ERRBIT_COUNT=000000000000
+Quad_131:MGT_X0Y17: RX_RECEIVED_BIT_COUNT=14575186000
+Quad_131:MGT_X0Y17: TX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y17: RX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y17: LOOPBACK=None
+Quad_131:MGT_X0Y17: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y17/TX
+Quad_131:MGT_X0Y17: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y17/RX
+Quad_131:MGT_X0Y17: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y17
+Quad_131:MGT_X0Y17: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/COMMON_X0Y4/QPLL0
+Quad_131:MGT_X0Y18: DESCRIPTION=Link 14
+Quad_131:MGT_X0Y18: STATUS=28.125 Gbps
+Quad_131:MGT_X0Y18: QPLL0_STATUS=LOCKED
+Quad_131:MGT_X0Y18: LINE_RATE=28.125
+Quad_131:MGT_X0Y18: LOGIC.ERRBIT_COUNT=000000000000
+Quad_131:MGT_X0Y18: RX_RECEIVED_BIT_COUNT=15273307520
+Quad_131:MGT_X0Y18: TX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y18: RX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y18: LOOPBACK=None
+Quad_131:MGT_X0Y18: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y18/TX
+Quad_131:MGT_X0Y18: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y18/RX
+Quad_131:MGT_X0Y18: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y18
+Quad_131:MGT_X0Y18: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/COMMON_X0Y4/QPLL0
+Quad_131:MGT_X0Y19: DESCRIPTION=Link 15
+Quad_131:MGT_X0Y19: STATUS=28.123 Gbps
+Quad_131:MGT_X0Y19: QPLL0_STATUS=LOCKED
+Quad_131:MGT_X0Y19: LINE_RATE=28.123
+Quad_131:MGT_X0Y19: LOGIC.ERRBIT_COUNT=000000000000
+Quad_131:MGT_X0Y19: RX_RECEIVED_BIT_COUNT=16164718160
+Quad_131:MGT_X0Y19: TX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y19: RX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y19: LOOPBACK=None
+Quad_131:MGT_X0Y19: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y19/TX
+Quad_131:MGT_X0Y19: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y19/RX
+Quad_131:MGT_X0Y19: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y19
+Quad_131:MGT_X0Y19: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/COMMON_X0Y4/QPLL0
+# puts "Waiting 120 seconds for test to run."
+Waiting 120 seconds for test to run.
+# after [expr 120 * 1000]
+# refresh_hw_sio [get_hw_sio_links]
+# set offset 0
+# set initial_links 0
+# for {set i $offset} {$i <= 15} {incr i} {
+#   set j [expr {$i - $offset + $initial_links}]
+#   set display_name [get_property {DISPLAY_NAME} [lindex [get_hw_sio_gts] $i]]
+#   set quad_name [lindex [split [get_property {NAME} [lindex [get_hw_sio_gts] $i]] /] 6]
+#   set qpll0 [expr [expr $i / 4] * 6]
+#   #set qpll1 [expr [expr [expr $i / 4] * 6] + 1]
+#   #set cpll0 [expr $qpll0 + 2 + [expr $i%4]]
+#   puts "$quad_name:$display_name: DESCRIPTION=[get_property {DESCRIPTION} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: STATUS=[get_property {STATUS} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: QPLL0_STATUS=[get_property {QPLL0_STATUS} [lindex [get_hw_sio_plls] $qpll0]]"
+#   #puts "$quad_name:$display_name: QPLL1_STATUS=[get_property {QPLL1_STATUS} [lindex [get_hw_sio_plls] $qpll1]]"
+#   #puts "$quad_name:$display_name: CPLL_STATUS=[get_property {PLL_STATUS} [lindex [get_hw_sio_plls] $cpll0]]"
+#   puts "$quad_name:$display_name: LINE_RATE=[get_property {LINE_RATE} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: LOGIC.ERRBIT_COUNT=[get_property {LOGIC.ERRBIT_COUNT} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: RX_RECEIVED_BIT_COUNT=[get_property {RX_RECEIVED_BIT_COUNT} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: TX_PATTERN=[get_property {TX_PATTERN} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: RX_PATTERN=[get_property {RX_PATTERN} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: LOOPBACK=[get_property {LOOPBACK} [lindex [get_hw_sio_links] $j]]"
+#   # Debug lines to insure the correct alignment of the get_hw_sio_gts, get_hw_sio_links, and get_hw_sio_plls numbering
+#   puts "$quad_name:$display_name: TX_ENDPOINT=[get_property {TX_ENDPOINT} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: RX_ENDPOINT=[get_property {RX_ENDPOINT} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: NAME=[get_property {NAME} [lindex [get_hw_sio_gts] $i]]"
+#   puts "$quad_name:$display_name: get_hw_sio_plls=[lindex [get_hw_sio_plls] $qpll0]"
+#   #puts "$quad_name:$display_name: get_hw_sio_plls=[lindex [get_hw_sio_plls] $qpll1]"
+#   #puts "$quad_name:$display_name: get_hw_sio_plls=[lindex [get_hw_sio_plls] $cpll0]"
+# }
+Quad_128:MGT_X0Y4: DESCRIPTION=Link 0
+Quad_128:MGT_X0Y4: STATUS=28.125 Gbps
+Quad_128:MGT_X0Y4: QPLL0_STATUS=LOCKED
+Quad_128:MGT_X0Y4: LINE_RATE=28.125
+Quad_128:MGT_X0Y4: LOGIC.ERRBIT_COUNT=000000000000
+Quad_128:MGT_X0Y4: RX_RECEIVED_BIT_COUNT=3426094039520
+Quad_128:MGT_X0Y4: TX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y4: RX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y4: LOOPBACK=None
+Quad_128:MGT_X0Y4: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y4/TX
+Quad_128:MGT_X0Y4: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y4/RX
+Quad_128:MGT_X0Y4: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y4
+Quad_128:MGT_X0Y4: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/COMMON_X0Y1/QPLL0
+Quad_128:MGT_X0Y5: DESCRIPTION=Link 1
+Quad_128:MGT_X0Y5: STATUS=28.125 Gbps
+Quad_128:MGT_X0Y5: QPLL0_STATUS=LOCKED
+Quad_128:MGT_X0Y5: LINE_RATE=28.125
+Quad_128:MGT_X0Y5: LOGIC.ERRBIT_COUNT=000000000000
+Quad_128:MGT_X0Y5: RX_RECEIVED_BIT_COUNT=3426761247760
+Quad_128:MGT_X0Y5: TX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y5: RX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y5: LOOPBACK=None
+Quad_128:MGT_X0Y5: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y5/TX
+Quad_128:MGT_X0Y5: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y5/RX
+Quad_128:MGT_X0Y5: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y5
+Quad_128:MGT_X0Y5: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/COMMON_X0Y1/QPLL0
+Quad_128:MGT_X0Y6: DESCRIPTION=Link 2
+Quad_128:MGT_X0Y6: STATUS=28.125 Gbps
+Quad_128:MGT_X0Y6: QPLL0_STATUS=LOCKED
+Quad_128:MGT_X0Y6: LINE_RATE=28.125
+Quad_128:MGT_X0Y6: LOGIC.ERRBIT_COUNT=000000000000
+Quad_128:MGT_X0Y6: RX_RECEIVED_BIT_COUNT=3427663383600
+Quad_128:MGT_X0Y6: TX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y6: RX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y6: LOOPBACK=None
+Quad_128:MGT_X0Y6: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y6/TX
+Quad_128:MGT_X0Y6: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y6/RX
+Quad_128:MGT_X0Y6: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y6
+Quad_128:MGT_X0Y6: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/COMMON_X0Y1/QPLL0
+Quad_128:MGT_X0Y7: DESCRIPTION=Link 3
+Quad_128:MGT_X0Y7: STATUS=28.115 Gbps
+Quad_128:MGT_X0Y7: QPLL0_STATUS=LOCKED
+Quad_128:MGT_X0Y7: LINE_RATE=28.115
+Quad_128:MGT_X0Y7: LOGIC.ERRBIT_COUNT=000000000000
+Quad_128:MGT_X0Y7: RX_RECEIVED_BIT_COUNT=3428380285600
+Quad_128:MGT_X0Y7: TX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y7: RX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y7: LOOPBACK=None
+Quad_128:MGT_X0Y7: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y7/TX
+Quad_128:MGT_X0Y7: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y7/RX
+Quad_128:MGT_X0Y7: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/MGT_X0Y7
+Quad_128:MGT_X0Y7: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_128/COMMON_X0Y1/QPLL0
+Quad_129:MGT_X0Y8: DESCRIPTION=Link 4
+Quad_129:MGT_X0Y8: STATUS=28.125 Gbps
+Quad_129:MGT_X0Y8: QPLL0_STATUS=LOCKED
+Quad_129:MGT_X0Y8: LINE_RATE=28.125
+Quad_129:MGT_X0Y8: LOGIC.ERRBIT_COUNT=000000000000
+Quad_129:MGT_X0Y8: RX_RECEIVED_BIT_COUNT=3429102008240
+Quad_129:MGT_X0Y8: TX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y8: RX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y8: LOOPBACK=None
+Quad_129:MGT_X0Y8: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y8/TX
+Quad_129:MGT_X0Y8: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y8/RX
+Quad_129:MGT_X0Y8: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y8
+Quad_129:MGT_X0Y8: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/COMMON_X0Y2/QPLL0
+Quad_129:MGT_X0Y9: DESCRIPTION=Link 5
+Quad_129:MGT_X0Y9: STATUS=28.125 Gbps
+Quad_129:MGT_X0Y9: QPLL0_STATUS=LOCKED
+Quad_129:MGT_X0Y9: LINE_RATE=28.125
+Quad_129:MGT_X0Y9: LOGIC.ERRBIT_COUNT=000000000000
+Quad_129:MGT_X0Y9: RX_RECEIVED_BIT_COUNT=3429823632720
+Quad_129:MGT_X0Y9: TX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y9: RX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y9: LOOPBACK=None
+Quad_129:MGT_X0Y9: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y9/TX
+Quad_129:MGT_X0Y9: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y9/RX
+Quad_129:MGT_X0Y9: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y9
+Quad_129:MGT_X0Y9: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/COMMON_X0Y2/QPLL0
+Quad_129:MGT_X0Y10: DESCRIPTION=Link 6
+Quad_129:MGT_X0Y10: STATUS=28.125 Gbps
+Quad_129:MGT_X0Y10: QPLL0_STATUS=LOCKED
+Quad_129:MGT_X0Y10: LINE_RATE=28.125
+Quad_129:MGT_X0Y10: LOGIC.ERRBIT_COUNT=000000000000
+Quad_129:MGT_X0Y10: RX_RECEIVED_BIT_COUNT=3430504150240
+Quad_129:MGT_X0Y10: TX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y10: RX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y10: LOOPBACK=None
+Quad_129:MGT_X0Y10: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y10/TX
+Quad_129:MGT_X0Y10: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y10/RX
+Quad_129:MGT_X0Y10: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y10
+Quad_129:MGT_X0Y10: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/COMMON_X0Y2/QPLL0
+Quad_129:MGT_X0Y11: DESCRIPTION=Link 7
+Quad_129:MGT_X0Y11: STATUS=28.125 Gbps
+Quad_129:MGT_X0Y11: QPLL0_STATUS=LOCKED
+Quad_129:MGT_X0Y11: LINE_RATE=28.125
+Quad_129:MGT_X0Y11: LOGIC.ERRBIT_COUNT=000000000000
+Quad_129:MGT_X0Y11: RX_RECEIVED_BIT_COUNT=3431208976000
+Quad_129:MGT_X0Y11: TX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y11: RX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y11: LOOPBACK=None
+Quad_129:MGT_X0Y11: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y11/TX
+Quad_129:MGT_X0Y11: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y11/RX
+Quad_129:MGT_X0Y11: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/MGT_X0Y11
+Quad_129:MGT_X0Y11: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_129/COMMON_X0Y2/QPLL0
+Quad_130:MGT_X0Y12: DESCRIPTION=Link 8
+Quad_130:MGT_X0Y12: STATUS=28.128 Gbps
+Quad_130:MGT_X0Y12: QPLL0_STATUS=LOCKED
+Quad_130:MGT_X0Y12: LINE_RATE=28.128
+Quad_130:MGT_X0Y12: LOGIC.ERRBIT_COUNT=000000000000
+Quad_130:MGT_X0Y12: RX_RECEIVED_BIT_COUNT=3431914179920
+Quad_130:MGT_X0Y12: TX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y12: RX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y12: LOOPBACK=None
+Quad_130:MGT_X0Y12: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y12/TX
+Quad_130:MGT_X0Y12: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y12/RX
+Quad_130:MGT_X0Y12: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y12
+Quad_130:MGT_X0Y12: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/COMMON_X0Y3/QPLL0
+Quad_130:MGT_X0Y13: DESCRIPTION=Link 9
+Quad_130:MGT_X0Y13: STATUS=28.139 Gbps
+Quad_130:MGT_X0Y13: QPLL0_STATUS=LOCKED
+Quad_130:MGT_X0Y13: LINE_RATE=28.139
+Quad_130:MGT_X0Y13: LOGIC.ERRBIT_COUNT=000000000000
+Quad_130:MGT_X0Y13: RX_RECEIVED_BIT_COUNT=3432577324320
+Quad_130:MGT_X0Y13: TX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y13: RX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y13: LOOPBACK=None
+Quad_130:MGT_X0Y13: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y13/TX
+Quad_130:MGT_X0Y13: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y13/RX
+Quad_130:MGT_X0Y13: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y13
+Quad_130:MGT_X0Y13: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/COMMON_X0Y3/QPLL0
+Quad_130:MGT_X0Y14: DESCRIPTION=Link 10
+Quad_130:MGT_X0Y14: STATUS=28.125 Gbps
+Quad_130:MGT_X0Y14: QPLL0_STATUS=LOCKED
+Quad_130:MGT_X0Y14: LINE_RATE=28.125
+Quad_130:MGT_X0Y14: LOGIC.ERRBIT_COUNT=000000000000
+Quad_130:MGT_X0Y14: RX_RECEIVED_BIT_COUNT=3433273338240
+Quad_130:MGT_X0Y14: TX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y14: RX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y14: LOOPBACK=None
+Quad_130:MGT_X0Y14: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y14/TX
+Quad_130:MGT_X0Y14: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y14/RX
+Quad_130:MGT_X0Y14: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y14
+Quad_130:MGT_X0Y14: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/COMMON_X0Y3/QPLL0
+Quad_130:MGT_X0Y15: DESCRIPTION=Link 11
+Quad_130:MGT_X0Y15: STATUS=28.112 Gbps
+Quad_130:MGT_X0Y15: QPLL0_STATUS=LOCKED
+Quad_130:MGT_X0Y15: LINE_RATE=28.112
+Quad_130:MGT_X0Y15: LOGIC.ERRBIT_COUNT=000000000000
+Quad_130:MGT_X0Y15: RX_RECEIVED_BIT_COUNT=3434156342640
+Quad_130:MGT_X0Y15: TX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y15: RX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y15: LOOPBACK=None
+Quad_130:MGT_X0Y15: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y15/TX
+Quad_130:MGT_X0Y15: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y15/RX
+Quad_130:MGT_X0Y15: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/MGT_X0Y15
+Quad_130:MGT_X0Y15: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_130/COMMON_X0Y3/QPLL0
+Quad_131:MGT_X0Y16: DESCRIPTION=Link 12
+Quad_131:MGT_X0Y16: STATUS=28.147 Gbps
+Quad_131:MGT_X0Y16: QPLL0_STATUS=LOCKED
+Quad_131:MGT_X0Y16: LINE_RATE=28.147
+Quad_131:MGT_X0Y16: LOGIC.ERRBIT_COUNT=000000000000
+Quad_131:MGT_X0Y16: RX_RECEIVED_BIT_COUNT=3434869129440
+Quad_131:MGT_X0Y16: TX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y16: RX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y16: LOOPBACK=None
+Quad_131:MGT_X0Y16: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y16/TX
+Quad_131:MGT_X0Y16: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y16/RX
+Quad_131:MGT_X0Y16: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y16
+Quad_131:MGT_X0Y16: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/COMMON_X0Y4/QPLL0
+Quad_131:MGT_X0Y17: DESCRIPTION=Link 13
+Quad_131:MGT_X0Y17: STATUS=28.125 Gbps
+Quad_131:MGT_X0Y17: QPLL0_STATUS=LOCKED
+Quad_131:MGT_X0Y17: LINE_RATE=28.125
+Quad_131:MGT_X0Y17: LOGIC.ERRBIT_COUNT=000000000000
+Quad_131:MGT_X0Y17: RX_RECEIVED_BIT_COUNT=3435576853680
+Quad_131:MGT_X0Y17: TX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y17: RX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y17: LOOPBACK=None
+Quad_131:MGT_X0Y17: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y17/TX
+Quad_131:MGT_X0Y17: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y17/RX
+Quad_131:MGT_X0Y17: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y17
+Quad_131:MGT_X0Y17: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/COMMON_X0Y4/QPLL0
+Quad_131:MGT_X0Y18: DESCRIPTION=Link 14
+Quad_131:MGT_X0Y18: STATUS=28.125 Gbps
+Quad_131:MGT_X0Y18: QPLL0_STATUS=LOCKED
+Quad_131:MGT_X0Y18: LINE_RATE=28.125
+Quad_131:MGT_X0Y18: LOGIC.ERRBIT_COUNT=000000000000
+Quad_131:MGT_X0Y18: RX_RECEIVED_BIT_COUNT=3436283003360
+Quad_131:MGT_X0Y18: TX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y18: RX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y18: LOOPBACK=None
+Quad_131:MGT_X0Y18: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y18/TX
+Quad_131:MGT_X0Y18: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y18/RX
+Quad_131:MGT_X0Y18: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y18
+Quad_131:MGT_X0Y18: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/COMMON_X0Y4/QPLL0
+Quad_131:MGT_X0Y19: DESCRIPTION=Link 15
+Quad_131:MGT_X0Y19: STATUS=28.125 Gbps
+Quad_131:MGT_X0Y19: QPLL0_STATUS=LOCKED
+Quad_131:MGT_X0Y19: LINE_RATE=28.125
+Quad_131:MGT_X0Y19: LOGIC.ERRBIT_COUNT=000000000000
+Quad_131:MGT_X0Y19: RX_RECEIVED_BIT_COUNT=3437027199280
+Quad_131:MGT_X0Y19: TX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y19: RX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y19: LOOPBACK=None
+Quad_131:MGT_X0Y19: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y19/TX
+Quad_131:MGT_X0Y19: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y19/RX
+Quad_131:MGT_X0Y19: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/MGT_X0Y19
+Quad_131:MGT_X0Y19: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976B113A/0_1_0_0/IBERT/Quad_131/COMMON_X0Y4/QPLL0
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280976B113A
+close_hw_target: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 1065.625 ; gain = 0.000
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Wed Jul 18 15:05:04 2018...
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+
+Info: The test took 0 hours, 05 minutes, and 06 seconds. 0:05:06

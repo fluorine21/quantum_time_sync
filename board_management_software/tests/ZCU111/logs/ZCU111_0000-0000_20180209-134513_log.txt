@@ -1,0 +1,378 @@
+Board: ZCU111
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: ZCU111 RTC test started...
+
+Info: The test will take 0 hours, 00 minutes, and 31 seconds. 0:00:31
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-09 13:45:16
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-09 13:45:16
+
+C:\zcu111_bit\tests\ZCU111>cd bat\ 
+
+C:\zcu111_bit\tests\ZCU111\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-09 13:45:20
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+fpga -state
+FPGA is not configured
+
+fpga -no-revision-check -file {C:/zcu111_bit/tests/ZCU111/../bitstream/zcu111_ipi.bit}
+initializing  0%    0MB   0.0MB/s  ??:?? ETA  3%    1MB   2.1MB/s  ??:?? ETA  5%    1MB   1.9MB/s  ??:?? ETA  8%    2MB   1.8MB/s  ??:?? ETA 11%    3MB   1.8MB/s  ??:?? ETA 13%    4MB   1.8MB/s  ??:?? ETA 15%    5MB   1.7MB/s  00:15 ETA 18%    6MB   1.7MB/s  00:15 ETA 21%    6MB   1.7MB/s  00:15 ETA 23%    7MB   1.7MB/s  00:14 ETA 26%    8MB   1.7MB/s  00:14 ETA 28%    9MB   1.7MB/s  00:13 ETA 31%   10MB   1.7MB/s  00:13 ETA 34%   11MB   1.7MB/s  00:12 ETA 36%   12MB   1.7MB/s  00:12 ETA 39%   12MB   1.7MB/s  00:11 ETA 41%   13MB   1.7MB/s  00:11 ETA 44%   14MB   1.7MB/s  00:10 ETA 47%   15MB   1.7MB/s  00:10 ETA 49%   16MB   1.7MB/s  00:09 ETA 52%   17MB   1.7MB/s  00:09 ETA 54%   18MB   1.7MB/s  00:08 ETA 57%   18MB   1.7MB/s  00:08 ETA 59%   19MB   1.7MB/s  00:07 ETA 62%   20MB   1.7MB/s  00:07 ETA 65%   21MB   1.7MB/s  00:06 ETA 67%   22MB   1.7MB/s  00:06 ETA 70%   23MB   1.7MB/s  00:05 ETA 72%   23MB   1.7MB/s  00:05 ETA 75%   24MB   1.7MB/s  00:04 ETA 77%   25MB   1.7MB/s  00:04 ETA 80%   26MB   1.7MB/s  00:03 ETA 83%   27MB   1.7MB/s  00:03 ETA 85%   28MB   1.7MB/s  00:02 ETA 88%   29MB   1.7MB/s  00:02 ETA 90%   29MB   1.7MB/s  00:01 ETA 93%   30MB   1.7MB/s  00:01 ETA 96%   31MB   1.7MB/s  00:00 ETA 98%   32MB   1.7MB/s  00:00 ETA100%   32MB   1.7MB/s  00:19    
+
+fpga -ir-status
+IR STATUS: 117
+     Always One (Bits [0]): 1
+    Always Zero (Bits [1]): 0
+       ISC_Done (Bits [2]): 1
+    ISC_Enabled (Bits [3]): 0
+  Init Complete (Bits [4]): 1
+           DONE (Bits [5]): 1
+             (Bits [11:6]): 1
+targets -set -filter {name =~"*APU*"}
+
+source {C:/zcu111_bit/tests/ZCU111/../tcl/psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/zcu111_bit/tests/ZCU111/../elf/hello_rtc.elf}
+Downloading Program -- C:/zcu111_bit/tests/ZCU111/elf/hello_rtc.elf
+	section, .text: 0x00000000 - 0x0000322b
+	section, .init: 0x00003240 - 0x00003273
+	section, .fini: 0x00003280 - 0x000032b3
+	section, .note.gnu.build-id: 0x000032b4 - 0x000032d7
+	section, .rodata: 0x000032d8 - 0x0000362f
+	section, .rodata1: 0x00003630 - 0x0000363f
+	section, .sdata2: 0x00003640 - 0x0000363f
+	section, .sbss2: 0x00003640 - 0x0000363f
+	section, .data: 0x00003640 - 0x00003f3f
+	section, .data1: 0x00003f40 - 0x00003f3f
+	section, .ctors: 0x00003f40 - 0x00003f3f
+	section, .dtors: 0x00003f40 - 0x00003f3f
+	section, .eh_frame: 0x00003f40 - 0x00003f43
+	section, .mmu_tbl0: 0x00004000 - 0x0000400f
+	section, .mmu_tbl1: 0x00005000 - 0x00006fff
+	section, .mmu_tbl2: 0x00007000 - 0x0000afff
+	section, .preinit_array: 0x0000b000 - 0x0000afff
+	section, .init_array: 0x0000b000 - 0x0000b007
+	section, .fini_array: 0x0000b008 - 0x0000b047
+	section, .sdata: 0x0000b048 - 0x0000b07f
+	section, .sbss: 0x0000b080 - 0x0000b07f
+	section, .tdata: 0x0000b080 - 0x0000b07f
+	section, .tbss: 0x0000b080 - 0x0000b07f
+	section, .bss: 0x0000b080 - 0x0000b13f
+	section, .heap: 0x0000b140 - 0x0000d13f
+	section, .stack: 0x0000d140 - 0x0001013f
+  0%    0MB   0.0MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu111_bit/tests/ZCU111/elf/hello_rtc.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 2000
+
+disconnect
+
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-09 13:45:52
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Fri Feb  9 13:46:08 2018...
+step finished 
+
+step finished 
+the expression:(.*)YEAR\:MM\:DD\s+HR\:MM\:SS
+
+Error: Could not find regular expression in step 0 of test 4 - "(.*)Last\s+set\s+time\s+for\s+RTC\s+is"
+
+Error: Could not find regular expression in step 0 of test 4 - "(.*)RTC\s+time\s+after\s+set\s+is"
+
+Error: Could not find regular expression in step 0 of test 4 - "(.*)YEAR\:MM\:DD\s+HR\:MM\:SS"
+
+Info: Result for step 0: Fail
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+
+Info: The test took 0 hours, 00 minutes, and 54 seconds. 0:00:54
+
+Info: ZCU111 RTC test started...
+
+Info: The test will take 0 hours, 00 minutes, and 31 seconds. 0:00:31
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-09 13:46:21
+
+Error: Failed to connect to Serial port in step 0 of test 4
+
+step finished 
+Exception in thread :
+Traceback (most recent call last):
+  File "threading.py", line 801, in __bootstrap_inner
+  File "com.py", line 156, in run
+UnboundLocalError: local variable 'expression' referenced before assignment
+
+
+Error: 'comm' type in step 0 never found a serial port to connect to in test 4
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-09 13:46:21
+
+Error: Stopped because step 0 failed in test 4
+
+Info: Result for step 0: Fail
+Info: The test took 0 hours, 00 minutes, and 00 seconds. 0:00:00
+
+Info: ZCU111 RTC test started...
+
+Info: The test will take 0 hours, 00 minutes, and 31 seconds. 0:00:31
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-09 13:50:29
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-09 13:50:29
+
+C:\zcu111_bit\tests\ZCU111>cd bat\ 
+
+C:\zcu111_bit\tests\ZCU111\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-09 13:50:33
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+fpga -state
+FPGA is not configured
+after 2000
+
+fpga -no-revision-check -file {C:/zcu111_bit/tests/ZCU111/../bitstream/zcu111_ipi.bit}
+initializing  0%    0MB   0.0MB/s  ??:?? ETA  3%    1MB   2.2MB/s  ??:?? ETA  5%    1MB   1.9MB/s  ??:?? ETA  8%    2MB   1.8MB/s  ??:?? ETA 11%    3MB   1.8MB/s  ??:?? ETA 13%    4MB   1.8MB/s  ??:?? ETA 16%    5MB   1.8MB/s  00:15 ETA 18%    6MB   1.7MB/s  00:15 ETA 21%    7MB   1.7MB/s  00:14 ETA 23%    7MB   1.7MB/s  00:14 ETA 26%    8MB   1.7MB/s  00:14 ETA 28%    9MB   1.7MB/s  00:13 ETA 31%   10MB   1.7MB/s  00:13 ETA 34%   11MB   1.7MB/s  00:12 ETA 36%   12MB   1.7MB/s  00:12 ETA 39%   12MB   1.7MB/s  00:11 ETA 41%   13MB   1.7MB/s  00:11 ETA 44%   14MB   1.7MB/s  00:10 ETA 46%   15MB   1.7MB/s  00:10 ETA 49%   16MB   1.7MB/s  00:09 ETA 52%   17MB   1.7MB/s  00:09 ETA 54%   17MB   1.7MB/s  00:08 ETA 57%   18MB   1.7MB/s  00:08 ETA 59%   19MB   1.7MB/s  00:07 ETA 62%   20MB   1.7MB/s  00:07 ETA 64%   21MB   1.7MB/s  00:06 ETA 67%   22MB   1.7MB/s  00:06 ETA 70%   23MB   1.7MB/s  00:05 ETA 72%   23MB   1.7MB/s  00:05 ETA 75%   24MB   1.7MB/s  00:04 ETA 77%   25MB   1.7MB/s  00:04 ETA 80%   26MB   1.7MB/s  00:03 ETA 82%   27MB   1.7MB/s  00:03 ETA 85%   28MB   1.7MB/s  00:02 ETA 88%   28MB   1.7MB/s  00:02 ETA 90%   29MB   1.7MB/s  00:01 ETA 93%   30MB   1.7MB/s  00:01 ETA 95%   31MB   1.7MB/s  00:00 ETA 98%   32MB   1.7MB/s  00:00 ETA100%   32MB   1.7MB/s  00:19    
+
+after 2000
+
+fpga -state
+FPGA is configured
+after 2000
+
+fpga -ir-status
+IR STATUS: 117
+     Always One (Bits [0]): 1
+    Always Zero (Bits [1]): 0
+       ISC_Done (Bits [2]): 1
+    ISC_Enabled (Bits [3]): 0
+  Init Complete (Bits [4]): 1
+           DONE (Bits [5]): 1
+             (Bits [11:6]): 1
+after 2000
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/zcu111_bit/tests/ZCU111/../tcl/ipi_psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/zcu111_bit/tests/ZCU111/../elf/hello_rtc.elf}
+Downloading Program -- C:/zcu111_bit/tests/ZCU111/elf/hello_rtc.elf
+	section, .text: 0x00000000 - 0x0000322b
+	section, .init: 0x00003240 - 0x00003273
+	section, .fini: 0x00003280 - 0x000032b3
+	section, .note.gnu.build-id: 0x000032b4 - 0x000032d7
+	section, .rodata: 0x000032d8 - 0x0000362f
+	section, .rodata1: 0x00003630 - 0x0000363f
+	section, .sdata2: 0x00003640 - 0x0000363f
+	section, .sbss2: 0x00003640 - 0x0000363f
+	section, .data: 0x00003640 - 0x00003f3f
+	section, .data1: 0x00003f40 - 0x00003f3f
+	section, .ctors: 0x00003f40 - 0x00003f3f
+	section, .dtors: 0x00003f40 - 0x00003f3f
+	section, .eh_frame: 0x00003f40 - 0x00003f43
+	section, .mmu_tbl0: 0x00004000 - 0x0000400f
+	section, .mmu_tbl1: 0x00005000 - 0x00006fff
+	section, .mmu_tbl2: 0x00007000 - 0x0000afff
+	section, .preinit_array: 0x0000b000 - 0x0000afff
+	section, .init_array: 0x0000b000 - 0x0000b007
+	section, .fini_array: 0x0000b008 - 0x0000b047
+	section, .sdata: 0x0000b048 - 0x0000b07f
+	section, .sbss: 0x0000b080 - 0x0000b07f
+	section, .tdata: 0x0000b080 - 0x0000b07f
+	section, .tbss: 0x0000b080 - 0x0000b07f
+	section, .bss: 0x0000b080 - 0x0000b13f
+	section, .heap: 0x0000b140 - 0x0000d13f
+	section, .stack: 0x0000d140 - 0x0001013f
+  0%    0MB   0.0MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu111_bit/tests/ZCU111/elf/hello_rtc.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 2000
+
+Day Convention : 0-Fri, 1-Sat, 2-Sun, 3-Mon, 4-Tue, 5-Wed, 6-Thur
+Last set time for RTC is..
+YEAR:MM:DD HR:MM:SS 	 2016:10:17 00:00:01	 Day = 3
+
+Current RTC time is..
+YEAR:MM:DD HR:MM:SS 	 2016:10:17 00:00:53	 Day = 3
+
+Setting Time = 2016:10:17 00:00:00
+RTC time after set is..
+YEAR:MM:DD HR:MM:SS 	 2016:10:17 00:00:00	 Day = 3
+
+disconnect
+
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-09 13:51:11
+
+RTC time after delay_1 is..
+YEAR:MM:DD HR:MM:SS 	 2016:10:17 00:00:02	 Day = 3
+
+RTC time after delay_2 is..
+YEAR:MM:DD HR:MM:SS 	 2016:10:17 00:00:04	 Day = 3
+Successfully ran RTC Set time Example Test
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Fri Feb  9 13:51:27 2018...
+step finished 
+
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+
+Info: The test took 0 hours, 00 minutes, and 59 seconds. 0:00:59
+
+Info: XM107 CARD TEST test started...
+
+Info: The test will take 0 hours, 00 minutes, and 49 seconds. 0:00:49
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-09 13:53:16
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-09 13:53:16
+
+C:\zcu111_bit\tests\ZCU111>cd bat\ 
+
+C:\zcu111_bit\tests\ZCU111\bat>ezoutlet.exe reset 192.168.0.12 
+ step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-09 13:53:20
+ Writing: '\x1b'
+:RWriting: '\x08'
+[('<setmux:1:75:01>', '', '', ''), ('<readeeprom:1:50:00:FF>', '', '', ''), ('<wait:0.3>', '', '', ''), ('<interpeeprom>', '', '', ''), ('<setmux:1:75:00>', '', '', '')]Writing: '\t'
+:RWriting: 'IW1\r75\r01\r\t'
+IW17501:PWriting: 'IW1\r50\r00\r\tIR1\r50\rFF\r\t'
+IW15000:PIR150FF:RWriting: 'IW1\r75\r00\r\t'
+IW17500:Pu'\x00\x00:R\r\x08:R\rIW1\r75\r01\r:P\rIW1\r50\r00\r:P\rIR1\r50\rFF\r:R\rINTERP[]IW1\r75\r00\r:P\r'
+step finished 
+the expression:(.*)XM107
+
+Error: Could not find regular expression in step 0 of test 2 - "(.*)XM107"
+
+Info: Result for step 0: Fail
+Info: Result for step 1: Pass
+Info: Result for step 2: Fail
+
+Info: The test took 0 hours, 00 minutes, and 16 seconds. 0:00:16

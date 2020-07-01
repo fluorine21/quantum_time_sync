@@ -1,0 +1,227 @@
+Board: ZCU111
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: UART 02 TEST test started...
+
+Info: The test will take 0 hours, 00 minutes, and 44 seconds. 0:00:44
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-21 12:21:37
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-21 12:21:38
+
+C:\zcu111_bit\tests\ZCU111>cd bat\ 
+
+C:\zcu111_bit\tests\ZCU111\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-21 12:21:41
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+attempting to launch hw_server
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:08:27
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+INFO: hw_server application started
+INFO: Use Ctrl-C to exit hw_server application
+
+
+
+****** Xilinx hw_server v2017.4
+
+  **** Build date : Dec 15 2017-21:08:27
+
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+
+INFO: hw_server application started
+
+INFO: Use Ctrl-C to exit hw_server application
+
+
+
+
+INFO: To connect to this hw_server instance use url: TCP:127.0.0.1:3121
+
+
+
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+fpga -state
+FPGA is not configured
+after 2000
+
+fpga -no-revision-check -file {C:/zcu111_bit/tests/ZCU111/../bitstream/zcu111_ipi.bit}
+initializing  0%    0MB   0.0MB/s  ??:?? ETA  1%    0MB   0.4MB/s  ??:?? ETA  4%    1MB   0.8MB/s  ??:?? ETA  7%    2MB   0.9MB/s  ??:?? ETA  9%    3MB   1.1MB/s  00:28 ETA 12%    4MB   1.2MB/s  00:25 ETA 14%    4MB   1.2MB/s  00:23 ETA 15%    4MB   0.9MB/s  00:29 ETA 17%    5MB   1.0MB/s  00:27 ETA 20%    6MB   1.0MB/s  00:25 ETA 22%    7MB   1.1MB/s  00:23 ETA 25%    8MB   1.1MB/s  00:21 ETA 27%    9MB   1.0MB/s  00:23 ETA 30%    9MB   1.0MB/s  00:21 ETA 32%   10MB   1.1MB/s  00:20 ETA 35%   11MB   1.1MB/s  00:19 ETA 37%   12MB   1.1MB/s  00:18 ETA 40%   13MB   1.2MB/s  00:16 ETA 43%   14MB   1.2MB/s  00:15 ETA 45%   15MB   1.2MB/s  00:14 ETA 48%   15MB   1.2MB/s  00:14 ETA 50%   16MB   1.2MB/s  00:13 ETA 53%   17MB   1.2MB/s  00:12 ETA 55%   18MB   1.3MB/s  00:11 ETA 58%   19MB   1.3MB/s  00:10 ETA 60%   20MB   1.3MB/s  00:10 ETA 63%   20MB   1.3MB/s  00:09 ETA 66%   21MB   1.3MB/s  00:08 ETA 68%   22MB   1.3MB/s  00:07 ETA 71%   23MB   1.3MB/s  00:07 ETA 73%   24MB   1.3MB/s  00:06 ETA 76%   25MB   1.3MB/s  00:05 ETA 79%   25MB   1.4MB/s  00:05 ETA 81%   26MB   1.4MB/s  00:04 ETA 84%   27MB   1.4MB/s  00:03 ETA 86%   28MB   1.4MB/s  00:03 ETA 89%   29MB   1.4MB/s  00:02 ETA 91%   30MB   1.4MB/s  00:01 ETA 94%   30MB   1.4MB/s  00:01 ETA 96%   31MB   1.4MB/s  00:00 ETA 99%   32MB   1.4MB/s  00:00 ETA100%   32MB   1.4MB/s  00:23    
+
+after 2000
+
+fpga -state
+FPGA is configured
+after 2000
+
+fpga -ir-status
+IR STATUS: 117
+     Always One (Bits [0]): 1
+    Always Zero (Bits [1]): 0
+       ISC_Done (Bits [2]): 1
+    ISC_Enabled (Bits [3]): 0
+  Init Complete (Bits [4]): 1
+           DONE (Bits [5]): 1
+             (Bits [11:6]): 1
+after 2000
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/zcu111_bit/tests/ZCU111/../tcl/ipi_psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/zcu111_bit/tests/ZCU111/../elf/hello_uart_2.elf}
+Downloading Program -- C:/zcu111_bit/tests/ZCU111/elf/hello_uart_2.elf
+	section, .text: 0x00000000 - 0x000026ab
+	section, .init: 0x000026c0 - 0x000026f3
+	section, .fini: 0x00002700 - 0x00002733
+	section, .note.gnu.build-id: 0x00002734 - 0x00002757
+	section, .rodata: 0x00002758 - 0x000029b7
+	section, .rodata1: 0x000029b8 - 0x000029bf
+	section, .sdata2: 0x000029c0 - 0x000029bf
+	section, .sbss2: 0x000029c0 - 0x000029bf
+	section, .data: 0x000029c0 - 0x000032af
+	section, .data1: 0x000032b0 - 0x000032bf
+	section, .ctors: 0x000032c0 - 0x000032bf
+	section, .dtors: 0x000032c0 - 0x000032bf
+	section, .eh_frame: 0x000032c0 - 0x000032c3
+	section, .mmu_tbl0: 0x00004000 - 0x0000400f
+	section, .mmu_tbl1: 0x00005000 - 0x00006fff
+	section, .mmu_tbl2: 0x00007000 - 0x0000afff
+	section, .preinit_array: 0x0000b000 - 0x0000afff
+	section, .init_array: 0x0000b000 - 0x0000b007
+	section, .fini_array: 0x0000b008 - 0x0000b047
+	section, .sdata: 0x0000b048 - 0x0000b07f
+	section, .sbss: 0x0000b080 - 0x0000b07f
+	section, .tdata: 0x0000b080 - 0x0000b07f
+	section, .tbss: 0x0000b080 - 0x0000b07f
+	section, .bss: 0x0000b080 - 0x0000b0bf
+	section, .heap: 0x0000b0c0 - 0x0000d0bf
+	section, .stack: 0x0000d0c0 - 0x000100bf
+  0%    0MB   0.0MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu111_bit/tests/ZCU111/elf/hello_uart_2.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 2000
+
+********************************************************
+********************************************************
+**                ZCU111 - UART 02 Test               **
+********************************************************
+********************************************************
+Testing UART
+115200,8,N,1
+Hello world!
+UART 02 Test Passed
+
+
+disconnect
+
+step finished 
+
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+
+Info: The test took 0 hours, 00 minutes, and 51 seconds. 0:00:51
+
+Info: XM107 LVDS Test test started...
+
+Info: The test will take 0 hours, 01 minutes, and 48 seconds. 0:01:48
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-21 12:23:54
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-21 12:23:54
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu111_xm107_lvds.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:08:27
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 306.125 ; gain = 2.520
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280976A038A
+open_hw_target: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 307.152 ; gain = 1.027
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+WARNING: [Labtools 27-3410] Calibration Failed.
+Resolution: For further debugging information, please refer to the Debug Guide that can be found from the following URL - https://www.xilinx.com/support/answers/68937.html
+INFO: [Labtools 27-2302] Device xczu28dr (JTAG device index = 0) is programmed with a design that has 1 MIG core(s).
+# set_property PROGRAM.FILE {[pwd]/../bitstream/zcu104_xm107_lvds.bit} [lindex [get_hw_devices] 0]
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 21 12:24:23 2018...
+
+step finished 
+the expression:(.*)FMC XM107 LVDS Test passed
+
+Error: Could not find regular expression in step 0 of test 18 - "(.*)FMC XM107 LVDS Test passed"
+
+Info: Result for step 0: Fail
+Info: Result for step 1: Pass
+
+Info: The test took 0 hours, 00 minutes, and 50 seconds. 0:00:50

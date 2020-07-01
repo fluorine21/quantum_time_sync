@@ -267,3 +267,23 @@ timestamp=[2020-06-26 14:02:24], mode=BUILD, duration=0:00:02.119, duration_ms=2
 timestamp=[2020-06-26 14:02:38], mode=BUILD, duration=0:00:13.393, duration_ms=13393, data={name=test_proj_pulse_ctrl_system, configuration=Debug, clean_build=false}
 timestamp=[2020-06-26 14:09:35], mode=BUILD, duration=0:00:02.112, duration_ms=2112, data={name=test_proj_pulse_ctrl, configuration=Debug, clean_build=false}
 timestamp=[2020-06-26 14:09:49], mode=BUILD, duration=0:00:13.435, duration_ms=13435, data={name=test_proj_pulse_ctrl_system, configuration=Debug, clean_build=false}
+timestamp=[2020-06-30 16:03:53], mode=WORKBENCH_START, duration=0:00:12.450, duration_ms=12450, data={}
+timestamp=[2020-06-30 16:03:54], mode=WORKBENCH_UI_INIT, duration=0:00:00.978, duration_ms=978, data={editors_count=8, platform_editors_count=2, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,test_proj_plat,test_proj_pulse_ctrl,test_proj_pulse_ctrl_system}
+timestamp=[2020-06-30 16:03:55], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.134, duration_ms=134, data={}
+timestamp=[2020-06-30 16:05:16], mode=BUILD, duration=0:00:00.437, duration_ms=437, data={name=test_proj_pulse_ctrl, configuration=Debug, clean_build=false}
+timestamp=[2020-06-30 16:05:33], mode=BUILD, duration=0:00:16.856, duration_ms=16856, data={name=test_proj_pulse_ctrl_system, configuration=Debug, clean_build=false}
+timestamp=[2020-06-30 16:08:34], mode=PLATFORM_GENERATION, duration=0:01:38.335, duration_ms=98335, data={name=test_proj_plat}
+timestamp=[2020-06-30 16:10:53], mode=APP_CREATION, duration=0:00:03.569, duration_ms=3569, data={name=test_proj_ethernet, project_type=sdk, os=standalone, processor=cortex-a53, runtime=C/C++, platform=test_proj_plat, application_type=application}
+timestamp=[2020-06-30 16:11:24], mode=BUILD, duration=0:00:05.838, duration_ms=5838, data={name=test_proj_ethernet, configuration=Debug, clean_build=false}
+timestamp=[2020-06-30 16:11:38], mode=BUILD, duration=0:00:13.333, duration_ms=13333, data={name=test_proj_ethernet_system, configuration=Debug, clean_build=false}
+timestamp=[2020-06-30 16:12:21], mode=BUILD, duration=0:00:01.822, duration_ms=1822, data={name=test_proj_ethernet, configuration=Debug, clean_build=false}
+timestamp=[2020-06-30 16:12:35], mode=BUILD, duration=0:00:13.428, duration_ms=13428, data={name=test_proj_ethernet_system, configuration=Debug, clean_build=false}
+timestamp=[2020-06-30 16:15:56], mode=BUILD, duration=0:00:01.856, duration_ms=1856, data={name=test_proj_ethernet, configuration=Debug, clean_build=false}
+timestamp=[2020-06-30 16:16:10], mode=BUILD, duration=0:00:13.494, duration_ms=13494, data={name=test_proj_ethernet_system, configuration=Debug, clean_build=false}
+timestamp=[2020-06-30 16:18:50], mode=BUILD, duration=0:00:01.820, duration_ms=1820, data={name=test_proj_ethernet, configuration=Debug, clean_build=false}
+timestamp=[2020-06-30 16:19:03], mode=BUILD, duration=0:00:13.242, duration_ms=13242, data={name=test_proj_ethernet_system, configuration=Debug, clean_build=false}
+timestamp=[2020-06-30 16:27:20], mode=BUILD, duration=0:00:01.755, duration_ms=1755, data={name=test_proj_ethernet, configuration=Debug, clean_build=false}
+timestamp=[2020-06-30 16:27:34], mode=BUILD, duration=0:00:13.255, duration_ms=13255, data={name=test_proj_ethernet_system, configuration=Debug, clean_build=false}
+timestamp=[2020-06-30 20:38:17], mode=APP_CREATION, duration=0:00:02.702, duration_ms=2702, data={name=test_proj_ethernet, project_type=sdk, os=standalone, processor=cortex-a53, runtime=C/C++, platform=test_proj_plat, application_type=application}
+timestamp=[2020-06-30 20:42:33], mode=BUILD, duration=0:00:05.962, duration_ms=5962, data={name=test_proj_ethernet, configuration=Debug, clean_build=false}
+timestamp=[2020-06-30 20:42:48], mode=BUILD, duration=0:00:13.891, duration_ms=13891, data={name=test_proj_ethernet_system, configuration=Debug, clean_build=false}

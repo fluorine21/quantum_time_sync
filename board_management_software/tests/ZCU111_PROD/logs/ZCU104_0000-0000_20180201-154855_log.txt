@@ -1,0 +1,46 @@
+Board: ZCU104
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: ZCU104 SETUP test started...
+
+Info: The test will take 0 hours, 04 minutes, and 14 seconds. 0:04:14
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-01 15:48:59
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-01 15:48:59
+
+C:\zcu104_bit\tests\ZCU104>cd bat\ 
+
+C:\zcu104_bit\tests\ZCU104\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-01 15:49:02
+
+step finished 
+Exception in thread :
+Traceback (most recent call last):
+  File "threading.py", line 801, in __bootstrap_inner
+  File "com.py", line 156, in run
+UnboundLocalError: local variable 'expression' referenced before assignment
+
+
+Error: 'coms' type in step 2 never found a serial port to connect to in test 4
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "threading.py", line 801, in __bootstrap_inner
+  File "testthread.py", line 62, in run
+  File "testthread.py", line 411, in testfunc
+  File "testthread.py", line 113, in sysctrl
+AttributeError: 'winCmd' object has no attribute 'Write'
+

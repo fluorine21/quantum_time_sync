@@ -1,0 +1,1974 @@
+Board: ZCU104
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: MIG PL DDR4 test started...
+
+Info: The test will take 0 hours, 00 minutes, and 43 seconds. 0:00:43
+
+Entering step: 0
+
+
+Info: This step started at: 2017-07-12 17:11:17
+
+User has confirmed: "Turn off the ZCU102 Board Power.
+Set mode switch SW6 to "0000" (Up,Up,Up,Up)
+Turn on the ZCU102 Board Power."
+
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2017-07-12 17:11:24
+
+****** Vivado Lab Edition v2017.2 (64-bit)
+  **** SW Build 1894441 on Mon May 29 16:52:06 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_mig_pl_ddr4.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+# current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Xilinx/*]
+# open_hw_target -jtag_mode 1
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A023A
+INFO: [Labtoolstcl 44-467] Setting hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A023A into jtag_mode
+# scan_ir_hw_jtag 12 -tdi 0x90B
+# close_hw_target
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A023A
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A023A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1435] Device xczu7 (JTAG device index = 0) is not programmed (DONE status = 0).
+# current_hw_device [lindex [get_hw_devices] 1]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 1]
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/zcu104_mig_pl_ddr4.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 371.895 ; gain = 0.000
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A023A
+# disconnect_hw_server
+# close_hw
+INFO: [Common 17-206] Exiting vivado_lab at Wed Jul 12 17:11:44 2017...
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2017-07-12 17:11:44
+
+****** Vivado Lab Edition v2017.2 (64-bit)
+  **** SW Build 1894441 on Mon May 29 16:52:06 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_mig_pl_ddr4_status.tcl}
+# set TEST_DELAY 120
+# disconnect_hw_server -quiet
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+# current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Xilinx/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A023A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 MIG core(s).
+# set_property PROBES.FILE {[pwd]/../bitstream/zcu104_mig_pl_ddr4.ltx} [lindex [get_hw_devices] 0]
+# refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 MIG core(s).
+# puts "\n    5 second delay for UltraScale MIG calibration\n"
+
+    5 second delay for UltraScale MIG calibration
+
+# after 5000
+# set cal_status [get_property CALIBRATION_FAIL.STATUS [get_hw_migs]]
+# if {${cal_status} == "FALSE"} {
+#     puts "\n[lindex $argv 1] TEST\tPASSED\n"
+# } else {
+#     puts "\n[lindex $argv 1] TEST\tFAILED\n"
+# }
+
+Error: Could not find regular expression in step 2 of test 1 - "(.*)^\s+TEST\s+PASSED"
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Fail
+
+Info: The test took 0 hours, 00 minutes, and 33 seconds. 0:00:33
+
+Info: MIG PL DDR4 test started...
+
+Info: The test will take 0 hours, 00 minutes, and 43 seconds. 0:00:43
+
+Entering step: 0
+
+
+Info: This step started at: 2017-07-12 17:12:30
+
+User has confirmed: "Turn off the ZCU102 Board Power.
+Set mode switch SW6 to "0000" (Up,Up,Up,Up)
+Turn on the ZCU102 Board Power."
+
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2017-07-12 17:12:31
+
+****** Vivado Lab Edition v2017.2 (64-bit)
+  **** SW Build 1894441 on Mon May 29 16:52:06 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_mig_pl_ddr4.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+# current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Xilinx/*]
+# open_hw_target -jtag_mode 1
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A023A
+INFO: [Labtoolstcl 44-467] Setting hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A023A into jtag_mode
+# scan_ir_hw_jtag 12 -tdi 0x90B
+# close_hw_target
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A023A
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A023A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1435] Device xczu7 (JTAG device index = 0) is not programmed (DONE status = 0).
+# current_hw_device [lindex [get_hw_devices] 1]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 1]
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/zcu104_mig_pl_ddr4.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 371.789 ; gain = 0.000
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A023A
+# disconnect_hw_server
+
+Entering step: 2
+
+
+Info: This step started at: 2017-07-12 17:12:51
+
+****** Vivado Lab Edition v2017.2 (64-bit)
+  **** SW Build 1894441 on Mon May 29 16:52:06 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_mig_pl_ddr4_status.tcl}
+# set TEST_DELAY 120
+# disconnect_hw_server -quiet
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+# current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Xilinx/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A023A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 MIG core(s).
+# set_property PROBES.FILE {[pwd]/../bitstream/zcu104_mig_pl_ddr4.ltx} [lindex [get_hw_devices] 0]
+# refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 MIG core(s).
+# puts "\n    5 second delay for UltraScale MIG calibration\n"
+
+    5 second delay for UltraScale MIG calibration
+
+# after 5000
+# puts [set cal_status [get_property CALIBRATION_FAIL.STATUS [get_hw_migs]]]
+TRUE
+# if {${cal_status} == "FALSE"} {
+#     puts "\n[lindex $argv 1] TEST\tPASSED\n"
+# } else {
+#     puts "\n[lindex $argv 1] TEST\tFAILED\n"
+
+Error: Could not find regular expression in step 2 of test 1 - "(.*)^\s+TEST\s+PASSED"
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Fail
+
+Info: The test took 0 hours, 00 minutes, and 33 seconds. 0:00:33
+
+Info: Run All button pressed, running through all of the checked tests 1 time.
+
+Info: The runall will take 0 hours, 03 minutes, and 50 seconds. 0:03:50
+
+Info: MIG PL DDR4 test started...
+
+Info: The test will take 0 hours, 00 minutes, and 43 seconds. 0:00:43
+
+Entering step: 0
+
+
+Info: This step started at: 2017-07-12 17:35:38
+
+User has confirmed: "Turn off the ZCU102 Board Power.
+Set mode switch SW6 to "0000" (Up,Up,Up,Up)
+Turn on the ZCU102 Board Power."
+
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2017-07-12 17:35:40
+
+****** Vivado Lab Edition v2017.2 (64-bit)
+  **** SW Build 1894441 on Mon May 29 16:52:06 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_mig_pl_ddr4.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.2
+  **** Build date : May 29 2017-17:10:40
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:15 . Memory (MB): peak = 324.195 ; gain = 0.000
+# current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Xilinx/*]
+# open_hw_target -jtag_mode 1
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+INFO: [Labtoolstcl 44-467] Setting hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A into jtag_mode
+# scan_ir_hw_jtag 12 -tdi 0x90B
+# close_hw_target
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1435] Device xczu7 (JTAG device index = 0) is not programmed (DONE status = 0).
+# current_hw_device [lindex [get_hw_devices] 1]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 1]
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/zcu104_mig_pl_ddr4.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 371.512 ; gain = 0.035
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+# disconnect_hw_server
+# close_hw
+INFO: [Common 17-206] Exiting vivado_lab at Wed Jul 12 17:36:15 2017...
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2017-07-12 17:36:15
+
+****** Vivado Lab Edition v2017.2 (64-bit)
+  **** SW Build 1894441 on Mon May 29 16:52:06 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_mig_pl_ddr4_status.tcl}
+# set TEST_DELAY 120
+# disconnect_hw_server -quiet
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+# current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Xilinx/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 MIG core(s).
+# set_property PROBES.FILE {[pwd]/../bitstream/zcu104_mig_pl_ddr4.ltx} [lindex [get_hw_devices] 0]
+# refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 MIG core(s).
+# puts "\n    5 second delay for UltraScale MIG calibration\n"
+
+    5 second delay for UltraScale MIG calibration
+
+# after 5000
+# puts [set cal_status [get_property CALIBRATION_FAIL.STATUS [get_hw_migs]]]
+FALSE
+# if {${cal_status} == "FALSE"} {
+#     puts "\n[lindex $argv 1] TEST\tPASSED\n"
+# } else {
+#     puts "\n[lindex $argv 1] TEST\tFAILED\n"
+# }
+
+ TEST	PASSED
+
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting vivado_lab at Wed Jul 12 17:36:32 2017...
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+
+Info: The test took 0 hours, 00 minutes, and 51 seconds. 0:00:51
+
+Info: FTDI UART flashing test started...
+
+Info: The test will take 0 hours, 00 minutes, and 01 seconds. 0:00:01
+
+Entering step: 0
+
+
+Info: This step started at: 2017-07-12 17:36:32
+Location   Description                    SerialNumber        
+0          Xilinx MPSoC ZCU104 Eval Kit B 1280961A003B        
+0
+1280961A003
+program_eeprom 0 openjtag3 1280961A003
+step finished 
+
+Info: Result for step 0: Pass
+
+Info: The test took 0 hours, 00 minutes, and 03 seconds. 0:00:03
+
+Info: PMOD Loopback test started...
+
+Info: The test will take 0 hours, 00 minutes, and 37 seconds. 0:00:37
+
+Entering step: 0
+
+
+Info: This step started at: 2017-07-12 17:36:35
+
+Entering step: 1
+
+
+Info: This step started at: 2017-07-12 17:36:35
+
+User has confirmed: "Turn off the ZCU102 Board Power.
+Set mode switch SW6 to "0000" (Up,Up,Up,Up)
+Turn on the ZCU102 Board Power."
+
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2017-07-12 17:37:14
+
+****** Vivado Lab Edition v2017.2 (64-bit)
+  **** SW Build 1894441 on Mon May 29 16:52:06 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_pl_pmod_loop_bit.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.2
+  **** Build date : May 29 2017-17:10:40
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 324.023 ; gain = 0.000
+# current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Xilinx/*]
+# open_hw_target -jtag_mode 1
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+INFO: [Labtoolstcl 44-467] Setting hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A into jtag_mode
+# scan_ir_hw_jtag 12 -tdi 0x90B
+# close_hw_target
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/pmod_loop.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:12 ; elapsed = 00:00:11 . Memory (MB): peak = 324.023 ; gain = 0.000
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting vivado_lab at Wed Jul 12 17:37:44 2017...
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2017-07-12 17:37:44
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+fpga -state
+FPGA is configured
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/../tcl/psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/../elf/pmod_loop.elf}
+Downloading Program -- C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/elf/pmod_loop.elf
+	section, .text: 0x00000000 - 0x0000c51b
+	section, .init: 0x0000c540 - 0x0000c573
+	section, .fini: 0x0000c580 - 0x0000c5b3
+	section, .note.gnu.build-id: 0x0000c5b4 - 0x0000c5d7
+	section, .rodata: 0x0000c5d8 - 0x0000cc07
+	section, .rodata1: 0x0000cc08 - 0x0000cc3f
+	section, .sdata2: 0x0000cc40 - 0x0000cc3f
+	section, .sbss2: 0x0000cc40 - 0x0000cc3f
+	section, .data: 0x0000cc40 - 0x0000de0f
+	section, .data1: 0x0000de10 - 0x0000de3f
+	section, .ctors: 0x0000de40 - 0x0000de3f
+	section, .dtors: 0x0000de40 - 0x0000de3f
+	section, .eh_frame: 0x0000de40 - 0x0000de43
+	section, .mmu_tbl0: 0x0000e000 - 0x0000e00f
+	section, .mmu_tbl1: 0x0000f000 - 0x00010fff
+	section, .mmu_tbl2: 0x00011000 - 0x00014fff
+	section, .preinit_array: 0x00015000 - 0x00014fff
+	section, .init_array: 0x00015000 - 0x00015007
+	section, .fini_array: 0x00015008 - 0x00015047
+	section, .sdata: 0x00015048 - 0x0001507f
+	section, .sbss: 0x00015080 - 0x0001507f
+	section, .tdata: 0x00015080 - 0x0001507f
+	section, .tbss: 0x00015080 - 0x0001507f
+	section, .bss: 0x00015080 - 0x0001513f
+	section, .heap: 0x00015140 - 0x0001713f
+	section, .stack: 0x00017140 - 0x0001a13f
+  0%    0MB   0.0MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/elf/pmod_loop.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+****************************************
+         PMOD0 LOOPBACK TEST
+****************************************
+PMOD0 Loopback Test: Pattern = 0xFFFFFFFF FAILED
+Data In = 0x000000
+after 5000
+0A
+PMOD0 Loopback Test: Pattern = 0x00000000 FAILED
+Data In = 0x0000000A
+PMOD0 Loopback Test: Pattern = 0xAAAAAAAA, PASSED
+Data In = 0x0000000A
+PMOD0 Loopback Test: Pattern = 0x55555555 FAILED
+Data In = 0x0000000A
+
+****************************************
+         PMOD1 LOOPBACK TEST
+****************************************
+PMOD1 Loopback Test: Pattern = 0xFFFFFFFF FAILED
+Data In = 0x0000000C
+PMOD1 Loopback Test: Pattern = 0x00000000 FAILED
+Data In = 0x0000000C
+PMOD1 Loopback Test: Pattern = 0xAAAAAAAA FAILED
+Data In = 0x0000000C
+PMOD1 Loopback Test: Pattern = 0x55555555 FAILED
+Data In = 0x0000000C
+
+PMOD Loopback: Test failed
+
+Error: Found regular expression in step 0 of test 3 - "(.*)PMOD Loopback: Test failed"
+
+step finished 
+the expression:(.*)PMOD Loopback: Test failed
+
+Error: Could not find regular expression in step 0 of test 3 - "(.*)PMOD Loopback: Test passed"
+
+Error: Stopped because step 0 failed in test 3
+
+Error: Step 3 timed out in test number 3
+
+Info: Result for step 0: Fail
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+Info: The test took 0 hours, 00 minutes, and 48 seconds. 0:00:48
+
+Info: FMC Loopback test started...
+
+Info: The test will take 0 hours, 00 minutes, and 36 seconds. 0:00:36
+
+Entering step: 0
+
+
+Info: This step started at: 2017-07-12 17:38:02
+
+Entering step: 1
+
+
+Info: This step started at: 2017-07-12 17:38:03
+
+User has confirmed: "Turn off the ZCU102 Board Power.
+Set mode switch SW6 to "0000" (Up,Up,Up,Up)
+Plug in an XM105 with all of the "FMC LA" Jumpers connected
+Turn on the ZCU102 Board Power."
+
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2017-07-12 17:38:42
+
+****** Vivado Lab Edition v2017.2 (64-bit)
+  **** SW Build 1894441 on Mon May 29 16:52:06 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_pl_pmod_loop_bit.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.2
+  **** Build date : May 29 2017-17:10:40
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 324.625 ; gain = 0.000
+# current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Xilinx/*]
+# open_hw_target -jtag_mode 1
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+INFO: [Labtoolstcl 44-467] Setting hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A into jtag_mode
+# scan_ir_hw_jtag 12 -tdi 0x90B
+# close_hw_target
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/pmod_loop.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 324.625 ; gain = 0.000
+
+Entering step: 3
+
+
+Info: This step started at: 2017-07-12 17:39:13
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+fpga -state
+FPGA is configured
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/../tcl/psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/../elf/xm105_loop.elf}
+Downloading Program -- C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/elf/xm105_loop.elf
+	section, .text: 0x00000000 - 0x0000c51b
+	section, .init: 0x0000c540 - 0x0000c573
+	section, .fini: 0x0000c580 - 0x0000c5b3
+	section, .note.gnu.build-id: 0x0000c5b4 - 0x0000c5d7
+	section, .rodata: 0x0000c5d8 - 0x0000cc57
+	section, .rodata1: 0x0000cc58 - 0x0000cc7f
+	section, .sdata2: 0x0000cc80 - 0x0000cc7f
+	section, .sbss2: 0x0000cc80 - 0x0000cc7f
+	section, .data: 0x0000cc80 - 0x0000de4f
+	section, .data1: 0x0000de50 - 0x0000de7f
+	section, .ctors: 0x0000de80 - 0x0000de7f
+	section, .dtors: 0x0000de80 - 0x0000de7f
+	section, .eh_frame: 0x0000de80 - 0x0000de83
+	section, .mmu_tbl0: 0x0000e000 - 0x0000e00f
+	section, .mmu_tbl1: 0x0000f000 - 0x00010fff
+	section, .mmu_tbl2: 0x00011000 - 0x00014fff
+	section, .preinit_array: 0x00015000 - 0x00014fff
+	section, .init_array: 0x00015000 - 0x00015007
+	section, .fini_array: 0x00015008 - 0x00015047
+
+step finished 
+the expression:(.*)XM105 GPIO Loopback: Test passed
+
+Error: Could not find regular expression in step 0 of test 4 - "(.*)XM105 GPIO Loopback: Test passed"
+
+Info: Result for step 0: Fail
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+
+Info: The test took 0 hours, 00 minutes, and 47 seconds. 0:00:47
+
+Info: Basic Peripherals test started...
+
+Info: The test will take 0 hours, 00 minutes, and 36 seconds. 0:00:36
+
+Entering step: 0
+
+
+Info: This step started at: 2017-07-12 17:39:29
+
+Entering step: 1
+
+
+Info: This step started at: 2017-07-12 17:39:29
+
+User has confirmed: "Turn off the ZCU102 Board Power.
+Set mode switch SW6 to "0000" (Up,Up,Up,Up)
+Turn on the ZCU102 Board Power."
+
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2017-07-12 17:39:35
+
+****** Vivado Lab Edition v2017.2 (64-bit)
+  **** SW Build 1894441 on Mon May 29 16:52:06 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_pl_pmod_loop_bit.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+# current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Xilinx/*]
+# open_hw_target -jtag_mode 1
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+INFO: [Labtoolstcl 44-467] Setting hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A into jtag_mode
+# scan_ir_hw_jtag 12 -tdi 0x90B
+# close_hw_target
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/pmod_loop.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+program_hw_devices: Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 324.223 ; gain = 0.000
+ERROR: [Common 17-39] 'program_hw_devices' failed due to earlier errors.
+
+
+Error: Could not find regular expression in step 2 of test 5 - "(.*)End of startup status: HIGH"
+
+Entering step: 3
+
+
+Info: This step started at: 2017-07-12 17:40:00
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+fpga -state
+FPGA is not configured
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/../tcl/psu_init.tcl}
+
+psu_init
+step finished 
+
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Fail
+Info: Result for step 3: Pass
+
+Info: The test took 0 hours, 00 minutes, and 35 seconds. 0:00:35
+
+Info: LED & DIP test started...
+
+Info: The test will take 0 hours, 00 minutes, and 37 seconds. 0:00:37
+
+Entering step: 0
+
+
+Info: This step started at: 2017-07-12 17:40:10
+
+Entering step: 1
+
+
+Info: This step started at: 2017-07-12 17:40:10
+
+User has confirmed: "Turn off the ZCU102 Board Power.
+Set mode switch SW6 to "0000" (Up,Up,Up,Up)
+Turn on the ZCU102 Board Power."
+
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2017-07-12 17:41:43
+
+****** Vivado Lab Edition v2017.2 (64-bit)
+  **** SW Build 1894441 on Mon May 29 16:52:06 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_pl_pmod_loop_bit.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.2
+  **** Build date : May 29 2017-17:10:40
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 323.688 ; gain = 0.000
+# current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Xilinx/*]
+# open_hw_target -jtag_mode 1
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+INFO: [Labtoolstcl 44-467] Setting hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A into jtag_mode
+# scan_ir_hw_jtag 12 -tdi 0x90B
+# close_hw_target
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/pmod_loop.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 323.688 ; gain = 0.000
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+
+Entering step: 3
+
+
+Info: This step started at: 2017-07-12 17:42:14
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+fpga -state
+FPGA is configured
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/../tcl/psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/../elf/pb_dip_led.elf}
+Downloading Program -- C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/elf/pb_dip_led.elf
+	section, .text: 0x00000000 - 0x0000c4db
+	section, .init: 0x0000c500 - 0x0000c533
+	section, .fini: 0x0000c540 - 0x0000c573
+	section, .note.gnu.build-id: 0x0000c574 - 0x0000c597
+	section, .rodata: 0x0000c598 - 0x0000cb0f
+	section, .rodata1: 0x0000cb10 - 0x0000cb3f
+	section, .sdata2: 0x0000cb40 - 0x0000cb3f
+	section, .sbss2: 0x0000cb40 - 0x0000cb3f
+	section, .data: 0x0000cb40 - 0x0000dcff
+	section, .data1: 0x0000dd00 - 0x0000dcff
+	section, .ctors: 0x0000dd00 - 0x0000dcff
+	section, .dtors: 0x0000dd00 - 0x0000dcff
+	section, .eh_frame: 0x0000dd00 - 0x0000dd03
+	section, .mmu_tbl0: 0x0000e000 - 0x0000e00f
+	section, .mmu_tbl1: 0x0000f000 - 0x00010fff
+	section, .mmu_tbl2: 0x00011000 - 0x00014fff
+	section, .preinit_array: 0x00015000 - 0x00014fff
+	section, .init_array: 0x00015000 - 0x00015007
+	section, .fini_array: 0x00015008 - 0x00015047
+
+****************************************
+         LED TEST
+****************************************
+	section, .sdata: 0x00015048 - 0x0001507f
+	section, .sbss: 0x00015080 - 0x0001507f
+	section, .tdata: 0x00015080 - 0x0001507f
+	section, .tbss: 0x00015080 - 0x0001507f
+	section, .bss: 0x00015080 - 0x0001513f
+	section, .heap: 0x00015140 - 0x0001713f
+	section, .stack: 0x00017140 - 0x0001a13f
+  0%    0MB   0.0MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/elf/pb_dip_led.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 10000
+
+****************************************
+         DIP SWITCH AND PUSH-BUTTON TEST
+****************************************
+
+DIP switch and Push-button changes shown on GPIO LEDs
+
+disconnect
+
+Entering step: 4
+
+
+Info: This step started at: 2017-07-12 17:42:36
+
+User has responded "Yes": "Push each of the buttons and make sure the LEDs turn on
+Toggle each of the DIP switches and make sure the LEDs toggle as well."
+
+step finished 
+
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+Info: Result for step 4: Pass
+
+Info: The test took 0 hours, 00 minutes, and 55 seconds. 0:00:55
+
+Info: Zynq DDR Memory test started...
+
+Info: The test will take 0 hours, 00 minutes, and 37 seconds. 0:00:37
+
+Entering step: 0
+
+
+Info: This step started at: 2017-07-12 17:42:41
+
+Entering step: 1
+
+
+Info: This step started at: 2017-07-12 17:42:41
+
+User has confirmed: "Turn off the ZCU102 Board Power.
+Set mode switch SW6 to "0000" (Up,Up,Up,Up)
+Turn on the ZCU102 Board Power."
+
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2017-07-12 17:42:49
+
+****** Vivado Lab Edition v2017.2 (64-bit)
+  **** SW Build 1894441 on Mon May 29 16:52:06 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_pl_pmod_loop_bit.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+# current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Xilinx/*]
+# open_hw_target -jtag_mode 1
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+INFO: [Labtoolstcl 44-467] Setting hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A into jtag_mode
+# scan_ir_hw_jtag 12 -tdi 0x90B
+# close_hw_target
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/pmod_loop.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 324.207 ; gain = 0.000
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]]
+
+Entering step: 3
+
+
+Info: This step started at: 2017-07-12 17:43:10
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+fpga -state
+FPGA is configured
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/../tcl/psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/../elf/zynqmp_memtest.elf}
+Downloading Program -- C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/elf/zynqmp_memtest.elf
+	section, .text: 0xfffc0000 - 0xfffdc38f
+	section, .boot: 0xffff0000 - 0xffff0b8f
+	section, .init: 0xffff0bc0 - 0xffff0bf3
+	section, .fini: 0xffff0c00 - 0xffff0c33
+	section, .note.gnu.build-id: 0xfffdc390 - 0xfffdc3b3
+	section, .rodata: 0xfffdc3b8 - 0xfffdec8f
+	section, .rodata1: 0xfffdec90 - 0xfffdecbf
+	section, .sdata2: 0xfffdecc0 - 0xfffdecbf
+	section, .sbss2: 0xfffdecc0 - 0xfffdecbf
+	section, .data: 0xfffdecc0 - 0xfffe0877
+	section, .data1: 0xfffe0878 - 0xfffe087f
+	section, .ctors: 0xfffe0880 - 0xfffe087f
+	section, .dtors: 0xfffe0880 - 0xfffe087f
+	section, .eh_frame: 0xfffe0880 - 0xfffe0883
+	section, .mmu_tbl0: 0xfffe1000 - 0xfffe100f
+	section, .mmu_tbl1: 0xfffe2000 - 0xfffe3fff
+	section, .mmu_tbl2: 0xfffe4000 - 0xfffe7fff
+	section, .preinit_array: 0xfffe8000 - 0xfffe7fff
+	section, .init_array: 0xfffe8000 - 0xfffe8007
+	section, .fini_array: 0xfffe8008 - 0xfffe8047
+	section, .sdata: 0xfffe8048 - 0xfffe807f
+	section, .sbss: 0xfffe8080 - 0xfffe807f
+	section, .tdata: 0xfffe8080 - 0xfffe807f
+	section, .tbss: 0xfffe8080 - 0xfffe807f
+	section, .bss: 0xfffe8080 - 0xfffe963f
+
+********************************************************************************
+   Zynq MPSoC
+   DRAM Diagnostics Test (A53) 
+********************************************************************************
+   Select one of the options below:
+   +--------------------------------------------------------------------+
+   |  Memory Tests                                                      |
+   +-----+--------------------------------------------------------------+
+   | '0' | Test first 2MB region of DDR                                 |
+   | '1' | Test first 32MB region of DDR                                |
+   | '2' | Test first 64MB region of DDR                                |
+   | '3' | Test first 128MB region of DDR                               |
+   | '4' | Test first 256MB region of DDR                               |
+   | '5' | Test first 512MB region of DDR                               |
+   | '6' | Test first 1GB region of DDR                                 |
+   | '7' | Test first 2GB region of DDR                                 |
+   | '8' | Test first 4GB region of DDR                                 |
+   | '9' | Test first 8GB region of DDR                                 |
+   +-----+--------------------------------------------------------------+
+   |  Eye Tests                                                         |
+   +-----+--------------------------------------------------------------+
+   | 'r' | Perform a read eye analysis test                             |
+   | 'w' | Perform a write eye analysis test                            |
+   | 'a' | Print test start address                                     |
+   | 't' | Specify test start address (default=0x0)                     |
+   | 's' | Select the DRAM rank (default=1)                             |
+   +-----+--------------------------------------------------------------+
+   |  Miscellaneous options                                             |
+   +-----+--------------------------------------------------------------+
+   | 'i' | Print DDR information                                        |
+   | 'v' | Verbose Mode ON/OFF                                          |
+   | 'o' | Toggle cache enable/disable                                  |
+   | 'b' | Toggle between 32/64-bit bus widths                          |
+   | 'h' | Print this help menu                                         |
+   +-----+--------------------------------------------------------------+
+    Bus Width = 64,   D-cache is enable,   Verbose Mode is OFF
+
+ Enter 'h' to print help menu
+ Enter Test Option: 
+	section, .heap: 0xffff0c34 - 0xffff2c3f
+	section, .stack: 0xffff2c40 - 0xffff5c3f
+  0%    0MB   0.0MB/s  ??:?? ETA 68%    0MB   0.2MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0xffff0000
+Successfully downloaded C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/elf/zynqmp_memtest.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 3000
+
+disconnect
+
+
+Entering step: 4
+
+
+Info: This step started at: 2017-07-12 17:43:26
+Writing: '2\n'
+2
+Starting Memory Test '2' - Testing 64MB length from address 0x0...
+---------+--------+------------------------------------------------+-----------
+  TEST   | ERROR  |          PER-BYTE-LANE ERROR COUNT             |  TIME
+         | COUNT  | LANES [ #0,  #1,  #2,  #3,  #4,  #5,  #6,  #7] |  (sec)
+---------+--------+------------------------------------------------+-----------
+MT0(1: 0)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 1.33838
+---------+--------+------------------------------------------------+-----------
+MTS(1: 1)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.666568
+---------+--------+------------------------------------------------+-----------
+MTS(1: 2)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.666568
+---------+--------+------------------------------------------------+-----------
+MTS(1: 3)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.666568
+---------+--------+------------------------------------------------+-----------
+MTS(1: 4)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.666568
+---------+--------+------------------------------------------------+-----------
+MTS(1: 5)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.666568
+---------+--------+------------------------------------------------+-----------
+MTS(1: 6)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.666568
+---------+--------+------------------------------------------------+-----------
+MTS(1: 7)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.666568
+---------+--------+------------------------------------------------+-----------
+MTS(1: 8)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 0.666568
+---------+--------+------------------------------------------------+-----------
+MTP(1: 9)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 1.07883
+---------+--------+------------------------------------------------+-----------
+MTP(1:10)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 1.07949
+---------+--------+------------------------------------------------+-----------
+MTL(1:11)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 1.16338
+---------+--------+------------------------------------------------+-----------
+MTL(1:12)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 1.16338
+---------+--------+------------------------------------------------+-----------
+MTL(1:13)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 1.16338
+---------+--------+------------------------------------------------+-----------
+MTL(1:14)|      0 |    0,    0,    0,    0,    0,    0,    0,    0 | 1.16338
+---------+--------+------------------------------------------------+-----------
+    Bus Width = 64,   D-cache is enable,   Verbose Mode is OFF
+
+ Enter 'h' to print help menu
+ Enter Test Option: 
+
+    Bus Width = 64,   D-cache is enable,   Verbose Mode is OFF
+
+ Enter 'h' to print help menu
+ Enter Test Option: 
+
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+Info: Result for step 4: Pass
+
+Info: The test took 0 hours, 00 minutes, and 54 seconds. 0:00:54
+
+Info: Basic Peripherals test started...
+
+Info: The test will take 0 hours, 00 minutes, and 36 seconds. 0:00:36
+
+Entering step: 0
+
+
+Info: This step started at: 2017-07-12 17:44:07
+
+Entering step: 1
+
+
+Info: This step started at: 2017-07-12 17:44:07
+
+User has confirmed: "Turn off the ZCU102 Board Power.
+Set mode switch SW6 to "0000" (Up,Up,Up,Up)
+Turn on the ZCU102 Board Power."
+
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2017-07-12 17:44:08
+
+****** Vivado Lab Edition v2017.2 (64-bit)
+  **** SW Build 1894441 on Mon May 29 16:52:06 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_pl_pmod_loop_bit.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.2
+  **** Build date : May 29 2017-17:10:40
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 324.504 ; gain = 0.000
+# current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Xilinx/*]
+# open_hw_target -jtag_mode 1
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+INFO: [Labtoolstcl 44-467] Setting hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A into jtag_mode
+# scan_ir_hw_jtag 12 -tdi 0x90B
+# close_hw_target
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/pmod_loop.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 324.504 ; gain = 0.000
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+
+Entering step: 3
+
+
+Info: This step started at: 2017-07-12 17:44:40
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+fpga -state
+FPGA is configured
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/../tcl/psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/../elf/test_periph.elf}
+Downloading Program -- C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/elf/test_periph.elf
+	section, .text: 0x00000000 - 0x00008bab
+	section, .init: 0x00008bc0 - 0x00008bf3
+	section, .fini: 0x00008c00 - 0x00008c33
+	section, .note.gnu.build-id: 0x00008c34 - 0x00008c57
+	section, .rodata: 0x00008c58 - 0x00009587
+	section, .rodata1: 0x00009588 - 0x000095bf
+	section, .sdata2: 0x000095c0 - 0x000095bf
+	section, .sbss2: 0x000095c0 - 0x000095bf
+	section, .data: 0x000095c0 - 0x0000ac6f
+	section, .data1: 0x0000ac70 - 0x0000ac7f
+	section, .ctors: 0x0000ac80 - 0x0000ac7f
+---Entering main---
+
+ Running ScuGicSelfTestExample() for psu_acpu_gic...
+ScuGicSelfTestExample PASSED
+ScuGic Interrupt Setup PASSED
+
+Running GpioInputExample() for axi_gpio_11_fmc...
+GpioInputExample PASSED. Read data:0x0
+
+Running GpioInputExample() for axi_gpio_1_dip...
+GpioInputExample PASSED. Read data:0x0
+
+Running GpioInputExample() for axi_gpio_2_pb...
+GpioInputExample PASSED. Read data:0x0
+
+Running GpioOutputExample() for axi_gpio_3_pmod0...
+GpioOutputExample PASSED.
+
+Running GpioOutputExample() for axi_gpio_4_pmod1...
+GpioOutputExample PASSED.
+
+Running GpioInputExample() for axi_gpio_5_pmod	section, .dtors: 0x0000ac80 - 0x0000ac7f
+	section, .eh_frame: 0x0000ac80 - 0x0000ac83
+	section, .mmu_tbl0: 0x0000b000 - 0x0000b00f
+	section, .mmu_tbl1: 0x0000c000 - 0x0000dfff
+	section, .mmu_tbl2: 0x0000e000 - 0x00011fff
+	section, .preinit_array: 0x00012000 - 0x00011fff
+	section, .init_array: 0x00012000 - 0x00012007
+	section, .fini_array: 0x00012008 - 0x00012047
+	section, .sdata: 0x00012048 - 0x0001207f
+	section, .sbss: 0x00012080 - 0x0001207f
+	section, .tdata: 0x00012080 - 0x0001207f
+	section, .tbss: 0x00012080 - 0x0001207f
+	section, .bss: 0x00012080 - 0x0001263f
+	section, .heap: 0x00012640 - 0x0001463f
+	section, .stack: 0x00014640 - 0x0001763f
+  0%    0MB   0.0MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/elf/test_periph.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 5000
+0...
+GpioInputExample PASSED. Read data:0x0
+
+Running GpioInputExample() for axi_gpio_6_pmod1...
+GpioInputExample PASSED. Read data:0x0
+
+Running GpioInputExample() for axi_gpio_7_rst...
+GpioInputExample PASSED. Read data:0x0
+
+Running GpioOutputExample() for axi_gpio_8_fmc...
+GpioOutputExample PASSED.
+
+Running GpioOutputExample() for axi_gpio_9_fmc...
+GpioOutputExample PASSED.
+
+Running GpioOutputExample() for axi_gpio_0_led...
+GpioOutputExample PASSED.
+
+ Running CanPsPolledExample() for psu_can_1...
+CanPsPolledExample PASSED
+
+ Running Interrupt Test  for psu_can_1...
+CanPsIntrExample PASSED
+
+ Running IicPsSelfTestExample() for psu_i2c_1...
+IicPsSelfTestExample PASSED
+
+Running GpioInputExample() for axi_gpio_10_fmc...
+GpioInputExample PASSED. Read data:0x0
+
+Running UartPsPolledExample() for psu_uart_1...
+UartPsPolledExample PASSED
+
+ Running Interrupt Test for psu_uart_1...
+UartPsIntrExample PASSED
+---Exiting main---
+
+disconnect
+
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+
+Info: The test took 0 hours, 00 minutes, and 51 seconds. 0:00:51
+
+Info: FMC Loopback test started...
+
+Info: The test will take 0 hours, 00 minutes, and 36 seconds. 0:00:36
+
+Entering step: 0
+
+
+Info: This step started at: 2017-07-12 17:46:29
+
+Entering step: 1
+
+
+Info: This step started at: 2017-07-12 17:46:29
+
+User has confirmed: "Turn off the ZCU102 Board Power.
+Set mode switch SW6 to "0000" (Up,Up,Up,Up)
+Plug in an XM105 with all of the "FMC LA" Jumpers connected
+Turn on the ZCU102 Board Power."
+
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2017-07-12 17:46:31
+
+****** Vivado Lab Edition v2017.2 (64-bit)
+  **** SW Build 1894441 on Mon May 29 16:52:06 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_pl_pmod_loop_bit.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.2
+  **** Build date : May 29 2017-17:10:40
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 324.488 ; gain = 0.000
+# current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Xilinx/*]
+# open_hw_target -jtag_mode 1
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+INFO: [Labtoolstcl 44-467] Setting hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A into jtag_mode
+# scan_ir_hw_jtag 12 -tdi 0x90B
+# close_hw_target
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/pmod_loop.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 324.488 ; gain = 0.000
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting vivado_lab at Wed Jul 12 17:47:02 2017...
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2017-07-12 17:47:02
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+fpga -state
+FPGA is configured
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/../tcl/psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/../elf/xm105_loop.elf}
+Downloading Program -- C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/elf/xm105_loop.elf
+	section, .text: 0x00000000 - 0x0000c51b
+	section, .init: 0x0000c540 - 0x0000c573
+	section, .fini: 0x0000c580 - 0x0000c5b3
+	section, .note.gnu.build-id: 0x0000c5b4 - 0x0000c5d7
+	section, .rodata: 0x0000c5d8 - 0x0000cc57
+	section, .rodata1: 0x0000cc58 - 0x0000cc7f
+	section, .sdata2: 0x0000cc80 - 0x0000cc7f
+	section, .sbss2: 0x0000cc80 - 0x0000cc7f
+	section, .data: 0x0000cc80 - 0x0000de4f
+	section, .data1: 0x0000de50 - 0x0000de7f
+	section, .ctors: 0x0000de80 - 0x0000de7f
+	section, .dtors: 0x0000de80 - 0x0000de7f
+	section, .eh_frame: 0x0000de80 - 0x0000de83
+	section, .mmu_tbl0: 0x0000e000 - 0x0000e00f
+	section, .mmu_tbl1: 0x0000f000 - 0x00010fff
+	section, .mmu_tbl2: 0x00011000 - 0x00014fff
+	section, .preinit_array: 0x00015000 - 0x00014fff
+	section, .init_array: 0x00015000 - 0x00015007
+	section, .fini_array: 0x00015008 - 0x00015047
+	section, .sdata: 0x00015048 - 0x0001507f
+	section, .sbss: 0x00015080 - 0x0001507f
+	section, .tdata: 0x00015080 - 0x0001507f
+	section, .tbss: 0x00015080 - 0x0001507f
+	section, .bss: 0x00015080 - 0x0001513f
+	section, .heap: 0x00015140 - 0x0001713f
+	section, .stack: 0x00017140 - 0x0001a13f
+  0%    0MB   0.0MB/s  ??:?? ETAaborting, 5 pending requests... aborting, 4 pending requests... aborting, 3 pending requests... aborting, 2 pending requests... aborting, 1 pending requests... 
+Failed to download C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/elf/xm105_loop.elf
+step finished 
+
+step finished 
+the expression:(.*)XM105 GPIO Loopback: Test passed
+
+Error: Could not find regular expression in step 0 of test 4 - "(.*)XM105 GPIO Loopback: Test passed"
+
+Info: Result for step 0: Fail
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+
+Info: The test took 0 hours, 00 minutes, and 46 seconds. 0:00:46
+
+Info: FMC Loopback test started...
+
+Info: The test will take 0 hours, 00 minutes, and 36 seconds. 0:00:36
+
+Entering step: 0
+
+
+Info: This step started at: 2017-07-12 17:47:31
+
+Entering step: 1
+
+
+Info: This step started at: 2017-07-12 17:47:31
+
+User has confirmed: "Turn off the ZCU102 Board Power.
+Set mode switch SW6 to "0000" (Up,Up,Up,Up)
+Plug in an XM105 with all of the "FMC LA" Jumpers connected
+Turn on the ZCU102 Board Power."
+
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2017-07-12 17:47:37
+
+****** Vivado Lab Edition v2017.2 (64-bit)
+  **** SW Build 1894441 on Mon May 29 16:52:06 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_pl_pmod_loop_bit.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.2
+  **** Build date : May 29 2017-17:10:40
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 324.055 ; gain = 0.000
+# current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Xilinx/*]
+# open_hw_target -jtag_mode 1
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+INFO: [Labtoolstcl 44-467] Setting hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A into jtag_mode
+# scan_ir_hw_jtag 12 -tdi 0x90B
+# close_hw_target
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/pmod_loop.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 324.055 ; gain = 0.000
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting vivado_lab at Wed Jul 12 17:48:08 2017...
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2017-07-12 17:48:08
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+fpga -state
+FPGA is configured
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/../tcl/psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/../elf/xm105_loop.elf}
+Downloading Program -- C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/elf/xm105_loop.elf
+	section, .text: 0x00000000 - 0x0000c51b
+	section, .init: 0x0000c540 - 0x0000c573
+	section, .fini: 0x0000c580 - 0x0000c5b3
+	section, .note.gnu.build-id: 0x0000c5b4 - 0x0000c5d7
+	section, .rodata: 0x0000c5d8 - 0x0000cc57
+	section, .rodata1: 0x0000cc58 - 0x0000cc7f
+	section, .sdata2: 0x0000cc80 - 0x0000cc7f
+	section, .sbss2: 0x0000cc80 - 0x0000cc7f
+	section, .data: 0x0000cc80 - 0x0000de4f
+	section, .data1: 0x0000de50 - 0x0000de7f
+	section, .ctors: 0x0000de80 - 0x0000de7f
+	section, .dtors: 0x0000de80 - 0x0000de7f
+	section, .eh_frame: 0x0000de80 - 0x0000de83
+	section, .mmu_tbl0: 0x0000e000 - 0x0000e00f
+	section, .mmu_tbl1: 0x0000f000 - 0x00010fff
+	section, .mmu_tbl2: 0x00011000 - 0x00014fff
+	section, .preinit_array: 0x00015000 - 0x00014fff
+	section, .init_array: 0x00015000 - 0x00015007
+	section, .fini_array: 0x00015008 - 0x00015047
+	section, .sdata: 0x00015048 - 0x0001507f
+	section, .sbss: 0x00015080 - 0x0001507f
+	section, .tdata: 0x00015080 - 0x0001507f
+	section, .tbss: 0x00015080 - 0x0001507f
+	section, .bss: 0x00015080 - 0x0001513f
+	section, .heap: 0x00015140 - 0x0001713f
+	section, .stack: 0x00017140 - 0x0001a13f
+  0%    0MB   0.0MB/s  ??:?? ETA 95%    0MB   0.1MB/s  ??:?? ETA100%    0MB   0.1MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/elf/xm105_loop.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 5000
+
+****************************************
+         HPC0 LA00 - LA31
+****************************************
+HPC0 LA00-LA31 XM105 Loopback Test: Pattern = 0xFFFFFFFF, PASSED
+Data In = 0xFFFFFFFF
+HPC0 LA00-LA31 XM105 Loopback Test: Pattern = 0x00000000, PASSED
+Data In = 0x00000000
+HPC0 LA00-LA31 XM105 Loopback Test: Pattern = 0xAAAAAAAA, PASSED
+Data In = 0xAAAAAAAA
+HPC0 LA00-LA31 XM105 Loopback Test: Pattern = 0x55555555, PASSED
+Data In = 0x55555555
+
+****************************************
+         HPC0 LA32 - LA33
+****************************************
+HPC0 LA32-LA33 XM105 Loopback Test: Pattern = 0xFFFFFFFF, PASSED
+Data In = 0x00000003
+HPC0 LA32-LA33 XM105 Loopback Test: Pattern = 0x00000000, PASSED
+Data In = 0x00000000
+HPC0 LA32-LA33 XM105 Loopback Test: Pattern = 0xAAAAAAAA, PASSED
+Data In = 0x00000002
+HPC0 LA32-LA33 XM105 Loopback Test: Pattern = 0x55555555, PASSED
+Data In = 0x00000001
+
+XM105 GPIO Loopback: Test passed
+
+disconnect
+
+step finished 
+
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+
+Info: The test took 0 hours, 00 minutes, and 50 seconds. 0:00:50
+
+Info: PMOD Loopback test started...
+
+Info: The test will take 0 hours, 00 minutes, and 37 seconds. 0:00:37
+
+Entering step: 0
+
+
+Info: This step started at: 2017-07-12 17:48:28
+
+Entering step: 1
+
+
+Info: This step started at: 2017-07-12 17:48:28
+
+User has confirmed: "Turn off the ZCU102 Board Power.
+Set mode switch SW6 to "0000" (Up,Up,Up,Up)
+Turn on the ZCU102 Board Power."
+
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2017-07-12 17:48:30
+
+****** Vivado Lab Edition v2017.2 (64-bit)
+  **** SW Build 1894441 on Mon May 29 16:52:06 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_pl_pmod_loop_bit.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+# current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Xilinx/*]
+# open_hw_target -jtag_mode 1
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+INFO: [Labtoolstcl 44-467] Setting hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A into jtag_mode
+# scan_ir_hw_jtag 12 -tdi 0x90B
+# close_hw_target
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/pmod_loop.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 323.754 ; gain = 0.000
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+
+Entering step: 3
+
+
+Info: This step started at: 2017-07-12 17:48:52
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+fpga -state
+FPGA is configured
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/../tcl/psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/../elf/pmod_loop.elf}
+Downloading Program -- C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/elf/pmod_loop.elf
+	section, .text: 0x00000000 - 0x0000c51b
+	section, .init: 0x0000c540 - 0x0000c573
+	section, .fini: 0x0000c580 - 0x0000c5b3
+	section, .note.gnu.build-id: 0x0000c5b4 - 0x0000c5d7
+	section, .rodata: 0x0000c5d8 - 0x0000cc07
+	section, .rodata1: 0x0000cc08 - 0x0000cc3f
+	section, .sdata2: 0x0000cc40 - 0x0000cc3f
+	section, .sbss2: 0x0000cc40 - 0x0000cc3f
+	section, .data: 0x0000cc40 - 0x0000de0f
+	section, .data1: 0x0000de10 - 0x0000de3f
+	section, .ctors: 0x0000de40 - 0x0000de3f
+	section, .dtors: 0x0000de40 - 0x0000de3f
+	section, .eh_frame: 0x0000de40 - 0x0000de43
+	section, .mmu_tbl0: 0x0000e000 - 0x0000e00f
+	section, .mmu_tbl1: 0x0000f000 - 0x00010fff
+	section, .mmu_tbl2: 0x00011000 - 0x00014fff
+	section, .preinit_array: 0x00015000 - 0x00014fff
+	section, .init_array: 0x00015000 - 0x00015007
+	section, .fini_array: 0x00015008 - 0x00015047
+
+step finished 
+the expression:(.*)PMOD Loopback: Test passed
+
+Error: Could not find regular expression in step 0 of test 3 - "(.*)PMOD Loopback: Test passed"
+
+Info: Result for step 0: Fail
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+
+Info: The test took 0 hours, 00 minutes, and 37 seconds. 0:00:37
+
+Info: PMOD Loopback test started...
+
+Info: The test will take 0 hours, 00 minutes, and 37 seconds. 0:00:37
+
+Entering step: 0
+
+
+Info: This step started at: 2017-07-12 17:49:16
+
+Entering step: 1
+
+
+Info: This step started at: 2017-07-12 17:49:16
+
+User has confirmed: "Turn off the ZCU102 Board Power.
+Set mode switch SW6 to "0000" (Up,Up,Up,Up)
+Turn on the ZCU102 Board Power."
+
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2017-07-12 17:49:24
+
+****** Vivado Lab Edition v2017.2 (64-bit)
+  **** SW Build 1894441 on Mon May 29 16:52:06 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_pl_pmod_loop_bit.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.2
+  **** Build date : May 29 2017-17:10:40
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 324.453 ; gain = 0.000
+# current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Xilinx/*]
+# open_hw_target -jtag_mode 1
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+INFO: [Labtoolstcl 44-467] Setting hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A into jtag_mode
+# scan_ir_hw_jtag 12 -tdi 0x90B
+# close_hw_target
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/pmod_loop.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 324.453 ; gain = 0.000
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+
+Entering step: 3
+
+
+Info: This step started at: 2017-07-12 17:49:55
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+fpga -state
+FPGA is configured
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/../tcl/psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/../elf/pmod_loop.elf}
+Downloading Program -- C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/elf/pmod_loop.elf
+	section, .text: 0x00000000 - 0x0000c51b
+	section, .init: 0x0000c540 - 0x0000c573
+	section, .fini: 0x0000c580 - 0x0000c5b3
+	section, .note.gnu.build-id: 0x0000c5b4 - 0x0000c5d7
+	section, .rodata: 0x0000c5d8 - 0x0000cc07
+	section, .rodata1: 0x0000cc08 - 0x0000cc3f
+	section, .sdata2: 0x0000cc40 - 0x0000cc3f
+	section, .sbss2: 0x0000cc40 - 0x0000cc3f
+	section, .data: 0x0000cc40 - 0x0000de0f
+	section, .data1: 0x0000de10 - 0x0000de3f
+	section, .ctors: 0x0000de40 - 0x0000de3f
+	section, .dtors: 0x0000de40 - 0x0000de3f
+	section, .eh_frame: 0x0000de40 - 0x0000de43
+	section, .mmu_tbl0: 0x0000e000 - 0x0000e00f
+	section, .mmu_tbl1: 0x0000f000 - 0x00010fff
+	section, .mmu_tbl2: 0x00011000 - 0x00014fff
+	section, .preinit_array: 0x00015000 - 0x00014fff
+	section, .init_array: 0x00015000 - 0x00015007
+	section, .fini_array: 0x00015008 - 0x00015047
+	section, .sdata: 0x00015048 - 0x0001507f
+	section, .sbss: 0x00015080 - 0x0001507f
+	section, .tdata: 0x00015080 - 0x0001507f
+	section, .tbss: 0x00015080 - 0x0001507f
+	section, .bss: 0x00015080 - 0x0001513f
+	section, .heap: 0x00015140 - 0x0001713f
+	section, .stack: 0x00017140 - 0x0001a13f
+  0%    0MB   0.0MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/elf/pmod_loop.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 5000
+
+****************************************
+         PMOD0 LOOPBACK TEST
+****************************************
+PMOD0 Loopback Test: Pattern = 0xFFFFFFFF, PASSED
+Data In = 0x0000000F
+PMOD0 Loopback Test: Pattern = 0x00000000, PASSED
+Data In = 0x00000000
+PMOD0 Loopback Test: Pattern = 0xAAAAAAAA, PASSED
+Data In = 0x0000000A
+PMOD0 Loopback Test: Pattern = 0x55555555, PASSED
+Data In = 0x00000005
+
+****************************************
+         PMOD1 LOOPBACK TEST
+****************************************
+PMOD1 Loopback Test: Pattern = 0xFFFFFFFF, PASSED
+Data In = 0x0000000F
+PMOD1 Loopback Test: Pattern = 0x00000000, PASSED
+Data In = 0x00000000
+PMOD1 Loopback Test: Pattern = 0xAAAAAAAA, PASSED
+Data In = 0x0000000A
+PMOD1 Loopback Test: Pattern = 0x55555555, PASSED
+Data In = 0x00000005
+
+PMOD Loopback: Test passed
+
+disconnect
+
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+
+Info: The test took 0 hours, 00 minutes, and 50 seconds. 0:00:50
+
+Info: SD BOOT and UART test started...
+
+Info: The test will take 0 hours, 00 minutes, and 01 seconds. 0:00:01
+
+Entering step: 0
+
+
+Info: This step started at: 2017-07-12 17:50:16
+
+Entering step: 1
+
+
+Info: This step started at: 2017-07-12 17:50:16
+Xilinx Zynq MP First Stage Boot Loader 
+Release 2017.1   Jun 18 2017  -  17:37:04
+Hello World
+
+User has confirmed: "Turn off the ZCU102 Board Power.
+Set mode switch SW6 to "1010" (Down,Up,Down,Up)
+Insert the SD BOOT micro-SD card
+Turn on the ZCU102 Board Power."
+
+step finished 
+
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+
+Info: The test took 0 hours, 00 minutes, and 01 seconds. 0:00:01

@@ -1,0 +1,192 @@
+Board: ZCU111
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: MIG DDR4 test started...
+
+Info: The test will take 0 hours, 03 minutes, and 28 seconds. 0:03:28
+
+Entering step: 0
+
+
+Info: This step started at: 2018-04-03 17:13:14
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu111_mig_pl_ddr4.tcl}
+# set_param xicom.use_bitstream_version_check false
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:08:27
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:15 . Memory (MB): peak = 306.980 ; gain = 2.258
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target -jtag_mode 1
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280976a037A
+INFO: [Labtoolstcl 44-467] Setting hw_target localhost:3121/xilinx_tcf/Xilinx/1280976a037A into jtag_mode
+# scan_ir_hw_jtag 12 -tdi 0x90B
+# close_hw_target
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280976a037A
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280976a037A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1435] Device xczu28dr (JTAG device index = 0) is not programmed (DONE status = 0).
+# current_hw_device [lindex [get_hw_devices] 1]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 1]
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/zcu111_mig_pl_ddr4.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 883.570 ; gain = 1.258
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280976a037A
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Tue Apr  3 17:14:05 2018...
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-04-03 17:14:05
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu111_mig_pl_ddr4_status.tcl}
+# set TEST_DELAY 120
+# disconnect_hw_server -quiet
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280976a037A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+WARNING: [Labtools 27-3410] Calibration Failed.
+Resolution: For further debugging information, please refer to the Debug Guide that can be found from the following URL - https://www.xilinx.com/support/answers/68937.html
+INFO: [Labtools 27-2302] Device xczu28dr (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+INFO: [Labtools 27-2302] Device xczu28dr (JTAG device index = 0) is programmed with a design that has 1 MIG core(s).
+INFO: [Labtools 27-2302] Device xczu28dr (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+# set_property PROBES.FILE {[pwd]/../bitstream/zcu111_mig_pl_ddr4.ltx} [lindex [get_hw_devices] 0]
+# puts "\n    10 second delay for UltraScale MIG calibration\n"
+
+    10 second delay for UltraScale MIG calibration
+
+# after 10000
+# refresh_hw_device [lindex [get_hw_devices] 0]
+WARNING: [Labtools 27-3410] Calibration Failed.
+Resolution: For further debugging information, please refer to the Debug Guide that can be found from the following URL - https://www.xilinx.com/support/answers/68937.html
+INFO: [Labtools 27-2302] Device xczu28dr (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+INFO: [Labtools 27-2302] Device xczu28dr (JTAG device index = 0) is programmed with a design that has 1 MIG core(s).
+INFO: [Labtools 27-2302] Device xczu28dr (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+INFO: [Labtools 27-1889] Uploading output probe values for VIO core [hw_vio_1]
+# puts "\n    Refreshing VIO\n"
+
+    Refreshing VIO
+
+# refresh_hw_vio [get_hw_vios hw_vio_*]
+# puts "\n    Reading LED Status Before Resetting\n"
+
+    Reading LED Status Before Resetting
+
+# set leds [get_property INPUT_VALUE [get_hw_probes -filter {NAME =~ */led || NAME =~ */out}]]
+# if {${leds} == "9" || ${leds} == "b"} {
+#     set pass_1 true
+# } else {
+#     set pass_1 false
+# }
+# puts "\n    Info:VIO Core Read LED Data Pass 1:_________${leds}_________\n"
+
+    Info:VIO Core Read LED Data Pass 1:_________3_________
+
+# puts "\n    Reset the design\n"
+
+    Reset the design
+
+# set_property OUTPUT_VALUE 1 [get_hw_probes u_led_display_driver/reset_in -of_objects [get_hw_vios hw_vio_*]]
+# commit_hw_vio [get_hw_probes {u_led_display_driver/reset_in} -of_objects [get_hw_vios hw_vio_*]]
+# after 5000
+# set_property OUTPUT_VALUE 0 [get_hw_probes u_led_display_driver/reset_in -of_objects [get_hw_vios hw_vio_*]]
+# commit_hw_vio [get_hw_probes {u_led_display_driver/reset_in} -of_objects [get_hw_vios hw_vio_*]]
+# puts "\n    Waiting $TEST_DELAY seconds for test to run\n"
+
+    Waiting 120 seconds for test to run
+
+# after [expr $TEST_DELAY * 1000]
+# puts "\n    Refreshing VIO\n"
+
+    Refreshing VIO
+
+# refresh_hw_vio [get_hw_vios hw_vio_*]
+# puts "\n    Reading LED Status"
+
+    Reading LED Status
+# set leds [get_property INPUT_VALUE [get_hw_probes -filter {NAME =~ */led || NAME =~ */out}]]
+# if {${leds} == "9" || ${leds} == "b"} {
+#     set pass_2 true
+# } else {
+#     set pass_2 false
+# }
+# puts "\nInfo:VIO Core Read LED Data Pass 2:_________${leds}_________\n"
+
+Info:VIO Core Read LED Data Pass 2:_________1_________
+
+# if {$pass_1 == true && $pass_2 == true} {
+#     puts "\n[lindex $argv 1] TEST PASSED\n"
+# } else  {
+#     puts "\n[lindex $argv 1] TEST FAILED\n"
+# }
+
+ TEST FAILED
+
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280976a037A
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Tue Apr  3 17:16:41 2018...
+step finished 
+
+Error: Could not find regular expression in step 1 of test 11 - "(.*)Info:VIO\s+Core\s+Read\s+LED\s+Data\s+Pass\s+1:_________[b9]_________"
+
+Error: Could not find regular expression in step 1 of test 11 - "(.*)Info:VIO\s+Core\s+Read\s+LED\s+Data\s+Pass\s+2:_________[b9]_________"
+
+Error: Could not find regular expression in step 1 of test 11 - "(.*)^\s+TEST\s+PASSED"
+
+Entering step: 2
+
+
+Info: This step started at: 2018-04-03 17:16:42
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Tue Apr  3 17:16:57 2018...
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Fail
+Info: Result for step 2: Pass
+
+Info: The test took 0 hours, 03 minutes, and 43 seconds. 0:03:43

@@ -1,0 +1,120 @@
+Board: ZCU111
+Serial Number: 1280976b003
+Mac Address: 01:02:03:04:05:06
+
+
+Info: Ethernet, SD, USB, SATA Test test started...
+
+Info: The test will take 0 hours, 02 minutes, and 36 seconds. 0:02:36
+
+Entering step: 0
+
+
+Info: This step started at: 2018-04-11 18:06:36
+
+step finished 
+Exception in thread :
+Traceback (most recent call last):
+  File "threading.py", line 801, in __bootstrap_inner
+  File "com.py", line 156, in run
+UnboundLocalError: local variable 'expression' referenced before assignment
+
+
+Error: 'comm' type in step 0 never found a serial port to connect to in test 17
+
+Entering step: 1
+
+
+Info: This step started at: 2018-04-11 18:06:36
+
+Error: Stopped because step 0 failed in test 17
+
+Info: Result for step 0: Fail
+Info: The test took 0 hours, 00 minutes, and 00 seconds. 0:00:00
+
+Info: Ethernet, SD, USB, SATA Test test started...
+
+Info: The test will take 0 hours, 02 minutes, and 36 seconds. 0:02:36
+
+Entering step: 0
+
+
+Info: This step started at: 2018-04-11 18:06:56
+
+step finished 
+Exception in thread :
+Traceback (most recent call last):
+  File "threading.py", line 801, in __bootstrap_inner
+  File "com.py", line 156, in run
+UnboundLocalError: local variable 'expression' referenced before assignment
+
+
+Error: 'comm' type in step 0 never found a serial port to connect to in test 17
+
+Entering step: 1
+
+
+Info: This step started at: 2018-04-11 18:06:56
+
+Error: Stopped because step 0 failed in test 17
+
+Info: Result for step 0: Fail
+Info: The test took 0 hours, 00 minutes, and 00 seconds. 0:00:00
+
+Info: ZCU111 RTC test started...
+
+Info: The test will take 0 hours, 01 minutes, and 13 seconds. 0:01:13
+
+Entering step: 0
+
+
+Info: This step started at: 2018-04-11 18:13:28
+
+step finished 
+Exception in thread :
+Traceback (most recent call last):
+  File "threading.py", line 801, in __bootstrap_inner
+  File "com.py", line 156, in run
+UnboundLocalError: local variable 'expression' referenced before assignment
+
+
+Error: 'comm' type in step 0 never found a serial port to connect to in test 5
+
+Entering step: 1
+
+
+Info: This step started at: 2018-04-11 18:13:28
+
+Error: Stopped because step 0 failed in test 5
+
+Info: Result for step 0: Fail
+Info: The test took 0 hours, 00 minutes, and 00 seconds. 0:00:00
+
+Info: ZCU111 RTC test started...
+
+Info: The test will take 0 hours, 01 minutes, and 13 seconds. 0:01:13
+
+Entering step: 0
+
+
+Info: This step started at: 2018-04-11 18:15:20
+
+step finished 
+Exception in thread :
+Traceback (most recent call last):
+  File "threading.py", line 801, in __bootstrap_inner
+  File "com.py", line 156, in run
+UnboundLocalError: local variable 'expression' referenced before assignment
+
+
+Error: 'comm' type in step 0 never found a serial port to connect to in test 5
+
+Entering step: 1
+
+
+Info: This step started at: 2018-04-11 18:15:20
+
+Error: Stopped because step 0 failed in test 5
+
+Info: Result for step 0: Fail
+Info: The test took 0 hours, 00 minutes, and 00 seconds. 0:00:00

@@ -66,47 +66,48 @@ module top_level_block_design_usp_rf_data_converter_0_0_device_rom (
     // 29:27 |  26:24  |    23:16    |    15:0
     // Tile  |  Slice  | DRP Address |  DRP Data
 
-    (* rom_style = "distributed" *) reg [29:0] data_array [0:40] = '{
+    (* rom_style = "distributed" *) reg [29:0] data_array [0:41] = '{
        30'h07280280,  // SYSREF Distribution (ADC0)
        30'h0f280600,  // SYSREF Distribution (ADC1)
        30'h17288880,  // SYSREF Distribution (ADC2)
        30'h1f281700,  // SYSREF Distribution (ADC3)
-       30'h27230000,  // Clock Network Control 0 (DAC0)
-       30'h27240001,  // Clock Network Control 1 (DAC0)
-       30'h2717002e,  // PLL FB Div (DAC0)
-       30'h270c0081,  // PLL Output Divide (DAC0)
-       30'h27100010,  // PLL Ref clock divide (DAC0)
-       30'h27000080,  // PLL SDM CONFIG0 (DAC0)
-       30'h27060111,  // PLL SDM seed (DAC0)
-       30'h27070011,  // PLL SDM seed setup (DAC0)
-       30'h270e0507,  // PLL ChargePump setup (DAC0)
-       30'h2712ffff,  // PLL ChargePump setup (DAC0)
-       30'h27137f9c,  // PLL loop filter setup (DAC0)
-       30'h27140006,  // PLL loop filter setup (DAC0)
-       30'h27155800,  // PLL VCO setup (DAC0)
-       30'h27160008,  // PLL VCO setup (DAC0)
-       30'h270a7a3e,  // PLL Coarse Frequency setup (DAC0)
-       30'h270b7008,  // PLL Coarse Frequency setup (DAC0)
-       30'h2711003d,  // PLL Voltage Regulator setup (DAC0)
-       30'h272c0012,  // CLK_DIV (DAC0)
+       30'h27240000,  // Clock Network Control 1 (DAC0)
        30'h2728c980,  // SYSREF Distribution (DAC0)
-       30'h272dffc0,  // HSCOM_PWR_MASK (DAC0)
-       30'h20020810,  // DAC00 Data Width
-       30'h20100001,  // DAC00 Interpolation Control
-       30'h20110000,  // DAC00 Interpolation Data
-       30'h20200000,  // DAC00 Mixer Config 0
-       30'h20210924,  // DAC00 Mixer Config 1
-       30'h20300000,  // DAC00 Inv Sinc Filter
-       30'h20310040,  // DAC00 Multiband Config
-       30'h20600001,  // DAC00 Decoder Control
-       30'h20610001,  // DAC00 Decoder Clock Enable
-       30'h20710000,  // DAC00 MC_CONFIG0
-       30'h20734858,  // DAC00 MC_CONFIG2
-       30'h207487c0,  // DAC00 MC_CONFIG3
-       30'h2006000f,  // DAC00 FABRIC_IMR
-       30'h200f0fff,  // DAC00 DATAPATH_IMR
-       30'h20070008,  // DAC00 FABRIC_DEBUG
+       30'h2f230000,  // Clock Network Control 0 (DAC1)
+       30'h2f240001,  // Clock Network Control 1 (DAC1)
+       30'h2f17002e,  // PLL FB Div (DAC1)
+       30'h2f0c0081,  // PLL Output Divide (DAC1)
+       30'h2f100010,  // PLL Ref clock divide (DAC1)
+       30'h2f000080,  // PLL SDM CONFIG0 (DAC1)
+       30'h2f060111,  // PLL SDM seed (DAC1)
+       30'h2f070011,  // PLL SDM seed setup (DAC1)
+       30'h2f0e0507,  // PLL ChargePump setup (DAC1)
+       30'h2f12ffff,  // PLL ChargePump setup (DAC1)
+       30'h2f137f9c,  // PLL loop filter setup (DAC1)
+       30'h2f140006,  // PLL loop filter setup (DAC1)
+       30'h2f155800,  // PLL VCO setup (DAC1)
+       30'h2f160008,  // PLL VCO setup (DAC1)
+       30'h2f0a7a3e,  // PLL Coarse Frequency setup (DAC1)
+       30'h2f0b7008,  // PLL Coarse Frequency setup (DAC1)
+       30'h2f11003d,  // PLL Voltage Regulator setup (DAC1)
+       30'h2f2c0012,  // CLK_DIV (DAC1)
        30'h2f280100,  // SYSREF Distribution (DAC1)
+       30'h2f2dffc0,  // HSCOM_PWR_MASK (DAC1)
+       30'h28020810,  // DAC10 Data Width
+       30'h28100001,  // DAC10 Interpolation Control
+       30'h28110000,  // DAC10 Interpolation Data
+       30'h28200000,  // DAC10 Mixer Config 0
+       30'h28210924,  // DAC10 Mixer Config 1
+       30'h28300000,  // DAC10 Inv Sinc Filter
+       30'h28310040,  // DAC10 Multiband Config
+       30'h28600001,  // DAC10 Decoder Control
+       30'h28610001,  // DAC10 Decoder Clock Enable
+       30'h28710000,  // DAC10 MC_CONFIG0
+       30'h28734858,  // DAC10 MC_CONFIG2
+       30'h287487c0,  // DAC10 MC_CONFIG3
+       30'h2806000f,  // DAC10 FABRIC_IMR
+       30'h280f0fff,  // DAC10 DATAPATH_IMR
+       30'h28070008,  // DAC10 FABRIC_DEBUG
        30'h00000000};
 
     //-------------------------------------------------------------------------

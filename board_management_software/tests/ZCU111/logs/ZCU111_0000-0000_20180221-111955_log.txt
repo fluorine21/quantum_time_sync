@@ -1,0 +1,136 @@
+Board: ZCU111
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: XM107 LVDS test started...
+
+Info: The test will take 0 hours, 01 minutes, and 48 seconds. 0:01:48
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-21 11:20:03
+
+Error: Failed to connect to Serial port in step 0 of test 17
+
+step finished 
+Exception in thread :
+Traceback (most recent call last):
+  File "threading.py", line 801, in __bootstrap_inner
+  File "com.py", line 156, in run
+UnboundLocalError: local variable 'expression' referenced before assignment
+
+
+Error: 'comm' type in step 0 never found a serial port to connect to in test 17
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-21 11:20:03
+
+Error: Stopped because step 0 failed in test 17
+
+Info: Result for step 0: Fail
+Info: The test took 0 hours, 00 minutes, and 00 seconds. 0:00:00
+
+Info: XM107 LVDS test started...
+
+Info: The test will take 0 hours, 01 minutes, and 48 seconds. 0:01:48
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-21 11:20:09
+
+Error: Failed to connect to Serial port in step 0 of test 17
+
+step finished 
+Exception in thread :
+Traceback (most recent call last):
+  File "threading.py", line 801, in __bootstrap_inner
+  File "com.py", line 156, in run
+UnboundLocalError: local variable 'expression' referenced before assignment
+
+
+Error: 'comm' type in step 0 never found a serial port to connect to in test 17
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-21 11:20:09
+
+Error: Stopped because step 0 failed in test 17
+
+Info: Result for step 0: Fail
+Info: The test took 0 hours, 00 minutes, and 00 seconds. 0:00:00
+
+Info: XM107 LVDS test started...
+
+Info: The test will take 0 hours, 01 minutes, and 48 seconds. 0:01:48
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-21 11:20:15
+
+Error: Failed to connect to Serial port in step 0 of test 17
+
+step finished 
+Exception in thread :
+Traceback (most recent call last):
+  File "threading.py", line 801, in __bootstrap_inner
+  File "com.py", line 156, in run
+UnboundLocalError: local variable 'expression' referenced before assignment
+
+
+Error: 'comm' type in step 0 never found a serial port to connect to in test 17
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-21 11:20:15
+
+Error: Stopped because step 0 failed in test 17
+
+Info: Result for step 0: Fail
+Info: The test took 0 hours, 00 minutes, and 00 seconds. 0:00:00
+
+Info: XM107 LVDS test started...
+
+Info: The test will take 0 hours, 01 minutes, and 48 seconds. 0:01:48
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-21 11:20:21
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-21 11:20:21
+
+Error: Failed to connect to Serial port in step 1 of test 17
+
+step finished 
+Exception in thread :
+Traceback (most recent call last):
+  File "threading.py", line 801, in __bootstrap_inner
+  File "com.py", line 156, in run
+UnboundLocalError: local variable 'expression' referenced before assignment
+
+
+Error: 'comm' type in step 1 never found a serial port to connect to in test 17
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-21 11:20:21
+
+Error: Stopped because step 1 failed in test 17
+
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Fail
+Info: The test took 0 hours, 00 minutes, and 02 seconds. 0:00:02

@@ -1,0 +1,337 @@
+Board: ZCU104
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: IBERT ALL test started...
+
+Info: The test will take 0 hours, 03 minutes, and 32 seconds. 0:03:32
+
+Entering step: 0
+
+
+Info: This step started at: 2018-01-25 12:53:57
+
+****** Vivado v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_ibert_bank_all.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.2
+  **** Build date : Jun 15 2017-18:53:26
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 376.957 ; gain = 2.262
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+open_hw_target: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 378.117 ; gain = 1.160
+# current_hw_device [lindex [get_hw_devices xczu7_0] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xczu7_0] 0]
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 IBERT core(s).
+# current_hw_device [lindex [get_hw_devices arm_dap_1] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices arm_dap_1] 0]
+# current_hw_device [lindex [get_hw_devices xczu7_0] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/zcu104_ibert_bank_all.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices xczu7_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 504.195 ; gain = 0.000
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Thu Jan 25 12:54:57 2018...
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-01-25 12:54:57
+
+****** Vivado v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\vivado_ibert_reset.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# current_hw_device [lindex [get_hw_devices xczu7_0] 0]
+# refresh_hw_device -quiet [lindex [get_hw_devices] 0]
+# set_property PORT.QPLL0RESET 1 [get_hw_sio_commons *];
+# commit_hw_sio [list [get_hw_sio_commons {*}] ]
+# set_property PORT.QPLL0RESET 0 [get_hw_sio_commons *];
+# commit_hw_sio [list [get_hw_sio_commons {*}] ]
+# set_property PORT.QPLL1RESET 1 [get_hw_sio_commons *];
+# commit_hw_sio [list [get_hw_sio_commons {*}] ]
+# set_property PORT.QPLL1RESET 0 [get_hw_sio_commons *];
+# commit_hw_sio [list [get_hw_sio_commons {*}] ]
+# set_property PORT.CPLLRESET 1 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# set_property PORT.CPLLRESET 0 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# set_property PORT.GTRXRESET 1 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# set_property PORT.GTRXRESET 0 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# set_property PORT.GTTXRESET 1 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# set_property PORT.GTTXRESET 0 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# refresh_hw_sio [get_hw_sio_gts *]
+# refresh_hw_sio [get_hw_sio_commons *]
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+close_hw_target: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 506.422 ; gain = 0.074
+# disconnect_hw_server
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Thu Jan 25 12:55:32 2018...
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-01-25 12:55:32
+
+****** Vivado v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_ibert_bank_all_status.tcl}
+# open_hw
+# catch {disconnect_hw_server localhost:3121}
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# current_hw_device [lindex [get_hw_devices xczu7_0] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xczu7_0] 0]
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 IBERT core(s).
+# set xil_newLinks [list]
+# set xil_newLink [create_hw_sio_link -description {Link 0} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/*/*/0_1_0_0/IBERT/Quad_226/MGT_X0Y15/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/*/*/0_1_0_0/IBERT/Quad_226/MGT_X0Y15/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLinkGroup [create_hw_sio_linkgroup -description {Link Group 0} [get_hw_sio_links $xil_newLinks]]
+# unset xil_newLinks
+# set_property TX_PATTERN {PRBS 31-bit} [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property RX_PATTERN {PRBS 31-bit} [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.TX_RESET_DATAPATH 1 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.TX_RESET_DATAPATH 0 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.RX_RESET_DATAPATH 1 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.RX_RESET_DATAPATH 0 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.MGT_ERRCNT_RESET_CTRL 1 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.MGT_ERRCNT_RESET_CTRL 0 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/*/*/0_1_0_0/IBERT/Quad_226/MGT_X0Y15/TX->localhost:3121/xilinx_tcf/*/*/0_1_0_0/IBERT/Quad_226/MGT_X0Y15/RX}] ]
+# puts "Waiting 120 seconds for test to run."
+Waiting 120 seconds for test to run.
+# after [expr 120 * 1000]
+# set offset 3
+# set initial_links 0
+# for {set i $offset} {$i <= 3} {incr i} {
+#   set j [expr {$i - $offset + $initial_links}]
+#   set display_name [get_property {DISPLAY_NAME} [lindex [get_hw_sio_gts] $i]]
+#   set quad_name [lindex [split [get_property {NAME} [lindex [get_hw_sio_gts] $i]] /] 6]
+#   set qpll0 [expr [expr $i / 4] * 6]
+#   #set qpll1 [expr [expr [expr $i / 4] * 6] + 1]
+#   #set cpll0 [expr $qpll0 + 2 + [expr $i%4]]
+#   puts "$quad_name:$display_name: DESCRIPTION=[get_property {DESCRIPTION} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: STATUS=[get_property {STATUS} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: QPLL0_STATUS=[get_property {QPLL0_STATUS} [lindex [get_hw_sio_plls] $qpll0]]"
+#   #puts "$quad_name:$display_name: QPLL1_STATUS=[get_property {QPLL1_STATUS} [lindex [get_hw_sio_plls] $qpll1]]"
+#   #puts "$quad_name:$display_name: CPLL_STATUS=[get_property {PLL_STATUS} [lindex [get_hw_sio_plls] $cpll0]]"
+#   puts "$quad_name:$display_name: LINE_RATE=[get_property {LINE_RATE} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: LOGIC.ERRBIT_COUNT=[get_property {LOGIC.ERRBIT_COUNT} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: RX_RECEIVED_BIT_COUNT=[get_property {RX_RECEIVED_BIT_COUNT} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: TX_PATTERN=[get_property {TX_PATTERN} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: RX_PATTERN=[get_property {RX_PATTERN} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: LOOPBACK=[get_property {LOOPBACK} [lindex [get_hw_sio_links] $j]]"
+#   # Debug lines to insure the correct alignment of the get_hw_sio_gts, get_hw_sio_links, and get_hw_sio_plls numbering
+#   puts "$quad_name:$display_name: TX_ENDPOINT=[get_property {TX_ENDPOINT} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: RX_ENDPOINT=[get_property {RX_ENDPOINT} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: NAME=[get_property {NAME} [lindex [get_hw_sio_gts] $i]]"
+#   puts "$quad_name:$display_name: get_hw_sio_plls=[lindex [get_hw_sio_plls] $qpll0]"
+#   #puts "$quad_name:$display_name: get_hw_sio_plls=[lindex [get_hw_sio_plls] $qpll1]"
+#   #puts "$quad_name:$display_name: get_hw_sio_plls=[lindex [get_hw_sio_plls] $cpll0]"
+# }
+Quad_226:MGT_X0Y15: DESCRIPTION=Link 0
+Quad_226:MGT_X0Y15: STATUS=15.625 Gbps
+Quad_226:MGT_X0Y15: QPLL0_STATUS=LOCKED
+Quad_226:MGT_X0Y15: LINE_RATE=15.625
+Quad_226:MGT_X0Y15: LOGIC.ERRBIT_COUNT=000000000000
+Quad_226:MGT_X0Y15: RX_RECEIVED_BIT_COUNT=316407880
+Quad_226:MGT_X0Y15: TX_PATTERN=PRBS 31-bit
+Quad_226:MGT_X0Y15: RX_PATTERN=PRBS 31-bit
+Quad_226:MGT_X0Y15: LOOPBACK=None
+Quad_226:MGT_X0Y15: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280961B036A/0_1_0_0/IBERT/Quad_226/MGT_X0Y15/TX
+Quad_226:MGT_X0Y15: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280961B036A/0_1_0_0/IBERT/Quad_226/MGT_X0Y15/RX
+Quad_226:MGT_X0Y15: NAME=localhost:3121/xilinx_tcf/Xilinx/1280961B036A/0_1_0_0/IBERT/Quad_226/MGT_X0Y15
+Quad_226:MGT_X0Y15: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280961B036A/0_1_0_0/IBERT/Quad_226/COMMON_X0Y3/QPLL0
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+close_hw_target: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 505.289 ; gain = 0.000
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Thu Jan 25 12:58:08 2018...
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+
+Info: The test took 0 hours, 04 minutes, and 11 seconds. 0:04:11
+
+Info: MIG PL DDR4 test started...
+
+Info: The test will take 0 hours, 01 minutes, and 08 seconds. 0:01:08
+
+Entering step: 0
+
+
+Info: This step started at: 2018-01-25 12:58:29
+
+C:\zcu104_bit\tests\ZCU104>cd bat\ 
+
+C:\zcu104_bit\tests\ZCU104\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-01-25 12:58:33
+
+****** Vivado v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_mig_pl_ddr4.tcl}
+# set_param xicom.use_bitstream_version_check false
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.2
+  **** Build date : Jun 15 2017-18:53:26
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 377.813 ; gain = 2.250
+# current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Xilinx/*]
+# open_hw_target -jtag_mode 1
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+INFO: [Labtoolstcl 44-467] Setting hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A into jtag_mode
+# scan_ir_hw_jtag 12 -tdi 0x90B
+# close_hw_target
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1435] Device xczu7 (JTAG device index = 0) is not programmed (DONE status = 0).
+# current_hw_device [lindex [get_hw_devices] 1]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 1]
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/zcu104_mig_pl_ddr4.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+WARNING: [Xicom 50-99] Incorrect bitstream assigned to device. Bitstream was generated for part xczu7ev-ffvc1156-2-i-es2, target device (with IDCODE revision 1) is compatible with production revision bitstreams.
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 488.125 ; gain = 1.004
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# disconnect_hw_server
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Thu Jan 25 12:59:20 2018...
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-01-25 12:59:21
+
+****** Vivado v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_mig_pl_ddr4_status.tcl}
+# set TEST_DELAY 120
+# disconnect_hw_server -quiet
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.2
+  **** Build date : Jun 15 2017-18:53:26
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 377.406 ; gain = 2.266
+# current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Xilinx/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+open_hw_target: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 379.102 ; gain = 1.695
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 MIG core(s).
+# set_property PROBES.FILE {[pwd]/../bitstream/zcu104_mig_pl_ddr4.ltx} [lindex [get_hw_devices] 0]
+# refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+INFO: [Labtools 27-2302] Device xczu7 (JTAG device index = 0) is programmed with a design that has 1 MIG core(s).
+# puts "\n    5 second delay for UltraScale MIG calibration\n"
+
+    5 second delay for UltraScale MIG calibration
+
+# after 5000
+# puts [set cal_status [get_property CALIBRATION_FAIL.STATUS [get_hw_migs]]]
+FALSE
+# if {${cal_status} == "FALSE"} {
+#     puts "\n[lindex $argv 1] TEST\tPASSED\n"
+# } else {
+#     puts "\n[lindex $argv 1] TEST\tFAILED\n"
+# }
+
+ TEST	PASSED
+
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961B036A
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Thu Jan 25 13:00:03 2018...
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+
+Info: The test took 0 hours, 01 minutes, and 34 seconds. 0:01:34

@@ -40,19 +40,12 @@ class QuTAG:
             
     def __init__(self):
         # load DLL -------------------------------------------
-        
         dll_name = 'tdcbase.dll'
         usbdll_name= 'FTD3XX.dll'
-        
-        #dll_name = 'C:\James\python_drivers\tdcbase.dll'
-        #usbdll_name= 'C:\James\python_drivers\FTD3XX.dll'
-        
-        
         #dir_wrapper = os.getcwd()
         #os.chdir("..")
         #dir_parent = os.getcwd()
         #os.chdir(dir_parent+'/lib/')
-        #os.chdir(dir_parent)
         self.qutools_usbdll = ctypes.windll.LoadLibrary(usbdll_name) # only needed for quTAG 
         self.qutools_dll = ctypes.windll.LoadLibrary(dll_name)
         #print(dir_wrapper)
@@ -470,7 +463,7 @@ class QuTAG:
         return devCount.value
     
     def getCurrentAddress(self):
-        devNo = ctypes.c_unit32()
+        devNo = ctype.c_unit32()
         ans = self.qutools_dll.TDC_getCurrentAddress(ctypes.byref(devNo))
         if (ans!=0):
             print("Error in TDC_getCurrentAddress: "+self.ans_dict[ans])
@@ -479,7 +472,7 @@ class QuTAG:
     def getDeviceInfo(self,deviceNumber):
         devicetype = ctypes.c_int32()
         deviceid = ctypes.c_int32()
-        serialnumber=ctypes.c_char_p()
+        serialnumnber=ctypes.c_char_p()
         connected = ctypes.s_int32()
         
         ans = self.qutools_dll.TDC_getDeviceInfo(deviceNumber,ctypes.byref(devicetype), ctypes.byref(deviceid), ctypes.byref(serialnumber), ctypes.byref(connected))
@@ -684,7 +677,7 @@ class QuTAG:
         
 # Timestamping ---------------------------------------------------------
     def getBufferSize(self):
-        sz = ctypes.c_int32()
+        sz = ctype.c_int32()
         ans = self.qutools_dll.TDC_getTimestampBufferSize(ctypes.byref(sz))
         if ans != 0:
             print("Error in TDC_getTimestampBufferSize: "+self.err_dict[ans])
@@ -854,7 +847,7 @@ class QuTAG:
 
     def getLFTStartInput(self):
         startChannel = ctypes.c_int32()
-        ans = self.qutools_dll.TDC_getLFTStartInput(ctypes.byref(startChannel))
+        ans = self.qutools_dll.TDC_getLFTStartInput(ctype.byref(startChannel))
         if ans != 0:
             print("Error in TDC_getLFTStartInput: "+self.err_dict[ans])
         return startChannel.value
@@ -927,7 +920,7 @@ class QuTAG:
                 c_params[i] = params[i]
             else:
                 break
-        ans = self.qutools.TDC_generateLftDemo(lfttype,c_params.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),noiseLv)
+        ans = selfg.qutools.TDC_generateLftDemo(lfttype,c_params.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),noiseLv)
         if ans != 0:
             print("Error in TDC_generateLftDemo: "+self.err_dict[ans])
         return ans

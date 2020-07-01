@@ -1,0 +1,791 @@
+{
+    "board": "ZCU111", 
+    "tests": [
+        {
+            "checked": 1, 
+            "name": "ZCU111 IDCODE Check", 
+            "progress time": 50.19100022315979, 
+            "repeat": 1, 
+            "steps": [
+                {
+                    "command": "Set mode switch SW6 to \"0000\" (Up,Up,Up,Up)", 
+                    "delay": 1, 
+                    "type": "manc"
+                }, 
+                {
+                    "command": "tcl\\five_second_delay.tcl", 
+                    "fail condition": [], 
+                    "pass condition": [], 
+                    "type": "tcl"
+                }, 
+                {
+                    "command": "tcl\\zcu111_rev_b_idcode_check.tcl", 
+                    "fail condition": [
+                        "(.*)[^\"]IDCODE check FAILED"
+                    ], 
+                    "pass condition": [
+                        "(.*)[^\"]IDCODE check PASSED"
+                    ], 
+                    "type": "tcl"
+                }
+            ]
+        }, 
+        {
+            "checked": 1, 
+            "name": "XM107 CARD TEST", 
+            "progress time": 43.20199990272522, 
+            "repeat": 1, 
+            "steps": [
+                {
+                    "baud": 115200, 
+                    "fail condition": [
+                        "(.*):N(.*)"
+                    ], 
+                    "pass condition": [
+                        "(.*)SamtecFMC(.*)Loopback"
+                    ], 
+                    "port": "COM42", 
+                    "type": "comm"
+                }, 
+                {
+                    "command": "Cycle ZCU111 Board Power.", 
+                    "delay": 1, 
+                    "type": "manc"
+                }, 
+                {
+                    "command": "<setmux:1:75:01><readeeprom:1:50:00:40><wait:0.3><interpeeprom><setmux:1:74:00>", 
+                    "comment": "Read FMC EEPROM", 
+                    "delay": 5, 
+                    "port": "COM42", 
+                    "type": "sysc"
+                }
+            ]
+        }, 
+        {
+            "checked": 1, 
+            "name": "ZCU111 EFUSE", 
+            "progress time": 69.10199999809265, 
+            "repeat": 1, 
+            "steps": [
+                {
+                    "command": "tcl\\five_second_delay.tcl", 
+                    "fail condition": [], 
+                    "pass condition": [], 
+                    "type": "tcl"
+                }, 
+                {
+                    "command": "tcl\\vivado_read_fpga_efuse_status.tcl", 
+                    "fail condition": [], 
+                    "pass condition": [
+                        "(.*)Property\\s+Type\\s+Read\\-only\\s+Value", 
+                        "(.*)REGISTER\\.EFUSE\\.FUSE_DNA\\s+string\\s+true\\s+[0-9a-fA-F]+", 
+                        "(.*)INFO:\\s+\\[Common\\s+17\\-206\\]\\s+Exiting\\s+[Vv]ivado"
+                    ], 
+                    "type": "tcl"
+                }
+            ]
+        }, 
+        {
+            "checked": 1, 
+            "name": "ZCU111 RTC", 
+            "progress time": 88.16600012779236, 
+            "repeat": 1, 
+            "steps": [
+                {
+                    "baud": 115200, 
+                    "fail condition": [], 
+                    "pass condition": [
+                        "(.*)Last\\s+set\\s+time\\s+for\\s+RTC\\s+is", 
+                        "(.*)RTC\\s+time\\s+after\\s+set\\s+is", 
+                        "(.*)YEAR\\:MM\\:DD\\s+HR\\:MM\\:SS"
+                    ], 
+                    "port": "COM40", 
+                    "type": "comm"
+                }, 
+                {
+                    "command": "Cycle ZCU111 Board Power.", 
+                    "delay": 1, 
+                    "type": "manc"
+                }, 
+                {
+                    "command": "tcl\\zcu111_rtc_elf.tcl", 
+                    "fail condition": [], 
+                    "pass condition": [
+                        "(.*)Successfully\\s+downloaded"
+                    ], 
+                    "type": "xsdb"
+                }, 
+                {
+                    "command": "tcl\\five_second_delay.tcl", 
+                    "fail condition": [], 
+                    "pass condition": [], 
+                    "type": "tcl"
+                }
+            ]
+        }, 
+        {
+            "checked": 1, 
+            "name": "Test Level Shifters", 
+            "progress time": 84.37299990653992, 
+            "repeat": 1, 
+            "steps": [
+                {
+                    "baud": 115200, 
+                    "fail condition": [], 
+                    "pass condition": [
+                        "(.*)320 - Success(\\r\\n|\\r|\\n)331 - Success(\\r\\n|\\r|\\n)340 - Success(\\r\\n|\\r|\\n)351 - Success(\\r\\n|\\r|\\n)360 - Success(\\r\\n|\\r|\\n)371 - Success(\\r\\n|\\r|\\n)380 - Success(\\r\\n|\\r|\\n)131 - Success(\\r\\n|\\r|\\n)321 - Success(\\r\\n|\\r|\\n)330 - Success(\\r\\n|\\r|\\n)341 - Success(\\r\\n|\\r|\\n)350 - Success(\\r\\n|\\r|\\n)361 - Success(\\r\\n|\\r|\\n)370 - Success(\\r\\n|\\r|\\n)381 - Success(\\r\\n|\\r|\\n)130 - Success"
+                    ], 
+                    "port": "COM40", 
+                    "type": "comm"
+                }, 
+                {
+                    "baud": 115200, 
+                    "fail condition": [], 
+                    "pass condition": [
+                        "(.*)GPR\\r11\\r:P\\r2A", 
+                        "(.*)GPR\\r24\\r:P\\r00", 
+                        "(.*)GPR\\r25\\r:P\\r01", 
+                        "(.*)GPR\\r11\\r:P\\r15", 
+                        "(.*)GPR\\r24\\r:P\\r01", 
+                        "(.*)GPR\\r25\\r:P\\r00"
+                    ], 
+                    "port": "COM42", 
+                    "type": "comm"
+                }, 
+                {
+                    "command": "Cycle ZCU111 Board Power.", 
+                    "delay": 1, 
+                    "type": "manc"
+                }, 
+                {
+                    "command": "\r\t\r\t", 
+                    "port": "COM42", 
+                    "type": "sysc"
+                }, 
+                {
+                    "command": "tcl\\level_shifters_test.tcl", 
+                    "fail condition": [], 
+                    "pass condition": [], 
+                    "type": "xsdb"
+                }, 
+                {
+                    "command": "GPD\r24\r00\r\tGPD\r25\r00\r\t", 
+                    "port": "COM42", 
+                    "type": "sysc"
+                }, 
+                {
+                    "command": "320\r331\r340\r351\r360\r371\r380\r131\r", 
+                    "port": "COM40", 
+                    "type": "coms"
+                }, 
+                {
+                    "command": "GPR\r11\r\tGPR\r24\r\tGPR\r25\r\t", 
+                    "port": "COM42", 
+                    "type": "sysc"
+                }, 
+                {
+                    "command": "321\r330\r341\r350\r361\r370\r381\r130\r", 
+                    "port": "COM40", 
+                    "type": "coms"
+                }, 
+                {
+                    "command": "GPR\r11\r\tGPR\r24\r\tGPR\r25\r\t", 
+                    "port": "COM42", 
+                    "type": "sysc"
+                }
+            ]
+        }, 
+        {
+            "checked": 1, 
+            "name": "ZCU111 SETUP", 
+            "progress time": 418.856999874115, 
+            "repeat": 1, 
+            "steps": [
+                {
+                    "baud": 115200, 
+                    "fail condition": [
+                        "(.*):N(.*)"
+                    ], 
+                    "pass condition": [
+                        "(.*)MSP v1.50 I2C Bridge v1.50"
+                    ], 
+                    "port": "COM42", 
+                    "type": "comm"
+                }, 
+                {
+                    "command": "Cycle ZCU111 Board Power.", 
+                    "delay": 1, 
+                    "type": "manc"
+                }, 
+                {
+                    "command": "IW0\r75\r04\r\tIW0\r45\r0003\r\tIW0\r45\r2014\r\tIW0\r45\r24FFFF\r\tIW0\r45\r0140\r\tDLY\rC350\r\tIW0\r45\r21cd1c\r\tDLY\rC350\r\tIW0\r45\r0180\r\tDLY\rC350\r\tIW0\r75\r00\r\t", 
+                    "comment": "FMC -> Set VADJ 1.8V", 
+                    "port": "COM42", 
+                    "type": "sysc"
+                }, 
+                {
+                    "command": "IW1\r74\r10\r\tIW1\r68\r010B\r\tIW1\r68\r24C0\r\tIW1\r68\r2504\r\tIW1\r68\r0105\r\tIW1\r68\r4001\r\tIW1\r68\r0100\r\tIW1\r68\r0B68\r\tIW1\r68\r1603\r\tIW1\r68\r17DC\r\tIW1\r68\r18BB\r\tIW1\r68\r19DD\r\tIW1\r68\r1ADF\r\tIW1\r68\r2002\r\tIW1\r68\r2B02\r\tIW1\r68\r2C04\r\tIW1\r68\r323B\r\tIW1\r68\r3A02\r\tIW1\r68\r3E40\r\tIW1\r68\r3F44\r\tIW1\r68\r4004\r\tIW1\r68\r430A\r\tIW1\r68\r450C\r\tIW1\r68\r4832\r\tIW1\r68\r4C32\r\tIW1\r68\r4F05\r\tIW1\r68\r500F\r\tIW1\r68\r5303\r\tIW1\r68\r5703\r\tIW1\r68\r5910\r\tIW1\r68\r622F\r\tIW1\r68\r63A1\r\tIW1\r68\r64BD\r\tIW1\r68\r9202\r\tIW1\r68\r93A0\r\tIW1\r68\r9680\r\tIW1\r68\r9860\r\tIW1\r68\r9A02\r\tIW1\r68\r9B60\r\tIW1\r68\r9D08\r\tIW1\r68\r9E40\r\tIW1\r68\rA020\r\tIW1\r68\rA9A0\r\tIW1\r68\rAA61\r\tIW1\r68\rE521\r\tIW1\r68\rEA0A\r\tIW1\r68\rEB60\r\tIW1\r68\r0101\r\tIW1\r68\r0201\r\tIW1\r68\r0302\r\tIW1\r68\r0409\r\tIW1\r68\r053E\r\tIW1\r68\r0618\r\tIW1\r68\r0701\r\tIW1\r68\r0801\r\tIW1\r68\r0909\r\tIW1\r68\r0A3E\r\tIW1\r68\r0B18\r\tIW1\r68\r0C02\r\tIW1\r68\r0D06\r\tIW1\r68\r0E09\r\tIW1\r68\r0F3B\r\tIW1\r68\r1029\r\tIW1\r68\r1102\r\tIW1\r68\r1201\r\tIW1\r68\r1309\r\tIW1\r68\r143B\r\tIW1\r68\r1528\r\tIW1\r68\r1602\r\tIW1\r68\r1701\r\tIW1\r68\r1809\r\tIW1\r68\r193B\r\tIW1\r68\r1A28\r\tIW1\r68\r1B02\r\tIW1\r68\r1C01\r\tIW1\r68\r1D09\r\tIW1\r68\r1E3B\r\tIW1\r68\r1F28\r\tIW1\r68\r2002\r\tIW1\r68\r2101\r\tIW1\r68\r2209\r\tIW1\r68\r233B\r\tIW1\r68\r2428\r\tIW1\r68\r2502\r\tIW1\r68\r2601\r\tIW1\r68\r2709\r\tIW1\r68\r283B\r\tIW1\r68\r2928\r\tIW1\r68\r2A02\r\tIW1\r68\r2B01\r\tIW1\r68\r2C09\r\tIW1\r68\r2D3B\r\tIW1\r68\r2E28\r\tIW1\r68\r2F02\r\tIW1\r68\r3001\r\tIW1\r68\r3109\r\tIW1\r68\r323B\r\tIW1\r68\r3328\r\tIW1\r68\r3402\r\tIW1\r68\r3501\r\tIW1\r68\r3609\r\tIW1\r68\r373B\r\tIW1\r68\r3828\r\tIW1\r68\r3902\r\tIW1\r68\r3A01\r\tIW1\r68\r3B09\r\tIW1\r68\r3C3B\r\tIW1\r68\r3D28\r\tIW1\r68\r3E02\r\tIW1\r68\r4140\r\tIW1\r68\r42FF\r\tIW1\r68\r0102\r\tIW1\r68\r1C05\r\tIW1\r68\r2201\r\tIW1\r68\r310B\r\tIW1\r68\r320B\r\tIW1\r68\r330B\r\tIW1\r68\r340B\r\tIW1\r68\r3A01\r\tIW1\r68\r3EF0\r\tIW1\r68\r4702\r\tIW1\r68\r6B5A\r\tIW1\r68\r6C43\r\tIW1\r68\r6D55\r\tIW1\r68\r6E31\r\tIW1\r68\r6F31\r\tIW1\r68\r7031\r\tIW1\r68\r923F\r\tIW1\r68\r93FF\r\tIW1\r68\r94B8\r\tIW1\r68\r9602\r\tIW1\r68\r9702\r\tIW1\r68\r9902\r\tIW1\r68\r9DFA\r\tIW1\r68\r9E01\r\tIW1\r68\rA9CC\r\tIW1\r68\rAA04\r\tIW1\r68\rB7FF\r\tIW1\r68\r0103\r\tIW1\r68\r060C\r\tIW1\r68\r0A50\r\tIW1\r68\r0BC3\r\tIW1\r68\r1124\r\tIW1\r68\r1550\r\tIW1\r68\r16C3\r\tIW1\r68\r0104\r\tIW1\r68\r212B\r\tIW1\r68\r2201\r\tIW1\r68\r2B01\r\tIW1\r68\r2C0F\r\tIW1\r68\r2D03\r\tIW1\r68\r3304\r\tIW1\r68\r3501\r\tIW1\r68\r3606\r\tIW1\r68\r3D0A\r\tIW1\r68\r3E06\r\tIW1\r68\r9B18\r\tIW1\r68\r9C4C\r\tIW1\r68\rA420\r\tIW1\r68\r0105\r\tIW1\r68\r0811\r\tIW1\r68\r0920\r\tIW1\r68\r0A0C\r\tIW1\r68\r0B0B\r\tIW1\r68\r0C1F\r\tIW1\r68\r0D3F\r\tIW1\r68\r0E14\r\tIW1\r68\r0F28\r\tIW1\r68\r1009\r\tIW1\r68\r1108\r\tIW1\r68\r121F\r\tIW1\r68\r133F\r\tIW1\r68\r1980\r\tIW1\r68\r1A04\r\tIW1\r68\r1FC8\r\tIW1\r68\r211B\r\tIW1\r68\r2A05\r\tIW1\r68\r2B01\r\tIW1\r68\r2C87\r\tIW1\r68\r2D03\r\tIW1\r68\r2E19\r\tIW1\r68\r2F19\r\tIW1\r68\r3242\r\tIW1\r68\r3303\r\tIW1\r68\r3604\r\tIW1\r68\r3A01\r\tIW1\r68\r3B03\r\tIW1\r68\r3D04\r\tIW1\r68\r3E02\r\tIW1\r68\r8806\r\tIW1\r68\r890D\r\tIW1\r68\r8B72\r\tIW1\r68\r8C56\r\tIW1\r68\r9B7A\r\tIW1\r68\r9C8C\r\tIW1\r68\r9D11\r\tIW1\r68\r9E22\r\tIW1\r68\r9F0C\r\tIW1\r68\rA00B\r\tIW1\r68\rA11F\r\tIW1\r68\rA23F\r\tIW1\r68\rA408\r\tIW1\r68\rA603\r\tIW1\r68\rAC09\r\tIW1\r68\rADE7\r\tIW1\r68\rAE45\r\tIW1\r68\rB1DD\r\tIW1\r68\rB202\r\tIW1\r68\r0108\r\tIW1\r68\r0235\r\tIW1\r68\r0304\r\tIW1\r68\r0401\r\tIW1\r68\r0109\r\tIW1\r68\r0E02\r\tIW1\r68\r4944\r\tIW1\r68\r4A04\r\tIW1\r68\r4E49\r\tIW1\r68\r4FF2\r\tIW1\r68\r010A\r\tIW1\r68\r0303\r\tIW1\r68\r0503\r\tIW1\r68\r010B\r\tIW1\r68\r440F\r\tIW1\r68\r470B\r\tIW1\r68\r480B\r\tIW1\r68\r4A1C\r\tIW1\r68\r57F0\r\tIW1\r68\r010C\r\tIW1\r68\r0203\r\tIW1\r68\r0304\r\tIW1\r68\r0701\r\tIW1\r68\r0801\r\tIW1\r68\r0105\r\tIW1\r68\r1401\r\tIW1\r68\r0100\r\tIW1\r68\r1C01\r\tIW1\r68\r0105\r\tIW1\r68\r4000\r\tIW1\r68\r010B\r\tIW1\r68\r24C3\r\tIW1\r68\r2506\r\tIW1\r74\r00\r\t", 
+                    "comment": "Set Si5382 to 156.25 MHz", 
+                    "port": "COM42", 
+                    "type": "sysc"
+                }, 
+                {
+                    "command": "VRN\r\t", 
+                    "comment": "Check Firmware version", 
+                    "port": "COM42", 
+                    "type": "sysc"
+                }
+            ]
+        }, 
+        {
+            "checked": 1, 
+            "name": "IPI Test", 
+            "progress time": 86.48800015449524, 
+            "repeat": 1, 
+            "steps": [
+                {
+                    "baud": 115200, 
+                    "fail condition": [
+                        "(.*)FMC XM107 LVDS Test failed"
+                    ], 
+                    "pass condition": [
+                        "(.*)All\\s+Tests\\s+Complete:\\s+IIC\\s+PASSED", 
+                        "(.*)###\\s+PS\\s+DDR4\\s+Memory\\s+Test\\s+finished\\s+successfully\\s+###", 
+                        "(.*)###\\s+PL\\s+BRAM\\s+Memory\\s+Test\\s+finished\\s+successfully\\s+###", 
+                        "(.*)###\\s+PL\\s+DDR4\\s+Memory\\s+Test\\s+finished\\s+successfully\\s+###", 
+                        "(.*)PMOD\\s+Test\\s+passed", 
+                        "(.*)System\\s+Monitor\\s+Example\\s+passed!", 
+                        "(.*)The\\s+Current\\s+Temperature\\s+is\\s+[2-6]\\d.\\d\\d\\d\\s+Centigrades"
+                    ], 
+                    "port": "COM40", 
+                    "type": "comm"
+                }, 
+                {
+                    "command": "tcl\\zcu111_ipi_elf.tcl", 
+                    "fail condition": [], 
+                    "pass condition": [
+                        "(.*)FPGA\\s+is\\s+configured", 
+                        "(.*)FPGA\\s+is\\s+not\\s+configured", 
+                        "(.*)DONE\\s+\\(Bits \\[5\\]\\)\\:\\s+1", 
+                        "(.*)Successfully\\s+downloaded"
+                    ], 
+                    "type": "xsdb"
+                }, 
+                {
+                    "command": "33", 
+                    "delay": 5, 
+                    "port": "COM40", 
+                    "type": "coms"
+                }, 
+                {
+                    "command": "88", 
+                    "delay": 10, 
+                    "port": "COM40", 
+                    "type": "coms"
+                }, 
+                {
+                    "command": "99", 
+                    "delay": 10, 
+                    "port": "COM40", 
+                    "type": "coms"
+                }, 
+                {
+                    "command": "AA", 
+                    "delay": 10, 
+                    "port": "COM40", 
+                    "type": "coms"
+                }, 
+                {
+                    "command": "DD", 
+                    "delay": 5, 
+                    "port": "COM40", 
+                    "type": "coms"
+                }, 
+                {
+                    "command": "GG", 
+                    "delay": 5, 
+                    "port": "COM40", 
+                    "type": "coms"
+                }
+            ]
+        }, 
+        {
+            "checked": 1, 
+            "name": "PS DDR4", 
+            "progress time": 36.7739999294281, 
+            "repeat": 1, 
+            "steps": [
+                {
+                    "baud": 115200, 
+                    "fail condition": [], 
+                    "pass condition": [
+                        "(.*)memtest_all:\\s+PASSED", 
+                        "(.*)error_counter\\s+=\\s+0x0000000000000000"
+                    ], 
+                    "port": "COM40", 
+                    "type": "comm"
+                }, 
+                {
+                    "command": "tcl\\zcu111_mig_ps_ddr4.tcl", 
+                    "fail condition": [], 
+                    "pass condition": [
+                        "(.*)Successfully\\s+downloaded"
+                    ], 
+                    "type": "xsdb"
+                }, 
+                {
+                    "command": "2\n", 
+                    "delay": 20, 
+                    "port": "COM40", 
+                    "type": "coms"
+                }
+            ]
+        }, 
+        {
+            "checked": 1, 
+            "name": "MIG DDR4", 
+            "progress time": 239.4779999256134, 
+            "repeat": 1, 
+            "steps": [
+                {
+                    "command": "tcl\\zcu111_mig_pl_ddr4.tcl", 
+                    "fail condition": [], 
+                    "pass condition": [
+                        "(.*)INFO:\\s+\\[Labtools\\s+27\\-3164\\]\\s+End\\s+of\\s+startup\\s+status:\\s+HIGH", 
+                        "(.*)INFO:\\s+\\[Common\\s+17\\-206\\]\\s+Exiting\\s+[Vv]ivado"
+                    ], 
+                    "type": "tcl"
+                }, 
+                {
+                    "command": "tcl\\zcu111_mig_pl_ddr4_status.tcl", 
+                    "fail condition": [], 
+                    "pass condition": [
+                        "(.*)Info:VIO\\s+Core\\s+Read\\s+LED\\s+Data\\s+Pass\\s+1:_________[b9]_________", 
+                        "(.*)Info:VIO\\s+Core\\s+Read\\s+LED\\s+Data\\s+Pass\\s+2:_________[b9]_________", 
+                        "(.*)^\\s+TEST\\s+PASSED", 
+                        "(.*)INFO:\\s+\\[Common\\s+17\\-206\\]\\s+Exiting\\s+[Vv]ivado"
+                    ], 
+                    "type": "tcl"
+                }, 
+                {
+                    "command": "tcl\\five_second_delay.tcl", 
+                    "fail condition": [], 
+                    "pass condition": [], 
+                    "type": "tcl"
+                }
+            ]
+        }, 
+        {
+            "checked": 1, 
+            "name": "Ethernet PING", 
+            "progress time": 91.16799998283386, 
+            "repeat": 1, 
+            "steps": [
+                {
+                    "baud": 115200, 
+                    "fail condition": [], 
+                    "pass condition": [
+                        "(.*)\\-\\-\\-\\-\\-lwIP\\s+TCP\\s+echo\\s+server\\s+\\-\\-\\-\\-\\-\\-", 
+                        "(.*)TCP\\s+packets\\s+sent\\s+to\\s+port\\s+6001\\s+will\\s+be\\s+echoed\\s+back", 
+                        "(.*)Start\\s+PHY\\s+autonegotiation", 
+                        "(.*)Waiting\\s+for\\s+PHY\\s+to\\s+complete\\s+autonegotiation", 
+                        "(.*)[Aa]utonegotiation\\s+complete", 
+                        "(.*)link\\s+speed\\s+for\\s+phy\\s+address\\s+\\d+\\:\\s+1000", 
+                        "(.*)DHCP\\s+Timeout", 
+                        "(.*)Configuring\\s+default\\s+IP\\s+of\\s+192\\.168\\.1\\.10", 
+                        "(.*)Board\\s+IP:\\s+192\\.168\\.1\\.10", 
+                        "(.*)Netmask\\s+:\\s+255\\.255\\.255\\.0", 
+                        "(.*)Gateway\\s+:\\s+192\\.168\\.1\\.1", 
+                        "(.*)TCP\\s+echo\\s+server\\s+started\\s+@\\s+port\\s+7"
+                    ], 
+                    "port": "COM40", 
+                    "type": "comm"
+                }, 
+                {
+                    "command": "Cycle ZCU111 Board Power.", 
+                    "delay": 1, 
+                    "type": "manc"
+                }, 
+                {
+                    "command": "tcl\\zcu111_ping_elf.tcl", 
+                    "delay": 30, 
+                    "fail condition": [], 
+                    "pass condition": [
+                        "(.*)FPGA\\s+is\\s+not\\s+configured", 
+                        "(.*)Successfully\\s+downloaded"
+                    ], 
+                    "type": "xsdb"
+                }, 
+                {
+                    "command": "(.*)TCP echo server started @ port 7(.*)", 
+                    "port": "COM40", 
+                    "type": "comp"
+                }, 
+                {
+                    "command": "bat\\ping.bat", 
+                    "delay": 30, 
+                    "fail condition": [
+                        "(.*)Request timed out."
+                    ], 
+                    "pass condition": [
+                        "(.*)Pinging\\s+192.168.1.10\\s+with\\s+32\\s+bytes\\s+of\\s+data:", 
+                        "(.*)Reply\\s+from\\s+192.168.1.10:\\s+bytes=32\\s+time.*\\d+ms\\s+TTL=\\d+", 
+                        "(.*)Ping\\s+statistics\\s+for\\s+192.168.1.10:", 
+                        "(.*)^\\s+Packets:\\s+Sent\\s+=\\s+4,\\s+Received\\s+=\\s+4,\\s+Lost\\s+=\\s+0\\s+\\(0%\\s+loss\\),"
+                    ], 
+                    "type": "cmd"
+                }
+            ]
+        }, 
+        {
+            "checked": 1, 
+            "name": "UART 02 TEST", 
+            "progress time": 67.8730001449585, 
+            "repeat": 1, 
+            "steps": [
+                {
+                    "baud": 115200, 
+                    "fail condition": [], 
+                    "pass condition": [
+                        "(.*)UART 02 Test Passed"
+                    ], 
+                    "port": "COM41", 
+                    "type": "comm"
+                }, 
+                {
+                    "command": "Cycle ZCU111 Board Power.", 
+                    "delay": 1, 
+                    "type": "manc"
+                }, 
+                {
+                    "command": "tcl\\zcu111_uart_02_elf.tcl", 
+                    "delay": 30, 
+                    "fail condition": [], 
+                    "pass condition": [
+                        "(.*)FPGA\\s+is\\s+not\\s+configured", 
+                        "(.*)Successfully\\s+downloaded"
+                    ], 
+                    "type": "xsdb"
+                }
+            ]
+        }, 
+        {
+            "checked": 1, 
+            "name": "IBERT ALL", 
+            "progress time": 258.4300000667572, 
+            "repeat": 1, 
+            "steps": [
+                {
+                    "command": "tcl\\zcu111_ibert_bank_all.tcl", 
+                    "fail condition": [], 
+                    "pass condition": [
+                        "(.*)INFO: \\[Labtools 27\\-3164\\] End of startup status: HIGH", 
+                        "(.*)INFO: \\[Common 17\\-206\\]\\s+Exiting\\s+[Vv]ivado"
+                    ], 
+                    "type": "tcl"
+                }, 
+                {
+                    "command": "tcl\\vivado_ibert_reset.tcl", 
+                    "fail condition": [], 
+                    "pass condition": [], 
+                    "type": "tcl"
+                }, 
+                {
+                    "command": "tcl\\zcu111_ibert_bank_all_status.tcl", 
+                    "fail condition": [
+                        "(.*)No\\s+matching\\s+hw_sio_links\\s+were\\s+found", 
+                        "(.*)No\\s+CseXsdb\\s+register\\s+file\\s+specified\\s+for\\s+CseXsdb"
+                    ], 
+                    "pass condition": [
+                        "(.*)Quad_128:MGT_X0Y4:\\s+STATUS=\\d+\\.\\d\\d\\d Gbps", 
+                        "(.*)Quad_128:MGT_X0Y4:\\s+QPLL0_STATUS=LOCKED", 
+                        "(.*)Quad_128:MGT_X0Y4:\\s+LINE_RATE=\\d+\\.\\d\\d\\d", 
+                        "(.*)Quad_128:MGT_X0Y4:\\s+LOGIC.ERRBIT_COUNT=000000000000", 
+                        "(.*)Quad_128:MGT_X0Y4:\\s+RX_RECEIVED_BIT_COUNT=[0]*[1-9]\\d*\\.?[0]*", 
+                        "(.*)Quad_128:MGT_X0Y4:\\s+TX_PATTERN=PRBS\\s+\\d+\\-bit", 
+                        "(.*)Quad_128:MGT_X0Y4:\\s+RX_PATTERN=PRBS\\s+\\d+\\-bit", 
+                        "(.*)Quad_128:MGT_X0Y4:\\s+LOOPBACK=None", 
+                        "(.*)Quad_128:MGT_X0Y5:\\s+STATUS=\\d+\\.\\d\\d\\d Gbps", 
+                        "(.*)Quad_128:MGT_X0Y5:\\s+QPLL0_STATUS=LOCKED", 
+                        "(.*)Quad_128:MGT_X0Y5:\\s+LINE_RATE=\\d+\\.\\d\\d\\d", 
+                        "(.*)Quad_128:MGT_X0Y5:\\s+LOGIC.ERRBIT_COUNT=000000000000", 
+                        "(.*)Quad_128:MGT_X0Y5:\\s+RX_RECEIVED_BIT_COUNT=[0]*[1-9]\\d*\\.?[0]*", 
+                        "(.*)Quad_128:MGT_X0Y5:\\s+TX_PATTERN=PRBS\\s+\\d+\\-bit", 
+                        "(.*)Quad_128:MGT_X0Y5:\\s+RX_PATTERN=PRBS\\s+\\d+\\-bit", 
+                        "(.*)Quad_128:MGT_X0Y5:\\s+LOOPBACK=None", 
+                        "(.*)Quad_128:MGT_X0Y6:\\s+STATUS=\\d+\\.\\d\\d\\d Gbps", 
+                        "(.*)Quad_128:MGT_X0Y6:\\s+QPLL0_STATUS=LOCKED", 
+                        "(.*)Quad_128:MGT_X0Y6:\\s+LINE_RATE=\\d+\\.\\d\\d\\d", 
+                        "(.*)Quad_128:MGT_X0Y6:\\s+LOGIC.ERRBIT_COUNT=000000000000", 
+                        "(.*)Quad_128:MGT_X0Y6:\\s+RX_RECEIVED_BIT_COUNT=[0]*[1-9]\\d*\\.?[0]*", 
+                        "(.*)Quad_128:MGT_X0Y6:\\s+TX_PATTERN=PRBS\\s+\\d+\\-bit", 
+                        "(.*)Quad_128:MGT_X0Y6:\\s+RX_PATTERN=PRBS\\s+\\d+\\-bit", 
+                        "(.*)Quad_128:MGT_X0Y6:\\s+LOOPBACK=None", 
+                        "(.*)Quad_128:MGT_X0Y7:\\s+STATUS=\\d+\\.\\d\\d\\d Gbps", 
+                        "(.*)Quad_128:MGT_X0Y7:\\s+QPLL0_STATUS=LOCKED", 
+                        "(.*)Quad_128:MGT_X0Y7:\\s+LINE_RATE=\\d+\\.\\d\\d\\d", 
+                        "(.*)Quad_128:MGT_X0Y7:\\s+LOGIC.ERRBIT_COUNT=000000000000", 
+                        "(.*)Quad_128:MGT_X0Y7:\\s+RX_RECEIVED_BIT_COUNT=[0]*[1-9]\\d*\\.?[0]*", 
+                        "(.*)Quad_128:MGT_X0Y7:\\s+TX_PATTERN=PRBS\\s+\\d+\\-bit", 
+                        "(.*)Quad_128:MGT_X0Y7:\\s+RX_PATTERN=PRBS\\s+\\d+\\-bit", 
+                        "(.*)Quad_128:MGT_X0Y7:\\s+LOOPBACK=None", 
+                        "(.*)Quad_129:MGT_X0Y8:\\s+STATUS=\\d+\\.\\d\\d\\d Gbps", 
+                        "(.*)Quad_129:MGT_X0Y8:\\s+QPLL0_STATUS=LOCKED", 
+                        "(.*)Quad_129:MGT_X0Y8:\\s+LINE_RATE=\\d+\\.\\d\\d\\d", 
+                        "(.*)Quad_129:MGT_X0Y8:\\s+LOGIC.ERRBIT_COUNT=000000000000", 
+                        "(.*)Quad_129:MGT_X0Y8:\\s+RX_RECEIVED_BIT_COUNT=[0]*[1-9]\\d*\\.?[0]*", 
+                        "(.*)Quad_129:MGT_X0Y8:\\s+TX_PATTERN=PRBS\\s+\\d+\\-bit", 
+                        "(.*)Quad_129:MGT_X0Y8:\\s+RX_PATTERN=PRBS\\s+\\d+\\-bit", 
+                        "(.*)Quad_129:MGT_X0Y8:\\s+LOOPBACK=None", 
+                        "(.*)Quad_129:MGT_X0Y9:\\s+STATUS=\\d+\\.\\d\\d\\d Gbps", 
+                        "(.*)Quad_129:MGT_X0Y9:\\s+QPLL0_STATUS=LOCKED", 
+                        "(.*)Quad_129:MGT_X0Y9:\\s+LINE_RATE=\\d+\\.\\d\\d\\d", 
+                        "(.*)Quad_129:MGT_X0Y9:\\s+LOGIC.ERRBIT_COUNT=000000000000", 
+                        "(.*)Quad_129:MGT_X0Y9:\\s+RX_RECEIVED_BIT_COUNT=[0]*[1-9]\\d*\\.?[0]*", 
+                        "(.*)Quad_129:MGT_X0Y9:\\s+TX_PATTERN=PRBS\\s+\\d+\\-bit", 
+                        "(.*)Quad_129:MGT_X0Y9:\\s+RX_PATTERN=PRBS\\s+\\d+\\-bit", 
+                        "(.*)Quad_129:MGT_X0Y9:\\s+LOOPBACK=None", 
+                        "(.*)Quad_129:MGT_X0Y10:\\s+STATUS=\\d+\\.\\d\\d\\d Gbps", 
+                        "(.*)Quad_129:MGT_X0Y10:\\s+QPLL0_STATUS=LOCKED", 
+                        "(.*)Quad_129:MGT_X0Y10:\\s+LINE_RATE=\\d+\\.\\d\\d\\d", 
+                        "(.*)Quad_129:MGT_X0Y10:\\s+LOGIC.ERRBIT_COUNT=000000000000", 
+                        "(.*)Quad_129:MGT_X0Y10:\\s+RX_RECEIVED_BIT_COUNT=[0]*[1-9]\\d*\\.?[0]*", 
+                        "(.*)Quad_129:MGT_X0Y10:\\s+TX_PATTERN=PRBS\\s+\\d+\\-bit", 
+                        "(.*)Quad_129:MGT_X0Y10:\\s+RX_PATTERN=PRBS\\s+\\d+\\-bit", 
+                        "(.*)Quad_129:MGT_X0Y10:\\s+LOOPBACK=None", 
+                        "(.*)Quad_129:MGT_X0Y11:\\s+STATUS=\\d+\\.\\d\\d\\d Gbps", 
+                        "(.*)Quad_129:MGT_X0Y11:\\s+QPLL0_STATUS=LOCKED", 
+                        "(.*)Quad_129:MGT_X0Y11:\\s+LINE_RATE=\\d+\\.\\d\\d\\d", 
+                        "(.*)Quad_129:MGT_X0Y11:\\s+LOGIC.ERRBIT_COUNT=000000000000", 
+                        "(.*)Quad_129:MGT_X0Y11:\\s+RX_RECEIVED_BIT_COUNT=[0]*[1-9]\\d*\\.?[0]*", 
+                        "(.*)Quad_129:MGT_X0Y11:\\s+TX_PATTERN=PRBS\\s+\\d+\\-bit", 
+                        "(.*)Quad_129:MGT_X0Y11:\\s+RX_PATTERN=PRBS\\s+\\d+\\-bit", 
+                        "(.*)Quad_129:MGT_X0Y11:\\s+LOOPBACK=None", 
+                        "(.*)Quad_130:MGT_X0Y12:\\s+STATUS=\\d+\\.\\d\\d\\d Gbps", 
+                        "(.*)Quad_130:MGT_X0Y12:\\s+QPLL0_STATUS=LOCKED", 
+                        "(.*)Quad_130:MGT_X0Y12:\\s+LINE_RATE=\\d+\\.\\d\\d\\d", 
+                        "(.*)Quad_130:MGT_X0Y12:\\s+LOGIC.ERRBIT_COUNT=000000000000", 
+                        "(.*)Quad_130:MGT_X0Y12:\\s+RX_RECEIVED_BIT_COUNT=[0]*[1-9]\\d*\\.?[0]*", 
+                        "(.*)Quad_130:MGT_X0Y12:\\s+TX_PATTERN=PRBS\\s+\\d+\\-bit", 
+                        "(.*)Quad_130:MGT_X0Y12:\\s+RX_PATTERN=PRBS\\s+\\d+\\-bit", 
+                        "(.*)Quad_130:MGT_X0Y12:\\s+LOOPBACK=None", 
+                        "(.*)Quad_130:MGT_X0Y13:\\s+STATUS=\\d+\\.\\d\\d\\d Gbps", 
+                        "(.*)Quad_130:MGT_X0Y13:\\s+QPLL0_STATUS=LOCKED", 
+                        "(.*)Quad_130:MGT_X0Y13:\\s+LINE_RATE=\\d+\\.\\d\\d\\d", 
+                        "(.*)Quad_130:MGT_X0Y13:\\s+LOGIC.ERRBIT_COUNT=000000000000", 
+                        "(.*)Quad_130:MGT_X0Y13:\\s+RX_RECEIVED_BIT_COUNT=[0]*[1-9]\\d*\\.?[0]*", 
+                        "(.*)Quad_130:MGT_X0Y13:\\s+TX_PATTERN=PRBS\\s+\\d+\\-bit", 
+                        "(.*)Quad_130:MGT_X0Y13:\\s+RX_PATTERN=PRBS\\s+\\d+\\-bit", 
+                        "(.*)Quad_130:MGT_X0Y13:\\s+LOOPBACK=None", 
+                        "(.*)Quad_130:MGT_X0Y14:\\s+STATUS=\\d+\\.\\d\\d\\d Gbps", 
+                        "(.*)Quad_130:MGT_X0Y14:\\s+QPLL0_STATUS=LOCKED", 
+                        "(.*)Quad_130:MGT_X0Y14:\\s+LINE_RATE=\\d+\\.\\d\\d\\d", 
+                        "(.*)Quad_130:MGT_X0Y14:\\s+LOGIC.ERRBIT_COUNT=000000000000", 
+                        "(.*)Quad_130:MGT_X0Y14:\\s+RX_RECEIVED_BIT_COUNT=[0]*[1-9]\\d*\\.?[0]*", 
+                        "(.*)Quad_130:MGT_X0Y14:\\s+TX_PATTERN=PRBS\\s+\\d+\\-bit", 
+                        "(.*)Quad_130:MGT_X0Y14:\\s+RX_PATTERN=PRBS\\s+\\d+\\-bit", 
+                        "(.*)Quad_130:MGT_X0Y14:\\s+LOOPBACK=None", 
+                        "(.*)Quad_130:MGT_X0Y15:\\s+STATUS=\\d+\\.\\d\\d\\d Gbps", 
+                        "(.*)Quad_130:MGT_X0Y15:\\s+QPLL0_STATUS=LOCKED", 
+                        "(.*)Quad_130:MGT_X0Y15:\\s+LINE_RATE=\\d+\\.\\d\\d\\d", 
+                        "(.*)Quad_130:MGT_X0Y15:\\s+LOGIC.ERRBIT_COUNT=000000000000", 
+                        "(.*)Quad_130:MGT_X0Y15:\\s+RX_RECEIVED_BIT_COUNT=[0]*[1-9]\\d*\\.?[0]*", 
+                        "(.*)Quad_130:MGT_X0Y15:\\s+TX_PATTERN=PRBS\\s+\\d+\\-bit", 
+                        "(.*)Quad_130:MGT_X0Y15:\\s+RX_PATTERN=PRBS\\s+\\d+\\-bit", 
+                        "(.*)Quad_130:MGT_X0Y15:\\s+LOOPBACK=None", 
+                        "(.*)Quad_131:MGT_X0Y16:\\s+STATUS=\\d+\\.\\d\\d\\d Gbps", 
+                        "(.*)Quad_131:MGT_X0Y16:\\s+QPLL0_STATUS=LOCKED", 
+                        "(.*)Quad_131:MGT_X0Y16:\\s+LINE_RATE=\\d+\\.\\d\\d\\d", 
+                        "(.*)Quad_131:MGT_X0Y16:\\s+LOGIC.ERRBIT_COUNT=000000000000", 
+                        "(.*)Quad_131:MGT_X0Y16:\\s+RX_RECEIVED_BIT_COUNT=[0]*[1-9]\\d*\\.?[0]*", 
+                        "(.*)Quad_131:MGT_X0Y16:\\s+TX_PATTERN=PRBS\\s+\\d+\\-bit", 
+                        "(.*)Quad_131:MGT_X0Y16:\\s+RX_PATTERN=PRBS\\s+\\d+\\-bit", 
+                        "(.*)Quad_131:MGT_X0Y16:\\s+LOOPBACK=None", 
+                        "(.*)Quad_131:MGT_X0Y17:\\s+STATUS=\\d+\\.\\d\\d\\d Gbps", 
+                        "(.*)Quad_131:MGT_X0Y17:\\s+QPLL0_STATUS=LOCKED", 
+                        "(.*)Quad_131:MGT_X0Y17:\\s+LINE_RATE=\\d+\\.\\d\\d\\d", 
+                        "(.*)Quad_131:MGT_X0Y17:\\s+LOGIC.ERRBIT_COUNT=000000000000", 
+                        "(.*)Quad_131:MGT_X0Y17:\\s+RX_RECEIVED_BIT_COUNT=[0]*[1-9]\\d*\\.?[0]*", 
+                        "(.*)Quad_131:MGT_X0Y17:\\s+TX_PATTERN=PRBS\\s+\\d+\\-bit", 
+                        "(.*)Quad_131:MGT_X0Y17:\\s+RX_PATTERN=PRBS\\s+\\d+\\-bit", 
+                        "(.*)Quad_131:MGT_X0Y17:\\s+LOOPBACK=None", 
+                        "(.*)Quad_131:MGT_X0Y18:\\s+STATUS=\\d+\\.\\d\\d\\d Gbps", 
+                        "(.*)Quad_131:MGT_X0Y18:\\s+QPLL0_STATUS=LOCKED", 
+                        "(.*)Quad_131:MGT_X0Y18:\\s+LINE_RATE=\\d+\\.\\d\\d\\d", 
+                        "(.*)Quad_131:MGT_X0Y18:\\s+LOGIC.ERRBIT_COUNT=000000000000", 
+                        "(.*)Quad_131:MGT_X0Y18:\\s+RX_RECEIVED_BIT_COUNT=[0]*[1-9]\\d*\\.?[0]*", 
+                        "(.*)Quad_131:MGT_X0Y18:\\s+TX_PATTERN=PRBS\\s+\\d+\\-bit", 
+                        "(.*)Quad_131:MGT_X0Y18:\\s+RX_PATTERN=PRBS\\s+\\d+\\-bit", 
+                        "(.*)Quad_131:MGT_X0Y18:\\s+LOOPBACK=None", 
+                        "(.*)Quad_131:MGT_X0Y19:\\s+STATUS=\\d+\\.\\d\\d\\d Gbps", 
+                        "(.*)Quad_131:MGT_X0Y19:\\s+QPLL0_STATUS=LOCKED", 
+                        "(.*)Quad_131:MGT_X0Y19:\\s+LINE_RATE=\\d+\\.\\d\\d\\d", 
+                        "(.*)Quad_131:MGT_X0Y19:\\s+LOGIC.ERRBIT_COUNT=000000000000", 
+                        "(.*)Quad_131:MGT_X0Y19:\\s+RX_RECEIVED_BIT_COUNT=[0]*[1-9]\\d*\\.?[0]*", 
+                        "(.*)Quad_131:MGT_X0Y19:\\s+TX_PATTERN=PRBS\\s+\\d+\\-bit", 
+                        "(.*)Quad_131:MGT_X0Y19:\\s+RX_PATTERN=PRBS\\s+\\d+\\-bit", 
+                        "(.*)Quad_131:MGT_X0Y19:\\s+LOOPBACK=None", 
+                        "(.*)INFO: \\[Common 17\\-206\\]\\s+Exiting\\s+[Vv]ivado"
+                    ], 
+                    "type": "tcl"
+                }
+            ]
+        }, 
+        {
+            "checked": 1, 
+            "name": "XM107 LVDS", 
+            "progress time": 103.25999999046326, 
+            "repeat": 1, 
+            "steps": [
+                {
+                    "baud": 115200, 
+                    "fail condition": [
+                        "(.*):N(.*)"
+                    ], 
+                    "pass condition": [], 
+                    "port": "COM42", 
+                    "type": "comm"
+                }, 
+                {
+                    "baud": 115200, 
+                    "fail condition": [], 
+                    "pass condition": [
+                        "(.*)FMC LVDS Test passed"
+                    ], 
+                    "port": "COM41", 
+                    "type": "comm"
+                }, 
+                {
+                    "command": "Cycle ZCU111 Board Power.", 
+                    "delay": 1, 
+                    "type": "manc"
+                }, 
+                {
+                    "command": "IW0\r75\r04\r\tIW0\r45\r0003\r\tIW0\r45\r2014\r\tIW0\r45\r24FFFF\r\tIW0\r45\r0140\r\tDLY\rC350\r\tIW0\r45\r21cd1c\r\tDLY\rC350\r\tIW0\r45\r0180\r\tDLY\rC350\r\tIW0\r75\r00\r\t", 
+                    "comment": "FMC -> Set VADJ 1.8V", 
+                    "port": "COM42", 
+                    "type": "sysc"
+                }, 
+                {
+                    "command": "tcl\\zcu111_xm107_lvds.tcl", 
+                    "fail condition": [], 
+                    "pass condition": [], 
+                    "type": "tcl"
+                }
+            ]
+        }, 
+        {
+            "checked": 1, 
+            "name": "XM500 DAC IO", 
+            "progress time": 59.25600004196167, 
+            "repeat": 1, 
+            "steps": [
+                {
+                    "baud": 115200, 
+                    "fail condition": [], 
+                    "pass condition": [
+                        "(.*)FMC DAC IO Test passed"
+                    ], 
+                    "port": "COM41", 
+                    "type": "comm"
+                }, 
+                {
+                    "command": "Cycle ZCU111 Board Power.", 
+                    "delay": 1, 
+                    "type": "manc"
+                }, 
+                {
+                    "command": "tcl\\zcu111_xm500_dacio.tcl", 
+                    "fail condition": [], 
+                    "pass condition": [], 
+                    "type": "tcl"
+                }
+            ]
+        }, 
+        {
+            "checked": 1, 
+            "name": "Program QSPI Flash", 
+            "progress time": 725.9249999523163, 
+            "repeat": 1, 
+            "steps": [
+                {
+                    "command": "Cycle ZCU111 Board Power.", 
+                    "delay": 1, 
+                    "type": "manc"
+                }, 
+                {
+                    "command": "tcl\\zcu111_srst.tcl", 
+                    "delay": 10, 
+                    "fail condition": [], 
+                    "pass condition": [], 
+                    "type": "xsdb"
+                }, 
+                {
+                    "command": "tcl\\zcu111_program_qspi.tcl", 
+                    "fail condition": [], 
+                    "pass condition": [
+                        "(.*)Performing\\s+Erase\\s+Operation", 
+                        "(.*)Erase\\s+Operation\\s+successful", 
+                        "(.*)Performing\\s+Program\\s+Operation", 
+                        "(.*)Program\\s+Operation\\s+successful", 
+                        "(.*)Performing\\s+Verify\\s+Operation", 
+                        "(.*)Verify\\s+Operation\\s+successful", 
+                        "(.*)BOOT_MODE\\s+REG\\s+=\\s+0x0000", 
+                        "(.*)INFO:\\s+\\[Labtoolstcl\\s+44\\-377\\]\\s+Flash\\s+programming\\s+completed\\s+successfully"
+                    ], 
+                    "type": "tcl"
+                }
+            ]
+        }, 
+        {
+            "checked": 1, 
+            "name": "Test QSPI Flash", 
+            "progress time": 26.907000064849854, 
+            "repeat": 1, 
+            "steps": [
+                {
+                    "baud": 115200, 
+                    "fail condition": [], 
+                    "pass condition": [
+                        "(.*)Zynq UltraScale+ RFSoC ZCU111 Evaluation Kit IPI Test"
+                    ], 
+                    "port": "COM40", 
+                    "type": "comm"
+                }, 
+                {
+                    "command": "Set SW6 to 0100 (Up, Down, Up, Up) for Testing QSPI.\r\n", 
+                    "type": "manc"
+                }, 
+                {
+                    "command": "Cycle ZCU111 Board Power.", 
+                    "delay": 1, 
+                    "type": "manc"
+                }, 
+                {
+                    "command": "Observe PL LEDs blinking, then PL LED7 through PL LED2 turn on in sequence.\nPL LED1 should be blinking.\nCycle ZCU111 power if you need to repeat this part of the test.\nClick OK when this is done. ", 
+                    "delay": 1, 
+                    "type": "manc"
+                }, 
+                {
+                    "command": "Do you see the PL LEDs 7 through 2 all on?\nThis part of the BIST test passed if you saw this.", 
+                    "type": "manq"
+                }, 
+                {
+                    "command": "1. Set PL DIP, SW14 to \"11111111\" (All Up).\n2. Set PL DIP, SW14 to \"00000000\" (All Down)\n3. Observe PL LED1 on solid and PL LED0 blinking.\nClick OK when this is done.", 
+                    "delay": 1, 
+                    "type": "manc"
+                }, 
+                {
+                    "command": "Press all the 5 Push buttons in any order.\n\nClick OK when this is done.", 
+                    "delay": 1, 
+                    "type": "manc"
+                }, 
+                {
+                    "command": "Do you see the PL LEDs 7 through 0 all on?\nThis part of the BIST test passed if you saw this.", 
+                    "type": "manq"
+                }
+            ]
+        }
+    ], 
+    "vivado path": "C:\\Xilinx\\Vivado\\2018.2"
+}

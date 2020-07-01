@@ -1,0 +1,83 @@
+Board: ZCU111
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: SD BOOT and UART test started...
+
+Info: The test will take 0 hours, 00 minutes, and 28 seconds. 0:00:28
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-23 14:49:54
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-23 14:49:55
+
+User has confirmed: "Set mode switch SW6 to "0111" (Up,Down,Down,Down)
+Insert the SD BOOT micro-SD card"
+
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-23 14:50:00
+
+C:\zcu111_bit\tests\ZCU111>cd bat\ 
+
+C:\zcu111_bit\tests\ZCU111\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-23 14:50:04
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Fri Feb 23 14:50:19 2018...
+step finished 
+
+Entering step: 4
+
+
+Info: This step started at: 2018-02-23 14:50:19
+
+User has responded "Yes": "Do you see the input test pattern on the output Monitor? 
+The test passed if you see the pattern on the output monitor."
+
+step finished 
+
+step finished 
+the expression:(.*)RX\s+stream\s+is\s+up
+
+Error: Could not find regular expression in step 0 of test 17 - "(.*)Xilinx\sZynq\sMP\sFirst\sStage\sBoot\sLoader"
+
+Error: Could not find regular expression in step 0 of test 17 - "(.*)Pass-Through\s+:(.*)
+\s+(.*)
+\s+(.*)
+\s+(.*)
+\s+(.*)
+\s+Frame\s+Rate:\s+60Hz(.*)
+\s+Resolution:\s+3840x2160@60Hz"
+
+Error: Could not find regular expression in step 0 of test 17 - "(.*)TX\s+stream\s+is\s+up"
+
+Error: Could not find regular expression in step 0 of test 17 - "(.*)RX\s+stream\s+is\s+up"
+
+Info: Result for step 0: Fail
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+Info: Result for step 4: Pass
+
+Info: The test took 0 hours, 00 minutes, and 20 seconds. 0:00:20

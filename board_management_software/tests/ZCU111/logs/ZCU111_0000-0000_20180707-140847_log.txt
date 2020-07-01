@@ -1,0 +1,100 @@
+Board: ZCU111
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: XM505 DAC IO test started...
+
+Info: The test will take 0 hours, 01 minutes, and 20 seconds. 0:01:20
+
+Entering step: 0
+
+
+Info: This step started at: 2018-07-07 14:08:49
+
+Entering step: 1
+
+
+Info: This step started at: 2018-07-07 14:08:49
+
+C:\zcu111_bit\tests\ZCU111>cd bat\ 
+
+C:\zcu111_bit\tests\ZCU111\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-07-07 14:08:53
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Sat Jul  7 14:09:08 2018...
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-07-07 14:09:09
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu111_xm505_dacio.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280976B113A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1435] Device xczu28dr (JTAG device index = 0) is not programmed (DONE status = 0).
+# current_hw_device [lindex [get_hw_devices arm_dap_1] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 1]
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/zcu111_xm505_dacio.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 973.883 ; gain = 1.332
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280976B113A
+# disconnect_hw_server localhost:3121
+# close_hw
+
+***********************************************************
+***********************************************************
+**    ZCU111 - XM505 IO Loopback Write and Read Tests    **
+***********************************************************
+***********************************************************
+
+Testing DAC_IO 
+DAC_IO: Writing and Reading all 0's            - PASSED
+DAC_IO: Writing and Reading all 1's            - PASSED
+DAC_IO: Writing and Reading 0xFEDCBA98 pattern - PASSED
+DAC_IO: Writing and Reading 0x01234567 pattern - PASSED
+
+
+Completed FMC DAC IO Loopback Write and Read Tests
+
+FMC DAC IO Test passed
+
+INFO: [Common 17-206] Exiting Vivado at Sat Jul  7 14:09:47 2018...
+step finished 
+
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+
+Info: The test took 0 hours, 01 minutes, and 00 seconds. 0:01:00

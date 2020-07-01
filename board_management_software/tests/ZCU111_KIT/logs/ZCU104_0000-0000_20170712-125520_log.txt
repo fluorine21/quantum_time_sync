@@ -1,0 +1,84 @@
+Board: ZCU104
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: PMOD Loopback test started...
+
+Info: The test will take 0 hours, 01 minutes, and 40 seconds. 0:01:40
+
+Entering step: 0
+
+
+Info: This step started at: 2017-07-12 12:55:24
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+
+fpga -state
+FPGA is not configured
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/../tcl/psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/../elf/pmod_loop.elf}
+Downloading Program -- C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/elf/pmod_loop.elf
+	section, .text: 0x00000000 - 0x0000c51b
+	section, .init: 0x0000c540 - 0x0000c573
+	section, .fini: 0x0000c580 - 0x0000c5b3
+	section, .note.gnu.build-id: 0x0000c5b4 - 0x0000c5d7
+	section, .rodata: 0x0000c5d8 - 0x0000cc07
+	section, .rodata1: 0x0000cc08 - 0x0000cc3f
+	section, .sdata2: 0x0000cc40 - 0x0000cc3f
+	section, .sbss2: 0x0000cc40 - 0x0000cc3f
+	section, .data: 0x0000cc40 - 0x0000de0f
+	section, .data1: 0x0000de10 - 0x0000de3f
+	section, .ctors: 0x0000de40 - 0x0000de3f
+	section, .dtors: 0x0000de40 - 0x0000de3f
+	section, .eh_frame: 0x0000de40 - 0x0000de43
+	section, .mmu_tbl0: 0x0000e000 - 0x0000e00f
+	section, .mmu_tbl1: 0x0000f000 - 0x00010fff
+	section, .mmu_tbl2: 0x00011000 - 0x00014fff
+	section, .preinit_array: 0x00015000 - 0x00014fff
+	section, .init_array: 0x00015000 - 0x00015007
+	section, .fini_array: 0x00015008 - 0x00015047
+	section, .sdata: 0x00015048 - 0x0001507f
+	section, .sbss: 0x00015080 - 0x0001507f
+	section, .tdata: 0x00015080 - 0x0001507f
+	section, .tbss: 0x00015080 - 0x0001507f
+	section, .bss: 0x00015080 - 0x0001513f
+	section, .heap: 0x00015140 - 0x0001713f
+	section, .stack: 0x00017140 - 0x0001a13f
+  0%    0MB   0.0MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/elf/pmod_loop.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 105000

@@ -1,0 +1,17 @@
+folders:
+    ZCU111:
+        - board: ZCU111
+          revision: B
+          silicon: prod
+          bit config: BIT.yaml
+          sc config: SC.yaml
+          main config: config.yaml
+          information: zcu111.html
+application options:
+    show autodetect button: False
+    show qr button: False
+    log level: info 
+    sc window: True
+    bit window: False
+    bottom pane: False
+    right pane: False

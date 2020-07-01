@@ -1,0 +1,314 @@
+Board: ZCU104
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: PING test started...
+
+Info: The test will take 0 hours, 00 minutes, and 59 seconds. 0:00:59
+
+Entering step: 0
+
+
+Info: This step started at: 2018-01-25 17:07:10
+
+Entering step: 1
+
+
+Info: This step started at: 2018-01-25 17:07:10
+
+C:\zcu104_bit\tests\ZCU104>cd bat\ 
+
+C:\zcu104_bit\tests\ZCU104\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-01-25 17:07:14
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+fpga -state
+FPGA is not configured
+after 2000
+
+fpga -no-revision-check -file {C:/zcu104_bit/tests/ZCU104/../bitstream/zcu104_ipi.bit}
+initializing  0%    0MB   0.0MB/s  ??:?? ETA  5%    1MB   2.1MB/s  ??:?? ETA 10%    1MB   1.9MB/s  ??:?? ETA 15%    2MB   1.8MB/s  ??:?? ETA 19%    3MB   1.8MB/s  ??:?? ETA 24%    4MB   1.8MB/s  ??:?? ETA 28%    5MB   1.8MB/s  00:07 ETA 33%    6MB   1.7MB/s  00:06 ETA 38%    7MB   1.7MB/s  00:06 ETA 42%    7MB   1.7MB/s  00:06 ETA 47%    8MB   1.7MB/s  00:05 ETA 51%    9MB   1.7MB/s  00:05 ETA 56%   10MB   1.7MB/s  00:04 ETA 60%   11MB   1.7MB/s  00:04 ETA 65%   12MB   1.7MB/s  00:03 ETA 69%   12MB   1.7MB/s  00:03 ETA 74%   13MB   1.7MB/s  00:02 ETA 79%   14MB   1.7MB/s  00:02 ETA 83%   15MB   1.7MB/s  00:01 ETA 88%   16MB   1.7MB/s  00:01 ETA 92%   17MB   1.7MB/s  00:00 ETA 97%   17MB   1.7MB/s  00:00 ETA100%   18MB   1.7MB/s  00:10    
+
+after 2000
+
+fpga -state
+FPGA is configured
+after 2000
+
+fpga -ir-status
+IR STATUS: 117
+     Always One (Bits [0]): 1
+    Always Zero (Bits [1]): 0
+       ISC_Done (Bits [2]): 1
+    ISC_Enabled (Bits [3]): 0
+  Init Complete (Bits [4]): 1
+           DONE (Bits [5]): 1
+             (Bits [11:6]): 1
+after 2000
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/zcu104_bit/tests/ZCU104/../tcl/ipi_psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/zcu104_bit/tests/ZCU104/../elf/lwip_echo_server.elf}
+Downloading Program -- C:/zcu104_bit/tests/ZCU104/elf/lwip_echo_server.elf
+	section, .text: 0x00000000 - 0x00015e77
+	section, .init: 0x00015e80 - 0x00015eb3
+	section, .fini: 0x00015ec0 - 0x00015ef3
+	section, .note.gnu.build-id: 0x00015ef4 - 0x00015f17
+	section, .rodata: 0x00015f18 - 0x000169ef
+	section, .rodata1: 0x000169f0 - 0x000169ff
+	section, .sdata2: 0x00016a00 - 0x000169ff
+	section, .sbss2: 0x00016a00 - 0x000169ff
+	section, .data: 0x00016a00 - 0x00018837
+	section, .data1: 0x00018838 - 0x0001883f
+	section, .ctors: 0x00018840 - 0x0001883f
+	section, .dtors: 0x00018840 - 0x0001883f
+	section, .eh_frame: 0x00018840 - 0x00018843
+	section, .mmu_tbl0: 0x00019000 - 0x0001900f
+	section, .mmu_tbl1: 0x0001a000 - 0x0001bfff
+	section, .mmu_tbl2: 0x0001c000 - 0x0001ffff
+	section, .preinit_array: 0x00020000 - 0x0001ffff
+	section, .init_array: 0x00020000 - 0x00020007
+	section, .fini_array: 0x00020008 - 0x00020047
+	section, .sdata: 0x00020048 - 0x0002007f
+	section, .sbss: 0x00020080 - 0x0002007f
+	section, .tdata: 0x00020080 - 0x0002007f
+	section, .tbss: 0x00020080 - 0x0002007f
+	section, .bss: 0x00200000 - 0x0061013f
+	section, .heap: 0x00610140 - 0x0061a13f
+	section, .stack: 0x0061a140 - 0x0062513f
+  0%    0MB   0.0MB/s  ??:?? ETA 74%    0MB   0.2MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu104_bit/tests/ZCU104/elf/lwip_echo_server.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 2000
+
+
+-----lwIP TCP echo server ------
+TCP packets sent to port 6001 will be echoed back
+Start PHY autonegotiation 
+Waiting for PHY to complete autonegotiation.
+
+disconnect
+
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-01-25 17:07:44
+autonegotiation complete 
+link speed for phy address 12: 1000
+DHCP Timeout
+Configuring default IP of 192.168.1.10
+Board IP: 192.168.1.10
+Netmask : 255.255.255.0
+Gateway : 192.168.1.1
+TCP echo server started @ port 7
+
+Entering step: 4
+
+
+Info: This step started at: 2018-01-25 17:08:04
+
+Error: Could not find regular expression in step 4 of test 6 - "(.*)Pinging\s+192.168.1.10\s+with\s+32\s+bytes\s+of\s+data:"
+
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+Info: Result for step 4: Fail
+
+Info: The test took 0 hours, 00 minutes, and 55 seconds. 0:00:55
+
+Info: PING test started...
+
+Info: The test will take 0 hours, 00 minutes, and 59 seconds. 0:00:59
+
+Entering step: 0
+
+
+Info: This step started at: 2018-01-25 17:14:20
+
+Entering step: 1
+
+
+Info: This step started at: 2018-01-25 17:14:20
+
+C:\zcu104_bit\tests\ZCU104>cd bat\ 
+
+C:\zcu104_bit\tests\ZCU104\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-01-25 17:14:24
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+fpga -state
+FPGA is not configured
+after 2000
+
+fpga -no-revision-check -file {C:/zcu104_bit/tests/ZCU104/../bitstream/zcu104_ipi.bit}
+initializing  0%    0MB   0.0MB/s  ??:?? ETA  5%    1MB   2.2MB/s  ??:?? ETA 10%    1MB   1.9MB/s  ??:?? ETA 15%    2MB   1.8MB/s  ??:?? ETA 19%    3MB   1.8MB/s  ??:?? ETA 24%    4MB   1.8MB/s  ??:?? ETA 28%    5MB   1.8MB/s  00:07 ETA 33%    6MB   1.7MB/s  00:07 ETA 38%    7MB   1.7MB/s  00:06 ETA 42%    7MB   1.7MB/s  00:06 ETA 47%    8MB   1.7MB/s  00:05 ETA 51%    9MB   1.7MB/s  00:05 ETA 56%   10MB   1.7MB/s  00:04 ETA 61%   11MB   1.7MB/s  00:04 ETA 65%   12MB   1.7MB/s  00:03 ETA 70%   12MB   1.7MB/s  00:03 ETA 74%   13MB   1.7MB/s  00:02 ETA 79%   14MB   1.7MB/s  00:02 ETA 84%   15MB   1.7MB/s  00:01 ETA 88%   16MB   1.7MB/s  00:01 ETA 93%   17MB   1.7MB/s  00:00 ETA 97%   17MB   1.7MB/s  00:00 ETA100%   18MB   1.7MB/s  00:10    
+
+after 2000
+
+fpga -state
+FPGA is configured
+after 2000
+
+fpga -ir-status
+IR STATUS: 117
+     Always One (Bits [0]): 1
+    Always Zero (Bits [1]): 0
+       ISC_Done (Bits [2]): 1
+    ISC_Enabled (Bits [3]): 0
+  Init Complete (Bits [4]): 1
+           DONE (Bits [5]): 1
+             (Bits [11:6]): 1
+after 2000
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/zcu104_bit/tests/ZCU104/../tcl/ipi_psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/zcu104_bit/tests/ZCU104/../elf/lwip_echo_server.elf}
+Downloading Program -- C:/zcu104_bit/tests/ZCU104/elf/lwip_echo_server.elf
+	section, .text: 0x00000000 - 0x00015e77
+	section, .init: 0x00015e80 - 0x00015eb3
+	section, .fini: 0x00015ec0 - 0x00015ef3
+	section, .note.gnu.build-id: 0x00015ef4 - 0x00015f17
+	section, .rodata: 0x00015f18 - 0x000169ef
+	section, .rodata1: 0x000169f0 - 0x000169ff
+	section, .sdata2: 0x00016a00 - 0x000169ff
+	section, .sbss2: 0x00016a00 - 0x000169ff
+	section, .data: 0x00016a00 - 0x00018837
+	section, .data1: 0x00018838 - 0x0001883f
+	section, .ctors: 0x00018840 - 0x0001883f
+	section, .dtors: 0x00018840 - 0x0001883f
+	section, .eh_frame: 0x00018840 - 0x00018843
+	section, .mmu_tbl0: 0x00019000 - 0x0001900f
+	section, .mmu_tbl1: 0x0001a000 - 0x0001bfff
+	section, .mmu_tbl2: 0x0001c000 - 0x0001ffff
+	section, .preinit_array: 0x00020000 - 0x0001ffff
+	section, .init_array: 0x00020000 - 0x00020007
+	section, .fini_array: 0x00020008 - 0x00020047
+	section, .sdata: 0x00020048 - 0x0002007f
+	section, .sbss: 0x00020080 - 0x0002007f
+	section, .tdata: 0x00020080 - 0x0002007f
+	section, .tbss: 0x00020080 - 0x0002007f
+	section, .bss: 0x00200000 - 0x0061013f
+	section, .heap: 0x00610140 - 0x0061a13f
+	section, .stack: 0x0061a140 - 0x0062513f
+  0%    0MB   0.0MB/s  ??:?? ETA 87%    0MB   0.2MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu104_bit/tests/ZCU104/elf/lwip_echo_server.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 2000
+
+
+-----lwIP TCP echo server ------
+TCP packets sent to port 6001 will be echoed back
+Start PHY autonegotiation 
+Waiting for PHY to complete autonegotiation.
+
+disconnect
+
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-01-25 17:14:54
+autonegotiation complete 
+link speed for phy address 12: 1000
+DHCP Timeout
+Configuring default IP of 192.168.1.10
+Board IP: 192.168.1.10
+Netmask : 255.255.255.0
+Gateway : 192.168.1.1
+TCP echo server started @ port 7
+
+Entering step: 4
+
+
+Info: This step started at: 2018-01-25 17:15:10
+
+Error: Could not find regular expression in step 4 of test 6 - "(.*)Pinging\s+192.168.1.10\s+with\s+32\s+bytes\s+of\s+data:"
+
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+Info: Result for step 4: Fail
+
+Info: The test took 0 hours, 00 minutes, and 51 seconds. 0:00:51

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Sun Jun 28 15:59:59 2020
+# Process ID: 10764
+# Current directory: C:/James/board_management_software/tests/ZCU111
+# Command line: vivado.exe -mode batch -source tcl\five_second_delay.tcl
+# Log file: C:/James/board_management_software/tests/ZCU111/vivado.log
+# Journal file: C:/James/board_management_software/tests/ZCU111\vivado.jou
+#-----------------------------------------------------------
+source {tcl\five_second_delay.tcl}

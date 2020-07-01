@@ -87,24 +87,24 @@ module top_level_block_design_usp_rf_data_converter_0_0_block (
 
 
 
-  // DAC Reference Clock for Tile 0
-  input             dac0_clk_p,
-  input             dac0_clk_n,
+  // DAC Reference Clock for Tile 1
+  input             dac1_clk_p,
+  input             dac1_clk_n,
 
-  // DAC Fabric Feedback Clock for Tile 0
-  output            clk_dac0,
+  // DAC Fabric Feedback Clock for Tile 1
+  output            clk_dac1,
 
-  // DAC AXI Streaming and Reset for DAC0
-  input             s0_axis_aclk,
-  input             s0_axis_aresetn,
+  // DAC AXI Streaming and Reset for DAC1
+  input             s1_axis_aclk,
+  input             s1_axis_aresetn,
 
-  output            vout00_p,
-  output            vout00_n,
+  output            vout10_p,
+  output            vout10_n,
 
-  // DAC AXI Streaming Data for DAC00
-  input  [255:0]    s00_axis_tdata,
-  input             s00_axis_tvalid,
-  output            s00_axis_tready,
+  // DAC AXI Streaming Data for DAC10
+  input  [255:0]    s10_axis_tdata,
+  input             s10_axis_tvalid,
+  output            s10_axis_tready,
 
   // DAC Debug Ports
   // DAC0
@@ -252,9 +252,9 @@ module top_level_block_design_usp_rf_data_converter_0_0_block (
 
   // DAC Default Configuration Settings
   // NO NOT MODIFY
-  localparam       dac00_enable        = 1'b1;
+  localparam       dac00_enable        = 1'b0;
   localparam       dac00_data_type     = 1'b0;
-  localparam [2:0] dac00_interpolation = 3'd1;
+  localparam [2:0] dac00_interpolation = 3'd0;
   localparam [1:0] dac00_mixer         = 2'd2;
   localparam       dac00_sinc          = 1'b0;
   localparam       dac01_enable        = 1'b0;
@@ -272,9 +272,9 @@ module top_level_block_design_usp_rf_data_converter_0_0_block (
   localparam [2:0] dac03_interpolation = 3'd0;
   localparam [1:0] dac03_mixer         = 2'd2;
   localparam       dac03_sinc          = 1'b0;
-  localparam       dac10_enable        = 1'b0;
+  localparam       dac10_enable        = 1'b1;
   localparam       dac10_data_type     = 1'b0;
-  localparam [2:0] dac10_interpolation = 3'd0;
+  localparam [2:0] dac10_interpolation = 3'd1;
   localparam [1:0] dac10_mixer         = 2'd2;
   localparam       dac10_sinc          = 1'b0;
   localparam       dac11_enable        = 1'b0;
@@ -877,8 +877,8 @@ module top_level_block_design_usp_rf_data_converter_0_0_block (
 
   wire               adc_reset_cnt_ack_i;
 
-  wire             clk_dac0_i;
-  wire             s0_axis_aclk_val_sync;
+  wire             clk_dac1_i;
+  wire             s1_axis_aclk_val_sync;
 
 
   wire  [15:0]     adc00_stat;
@@ -1011,10 +1011,10 @@ module top_level_block_design_usp_rf_data_converter_0_0_block (
   wire   [1:0]     dac13_irq_i;
   reg              dac13_irq_en;
 
-  wire  [255:0]    dac00_data_i;
+  wire  [255:0]    dac10_data_i;
 
 
-  assign  dac00_data_i  =  s00_axis_tdata;
+  assign  dac10_data_i  =  s10_axis_tdata;
 
   top_level_block_design_usp_rf_data_converter_0_0_rf_wrapper
   top_level_block_design_usp_rf_data_converter_0_0_rf_wrapper_i(
@@ -1123,45 +1123,45 @@ module top_level_block_design_usp_rf_data_converter_0_0_block (
     .adc32_stat            (adc32_stat),
     .adc33_stat            (adc33_stat),
     // DAC Reference Clock for Tile 0
-    .dac0_clk_p            (dac0_clk_p),
-    .dac0_clk_n            (dac0_clk_n),
+    .dac0_clk_p            (1'b0),
+    .dac0_clk_n            (1'b0),
 
     // DAC PLL Reference Clock for Tile 0
-    // TODO. How to connect this?
     .dac0_pll_clk          (1'b0),
 
-    .dac0_fabricclk        (s0_axis_aclk),
-    .dac0_fabricclk_val    (s0_axis_aclk_val_sync),
+    .dac0_fabricclk        (1'b0),
+    .dac0_fabricclk_val    (1'b0),
 
     // DAC Fabric Feedback Clock for Tile 0
-    .clk_dac0              (clk_dac0_i),
+    .clk_dac0              (),
 
     // DAC Common Status for Tile 0
     .dac0_common_stat      (dac0_common_stat),
 
     // DAC Reference Clock for Tile 1
-    .dac1_clk_p            (1'b0),
-    .dac1_clk_n            (1'b0),
+    .dac1_clk_p            (dac1_clk_p),
+    .dac1_clk_n            (dac1_clk_n),
 
     // DAC PLL Reference Clock for Tile 1
+    // TODO. How to connect this?
     .dac1_pll_clk          (1'b0),
 
-    .dac1_fabricclk        (1'b0),
-    .dac1_fabricclk_val    (1'b0),
+    .dac1_fabricclk        (s1_axis_aclk),
+    .dac1_fabricclk_val    (s1_axis_aclk_val_sync),
 
     // DAC Fabric Feedback Clock for Tile 1
-    .clk_dac1              (),
+    .clk_dac1              (clk_dac1_i),
 
     // DAC Common Status for Tile 1
     .dac1_common_stat      (dac1_common_stat),
 
-    .vout00_p              (vout00_p),
-    .vout00_n              (vout00_n),
+    .vout10_p              (vout10_p),
+    .vout10_n              (vout10_n),
 
     // DAC data for DAC00
-    .dac00_data_in         (dac00_data_i),
-    .dac00_valid_in        (s00_axis_tvalid),
-    .dac00_ready_out       (s00_axis_tready),
+    .dac00_data_in         (256'b0),
+    .dac00_valid_in        (1'b0),
+    .dac00_ready_out       (),
 
     // DAC data for DAC01
     .dac01_data_in         (256'b0),
@@ -1179,9 +1179,9 @@ module top_level_block_design_usp_rf_data_converter_0_0_block (
     .dac03_ready_out       (),
 
     // DAC data for DAC10
-    .dac10_data_in         (256'b0),
-    .dac10_valid_in        (1'b0),
-    .dac10_ready_out       (),
+    .dac10_data_in         (dac10_data_i),
+    .dac10_valid_in        (s10_axis_tvalid),
+    .dac10_ready_out       (s10_axis_tready),
 
     // DAC data for DAC11
     .dac11_data_in         (256'b0),
@@ -1581,14 +1581,14 @@ module top_level_block_design_usp_rf_data_converter_0_0_block (
   // Synchronize the asynchronous ADC clock valid inputs onto the DRP clock
   // Synchronize the asynchronous ADC clock valid inputs onto the DRP clock
   // Synchronize the asynchronous DAC clock valid inputs onto the DRP clock
-  xpm_cdc_single #(.SRC_INPUT_REG(0))
-    cdc_dac0_clk_valid_i (
-      .src_clk  (1'b0                              ),
-      .src_in   (s0_axis_aresetn      ),
-      .dest_clk (s_axi_aclk                        ),
-      .dest_out (s0_axis_aclk_val_sync)
-    );
   // Synchronize the asynchronous DAC clock valid inputs onto the DRP clock
+  xpm_cdc_single #(.SRC_INPUT_REG(0))
+    cdc_dac1_clk_valid_i (
+      .src_clk  (1'b0                              ),
+      .src_in   (s1_axis_aresetn      ),
+      .dest_clk (s_axi_aclk                        ),
+      .dest_out (s1_axis_aclk_val_sync)
+    );
 
   top_level_block_design_usp_rf_data_converter_0_0_axi_lite_ipif #(
     .C_S_AXI_DATA_WIDTH           (32),
@@ -1972,7 +1972,7 @@ module top_level_block_design_usp_rf_data_converter_0_0_block (
   always @(posedge Bus2IP_Clk)
     if (~Bus2IP_Resetn)
     begin
-      dac0_ref_clk_freq <= 32'd250000;
+      dac0_ref_clk_freq <= 32'd4000000;
     end
     else if (bank1_write[192])
     begin
@@ -2162,7 +2162,7 @@ module top_level_block_design_usp_rf_data_converter_0_0_block (
   always @(posedge Bus2IP_Clk)
     if (~Bus2IP_Resetn)
     begin
-      dac1_ref_clk_freq <= 32'd6400000;
+      dac1_ref_clk_freq <= 32'd250000;
     end
     else if (bank3_write[192])
     begin
@@ -2173,7 +2173,7 @@ module top_level_block_design_usp_rf_data_converter_0_0_block (
   always @(posedge Bus2IP_Clk)
     if (~Bus2IP_Resetn)
     begin
-      dac1_sample_rate <= 32'd6400000;
+      dac1_sample_rate <= 32'd4000000;
     end
     else if (bank3_write[193])
     begin
@@ -3502,7 +3502,7 @@ module top_level_block_design_usp_rf_data_converter_0_0_block (
                                bank0_read[2] ? {16'b0, startup_delay} :
                                bank0_read[8] ? {16'b0, 8'd228, 7'b0, 1'b1} :
                                // DAC Tile Config Bit 0:DAC Tile 0 Enable, Bit 1 Tile 0 PLL Enable Bits 3:2 Reserved, Bit 4: DAC Tile 1 Enabled, Bit 5: Tile 1 PLL Enable Bits 7:6 Reserved...
-                               bank0_read[9] ? {4'h0, 2'b00, 1'b0, 1'b0, 2'b00, 1'b0, 1'b0, 2'b00, 1'b0, 1'b0, 2'b00, 1'b1, 1'b1} :
+                               bank0_read[9] ? {4'h0, 2'b00, 1'b0, 1'b0, 2'b00, 1'b0, 1'b0, 2'b00, 1'b1, 1'b1, 2'b00, 1'b0, 1'b0} :
                                bank0_read[10] ? {3'b000, dac01_sinc, 2'b00, dac01_mixer, 1'b0, dac01_interpolation, 2'b0, dac01_data_type, dac01_enable,  3'b000, dac00_sinc, 2'b00, dac00_mixer, 1'b0, dac00_interpolation, 2'b00, dac00_data_type, dac00_enable} :
                                bank0_read[11] ? {3'b000, dac03_sinc, 2'b00, dac03_mixer, 1'b0, dac03_interpolation, 2'b00, dac03_data_type, dac03_enable,  3'b000, dac02_sinc, 2'b00, dac02_mixer, 1'b0, dac02_interpolation, 2'b00, dac02_data_type, dac02_enable} :
                                bank0_read[12] ? {3'b000, dac11_sinc, 2'b00, dac11_mixer, 1'b0, dac11_interpolation, 2'b0, dac11_data_type, dac11_enable,  3'b000, dac10_sinc, 2'b00, dac10_mixer, 1'b0, dac10_interpolation, 2'b00, dac10_data_type, dac10_enable} :
@@ -3517,9 +3517,9 @@ module top_level_block_design_usp_rf_data_converter_0_0_block (
                                bank0_read[31] ? {6'b0, adc23_mixer, 1'b0, adc23_decimation, 2'b00, adc23_data_type, adc23_enable,  6'b0, adc22_mixer, 1'b0, adc22_decimation, 2'b00, adc22_data_type, adc22_enable} :
                                bank0_read[32] ? {6'b0, adc31_mixer, 1'b0, adc31_decimation, 2'b00, adc31_data_type, adc31_enable,  6'b0, adc30_mixer, 1'b0, adc30_decimation, 2'b00, adc30_data_type, adc30_enable} :
                                bank0_read[33] ? {6'b0, adc33_mixer, 1'b0, adc33_decimation, 2'b00, adc33_data_type, adc33_enable,  6'b0, adc32_mixer, 1'b0, adc32_decimation, 2'b00, adc32_data_type, adc32_enable} :
-                               bank0_read[40] ? {24'h000000, 1'b0, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b0, 1'b0} :
+                               bank0_read[40] ? {24'h000000, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0} :
                                bank0_read[41] ? {1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0} :
-                               bank0_read[42] ? {1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1} :
+                               bank0_read[42] ? {1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b0, 1'b0} :
                                bank0_read[64] ? tile_irq2axi :
                                bank0_read[65] ? {axi_timeout_en, 23'b0, adc3_irq_en, adc2_irq_en, adc1_irq_en, adc0_irq_en, 2'b00, dac1_irq_en, dac0_irq_en} :
                                32'h00000000;
@@ -3811,21 +3811,21 @@ module top_level_block_design_usp_rf_data_converter_0_0_block (
   assign irq  =  |tile_irq2axi;
 
   top_level_block_design_usp_rf_data_converter_0_0_bufg_gt_ctrl i_top_level_block_design_usp_rf_data_converter_0_0_bufg_gt_ctrl (
-  // DAC Fabric Feedback Clock for Tile 0
-    .clk_dac0         (clk_dac0_i),
-    .clk_dac0_buf     (clk_dac0)
+  // DAC Fabric Feedback Clock for Tile 1
+    .clk_dac1         (clk_dac1_i),
+    .clk_dac1_buf     (clk_dac1)
   );
 
-  // DAC Reset Module Counter for Tile 0
-  top_level_block_design_usp_rf_data_converter_0_0_reset_count i_dac0_reset_count (
+
+  // DAC Reset Module Counter for Tile 1
+  top_level_block_design_usp_rf_data_converter_0_0_reset_count i_dac1_reset_count (
     .clk          (s_axi_aclk),
     .reset        (~s_axi_aresetn),
-    .sm_reset     (dac0_sm_reset_i),
-    .axi_read_req (bank1_read[14]),
+    .sm_reset     (dac1_sm_reset_i),
+    .axi_read_req (bank3_read[14]),
     .read_ack     (dac_reset_cnt_ack[0]),
-    .count        (dac0_reset_cnt)
+    .count        (dac1_reset_cnt)
   );
-
 
   assign dac_reset_cnt_ack_i = |dac_reset_cnt_ack;
 

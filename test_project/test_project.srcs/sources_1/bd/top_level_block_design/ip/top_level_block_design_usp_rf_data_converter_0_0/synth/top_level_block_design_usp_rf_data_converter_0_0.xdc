@@ -206,12 +206,12 @@ create_waiver -internal -scope -user USP_RF_DATA_CONVERTER -type CDC -id CDC-4 \
 set top_level_block_design_usp_rf_data_converter_0_0_axi_aclk  [get_clocks -of_objects [get_ports s_axi_aclk]]
 
 # Workaround to exclude paths that are wrongly related to DCLK
-set_false_path -from $top_level_block_design_usp_rf_data_converter_0_0_axi_aclk -through [get_pins -filter {REF_PIN_NAME =~ DATA_DAC*} -of [get_cells top_level_block_design_usp_rf_data_converter_0_0_rf_wrapper_i/tx0_u_dac]]
+set_false_path -from $top_level_block_design_usp_rf_data_converter_0_0_axi_aclk -through [get_pins -filter {REF_PIN_NAME =~ DATA_DAC*} -of [get_cells top_level_block_design_usp_rf_data_converter_0_0_rf_wrapper_i/tx1_u_dac]]
 create_waiver -internal -scope -user USP_RF_DATA_CONVERTER -type CDC -id CDC-1 \
   -tags "1033132" \
   -description "Paths wrongly related to DRP clock" \
-  -from [list [get_pins -filter {REF_PIN_NAME =~ DCLK} -of [get_cells top_level_block_design_usp_rf_data_converter_0_0_rf_wrapper_i/tx0_u_dac]]] \
-  -to   [list [get_pins -filter {REF_PIN_NAME =~ DATA_DAC*} -of [get_cells top_level_block_design_usp_rf_data_converter_0_0_rf_wrapper_i/tx0_u_dac]]]
+  -from [list [get_pins -filter {REF_PIN_NAME =~ DCLK} -of [get_cells top_level_block_design_usp_rf_data_converter_0_0_rf_wrapper_i/tx1_u_dac]]] \
+  -to   [list [get_pins -filter {REF_PIN_NAME =~ DATA_DAC*} -of [get_cells top_level_block_design_usp_rf_data_converter_0_0_rf_wrapper_i/tx1_u_dac]]]
 
 # Multicycle paths from the state machine to the DRP address and
 # data inputs of the converters

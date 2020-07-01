@@ -1,0 +1,869 @@
+Board: ZCU111
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: IBERT ALL test started...
+
+Info: The test will take 0 hours, 04 minutes, and 40 seconds. 0:04:40
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-09 15:16:19
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu111_ibert_bank_all.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280976A038A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-2302] Device xczu28dr (JTAG device index = 0) is programmed with a design that has 1 IBERT core(s).
+# current_hw_device [lindex [get_hw_devices arm_dap_1] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 1]
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/zcu111_ibert_bank_all.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 947.313 ; gain = 0.547
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280976A038A
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Fri Feb  9 15:16:58 2018...
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-09 15:16:58
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\vivado_ibert_reset.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280976A038A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -quiet [lindex [get_hw_devices] 0]
+# set_property PORT.QPLL0RESET 1 [get_hw_sio_commons *];
+# commit_hw_sio [list [get_hw_sio_commons {*}] ]
+# set_property PORT.QPLL0RESET 0 [get_hw_sio_commons *];
+# commit_hw_sio [list [get_hw_sio_commons {*}] ]
+# set_property PORT.QPLL1RESET 1 [get_hw_sio_commons *];
+# commit_hw_sio [list [get_hw_sio_commons {*}] ]
+# set_property PORT.QPLL1RESET 0 [get_hw_sio_commons *];
+# commit_hw_sio [list [get_hw_sio_commons {*}] ]
+# set_property PORT.CPLLRESET 1 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# set_property PORT.CPLLRESET 0 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# set_property PORT.GTRXRESET 1 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# set_property PORT.GTRXRESET 0 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# set_property PORT.GTTXRESET 1 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# set_property PORT.GTTXRESET 0 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# refresh_hw_sio [get_hw_sio_gts *]
+# refresh_hw_sio [get_hw_sio_commons *]
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280976A038A
+close_hw_target: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 949.348 ; gain = 0.012
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Fri Feb  9 15:17:29 2018...
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-09 15:17:29
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu111_ibert_bank_all_status.tcl}
+# open_hw
+# catch {disconnect_hw_server localhost:3121}
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280976A038A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-2302] Device xczu28dr (JTAG device index = 0) is programmed with a design that has 1 IBERT core(s).
+# set xil_newLinks [list]
+# set xil_newLink [create_hw_sio_link -description {Link 0} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y4/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y4/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 1} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y5/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y5/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 2} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y6/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y6/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 3} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y7/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y7/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 4} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y8/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y8/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 5} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y9/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y9/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 6} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y10/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y10/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 7} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y11/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y11/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 8} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y12/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y12/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 9} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y13/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y13/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 10} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y14/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y14/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 11} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y15/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y15/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 12} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y16/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y16/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 13} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y17/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y17/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 14} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y18/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y18/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 15} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y19/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y19/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLinkGroup [create_hw_sio_linkgroup -description {Link Group 0} [get_hw_sio_links $xil_newLinks]]
+# unset xil_newLinks
+# set_property TX_PATTERN {PRBS 31-bit} [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property RX_PATTERN {PRBS 31-bit} [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property TXDIFFSWING {878 mV (11010)} [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.TX_RESET_DATAPATH 1 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.TX_RESET_DATAPATH 0 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.RX_RESET_DATAPATH 1 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.RX_RESET_DATAPATH 0 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.MGT_ERRCNT_RESET_CTRL 1 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.MGT_ERRCNT_RESET_CTRL 0 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+WARNING: [Labtoolstcl 44-158] No matching hw_sio_links were found.
+
+Error: Found regular expression in step 2 of test 15 - "(.*)No\s+matching\s+hw_sio_links\s+were\s+found"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_228:MGT_X0Y4:\s+STATUS=\d+\.\d\d\d Gbps"
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Fail
+
+Info: The test took 0 hours, 01 minutes, and 30 seconds. 0:01:30
+
+Info: IBERT ALL test started...
+
+Info: The test will take 0 hours, 04 minutes, and 40 seconds. 0:04:40
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-09 15:29:02
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu111_ibert_bank_all.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280976A038A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-2302] Device xczu28dr (JTAG device index = 0) is programmed with a design that has 1 IBERT core(s).
+# current_hw_device [lindex [get_hw_devices arm_dap_1] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 1]
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/zcu111_ibert_bank_all.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 946.422 ; gain = 0.547
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280976A038A
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Fri Feb  9 15:29:41 2018...
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-09 15:29:41
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\vivado_ibert_reset.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280976A038A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -quiet [lindex [get_hw_devices] 0]
+# set_property PORT.QPLL0RESET 1 [get_hw_sio_commons *];
+# commit_hw_sio [list [get_hw_sio_commons {*}] ]
+# set_property PORT.QPLL0RESET 0 [get_hw_sio_commons *];
+# commit_hw_sio [list [get_hw_sio_commons {*}] ]
+# set_property PORT.QPLL1RESET 1 [get_hw_sio_commons *];
+# commit_hw_sio [list [get_hw_sio_commons {*}] ]
+# set_property PORT.QPLL1RESET 0 [get_hw_sio_commons *];
+# commit_hw_sio [list [get_hw_sio_commons {*}] ]
+# set_property PORT.CPLLRESET 1 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# set_property PORT.CPLLRESET 0 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# set_property PORT.GTRXRESET 1 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# set_property PORT.GTRXRESET 0 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# set_property PORT.GTTXRESET 1 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# set_property PORT.GTTXRESET 0 [get_hw_sio_gts *];
+# commit_hw_sio [list [get_hw_sio_gts {*}] ]
+# refresh_hw_sio [get_hw_sio_gts *]
+# refresh_hw_sio [get_hw_sio_commons *]
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280976A038A
+close_hw_target: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 949.406 ; gain = 0.016
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Fri Feb  9 15:30:12 2018...
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-09 15:30:12
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu111_ibert_bank_all_status.tcl}
+# open_hw
+# catch {disconnect_hw_server localhost:3121}
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+# current_hw_target [get_hw_targets */xilinx_tcf/*/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/*/*]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280976A038A
+# current_hw_device [lindex [get_hw_devices] 0]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-2302] Device xczu28dr (JTAG device index = 0) is programmed with a design that has 1 IBERT core(s).
+# set xil_newLinks [list]
+# set xil_newLink [create_hw_sio_link -description {Link 0} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y4/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y4/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 1} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y5/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y5/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 2} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y6/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y6/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 3} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y7/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y7/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 4} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y8/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y8/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 5} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y9/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y9/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 6} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y10/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y10/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 7} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y11/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y11/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 8} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y12/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y12/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 9} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y13/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y13/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 10} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y14/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y14/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 11} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y15/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y15/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 12} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y16/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y16/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 13} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y17/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y17/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 14} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y18/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y18/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLink [create_hw_sio_link -description {Link 15} [lindex [get_hw_sio_txs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y19/TX] 0] [lindex [get_hw_sio_rxs localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y19/RX] 0] ]
+# lappend xil_newLinks $xil_newLink
+# set xil_newLinkGroup [create_hw_sio_linkgroup -description {Link Group 0} [get_hw_sio_links $xil_newLinks]]
+# unset xil_newLinks
+# set_property TX_PATTERN {PRBS 31-bit} [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property RX_PATTERN {PRBS 31-bit} [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property TXDIFFSWING {878 mV (11010)} [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.TX_RESET_DATAPATH 1 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.TX_RESET_DATAPATH 0 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.RX_RESET_DATAPATH 1 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.RX_RESET_DATAPATH 0 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.MGT_ERRCNT_RESET_CTRL 1 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# set_property LOGIC.MGT_ERRCNT_RESET_CTRL 0 [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# commit_hw_sio [get_hw_sio_links -of_objects [get_hw_sio_linkgroups {LINKGROUP_0}]]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y4/TX->localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y4/RX}] ]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y5/TX->localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y5/RX}] ]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y6/TX->localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y6/RX}] ]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y7/TX->localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_128/MGT_X0Y7/RX}] ]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y8/TX->localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y8/RX}] ]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y9/TX->localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y9/RX}] ]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y10/TX->localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y10/RX}] ]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y11/TX->localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_129/MGT_X0Y11/RX}] ]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y12/TX->localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y12/RX}] ]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y13/TX->localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y13/RX}] ]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y14/TX->localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y14/RX}] ]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y15/TX->localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_130/MGT_X0Y15/RX}] ]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y16/TX->localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y16/RX}] ]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y17/TX->localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y17/RX}] ]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y18/TX->localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y18/RX}] ]
+# refresh_hw_sio [list [get_hw_sio_links {localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y19/TX->localhost:3121/xilinx_tcf/Xilinx/*/0_1_0_0/IBERT/Quad_131/MGT_X0Y19/RX}] ]
+# puts "Waiting 120 seconds for test to run."
+Waiting 120 seconds for test to run.
+# after [expr 120 * 1000]
+# set offset 0
+# set initial_links 0
+# for {set i $offset} {$i <= 15} {incr i} {
+#   set j [expr {$i - $offset + $initial_links}]
+#   set display_name [get_property {DISPLAY_NAME} [lindex [get_hw_sio_gts] $i]]
+#   set quad_name [lindex [split [get_property {NAME} [lindex [get_hw_sio_gts] $i]] /] 6]
+#   set qpll0 [expr [expr $i / 4] * 6]
+#   #set qpll1 [expr [expr [expr $i / 4] * 6] + 1]
+#   #set cpll0 [expr $qpll0 + 2 + [expr $i%4]]
+#   puts "$quad_name:$display_name: DESCRIPTION=[get_property {DESCRIPTION} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: STATUS=[get_property {STATUS} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: QPLL0_STATUS=[get_property {QPLL0_STATUS} [lindex [get_hw_sio_plls] $qpll0]]"
+#   #puts "$quad_name:$display_name: QPLL1_STATUS=[get_property {QPLL1_STATUS} [lindex [get_hw_sio_plls] $qpll1]]"
+#   #puts "$quad_name:$display_name: CPLL_STATUS=[get_property {PLL_STATUS} [lindex [get_hw_sio_plls] $cpll0]]"
+#   puts "$quad_name:$display_name: LINE_RATE=[get_property {LINE_RATE} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: LOGIC.ERRBIT_COUNT=[get_property {LOGIC.ERRBIT_COUNT} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: RX_RECEIVED_BIT_COUNT=[get_property {RX_RECEIVED_BIT_COUNT} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: TX_PATTERN=[get_property {TX_PATTERN} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: RX_PATTERN=[get_property {RX_PATTERN} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: LOOPBACK=[get_property {LOOPBACK} [lindex [get_hw_sio_links] $j]]"
+#   # Debug lines to insure the correct alignment of the get_hw_sio_gts, get_hw_sio_links, and get_hw_sio_plls numbering
+#   puts "$quad_name:$display_name: TX_ENDPOINT=[get_property {TX_ENDPOINT} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: RX_ENDPOINT=[get_property {RX_ENDPOINT} [lindex [get_hw_sio_links] $j]]"
+#   puts "$quad_name:$display_name: NAME=[get_property {NAME} [lindex [get_hw_sio_gts] $i]]"
+#   puts "$quad_name:$display_name: get_hw_sio_plls=[lindex [get_hw_sio_plls] $qpll0]"
+#   #puts "$quad_name:$display_name: get_hw_sio_plls=[lindex [get_hw_sio_plls] $qpll1]"
+#   #puts "$quad_name:$display_name: get_hw_sio_plls=[lindex [get_hw_sio_plls] $cpll0]"
+# }
+Quad_128:MGT_X0Y4: DESCRIPTION=Link 0
+Quad_128:MGT_X0Y4: STATUS=10.312 Gbps
+Quad_128:MGT_X0Y4: QPLL0_STATUS=LOCKED
+Quad_128:MGT_X0Y4: LINE_RATE=10.312
+Quad_128:MGT_X0Y4: LOGIC.ERRBIT_COUNT=000000000000
+Quad_128:MGT_X0Y4: RX_RECEIVED_BIT_COUNT=340897840
+Quad_128:MGT_X0Y4: TX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y4: RX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y4: LOOPBACK=None
+Quad_128:MGT_X0Y4: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_128/MGT_X0Y4/TX
+Quad_128:MGT_X0Y4: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_128/MGT_X0Y4/RX
+Quad_128:MGT_X0Y4: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_128/MGT_X0Y4
+Quad_128:MGT_X0Y4: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_128/COMMON_X0Y1/QPLL0
+Quad_128:MGT_X0Y5: DESCRIPTION=Link 1
+Quad_128:MGT_X0Y5: STATUS=10.315 Gbps
+Quad_128:MGT_X0Y5: QPLL0_STATUS=LOCKED
+Quad_128:MGT_X0Y5: LINE_RATE=10.315
+Quad_128:MGT_X0Y5: LOGIC.ERRBIT_COUNT=000000000000
+Quad_128:MGT_X0Y5: RX_RECEIVED_BIT_COUNT=764370240
+Quad_128:MGT_X0Y5: TX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y5: RX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y5: LOOPBACK=None
+Quad_128:MGT_X0Y5: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_128/MGT_X0Y5/TX
+Quad_128:MGT_X0Y5: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_128/MGT_X0Y5/RX
+Quad_128:MGT_X0Y5: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_128/MGT_X0Y5
+Quad_128:MGT_X0Y5: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_128/COMMON_X0Y1/QPLL0
+Quad_128:MGT_X0Y6: DESCRIPTION=Link 2
+Quad_128:MGT_X0Y6: STATUS=10.312 Gbps
+Quad_128:MGT_X0Y6: QPLL0_STATUS=LOCKED
+Quad_128:MGT_X0Y6: LINE_RATE=10.312
+Quad_128:MGT_X0Y6: LOGIC.ERRBIT_COUNT=000000000000
+Quad_128:MGT_X0Y6: RX_RECEIVED_BIT_COUNT=1116504480
+Quad_128:MGT_X0Y6: TX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y6: RX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y6: LOOPBACK=None
+Quad_128:MGT_X0Y6: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_128/MGT_X0Y6/TX
+Quad_128:MGT_X0Y6: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_128/MGT_X0Y6/RX
+Quad_128:MGT_X0Y6: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_128/MGT_X0Y6
+Quad_128:MGT_X0Y6: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_128/COMMON_X0Y1/QPLL0
+Quad_128:MGT_X0Y7: DESCRIPTION=Link 3
+Quad_128:MGT_X0Y7: STATUS=10.313 Gbps
+Quad_128:MGT_X0Y7: QPLL0_STATUS=LOCKED
+Quad_128:MGT_X0Y7: LINE_RATE=10.313
+Quad_128:MGT_X0Y7: LOGIC.ERRBIT_COUNT=000000000000
+Quad_128:MGT_X0Y7: RX_RECEIVED_BIT_COUNT=1520770240
+Quad_128:MGT_X0Y7: TX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y7: RX_PATTERN=PRBS 31-bit
+Quad_128:MGT_X0Y7: LOOPBACK=None
+Quad_128:MGT_X0Y7: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_128/MGT_X0Y7/TX
+Quad_128:MGT_X0Y7: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_128/MGT_X0Y7/RX
+Quad_128:MGT_X0Y7: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_128/MGT_X0Y7
+Quad_128:MGT_X0Y7: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_128/COMMON_X0Y1/QPLL0
+Quad_129:MGT_X0Y8: DESCRIPTION=Link 4
+Quad_129:MGT_X0Y8: STATUS=10.304 Gbps
+Quad_129:MGT_X0Y8: QPLL0_STATUS=LOCKED
+Quad_129:MGT_X0Y8: LINE_RATE=10.304
+Quad_129:MGT_X0Y8: LOGIC.ERRBIT_COUNT=000000000000
+Quad_129:MGT_X0Y8: RX_RECEIVED_BIT_COUNT=1911677760
+Quad_129:MGT_X0Y8: TX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y8: RX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y8: LOOPBACK=None
+Quad_129:MGT_X0Y8: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_129/MGT_X0Y8/TX
+Quad_129:MGT_X0Y8: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_129/MGT_X0Y8/RX
+Quad_129:MGT_X0Y8: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_129/MGT_X0Y8
+Quad_129:MGT_X0Y8: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_129/COMMON_X0Y2/QPLL0
+Quad_129:MGT_X0Y9: DESCRIPTION=Link 5
+Quad_129:MGT_X0Y9: STATUS=10.312 Gbps
+Quad_129:MGT_X0Y9: QPLL0_STATUS=LOCKED
+Quad_129:MGT_X0Y9: LINE_RATE=10.312
+Quad_129:MGT_X0Y9: LOGIC.ERRBIT_COUNT=000000000000
+Quad_129:MGT_X0Y9: RX_RECEIVED_BIT_COUNT=2248787520
+Quad_129:MGT_X0Y9: TX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y9: RX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y9: LOOPBACK=None
+Quad_129:MGT_X0Y9: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_129/MGT_X0Y9/TX
+Quad_129:MGT_X0Y9: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_129/MGT_X0Y9/RX
+Quad_129:MGT_X0Y9: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_129/MGT_X0Y9
+Quad_129:MGT_X0Y9: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_129/COMMON_X0Y2/QPLL0
+Quad_129:MGT_X0Y10: DESCRIPTION=Link 6
+Quad_129:MGT_X0Y10: STATUS=10.323 Gbps
+Quad_129:MGT_X0Y10: QPLL0_STATUS=LOCKED
+Quad_129:MGT_X0Y10: LINE_RATE=10.323
+Quad_129:MGT_X0Y10: LOGIC.ERRBIT_COUNT=000000000000
+Quad_129:MGT_X0Y10: RX_RECEIVED_BIT_COUNT=2646350320
+Quad_129:MGT_X0Y10: TX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y10: RX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y10: LOOPBACK=None
+Quad_129:MGT_X0Y10: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_129/MGT_X0Y10/TX
+Quad_129:MGT_X0Y10: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_129/MGT_X0Y10/RX
+Quad_129:MGT_X0Y10: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_129/MGT_X0Y10
+Quad_129:MGT_X0Y10: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_129/COMMON_X0Y2/QPLL0
+Quad_129:MGT_X0Y11: DESCRIPTION=Link 7
+Quad_129:MGT_X0Y11: STATUS=10.313 Gbps
+Quad_129:MGT_X0Y11: QPLL0_STATUS=LOCKED
+Quad_129:MGT_X0Y11: LINE_RATE=10.313
+Quad_129:MGT_X0Y11: LOGIC.ERRBIT_COUNT=000000000000
+Quad_129:MGT_X0Y11: RX_RECEIVED_BIT_COUNT=3003785360
+Quad_129:MGT_X0Y11: TX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y11: RX_PATTERN=PRBS 31-bit
+Quad_129:MGT_X0Y11: LOOPBACK=None
+Quad_129:MGT_X0Y11: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_129/MGT_X0Y11/TX
+Quad_129:MGT_X0Y11: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_129/MGT_X0Y11/RX
+Quad_129:MGT_X0Y11: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_129/MGT_X0Y11
+Quad_129:MGT_X0Y11: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_129/COMMON_X0Y2/QPLL0
+Quad_130:MGT_X0Y12: DESCRIPTION=Link 8
+Quad_130:MGT_X0Y12: STATUS=10.312 Gbps
+Quad_130:MGT_X0Y12: QPLL0_STATUS=LOCKED
+Quad_130:MGT_X0Y12: LINE_RATE=10.312
+Quad_130:MGT_X0Y12: LOGIC.ERRBIT_COUNT=000000000000
+Quad_130:MGT_X0Y12: RX_RECEIVED_BIT_COUNT=3383439520
+Quad_130:MGT_X0Y12: TX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y12: RX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y12: LOOPBACK=None
+Quad_130:MGT_X0Y12: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_130/MGT_X0Y12/TX
+Quad_130:MGT_X0Y12: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_130/MGT_X0Y12/RX
+Quad_130:MGT_X0Y12: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_130/MGT_X0Y12
+Quad_130:MGT_X0Y12: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_130/COMMON_X0Y3/QPLL0
+Quad_130:MGT_X0Y13: DESCRIPTION=Link 9
+Quad_130:MGT_X0Y13: STATUS=10.313 Gbps
+Quad_130:MGT_X0Y13: QPLL0_STATUS=LOCKED
+Quad_130:MGT_X0Y13: LINE_RATE=10.313
+Quad_130:MGT_X0Y13: LOGIC.ERRBIT_COUNT=000000000000
+Quad_130:MGT_X0Y13: RX_RECEIVED_BIT_COUNT=3737390880
+Quad_130:MGT_X0Y13: TX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y13: RX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y13: LOOPBACK=None
+Quad_130:MGT_X0Y13: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_130/MGT_X0Y13/TX
+Quad_130:MGT_X0Y13: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_130/MGT_X0Y13/RX
+Quad_130:MGT_X0Y13: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_130/MGT_X0Y13
+Quad_130:MGT_X0Y13: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_130/COMMON_X0Y3/QPLL0
+Quad_130:MGT_X0Y14: DESCRIPTION=Link 10
+Quad_130:MGT_X0Y14: STATUS=10.312 Gbps
+Quad_130:MGT_X0Y14: QPLL0_STATUS=LOCKED
+Quad_130:MGT_X0Y14: LINE_RATE=10.312
+Quad_130:MGT_X0Y14: LOGIC.ERRBIT_COUNT=000000000000
+Quad_130:MGT_X0Y14: RX_RECEIVED_BIT_COUNT=4103258960
+Quad_130:MGT_X0Y14: TX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y14: RX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y14: LOOPBACK=None
+Quad_130:MGT_X0Y14: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_130/MGT_X0Y14/TX
+Quad_130:MGT_X0Y14: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_130/MGT_X0Y14/RX
+Quad_130:MGT_X0Y14: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_130/MGT_X0Y14
+Quad_130:MGT_X0Y14: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_130/COMMON_X0Y3/QPLL0
+Quad_130:MGT_X0Y15: DESCRIPTION=Link 11
+Quad_130:MGT_X0Y15: STATUS=10.313 Gbps
+Quad_130:MGT_X0Y15: QPLL0_STATUS=LOCKED
+Quad_130:MGT_X0Y15: LINE_RATE=10.313
+Quad_130:MGT_X0Y15: LOGIC.ERRBIT_COUNT=000000000000
+Quad_130:MGT_X0Y15: RX_RECEIVED_BIT_COUNT=4506660880
+Quad_130:MGT_X0Y15: TX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y15: RX_PATTERN=PRBS 31-bit
+Quad_130:MGT_X0Y15: LOOPBACK=None
+Quad_130:MGT_X0Y15: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_130/MGT_X0Y15/TX
+Quad_130:MGT_X0Y15: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_130/MGT_X0Y15/RX
+Quad_130:MGT_X0Y15: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_130/MGT_X0Y15
+Quad_130:MGT_X0Y15: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_130/COMMON_X0Y3/QPLL0
+Quad_131:MGT_X0Y16: DESCRIPTION=Link 12
+Quad_131:MGT_X0Y16: STATUS=10.313 Gbps
+Quad_131:MGT_X0Y16: QPLL0_STATUS=LOCKED
+Quad_131:MGT_X0Y16: LINE_RATE=10.313
+Quad_131:MGT_X0Y16: LOGIC.ERRBIT_COUNT=000000000000
+Quad_131:MGT_X0Y16: RX_RECEIVED_BIT_COUNT=4870632400
+Quad_131:MGT_X0Y16: TX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y16: RX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y16: LOOPBACK=None
+Quad_131:MGT_X0Y16: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_131/MGT_X0Y16/TX
+Quad_131:MGT_X0Y16: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_131/MGT_X0Y16/RX
+Quad_131:MGT_X0Y16: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_131/MGT_X0Y16
+Quad_131:MGT_X0Y16: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_131/COMMON_X0Y4/QPLL0
+Quad_131:MGT_X0Y17: DESCRIPTION=Link 13
+Quad_131:MGT_X0Y17: STATUS=10.312 Gbps
+Quad_131:MGT_X0Y17: QPLL0_STATUS=LOCKED
+Quad_131:MGT_X0Y17: LINE_RATE=10.312
+Quad_131:MGT_X0Y17: LOGIC.ERRBIT_COUNT=000000000001
+Quad_131:MGT_X0Y17: RX_RECEIVED_BIT_COUNT=5235230960
+Quad_131:MGT_X0Y17: TX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y17: RX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y17: LOOPBACK=None
+Quad_131:MGT_X0Y17: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_131/MGT_X0Y17/TX
+Quad_131:MGT_X0Y17: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_131/MGT_X0Y17/RX
+Quad_131:MGT_X0Y17: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_131/MGT_X0Y17
+Quad_131:MGT_X0Y17: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_131/COMMON_X0Y4/QPLL0
+Quad_131:MGT_X0Y18: DESCRIPTION=Link 14
+Quad_131:MGT_X0Y18: STATUS=10.313 Gbps
+Quad_131:MGT_X0Y18: QPLL0_STATUS=LOCKED
+Quad_131:MGT_X0Y18: LINE_RATE=10.313
+Quad_131:MGT_X0Y18: LOGIC.ERRBIT_COUNT=000000000003
+Quad_131:MGT_X0Y18: RX_RECEIVED_BIT_COUNT=5585491520
+Quad_131:MGT_X0Y18: TX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y18: RX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y18: LOOPBACK=None
+Quad_131:MGT_X0Y18: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_131/MGT_X0Y18/TX
+Quad_131:MGT_X0Y18: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_131/MGT_X0Y18/RX
+Quad_131:MGT_X0Y18: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_131/MGT_X0Y18
+Quad_131:MGT_X0Y18: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_131/COMMON_X0Y4/QPLL0
+Quad_131:MGT_X0Y19: DESCRIPTION=Link 15
+Quad_131:MGT_X0Y19: STATUS=10.313 Gbps
+Quad_131:MGT_X0Y19: QPLL0_STATUS=LOCKED
+Quad_131:MGT_X0Y19: LINE_RATE=10.313
+Quad_131:MGT_X0Y19: LOGIC.ERRBIT_COUNT=000000000000
+Quad_131:MGT_X0Y19: RX_RECEIVED_BIT_COUNT=5921777120
+Quad_131:MGT_X0Y19: TX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y19: RX_PATTERN=PRBS 31-bit
+Quad_131:MGT_X0Y19: LOOPBACK=None
+Quad_131:MGT_X0Y19: TX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_131/MGT_X0Y19/TX
+Quad_131:MGT_X0Y19: RX_ENDPOINT=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_131/MGT_X0Y19/RX
+Quad_131:MGT_X0Y19: NAME=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_131/MGT_X0Y19
+Quad_131:MGT_X0Y19: get_hw_sio_plls=localhost:3121/xilinx_tcf/Xilinx/1280976A038A/0_1_0_0/IBERT/Quad_131/COMMON_X0Y4/QPLL0
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/*/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280976A038A
+close_hw_target: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 971.227 ; gain = 0.000
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting Vivado at Fri Feb  9 15:32:43 2018...
+step finished 
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_228:MGT_X0Y4:\s+STATUS=\d+\.\d\d\d Gbps"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_228:MGT_X0Y4:\s+QPLL0_STATUS=LOCKED"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_228:MGT_X0Y4:\s+LINE_RATE=\d+\.\d\d\d"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_228:MGT_X0Y4:\s+LOGIC.ERRBIT_COUNT=000000000000"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_228:MGT_X0Y4:\s+RX_RECEIVED_BIT_COUNT=[0]*[1-9]\d*\.?[0]*"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_228:MGT_X0Y4:\s+TX_PATTERN=PRBS\s+\d+\-bit"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_228:MGT_X0Y4:\s+RX_PATTERN=PRBS\s+\d+\-bit"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_228:MGT_X0Y4:\s+LOOPBACK=None"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_228:MGT_X0Y5:\s+STATUS=\d+\.\d\d\d Gbps"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_228:MGT_X0Y5:\s+QPLL0_STATUS=LOCKED"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_228:MGT_X0Y5:\s+LINE_RATE=\d+\.\d\d\d"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_228:MGT_X0Y5:\s+LOGIC.ERRBIT_COUNT=000000000000"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_228:MGT_X0Y5:\s+RX_RECEIVED_BIT_COUNT=[0]*[1-9]\d*\.?[0]*"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_228:MGT_X0Y5:\s+TX_PATTERN=PRBS\s+\d+\-bit"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_228:MGT_X0Y5:\s+RX_PATTERN=PRBS\s+\d+\-bit"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_228:MGT_X0Y5:\s+LOOPBACK=None"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_228:MGT_X0Y6:\s+STATUS=\d+\.\d\d\d Gbps"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_228:MGT_X0Y6:\s+QPLL0_STATUS=LOCKED"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_228:MGT_X0Y6:\s+LINE_RATE=\d+\.\d\d\d"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_228:MGT_X0Y6:\s+LOGIC.ERRBIT_COUNT=000000000000"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_228:MGT_X0Y6:\s+RX_RECEIVED_BIT_COUNT=[0]*[1-9]\d*\.?[0]*"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_228:MGT_X0Y6:\s+TX_PATTERN=PRBS\s+\d+\-bit"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_228:MGT_X0Y6:\s+RX_PATTERN=PRBS\s+\d+\-bit"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_228:MGT_X0Y6:\s+LOOPBACK=None"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_228:MGT_X0Y7:\s+STATUS=\d+\.\d\d\d Gbps"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_228:MGT_X0Y7:\s+QPLL0_STATUS=LOCKED"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_228:MGT_X0Y7:\s+LINE_RATE=\d+\.\d\d\d"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_228:MGT_X0Y7:\s+LOGIC.ERRBIT_COUNT=000000000000"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_228:MGT_X0Y7:\s+RX_RECEIVED_BIT_COUNT=[0]*[1-9]\d*\.?[0]*"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_228:MGT_X0Y7:\s+TX_PATTERN=PRBS\s+\d+\-bit"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_228:MGT_X0Y7:\s+RX_PATTERN=PRBS\s+\d+\-bit"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_228:MGT_X0Y7:\s+LOOPBACK=None"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_229:MGT_X0Y8:\s+STATUS=\d+\.\d\d\d Gbps"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_229:MGT_X0Y8:\s+QPLL0_STATUS=LOCKED"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_229:MGT_X0Y8:\s+LINE_RATE=\d+\.\d\d\d"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_229:MGT_X0Y8:\s+LOGIC.ERRBIT_COUNT=000000000000"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_229:MGT_X0Y8:\s+RX_RECEIVED_BIT_COUNT=[0]*[1-9]\d*\.?[0]*"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_229:MGT_X0Y8:\s+TX_PATTERN=PRBS\s+\d+\-bit"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_229:MGT_X0Y8:\s+RX_PATTERN=PRBS\s+\d+\-bit"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_229:MGT_X0Y8:\s+LOOPBACK=None"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_229:MGT_X0Y9:\s+STATUS=\d+\.\d\d\d Gbps"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_229:MGT_X0Y9:\s+QPLL0_STATUS=LOCKED"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_229:MGT_X0Y9:\s+LINE_RATE=\d+\.\d\d\d"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_229:MGT_X0Y9:\s+LOGIC.ERRBIT_COUNT=000000000000"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_229:MGT_X0Y9:\s+RX_RECEIVED_BIT_COUNT=[0]*[1-9]\d*\.?[0]*"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_229:MGT_X0Y9:\s+TX_PATTERN=PRBS\s+\d+\-bit"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_229:MGT_X0Y9:\s+RX_PATTERN=PRBS\s+\d+\-bit"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_229:MGT_X0Y9:\s+LOOPBACK=None"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_229:MGT_X0Y10:\s+STATUS=\d+\.\d\d\d Gbps"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_229:MGT_X0Y10:\s+QPLL0_STATUS=LOCKED"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_229:MGT_X0Y10:\s+LINE_RATE=\d+\.\d\d\d"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_229:MGT_X0Y10:\s+LOGIC.ERRBIT_COUNT=000000000000"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_229:MGT_X0Y10:\s+RX_RECEIVED_BIT_COUNT=[0]*[1-9]\d*\.?[0]*"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_229:MGT_X0Y10:\s+TX_PATTERN=PRBS\s+\d+\-bit"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_229:MGT_X0Y10:\s+RX_PATTERN=PRBS\s+\d+\-bit"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_229:MGT_X0Y10:\s+LOOPBACK=None"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_229:MGT_X0Y11:\s+STATUS=\d+\.\d\d\d Gbps"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_229:MGT_X0Y11:\s+QPLL0_STATUS=LOCKED"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_229:MGT_X0Y11:\s+LINE_RATE=\d+\.\d\d\d"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_229:MGT_X0Y11:\s+LOGIC.ERRBIT_COUNT=000000000000"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_229:MGT_X0Y11:\s+RX_RECEIVED_BIT_COUNT=[0]*[1-9]\d*\.?[0]*"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_229:MGT_X0Y11:\s+TX_PATTERN=PRBS\s+\d+\-bit"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_229:MGT_X0Y11:\s+RX_PATTERN=PRBS\s+\d+\-bit"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_229:MGT_X0Y11:\s+LOOPBACK=None"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_230:MGT_X0Y12:\s+STATUS=\d+\.\d\d\d Gbps"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_230:MGT_X0Y12:\s+QPLL0_STATUS=LOCKED"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_230:MGT_X0Y12:\s+LINE_RATE=\d+\.\d\d\d"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_230:MGT_X0Y12:\s+LOGIC.ERRBIT_COUNT=000000000000"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_230:MGT_X0Y12:\s+RX_RECEIVED_BIT_COUNT=[0]*[1-9]\d*\.?[0]*"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_230:MGT_X0Y12:\s+TX_PATTERN=PRBS\s+\d+\-bit"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_230:MGT_X0Y12:\s+RX_PATTERN=PRBS\s+\d+\-bit"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_230:MGT_X0Y12:\s+LOOPBACK=None"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_230:MGT_X0Y13:\s+STATUS=\d+\.\d\d\d Gbps"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_230:MGT_X0Y13:\s+QPLL0_STATUS=LOCKED"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_230:MGT_X0Y13:\s+LINE_RATE=\d+\.\d\d\d"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_230:MGT_X0Y13:\s+LOGIC.ERRBIT_COUNT=000000000000"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_230:MGT_X0Y13:\s+RX_RECEIVED_BIT_COUNT=[0]*[1-9]\d*\.?[0]*"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_230:MGT_X0Y13:\s+TX_PATTERN=PRBS\s+\d+\-bit"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_230:MGT_X0Y13:\s+RX_PATTERN=PRBS\s+\d+\-bit"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_230:MGT_X0Y13:\s+LOOPBACK=None"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_230:MGT_X0Y14:\s+STATUS=\d+\.\d\d\d Gbps"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_230:MGT_X0Y14:\s+QPLL0_STATUS=LOCKED"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_230:MGT_X0Y14:\s+LINE_RATE=\d+\.\d\d\d"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_230:MGT_X0Y14:\s+LOGIC.ERRBIT_COUNT=000000000000"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_230:MGT_X0Y14:\s+RX_RECEIVED_BIT_COUNT=[0]*[1-9]\d*\.?[0]*"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_230:MGT_X0Y14:\s+TX_PATTERN=PRBS\s+\d+\-bit"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_230:MGT_X0Y14:\s+RX_PATTERN=PRBS\s+\d+\-bit"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_230:MGT_X0Y14:\s+LOOPBACK=None"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_230:MGT_X0Y15:\s+STATUS=\d+\.\d\d\d Gbps"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_230:MGT_X0Y15:\s+QPLL0_STATUS=LOCKED"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_230:MGT_X0Y15:\s+LINE_RATE=\d+\.\d\d\d"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_230:MGT_X0Y15:\s+LOGIC.ERRBIT_COUNT=000000000000"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_230:MGT_X0Y15:\s+RX_RECEIVED_BIT_COUNT=[0]*[1-9]\d*\.?[0]*"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_230:MGT_X0Y15:\s+TX_PATTERN=PRBS\s+\d+\-bit"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_230:MGT_X0Y15:\s+RX_PATTERN=PRBS\s+\d+\-bit"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_230:MGT_X0Y15:\s+LOOPBACK=None"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_231:MGT_X0Y16:\s+STATUS=\d+\.\d\d\d Gbps"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_231:MGT_X0Y16:\s+QPLL0_STATUS=LOCKED"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_231:MGT_X0Y16:\s+LINE_RATE=\d+\.\d\d\d"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_231:MGT_X0Y16:\s+LOGIC.ERRBIT_COUNT=000000000000"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_231:MGT_X0Y16:\s+RX_RECEIVED_BIT_COUNT=[0]*[1-9]\d*\.?[0]*"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_231:MGT_X0Y16:\s+TX_PATTERN=PRBS\s+\d+\-bit"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_231:MGT_X0Y16:\s+RX_PATTERN=PRBS\s+\d+\-bit"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_231:MGT_X0Y16:\s+LOOPBACK=None"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_231:MGT_X0Y17:\s+STATUS=\d+\.\d\d\d Gbps"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_231:MGT_X0Y17:\s+QPLL0_STATUS=LOCKED"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_231:MGT_X0Y17:\s+LINE_RATE=\d+\.\d\d\d"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_231:MGT_X0Y17:\s+LOGIC.ERRBIT_COUNT=000000000000"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_231:MGT_X0Y17:\s+RX_RECEIVED_BIT_COUNT=[0]*[1-9]\d*\.?[0]*"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_231:MGT_X0Y17:\s+TX_PATTERN=PRBS\s+\d+\-bit"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_231:MGT_X0Y17:\s+RX_PATTERN=PRBS\s+\d+\-bit"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_231:MGT_X0Y17:\s+LOOPBACK=None"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_231:MGT_X0Y18:\s+STATUS=\d+\.\d\d\d Gbps"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_231:MGT_X0Y18:\s+QPLL0_STATUS=LOCKED"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_231:MGT_X0Y18:\s+LINE_RATE=\d+\.\d\d\d"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_231:MGT_X0Y18:\s+LOGIC.ERRBIT_COUNT=000000000000"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_231:MGT_X0Y18:\s+RX_RECEIVED_BIT_COUNT=[0]*[1-9]\d*\.?[0]*"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_231:MGT_X0Y18:\s+TX_PATTERN=PRBS\s+\d+\-bit"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_231:MGT_X0Y18:\s+RX_PATTERN=PRBS\s+\d+\-bit"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_231:MGT_X0Y18:\s+LOOPBACK=None"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_231:MGT_X0Y19:\s+STATUS=\d+\.\d\d\d Gbps"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_231:MGT_X0Y19:\s+QPLL0_STATUS=LOCKED"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_231:MGT_X0Y19:\s+LINE_RATE=\d+\.\d\d\d"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_231:MGT_X0Y19:\s+LOGIC.ERRBIT_COUNT=000000000000"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_231:MGT_X0Y19:\s+RX_RECEIVED_BIT_COUNT=[0]*[1-9]\d*\.?[0]*"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_231:MGT_X0Y19:\s+TX_PATTERN=PRBS\s+\d+\-bit"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_231:MGT_X0Y19:\s+RX_PATTERN=PRBS\s+\d+\-bit"
+
+Error: Could not find regular expression in step 2 of test 15 - "(.*)Quad_231:MGT_X0Y19:\s+LOOPBACK=None"
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Fail
+
+Info: The test took 0 hours, 03 minutes, and 42 seconds. 0:03:42

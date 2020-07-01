@@ -1,0 +1,265 @@
+Board: ZCU111
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: Test QSPI Flash test started...
+
+Info: The test will take 0 hours, 00 minutes, and 26 seconds. 0:00:26
+
+Entering step: 0
+
+
+Info: This step started at: 2018-06-25 14:28:44
+
+Entering step: 1
+
+
+Info: This step started at: 2018-06-25 14:28:44
+
+User has confirmed: "Set SW6 to 0100 (Up, Down, Up, Up) for Testing QSPI.
+"
+
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-06-25 14:28:47
+
+C:\zcu111_bit\tests\ZCU111>cd bat\ 
+
+C:\zcu111_bit\tests\ZCU111\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-06-25 14:28:51
+Xilinx Zynq MP First Stage Boot Loader 
+Release 2018.1   Jun 19 2018  -  09:19:07
+PMU-FW is not running, certain applications may not be supported.
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Mon Jun 25 14:29:13 2018...
+step finished 
+
+Entering step: 4
+
+
+Info: This step started at: 2018-06-25 14:29:13
+
+User has confirmed: "Observe PL LEDs blinking, then PL LED7 through PL LED2 turn on in sequence.
+PL LED1 should be blinking.
+Cycle ZCU111 power if you need to repeat this part of the test.
+Click OK when this is done. "
+
+step finished 
+
+Entering step: 5
+
+
+Info: This step started at: 2018-06-25 14:30:26
+
+User has responded "Yes": "Do you see the PL LEDs 7 through 2 all on?
+This part of the BIST test passed if you saw this."
+
+step finished 
+
+Entering step: 6
+
+
+Info: This step started at: 2018-06-25 14:30:28
+Xilinx Zynq MP First Stage Boot Loader 
+Release 2018.1   Jun 19 2018  -  09:19:07
+PMU-FW is not running, certain applications may not be supported.
+
+User has confirmed: "1. Set PL DIP, SW14 to "11111111" (All Up).
+2. Set PL DIP, SW14 to "00000000" (All Down)
+3. Observe PL LED1 on solid and PL LED0 blinking.
+Click OK when this is done."
+
+step finished 
+
+Entering step: 7
+
+
+Info: This step started at: 2018-06-25 14:31:31
+
+User has confirmed: "Press all the 5 Push buttons in any order.
+
+Click OK when this is done."
+
+step finished 
+
+Entering step: 8
+
+
+Info: This step started at: 2018-06-25 14:31:32
+
+User has responded "Yes": "Do you see the PL LEDs 7 through 0 all on?
+This part of the BIST test passed if you saw this."
+
+step finished 
+
+step finished 
+the expression:(.*)RFSoC ZCU111
+
+Error: Could not find regular expression in step 0 of test 15 - "(.*)RFSoC ZCU111"
+
+Info: Result for step 0: Fail
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+Info: Result for step 4: Pass
+Info: Result for step 5: Pass
+Info: Result for step 6: Pass
+Info: Result for step 7: Pass
+Info: Result for step 8: Pass
+
+Info: The test took 0 hours, 00 minutes, and 27 seconds. 0:00:27
+
+Info: Test QSPI Flash test started...
+
+Info: The test will take 0 hours, 00 minutes, and 26 seconds. 0:00:26
+
+Entering step: 0
+
+
+Info: This step started at: 2018-06-25 14:31:46
+
+Entering step: 1
+
+
+Info: This step started at: 2018-06-25 14:31:46
+
+User has confirmed: "Set SW6 to 0100 (Up, Down, Up, Up) for Testing QSPI.
+"
+
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-06-25 14:31:47
+
+C:\zcu111_bit\tests\ZCU111>cd bat\ 
+
+C:\zcu111_bit\tests\ZCU111\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-06-25 14:31:52
+Xilinx Zynq MP First Stage Boot Loader 
+Release 2018.1   Jun 19 2018  -  09:19:07
+PMU-FW is not running, certain applications may not be supported.
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\five_second_delay.tcl}
+# after 5000
+INFO: [Common 17-206] Exiting Vivado at Mon Jun 25 14:32:12 2018...
+step finished 
+
+Entering step: 4
+
+
+Info: This step started at: 2018-06-25 14:32:13
+***********************************************************
+***********************************************************
+** Zynq UltraScale+ RFSoC ZCU111 Evaluation Kit IPI Test **
+***********************************************************
+***********************************************************
+
+Choose Feature to Test:
+1: UART Test
+2: LED Test
+3: IIC Test
+5: TIMER/SCUGIC Test
+7: SWITCH Test
+8: PS DDR4 External Memory Test
+9: DDR4 External Memory Test
+A: BRAM Internal Memory Test
+B: BUTTON Test
+C: Clocking Test
+D: PMOD Test
+E: PS Pushbutton Test
+F: PS LED Test
+G: System Monitor Test
+H: ETHERNET Loopback Test
+0: Exit
+
+User has confirmed: "Observe PL LEDs blinking, then PL LED7 through PL LED2 turn on in sequence.
+PL LED1 should be blinking.
+Cycle ZCU111 power if you need to repeat this part of the test.
+Click OK when this is done. "
+
+step finished 
+
+Entering step: 5
+
+
+Info: This step started at: 2018-06-25 14:32:33
+
+User has responded "Yes": "Do you see the PL LEDs 7 through 2 all on?
+This part of the BIST test passed if you saw this."
+
+step finished 
+
+Entering step: 6
+
+
+Info: This step started at: 2018-06-25 14:32:34
+
+User has confirmed: "1. Set PL DIP, SW14 to "11111111" (All Up).
+2. Set PL DIP, SW14 to "00000000" (All Down)
+3. Observe PL LED1 on solid and PL LED0 blinking.
+Click OK when this is done."
+
+step finished 
+
+Entering step: 7
+
+
+Info: This step started at: 2018-06-25 14:32:35
+
+User has confirmed: "Press all the 5 Push buttons in any order.
+
+Click OK when this is done."
+
+step finished 
+
+Entering step: 8
+
+
+Info: This step started at: 2018-06-25 14:32:36
+
+User has responded "Yes": "Do you see the PL LEDs 7 through 0 all on?
+This part of the BIST test passed if you saw this."
+
+step finished 
+
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+Info: Result for step 4: Pass
+Info: Result for step 5: Pass
+Info: Result for step 6: Pass
+Info: Result for step 7: Pass
+Info: Result for step 8: Pass
+
+Info: The test took 0 hours, 00 minutes, and 26 seconds. 0:00:26

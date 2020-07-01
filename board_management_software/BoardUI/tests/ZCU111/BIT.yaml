@@ -1,0 +1,79 @@
+tabs:
+  PMBus Commands:
+    buttons:
+      Get VCCINT:
+        steps:
+        - command: <setmux:3:74:01><getvoltage:3:44><setmux:3:74:00><calcvoltage>
+          type: sysc
+        ui:
+          columns: 2
+          content:
+          - label right: 'Voltage: '
+          - output left large: .*Voltage\[(.*)\]
+      Operation Register:
+        steps:
+        - command: <setmux:3:74:01><PMBUSSetReg:3:44:01:<3>><setmux:3:74:00>
+          type: sysc
+        ui:
+          columns: 2
+          content:
+          - label right: 'Register Value (2 hex values): '
+          - input: (A8)|(98)|(80)|(40)|(00)
+  Tab With More Tabs:
+    tabs:
+      First Tab:
+        buttons:
+          Get Version:
+            steps:
+            - command: "VRN\r\t"
+              type: sysc
+            ui:
+              rows: 2
+              columns: 2
+              content:
+              - label right: Firmware Version
+              - output huge left: ".*VRN\r:P\r(.*?)\r"
+              - label right: 'UI Version: '
+              - label left: SCUI v1.1
+      Second Tab:
+        buttons:
+          Get Version:
+            steps:
+            - command: "VRN\r\t"
+              type: sysc
+            ui:
+              rows: 2
+              columns: 2
+              content:
+              - label right: Firmware Version
+              - output huge left: ".*VRN\r:P\r(.*?)\r"
+              - label right: 'UI Version: '
+              - label left: SCUI v1.1
+      Third Tab:
+        buttons:
+          Get Version:
+            steps:
+            - command: "VRN\r\t"
+              type: sysc
+            ui:
+              rows: 2
+              columns: 2
+              content:
+              - label right: Firmware Version
+              - output huge left: ".*VRN\r:P\r(.*?)\r"
+              - label right: 'UI Version: '
+              - label left: SCUI v1.1
+  About:
+    buttons:
+      Get Version:
+        steps:
+        - command: "VRN\r\t"
+          type: sysc
+        ui:
+          rows: 2
+          columns: 2
+          content:
+          - label right: Firmware Version
+          - output huge left: ".*VRN\r:P\r(.*?)\r"
+          - label right: 'UI Version: '
+          - label left: SCUI v1.1

@@ -1,0 +1,174 @@
+Board: ZCU104
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: PMOD Loopback test started...
+
+Info: The test will take 0 hours, 01 minutes, and 40 seconds. 0:01:40
+
+Entering step: 0
+
+
+Info: This step started at: 2017-07-12 13:07:42
+
+Entering step: 1
+
+
+Info: This step started at: 2017-07-12 13:07:43
+
+User has confirmed: "Turn off the ZCU102 Board Power.
+Set mode switch SW6 to "0000" (Up,Up,Up,Up)
+Turn on the ZCU102 Board Power."
+
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2017-07-12 13:08:17
+
+****** Vivado Lab Edition v2017.2 (64-bit)
+  **** SW Build 1894441 on Mon May 29 16:52:06 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source {tcl\zcu104_pl_pmod_loop_bit.tcl}
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+# current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]
+# set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Xilinx/*]
+# open_hw_target -jtag_mode 1
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+INFO: [Labtoolstcl 44-467] Setting hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A into jtag_mode
+# scan_ir_hw_jtag 12 -tdi 0x90B
+# close_hw_target
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+# current_hw_device [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {[pwd]/../bitstream/pmod_loop.bit} [lindex [get_hw_devices] 0]
+# program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 325.387 ; gain = 0.000
+# close_hw_target [current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/*]]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/1280961A003A
+# disconnect_hw_server localhost:3121
+# close_hw
+INFO: [Common 17-206] Exiting vivado_lab at Wed Jul 12 13:08:36 2017...
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2017-07-12 13:08:36
+
+catch { disconnect }
+1
+
+connect -url tcp:127.0.0.1:3121
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+fpga -state
+FPGA is configured
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/../tcl/psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/../elf/pmod_loop.elf}
+Downloading Program -- C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/elf/pmod_loop.elf
+	section, .text: 0x00000000 - 0x0000c51b
+	section, .init: 0x0000c540 - 0x0000c573
+	section, .fini: 0x0000c580 - 0x0000c5b3
+	section, .note.gnu.build-id: 0x0000c5b4 - 0x0000c5d7
+	section, .rodata: 0x0000c5d8 - 0x0000cc07
+	section, .rodata1: 0x0000cc08 - 0x0000cc3f
+	section, .sdata2: 0x0000cc40 - 0x0000cc3f
+	section, .sbss2: 0x0000cc40 - 0x0000cc3f
+	section, .data: 0x0000cc40 - 0x0000de0f
+	section, .data1: 0x0000de10 - 0x0000de3f
+	section, .ctors: 0x0000de40 - 0x0000de3f
+	section, .dtors: 0x0000de40 - 0x0000de3f
+	section, .eh_frame: 0x0000de40 - 0x0000de43
+	section, .mmu_tbl0: 0x0000e000 - 0x0000e00f
+	section, .mmu_tbl1: 0x0000f000 - 0x00010fff
+	section, .mmu_tbl2: 0x00011000 - 0x00014fff
+	section, .preinit_array: 0x00015000 - 0x00014fff
+	section, .init_array: 0x00015000 - 0x00015007
+	section, .fini_array: 0x00015008 - 0x00015047
+	section, .sdata: 0x00015048 - 0x0001507f
+	section, .sbss: 0x00015080 - 0x0001507f
+	section, .tdata: 0x00015080 - 0x0001507f
+	section, .tbss: 0x00015080 - 0x0001507f
+	section, .bss: 0x00015080 - 0x0001513f
+	section, .heap: 0x00015140 - 0x0001713f
+	section, .stack: 0x00017140 - 0x0001a13f
+  0%    0MB   0.0MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/Users/sethm/Documents/TrackedWorkProjects/ZCU104/tests/ZCU104/elf/pmod_loop.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 5000
+
+****************************************
+         PMOD0 LOOPBACK TEST
+****************************************
+PMOD0 Loopback Test: Pattern = 0xFFFFFFFF, PASSED
+Data In = 0x0000000F
+PMOD0 Loopback Test: Pattern = 0x00000000, PASSED
+Data In = 0x00000000
+PMOD0 Loopback Test: Pattern = 0xAAAAAAAA, PASSED
+Data In = 0x0000000A
+PMOD0 Loopback Test: Pattern = 0x55555555, PASSED
+Data In = 0x00000005
+
+****************************************
+         PMOD1 LOOPBACK TEST
+****************************************
+PMOD1 Loopback Test: Pattern = 0xFFFFFFFF, PASSED
+Data In = 0x0000000F
+PMOD1 Loopback Test: Pattern = 0x00000000, PASSED
+Data In = 0x00000000
+PMOD1 Loopback Test: Pattern = 0xAAAAAAAA, PASSED
+Data In = 0x0000000A
+PMOD1 Loopback Test: Pattern = 0x55555555, PASSED
+Data In = 0x00000005
+
+PMOD Loopback: Test passed
+
+disconnect
+
+step finished 
+
+step finished 
+the expression:PMOD Loopback: Test passed
+
+Error: Could not find regular expression in step 0 of test 3 - "PMOD Loopback: Test passed"
+
+Info: Result for step 0: Fail
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+
+Info: The test took 0 hours, 00 minutes, and 36 seconds. 0:00:36

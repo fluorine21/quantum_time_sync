@@ -1,0 +1,402 @@
+Board: ZCU104
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: WRITE EEPROM test started...
+
+Info: The test will take 0 hours, 00 minutes, and 55 seconds. 0:00:55
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-02 12:08:40
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-02 12:08:41
+
+C:\zcu104_bit\tests\ZCU104>cd bat\ 
+
+C:\zcu104_bit\tests\ZCU104\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-02 12:08:45
+
+catch { disconnect }
+
+
+connect -url tcp:127.0.0.1:3121
+attempting to launch hw_server
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:08:27
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+INFO: hw_server application started
+INFO: Use Ctrl-C to exit hw_server application
+
+
+
+****** Xilinx hw_server v2017.4
+
+  **** Build date : Dec 15 2017-21:08:27
+
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+
+INFO: hw_server application started
+
+INFO: Use Ctrl-C to exit hw_server application
+
+
+
+
+INFO: To connect to this hw_server instance use url: TCP:127.0.0.1:3121
+
+
+
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+fpga -state
+FPGA is not configured
+after 2000
+
+fpga -file {C:/zcu104_bit/tests/ZCU104/../bitstream/sc.bit}
+initializing  0%    0MB   0.0MB/s  ??:?? ETA  3%    0MB   0.4MB/s  ??:?? ETA  7%    1MB   0.7MB/s  ??:?? ETA 12%    2MB   0.9MB/s  ??:?? ETA 17%    3MB   1.1MB/s  ??:?? ETA 21%    4MB   1.2MB/s  00:12 ETA 25%    4MB   1.2MB/s  00:11 ETA 26%    4MB   0.9MB/s  00:14 ETA 31%    5MB   1.0MB/s  00:12 ETA 35%    6MB   1.1MB/s  00:11 ETA 40%    7MB   1.1MB/s  00:09 ETA 44%    8MB   1.1MB/s  00:08 ETA 49%    9MB   1.0MB/s  00:09 ETA 54%    9MB   1.1MB/s  00:08 ETA 58%   10MB   1.1MB/s  00:07 ETA 63%   11MB   1.1MB/s  00:06 ETA 67%   12MB   1.1MB/s  00:05 ETA 72%   13MB   1.2MB/s  00:04 ETA 76%   14MB   1.2MB/s  00:03 ETA 81%   15MB   1.2MB/s  00:02 ETA 85%   15MB   1.2MB/s  00:02 ETA 90%   16MB   1.2MB/s  00:01 ETA 95%   17MB   1.3MB/s  00:00 ETA 99%   18MB   1.3MB/s  00:00 ETA100%   18MB   1.3MB/s  00:14    
+
+after 2000
+
+fpga -state
+FPGA is configured
+after 2000
+
+fpga -ir-status
+IR STATUS: 117
+     Always One (Bits [0]): 1
+    Always Zero (Bits [1]): 0
+       ISC_Done (Bits [2]): 1
+    ISC_Enabled (Bits [3]): 0
+  Init Complete (Bits [4]): 1
+           DONE (Bits [5]): 1
+             (Bits [11:6]): 1
+after 2000
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/zcu104_bit/tests/ZCU104/../tcl/sc_psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/zcu104_bit/tests/ZCU104/../elf/SC.elf}
+Downloading Program -- C:/zcu104_bit/tests/ZCU104/elf/SC.elf
+	section, .text: 0x00000000 - 0x0000556b
+	section, .init: 0x00005580 - 0x000055b3
+	section, .fini: 0x000055c0 - 0x000055f3
+	section, .note.gnu.build-id: 0x000055f4 - 0x00005617
+	section, .rodata: 0x00005618 - 0x00005927
+	section, .rodata1: 0x00005928 - 0x0000593f
+	section, .sdata2: 0x00005940 - 0x0000593f
+	section, .sbss2: 0x00005940 - 0x0000593f
+	section, .data: 0x00005940 - 0x00006a67
+	section, .data1: 0x00006a68 - 0x00006a7f
+	section, .ctors: 0x00006a80 - 0x00006a7f
+	section, .dtors: 0x00006a80 - 0x00006a7f
+	section, .eh_frame: 0x00006a80 - 0x00006a83
+	section, .mmu_tbl0: 0x00007000 - 0x0000700f
+	section, .mmu_tbl1: 0x00008000 - 0x00009fff
+	section, .mmu_tbl2: 0x0000a000 - 0x0000dfff
+	section, .preinit_array: 0x0000e000 - 0x0000dfff
+	section, .init_array: 0x0000e000 - 0x0000e007
+	section, .fini_array: 0x0000e008 - 0x0000e047
+	section, .sdata: 0x0000e048 - 0x0000e07f
+	section, .sbss: 0x0000e080 - 0x0000e07f
+	section, .tdata: 0x0000e080 - 0x0000e07f
+	section, .tbss: 0x0000e080 - 0x0000e07f
+	section, .bss: 0x0000e080 - 0x0000e17f
+	section, .heap: 0x0000e180 - 0x0001017f
+	section, .stack: 0x00010180 - 0x0001317f
+  0%    0MB   0.0MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu104_bit/tests/ZCU104/elf/SC.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 2000
+
+Starting System Controller...
+
+System Controller Initialization Finished...
+
+disconnect
+
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-02 12:09:24
+Writing: '\x1b'
+Writing: '\x08'
+[(u'<setmux:0:74:01>', u'', u'', u''), (u'<writeeeprom:0:54:20:FFFFFFFFFFFF>', u'', u'', u''), (u'<writeeeprom:0:54:20:010203040506>', u'', u'', u''), (u'<setmux:0:74:00>', u'', u'', u'')]:RWriting: '\t'
+:RWriting: 'IW0\r74\r01\r\t'
+IW07401:PWriting: 'IW0\r54\r20FFFFFFFFFFFF\r\t'
+IW05420FFFFFFFFFFFF:PWriting: 'IW0\r54\r20010203040506\r\t'
+IW05420010203040506:PWriting: 'IW0\r74\r00\r\t'
+IW07400:P'\r\nStarting System Controller...\r\n\r\nSystem Controller Initialization Finished...\r\n\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\r20FFFFFFFFFFFF\r:P\rIW0\r54\r20010203040506\r:P\rIW0\r74\r00\r:P\r'
+Entering step: 4
+
+
+Info: This step started at: 2018-02-02 12:09:37
+Writing: '\x1b'
+Writing: '\x08'
+[('<setmux:0:74:01>', '', '', ''), ('<writeeeprom:0:54:00:FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF>', '', '', ''), ('<writeeeprom:0:54:00:303030302d30303030>', '', '', ''), ('<setmux:0:74:00>', '', '', '')]:RWriting: '\t'
+:RWriting: 'IW0\r74\r01\r\t'
+IW07401:PWriting: 'IW0\r54\r00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r\tIW0\r54\r10FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r\t'
+IW05400FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF:PIW05410FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF:PWriting: 'IW0\r54\r00303030302d30303030\r\t'
+IW05400303030302d30303030:PWriting: 'IW0\r74\r00\r\t'
+'\r\nStarting System Controller...\r\n\r\nSystem Controller Initialization Finished...\r\n\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\r20FFFFFFFFFFFF\r:P\rIW0\r54\r20010203040506\r:P\rIW0\r74\r00\r:P\r\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\r00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r:P\rIW0\r54\r10FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r:P\rIW0\r54\r00303030302d30303030\r:P\r'IW07400:P
+Entering step: 5
+
+
+Info: This step started at: 2018-02-02 12:09:51
+Writing: '\x1b'
+Writing: '\x08'
+[('<setmux:0:74:01>', '', '', ''), ('<writeeeprom:0:54:E0:FFFFFFFFFFFF>', '', '', ''), ('<writeeeprom:0:54:E0:432020>', '', '', ''), ('<setmux:0:74:00>', '', '', '')]:RWriting: '\t'
+:RWriting: 'IW0\r74\r01\r\t'
+IW07401:PWriting: 'IW0\r54\re0FFFFFFFFFFFF\r\t'
+IW054e0FFFFFFFFFFFF:PWriting: 'IW0\r54\re0432020\r\t'
+IW054e0432020:PWriting: 'IW0\r74\r00\r\t'
+IW07400:P'\r\nStarting System Controller...\r\n\r\nSystem Controller Initialization Finished...\r\n\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\r20FFFFFFFFFFFF\r:P\rIW0\r54\r20010203040506\r:P\rIW0\r74\r00\r:P\r\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\r00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r:P\rIW0\r54\r10FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r:P\rIW0\r54\r00303030302d30303030\r:P\rIW0\r74\r00\r:P\r\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\re0FFFFFFFFFFFF\r:P\rIW0\r54\re0432020\r:P\rIW0\r74\r00\r:P\r'
+Entering step: 6
+
+
+Info: This step started at: 2018-02-02 12:10:04
+Writing: '\x1b'
+Writing: '\x08'
+[('<setmux:0:74:01>', '', '', ''), ('<writeeeprom:0:54:D0:FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF>', '', '', ''), ('<writeeeprom:0:54:D0:5a43553130342020202020>', '', '', ''), ('<setmux:0:74:00>', '', '', '')]:RWriting: '\t'
+:RWriting: 'IW0\r74\r01\r\t'
+IW07401:PWriting: 'IW0\r54\rd0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r\t'
+IW054d0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF:PWriting: 'IW0\r54\rd05a43553130342020202020\r\t'
+IW054d05a43553130342020202020:PWriting: 'IW0\r74\r00\r\t'
+'\r\nStarting System Controller...\r\n\r\nSystem Controller Initialization Finished...\r\n\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\r20FFFFFFFFFFFF\r:P\rIW0\r54\r20010203040506\r:P\rIW0\r74\r00\r:P\r\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\r00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r:P\rIW0\r54\r10FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r:P\rIW0\r54\r00303030302d30303030\r:P\rIW0\r74\r00\r:P\r\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\re0FFFFFFFFFFFF\r:P\rIW0\r54\re0432020\r:P\rIW0\r74\r00\r:P\r\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\rd0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r:P\rIW0\r54\rd05a43553130342020202020\r:P\r'IW07400:P
+Entering step: 7
+
+
+Info: This step started at: 2018-02-02 12:10:18
+Writing: '\x1b'
+Writing: '\x08'
+[('<setmux:0:74:01>', '', '', ''), ('<readeeprom:0:54:D0:10>', '', '', ''), ('<interpeeprom>', '', '', ''), ('<setmux:0:74:00>', '', '', '')]:RWriting: '\t'
+:RWriting: 'IW0\r74\r01\r\t'
+IW07401:PWriting: 'IW0\r54\rd0\r\tIR0\r54\r10\r\t'
+IW054d0:PIR05410:P5A43553130342020202020FFFFFFFFFFWriting: 'IW0\r74\r00\r\t'
+u'\r\nStarting System Controller...\r\n\r\nSystem Controller Initialization Finished...\r\n\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\r20FFFFFFFFFFFF\r:P\rIW0\r54\r20010203040506\r:P\rIW0\r74\r00\r:P\r\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\r00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r:P\rIW0\r54\r10FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r:P\rIW0\r54\r00303030302d30303030\r:P\rIW0\r74\r00\r:P\r\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\re0FFFFFFFFFFFF\r:P\rIW0\r54\re0432020\r:P\rIW0\r74\r00\r:P\r\x1b:R\r:R\rIW0\r74\r01\r:P\rIW0\r54\rd0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r:P\rIW0\r54\rd05a43553130342020202020\r:P\rIW0\r74\r00\r:P\r\x1b:R\r:R\rIW0\r74\r01\r:P\rINTERP[]IW0\r54\rd0\r:P\rIR0\r54\r10\r:P\r5A43553130342020202020FFFFFFFFFF\r'IW07400:P
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+Info: Result for step 4: Pass
+Info: Result for step 5: Pass
+Info: Result for step 6: Pass
+Info: Result for step 7: Pass
+
+Info: The test took 0 hours, 01 minutes, and 52 seconds. 0:01:52
+
+Info: XM107 CARD TEST test started...
+
+Info: The test will take 0 hours, 00 minutes, and 47 seconds. 0:00:47
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-02 12:12:04
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-02 12:12:04
+
+C:\zcu104_bit\tests\ZCU104>cd bat\ 
+
+C:\zcu104_bit\tests\ZCU104\bat>ezoutlet.exe reset 192.168.0.12 
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-02 12:12:08
+
+catch { disconnect }
+
+
+connect -url tcp:127.0.0.1:3121
+attempting to launch hw_server
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:08:27
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+INFO: hw_server application started
+INFO: Use Ctrl-C to exit hw_server application
+
+
+
+****** Xilinx hw_server v2017.4
+
+  **** Build date : Dec 15 2017-21:08:27
+
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+
+INFO: hw_server application started
+
+INFO: Use Ctrl-C to exit hw_server application
+
+
+
+
+INFO: To connect to this hw_server instance use url: TCP:127.0.0.1:3121
+
+
+
+tcfchan#0
+targets -set -filter {name =~"*APU*"}
+
+rst -srst
+
+fpga -state
+FPGA is not configured
+after 2000
+
+fpga -file {C:/zcu104_bit/tests/ZCU104/../bitstream/sc.bit}
+initializing  0%    0MB   0.0MB/s  ??:?? ETA  3%    0MB   0.5MB/s  ??:?? ETA  8%    1MB   0.8MB/s  ??:?? ETA 12%    2MB   1.0MB/s  ??:?? ETA 17%    3MB   1.1MB/s  ??:?? ETA 22%    4MB   1.2MB/s  00:12 ETA 26%    4MB   1.2MB/s  00:10 ETA 26%    4MB   0.9MB/s  00:14 ETA 31%    5MB   1.0MB/s  00:12 ETA 36%    6MB   1.1MB/s  00:11 ETA 40%    7MB   1.1MB/s  00:09 ETA 45%    8MB   1.2MB/s  00:08 ETA 49%    9MB   1.2MB/s  00:07 ETA 50%    9MB   1.0MB/s  00:08 ETA 54%   10MB   1.1MB/s  00:07 ETA 59%   10MB   1.1MB/s  00:06 ETA 63%   11MB   1.1MB/s  00:05 ETA 68%   12MB   1.1MB/s  00:05 ETA 73%   13MB   1.2MB/s  00:04 ETA 77%   14MB   1.2MB/s  00:03 ETA 81%   15MB   1.2MB/s  00:02 ETA 86%   15MB   1.2MB/s  00:02 ETA 91%   16MB   1.2MB/s  00:01 ETA 95%   17MB   1.3MB/s  00:00 ETA100%   18MB   1.3MB/s  00:14    
+
+after 2000
+
+fpga -state
+FPGA is configured
+after 2000
+
+fpga -ir-status
+IR STATUS: 117
+     Always One (Bits [0]): 1
+    Always Zero (Bits [1]): 0
+       ISC_Done (Bits [2]): 1
+    ISC_Enabled (Bits [3]): 0
+  Init Complete (Bits [4]): 1
+           DONE (Bits [5]): 1
+             (Bits [11:6]): 1
+after 2000
+
+targets -set -filter {name =~"*APU*"}
+
+source {C:/zcu104_bit/tests/ZCU104/../tcl/sc_psu_init.tcl}
+
+psu_init
+
+after 1000
+
+psu_ps_pl_isolation_removal
+
+after 1000
+
+psu_ps_pl_reset_config
+
+catch { psu_protection }
+0
+targets -set -filter {name =~"*A53*0"}
+
+rst -processor
+
+dow {C:/zcu104_bit/tests/ZCU104/../elf/SC.elf}
+Downloading Program -- C:/zcu104_bit/tests/ZCU104/elf/SC.elf
+	section, .text: 0x00000000 - 0x0000556b
+	section, .init: 0x00005580 - 0x000055b3
+	section, .fini: 0x000055c0 - 0x000055f3
+	section, .note.gnu.build-id: 0x000055f4 - 0x00005617
+	section, .rodata: 0x00005618 - 0x00005927
+	section, .rodata1: 0x00005928 - 0x0000593f
+	section, .sdata2: 0x00005940 - 0x0000593f
+	section, .sbss2: 0x00005940 - 0x0000593f
+	section, .data: 0x00005940 - 0x00006a67
+	section, .data1: 0x00006a68 - 0x00006a7f
+	section, .ctors: 0x00006a80 - 0x00006a7f
+	section, .dtors: 0x00006a80 - 0x00006a7f
+	section, .eh_frame: 0x00006a80 - 0x00006a83
+	section, .mmu_tbl0: 0x00007000 - 0x0000700f
+	section, .mmu_tbl1: 0x00008000 - 0x00009fff
+	section, .mmu_tbl2: 0x0000a000 - 0x0000dfff
+	section, .preinit_array: 0x0000e000 - 0x0000dfff
+	section, .init_array: 0x0000e000 - 0x0000e007
+	section, .fini_array: 0x0000e008 - 0x0000e047
+	section, .sdata: 0x0000e048 - 0x0000e07f
+	section, .sbss: 0x0000e080 - 0x0000e07f
+	section, .tdata: 0x0000e080 - 0x0000e07f
+	section, .tbss: 0x0000e080 - 0x0000e07f
+	section, .bss: 0x0000e080 - 0x0000e17f
+	section, .heap: 0x0000e180 - 0x0001017f
+	section, .stack: 0x00010180 - 0x0001317f
+  0%    0MB   0.0MB/s  ??:?? ETA100%    0MB   0.2MB/s  00:00    
+Setting PC to Program Start Address 0x00000000
+Successfully downloaded C:/zcu104_bit/tests/ZCU104/elf/SC.elf
+
+targets -set -filter {name =~"*A53*0"}
+
+con
+
+after 2000
+
+Starting System Controller...
+
+System Controller Initialization Finished...
+
+disconnect
+
+step finished 
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-02 12:12:46
+Writing: '\x1b'
+Writing: '\x08'
+[('<setmux:0:74:20>', '', '', ''), ('<readeeprom:0:50:00:FF>', '', '', ''), ('<wait:0.3>', '', '', ''), ('<interpeeprom>', '', '', ''), ('<setmux:0:74:00>', '', '', '')]:RWriting: '\t'
+:RWriting: 'IW0\r74\r20\r\t'
+IW07420:PWriting: 'IW0\r50\r00\r\tIR0\r50\rFF\r\t'
+IW05000:PIR050FF:P01000001000800F601071980E17FCA5768697A7A2020496E63C5584D313037C83134313932333900CE57485A20584D3130372020202020C0C55265762031C100FA020B7089A21200001C742C0000A08002020D30BF00FA006E005E0132000000D00702020D10DF014A013B015E0132000000D00702020DD91602B0047404EC0432000000D00701020D826E03FA006E005E01320000007E0401020DFCF40400000000000000000000000001820DFB750500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Writing: 'IW0\r74\r00\r\t'
+IW07400:Pu'\r\nStarting System Controller...\r\n\r\nSystem Controller Initialization Finished...\r\n\x1b:R\r:R\rIW0\r74\r20\r:P\rIW0\r50\r00\r:P\rIR0\r50\rFF\r:P\r01000001000800F601071980E17FCA5768697A7A2020496E63C5584D313037C83134313932333900CE57485A20584D3130372020202020C0C55265762031C100FA020B7089A21200001C742C0000A08002020D30BF00FA006E005E0132000000D00702020D10DF014A013B015E0132000000D00702020DD91602B0047404EC0432000000D00701020D826E03FA006E005E01320000007E0401020DFCF40400000000000000000000000001820DFB750500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\rINTERP[\x01\x00\x00\x01\x00\x08\x00\x01\x07\x19\x7fWhizz  IncXM1071419239\x00WHZ XM107     Rev 1\x00\x02\x0bp\x12\x00\x00\x1ct,\x00\x00\x02\x02\r0\x00\x00n\x00^\x012\x00\x00\x00\x07\x02\x02\r\x10\x01J\x01;\x01^\x012\x00\x00\x00\x07\x02\x02\r\x16\x02\x04t\x04\x042\x00\x00\x00\x07\x01\x02\rn\x03\x00n\x00^\x012\x00\x00\x00~\x04\x01\x02\r\x04\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\ru\x05\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00]IW0\r74\r00\r:P\r'
+step finished 
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Pass
+Info: Result for step 3: Pass
+
+Info: The test took 0 hours, 00 minutes, and 55 seconds. 0:00:55

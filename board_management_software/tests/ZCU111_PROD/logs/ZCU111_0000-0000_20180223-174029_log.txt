@@ -1,0 +1,50 @@
+Board: ZCU111
+Serial Number: 0000-0000
+Mac Address: 01:02:03:04:05:06
+
+
+Info: SYS_CTLR RESTORE test started...
+
+Info: The test will take 0 hours, 02 minutes, and 34 seconds. 0:02:34
+
+Entering step: 0
+
+
+Info: This step started at: 2018-02-23 17:40:35
+
+User has confirmed: "Turn ZCU111 Board Power Off.
+Set mode switch SW6 to "0" (Up,Up,Up,Up)
+Attach jumpers:
+J25(MSP430_RST_B) Pin 1 to Pin 2
+J25(MSP430_TEST), Pin 3 to Pin 4
+Turn ZCU111 Power On"
+
+step finished 
+
+Entering step: 1
+
+
+Info: This step started at: 2018-02-23 17:40:44
+step finished 
+
+Entering step: 2
+
+
+Info: This step started at: 2018-02-23 17:40:45
+Error: Invalid input for COM port
+
+Error: Found regular expression in step 2 of test 1 - "(.*)Error(.*)"
+
+Error: Could not find regular expression in step 2 of test 1 - "(.*)File\s+sent\s+successfully"
+
+Entering step: 3
+
+
+Info: This step started at: 2018-02-23 17:40:45
+
+Error: Stopped because step 2 failed in test 1
+
+Info: Result for step 0: Pass
+Info: Result for step 1: Pass
+Info: Result for step 2: Fail
+Info: The test took 0 hours, 00 minutes, and 01 seconds. 0:00:01
