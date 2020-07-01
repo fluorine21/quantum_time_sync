@@ -65,6 +65,11 @@ err_t recv_callback(void *arg, struct tcp_pcb *tpcb,
 	/* echo back the payload */
 	/* in this case, we assume that the payload is < TCP_SND_BUF */
 	if (tcp_sndbuf(tpcb) > p->len) {
+
+		//Load whatever was in the payload into the UART queue
+
+		//Replace all of the packed payload with 0s and send it back
+
 		err = tcp_write(tpcb, p->payload, p->len, 1);
 	} else
 		xil_printf("no space in tcp_sndbuf\n\r");
