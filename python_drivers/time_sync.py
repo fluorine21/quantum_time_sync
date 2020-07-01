@@ -9,12 +9,25 @@ Created on Wed Jul  1 10:46:08 2020
 import socket
 import pulse_gen_obj
 import time
+import tdc_wrapper
 
 CLIENT = 0
 SERVER = 1
 SERVER_ACK = b'\x66'
 SERVER_ACK_BYTE = 0x66
-TCP_TIMEOUT = 1000
+TCP_TIMEOUT = 10 #10 second timeout
+
+#Server commands
+RUN_TDC = b'\x03'
+
+#TDC Channels
+CHANNEL_ALICE_SEND = 0
+CHANNEL_ALICE_RECIEVE = 1
+CHANNEL_BOB_SEND = 0
+CHANNEL_BOB_RECIEVE = 1
+
+#Bob's responses
+TDC_SUCCESS = 8
 
 class time_sync:
     
@@ -22,6 +35,7 @@ class time_sync:
     server_ip = ""#IP which this machine will try to connect if it is in client mode
     mode = CLIENT
     board = []
+    tdc= []
     port = 25566
     
     
@@ -31,7 +45,10 @@ class time_sync:
         self.s = socket.socket() 
         
         #Initialize the FPGA
-        self.board = pulse_gen_obj.PULSE_GEN(COM_PORT)
+        self.board = pulse_gen_obj.pulse_gen(COM_PORT)
+        
+        #initialize the tdc
+        tdc = tdc_wrapper.tdc_wrapper(5)
         
         #save the other parameters
         self.server_ip = s_ip
@@ -49,7 +66,7 @@ class time_sync:
     def start_server(self):
         
         if(self.mode == CLIENT):
-            print("Error, this function must be called with the object in server mdoe")
+            print("Error, start_server must be called with the object in server mode!")
             return -1
         
         
@@ -164,7 +181,79 @@ class time_sync:
          else:
             print("Bad ACK received: " + hex(ack_res[0]))
             return -1
+        
+    #Returns -1 on fail
+    def receive_timestamp(self):
+      
+       #Wait for bob to respond with a number other than 0
+        bob_resp = self.receive_bytes(self.s, 2)
+        
+        if(bob_resp[0] == 0 and bob_resp[1] == 0):
+            print("Error, Bob did not detect our light pulse!")
+            return -1
+        
+        #Recieve the length of the number in bytes via
+        num_bytes = (bob_resp[1] << 8) + bob_resp[0]
+        
+        #Receive and reconstruct the whole number
+        return int.from_bytes(self.receive_bytes(self.s, num_bytes), byteorder='big')
+    
+    def do_sync(self):
+        
+        if(self.board.ping_board()):
+            print("Error, unable to connect to board")
+            return -1
+        
+        #Set the period to something fast
+        self.board.set_period(10)
+        
+        #Alice and Bob's variales
+        t_a_r = 0
+        t_a_s = 0
+        t_b_r = 0
+        t_b_s = 0
+        
+        #if we're alice
+        if(self.mode == CLIENT):
+            
+            #Tell bob to start listening for a light pulse
+            self.s.send(RUN_TDC)
+            
+            #Now run our tdc to get t_a_s
+            t_a_s = self.tdc.wait_pulse(CHANNEL_ALICE_SEND)
+            
+            #Send a nondelayed pulse
+            self.board.send_pulse(0,0)
+            
+            #Receive and reconstruct the whole number
+            t_b_r = self.receive_timestamp()
+            
+            if(t_b_r == -1):
+                return -1
+            
+            #Now run our tdc for t_a_r (time alice receives bob's pulse)
+            t_a_r = self.tdc.wait_pulse(CHANNEL_ALICE_RECIEVE)
+            
+            if(t_a_r == 0):
+                print("Error, did not receive bob's pulse!")
+                return -1
+            
+            #Receive bobs t_b_s
+            t_b_s = self.receive_timestamp()
+            
+        #must be in client mode
+        else:
+            
+            
+            
+            
+            
+            
+            
+        return
     
     
     
+   
+        
     

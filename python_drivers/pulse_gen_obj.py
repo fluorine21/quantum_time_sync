@@ -24,7 +24,7 @@ DEFAULT_BAUD = 115200
 UART_TIMEOUT = 0.1
 
 
-class PULSE_GEN:
+class pulse_gen:
     
     port = None
     

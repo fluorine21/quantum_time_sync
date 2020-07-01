@@ -74,7 +74,7 @@ begin
     fine_delay <= 0;
     rst_clock <= 0;
     main_clock <= 0;
-    clock_period <= 0;
+    clock_period <= 10;
     state <= state_idle;
     fifo_read <= 0;
     m_axis_tdata_int <= 0;

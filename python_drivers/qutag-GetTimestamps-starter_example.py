@@ -37,7 +37,7 @@ qutag = QuTAG.QuTAG()
 dataloss = qutag.getDataLost()
 print("dataloss: " + str(dataloss))
 
-
+time.sleep(1)
 
 # The next function retrieves the timestamp values of the last n detected events on all channels.
 # All timestamps are from a ring buffer with a variable buffer size.
@@ -45,9 +45,13 @@ print("dataloss: " + str(dataloss))
 #       In any other usage of the DLL, use the DLL function TDC_setTimestampBufferSize (default 0 -> 0 data will be returned).
 # The bool variable describes if the buffer should be cleared after retrieving the data (True).
 
-timestamps = qutag.getLastTimestamps(True)
-print("Timestamps in an array:")
-print(timestamps)
+for i in range(0, 10):
+    timestamps = qutag.getLastTimestamps(True)
+    print("Timestamps in an array:")
+    print(timestamps)
+    
+    if(timestamps[0][1] != 0):
+        print("Got something valid!")
 
 # The variable timestamps show our data in an array of:
 #       an array with all timestamps of the last events in base units 1 ps
