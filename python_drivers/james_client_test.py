@@ -8,7 +8,7 @@ Created on Wed Jul  1 12:19:37 2020
 
 import time_sync
 
-home_ip = ""
+home_ip = "172.251.35.3"
 ts = time_sync.time_sync("COM3", home_ip, time_sync.CLIENT)
 
 

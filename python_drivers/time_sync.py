@@ -53,44 +53,44 @@ class time_sync:
             return -1
         
         
-        try:
+        #try:
+    
+        host = socket.gethostname() # Get local machine name
+        self.s.bind((host, self.port))
         
-            host = socket.gethostname() # Get local machine name
-            self.s.bind((host, self.port))
-            
-            #Start listening for a connection
-            self.s.listen(5)
-            
-            print("Waiting for connection from client...")
-            
-            #Once a client connects we'll be here
-            c, addr = self.s.accept()     # Establish connection with client.
-            
-            print("Got a connection from " + addr + ", sending ACK")
-            
-            #Send back a 0 acknowledging that we are connected
-            c.send(SERVER_ACK)
-            
-            print("Waiting for ACK from client...")
-            
-            #Wait for one byte from the client
-            ack_res = self.receive_bytes(c, 1)
-            
-            if(ack_res == -1):
-                print("Timed out waiting for client ACK")
-            elif(ack_res[0] == SERVER_ACK_BYTE):
-                print("Received ACK from client!")
-            else:
-                print("Bad ACK received from client: " + hex(ack_res[0]))
-            
-            c.close()
-            self.s.close()
-            
-            return 0
+        #Start listening for a connection
+        self.s.listen(5)
         
-        except:
-            print("Error starting server, is the port in use?")
-            return -1
+        print("Waiting for connection from client...")
+        
+        #Once a client connects we'll be here
+        c, addr = self.s.accept()     # Establish connection with client.
+        
+        print("Got a connection from " + addr[0] + ", sending ACK")
+        
+        #Send back a 0 acknowledging that we are connected
+        c.send(SERVER_ACK)
+        
+        print("Waiting for ACK from client...")
+        
+        #Wait for one byte from the client
+        ack_res = self.receive_bytes(c, 1)
+        
+        if(ack_res == -1):
+            print("Timed out waiting for client ACK")
+        elif(ack_res[0] == SERVER_ACK_BYTE):
+            print("Received ACK from client!")
+        else:
+            print("Bad ACK received from client: " + hex(ack_res[0]))
+        
+        c.close()
+        self.s.close()
+        
+        return 0
+        
+        #except:
+            #print("Error starting server, is the port in use?")
+            #return -1
         
         
     #Returns -1 on timeout
@@ -141,6 +141,7 @@ class time_sync:
             return -1;
         
         #Send an ack to the server
+        print("Sending ACK to server")
         self.s.send(SERVER_ACK)
         
         self.s.close()
