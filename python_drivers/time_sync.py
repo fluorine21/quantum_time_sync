@@ -38,6 +38,9 @@ class time_sync:
     tdc= []
     port = 25566
     
+    time_diff = 0
+    path_len = 0
+    
     
     def __init__(self, COM_PORT, s_ip, m):
         
@@ -93,12 +96,18 @@ class time_sync:
         #Wait for one byte from the client
         ack_res = self.receive_bytes(c, 1)
         
-        if(ack_res == -1):
-            print("Timed out waiting for client ACK")
-        elif(ack_res[0] == SERVER_ACK_BYTE):
-            print("Received ACK from client!")
+        if(self.check_ack_res(ack_res)):
+            print("Bad ACK from client, exiting")
+            return 0
+        
+        #do the sync
+        self.do_sync(c)
+        time_diff = self.time_diff
+        
+        if(time_diff < 1):
+            print("Time sync failed!")
         else:
-            print("Bad ACK received from client: " + hex(ack_res[0]))
+            print("Success, time difference is " + str(time_diff) + "ps")
         
         c.close()
         self.s.close()
@@ -183,10 +192,10 @@ class time_sync:
             return -1
         
     #Returns -1 on fail
-    def receive_timestamp(self):
+    def receive_timestamp(self, sck):
       
        #Wait for bob to respond with a number other than 0
-        bob_resp = self.receive_bytes(self.s, 2)
+        bob_resp = self.receive_bytes(sck, 2)
         
         if(bob_resp[0] == 0 and bob_resp[1] == 0):
             print("Error, Bob did not detect our light pulse!")
@@ -196,9 +205,11 @@ class time_sync:
         num_bytes = (bob_resp[1] << 8) + bob_resp[0]
         
         #Receive and reconstruct the whole number
-        return int.from_bytes(self.receive_bytes(self.s, num_bytes), byteorder='big')
+        return int.from_bytes(self.receive_bytes(sck, num_bytes), byteorder='big')
     
-    def do_sync(self):
+    
+    #Returns 0 on success
+    def do_sync(self, sck):
         
         if(self.board.ping_board()):
             print("Error, unable to connect to board")
@@ -220,16 +231,27 @@ class time_sync:
             self.s.send(RUN_TDC)
             
             #Now run our tdc to get t_a_s
-            t_a_s = self.tdc.wait_pulse(CHANNEL_ALICE_SEND)
+            self.tdc.begin_record()
             
             #Send a nondelayed pulse
+            print("Sending pulse from Alice to Bob")
             self.board.send_pulse(0,0)
             
+            t_a_s = self.tdc.end_record(CHANNEL_ALICE_SEND)
+            
+            if(t_a_s < 1):
+                print("Error, did not receive pulse from myself to bob, exiting...")
+                return -1
+            
+            print("Saw my own pulse!")
+            
             #Receive and reconstruct the whole number
-            t_b_r = self.receive_timestamp()
+            t_b_r = self.receive_timestamp(sck)
             
             if(t_b_r == -1):
                 return -1
+            
+            print("Bob saw my pulse")
             
             #Now run our tdc for t_a_r (time alice receives bob's pulse)
             t_a_r = self.tdc.wait_pulse(CHANNEL_ALICE_RECIEVE)
@@ -238,22 +260,76 @@ class time_sync:
                 print("Error, did not receive bob's pulse!")
                 return -1
             
-            #Receive bobs t_b_s
-            t_b_s = self.receive_timestamp()
+            print("I saw Bob's pulse")
             
-        #must be in client mode
+            #Receive bobs t_b_s
+            t_b_s = self.receive_timestamp(sck)
+            
+            if(t_b_s < 1):
+                print("Error, Bob did not see his own pulse!")
+                return -1
+            print("Bob saw his own pulse!")
+            
+        #must be in server (bob) mode
         else:
             
+            #wait to get RUN_TDC
+            alice_cmd = self.recieve_bytes(sck, 1)
+            
+            #If we didn't get the correct response
+            if(alice_cmd[0] != RUN_TDC):
+                print("Error, bad command from alice, exiting")
+                
+            #Run bob's tdc
+                
+            t_b_r = self.tdc.wait_pulse(CHANNEL_BOB_RECIEVE)
+            
+            if(t_b_r < 1):
+                print("Error, did not recieve pulse from Alice!")
+                self.send_timestamp(sck, 0)
+                return -1
+            
+            #Send bob's t_b_r
+            self.send_timestamp(sck, t_b_r)
+            
+            time.sleep(1)
+            
+            #Run bob's TDC
+            self.tdc.begin_record()
+            
+            #Send Alice a pulse
+            print("Sending pulse from Bob to Alice")
+            self.board.send_pulse(0, 0)
+            
+            t_b_s = self.tdc.end_record(CHANNEL_BOB_SEND)
+            
+            self.send_timestamp(sck, t_b_s)
+            
+            #If we didn't get it
+            if(t_b_s < 1):
+                print("Error, didn't see my own pulse!")
+                return -1
             
             
             
-            
-            
-            
-        return
+        self.calc_path_len(t_a_r, t_a_s, t_b_r, t_b_s)
+        self.calc_time_diff(t_a_r, t_a_s, t_b_r, t_b_s)
+         
+        return 0
+
+    
+   
     
     
     
+    def calc_path_len(self, t_a_r, t_a_s, t_b_r, t_b_s):
+        
+        return 0
+    
+    
+    def calc_time_diff(self, t_a_r, t_a_s, t_b_r, t_b_s):
+        
+        return 0
    
         
     
