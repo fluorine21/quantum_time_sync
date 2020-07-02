@@ -10,6 +10,11 @@ import socket
 import pulse_gen_obj
 import time
 import tdc_wrapper
+import ssl
+import os.path
+
+#Open a secure socket?
+SECURE_MODE = 0
 
 CLIENT = 0
 SERVER = 1
@@ -29,9 +34,17 @@ CHANNEL_BOB_RECIEVE = 1
 #Bob's responses
 TDC_SUCCESS = 8
 
+#IP of the BOB
+SERVER_IP = "127.0.0.1"
+
+pem_path = 'C:\certs\certchain.pem'
+key_path = 'C:\certs\private.key'
+
+
 class time_sync:
     
     s = 0 #Socket for this class
+    sck_u = 0
     server_ip = ""#IP which this machine will try to connect if it is in client mode
     mode = CLIENT
     board = []
@@ -44,14 +57,33 @@ class time_sync:
     
     def __init__(self, COM_PORT, s_ip, m):
         
-        #initialize the socket object
-        self.s = socket.socket() 
+        if(SECURE_MODE):
+            print("Initializing socket in secure mode")
+            #Make sure we have an SSL key
+            self.check_key()
+            
+            #SSL Stuff
+            context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+            context.load_cert_chain(pem_path, key_path)
+                
+            #Open a secure socket
+            if(self.mode == CLIENT):
+                self.sck_u = socket.socket(socket.AF_INET, socket.SOCK_STREAM, 0)
+                self.s = context.wrap_socket(self.sck_u, server_hostname=SERVER_IP)
+            else:
+                self.sck_u = socket.socket(socket.AF_INET, socket.SOCK_STREAM, 0)
+                self.s = context.wrap_socket(self.sck_u, server_side=True)
+                
+        else:
+            print("Initializing socket in UNSECURE(!) mode")
+            self.sck_u = socket.socket()
+            self.s = self.sck_u
         
         #Initialize the FPGA
         self.board = pulse_gen_obj.pulse_gen(COM_PORT)
         
         #initialize the tdc
-        tdc = tdc_wrapper.tdc_wrapper(5)
+        self.tdc = tdc_wrapper.tdc_wrapper(5)
         
         #save the other parameters
         self.server_ip = s_ip
@@ -63,6 +95,54 @@ class time_sync:
             print("Initialized time sync in SERVER mode")
         
         return
+    
+    def check_key(self):
+        #If the key already exists
+        if(os.path.exists(key_path) and os.path.exists(pem_path)):
+            print("SSL Key found, skiping key generation...")
+            return
+        #Generate a key
+        print("No SSL key found, generating key...")
+        cert_gen()
+        
+        return
+    
+    def test_server(self):
+        
+        print("Server in test mode, will echo back bytes received...")
+        
+        host = socket.gethostname() # Get local machine name
+        self.sck_u.bind((host, self.port))
+        
+        #Start listening for a connection
+        self.sck_u.listen(5)
+        
+        print("Waiting for connection from client...")
+        
+        
+        c, addr = self.s.accept()     # Establish connection with client.
+        
+        print("Got a connection from " + addr[0] + ", Receiving 5 bytes")
+        
+        byte_res = self.receive_bytes(c, 5)
+        
+        print("Got: " + str(byte_res) + ", sending back...")
+        
+        c.send(byte_res)
+        
+        c.close()
+        self.s.close()
+        
+        return 0
+    
+    
+    def test_client(self):
+        
+        print("Testing connection to server")
+        
+        
+        
+        
     
     #Returns 0 on success
     #must be called in server mode
@@ -76,10 +156,10 @@ class time_sync:
         #try:
     
         host = socket.gethostname() # Get local machine name
-        self.s.bind((host, self.port))
+        self.sck_u.bind((host, self.port))
         
         #Start listening for a connection
-        self.s.listen(5)
+        self.sck_u.listen(5)
         
         print("Waiting for connection from client...")
         
@@ -101,13 +181,10 @@ class time_sync:
             return 0
         
         #do the sync
-        self.do_sync(c)
-        time_diff = self.time_diff
-        
-        if(time_diff < 1):
+        if(self.do_sync(c) < 1):
             print("Time sync failed!")
         else:
-            print("Success, time difference is " + str(time_diff) + "ps")
+            print("Success, time difference is " + str(self.time_diff) + "ps")
         
         c.close()
         self.s.close()
@@ -147,7 +224,7 @@ class time_sync:
                 
                 
             
-    
+    #CLIENT SIDE SYNC PROCEDURE
     #Returns the time difference between server and client in picoseconds
     #Returns -1 on error
     def start_time_sync(self):
@@ -169,6 +246,9 @@ class time_sync:
         #Send an ack to the server
         print("Sending ACK to server")
         self.s.send(SERVER_ACK)
+        
+        if(self.do_sync(self.s) == -1):
+            print("Time sync failed!")
         
         self.s.close()
         
@@ -207,6 +287,17 @@ class time_sync:
         #Receive and reconstruct the whole number
         return int.from_bytes(self.receive_bytes(sck, num_bytes), byteorder='big')
     
+    def send_timestamp(self, sck, ts):
+        
+        ts_bs = int.to_bytes(ts, byteorder='big')
+        
+        #send the length in 2 bytes
+        sck.send(int.to_bytes(len(ts_bs), byteorder='big'))
+        
+        #Then send the number itself
+        sck.send(ts_bs)
+        
+        return
     
     #Returns 0 on success
     def do_sync(self, sck):
@@ -312,6 +403,8 @@ class time_sync:
             
             
             
+            
+            
         self.calc_path_len(t_a_r, t_a_s, t_b_r, t_b_s)
         self.calc_time_diff(t_a_r, t_a_s, t_b_r, t_b_s)
          
@@ -331,5 +424,49 @@ class time_sync:
         
         return 0
    
-        
+    
+    
+from OpenSSL import crypto, SSL
+
+def cert_gen(
+    emailAddress="a@g.co",
+    commonName="cn",
+    countryName="CA",
+    localityName="SB",
+    stateOrProvinceName="Illinois",
+    organizationName="UC",
+    organizationUnitName="QC",
+    serialNumber=0,
+    validityStartInSeconds=0,
+    validityEndInSeconds=10*365*24*60*60,
+    KEY_FILE = key_path,
+    CERT_FILE =pem_path):
+    #can look at generated file using openssl:
+    #openssl x509 -inform pem -in selfsigned.crt -noout -text
+    # create a key pair
+    k = crypto.PKey()
+    k.generate_key(crypto.TYPE_RSA, 4096)
+    # create a self-signed cert
+    cert = crypto.X509()
+    cert.get_subject().C = countryName
+    cert.get_subject().ST = stateOrProvinceName
+    cert.get_subject().L = localityName
+    cert.get_subject().O = organizationName
+    cert.get_subject().OU = organizationUnitName
+    cert.get_subject().CN = commonName
+    cert.get_subject().emailAddress = emailAddress
+    cert.set_serial_number(serialNumber)
+    cert.gmtime_adj_notBefore(0)
+    cert.gmtime_adj_notAfter(validityEndInSeconds)
+    cert.set_issuer(cert.get_subject())
+    cert.set_pubkey(k)
+    cert.sign(k, 'sha512')
+    with open(CERT_FILE, "wt") as f:
+        f.write(crypto.dump_certificate(crypto.FILETYPE_PEM, cert).decode("utf-8"))
+    with open(KEY_FILE, "wt") as f:
+        f.write(crypto.dump_privatekey(crypto.FILETYPE_PEM, k).decode("utf-8"))
+
+
+
+
     
