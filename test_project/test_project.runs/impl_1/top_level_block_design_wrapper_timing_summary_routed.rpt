@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version      : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date              : Wed Jul  1 10:14:33 2020
+| Date              : Thu Jul  2 10:34:52 2020
 | Host              : pme10D0025 running 64-bit major release  (build 9200)
 | Command           : report_timing_summary -max_paths 10 -file top_level_block_design_wrapper_timing_summary_routed.rpt -pb top_level_block_design_wrapper_timing_summary_routed.pb -rpx top_level_block_design_wrapper_timing_summary_routed.rpx -warn_on_violation
 | Design            : top_level_block_design_wrapper

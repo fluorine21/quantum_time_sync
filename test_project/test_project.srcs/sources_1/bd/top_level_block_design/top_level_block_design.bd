@@ -28,8 +28,8 @@
       "clk_wiz_0": "",
       "axi_gpio_0": "",
       "system_ila_0": "",
-      "pulse_gen_0": "",
-      "system_ila_1": ""
+      "system_ila_1": "",
+      "pulse_gen_0": ""
     },
     "interface_ports": {
       "sysref_in": {
@@ -1301,12 +1301,6 @@
               }
             },
             "interface_nets": {
-              "s00_couplers_to_auto_ds": {
-                "interface_ports": [
-                  "S_AXI",
-                  "auto_ds/S_AXI"
-                ]
-              },
               "auto_ds_to_auto_pc": {
                 "interface_ports": [
                   "auto_ds/M_AXI",
@@ -1317,6 +1311,12 @@
                 "interface_ports": [
                   "M_AXI",
                   "auto_pc/M_AXI"
+                ]
+              },
+              "s00_couplers_to_auto_ds": {
+                "interface_ports": [
+                  "S_AXI",
+                  "auto_ds/S_AXI"
                 ]
               }
             },
@@ -1447,28 +1447,16 @@
           }
         },
         "interface_nets": {
-          "xbar_to_m01_couplers": {
-            "interface_ports": [
-              "xbar/M01_AXI",
-              "m01_couplers/S_AXI"
-            ]
-          },
-          "m01_couplers_to_ps8_0_axi_periph": {
-            "interface_ports": [
-              "M01_AXI",
-              "m01_couplers/M_AXI"
-            ]
-          },
-          "xbar_to_m00_couplers": {
-            "interface_ports": [
-              "xbar/M00_AXI",
-              "m00_couplers/S_AXI"
-            ]
-          },
           "ps8_0_axi_periph_to_s00_couplers": {
             "interface_ports": [
               "S00_AXI",
               "s00_couplers/S_AXI"
+            ]
+          },
+          "m00_couplers_to_ps8_0_axi_periph": {
+            "interface_ports": [
+              "M00_AXI",
+              "m00_couplers/M_AXI"
             ]
           },
           "s00_couplers_to_xbar": {
@@ -1477,10 +1465,22 @@
               "xbar/S00_AXI"
             ]
           },
-          "m00_couplers_to_ps8_0_axi_periph": {
+          "xbar_to_m00_couplers": {
             "interface_ports": [
-              "M00_AXI",
-              "m00_couplers/M_AXI"
+              "xbar/M00_AXI",
+              "m00_couplers/S_AXI"
+            ]
+          },
+          "m01_couplers_to_ps8_0_axi_periph": {
+            "interface_ports": [
+              "M01_AXI",
+              "m01_couplers/M_AXI"
+            ]
+          },
+          "xbar_to_m01_couplers": {
+            "interface_ports": [
+              "xbar/M01_AXI",
+              "m01_couplers/S_AXI"
             ]
           }
         },
@@ -1655,6 +1655,48 @@
           }
         }
       },
+      "system_ila_1": {
+        "vlnv": "xilinx.com:ip:system_ila:1.1",
+        "xci_name": "top_level_block_design_system_ila_1_0",
+        "parameters": {
+          "C_DATA_DEPTH": {
+            "value": "4096"
+          },
+          "C_MON_TYPE": {
+            "value": "MIX"
+          },
+          "C_NUM_MONITOR_SLOTS": {
+            "value": "1"
+          },
+          "C_NUM_OF_PROBES": {
+            "value": "3"
+          },
+          "C_PROBE0_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE1_TYPE": {
+            "value": "0"
+          },
+          "C_SLOT_0_APC_EN": {
+            "value": "0"
+          },
+          "C_SLOT_0_AXI_DATA_SEL": {
+            "value": "1"
+          },
+          "C_SLOT_0_AXI_TRIG_SEL": {
+            "value": "1"
+          },
+          "C_SLOT_0_INTF_TYPE": {
+            "value": "xilinx.com:interface:axis_rtl:1.0"
+          }
+        },
+        "interface_ports": {
+          "SLOT_0_AXIS": {
+            "mode": "Monitor",
+            "vlnv": "xilinx.com:interface:axis_rtl:1.0"
+          }
+        }
+      },
       "pulse_gen_0": {
         "vlnv": "xilinx.com:module_ref:pulse_gen:1.0",
         "xci_name": "top_level_block_design_pulse_gen_0_0",
@@ -1770,48 +1812,6 @@
           },
           "fifo_read": {
             "direction": "O"
-          }
-        }
-      },
-      "system_ila_1": {
-        "vlnv": "xilinx.com:ip:system_ila:1.1",
-        "xci_name": "top_level_block_design_system_ila_1_0",
-        "parameters": {
-          "C_DATA_DEPTH": {
-            "value": "4096"
-          },
-          "C_MON_TYPE": {
-            "value": "MIX"
-          },
-          "C_NUM_MONITOR_SLOTS": {
-            "value": "1"
-          },
-          "C_NUM_OF_PROBES": {
-            "value": "3"
-          },
-          "C_PROBE0_TYPE": {
-            "value": "0"
-          },
-          "C_PROBE1_TYPE": {
-            "value": "0"
-          },
-          "C_SLOT_0_APC_EN": {
-            "value": "0"
-          },
-          "C_SLOT_0_AXI_DATA_SEL": {
-            "value": "1"
-          },
-          "C_SLOT_0_AXI_TRIG_SEL": {
-            "value": "1"
-          },
-          "C_SLOT_0_INTF_TYPE": {
-            "value": "xilinx.com:interface:axis_rtl:1.0"
-          }
-        },
-        "interface_ports": {
-          "SLOT_0_AXIS": {
-            "mode": "Monitor",
-            "vlnv": "xilinx.com:interface:axis_rtl:1.0"
           }
         }
       }
@@ -1949,8 +1949,8 @@
       "fifo_generator_0_empty": {
         "ports": [
           "fifo_generator_0/empty",
-          "pulse_gen_0/fifo_empty",
-          "system_ila_1/probe2"
+          "system_ila_1/probe2",
+          "pulse_gen_0/fifo_empty"
         ],
         "hdl_attributes": {
           "DEBUG": {
@@ -1964,8 +1964,8 @@
       "fifo_generator_0_dout": {
         "ports": [
           "fifo_generator_0/dout",
-          "pulse_gen_0/fifo_data",
-          "system_ila_1/probe0"
+          "system_ila_1/probe0",
+          "pulse_gen_0/fifo_data"
         ],
         "hdl_attributes": {
           "DEBUG": {
@@ -2000,9 +2000,9 @@
       "proc_sys_reset_0_peripheral_aresetn": {
         "ports": [
           "proc_sys_reset_0/peripheral_aresetn",
-          "pulse_gen_0/rst",
           "usp_rf_data_converter_0/s1_axis_aresetn",
-          "system_ila_1/resetn"
+          "system_ila_1/resetn",
+          "pulse_gen_0/rst"
         ]
       },
       "axi_gpio_0_gpio_io_o": {
@@ -2038,8 +2038,8 @@
           "usp_rf_data_converter_0/s1_axis_aclk",
           "fifo_generator_0/rd_clk",
           "proc_sys_reset_0/slowest_sync_clk",
-          "pulse_gen_0/clk",
-          "system_ila_1/clk"
+          "system_ila_1/clk",
+          "pulse_gen_0/clk"
         ]
       }
     },
