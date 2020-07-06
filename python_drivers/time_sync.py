@@ -170,7 +170,7 @@ class time_sync:
         while(1):
             try:
                  #Once a client connects we'll be here
-                c, addr = self.s.accept()     # Establish connection with client.
+                c, addr = sck.accept()     # Establish connection with client.
                 print("Got a connection from " + addr[0])
                 return c
             except socket.timeout:
@@ -249,7 +249,7 @@ class time_sync:
                     return -1
                 print("Waiting for command from client...")
             else:
-                print("Socket is alive")
+                print("Socket is alive, waiting for next command...")
 
         print("Closing server...")
         return 0
