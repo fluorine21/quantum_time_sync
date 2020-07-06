@@ -209,6 +209,8 @@ class time_sync:
         if(self.receive_timestamp(self.s) != 1234567890):
             print("Error, bad timestamp received from server while pinging")
             return -1
+        else:
+            print("Server ping test success!")
         
         return 0
             
@@ -286,6 +288,7 @@ class time_sync:
             print("Command received: SERVER_PING")
             print("Sending timestamp 1234567890")
             self.send_timestamp(sck, 1234567890)
+            return 1
             
         else:
             print("Invalid command received: " + hex(client_cmd[0]))
