@@ -20,7 +20,7 @@ CLIENT = 0
 SERVER = 1
 SERVER_ACK = b'\x66'
 SERVER_ACK_BYTE = 0x66
-TCP_TIMEOUT = 5 #5 second timeout
+TCP_TIMEOUT = 30 #5 second timeout
 SERVER_TIMEOUT = 30 #Long timeout for the server
 
 #Server commands
@@ -43,6 +43,8 @@ SERVER_IP = "127.0.0.1"
 
 pem_path = 'C:\certs\certchain.pem'
 key_path = 'C:\certs\private.key'
+
+TIMESTAMP_BYTE_LEN = 20
 
 
 class time_sync:
@@ -140,6 +142,7 @@ class time_sync:
         print("Attempting to connect to server")
         #connect to the client
         self.s.connect((self.server_ip, self.port))
+        time.sleep(0.5)
         if(self.is_socket_alive(self.s)):
             print("Error, failed to connect to server")
             return -1
@@ -332,32 +335,13 @@ class time_sync:
         
     #Returns -1 on fail
     def receive_timestamp(self, sck):
-      
-       #Wait for bob to respond with a number other than 0
-        bob_resp = self.receive_bytes(sck, 2)
-        
-        if(bob_resp[0] == 0 and bob_resp[1] == 0):
-            print("Error, timestamp length on receive was 0!")
-            return -1
-        
-        #Recieve the length of the number in bytes via
-        num_bytes = (bob_resp[1] << 8) + bob_resp[0]
-        
         #Receive and reconstruct the whole number
-        return int.from_bytes(self.receive_bytes(sck, num_bytes), byteorder='big')
+        return int.from_bytes(self.receive_bytes(sck, TIMESTAMP_BYTE_LEN), byteorder='big', signed = False)
     
-    def send_timestamp(self, sck, ts):
-        
-        ts_bs = int.to_bytes(ts, byteorder='big')
-        len_bs = bytearray([(len(ts_bs) >> 8) & 0xFF, len(ts_bs)&0xFF ])
-        
-        #send the length in 2 bytes
-        #sck.send(int.to_bytes(len(ts_bs), byteorder='big'))
-        sck.send(len_bs)
-        
+    def send_timestamp(self, sck, ts):        
+        ts_bs = int(ts).to_bytes(TIMESTAMP_BYTE_LEN, byteorder='big', signed = False)        
         #Then send the number itself
-        sck.send(ts_bs)
-        
+        sck.send(ts_bs)        
         return
     
     #Returns 0 on success
@@ -535,15 +519,15 @@ class time_sync:
         try:
             # this will try to read bytes without blocking and also without removing them from buffer (peek only)
             data = sock.recv(16, socket.MSG_DONTWAIT | socket.MSG_PEEK)
-            if len(data) == 0:
+            if len(data) == 0 or data:
                 return 0
         except BlockingIOError:
-            return 1  # socket is open and reading from it would block
+            return 0  # socket is open and reading from it would block
         except ConnectionResetError:
             return 1  # socket was closed for some other reason
-        except Exception as e:
-            print("unexpected exception when checking if a socket is closed")
-            return 1
+        #except Exception as e:
+            #print("unexpected exception when checking if a socket is closed")
+            #return 1
         return 1
     
     
