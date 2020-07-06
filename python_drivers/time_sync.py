@@ -20,12 +20,14 @@ CLIENT = 0
 SERVER = 1
 SERVER_ACK = b'\x66'
 SERVER_ACK_BYTE = 0x66
-TCP_TIMEOUT = 10 #10 second timeout
+TCP_TIMEOUT = 5 #5 second timeout
+SERVER_TIMEOUT = 30 #Long timeout for the server
 
 #Server commands
 SERVER_RECEIVE_PULSE = 4
 SERVER_SEND_PULSE = 5
 SERVER_EXIT = 6
+SERVER_PING = 7
 
 #TDC Channels
 CHANNEL_ALICE_SEND = 0
@@ -58,6 +60,7 @@ class time_sync:
     
     channel_send = 0
     channel_receive = 0
+
     
     t_a_r = 0
     t_a_s = 0
@@ -115,8 +118,64 @@ class time_sync:
             self.sck_u = socket.socket()
             self.s = self.sck_u
             
-        
+        #Set the socket timeout if we're the client
+        if(self.mode == CLIENT):
+           self.s.settimeout(TCP_TIMEOUT)
+           self.sck_u.settimeout(TCP_TIMEOUT)
+        else:
+            #Set the timeout to none if we're the server so that we always block on receiving bytes
+            self.s.settimeout(SERVER_TIMEOUT)
+            self.sck_u.settimeout(SERVER_TIMEOUT)
+             
+            
+            
         return
+    
+    def connect_to_server(self):
+        
+        if(self.mode != CLIENT):
+           print("Error, cannot ping server while in server mode")
+           return -1
+       
+        print("Attempting to connect to server")
+        #connect to the client
+        self.s.connect((self.server_ip, self.port))
+        if(self.is_socket_alive(self.s)):
+            print("Error, failed to connect to server")
+            return -1
+        else:
+            print("Connected to server!")
+            return 0
+        
+    def disconnect_from_server(self):
+    
+        if(self.mode != CLIENT):
+           print("Error, cannot ping server while in server mode")
+           return -1
+       
+        print("Closing connection to server")
+        self.s.close()
+        
+    #Returns socket object on successful connection
+    #Returns 0 otherwise
+    def wait_connection(self, sck):
+        
+        if(self.mode == CLIENT):
+            print("Error, cannot call wait_connection in client mode!")
+            return 0
+        #Keep trying to connect
+        while(1):
+            try:
+                 #Once a client connects we'll be here
+                c, addr = self.s.accept()     # Establish connection with client.
+                print("Got a connection from " + addr[0])
+                return c
+            except socket.timeout:
+                print("Waiting for client connection...")
+            except:
+                print("Unknown error while waiting for client connection")
+                return 0
+        
     
     def check_key(self):
         #If the key already exists
@@ -128,81 +187,32 @@ class time_sync:
         cert_gen()
         
         return
-    
-    def test_server(self):
         
-        print("Server in test mode, will echo back bytes received...")
         
-        host = socket.gethostname() # Get local machine name
-        self.sck_u.bind((host, self.port))
+    def ping_server(self):
         
-        #Start listening for a connection
-        self.sck_u.listen(5)
-        
-        print("Waiting for connection from client...")
-    
-        c, addr = self.s.accept()     # Establish connection with client.
-        
-        print("Got a connection from " + addr[0] + ", Receiving 5 bytes")
-        
-        byte_res = self.receive_bytes(c, 5)
-        
-        print("Got: " + str(byte_res) + ", sending back...")
-        
-        c.send(byte_res)
-        
-        print("Sending test timestamp to client...")
-        
-        self.send_timestamp(c, 25566)
-        
-        print("Closing server...")
-        
-        c.close()
-        self.s.close()
+        if(self.mode != CLIENT):
+           print("Error, cannot ping server while in server mode")
+           return -1
+       
+        #Send the ping server command
+        self.s.send(bytearray([SERVER_PING]))
+
+        if(self.wait_ack(self.s)):
+            print("Error, bad ACK received from server while pinging")
+            return -1
+            
+        #receive the timestamp
+        if(self.receive_timestamp(self.s) != 1234567890):
+            print("Error, bad timestamp received from server while pinging")
+            return -1
         
         return 0
-    
-    
-    def test_client(self):
-        
-        print("Testing connection to server")
-        
-        #connect to the client
-        self.s.connect((self.server_ip, self.port))
-        
-        print("Connected to server, sending [0x0A, 0x0B, 0x0C, 0x0D, 0x0E]..")
-
-        self.s.send(bytearray([0x0A, 0x0B, 0x0C, 0x0D, 0x0E]))
-
-        print("Waiting for server response...")
-
-        server_resp = self.receive_bytes(self.s, 5) 
-        
-        if(server_resp != bytearray([0x0A, 0x0B, 0x0C, 0x0D, 0x0E])):
-            print("Error, bad response from server during test!")
-        else:
-            print("Got correct response from server!")
             
-        print("Testing timestamp transmission")
-        
-        t_s = self.receive_timestamp(self.s)
-        
-        if(t_s != 25566):
-            print("Error, bad timestamp received from server")
-        else:
-            print("Timestamp test success!")
-            
-        self.s.close()
-        
-        return 0
-        
-        
-        
-        
-    #SERVER SIDE SYNCH PROCEDURE
+    #Starts the server's command handler
     #Returns 0 on success
     #must be called in server mode
-    def start_server_sync(self):
+    def start_server(self):
         
         if(self.mode == CLIENT):
             print("Error, start_server must be called with the object in server mode!")
@@ -217,56 +227,58 @@ class time_sync:
         print("Waiting for connection from client...")
         
         #Once a client connects we'll be here
-        c, addr = self.s.accept()     # Establish connection with client.
+        c = self.wait_connection(self.s)
+        if(c == 0):
+            return -1
         
-        print("Got a connection from " + addr[0] + ", sending ACK")
-        
-        #Send back a 0 acknowledging that we are connected
-        c.send(SERVER_ACK)
-        
-        print("Waiting for ACK from client...")
-        
-        #Wait for one byte from the client
-        ack_res = self.receive_bytes(c, 1)
-        
-        if(self.check_ack_res(ack_res)):
-            print("Bad ACK from client, exiting")
-            c.close()
-            self.s.close()
-            return 0
-        
-        print("Handshake from client successful, waiting for command")
+        print("Waiting for command from client...")
         
         while(self.server_handle_command(c)):
-            print("...")
+            print("Handled command, checking socket...")
+            if(self.is_socket_alive(c)):
+                print("Dead socket, waiting for new connection...")
+                c = self.wait_connection(self.s)
+                if(c == 0):
+                    print("No socket returned while trying to connect to client, exiting...")
+                    self.s.close()
+                    return -1
+                print("Waiting for command from client...")
+            else:
+                print("Socket is alive")
 
         print("Closing server...")
         return 0
         
+    #Server side command handler, handles incomming commands from client
     #Returns 0 on server exit
     def server_handle_command(self, sck):
         
         #Receive one command byte from the client
         client_cmd = sck.recieve_bytes(sck, 1)
-        if(client_cmd == -1):
-            print("Timed out waiting for command from client")
-            return 1
         
         if(client_cmd[0] == SERVER_SEND_PULSE):
+            sck.send(SERVER_ACK)
             print("Command received: SERVER_SEND_PULSE")
             self.pulse_bob_to_alice(sck)
             return 1
             
         elif(client_cmd[0] == SERVER_RECEIVE_PULSE):
+            sck.send(SERVER_ACK)
             print("Command received: SERVER_RECEIVE_PULSE")
             self.pulse_alice_to_bob(sck)
             return 1
             
         elif(client_cmd[0] == SERVER_EXIT):
+            sck.send(SERVER_ACK)
             print("Command received: SERVER_EXIT")
             sck.close()
             self.s.close()
             return 0
+        elif(client_cmd[0] == SERVER_PING):
+            sck.send(SERVER_ACK)
+            print("Command received: SERVER_PING")
+            print("Sending timestamp 1234567890")
+            self.send_timestamp(sck, 1234567890)
             
         else:
             print("Invalid command received: " + hex(client_cmd[0]))
@@ -284,23 +296,14 @@ class time_sync:
            return -1
         
         #connect to the client
-        self.s.connect((self.server_ip, self.port))
+        #self.s.connect((self.server_ip, self.port))
         
-        print("Connected to server, waiting for ACK")
-        
-        ack_res = self.receive_bytes(self.s, 1)
-        
-        if(self.check_ack(ack_res) != 0):
-            return -1;
-        
-        #Send an ack to the server
-        print("Sending ACK to server")
-        self.s.send(SERVER_ACK)
+        print("Connected to server, performing time synchronization...")
         
         if(self.do_sync(self.s) == -1):
             print("Time sync failed!")
         
-        self.s.close()
+        #self.s.close()
         
         return 0
     
@@ -308,6 +311,12 @@ class time_sync:
     #returns 0 on success
     def check_board(self):
         return self.board.ping_board()
+    
+    #Waits to receive an ACK from the server
+    #Returns 0 on success
+    def wait_ack(self, sck):
+        ack_res = self.receive_bytes(self.s, 1)
+        return self.check_ack(ack_res)
     
     #returns 0 on success
     def check_ack(self, ack_res):
@@ -318,7 +327,7 @@ class time_sync:
             print("Received ACK!")
             return 0
          else:
-            print("Bad ACK received: " + hex(ack_res[0]))
+            print("Bad ACK received: " + hex(ack_res[0]) + ", was an invalid command sent to the server?")
             return -1
         
     #Returns -1 on fail
@@ -357,8 +366,13 @@ class time_sync:
         ret_val = 0
         
         if(self.board.ping_board()):
-            print("Error, unable to connect to board")
+            print("Error, unable to connect to FPGA board")
             return -1
+        
+        if( (not self.is_socket_alive(sck)) or self.ping_server()):
+            print("Error, not connected to server (Bob)")
+            return -1
+            
         
         #Set the period to something fast
         self.board.set_period(10)
@@ -368,6 +382,9 @@ class time_sync:
             
             #Tell bob to receive a pulse
             sck.send(bytearray([SERVER_RECEIVE_PULSE]))
+            
+            if(self.wait_ack(sck)):
+                print("Error, no ACK received from server while telling it to receive a pulse")
             
             #Send a pulse
             if(self.pulse_alice_to_bob(sck)):
@@ -386,6 +403,9 @@ class time_sync:
             
             #Tell bob to receive a pulse
             sck.send(bytearray([SERVER_SEND_PULSE]))
+            
+            if(self.wait_ack(sck)):
+                print("Error, no ACK received from server while telling it to send a pulse")
             
             #Send a pulse
             if(self.pulse_bob_to_alice(sck)):
@@ -510,7 +530,21 @@ class time_sync:
             
         return ret_val
     
-    
+    #Returns 0 if connection is active
+    def is_socket_alive(self, sock):
+        try:
+            # this will try to read bytes without blocking and also without removing them from buffer (peek only)
+            data = sock.recv(16, socket.MSG_DONTWAIT | socket.MSG_PEEK)
+            if len(data) == 0:
+                return 0
+        except BlockingIOError:
+            return 1  # socket is open and reading from it would block
+        except ConnectionResetError:
+            return 1  # socket was closed for some other reason
+        except Exception as e:
+            print("unexpected exception when checking if a socket is closed")
+            return 1
+        return 1
     
     
     
@@ -523,32 +557,60 @@ class time_sync:
         
         return 0
     
-        #Returns -1 on timeout
+    #     #Returns -1 on timeout
+    # def receive_bytes(self, c, num_bytes):
+        
+    #     byte_res = []
+        
+    #     time_now = time.time()
+            
+    #     while(time.time() - time_now < TCP_TIMEOUT):
+            
+    #         #res = c.recv(1024)
+    #         res = c.recv(1)
+            
+    #         if(len(res) > 0):
+        
+    #             #copy all bytes into the result array
+    #             for b in res:
+    #                 byte_res.append(b)
+    #             #If we have all of the bytes
+    #             if(len(byte_res) >= num_bytes):
+    #                 break
+                
+    #     if(time.time() - time_now >= TCP_TIMEOUT):
+    #             print("Timed out waiting for client ACK, closing server")
+    #             return -1
+                
+    #     return byte_res
+    
+    
     def receive_bytes(self, c, num_bytes):
         
         byte_res = []
-        
-        time_now = time.time()
             
-        while(time.time() - time_now < TCP_TIMEOUT):
+        while(1):
             
-            #res = c.recv(1024)
-            res = c.recv(1)
-            
-            if(len(res) > 0):
-        
-                #copy all bytes into the result array
-                for b in res:
-                    byte_res.append(b)
-                #If we have all of the bytes
-                if(len(byte_res) >= num_bytes):
-                    break
+            try:
+                #res = c.recv(1024)
+                res = c.recv(1)
                 
-        if(time.time() - time_now >= TCP_TIMEOUT):
-                print("Timed out waiting for client ACK, closing server")
+                if(len(res) > 0):
+            
+                    #copy all bytes into the result array
+                    for b in res:
+                        byte_res.append(b)
+                    #If we have all of the bytes
+                    if(len(byte_res) >= num_bytes):
+                        return byte_res
+            except socket.timeout:
+                print("Timed out while waiting for bytes...")
+                return -1
+            except Exception as e:
+                print("Unknown error occured while waiting for bytes")
                 return -1
                 
-        return byte_res
+   
    
     
     

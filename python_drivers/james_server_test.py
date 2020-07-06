@@ -11,5 +11,5 @@ import time_sync
 home_ip = ""
 ts = time_sync.time_sync("COM3", home_ip, time_sync.SERVER)
 
-
+print("Attempting to start server")
 ts.start_server()
