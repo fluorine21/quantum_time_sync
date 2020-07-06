@@ -525,32 +525,24 @@ class time_sync:
     #Returns 0 if connection is active
     def is_socket_alive(self, sock):
         
-        return 0
+        #return 0
     
         sock.settimeout(0.01)
         retval = 0
         try:
             # this will try to read bytes without blocking and also without removing them from buffer (peek only)
             data = sock.recv(16, socket.MSG_PEEK)
-            if len(data) == 0 or data:
-                retval = 0
-            else:
+            if len(data) == 0:
                 retval = -1
-        except BlockingIOError:
-            retval = 0  # socket is open and reading from it would block
-        except ConnectionResetError:
-            retval = -1  # socket was closed for some other reason
-        #except Exception as e:
-            #print("unexpected exception when checking if a socket is closed")
-            #return 1
+ 
+        except socket.timeout:
+            #Timeout indicates active connection
+            retval = 0
             
         if(self.mode == CLIENT):
-           self.s.settimeout(CLIENT_TIMEOUT)
-           self.sck_u.settimeout(CLIENT_TIMEOUT)
+           sock.settimeout(CLIENT_TIMEOUT)
         else:
-            #Set the timeout to none if we're the server so that we always block on receiving bytes
-            self.s.settimeout(SERVER_TIMEOUT)
-            self.sck_u.settimeout(SERVER_TIMEOUT)
+            sock.settimeout(SERVER_TIMEOUT)
         
         return retval
     
@@ -597,6 +589,8 @@ class time_sync:
         
         byte_res = []
             
+        #Need our own timer to figure out if the socket is closed
+        
         while(1):
             
             try:
@@ -611,6 +605,9 @@ class time_sync:
                     #If we have all of the bytes
                     if(len(byte_res) >= num_bytes):
                         return byte_res
+                else:
+                    print("Received an empty byte array from socket, socket is probably closed...")
+                    return -1
             except socket.timeout:
                 print("Timed out while waiting for bytes...")
                 return -1
