@@ -16,5 +16,6 @@ s.bind((host, 25565))
 s.listen(5)
 
 c, addr = s.accept()
+c.settimeout(2)
 
 print("Got connection")

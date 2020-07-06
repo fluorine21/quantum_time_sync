@@ -172,6 +172,7 @@ class time_sync:
                  #Once a client connects we'll be here
                 c, addr = sck.accept()     # Establish connection with client.
                 print("Got a connection from " + addr[0])
+                c.settimeout(SERVER_TIMEOUT)
                 return c
             except socket.timeout:
                 print("Waiting for client connection...")
