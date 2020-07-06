@@ -254,7 +254,7 @@ class time_sync:
     def server_handle_command(self, sck):
         
         #Receive one command byte from the client
-        client_cmd = sck.recieve_bytes(sck, 1)
+        client_cmd = self.receive_bytes(sck, 1)
         
         if(client_cmd[0] == SERVER_SEND_PULSE):
             sck.send(SERVER_ACK)
