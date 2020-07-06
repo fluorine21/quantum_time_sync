@@ -20,7 +20,7 @@ CLIENT = 0
 SERVER = 1
 SERVER_ACK = b'\x66'
 SERVER_ACK_BYTE = 0x66
-TCP_TIMEOUT = 30 #5 second timeout
+CLIENT_TIMEOUT = 30 #5 second timeout
 SERVER_TIMEOUT = 30 #Long timeout for the server
 
 #Server commands
@@ -122,8 +122,8 @@ class time_sync:
             
         #Set the socket timeout if we're the client
         if(self.mode == CLIENT):
-           self.s.settimeout(TCP_TIMEOUT)
-           self.sck_u.settimeout(TCP_TIMEOUT)
+           self.s.settimeout(CLIENT_TIMEOUT)
+           self.sck_u.settimeout(CLIENT_TIMEOUT)
         else:
             #Set the timeout to none if we're the server so that we always block on receiving bytes
             self.s.settimeout(SERVER_TIMEOUT)
@@ -237,7 +237,7 @@ class time_sync:
         print("Waiting for command from client...")
         
         while(self.server_handle_command(c)):
-            print("Handled command, checking socket...")
+            print("Checking socket...")
             if(self.is_socket_alive(c)):
                 print("Dead socket, waiting for new connection...")
                 c = self.wait_connection(self.s)
@@ -258,6 +258,10 @@ class time_sync:
         
         #Receive one command byte from the client
         client_cmd = self.receive_bytes(sck, 1)
+        
+        if(client_cmd == -1):
+            print("Timed out waiting for command")
+            return 1
         
         if(client_cmd[0] == SERVER_SEND_PULSE):
             sck.send(SERVER_ACK)
@@ -516,19 +520,35 @@ class time_sync:
     
     #Returns 0 if connection is active
     def is_socket_alive(self, sock):
+        
+        return 0
+    
+        sock.settimeout(0.01)
+        retval = 0
         try:
             # this will try to read bytes without blocking and also without removing them from buffer (peek only)
-            data = sock.recv(16, socket.MSG_DONTWAIT | socket.MSG_PEEK)
+            data = sock.recv(16, socket.MSG_PEEK)
             if len(data) == 0 or data:
-                return 0
+                retval = 0
+            else:
+                retval = -1
         except BlockingIOError:
-            return 0  # socket is open and reading from it would block
+            retval = 0  # socket is open and reading from it would block
         except ConnectionResetError:
-            return 1  # socket was closed for some other reason
+            retval = -1  # socket was closed for some other reason
         #except Exception as e:
             #print("unexpected exception when checking if a socket is closed")
             #return 1
-        return 1
+            
+        if(self.mode == CLIENT):
+           self.s.settimeout(CLIENT_TIMEOUT)
+           self.sck_u.settimeout(CLIENT_TIMEOUT)
+        else:
+            #Set the timeout to none if we're the server so that we always block on receiving bytes
+            self.s.settimeout(SERVER_TIMEOUT)
+            self.sck_u.settimeout(SERVER_TIMEOUT)
+        
+        return retval
     
     
     
