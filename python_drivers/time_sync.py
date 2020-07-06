@@ -20,8 +20,8 @@ CLIENT = 0
 SERVER = 1
 SERVER_ACK = b'\x66'
 SERVER_ACK_BYTE = 0x66
-CLIENT_TIMEOUT = 30 #5 second timeout
-SERVER_TIMEOUT = 30 #Long timeout for the server
+CLIENT_TIMEOUT = 15 #5 second timeout
+SERVER_TIMEOUT = 15 #Long timeout for the server
 
 #Server commands
 SERVER_RECEIVE_PULSE = 4
