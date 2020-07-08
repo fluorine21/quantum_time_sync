@@ -12,6 +12,7 @@ import time
 import tdc_wrapper
 import ssl
 import os.path
+from OpenSSL import crypto
 
 #Open a secure socket?
 SECURE_MODE = 1
@@ -113,10 +114,11 @@ class time_sync:
             #Open a secure socket
             if(self.mode == CLIENT):
                 self.sck_u = socket.socket(socket.AF_INET, socket.SOCK_STREAM, 0)
-                self.s = context.wrap_socket(self.sck_u, server_hostname=SERVER_IP)
+                #self.s = context.wrap_socket(self.sck_u, server_hostname=SERVER_IP)
+                self.s = ssl.wrap_socket(self.sck_u, ca_certs=pem_path, cert_reqs=ssl.CERT_REQUIRED)
             else:
                 self.sck_u = socket.socket(socket.AF_INET, socket.SOCK_STREAM, 0)
-                self.s = context.wrap_socket(self.sck_u, server_side=True)
+                #self.s = context.wrap_socket(self.sck_u, server_side=True)
                 
         else:
             print("Initializing socket in UNSECURE(!) mode")
@@ -129,8 +131,8 @@ class time_sync:
            #self.sck_u.settimeout(CLIENT_TIMEOUT)
         else:
             #Set the timeout to none if we're the server so that we always block on receiving bytes
-            self.s.settimeout(SERVER_TIMEOUT)
-            #self.sck_u.settimeout(SERVER_TIMEOUT)
+            #self.s.settimeout(SERVER_TIMEOUT)
+            self.sck_u.settimeout(SERVER_TIMEOUT)
              
             
             
@@ -175,8 +177,18 @@ class time_sync:
                  #Once a client connects we'll be here
                 c, addr = sck.accept()     # Establish connection with client.
                 print("Got a connection from " + addr[0])
-                c.settimeout(SERVER_TIMEOUT)
-                return c
+                
+                if(SECURE_MODE):
+                   c_s = ssl.wrap_socket(c,
+                                server_side=True,
+                                certfile=pem_path,
+                                keyfile=key_path,
+                                ssl_version=ssl.PROTOCOL_TLSv1)
+                else:
+                    c_s = c
+                
+                c_s.settimeout(SERVER_TIMEOUT)
+                return c_s
             except socket.timeout:
                 print("Waiting for client connection...")
             except:
@@ -624,7 +636,7 @@ class time_sync:
    
     
     
-from OpenSSL import crypto, SSL
+
 
 def cert_gen(
     emailAddress="a@g.co",
