@@ -546,6 +546,7 @@ class time_sync:
         if(SECURE_MODE):
             
             try:
+                #If this returns something that isn't None then we are connected
                 if(sock.get_channel_binding(cb_type="tls-unique")):
                     return 0
                 else:
