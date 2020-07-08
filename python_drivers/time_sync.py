@@ -72,6 +72,8 @@ class time_sync:
     t_b_r = 0
     t_b_s = 0
     
+    socket_dead = 0
+    
     
     def __init__(self, COM_PORT, s_ip, m):
         
@@ -264,7 +266,8 @@ class time_sync:
         
         while(self.server_handle_command(c)):
             print("Checking socket...")
-            if(self.is_socket_alive(c)):
+            if(self.is_socket_alive(c) or self.socket_dead):
+                self.socket_dead = 0
                 print("Dead socket, client has closed connection, waiting for new connection...")
                 c = self.wait_connection(self.sck_u)
                 if(c == 0):
@@ -550,14 +553,22 @@ class time_sync:
         
         if(SECURE_MODE):
             
+            if(self.mode == CLIENT):
+                return 0
+            
+            retval = 0
+            self.sck_u.settimeout(0.01)
             try:
                 #If this returns something that isn't None then we are connected
-                if(sock.version()):
-                    return 0
+                if(len(self.sck_u.recv(16, socket.MSG_PEEK)) > 0):
+                    retval = 0
                 else:
-                    return -1
-            except:
-                return -1  
+                    retval = -1
+            except socket.timeout:
+                retval = -1  
+                
+            self.sck_u.settimeout(SERVER_TIMEOUT)   
+            return retval
            
         else:
             sock.settimeout(0.01)
@@ -614,6 +625,7 @@ class time_sync:
                         return byte_res
                 else:
                     print("Received an empty byte array from socket, socket is probably closed...")
+                    self.socket_dead = 1
                     return -1
             except socket.timeout:
                 print("Timed out while waiting for bytes...")
