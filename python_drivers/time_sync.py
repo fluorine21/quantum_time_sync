@@ -115,7 +115,8 @@ class time_sync:
             if(self.mode == CLIENT):
                 self.sck_u = socket.socket(socket.AF_INET, socket.SOCK_STREAM, 0)
                 #self.s = context.wrap_socket(self.sck_u, server_hostname=SERVER_IP)
-                self.s = ssl.wrap_socket(self.sck_u, ca_certs=pem_path, cert_reqs=ssl.CERT_REQUIRED)
+                #self.s = ssl.wrap_socket(self.sck_u, ca_certs=pem_path, cert_reqs=ssl.CERT_REQUIRED)
+                self.s = ssl.wrap_socket(self.sck_u, ca_certs=pem_path)
             else:
                 self.sck_u = socket.socket(socket.AF_INET, socket.SOCK_STREAM, 0)
                 #self.s = context.wrap_socket(self.sck_u, server_side=True)
@@ -544,11 +545,11 @@ class time_sync:
         
         #return 0
     
-        sock.settimeout(0.01)
+        self.sck_u.settimeout(0.01)
         retval = 0
         try:
             # this will try to read bytes without blocking and also without removing them from buffer (peek only)
-            data = sock.recv(16, socket.MSG_PEEK)
+            data = self.sck_u.recv(16, socket.MSG_PEEK)
             if len(data) == 0:
                 retval = -1
  
@@ -557,9 +558,9 @@ class time_sync:
             retval = 0
             
         if(self.mode == CLIENT):
-           sock.settimeout(CLIENT_TIMEOUT)
+           self.sck_u.settimeout(CLIENT_TIMEOUT)
         else:
-            sock.settimeout(SERVER_TIMEOUT)
+            self.sck_u.settimeout(SERVER_TIMEOUT)
         
         return retval
     
