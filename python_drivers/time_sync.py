@@ -259,7 +259,7 @@ class time_sync:
         
         while(self.server_handle_command(c)):
             print("Checking socket...")
-            if(self.is_socket_alive(c)):
+            if(self.is_socket_alive(self.sck_u)):
                 print("Dead socket, waiting for new connection...")
                 c = self.wait_connection(self.sck_u)
                 if(c == 0):
