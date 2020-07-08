@@ -3,7 +3,6 @@
 	<name>test_proj_ethernet</name>
 	<comment>Created by Vitis v2020.1</comment>
 	<projects>
-		<project>test_proj_plat</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

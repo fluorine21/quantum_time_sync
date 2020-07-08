@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="39">
   <CompositeFile CompositeFileTopName="bd_da80" CanBeSetAsTop="true" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1593703561"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1593703561"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1593703561"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1593703561"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1594145831"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1594145831"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1594145831"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1594145831"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="synth\bd_da80.v" Type="Verilog">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>

@@ -6,8 +6,8 @@ BEGIN OS
  PARAMETER OS_NAME = standalone
  PARAMETER OS_VER = 7.2
  PARAMETER PROC_INSTANCE = psu_cortexa53_0
- PARAMETER stdin = psu_coresight_0
- PARAMETER stdout = psu_coresight_0
+ PARAMETER stdin = psu_uart_0
+ PARAMETER stdout = psu_uart_0
 END
 
 
@@ -640,14 +640,6 @@ BEGIN DRIVER
  PARAMETER DRIVER_NAME = rfdc
  PARAMETER DRIVER_VER = 8.0
  PARAMETER HW_INSTANCE = usp_rf_data_converter_0
-END
-
-
-BEGIN LIBRARY
- PARAMETER LIBRARY_NAME = lwip211
- PARAMETER LIBRARY_VER = 1.2
- PARAMETER PROC_INSTANCE = psu_cortexa53_0
- PARAMETER lwip_dhcp = true
 END
 
 

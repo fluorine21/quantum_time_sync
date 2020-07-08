@@ -1,7 +1,7 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Sun Jun 28 13:58:28 2020
+-- Date        : Tue Jul  7 13:19:30 2020
 -- Host        : pme10D0025 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_usp_rf_data_converter_0_0/top_level_block_design_usp_rf_data_converter_0_0_sim_netlist.vhdl
@@ -62953,20 +62953,20 @@ dac1_restart_pending_i_1: unisim.vcomponents.LUT5
     );
 \data[2]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"020A02A000010700"
+      INIT => X"000C44C000000700"
     )
         port map (
-      I0 => \data_index_reg_n_0_[2]\,
-      I1 => \data_index_reg_n_0_[0]\,
-      I2 => \data_index_reg_n_0_[5]\,
+      I0 => \data_index_reg_n_0_[0]\,
+      I1 => \data_index_reg_n_0_[2]\,
+      I2 => \data_index_reg_n_0_[3]\,
       I3 => \data_index_reg_n_0_[4]\,
-      I4 => \data_index_reg_n_0_[3]\,
+      I4 => \data_index_reg_n_0_[5]\,
       I5 => \data_index_reg_n_0_[1]\,
       O => \data[2]_i_1_n_0\
     );
 \data[3]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"000806A000110B20"
+      INIT => X"000806A000100B20"
     )
         port map (
       I0 => \data_index_reg_n_0_[2]\,
@@ -63005,14 +63005,14 @@ dac1_restart_pending_i_1: unisim.vcomponents.LUT5
     );
 \data[6]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0000088000400B00"
+      INIT => X"0008080000410B00"
     )
         port map (
       I0 => \data_index_reg_n_0_[2]\,
       I1 => \data_index_reg_n_0_[0]\,
-      I2 => \data_index_reg_n_0_[3]\,
+      I2 => \data_index_reg_n_0_[4]\,
       I3 => \data_index_reg_n_0_[5]\,
-      I4 => \data_index_reg_n_0_[4]\,
+      I4 => \data_index_reg_n_0_[3]\,
       I5 => \data_index_reg_n_0_[1]\,
       O => \data[6]_i_1_n_0\
     );
@@ -74569,13 +74569,13 @@ dac1_irq_en_reg: unisim.vcomponents.FDRE
       Q => dac1_ref_clk_freq(0),
       R => i_top_level_block_design_usp_rf_data_converter_0_0_overvol_irq_n_0
     );
-\dac1_ref_clk_freq_reg[10]\: unisim.vcomponents.FDRE
+\dac1_ref_clk_freq_reg[10]\: unisim.vcomponents.FDSE
      port map (
       C => s_axi_aclk,
       CE => bank3_write(192),
       D => s_axi_wdata(10),
       Q => dac1_ref_clk_freq(10),
-      R => i_top_level_block_design_usp_rf_data_converter_0_0_overvol_irq_n_0
+      S => i_top_level_block_design_usp_rf_data_converter_0_0_overvol_irq_n_0
     );
 \dac1_ref_clk_freq_reg[11]\: unisim.vcomponents.FDRE
      port map (
@@ -74625,13 +74625,13 @@ dac1_irq_en_reg: unisim.vcomponents.FDRE
       Q => dac1_ref_clk_freq(16),
       S => i_top_level_block_design_usp_rf_data_converter_0_0_overvol_irq_n_0
     );
-\dac1_ref_clk_freq_reg[17]\: unisim.vcomponents.FDSE
+\dac1_ref_clk_freq_reg[17]\: unisim.vcomponents.FDRE
      port map (
       C => s_axi_aclk,
       CE => bank3_write(192),
       D => s_axi_wdata(17),
       Q => dac1_ref_clk_freq(17),
-      S => i_top_level_block_design_usp_rf_data_converter_0_0_overvol_irq_n_0
+      R => i_top_level_block_design_usp_rf_data_converter_0_0_overvol_irq_n_0
     );
 \dac1_ref_clk_freq_reg[18]\: unisim.vcomponents.FDRE
      port map (
@@ -74769,13 +74769,13 @@ dac1_irq_en_reg: unisim.vcomponents.FDRE
       Q => dac1_ref_clk_freq(3),
       R => i_top_level_block_design_usp_rf_data_converter_0_0_overvol_irq_n_0
     );
-\dac1_ref_clk_freq_reg[4]\: unisim.vcomponents.FDSE
+\dac1_ref_clk_freq_reg[4]\: unisim.vcomponents.FDRE
      port map (
       C => s_axi_aclk,
       CE => bank3_write(192),
       D => s_axi_wdata(4),
       Q => dac1_ref_clk_freq(4),
-      S => i_top_level_block_design_usp_rf_data_converter_0_0_overvol_irq_n_0
+      R => i_top_level_block_design_usp_rf_data_converter_0_0_overvol_irq_n_0
     );
 \dac1_ref_clk_freq_reg[5]\: unisim.vcomponents.FDRE
      port map (
@@ -74785,13 +74785,13 @@ dac1_irq_en_reg: unisim.vcomponents.FDRE
       Q => dac1_ref_clk_freq(5),
       R => i_top_level_block_design_usp_rf_data_converter_0_0_overvol_irq_n_0
     );
-\dac1_ref_clk_freq_reg[6]\: unisim.vcomponents.FDRE
+\dac1_ref_clk_freq_reg[6]\: unisim.vcomponents.FDSE
      port map (
       C => s_axi_aclk,
       CE => bank3_write(192),
       D => s_axi_wdata(6),
       Q => dac1_ref_clk_freq(6),
-      R => i_top_level_block_design_usp_rf_data_converter_0_0_overvol_irq_n_0
+      S => i_top_level_block_design_usp_rf_data_converter_0_0_overvol_irq_n_0
     );
 \dac1_ref_clk_freq_reg[7]\: unisim.vcomponents.FDSE
      port map (

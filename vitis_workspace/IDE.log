@@ -5641,3 +5641,16 @@ con
 ----------------End of Script----------------
 
 20:43:52 INFO  : Launch script is exported to file 'C:\James\vitis_workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_test_proj_ethernet_system_standalone.tcl'
+13:48:03 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\James\vitis_workspace\temp_xsdb_launch_script.tcl
+13:48:06 INFO  : XSCT server has started successfully.
+13:48:06 INFO  : plnx-install-location is set to ''
+13:48:06 INFO  : Successfully done setting XSCT server connection channel  
+13:48:06 INFO  : Successfully done setting workspace for the tool. 
+13:48:10 INFO  : Registering command handlers for Vitis TCF services
+13:48:10 INFO  : Platform repository initialization has completed.
+13:48:11 INFO  : Successfully done query RDI_DATADIR 
+13:56:52 INFO  : Result from executing command 'getProjects': test_proj_plat
+13:56:52 INFO  : Result from executing command 'getPlatforms': 
+13:57:08 INFO  : Successfully done sdx_reload_mss "C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss"
+14:09:37 INFO  : Result from executing command 'getProjects': test_proj_plat
+14:09:37 INFO  : Result from executing command 'getPlatforms': test_proj_plat|C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm

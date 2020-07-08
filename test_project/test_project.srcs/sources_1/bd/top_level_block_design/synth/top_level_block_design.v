@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-//Date        : Thu Jul  2 10:25:54 2020
+//Date        : Tue Jul  7 13:16:57 2020
 //Host        : pme10D0025 running 64-bit major release  (build 9200)
 //Command     : generate_target top_level_block_design.bd
 //Design      : top_level_block_design
@@ -683,7 +683,7 @@ module s00_couplers_imp_1HUQ0NZ
         .s_axi_wvalid(auto_ds_to_auto_pc_WVALID));
 endmodule
 
-(* CORE_GENERATION_INFO = "top_level_block_design,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=top_level_block_design,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=18,numReposBlks=14,numNonXlnxBlks=0,numHierBlks=4,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=2,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=8,da_board_cnt=21,da_mb_cnt=1,da_rf_converter_usp_cnt=4,da_zynq_ultra_ps_e_cnt=4,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "top_level_block_design.hwdef" *) 
+(* CORE_GENERATION_INFO = "top_level_block_design,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=top_level_block_design,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=17,numReposBlks=13,numNonXlnxBlks=0,numHierBlks=4,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=2,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=8,da_board_cnt=21,da_mb_cnt=1,da_rf_converter_usp_cnt=4,da_zynq_ultra_ps_e_cnt=4,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "top_level_block_design.hwdef" *) 
 module top_level_block_design
    (dac1_clk_clk_n,
     dac1_clk_clk_p,
@@ -704,7 +704,7 @@ module top_level_block_design
   (* X_INTERFACE_INFO = "xilinx.com:interface:diff_analog_io:1.0 vout10 V_N" *) output vout10_v_n;
   (* X_INTERFACE_INFO = "xilinx.com:interface:diff_analog_io:1.0 vout10 V_P" *) output vout10_v_p;
 
-  (* DEBUG = "true" *) (* MARK_DEBUG *) wire [31:0]axi_gpio_0_gpio_io_o;
+  wire [31:0]axi_gpio_0_gpio_io_o;
   wire dac1_clk_1_CLK_N;
   wire dac1_clk_1_CLK_P;
   wire default_sysclk3_100mhz_1_CLK_N;
@@ -712,8 +712,8 @@ module top_level_block_design
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire [31:0]fifo_generator_0_dout;
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire fifo_generator_0_empty;
   wire fifo_generator_0_full;
-  (* DEBUG = "true" *) (* MARK_DEBUG *) wire [31:0]gpio_to_fifo_0_dout;
-  (* DEBUG = "true" *) (* MARK_DEBUG *) wire gpio_to_fifo_0_fifo_write;
+  wire [31:0]gpio_to_fifo_0_dout;
+  wire gpio_to_fifo_0_fifo_write;
   wire gpio_to_fifo_0_rst_pl;
   wire [0:0]proc_sys_reset_0_peripheral_aresetn;
   wire [39:0]ps8_0_axi_periph_M00_AXI_ARADDR;
@@ -959,11 +959,6 @@ module top_level_block_design
         .mb_reset(rst_ps8_0_99M_mb_reset),
         .peripheral_aresetn(rst_ps8_0_99M_peripheral_aresetn),
         .slowest_sync_clk(zynq_ultra_ps_e_0_pl_clk0));
-  top_level_block_design_system_ila_0_1 system_ila_0
-       (.clk(zynq_ultra_ps_e_0_pl_clk0),
-        .probe0(axi_gpio_0_gpio_io_o),
-        .probe1(gpio_to_fifo_0_dout),
-        .probe2(gpio_to_fifo_0_fifo_write));
   top_level_block_design_system_ila_1_0 system_ila_1
        (.SLOT_0_AXIS_tdata(pulse_gen_0_m_axis_TDATA),
         .SLOT_0_AXIS_tlast(1'b0),

@@ -37,9 +37,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==top_level_block
 # IP: bd/top_level_block_design/ip/top_level_block_design_axi_gpio_0_0/top_level_block_design_axi_gpio_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==top_level_block_design_axi_gpio_0_0 || ORIG_REF_NAME==top_level_block_design_axi_gpio_0_0} -quiet] -quiet
 
-# IP: bd/top_level_block_design/ip/top_level_block_design_system_ila_0_1/top_level_block_design_system_ila_0_1.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==top_level_block_design_system_ila_0_1 || ORIG_REF_NAME==top_level_block_design_system_ila_0_1} -quiet] -quiet
-
 # IP: bd/top_level_block_design/ip/top_level_block_design_system_ila_1_0/top_level_block_design_system_ila_1_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==top_level_block_design_system_ila_1_0 || ORIG_REF_NAME==top_level_block_design_system_ila_1_0} -quiet] -quiet
 

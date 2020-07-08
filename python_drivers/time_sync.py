@@ -14,7 +14,7 @@ import ssl
 import os.path
 
 #Open a secure socket?
-SECURE_MODE = 0
+SECURE_MODE = 1
 
 CLIENT = 0
 SERVER = 1
@@ -43,6 +43,8 @@ SERVER_IP = "127.0.0.1"
 
 pem_path = 'C:\certs\certchain.pem'
 key_path = 'C:\certs\private.key'
+SSL_PATH = 'C:\certs'
+
 
 TIMESTAMP_BYTE_LEN = 20
 
@@ -72,6 +74,10 @@ class time_sync:
     
     def __init__(self, COM_PORT, s_ip, m):
         
+        #save the other parameters
+        self.server_ip = s_ip
+        self.mode = m
+        
         #initialize the socket
         self.init_socket()
         
@@ -81,9 +87,6 @@ class time_sync:
         #initialize the tdc
         self.tdc = tdc_wrapper.tdc_wrapper(5)
         
-        #save the other parameters
-        self.server_ip = s_ip
-        self.mode = m
         
         if(m == CLIENT):
             print("Initialized time sync in CLIENT mode")
@@ -123,11 +126,11 @@ class time_sync:
         #Set the socket timeout if we're the client
         if(self.mode == CLIENT):
            self.s.settimeout(CLIENT_TIMEOUT)
-           self.sck_u.settimeout(CLIENT_TIMEOUT)
+           #self.sck_u.settimeout(CLIENT_TIMEOUT)
         else:
             #Set the timeout to none if we're the server so that we always block on receiving bytes
             self.s.settimeout(SERVER_TIMEOUT)
-            self.sck_u.settimeout(SERVER_TIMEOUT)
+            #self.sck_u.settimeout(SERVER_TIMEOUT)
              
             
             
@@ -225,10 +228,12 @@ class time_sync:
             return -1
     
         host = socket.gethostname() # Get local machine name
-        self.sck_u.bind((host, self.port))
+        #self.sck_u.bind((host, self.port))
+        self.s.bind((host, self.port))
         
         #Start listening for a connection
-        self.sck_u.listen(5)
+        #self.sck_u.listen(5)
+        self.s.listen(5)
         
         print("Waiting for connection from client...")
         
@@ -639,6 +644,12 @@ def cert_gen(
     # create a key pair
     k = crypto.PKey()
     k.generate_key(crypto.TYPE_RSA, 4096)
+    
+    #Create the directory if it does not exist
+    if not os.path.exists(SSL_PATH):
+        os.makedirs(SSL_PATH)
+    
+    
     # create a self-signed cert
     cert = crypto.X509()
     cert.get_subject().C = countryName
@@ -654,9 +665,9 @@ def cert_gen(
     cert.set_issuer(cert.get_subject())
     cert.set_pubkey(k)
     cert.sign(k, 'sha512')
-    with open(CERT_FILE, "wt") as f:
+    with open(CERT_FILE, "wt+") as f:
         f.write(crypto.dump_certificate(crypto.FILETYPE_PEM, cert).decode("utf-8"))
-    with open(KEY_FILE, "wt") as f:
+    with open(KEY_FILE, "wt+") as f:
         f.write(crypto.dump_privatekey(crypto.FILETYPE_PEM, k).decode("utf-8"))
 
 
