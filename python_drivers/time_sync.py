@@ -545,22 +545,26 @@ class time_sync:
         
         #return 0
     
-        self.sck_u.settimeout(0.01)
+        self.s.settimeout(0.01)
         retval = 0
         try:
             # this will try to read bytes without blocking and also without removing them from buffer (peek only)
-            data = self.sck_u.recv(16, socket.MSG_PEEK)
-            if len(data) == 0:
-                retval = -1
+            if(self.mode == CLIENT):
+                retval = 0#Socket is always alive if we're the client
+            else:
+                data = self.sck_u.recv(16, socket.MSG_PEEK)
+                #data = self.sck_u.recv(0)
+                if len(data) == 0:
+                    retval = -1
  
         except socket.timeout:
             #Timeout indicates active connection
             retval = 0
             
         if(self.mode == CLIENT):
-           self.sck_u.settimeout(CLIENT_TIMEOUT)
+           self.s.settimeout(CLIENT_TIMEOUT)
         else:
-            self.sck_u.settimeout(SERVER_TIMEOUT)
+            self.s.settimeout(SERVER_TIMEOUT)
         
         return retval
     
