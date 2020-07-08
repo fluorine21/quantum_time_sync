@@ -264,7 +264,7 @@ class time_sync:
                 c = self.wait_connection(self.sck_u)
                 if(c == 0):
                     print("No socket returned while trying to connect to client, exiting...")
-                    self.s.close()
+                    self.sck_u.close()
                     return -1
                 print("Waiting for command from client...")
             else:
@@ -300,7 +300,7 @@ class time_sync:
             sck.send(SERVER_ACK)
             print("Command received: SERVER_EXIT")
             sck.close()
-            self.s.close()
+            self.sck_u.close()
             return 0
         elif(client_cmd[0] == SERVER_PING):
             sck.send(SERVER_ACK)
@@ -543,28 +543,26 @@ class time_sync:
     #Returns 0 if connection is active
     def is_socket_alive(self, sock):
         
-        #return 0
+        if(self.mode == CLIENT):
+            return 0
     
-        self.s.settimeout(0.01)
+        sock.settimeout(0.01)
         retval = 0
         try:
             # this will try to read bytes without blocking and also without removing them from buffer (peek only)
-            if(self.mode == CLIENT):
-                retval = 0#Socket is always alive if we're the client
-            else:
-                data = self.sck_u.recv(16, socket.MSG_PEEK)
-                #data = self.sck_u.recv(0)
-                if len(data) == 0:
-                    retval = -1
+            data = sock.recv(16, socket.MSG_PEEK)
+            #data = self.sck_u.recv(0)
+            if len(data) == 0:
+                retval = -1
  
         except socket.timeout:
             #Timeout indicates active connection
             retval = 0
             
         if(self.mode == CLIENT):
-           self.s.settimeout(CLIENT_TIMEOUT)
+           sock.settimeout(CLIENT_TIMEOUT)
         else:
-            self.s.settimeout(SERVER_TIMEOUT)
+            sock.settimeout(SERVER_TIMEOUT)
         
         return retval
     
