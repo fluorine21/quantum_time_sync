@@ -184,7 +184,7 @@ class time_sync:
                                 server_side=True,
                                 certfile=pem_path,
                                 keyfile=key_path,
-                                ssl_version=ssl.PROTOCOL_TLSv1)
+                                ssl_version=ssl.PROTOCOL_TLS)
                 else:
                     c_s = c
                 
@@ -543,28 +543,36 @@ class time_sync:
     #Returns 0 if connection is active
     def is_socket_alive(self, sock):
         
-        if(self.mode == CLIENT):
-            return 0
-    
-        sock.settimeout(0.01)
-        retval = 0
-        try:
-            # this will try to read bytes without blocking and also without removing them from buffer (peek only)
-            data = sock.recv(16, socket.MSG_PEEK)
-            #data = self.sck_u.recv(0)
-            if len(data) == 0:
-                retval = -1
- 
-        except socket.timeout:
-            #Timeout indicates active connection
-            retval = 0
+        if(SECURE_MODE):
             
-        if(self.mode == CLIENT):
-           sock.settimeout(CLIENT_TIMEOUT)
+            try:
+                if(sock.get_channel_binding(cb_type="tls-unique")):
+                    return 0
+                else:
+                    return -1
+            except:
+                return -1  
+           
         else:
-            sock.settimeout(SERVER_TIMEOUT)
-        
-        return retval
+            sock.settimeout(0.01)
+            retval = 0
+            try:
+                # this will try to read bytes without blocking and also without removing them from buffer (peek only)
+                data = sock.recv(16, socket.MSG_PEEK)
+                #data = self.sck_u.recv(0)
+                if len(data) == 0:
+                    retval = -1
+     
+            except socket.timeout:
+                #Timeout indicates active connection
+                retval = 0
+                
+            if(self.mode == CLIENT):
+                sock.settimeout(CLIENT_TIMEOUT)
+            else:
+                sock.settimeout(SERVER_TIMEOUT)
+            
+            return retval
     
     
     
@@ -576,33 +584,6 @@ class time_sync:
     def calc_time_diff(self, t_a_r, t_a_s, t_b_r, t_b_s):
         
         return 0
-    
-    #     #Returns -1 on timeout
-    # def receive_bytes(self, c, num_bytes):
-        
-    #     byte_res = []
-        
-    #     time_now = time.time()
-            
-    #     while(time.time() - time_now < TCP_TIMEOUT):
-            
-    #         #res = c.recv(1024)
-    #         res = c.recv(1)
-            
-    #         if(len(res) > 0):
-        
-    #             #copy all bytes into the result array
-    #             for b in res:
-    #                 byte_res.append(b)
-    #             #If we have all of the bytes
-    #             if(len(byte_res) >= num_bytes):
-    #                 break
-                
-    #     if(time.time() - time_now >= TCP_TIMEOUT):
-    #             print("Timed out waiting for client ACK, closing server")
-    #             return -1
-                
-    #     return byte_res
     
     
     def receive_bytes(self, c, num_bytes):
