@@ -154,6 +154,11 @@ class time_sync:
             return -1
         else:
             print("Connected to server!")
+            if(SECURE_MODE):
+                if(self.s.version()):
+                    print("SSL version: " + self.s.version())
+                else:
+                    print("Warning, socket is NOT SECURE!")
             return 0
         
     def disconnect_from_server(self):
@@ -259,8 +264,8 @@ class time_sync:
         
         while(self.server_handle_command(c)):
             print("Checking socket...")
-            if(self.is_socket_alive(self.sck_u)):
-                print("Dead socket, waiting for new connection...")
+            if(self.is_socket_alive(c)):
+                print("Dead socket, client has closed connection, waiting for new connection...")
                 c = self.wait_connection(self.sck_u)
                 if(c == 0):
                     print("No socket returned while trying to connect to client, exiting...")
@@ -547,7 +552,7 @@ class time_sync:
             
             try:
                 #If this returns something that isn't None then we are connected
-                if(sock.get_channel_binding(cb_type="tls-unique")):
+                if(sock.version()):
                     return 0
                 else:
                     return -1
