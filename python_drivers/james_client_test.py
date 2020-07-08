@@ -18,7 +18,7 @@ ts.connect_to_server()
 ts.ping_server()
 
 
-time.sleep(60)
+time.sleep(20)
 
 
 ts.disconnect_from_server()

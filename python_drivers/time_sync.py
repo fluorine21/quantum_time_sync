@@ -553,22 +553,26 @@ class time_sync:
         
         if(SECURE_MODE):
             
-            if(self.mode == CLIENT):
-                return 0
+            #Cannot use this method to detect a dead socket in secure mode, must detect it when we go to read from it
             
-            retval = 0
-            self.sck_u.settimeout(0.01)
-            try:
-                #If this returns something that isn't None then we are connected
-                if(len(self.sck_u.recv(16, socket.MSG_PEEK)) > 0):
-                    retval = 0
-                else:
-                    retval = -1
-            except socket.timeout:
-                retval = -1  
+            return 0
+            
+            # if(self.mode == CLIENT):
+            #     return 0
+            
+            # retval = 0
+            # self.sck_u.settimeout(0.01)
+            # try:
+            #     #If this returns something that isn't None then we are connected
+            #     if(len(self.sck_u.recv(16, socket.MSG_PEEK)) > 0):
+            #         retval = 0
+            #     else:
+            #         retval = -1
+            # except socket.timeout:
+            #     retval = 0  
                 
-            self.sck_u.settimeout(SERVER_TIMEOUT)   
-            return retval
+            # self.sck_u.settimeout(SERVER_TIMEOUT)   
+            # return retval
            
         else:
             sock.settimeout(0.01)
