@@ -193,7 +193,7 @@ class time_sync:
                 print("Waiting for client connection...")
             except:
                 print("Unknown error while waiting for client connection")
-                return 0
+                raise
         
     
     def check_key(self):
@@ -240,17 +240,17 @@ class time_sync:
             return -1
     
         host = socket.gethostname() # Get local machine name
-        #self.sck_u.bind((host, self.port))
-        self.s.bind((host, self.port))
+        self.sck_u.bind((host, self.port))
+        #self.s.bind((host, self.port))
         
         #Start listening for a connection
-        #self.sck_u.listen(5)
-        self.s.listen(5)
+        self.sck_u.listen(5)
+        #self.s.listen(5)
         
         print("Waiting for connection from client...")
         
         #Once a client connects we'll be here
-        c = self.wait_connection(self.s)
+        c = self.wait_connection(self.sck_u)
         if(c == 0):
             return -1
         
@@ -260,7 +260,7 @@ class time_sync:
             print("Checking socket...")
             if(self.is_socket_alive(c)):
                 print("Dead socket, waiting for new connection...")
-                c = self.wait_connection(self.s)
+                c = self.wait_connection(self.sck_u)
                 if(c == 0):
                     print("No socket returned while trying to connect to client, exiting...")
                     self.s.close()
