@@ -1446,30 +1446,6 @@
           }
         },
         "interface_nets": {
-          "ps8_0_axi_periph_to_s00_couplers": {
-            "interface_ports": [
-              "S00_AXI",
-              "s00_couplers/S_AXI"
-            ]
-          },
-          "m01_couplers_to_ps8_0_axi_periph": {
-            "interface_ports": [
-              "M01_AXI",
-              "m01_couplers/M_AXI"
-            ]
-          },
-          "xbar_to_m01_couplers": {
-            "interface_ports": [
-              "xbar/M01_AXI",
-              "m01_couplers/S_AXI"
-            ]
-          },
-          "xbar_to_m00_couplers": {
-            "interface_ports": [
-              "xbar/M00_AXI",
-              "m00_couplers/S_AXI"
-            ]
-          },
           "s00_couplers_to_xbar": {
             "interface_ports": [
               "s00_couplers/M_AXI",
@@ -1480,6 +1456,30 @@
             "interface_ports": [
               "M00_AXI",
               "m00_couplers/M_AXI"
+            ]
+          },
+          "m01_couplers_to_ps8_0_axi_periph": {
+            "interface_ports": [
+              "M01_AXI",
+              "m01_couplers/M_AXI"
+            ]
+          },
+          "xbar_to_m00_couplers": {
+            "interface_ports": [
+              "xbar/M00_AXI",
+              "m00_couplers/S_AXI"
+            ]
+          },
+          "xbar_to_m01_couplers": {
+            "interface_ports": [
+              "xbar/M01_AXI",
+              "m01_couplers/S_AXI"
+            ]
+          },
+          "ps8_0_axi_periph_to_s00_couplers": {
+            "interface_ports": [
+              "S00_AXI",
+              "s00_couplers/S_AXI"
             ]
           }
         },
@@ -1647,12 +1647,15 @@
             "value": "1"
           },
           "C_NUM_OF_PROBES": {
-            "value": "3"
+            "value": "4"
           },
           "C_PROBE0_TYPE": {
             "value": "0"
           },
           "C_PROBE1_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE3_TYPE": {
             "value": "0"
           },
           "C_SLOT_0_APC_EN": {
@@ -1790,11 +1793,40 @@
           },
           "fifo_read": {
             "direction": "O"
+          },
+          "state_out": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
           }
         }
       }
     },
     "interface_nets": {
+      "default_sysclk3_100mhz_1": {
+        "interface_ports": [
+          "default_sysclk3_100mhz",
+          "clk_wiz_0/CLK_IN1_D"
+        ]
+      },
+      "sysref_in_1": {
+        "interface_ports": [
+          "sysref_in",
+          "usp_rf_data_converter_0/sysref_in"
+        ]
+      },
+      "usp_rf_data_converter_0_vout10": {
+        "interface_ports": [
+          "vout10",
+          "usp_rf_data_converter_0/vout10"
+        ]
+      },
+      "ps8_0_axi_periph_M01_AXI": {
+        "interface_ports": [
+          "ps8_0_axi_periph/M01_AXI",
+          "axi_gpio_0/S_AXI"
+        ]
+      },
       "pulse_gen_0_m_axis": {
         "interface_ports": [
           "pulse_gen_0/m_axis",
@@ -1810,10 +1842,10 @@
           }
         }
       },
-      "ps8_0_axi_periph_M01_AXI": {
+      "dac1_clk_1": {
         "interface_ports": [
-          "ps8_0_axi_periph/M01_AXI",
-          "axi_gpio_0/S_AXI"
+          "dac1_clk",
+          "usp_rf_data_converter_0/dac1_clk"
         ]
       },
       "zynq_ultra_ps_e_0_M_AXI_HPM0_FPD": {
@@ -1826,30 +1858,6 @@
         "interface_ports": [
           "ps8_0_axi_periph/M00_AXI",
           "usp_rf_data_converter_0/s_axi"
-        ]
-      },
-      "usp_rf_data_converter_0_vout10": {
-        "interface_ports": [
-          "vout10",
-          "usp_rf_data_converter_0/vout10"
-        ]
-      },
-      "sysref_in_1": {
-        "interface_ports": [
-          "sysref_in",
-          "usp_rf_data_converter_0/sysref_in"
-        ]
-      },
-      "dac1_clk_1": {
-        "interface_ports": [
-          "dac1_clk",
-          "usp_rf_data_converter_0/dac1_clk"
-        ]
-      },
-      "default_sysclk3_100mhz_1": {
-        "interface_ports": [
-          "default_sysclk3_100mhz",
-          "clk_wiz_0/CLK_IN1_D"
         ]
       }
     },
@@ -1991,6 +1999,20 @@
           "system_ila_1/clk",
           "pulse_gen_0/clk"
         ]
+      },
+      "state_out": {
+        "ports": [
+          "pulse_gen_0/state_out",
+          "system_ila_1/probe3"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
       }
     },
     "addressing": {

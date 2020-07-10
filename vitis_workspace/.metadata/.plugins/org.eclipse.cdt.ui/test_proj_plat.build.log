@@ -1,5 +1,5 @@
-14:05:32 **** Build of project test_proj_plat ****
-buildplatform.bat 50101 test_proj_plat  
+14:01:24 **** Build of project test_proj_plat ****
+buildplatform.bat 49902 test_proj_plat  
 XSDB Server Channel: tcfchan#1
 Building the zynqmp_fsbl application.
 make -C zynqmp_fsbl_bsp
@@ -2407,6 +2407,11 @@ elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER
 make -C psu_cortexa53_0/libsrc/libmetal_v2_1/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-non
 e-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
 
+"Running Make include in psu_cortexa53_0/libsrc/lwip211_v1_2/src"
+
+make -C psu_cortexa53_0/libsrc/lwip211_v1_2/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none
+-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
 "Running Make include in psu_cortexa53_0/libsrc/qspipsu_v1_11/src"
 
 make -C psu_cortexa53_0/libsrc/qspipsu_v1_11/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-non
@@ -2719,6 +2724,32 @@ Install the project...
 
 -- Installing: ../../../lib/libmetal.a
 
+"Running Make libs in psu_cortexa53_0/libsrc/lwip211_v1_2/src"
+
+make -C psu_cortexa53_0/libsrc/lwip211_v1_2/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-el
+f-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+
+"Compiling lwip src and adapter files"
+
+In file included from ../../../include/xemacps.h:329,
+                 from ../../../include/netif/xemacpsif.h:56,
+                 from contrib/ports/xilinx/netif/xemacpsif_dma.c:37:
+contrib/ports/xilinx/netif/xemacpsif_dma.c: In function 'init_dma':
+../../../include/xemacps_bd.h:139:62: warning: 'bdrxterminate' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  139 |     (*(u32 *)((UINTPTR)(void*)(BaseAddress) + (u32)(Offset)) = (u32)(Data))
+      |                                                              ^
+contrib/ports/xilinx/netif/xemacpsif_dma.c:561:14: note: 'bdrxterminate' was declared here
+  561 |  XEmacPs_Bd *bdrxterminate;
+      |              ^~~~~~~~~~~~~
+In file included from ../../../include/xemacps.h:329,
+                 from ../../../include/netif/xemacpsif.h:56,
+                 from contrib/ports/xilinx/netif/xemacpsif_dma.c:37:
+../../../include/xemacps_bd.h:120:12: warning: 'bdtxterminate' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  120 |  (*(u32 *)((UINTPTR)((void*)(BaseAddress)) + (u32)(Offset)))
+      |            ^
+contrib/ports/xilinx/netif/xemacpsif_dma.c:560:14: note: 'bdtxterminate' was declared here
+  560 |  XEmacPs_Bd *bdtxterminate;
+      |              ^~~~~~~~~~~~~
 "Running Make libs in psu_cortexa53_0/libsrc/qspipsu_v1_11/src"
 
 make -C psu_cortexa53_0/libsrc/qspipsu_v1_11/src -s libs  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-e
@@ -2832,5 +2863,5 @@ s" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAG
 'Finished building libraries'
 
 
-14:09:37 Build Finished (took 4m:5s.497ms)
+14:05:51 Build Finished (took 4m:26s.889ms)
 

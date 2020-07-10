@@ -16,6 +16,7 @@ module bd_da80
     probe0,
     probe1,
     probe2,
+    probe3,
     resetn);
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_0_AXIS TDATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME SLOT_0_AXIS, CLK_DOMAIN top_level_block_design_usp_rf_data_converter_0_0_clk_dac1, FREQ_HZ 250000000, HAS_TKEEP 0, HAS_TLAST 0, HAS_TREADY 1, HAS_TSTRB 0, INSERT_VIP 0, LAYERED_METADATA undef, PHASE 0.000, TDATA_NUM_BYTES 32, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0" *) input [255:0]SLOT_0_AXIS_tdata;
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_0_AXIS TLAST" *) input SLOT_0_AXIS_tlast;
@@ -25,6 +26,7 @@ module bd_da80
   input [31:0]probe0;
   input [0:0]probe1;
   input [0:0]probe2;
+  input [7:0]probe3;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.RESETN RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RESETN, INSERT_VIP 0, POLARITY ACTIVE_LOW" *) input resetn;
 
   wire [255:0]Conn_TDATA;
@@ -39,6 +41,7 @@ module bd_da80
   wire [31:0]probe0_1;
   wire [0:0]probe1_1;
   wire [0:0]probe2_1;
+  wire [7:0]probe3_1;
   wire resetn_1;
 
   assign Conn_TDATA = SLOT_0_AXIS_tdata[255:0];
@@ -49,6 +52,7 @@ module bd_da80
   assign probe0_1 = probe0[31:0];
   assign probe1_1 = probe1[0];
   assign probe2_1 = probe2[0];
+  assign probe3_1 = probe3[7:0];
   assign resetn_1 = resetn;
   bd_da80_g_inst_0 g_inst
        (.aclk(clk_1),
@@ -66,8 +70,9 @@ module bd_da80
         .probe0(probe0_1),
         .probe1(probe1_1),
         .probe2(probe2_1),
-        .probe3(net_slot_0_axis_tdata),
-        .probe4(net_slot_0_axis_tvalid),
-        .probe5(net_slot_0_axis_tready),
-        .probe6(net_slot_0_axis_tlast));
+        .probe3(probe3_1),
+        .probe4(net_slot_0_axis_tdata),
+        .probe5(net_slot_0_axis_tvalid),
+        .probe6(net_slot_0_axis_tready),
+        .probe7(net_slot_0_axis_tlast));
 endmodule

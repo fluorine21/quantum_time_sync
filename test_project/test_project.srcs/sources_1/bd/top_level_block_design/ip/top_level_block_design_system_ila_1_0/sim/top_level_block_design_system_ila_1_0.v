@@ -58,6 +58,7 @@ module top_level_block_design_system_ila_1_0 (
   probe0,
   probe1,
   probe2,
+  probe3,
   SLOT_0_AXIS_tdata,
   SLOT_0_AXIS_tlast,
   SLOT_0_AXIS_tvalid,
@@ -71,6 +72,7 @@ input wire clk;
 input wire [31 : 0] probe0;
 input wire [0 : 0] probe1;
 input wire [0 : 0] probe2;
+input wire [7 : 0] probe3;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_0_AXIS TDATA" *)
 input wire [255 : 0] SLOT_0_AXIS_tdata;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_0_AXIS TLAST" *)
@@ -89,6 +91,7 @@ input wire resetn;
     .probe0(probe0),
     .probe1(probe1),
     .probe2(probe2),
+    .probe3(probe3),
     .SLOT_0_AXIS_tdata(SLOT_0_AXIS_tdata),
     .SLOT_0_AXIS_tlast(SLOT_0_AXIS_tlast),
     .SLOT_0_AXIS_tvalid(SLOT_0_AXIS_tvalid),

@@ -63,7 +63,8 @@ module top_level_block_design_pulse_gen_0_0 (
   fifo_read,
   m_axis_tdata,
   m_axis_tvalid,
-  m_axis_tready
+  m_axis_tready,
+  state_out
 );
 
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_BUSIF m_axis, ASSOCIATED_RESET rst, FREQ_HZ 250000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN top_level_block_design_usp_rf_data_converter_0_0_clk_dac1, INSERT_VIP 0" *)
@@ -82,6 +83,7 @@ output wire m_axis_tvalid;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_axis, TDATA_NUM_BYTES 32, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 250000000, PHASE 0.000, CLK_DOMAIN top_level_block_design_usp_rf_data_converter_0_0_clk_dac1, LAYERED_METADATA undef, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TREADY" *)
 input wire m_axis_tready;
+output wire [7 : 0] state_out;
 
   pulse_gen inst (
     .clk(clk),
@@ -91,6 +93,7 @@ input wire m_axis_tready;
     .fifo_read(fifo_read),
     .m_axis_tdata(m_axis_tdata),
     .m_axis_tvalid(m_axis_tvalid),
-    .m_axis_tready(m_axis_tready)
+    .m_axis_tready(m_axis_tready),
+    .state_out(state_out)
   );
 endmodule

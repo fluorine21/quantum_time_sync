@@ -1,6 +1,25 @@
-16:05:15 **** Incremental Build of configuration Debug for project test_proj_pulse_ctrl ****
+15:24:50 **** Incremental Build of configuration Debug for project test_proj_pulse_ctrl ****
 make all 
-make: Nothing to be done for 'all'.
+'Building file: C:/James/c_drivers/drivers/rf.c'
+'Invoking: ARM v8 gcc compiler'
+aarch64-none-elf-gcc -Wall -O0 -g3 -I"C:\James\c_drivers\drivers" -I"C:\James\vitis_workspace\test_proj_pulse_ctrl\src" -c -fmessage-length=0 -MT"drivers/rf.o" -D __BAREMETAL__ -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"drivers/rf.d" -MT"drivers/rf.o" -o "drivers/rf.o" "C:/James/c_drivers/drivers/rf.c"
+C:/James/c_drivers/drivers/rf.c: In function 'rf_self_test':
+C:/James/c_drivers/drivers/rf.c:158:13: warning: implicit declaration of function 'CompareFabricRate' [-Wimplicit-function-declaration]
+  158 |    Status = CompareFabricRate(SetFabricRate, GetFabricRate);
+      |             ^~~~~~~~~~~~~~~~~
+'Finished building: C:/James/c_drivers/drivers/rf.c'
+' '
+'Building target: test_proj_pulse_ctrl.elf'
+'Invoking: ARM v8 gcc linker'
+aarch64-none-elf-gcc -L"C:\James\c_drivers\drivers" -Wl,-T -Wl,../src/lscript.ld -LC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bsplib/lib -o "test_proj_pulse_ctrl.elf"  ./src/helloworld.o ./src/platform.o  ./drivers/cmd_handler.o ./drivers/gpio.o ./drivers/rf.o ./drivers/uart.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-lmetal,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-lgcc,-lc,-lmetal,--end-group
+'Finished building target: test_proj_pulse_ctrl.elf'
+' '
+'Invoking: ARM v8 Print Size'
+aarch64-none-elf-size test_proj_pulse_ctrl.elf  |tee "test_proj_pulse_ctrl.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 172764	   9520	  29084	 211368	  339a8	test_proj_pulse_ctrl.elf
+'Finished building: test_proj_pulse_ctrl.elf.size'
+' '
 
-16:05:16 Build Finished (took 373ms)
+15:24:51 Build Finished (took 1s.642ms)
 

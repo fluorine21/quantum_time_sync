@@ -2,6 +2,7 @@
 #include "cmd_handler.h"
 #include "uart.h"
 #include "gpio.h"
+#include "rf.h"
 
 #define DEBUG_PRINT
 
@@ -54,6 +55,15 @@ u8 cmd_init()
 	else
 	{
 		print("Successfully initialized UART!\r\n");
+	}
+
+	if(rf_init())
+	{
+		print("Failed to initialize RF components!\r\n");
+	}
+	else
+	{
+		print("Successfully initialized RF components!\r\n");
 	}
 
 	print("Finished initializing peripherals\r\n");

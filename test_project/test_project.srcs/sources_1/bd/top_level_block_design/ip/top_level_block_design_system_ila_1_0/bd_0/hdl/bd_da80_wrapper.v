@@ -15,6 +15,7 @@ module bd_da80_wrapper
     probe0,
     probe1,
     probe2,
+    probe3,
     resetn);
   input [255:0]SLOT_0_AXIS_tdata;
   input SLOT_0_AXIS_tlast;
@@ -24,6 +25,7 @@ module bd_da80_wrapper
   input [31:0]probe0;
   input [0:0]probe1;
   input [0:0]probe2;
+  input [7:0]probe3;
   input resetn;
 
   wire [255:0]SLOT_0_AXIS_tdata;
@@ -34,6 +36,7 @@ module bd_da80_wrapper
   wire [31:0]probe0;
   wire [0:0]probe1;
   wire [0:0]probe2;
+  wire [7:0]probe3;
   wire resetn;
 
   bd_da80 bd_da80_i
@@ -45,5 +48,6 @@ module bd_da80_wrapper
         .probe0(probe0),
         .probe1(probe1),
         .probe2(probe2),
+        .probe3(probe3),
         .resetn(resetn));
 endmodule

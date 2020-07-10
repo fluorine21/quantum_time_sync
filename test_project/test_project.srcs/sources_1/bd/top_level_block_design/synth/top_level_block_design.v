@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-//Date        : Tue Jul  7 13:16:57 2020
+//Date        : Fri Jul 10 17:51:58 2020
 //Host        : pme10D0025 running 64-bit major release  (build 9200)
 //Command     : generate_target top_level_block_design.bd
 //Design      : top_level_block_design
@@ -758,6 +758,7 @@ module top_level_block_design
   wire [0:0]rst_ps8_0_99M_interconnect_aresetn;
   wire rst_ps8_0_99M_mb_reset;
   wire [0:0]rst_ps8_0_99M_peripheral_aresetn;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire [7:0]state_out;
   wire sysref_in_1_diff_n;
   wire sysref_in_1_diff_p;
   wire usp_rf_data_converter_0_clk_dac1;
@@ -949,7 +950,8 @@ module top_level_block_design
         .m_axis_tdata(pulse_gen_0_m_axis_TDATA),
         .m_axis_tready(pulse_gen_0_m_axis_TREADY),
         .m_axis_tvalid(pulse_gen_0_m_axis_TVALID),
-        .rst(proc_sys_reset_0_peripheral_aresetn));
+        .rst(proc_sys_reset_0_peripheral_aresetn),
+        .state_out(state_out));
   top_level_block_design_rst_ps8_0_99M_0 rst_ps8_0_99M
        (.aux_reset_in(1'b1),
         .dcm_locked(1'b1),
@@ -968,6 +970,7 @@ module top_level_block_design
         .probe0(fifo_generator_0_dout),
         .probe1(pulse_gen_0_fifo_read),
         .probe2(fifo_generator_0_empty),
+        .probe3(state_out),
         .resetn(proc_sys_reset_0_peripheral_aresetn));
   top_level_block_design_usp_rf_data_converter_0_0 usp_rf_data_converter_0
        (.clk_dac1(usp_rf_data_converter_0_clk_dac1),

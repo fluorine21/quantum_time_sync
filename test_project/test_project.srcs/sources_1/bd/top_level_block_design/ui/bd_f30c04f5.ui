@@ -1,51 +1,52 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.849206",
-   "Default View_TopLeft":"-352,-8",
+   "Default View_ScaleFactor":"1.37954",
+   "Default View_TopLeft":"115,118",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
 #  -string -flagsOSRD
 preplace port sysref_in -pg 1 -lvl 0 -x 0 -y 310 -defaultsOSRD
 preplace port default_sysclk3_100mhz -pg 1 -lvl 0 -x 0 -y 400 -defaultsOSRD
 preplace port dac1_clk -pg 1 -lvl 0 -x 0 -y 280 -defaultsOSRD
-preplace port vout10 -pg 1 -lvl 7 -x 2350 -y 290 -defaultsOSRD
+preplace port vout10 -pg 1 -lvl 7 -x 2370 -y 290 -defaultsOSRD
 preplace port reset -pg 1 -lvl 0 -x 0 -y 460 -defaultsOSRD
-preplace inst zynq_ultra_ps_e_0 -pg 1 -lvl 4 -x 1270 -y 790 -defaultsOSRD
-preplace inst usp_rf_data_converter_0 -pg 1 -lvl 6 -x 2160 -y 320 -defaultsOSRD
-preplace inst ps8_0_axi_periph -pg 1 -lvl 5 -x 1740 -y 660 -defaultsOSRD
+preplace inst zynq_ultra_ps_e_0 -pg 1 -lvl 4 -x 1230 -y 790 -defaultsOSRD
+preplace inst usp_rf_data_converter_0 -pg 1 -lvl 6 -x 2173 -y 330 -defaultsOSRD
+preplace inst ps8_0_axi_periph -pg 1 -lvl 5 -x 1700 -y 660 -defaultsOSRD
 preplace inst rst_ps8_0_99M -pg 1 -lvl 2 -x 410 -y 480 -defaultsOSRD
-preplace inst fifo_generator_0 -pg 1 -lvl 6 -x 2160 -y 1090 -defaultsOSRD
-preplace inst proc_sys_reset_0 -pg 1 -lvl 4 -x 1270 -y 410 -defaultsOSRD
-preplace inst gpio_to_fifo_0 -pg 1 -lvl 3 -x 770 -y 610 -defaultsOSRD
+preplace inst fifo_generator_0 -pg 1 -lvl 6 -x 2173 -y 1090 -defaultsOSRD
+preplace inst proc_sys_reset_0 -pg 1 -lvl 4 -x 1230 -y 410 -defaultsOSRD
+preplace inst gpio_to_fifo_0 -pg 1 -lvl 3 -x 750 -y 610 -defaultsOSRD
 preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 130 -y 400 -defaultsOSRD
-preplace inst axi_gpio_0 -pg 1 -lvl 6 -x 2160 -y 690 -defaultsOSRD
-preplace inst system_ila_1 -pg 1 -lvl 6 -x 2160 -y 100 -defaultsOSRD
-preplace inst pulse_gen_0 -pg 1 -lvl 5 -x 1740 -y 390 -defaultsOSRD
-preplace netloc zynq_ultra_ps_e_0_pl_clk0 1 1 5 240 380 580 510 930 540 1590 490 1970
-preplace netloc rst_ps8_0_99M_peripheral_aresetn 1 2 4 590 520 920J 530 1570 480 1990
-preplace netloc gpio_to_fifo_0_fifo_write 1 3 3 N 630 1560J 870 1910J
-preplace netloc gpio_to_fifo_0_dout 1 3 3 N 610 1580J 510 1920J
-preplace netloc fifo_generator_0_full 1 2 4 590 1010 NJ 1010 NJ 1010 NJ
-preplace netloc rst_ps8_0_99M_mb_reset 1 2 4 N 440 950J 520 NJ 520 1890J
-preplace netloc fifo_generator_0_empty 1 4 2 1600 290 1960J
-preplace netloc fifo_generator_0_dout 1 4 2 1590 270 1880
-preplace netloc pulse_gen_0_fifo_read 1 5 1 1950 110n
+preplace inst axi_gpio_0 -pg 1 -lvl 6 -x 2173 -y 690 -defaultsOSRD
+preplace inst system_ila_1 -pg 1 -lvl 6 -x 2173 -y 100 -defaultsOSRD
+preplace inst pulse_gen_0 -pg 1 -lvl 5 -x 1700 -y 390 -defaultsOSRD
+preplace netloc zynq_ultra_ps_e_0_pl_clk0 1 1 5 240 580 590 510 910 600 1520 800 1940
+preplace netloc rst_ps8_0_99M_peripheral_aresetn 1 2 4 580 520 900J 530 1550 480 1960
+preplace netloc gpio_to_fifo_0_fifo_write 1 3 3 N 630 1530J 500 1890J
+preplace netloc gpio_to_fifo_0_dout 1 3 3 N 610 1540J 510 1880J
+preplace netloc fifo_generator_0_full 1 2 4 600 1010 NJ 1010 NJ 1010 NJ
+preplace netloc rst_ps8_0_99M_mb_reset 1 2 4 N 440 940J 520 NJ 520 1840J
+preplace netloc fifo_generator_0_empty 1 4 2 1550 270 1930J
+preplace netloc fifo_generator_0_dout 1 4 2 1560 290 1900
+preplace netloc pulse_gen_0_fifo_read 1 5 1 1910 100n
 preplace netloc rst_ps8_0_99M_interconnect_aresetn 1 2 2 590J 390 N
-preplace netloc proc_sys_reset_0_peripheral_aresetn 1 4 2 1560 260 1980
-preplace netloc axi_gpio_0_gpio_io_o 1 2 5 580 880 N 880 NJ 880 NJ 880 2330
+preplace netloc proc_sys_reset_0_peripheral_aresetn 1 4 2 1520 250 1950
+preplace netloc axi_gpio_0_gpio_io_o 1 2 5 600 500 930 510 1520J 490 NJ 490 2350
 preplace netloc reset_1 1 0 2 NJ 460 NJ
-preplace netloc gpio_to_fifo_0_rst_pl 1 3 1 940 410n
-preplace netloc usp_rf_data_converter_0_clk_dac1 1 3 4 970 310 1570 300 1900 450 2330
-preplace netloc usp_rf_data_converter_0_vout10 1 6 1 2330 290n
-preplace netloc sysref_in_1 1 0 6 NJ 310 NJ 310 NJ 310 960J 510 1560J 500 1940J
+preplace netloc gpio_to_fifo_0_rst_pl 1 3 1 920 410n
+preplace netloc usp_rf_data_converter_0_clk_dac1 1 3 4 940 310 1530 260 1870 460 2350
+preplace netloc state_out 1 5 1 1880 140n
+preplace netloc pulse_gen_0_m_axis 1 5 1 1860 40n
 preplace netloc ps8_0_axi_periph_M01_AXI 1 5 1 N 670
-preplace netloc pulse_gen_0_m_axis 1 5 1 1890 50n
-preplace netloc zynq_ultra_ps_e_0_M_AXI_HPM0_FPD 1 4 1 1600 580n
-preplace netloc dac1_clk_1 1 0 6 NJ 280 NJ 280 NJ 280 NJ 280 NJ 280 1970J
-preplace netloc ps8_0_axi_periph_M00_AXI 1 5 1 1930 250n
+preplace netloc zynq_ultra_ps_e_0_M_AXI_HPM0_FPD 1 4 1 1560 580n
+preplace netloc ps8_0_axi_periph_M00_AXI 1 5 1 1920 260n
+preplace netloc usp_rf_data_converter_0_vout10 1 6 1 2350 290n
+preplace netloc sysref_in_1 1 0 6 20J 300 NJ 300 NJ 300 NJ 300 NJ 300 1840J
+preplace netloc dac1_clk_1 1 0 6 NJ 280 NJ 280 NJ 280 NJ 280 NJ 280 1850J
 preplace netloc default_sysclk3_100mhz_1 1 0 1 NJ 400
-levelinfo -pg 1 0 130 410 770 1270 1740 2160 2350
-pagesize -pg 1 -db -bbox -sgen -200 -10 2450 1250
+levelinfo -pg 1 0 130 410 750 1230 1700 2173 2370
+pagesize -pg 1 -db -bbox -sgen -200 -20 2470 1760
 "
 }
 {

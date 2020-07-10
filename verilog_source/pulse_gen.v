@@ -25,11 +25,15 @@ module pulse_gen
 	//output to RFSoC module
     output wire [255:0] m_axis_tdata,
     output wire m_axis_tvalid,
-    input wire m_axis_tready 
+    input wire m_axis_tready,
+
+output wire [7:0] state_out	
 );
 
 
 reg [255:0] m_axis_tdata_int;
+
+assign m_axis_tvalid = 1;
 
 assign m_axis_tdata = is_phase_meas_mode ? (clock_tick ? default_pulse : 0) : m_axis_tdata_int;
 
@@ -61,9 +65,12 @@ reg [45:0] main_clock;
 reg [23:0] clock_period;
 
 reg [7:0] state;
-localparam [7:0] state_idle  = 0, 
-				 state_wait_tick = 1, 
-				 state_wait_pulse = 2;
+assign state_out = state;
+localparam [7:0] state_idle  = 0,
+				 state_rst_read = 1,
+				 state_read = 2,
+				 state_wait_tick = 3, 
+				 state_wait_pulse = 4;
 				 
 reg is_phase_meas_mode;//if 1, then pulse is emitted at each clock tick
 				 
@@ -73,7 +80,6 @@ begin
     coarse_delay <= 0;
     fine_delay <= 0;
     rst_clock <= 0;
-    main_clock <= 0;
     clock_period <= 10;
     state <= state_idle;
     fifo_read <= 0;
@@ -100,59 +106,77 @@ always @ (posedge clk or negedge rst) begin
 				m_axis_tdata_int <= 0;
 				rst_clock <= 0;
 				
-			
-				//If we have a command waiting for us in the FIFO
+				//If there is data in the fifo
 				if(!fifo_empty) begin
-					
+				
 					//Tell the FIFO we're reading out this entry
 					fifo_read <= 1;
 					
-					//Determine the command to be executed
-					case(FIFO_COMMAND)
-					
-						command_reset_clock: begin
-						
-							//Just strobe the rst_clock line and output a single pulse
-							rst_clock <= 1;
-							
-							m_axis_tdata_int <= default_pulse;
-							
-						end
-						
-						
-						command_send_pulse: begin
-						
-						      //Save the parameters
-						      coarse_delay <= FIFO_COARSE;
-						      fine_delay <= FIFO_FINE;
-						      state <= state_wait_tick;
-						
-						end
-						
-						command_set_period: begin
-						
-							//Just set the clock period
-							clock_period <= fifo_data[23:0];
-						
-						end
-						
-						command_set_phase_meas_mode: begin
-							is_phase_meas_mode <= 1;
-						end
-						
-						command_reset_phase_meas_mode: begin
-							is_phase_meas_mode <= 0;
-						end
-					
-						default begin
-						
-						      state <= state_idle;
-						
-						end
-					
-					endcase
+					//Go to the read state
+					state <= state_rst_read;
 				
 				end
+		
+			end
+			
+			state_rst_read: begin
+				fifo_read <= 0;
+				state <= state_read;
+			end
+		
+			state_read: begin
+		
+				//Determine the command to be executed
+				case(FIFO_COMMAND)
+				
+					command_reset_clock: begin
+					
+						//Just strobe the rst_clock line and output a single pulse
+						rst_clock <= 1;
+						
+						m_axis_tdata_int <= default_pulse;
+						
+						state <= state_idle;
+						
+					end
+					
+					
+					command_send_pulse: begin
+					
+						  //Save the parameters
+						  coarse_delay <= FIFO_COARSE;
+						  fine_delay <= FIFO_FINE;
+						  state <= state_wait_tick;
+					
+					end
+					
+					command_set_period: begin
+					
+						//Just set the clock period
+						clock_period <= fifo_data[23:0];
+						
+						state <= state_idle;
+					
+					end
+					
+					command_set_phase_meas_mode: begin
+						is_phase_meas_mode <= 1;
+						state <= state_idle;
+					end
+					
+					command_reset_phase_meas_mode: begin
+						is_phase_meas_mode <= 0;
+						state <= state_idle;
+					end
+				
+					default begin
+					
+						  state <= state_idle;
+					
+					end
+				
+				endcase
+				
 			
 			end
 			

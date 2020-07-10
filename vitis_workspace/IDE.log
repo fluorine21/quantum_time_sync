@@ -5654,3 +5654,150 @@ con
 13:57:08 INFO  : Successfully done sdx_reload_mss "C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss"
 14:09:37 INFO  : Result from executing command 'getProjects': test_proj_plat
 14:09:37 INFO  : Result from executing command 'getPlatforms': test_proj_plat|C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm
+13:57:59 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\James\vitis_workspace\temp_xsdb_launch_script.tcl
+13:58:02 INFO  : XSCT server has started successfully.
+13:58:02 INFO  : plnx-install-location is set to ''
+13:58:02 INFO  : Successfully done setting XSCT server connection channel  
+13:58:02 INFO  : Successfully done setting workspace for the tool. 
+13:58:03 INFO  : Successfully done query RDI_DATADIR 
+13:58:06 INFO  : Registering command handlers for Vitis TCF services
+13:58:06 INFO  : Platform repository initialization has completed.
+13:59:45 INFO  : Result from executing command 'getProjects': test_proj_plat
+13:59:45 INFO  : Result from executing command 'getPlatforms': 
+14:00:12 INFO  : Successfully done sdx_reload_mss "C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss"
+14:00:18 INFO  : (SwPlatform)  Successfully done add_library 
+14:00:20 INFO  : (SwPlatform)  Successfully done add_library 
+14:00:38 INFO  : (SwPlaform) Successfully done setParamInSpec 
+14:00:49 INFO  : (SwPlaform) Successfully done setParamInSpec 
+14:00:52 INFO  : (SwPlaform) Successfully done setParamInSpec 
+14:00:59 INFO  : (SwPlatform) Successfully done update_mss 
+14:01:00 INFO  : Successfully done sdx_reload_mss "C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss"
+14:05:51 INFO  : Result from executing command 'getProjects': test_proj_plat
+14:05:51 INFO  : Result from executing command 'getPlatforms': test_proj_plat|C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm
+14:08:10 INFO  : Checking for BSP changes to sync application flags for project 'test_proj_pulse_ctrl'...
+14:08:10 INFO  : Updating application flags with new BSP settings...
+14:08:11 INFO  : Successfully updated application flags for project test_proj_pulse_ctrl.
+14:08:15 INFO  : The hardware specfication used by project 'test_proj_pulse_ctrl' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+14:08:15 INFO  : The file 'C:\James\vitis_workspace\test_proj_pulse_ctrl\_ide\bitstream\top_level_block_design_wrapper.bit' stored in project is removed.
+14:08:15 INFO  : The updated bitstream files are copied from platform to folder 'C:\James\vitis_workspace\test_proj_pulse_ctrl\_ide\bitstream' in project 'test_proj_pulse_ctrl'.
+14:08:15 INFO  : The file 'C:\James\vitis_workspace\test_proj_pulse_ctrl\_ide\psinit\psu_init.tcl' stored in project is removed.
+14:08:16 INFO  : The updated ps init files are copied from platform to folder 'C:\James\vitis_workspace\test_proj_pulse_ctrl\_ide\psinit' in project 'test_proj_pulse_ctrl'.
+14:16:38 INFO  : Checking for BSP changes to sync application flags for project 'test_proj_pulse_ctrl'...
+14:17:16 INFO  : Checking for BSP changes to sync application flags for project 'test_proj_pulse_ctrl'...
+14:19:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:19:09 INFO  : Jtag cable 'Xilinx HW-Z1-ZCU104 FT4232H 19395A' is selected.
+14:19:09 INFO  : 'jtag frequency' command is executed.
+14:19:09 INFO  : Sourcing of 'C:/Xilinx/Vitis/2020.1/scripts/vitis/util/zynqmp_utils.tcl' is done.
+14:19:09 INFO  : Context for 'APU' is selected.
+14:19:09 INFO  : Cleared APU and A53 resets
+14:19:09 INFO  : Context for 'RPU' is selected.
+14:19:09 INFO  : Cleared RPU and R5 resets
+14:19:09 INFO  : Context for 'APU' is selected.
+14:19:09 INFO  : Hardware design and registers information is loaded from 'C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/hw/top_level_block_design_wrapper.xsa'.
+14:19:09 INFO  : 'configparams force-mem-access 1' command is executed.
+14:19:09 INFO  : Context for 'APU' is selected.
+14:19:09 INFO  : Boot mode is read from the target.
+14:19:10 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+14:19:10 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+14:19:10 INFO  : The application 'C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/boot/fsbl.elf' is downloaded to processor 'psu_cortexa53_0'.
+14:19:11 INFO  : 'set bp_19_10_fsbl_bp [bpadd -addr &XFsbl_Exit]' command is executed.
+14:19:12 INFO  : 'con -block -timeout 60' command is executed.
+14:19:12 INFO  : 'bpremove $bp_19_10_fsbl_bp' command is executed.
+14:19:12 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+14:19:12 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+14:19:13 INFO  : The application 'C:/James/vitis_workspace/test_proj_pulse_ctrl/Debug/test_proj_pulse_ctrl.elf' is downloaded to processor 'psu_cortexa53_0'.
+14:19:13 INFO  : 'configparams force-mem-access 0' command is executed.
+14:19:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Xilinx/Vitis/2020.1/scripts/vitis/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*"}
+reset_apu
+targets -set -nocase -filter {name =~"RPU*"}
+clear_rpu_reset
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/hw/top_level_block_design_wrapper.xsa -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+set mode [expr [mrd -value 0xFF5E0200] & 0xf]
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/boot/fsbl.elf
+set bp_19_10_fsbl_bp [bpadd -addr &XFsbl_Exit]
+con -block -timeout 60
+bpremove $bp_19_10_fsbl_bp
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow C:/James/vitis_workspace/test_proj_pulse_ctrl/Debug/test_proj_pulse_ctrl.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:19:13 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+14:19:13 INFO  : 'con' command is executed.
+14:19:13 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A53*#0"}
+con
+----------------End of Script----------------
+
+14:19:13 INFO  : Launch script is exported to file 'C:\James\vitis_workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_test_proj_pulse_ctrl_system_no_fpga_flash_standalone.tcl'
+15:14:42 INFO  : Checking for BSP changes to sync application flags for project 'test_proj_pulse_ctrl'...
+15:15:32 INFO  : Checking for BSP changes to sync application flags for project 'test_proj_pulse_ctrl'...
+15:16:07 INFO  : Checking for BSP changes to sync application flags for project 'test_proj_pulse_ctrl'...
+15:17:53 INFO  : Checking for BSP changes to sync application flags for project 'test_proj_pulse_ctrl'...
+15:18:22 INFO  : Checking for BSP changes to sync application flags for project 'test_proj_pulse_ctrl'...
+15:19:21 INFO  : Disconnected from the channel tcfchan#5.
+15:19:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:19:22 INFO  : Jtag cable 'Xilinx HW-Z1-ZCU104 FT4232H 19395A' is selected.
+15:19:22 INFO  : 'jtag frequency' command is executed.
+15:19:22 INFO  : Sourcing of 'C:/Xilinx/Vitis/2020.1/scripts/vitis/util/zynqmp_utils.tcl' is done.
+15:19:22 INFO  : Context for 'APU' is selected.
+15:19:22 INFO  : Cleared APU and A53 resets
+15:19:22 INFO  : Context for 'RPU' is selected.
+15:19:22 INFO  : Cleared RPU and R5 resets
+15:19:22 INFO  : Context for 'APU' is selected.
+15:19:22 INFO  : Hardware design and registers information is loaded from 'C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/hw/top_level_block_design_wrapper.xsa'.
+15:19:22 INFO  : 'configparams force-mem-access 1' command is executed.
+15:19:22 INFO  : Context for 'APU' is selected.
+15:19:22 INFO  : Boot mode is read from the target.
+15:19:22 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:19:22 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+15:19:23 INFO  : The application 'C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/boot/fsbl.elf' is downloaded to processor 'psu_cortexa53_0'.
+15:19:23 INFO  : 'set bp_19_23_fsbl_bp [bpadd -addr &XFsbl_Exit]' command is executed.
+15:19:24 INFO  : 'con -block -timeout 60' command is executed.
+15:19:24 INFO  : 'bpremove $bp_19_23_fsbl_bp' command is executed.
+15:19:24 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:19:24 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+15:19:25 INFO  : The application 'C:/James/vitis_workspace/test_proj_pulse_ctrl/Debug/test_proj_pulse_ctrl.elf' is downloaded to processor 'psu_cortexa53_0'.
+15:19:25 INFO  : 'configparams force-mem-access 0' command is executed.
+15:19:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Xilinx/Vitis/2020.1/scripts/vitis/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*"}
+reset_apu
+targets -set -nocase -filter {name =~"RPU*"}
+clear_rpu_reset
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/hw/top_level_block_design_wrapper.xsa -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+set mode [expr [mrd -value 0xFF5E0200] & 0xf]
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/boot/fsbl.elf
+set bp_19_23_fsbl_bp [bpadd -addr &XFsbl_Exit]
+con -block -timeout 60
+bpremove $bp_19_23_fsbl_bp
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow C:/James/vitis_workspace/test_proj_pulse_ctrl/Debug/test_proj_pulse_ctrl.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:19:25 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:19:26 INFO  : 'con' command is executed.
+15:19:26 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A53*#0"}
+con
+----------------End of Script----------------
+
+15:19:26 INFO  : Launch script is exported to file 'C:\James\vitis_workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_test_proj_pulse_ctrl_system_no_fpga_flash_standalone.tcl'
+15:24:50 INFO  : Checking for BSP changes to sync application flags for project 'test_proj_pulse_ctrl'...

@@ -292,3 +292,26 @@ timestamp=[2020-07-07 13:48:09], mode=WORKBENCH_UI_INIT, duration=0:00:00.890, d
 timestamp=[2020-07-07 13:48:10], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.166, duration_ms=166, data={}
 timestamp=[2020-07-07 13:56:53], mode=PLATFORM_CREATION, duration=0:00:47.516, duration_ms=47516, data={platform_source=dsa, os=standalone, processor=psu_cortexa53, platform=null}
 timestamp=[2020-07-07 14:09:38], mode=PLATFORM_GENERATION, duration=0:04:06.226, duration_ms=246226, data={name=test_proj_plat}
+timestamp=[2020-07-10 13:58:04], mode=WORKBENCH_START, duration=0:00:11.011, duration_ms=11011, data={}
+timestamp=[2020-07-10 13:58:05], mode=WORKBENCH_UI_INIT, duration=0:00:01.024, duration_ms=1024, data={editors_count=3, platform_editors_count=1, projects_count=6, platform_projects_count=1, active_platform_editor=true, projects=RemoteSystemsTempFiles,test_proj_ethernet,test_proj_ethernet_system,test_proj_plat,test_proj_pulse_ctrl,test_proj_pulse_ctrl_system}
+timestamp=[2020-07-10 13:58:06], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.088, duration_ms=88, data={}
+timestamp=[2020-07-10 13:59:46], mode=PLATFORM_CREATION, duration=0:00:44.036, duration_ms=44036, data={platform_source=dsa, os=standalone, processor=psu_cortexa53, platform=null}
+timestamp=[2020-07-10 14:05:52], mode=PLATFORM_GENERATION, duration=0:04:27.768, duration_ms=267768, data={name=test_proj_plat}
+timestamp=[2020-07-10 14:08:14], mode=BUILD, duration=0:00:03.281, duration_ms=3281, data={name=test_proj_pulse_ctrl, configuration=Debug, clean_build=false}
+timestamp=[2020-07-10 14:08:30], mode=BUILD, duration=0:00:13.432, duration_ms=13432, data={name=test_proj_pulse_ctrl_system, configuration=Debug, clean_build=false}
+timestamp=[2020-07-10 14:16:40], mode=BUILD, duration=0:00:01.482, duration_ms=1482, data={name=test_proj_pulse_ctrl, configuration=Debug, clean_build=false}
+timestamp=[2020-07-10 14:16:54], mode=BUILD, duration=0:00:13.121, duration_ms=13121, data={name=test_proj_pulse_ctrl_system, configuration=Debug, clean_build=false}
+timestamp=[2020-07-10 14:17:18], mode=BUILD, duration=0:00:01.689, duration_ms=1689, data={name=test_proj_pulse_ctrl, configuration=Debug, clean_build=false}
+timestamp=[2020-07-10 14:17:31], mode=BUILD, duration=0:00:13.023, duration_ms=13023, data={name=test_proj_pulse_ctrl_system, configuration=Debug, clean_build=false}
+timestamp=[2020-07-10 15:14:45], mode=BUILD, duration=0:00:02.373, duration_ms=2373, data={name=test_proj_pulse_ctrl, configuration=Debug, clean_build=false}
+timestamp=[2020-07-10 15:14:59], mode=BUILD, duration=0:00:13.185, duration_ms=13185, data={name=test_proj_pulse_ctrl_system, configuration=Debug, clean_build=false}
+timestamp=[2020-07-10 15:15:33], mode=BUILD, duration=0:00:00.793, duration_ms=793, data={name=test_proj_pulse_ctrl, configuration=Debug, clean_build=false}
+timestamp=[2020-07-10 15:15:47], mode=BUILD, duration=0:00:13.123, duration_ms=13123, data={name=test_proj_pulse_ctrl_system, configuration=Debug, clean_build=false}
+timestamp=[2020-07-10 15:16:09], mode=BUILD, duration=0:00:02.077, duration_ms=2077, data={name=test_proj_pulse_ctrl, configuration=Debug, clean_build=false}
+timestamp=[2020-07-10 15:16:23], mode=BUILD, duration=0:00:12.916, duration_ms=12916, data={name=test_proj_pulse_ctrl_system, configuration=Debug, clean_build=false}
+timestamp=[2020-07-10 15:17:55], mode=BUILD, duration=0:00:02.197, duration_ms=2197, data={name=test_proj_pulse_ctrl, configuration=Debug, clean_build=false}
+timestamp=[2020-07-10 15:18:09], mode=BUILD, duration=0:00:13.021, duration_ms=13021, data={name=test_proj_pulse_ctrl_system, configuration=Debug, clean_build=false}
+timestamp=[2020-07-10 15:18:24], mode=BUILD, duration=0:00:02.040, duration_ms=2040, data={name=test_proj_pulse_ctrl, configuration=Debug, clean_build=false}
+timestamp=[2020-07-10 15:18:37], mode=BUILD, duration=0:00:12.871, duration_ms=12871, data={name=test_proj_pulse_ctrl_system, configuration=Debug, clean_build=false}
+timestamp=[2020-07-10 15:24:51], mode=BUILD, duration=0:00:01.663, duration_ms=1663, data={name=test_proj_pulse_ctrl, configuration=Debug, clean_build=false}
+timestamp=[2020-07-10 15:25:05], mode=BUILD, duration=0:00:12.811, duration_ms=12811, data={name=test_proj_pulse_ctrl_system, configuration=Debug, clean_build=false}
