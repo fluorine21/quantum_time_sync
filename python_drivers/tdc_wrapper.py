@@ -12,18 +12,22 @@ class tdc_wrapper:
     
     timeout = 5 #in seconds
     device = 0
+    dummy_mode = 0#If true, timestamp returned will be unix time * 1e7
     
     
-    def __init__(self, tt):
+    def __init__(self, tt, dm):
         
         self.timeout = tt
-        
+        self.dummy_mode = dm
         return
     
     
     #Returns the timestamp of the first pulse seen on channel_num
     #Returns on timeout
     def wait_pulse(self, channel_num):
+        
+        if(self.dummy_mode):
+            return int(time.time() * 10000000)
         
         if(self.device):
             print("Error, cannot call wait_pulse while recording, exiting")
@@ -67,6 +71,9 @@ class tdc_wrapper:
     
     def start_record(self):
         
+        if(self.dummy_mode):
+            return 0
+        
         if(self.device):
             print("Error, cannot call this function while TDC is active!")
             return -1
@@ -80,6 +87,9 @@ class tdc_wrapper:
     #0 if not found
     #-1 if nothing found
     def end_record(self, channel_num):
+        
+        if(self.dummy_mode):
+            return int(time.time() * 10000000)
         
         ret_val = 0
         

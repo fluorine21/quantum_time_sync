@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Fri Jul 10 17:53:15 2020
+// Date        : Sat Jul 11 11:39:50 2020
 // Host        : pme10D0025 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_pulse_gen_0_0/top_level_block_design_pulse_gen_0_0_sim_netlist.v
@@ -324,25 +324,42 @@ endmodule
 
 (* ORIG_REF_NAME = "pulse_gen" *) 
 module top_level_block_design_pulse_gen_0_0_pulse_gen
-   (m_axis_tdata,
-    state_out,
+   (state_out,
+    m_axis_tdata,
     fifo_read,
-    fifo_data,
     clk,
+    fifo_data,
     fifo_empty,
     rst);
-  output [15:0]m_axis_tdata;
   output [2:0]state_out;
+  output [15:0]m_axis_tdata;
   output fifo_read;
-  input [31:0]fifo_data;
   input clk;
+  input [31:0]fifo_data;
   input fifo_empty;
   input rst;
 
+  wire \FSM_sequential_state[0]_i_2_n_0 ;
+  wire \FSM_sequential_state[0]_i_3_n_0 ;
   wire \FSM_sequential_state[1]_i_2_n_0 ;
+  wire \FSM_sequential_state[1]_i_3_n_0 ;
+  wire \FSM_sequential_state[2]_i_10_n_0 ;
+  wire \FSM_sequential_state[2]_i_11_n_0 ;
+  wire \FSM_sequential_state[2]_i_12_n_0 ;
+  wire \FSM_sequential_state[2]_i_13_n_0 ;
+  wire \FSM_sequential_state[2]_i_14_n_0 ;
+  wire \FSM_sequential_state[2]_i_15_n_0 ;
+  wire \FSM_sequential_state[2]_i_16_n_0 ;
+  wire \FSM_sequential_state[2]_i_17_n_0 ;
+  wire \FSM_sequential_state[2]_i_18_n_0 ;
   wire \FSM_sequential_state[2]_i_1_n_0 ;
-  wire \FSM_sequential_state[2]_i_2_n_0 ;
   wire \FSM_sequential_state[2]_i_3_n_0 ;
+  wire \FSM_sequential_state[2]_i_4_n_0 ;
+  wire \FSM_sequential_state[2]_i_5_n_0 ;
+  wire \FSM_sequential_state[2]_i_6_n_0 ;
+  wire \FSM_sequential_state[2]_i_7_n_0 ;
+  wire \FSM_sequential_state[2]_i_8_n_0 ;
+  wire \FSM_sequential_state[2]_i_9_n_0 ;
   wire clk;
   wire clock_period;
   wire \clock_period_reg_n_0_[0] ;
@@ -374,24 +391,25 @@ module top_level_block_design_pulse_gen_0_0_pulse_gen
   wire \coarse_delay[10]_i_1_n_0 ;
   wire \coarse_delay[11]_i_1_n_0 ;
   wire \coarse_delay[11]_i_2_n_0 ;
-  wire \coarse_delay[11]_i_3_n_0 ;
   wire \coarse_delay[12]_i_1_n_0 ;
-  wire \coarse_delay[12]_i_2_n_0 ;
-  wire \coarse_delay[12]_i_3_n_0 ;
-  wire \coarse_delay[12]_i_4_n_0 ;
   wire \coarse_delay[13]_i_1_n_0 ;
   wire \coarse_delay[14]_i_1_n_0 ;
   wire \coarse_delay[14]_i_2_n_0 ;
-  wire \coarse_delay[14]_i_3_n_0 ;
+  wire \coarse_delay[15]_i_10_n_0 ;
+  wire \coarse_delay[15]_i_11_n_0 ;
   wire \coarse_delay[15]_i_2_n_0 ;
   wire \coarse_delay[15]_i_3_n_0 ;
+  wire \coarse_delay[15]_i_4_n_0 ;
+  wire \coarse_delay[15]_i_5_n_0 ;
+  wire \coarse_delay[15]_i_6_n_0 ;
+  wire \coarse_delay[15]_i_7_n_0 ;
+  wire \coarse_delay[15]_i_8_n_0 ;
+  wire \coarse_delay[15]_i_9_n_0 ;
   wire \coarse_delay[1]_i_1_n_0 ;
   wire \coarse_delay[2]_i_1_n_0 ;
-  wire \coarse_delay[2]_i_2_n_0 ;
   wire \coarse_delay[3]_i_1_n_0 ;
   wire \coarse_delay[3]_i_2_n_0 ;
   wire \coarse_delay[4]_i_1_n_0 ;
-  wire \coarse_delay[4]_i_2_n_0 ;
   wire \coarse_delay[5]_i_1_n_0 ;
   wire \coarse_delay[5]_i_2_n_0 ;
   wire \coarse_delay[6]_i_1_n_0 ;
@@ -399,7 +417,6 @@ module top_level_block_design_pulse_gen_0_0_pulse_gen
   wire \coarse_delay[7]_i_1_n_0 ;
   wire \coarse_delay[8]_i_1_n_0 ;
   wire \coarse_delay[8]_i_2_n_0 ;
-  wire \coarse_delay[8]_i_3_n_0 ;
   wire \coarse_delay[9]_i_1_n_0 ;
   wire \coarse_delay[9]_i_2_n_0 ;
   wire \coarse_delay_reg_n_0_[0] ;
@@ -424,9 +441,8 @@ module top_level_block_design_pulse_gen_0_0_pulse_gen
   wire fifo_read_i_1_n_0;
   wire fifo_read_i_2_n_0;
   wire fine_delay;
+  wire is_phase_meas_mode;
   wire is_phase_meas_mode_i_1_n_0;
-  wire is_phase_meas_mode_i_2_n_0;
-  wire is_phase_meas_mode_i_3_n_0;
   wire is_phase_meas_mode_reg_n_0;
   wire [15:0]m_axis_tdata;
   wire \m_axis_tdata[240]_INST_0_i_10_n_0 ;
@@ -453,10 +469,9 @@ module top_level_block_design_pulse_gen_0_0_pulse_gen
   wire \m_axis_tdata_int[206]_i_1_n_0 ;
   wire \m_axis_tdata_int[222]_i_1_n_0 ;
   wire \m_axis_tdata_int[238]_i_1_n_0 ;
-  wire \m_axis_tdata_int[238]_i_2_n_0 ;
   wire \m_axis_tdata_int[254]_i_2_n_0 ;
   wire \m_axis_tdata_int[254]_i_4_n_0 ;
-  wire \m_axis_tdata_int[254]_i_5_n_0 ;
+  wire \m_axis_tdata_int[254]_i_6_n_0 ;
   wire \m_axis_tdata_int[30]_i_1_n_0 ;
   wire \m_axis_tdata_int[46]_i_1_n_0 ;
   wire \m_axis_tdata_int[62]_i_1_n_0 ;
@@ -646,7 +661,8 @@ module top_level_block_design_pulse_gen_0_0_pulse_gen
   wire rst_clock_i_1_n_0;
   wire rst_clock_reg_n_0;
   wire [2:0]state__0;
-  wire [1:0]state__1;
+  wire [2:0]state__1;
+  wire state__20;
   wire [2:0]state_out;
   wire [7:4]NLW_main_clock0_carry__4_CO_UNCONNECTED;
   wire [7:5]NLW_main_clock0_carry__4_O_UNCONNECTED;
@@ -658,93 +674,258 @@ module top_level_block_design_pulse_gen_0_0_pulse_gen
   wire [7:7]NLW_main_clock2_carry__1_O_UNCONNECTED;
 
   LUT6 #(
-    .INIT(64'h0000010011111111)) 
+    .INIT(64'h0004FFFF00000000)) 
     \FSM_sequential_state[0]_i_1 
+       (.I0(\FSM_sequential_state[0]_i_2_n_0 ),
+        .I1(fifo_data[24]),
+        .I2(fifo_data[26]),
+        .I3(fifo_data[25]),
+        .I4(state__0[1]),
+        .I5(\FSM_sequential_state[0]_i_3_n_0 ),
+        .O(state__1[0]));
+  LUT5 #(
+    .INIT(32'hFFFFFFFE)) 
+    \FSM_sequential_state[0]_i_2 
+       (.I0(fifo_data[31]),
+        .I1(fifo_data[30]),
+        .I2(fifo_data[29]),
+        .I3(fifo_data[27]),
+        .I4(fifo_data[28]),
+        .O(\FSM_sequential_state[0]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT2 #(
+    .INIT(4'h1)) 
+    \FSM_sequential_state[0]_i_3 
        (.I0(state__0[0]),
         .I1(state__0[2]),
-        .I2(fifo_data[25]),
-        .I3(fifo_data[24]),
-        .I4(\FSM_sequential_state[1]_i_2_n_0 ),
-        .I5(state__0[1]),
-        .O(state__1[0]));
-  LUT6 #(
-    .INIT(64'h0202020202060202)) 
+        .O(\FSM_sequential_state[0]_i_3_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT5 #(
+    .INIT(32'h888888F8)) 
     \FSM_sequential_state[1]_i_1 
-       (.I0(state__0[0]),
-        .I1(state__0[1]),
-        .I2(state__0[2]),
-        .I3(\FSM_sequential_state[1]_i_2_n_0 ),
-        .I4(fifo_data[24]),
-        .I5(fifo_data[25]),
+       (.I0(\FSM_sequential_state[1]_i_2_n_0 ),
+        .I1(\FSM_sequential_state[1]_i_3_n_0 ),
+        .I2(state__0[0]),
+        .I3(state__0[1]),
+        .I4(state__0[2]),
         .O(state__1[1]));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFFFE)) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT5 #(
+    .INIT(32'h00000002)) 
     \FSM_sequential_state[1]_i_2 
-       (.I0(fifo_data[26]),
-        .I1(fifo_data[27]),
-        .I2(fifo_data[28]),
+       (.I0(fifo_data[24]),
+        .I1(state__0[2]),
+        .I2(state__0[0]),
+        .I3(fifo_data[26]),
+        .I4(fifo_data[25]),
+        .O(\FSM_sequential_state[1]_i_2_n_0 ));
+  LUT6 #(
+    .INIT(64'h0000000000000002)) 
+    \FSM_sequential_state[1]_i_3 
+       (.I0(state__0[1]),
+        .I1(fifo_data[28]),
+        .I2(fifo_data[27]),
         .I3(fifo_data[29]),
         .I4(fifo_data[30]),
         .I5(fifo_data[31]),
-        .O(\FSM_sequential_state[1]_i_2_n_0 ));
+        .O(\FSM_sequential_state[1]_i_3_n_0 ));
   LUT6 #(
-    .INIT(64'h30333388303333BB)) 
+    .INIT(64'hFFFFFFFFFFFFFF80)) 
     \FSM_sequential_state[2]_i_1 
-       (.I0(\FSM_sequential_state[2]_i_3_n_0 ),
-        .I1(state__0[2]),
-        .I2(\m_axis_tdata[240]_INST_0_i_1_n_0 ),
-        .I3(state__0[1]),
-        .I4(state__0[0]),
-        .I5(fifo_empty),
+       (.I0(state_out[1]),
+        .I1(\FSM_sequential_state[2]_i_3_n_0 ),
+        .I2(\FSM_sequential_state[2]_i_4_n_0 ),
+        .I3(\FSM_sequential_state[2]_i_5_n_0 ),
+        .I4(\FSM_sequential_state[2]_i_6_n_0 ),
+        .I5(\FSM_sequential_state[2]_i_7_n_0 ),
         .O(\FSM_sequential_state[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT4 #(
+    .INIT(16'h0001)) 
+    \FSM_sequential_state[2]_i_10 
+       (.I0(main_clock[11]),
+        .I1(main_clock[10]),
+        .I2(main_clock[9]),
+        .I3(main_clock[8]),
+        .O(\FSM_sequential_state[2]_i_10_n_0 ));
+  LUT4 #(
+    .INIT(16'h0001)) 
+    \FSM_sequential_state[2]_i_11 
+       (.I0(main_clock[23]),
+        .I1(main_clock[22]),
+        .I2(main_clock[21]),
+        .I3(main_clock[20]),
+        .O(\FSM_sequential_state[2]_i_11_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT3 #(
-    .INIT(8'h40)) 
+    .INIT(8'h01)) 
+    \FSM_sequential_state[2]_i_12 
+       (.I0(main_clock[37]),
+        .I1(main_clock[36]),
+        .I2(main_clock[35]),
+        .O(\FSM_sequential_state[2]_i_12_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  LUT3 #(
+    .INIT(8'h01)) 
+    \FSM_sequential_state[2]_i_13 
+       (.I0(main_clock[26]),
+        .I1(main_clock[25]),
+        .I2(main_clock[24]),
+        .O(\FSM_sequential_state[2]_i_13_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  LUT5 #(
+    .INIT(32'hFFFFFFFE)) 
+    \FSM_sequential_state[2]_i_14 
+       (.I0(\coarse_delay_reg_n_0_[4] ),
+        .I1(\coarse_delay_reg_n_0_[5] ),
+        .I2(\coarse_delay_reg_n_0_[15] ),
+        .I3(\coarse_delay_reg_n_0_[14] ),
+        .I4(\coarse_delay_reg_n_0_[13] ),
+        .O(\FSM_sequential_state[2]_i_14_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    \FSM_sequential_state[2]_i_15 
+       (.I0(\coarse_delay_reg_n_0_[10] ),
+        .I1(\coarse_delay_reg_n_0_[11] ),
+        .I2(\coarse_delay_reg_n_0_[7] ),
+        .I3(\coarse_delay_reg_n_0_[8] ),
+        .O(\FSM_sequential_state[2]_i_15_n_0 ));
+  LUT6 #(
+    .INIT(64'h0051005100000051)) 
+    \FSM_sequential_state[2]_i_16 
+       (.I0(\coarse_delay_reg_n_0_[8] ),
+        .I1(\coarse_delay_reg_n_0_[6] ),
+        .I2(\coarse_delay_reg_n_0_[7] ),
+        .I3(\coarse_delay_reg_n_0_[11] ),
+        .I4(\coarse_delay_reg_n_0_[9] ),
+        .I5(\coarse_delay_reg_n_0_[10] ),
+        .O(\FSM_sequential_state[2]_i_16_n_0 ));
+  LUT6 #(
+    .INIT(64'h0051005100000051)) 
+    \FSM_sequential_state[2]_i_17 
+       (.I0(\coarse_delay_reg_n_0_[2] ),
+        .I1(\coarse_delay_reg_n_0_[0] ),
+        .I2(\coarse_delay_reg_n_0_[1] ),
+        .I3(\coarse_delay_reg_n_0_[5] ),
+        .I4(\coarse_delay_reg_n_0_[3] ),
+        .I5(\coarse_delay_reg_n_0_[4] ),
+        .O(\FSM_sequential_state[2]_i_17_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  LUT5 #(
+    .INIT(32'h01010001)) 
+    \FSM_sequential_state[2]_i_18 
+       (.I0(\coarse_delay_reg_n_0_[2] ),
+        .I1(\coarse_delay_reg_n_0_[1] ),
+        .I2(\coarse_delay_reg_n_0_[14] ),
+        .I3(\coarse_delay_reg_n_0_[12] ),
+        .I4(\coarse_delay_reg_n_0_[13] ),
+        .O(\FSM_sequential_state[2]_i_18_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  LUT5 #(
+    .INIT(32'h08080008)) 
     \FSM_sequential_state[2]_i_2 
+       (.I0(state__0[1]),
+        .I1(state__0[0]),
+        .I2(state__0[2]),
+        .I3(\FSM_sequential_state[2]_i_8_n_0 ),
+        .I4(\FSM_sequential_state[2]_i_9_n_0 ),
+        .O(state__1[2]));
+  LUT6 #(
+    .INIT(64'h8000000000000000)) 
+    \FSM_sequential_state[2]_i_3 
+       (.I0(\m_axis_tdata[240]_INST_0_i_12_n_0 ),
+        .I1(\FSM_sequential_state[2]_i_10_n_0 ),
+        .I2(\m_axis_tdata[240]_INST_0_i_11_n_0 ),
+        .I3(\m_axis_tdata[240]_INST_0_i_10_n_0 ),
+        .I4(\FSM_sequential_state[2]_i_11_n_0 ),
+        .I5(\m_axis_tdata[240]_INST_0_i_9_n_0 ),
+        .O(\FSM_sequential_state[2]_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'h8000000000000000)) 
+    \FSM_sequential_state[2]_i_4 
+       (.I0(\FSM_sequential_state[2]_i_12_n_0 ),
+        .I1(\m_axis_tdata[240]_INST_0_i_8_n_0 ),
+        .I2(\m_axis_tdata[240]_INST_0_i_7_n_0 ),
+        .I3(\FSM_sequential_state[2]_i_13_n_0 ),
+        .I4(\m_axis_tdata[240]_INST_0_i_6_n_0 ),
+        .I5(\m_axis_tdata[240]_INST_0_i_5_n_0 ),
+        .O(\FSM_sequential_state[2]_i_4_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  LUT4 #(
+    .INIT(16'h000D)) 
+    \FSM_sequential_state[2]_i_5 
+       (.I0(fifo_empty),
+        .I1(state__0[0]),
+        .I2(state__0[1]),
+        .I3(state__0[2]),
+        .O(\FSM_sequential_state[2]_i_5_n_0 ));
+  LUT6 #(
+    .INIT(64'h0200000000000000)) 
+    \FSM_sequential_state[2]_i_6 
+       (.I0(state_out[2]),
+        .I1(\FSM_sequential_state[2]_i_14_n_0 ),
+        .I2(\FSM_sequential_state[2]_i_15_n_0 ),
+        .I3(\FSM_sequential_state[2]_i_16_n_0 ),
+        .I4(\FSM_sequential_state[2]_i_17_n_0 ),
+        .I5(\FSM_sequential_state[2]_i_18_n_0 ),
+        .O(\FSM_sequential_state[2]_i_6_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \FSM_sequential_state[2]_i_7 
        (.I0(state__0[2]),
-        .I1(state__0[1]),
-        .I2(state__0[0]),
-        .O(\FSM_sequential_state[2]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+        .I1(state__0[0]),
+        .I2(state__0[1]),
+        .O(\FSM_sequential_state[2]_i_7_n_0 ));
   LUT5 #(
     .INIT(32'h00000001)) 
-    \FSM_sequential_state[2]_i_3 
-       (.I0(\coarse_delay_reg_n_0_[13] ),
-        .I1(\coarse_delay_reg_n_0_[14] ),
-        .I2(\coarse_delay[12]_i_2_n_0 ),
-        .I3(\coarse_delay_reg_n_0_[12] ),
-        .I4(\coarse_delay_reg_n_0_[15] ),
-        .O(\FSM_sequential_state[2]_i_3_n_0 ));
-  (* FSM_ENCODED_STATES = "state_rst_read:001,state_read:010,state_wait_pulse:100,state_wait_tick:011,state_idle:000" *) 
+    \FSM_sequential_state[2]_i_8 
+       (.I0(\coarse_delay_reg_n_0_[9] ),
+        .I1(\coarse_delay_reg_n_0_[12] ),
+        .I2(\coarse_delay_reg_n_0_[3] ),
+        .I3(\coarse_delay_reg_n_0_[6] ),
+        .I4(\coarse_delay[3]_i_2_n_0 ),
+        .O(\FSM_sequential_state[2]_i_8_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT5 #(
+    .INIT(32'hFFFFFFFE)) 
+    \FSM_sequential_state[2]_i_9 
+       (.I0(\FSM_sequential_state[2]_i_14_n_0 ),
+        .I1(\coarse_delay_reg_n_0_[8] ),
+        .I2(\coarse_delay_reg_n_0_[7] ),
+        .I3(\coarse_delay_reg_n_0_[11] ),
+        .I4(\coarse_delay_reg_n_0_[10] ),
+        .O(\FSM_sequential_state[2]_i_9_n_0 ));
+  (* FSM_ENCODED_STATES = "state_rst_read:001,state_read:010,state_wait_tick:011,state_wait_pulse:100,state_idle:000" *) 
   FDCE \FSM_sequential_state_reg[0] 
        (.C(clk),
         .CE(\FSM_sequential_state[2]_i_1_n_0 ),
         .CLR(fifo_read_i_2_n_0),
         .D(state__1[0]),
         .Q(state__0[0]));
-  (* FSM_ENCODED_STATES = "state_rst_read:001,state_read:010,state_wait_pulse:100,state_wait_tick:011,state_idle:000" *) 
+  (* FSM_ENCODED_STATES = "state_rst_read:001,state_read:010,state_wait_tick:011,state_wait_pulse:100,state_idle:000" *) 
   FDCE \FSM_sequential_state_reg[1] 
        (.C(clk),
         .CE(\FSM_sequential_state[2]_i_1_n_0 ),
         .CLR(fifo_read_i_2_n_0),
         .D(state__1[1]),
         .Q(state__0[1]));
-  (* FSM_ENCODED_STATES = "state_rst_read:001,state_read:010,state_wait_pulse:100,state_wait_tick:011,state_idle:000" *) 
+  (* FSM_ENCODED_STATES = "state_rst_read:001,state_read:010,state_wait_tick:011,state_wait_pulse:100,state_idle:000" *) 
   FDCE \FSM_sequential_state_reg[2] 
        (.C(clk),
         .CE(\FSM_sequential_state[2]_i_1_n_0 ),
         .CLR(fifo_read_i_2_n_0),
-        .D(\FSM_sequential_state[2]_i_2_n_0 ),
+        .D(state__1[2]),
         .Q(state__0[2]));
   LUT6 #(
     .INIT(64'h0000010000000000)) 
     \clock_period[23]_i_1 
-       (.I0(\FSM_sequential_state[1]_i_2_n_0 ),
-        .I1(fifo_data[24]),
-        .I2(state__0[2]),
-        .I3(state__0[1]),
-        .I4(state__0[0]),
-        .I5(fifo_data[25]),
+       (.I0(state__0[2]),
+        .I1(state__0[0]),
+        .I2(fifo_data[26]),
+        .I3(fifo_data[25]),
+        .I4(fifo_data[24]),
+        .I5(\FSM_sequential_state[1]_i_3_n_0 ),
         .O(clock_period));
   FDCE \clock_period_reg[0] 
        (.C(clk),
@@ -890,307 +1071,312 @@ module top_level_block_design_pulse_gen_0_0_pulse_gen
         .CLR(fifo_read_i_2_n_0),
         .D(fifo_data[9]),
         .Q(\clock_period_reg_n_0_[9] ));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT5 #(
-    .INIT(32'h04040455)) 
+    .INIT(32'h030A033B)) 
     \coarse_delay[0]_i_1 
-       (.I0(state__0[0]),
-        .I1(fifo_data[8]),
+       (.I0(fifo_data[8]),
+        .I1(\coarse_delay_reg_n_0_[0] ),
         .I2(state__0[2]),
-        .I3(state__0[1]),
-        .I4(\coarse_delay_reg_n_0_[0] ),
+        .I3(state__0[0]),
+        .I4(state__0[1]),
         .O(\coarse_delay[0]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0014001400FF0014)) 
+    .INIT(64'h00C300AA00C3C3EB)) 
     \coarse_delay[10]_i_1 
-       (.I0(state__0[1]),
-        .I1(\coarse_delay_reg_n_0_[10] ),
-        .I2(\coarse_delay[11]_i_2_n_0 ),
-        .I3(state__0[0]),
-        .I4(fifo_data[18]),
-        .I5(state__0[2]),
+       (.I0(fifo_data[18]),
+        .I1(\coarse_delay[11]_i_2_n_0 ),
+        .I2(\coarse_delay_reg_n_0_[10] ),
+        .I3(state__0[2]),
+        .I4(state__0[0]),
+        .I5(state__0[1]),
         .O(\coarse_delay[10]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000FFFF00004144)) 
+    .INIT(64'hFFF88888888F8888)) 
     \coarse_delay[11]_i_1 
-       (.I0(state__0[1]),
-        .I1(\coarse_delay_reg_n_0_[11] ),
-        .I2(\coarse_delay_reg_n_0_[10] ),
-        .I3(\coarse_delay[11]_i_2_n_0 ),
-        .I4(state__0[0]),
-        .I5(\coarse_delay[11]_i_3_n_0 ),
+       (.I0(\FSM_sequential_state[0]_i_3_n_0 ),
+        .I1(fifo_data[19]),
+        .I2(\coarse_delay[11]_i_2_n_0 ),
+        .I3(\coarse_delay_reg_n_0_[10] ),
+        .I4(\coarse_delay[15]_i_8_n_0 ),
+        .I5(\coarse_delay_reg_n_0_[11] ),
         .O(\coarse_delay[11]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
-    .INIT(32'h00000001)) 
+    .INIT(32'hFFFFFFFE)) 
     \coarse_delay[11]_i_2 
        (.I0(\coarse_delay_reg_n_0_[9] ),
-        .I1(\coarse_delay_reg_n_0_[7] ),
-        .I2(\coarse_delay_reg_n_0_[8] ),
-        .I3(\coarse_delay[6]_i_2_n_0 ),
-        .I4(\coarse_delay_reg_n_0_[6] ),
+        .I1(\coarse_delay[6]_i_2_n_0 ),
+        .I2(\coarse_delay_reg_n_0_[6] ),
+        .I3(\coarse_delay_reg_n_0_[8] ),
+        .I4(\coarse_delay_reg_n_0_[7] ),
         .O(\coarse_delay[11]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair33" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \coarse_delay[11]_i_3 
-       (.I0(fifo_data[19]),
-        .I1(state__0[2]),
-        .O(\coarse_delay[11]_i_3_n_0 ));
   LUT6 #(
-    .INIT(64'h0009000900FF0009)) 
+    .INIT(64'h00C300AA00C3C3EB)) 
     \coarse_delay[12]_i_1 
-       (.I0(\coarse_delay_reg_n_0_[12] ),
-        .I1(\coarse_delay[12]_i_2_n_0 ),
-        .I2(state__0[1]),
-        .I3(state__0[0]),
-        .I4(fifo_data[20]),
-        .I5(state__0[2]),
+       (.I0(fifo_data[20]),
+        .I1(\coarse_delay[15]_i_6_n_0 ),
+        .I2(\coarse_delay_reg_n_0_[12] ),
+        .I3(state__0[2]),
+        .I4(state__0[0]),
+        .I5(state__0[1]),
         .O(\coarse_delay[12]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFFFE)) 
-    \coarse_delay[12]_i_2 
-       (.I0(\coarse_delay[12]_i_3_n_0 ),
-        .I1(\coarse_delay[12]_i_4_n_0 ),
-        .I2(\coarse_delay_reg_n_0_[6] ),
-        .I3(\coarse_delay[6]_i_2_n_0 ),
-        .I4(\coarse_delay_reg_n_0_[8] ),
-        .I5(\coarse_delay_reg_n_0_[7] ),
-        .O(\coarse_delay[12]_i_2_n_0 ));
-  LUT2 #(
-    .INIT(4'hE)) 
-    \coarse_delay[12]_i_3 
-       (.I0(\coarse_delay_reg_n_0_[10] ),
-        .I1(\coarse_delay_reg_n_0_[11] ),
-        .O(\coarse_delay[12]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
-  LUT3 #(
-    .INIT(8'hBA)) 
-    \coarse_delay[12]_i_4 
-       (.I0(\coarse_delay_reg_n_0_[11] ),
-        .I1(\coarse_delay_reg_n_0_[10] ),
-        .I2(\coarse_delay_reg_n_0_[9] ),
-        .O(\coarse_delay[12]_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'h0014001400FF0014)) 
+    .INIT(64'hFFF88888888F8888)) 
     \coarse_delay[13]_i_1 
-       (.I0(state__0[1]),
-        .I1(\coarse_delay_reg_n_0_[13] ),
-        .I2(\coarse_delay[14]_i_2_n_0 ),
-        .I3(state__0[0]),
-        .I4(fifo_data[21]),
-        .I5(state__0[2]),
+       (.I0(\FSM_sequential_state[0]_i_3_n_0 ),
+        .I1(fifo_data[21]),
+        .I2(\coarse_delay[15]_i_6_n_0 ),
+        .I3(\coarse_delay_reg_n_0_[12] ),
+        .I4(\coarse_delay[15]_i_8_n_0 ),
+        .I5(\coarse_delay_reg_n_0_[13] ),
         .O(\coarse_delay[13]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000FFFF00004144)) 
+    .INIT(64'hFFAAFEABAAAAAAAA)) 
     \coarse_delay[14]_i_1 
-       (.I0(state__0[1]),
-        .I1(\coarse_delay_reg_n_0_[14] ),
-        .I2(\coarse_delay_reg_n_0_[13] ),
-        .I3(\coarse_delay[14]_i_2_n_0 ),
-        .I4(state__0[0]),
-        .I5(\coarse_delay[14]_i_3_n_0 ),
+       (.I0(\coarse_delay[14]_i_2_n_0 ),
+        .I1(\coarse_delay[15]_i_6_n_0 ),
+        .I2(\coarse_delay_reg_n_0_[12] ),
+        .I3(\coarse_delay_reg_n_0_[14] ),
+        .I4(\coarse_delay_reg_n_0_[13] ),
+        .I5(\coarse_delay[15]_i_8_n_0 ),
         .O(\coarse_delay[14]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
-  LUT5 #(
-    .INIT(32'h00000001)) 
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
     \coarse_delay[14]_i_2 
-       (.I0(\coarse_delay_reg_n_0_[12] ),
-        .I1(\coarse_delay[9]_i_2_n_0 ),
-        .I2(\coarse_delay_reg_n_0_[9] ),
-        .I3(\coarse_delay_reg_n_0_[10] ),
-        .I4(\coarse_delay_reg_n_0_[11] ),
+       (.I0(state__0[2]),
+        .I1(state__0[0]),
+        .I2(fifo_data[22]),
         .O(\coarse_delay[14]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair33" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \coarse_delay[14]_i_3 
-       (.I0(fifo_data[22]),
-        .I1(state__0[2]),
-        .O(\coarse_delay[14]_i_3_n_0 ));
-  LUT5 #(
-    .INIT(32'hF501F000)) 
+  LUT6 #(
+    .INIT(64'hFCECECECECECECEC)) 
     \coarse_delay[15]_i_1 
-       (.I0(\FSM_sequential_state[2]_i_3_n_0 ),
+       (.I0(state_out[2]),
+        .I1(fine_delay),
+        .I2(\coarse_delay[15]_i_3_n_0 ),
+        .I3(\coarse_delay[15]_i_4_n_0 ),
+        .I4(\FSM_sequential_state[2]_i_3_n_0 ),
+        .I5(\FSM_sequential_state[2]_i_4_n_0 ),
+        .O(coarse_delay));
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  LUT3 #(
+    .INIT(8'hF4)) 
+    \coarse_delay[15]_i_10 
+       (.I0(\coarse_delay_reg_n_0_[13] ),
+        .I1(\coarse_delay_reg_n_0_[12] ),
+        .I2(\coarse_delay_reg_n_0_[14] ),
+        .O(\coarse_delay[15]_i_10_n_0 ));
+  LUT2 #(
+    .INIT(4'hE)) 
+    \coarse_delay[15]_i_11 
+       (.I0(\coarse_delay_reg_n_0_[8] ),
+        .I1(\coarse_delay_reg_n_0_[7] ),
+        .O(\coarse_delay[15]_i_11_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFEAAABAAAAAAAA)) 
+    \coarse_delay[15]_i_2 
+       (.I0(\coarse_delay[15]_i_5_n_0 ),
+        .I1(\coarse_delay[15]_i_6_n_0 ),
+        .I2(\coarse_delay_reg_n_0_[12] ),
+        .I3(\coarse_delay[15]_i_7_n_0 ),
+        .I4(\coarse_delay_reg_n_0_[15] ),
+        .I5(\coarse_delay[15]_i_8_n_0 ),
+        .O(\coarse_delay[15]_i_2_n_0 ));
+  LUT5 #(
+    .INIT(32'hFFFFFFFD)) 
+    \coarse_delay[15]_i_3 
+       (.I0(\FSM_sequential_state[2]_i_16_n_0 ),
+        .I1(\coarse_delay[15]_i_9_n_0 ),
+        .I2(\FSM_sequential_state[2]_i_14_n_0 ),
+        .I3(\FSM_sequential_state[2]_i_15_n_0 ),
+        .I4(\coarse_delay[15]_i_10_n_0 ),
+        .O(\coarse_delay[15]_i_3_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT3 #(
+    .INIT(8'h40)) 
+    \coarse_delay[15]_i_4 
+       (.I0(state__0[2]),
+        .I1(state__0[1]),
+        .I2(state__0[0]),
+        .O(\coarse_delay[15]_i_4_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \coarse_delay[15]_i_5 
+       (.I0(state__0[2]),
+        .I1(state__0[0]),
+        .I2(fifo_data[23]),
+        .O(\coarse_delay[15]_i_5_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFFFFFFFFFFFFFE)) 
+    \coarse_delay[15]_i_6 
+       (.I0(\coarse_delay_reg_n_0_[10] ),
+        .I1(\coarse_delay_reg_n_0_[9] ),
+        .I2(\coarse_delay[6]_i_2_n_0 ),
+        .I3(\coarse_delay_reg_n_0_[6] ),
+        .I4(\coarse_delay[15]_i_11_n_0 ),
+        .I5(\coarse_delay_reg_n_0_[11] ),
+        .O(\coarse_delay[15]_i_6_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
+    \coarse_delay[15]_i_7 
+       (.I0(\coarse_delay_reg_n_0_[14] ),
+        .I1(\coarse_delay_reg_n_0_[13] ),
+        .O(\coarse_delay[15]_i_7_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+  LUT3 #(
+    .INIT(8'h47)) 
+    \coarse_delay[15]_i_8 
+       (.I0(state__0[2]),
         .I1(state__0[0]),
         .I2(state__0[1]),
-        .I3(state__1[0]),
-        .I4(state__0[2]),
-        .O(coarse_delay));
+        .O(\coarse_delay[15]_i_8_n_0 ));
   LUT6 #(
-    .INIT(64'h0014001455550014)) 
-    \coarse_delay[15]_i_2 
-       (.I0(state__0[0]),
-        .I1(\coarse_delay[15]_i_3_n_0 ),
-        .I2(\coarse_delay_reg_n_0_[15] ),
-        .I3(state__0[1]),
-        .I4(fifo_data[23]),
-        .I5(state__0[2]),
-        .O(\coarse_delay[15]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT4 #(
-    .INIT(16'h0001)) 
-    \coarse_delay[15]_i_3 
-       (.I0(\coarse_delay_reg_n_0_[12] ),
-        .I1(\coarse_delay[12]_i_2_n_0 ),
-        .I2(\coarse_delay_reg_n_0_[14] ),
-        .I3(\coarse_delay_reg_n_0_[13] ),
-        .O(\coarse_delay[15]_i_3_n_0 ));
+    .INIT(64'hFFFFFFFFFFFFFFF4)) 
+    \coarse_delay[15]_i_9 
+       (.I0(\coarse_delay_reg_n_0_[4] ),
+        .I1(\coarse_delay_reg_n_0_[3] ),
+        .I2(\coarse_delay_reg_n_0_[5] ),
+        .I3(\coarse_delay_reg_n_0_[0] ),
+        .I4(\coarse_delay_reg_n_0_[2] ),
+        .I5(\coarse_delay_reg_n_0_[1] ),
+        .O(\coarse_delay[15]_i_9_n_0 ));
   LUT6 #(
-    .INIT(64'h0009000900FF0009)) 
+    .INIT(64'h323F02020202323F)) 
     \coarse_delay[1]_i_1 
-       (.I0(\coarse_delay_reg_n_0_[1] ),
-        .I1(\coarse_delay_reg_n_0_[0] ),
-        .I2(state__0[1]),
-        .I3(state__0[0]),
-        .I4(fifo_data[9]),
-        .I5(state__0[2]),
+       (.I0(fifo_data[9]),
+        .I1(state__0[2]),
+        .I2(state__0[0]),
+        .I3(state__0[1]),
+        .I4(\coarse_delay_reg_n_0_[0] ),
+        .I5(\coarse_delay_reg_n_0_[1] ),
         .O(\coarse_delay[1]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000FFFF000000A9)) 
+    .INIT(64'hF8F8F88F88888888)) 
     \coarse_delay[2]_i_1 
-       (.I0(\coarse_delay_reg_n_0_[2] ),
-        .I1(\coarse_delay_reg_n_0_[0] ),
-        .I2(\coarse_delay_reg_n_0_[1] ),
-        .I3(state__0[1]),
-        .I4(state__0[0]),
-        .I5(\coarse_delay[2]_i_2_n_0 ),
-        .O(\coarse_delay[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair34" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \coarse_delay[2]_i_2 
        (.I0(fifo_data[10]),
-        .I1(state__0[2]),
-        .O(\coarse_delay[2]_i_2_n_0 ));
+        .I1(\FSM_sequential_state[0]_i_3_n_0 ),
+        .I2(\coarse_delay_reg_n_0_[2] ),
+        .I3(\coarse_delay_reg_n_0_[0] ),
+        .I4(\coarse_delay_reg_n_0_[1] ),
+        .I5(\coarse_delay[15]_i_8_n_0 ),
+        .O(\coarse_delay[2]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0009000900FF0009)) 
+    .INIT(64'h000CCCAE000333AB)) 
     \coarse_delay[3]_i_1 
-       (.I0(\coarse_delay_reg_n_0_[3] ),
+       (.I0(fifo_data[11]),
         .I1(\coarse_delay[3]_i_2_n_0 ),
         .I2(state__0[1]),
         .I3(state__0[0]),
-        .I4(fifo_data[11]),
-        .I5(state__0[2]),
+        .I4(state__0[2]),
+        .I5(\coarse_delay_reg_n_0_[3] ),
         .O(\coarse_delay[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT3 #(
     .INIT(8'hFE)) 
     \coarse_delay[3]_i_2 
+       (.I0(\coarse_delay_reg_n_0_[1] ),
+        .I1(\coarse_delay_reg_n_0_[0] ),
+        .I2(\coarse_delay_reg_n_0_[2] ),
+        .O(\coarse_delay[3]_i_2_n_0 ));
+  LUT6 #(
+    .INIT(64'h00C300AA00C3C3EB)) 
+    \coarse_delay[4]_i_1 
+       (.I0(fifo_data[12]),
+        .I1(\coarse_delay[5]_i_2_n_0 ),
+        .I2(\coarse_delay_reg_n_0_[4] ),
+        .I3(state__0[2]),
+        .I4(state__0[0]),
+        .I5(state__0[1]),
+        .O(\coarse_delay[4]_i_1_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFF88888888F8888)) 
+    \coarse_delay[5]_i_1 
+       (.I0(\FSM_sequential_state[0]_i_3_n_0 ),
+        .I1(fifo_data[13]),
+        .I2(\coarse_delay[5]_i_2_n_0 ),
+        .I3(\coarse_delay_reg_n_0_[4] ),
+        .I4(\coarse_delay[15]_i_8_n_0 ),
+        .I5(\coarse_delay_reg_n_0_[5] ),
+        .O(\coarse_delay[5]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    \coarse_delay[5]_i_2 
        (.I0(\coarse_delay_reg_n_0_[2] ),
         .I1(\coarse_delay_reg_n_0_[0] ),
         .I2(\coarse_delay_reg_n_0_[1] ),
-        .O(\coarse_delay[3]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'h0006000600FF0006)) 
-    \coarse_delay[4]_i_1 
-       (.I0(\coarse_delay_reg_n_0_[4] ),
-        .I1(\coarse_delay[4]_i_2_n_0 ),
-        .I2(state__0[1]),
-        .I3(state__0[0]),
-        .I4(fifo_data[12]),
-        .I5(state__0[2]),
-        .O(\coarse_delay[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
-  LUT4 #(
-    .INIT(16'h0001)) 
-    \coarse_delay[4]_i_2 
-       (.I0(\coarse_delay_reg_n_0_[3] ),
-        .I1(\coarse_delay_reg_n_0_[1] ),
-        .I2(\coarse_delay_reg_n_0_[0] ),
-        .I3(\coarse_delay_reg_n_0_[2] ),
-        .O(\coarse_delay[4]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT5 #(
-    .INIT(32'h01010F01)) 
-    \coarse_delay[5]_i_1 
-       (.I0(\coarse_delay[5]_i_2_n_0 ),
-        .I1(state__0[1]),
-        .I2(state__0[0]),
-        .I3(fifo_data[13]),
-        .I4(state__0[2]),
-        .O(\coarse_delay[5]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'h5555555555555556)) 
-    \coarse_delay[5]_i_2 
-       (.I0(\coarse_delay_reg_n_0_[5] ),
-        .I1(\coarse_delay_reg_n_0_[3] ),
-        .I2(\coarse_delay_reg_n_0_[1] ),
-        .I3(\coarse_delay_reg_n_0_[0] ),
-        .I4(\coarse_delay_reg_n_0_[2] ),
-        .I5(\coarse_delay_reg_n_0_[4] ),
+        .I3(\coarse_delay_reg_n_0_[3] ),
         .O(\coarse_delay[5]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'h0009000900FF0009)) 
+    .INIT(64'h00C300AA00C3C3EB)) 
     \coarse_delay[6]_i_1 
-       (.I0(\coarse_delay_reg_n_0_[6] ),
+       (.I0(fifo_data[14]),
         .I1(\coarse_delay[6]_i_2_n_0 ),
-        .I2(state__0[1]),
-        .I3(state__0[0]),
-        .I4(fifo_data[14]),
-        .I5(state__0[2]),
+        .I2(\coarse_delay_reg_n_0_[6] ),
+        .I3(state__0[2]),
+        .I4(state__0[0]),
+        .I5(state__0[1]),
         .O(\coarse_delay[6]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'hFFFFFFFFFFFFFFFE)) 
     \coarse_delay[6]_i_2 
-       (.I0(\coarse_delay_reg_n_0_[3] ),
+       (.I0(\coarse_delay_reg_n_0_[4] ),
         .I1(\coarse_delay_reg_n_0_[2] ),
         .I2(\coarse_delay_reg_n_0_[0] ),
         .I3(\coarse_delay_reg_n_0_[1] ),
-        .I4(\coarse_delay_reg_n_0_[5] ),
-        .I5(\coarse_delay_reg_n_0_[4] ),
+        .I4(\coarse_delay_reg_n_0_[3] ),
+        .I5(\coarse_delay_reg_n_0_[5] ),
         .O(\coarse_delay[6]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'h0006000600FF0006)) 
+    .INIT(64'h000CCCAE000333AB)) 
     \coarse_delay[7]_i_1 
-       (.I0(\coarse_delay_reg_n_0_[7] ),
+       (.I0(fifo_data[15]),
         .I1(\coarse_delay[8]_i_2_n_0 ),
         .I2(state__0[1]),
         .I3(state__0[0]),
-        .I4(fifo_data[15]),
-        .I5(state__0[2]),
+        .I4(state__0[2]),
+        .I5(\coarse_delay_reg_n_0_[7] ),
         .O(\coarse_delay[7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000FFFF000000A6)) 
+    .INIT(64'hFF88F88F88888888)) 
     \coarse_delay[8]_i_1 
-       (.I0(\coarse_delay_reg_n_0_[8] ),
-        .I1(\coarse_delay[8]_i_2_n_0 ),
-        .I2(\coarse_delay_reg_n_0_[7] ),
-        .I3(state__0[1]),
-        .I4(state__0[0]),
-        .I5(\coarse_delay[8]_i_3_n_0 ),
-        .O(\coarse_delay[8]_i_1_n_0 ));
-  LUT2 #(
-    .INIT(4'h1)) 
-    \coarse_delay[8]_i_2 
-       (.I0(\coarse_delay_reg_n_0_[6] ),
-        .I1(\coarse_delay[6]_i_2_n_0 ),
-        .O(\coarse_delay[8]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair34" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \coarse_delay[8]_i_3 
        (.I0(fifo_data[16]),
-        .I1(state__0[2]),
-        .O(\coarse_delay[8]_i_3_n_0 ));
+        .I1(\FSM_sequential_state[0]_i_3_n_0 ),
+        .I2(\coarse_delay[8]_i_2_n_0 ),
+        .I3(\coarse_delay_reg_n_0_[8] ),
+        .I4(\coarse_delay_reg_n_0_[7] ),
+        .I5(\coarse_delay[15]_i_8_n_0 ),
+        .O(\coarse_delay[8]_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'hFFFFFFFE)) 
+    \coarse_delay[8]_i_2 
+       (.I0(\coarse_delay_reg_n_0_[5] ),
+        .I1(\coarse_delay_reg_n_0_[3] ),
+        .I2(\coarse_delay[3]_i_2_n_0 ),
+        .I3(\coarse_delay_reg_n_0_[4] ),
+        .I4(\coarse_delay_reg_n_0_[6] ),
+        .O(\coarse_delay[8]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'h0009000900FF0009)) 
+    .INIT(64'h000333AB000CCCAE)) 
     \coarse_delay[9]_i_1 
-       (.I0(\coarse_delay_reg_n_0_[9] ),
+       (.I0(fifo_data[17]),
         .I1(\coarse_delay[9]_i_2_n_0 ),
         .I2(state__0[1]),
         .I3(state__0[0]),
-        .I4(fifo_data[17]),
-        .I5(state__0[2]),
+        .I4(state__0[2]),
+        .I5(\coarse_delay_reg_n_0_[9] ),
         .O(\coarse_delay[9]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT4 #(
-    .INIT(16'hFFFE)) 
+    .INIT(16'h0001)) 
     \coarse_delay[9]_i_2 
-       (.I0(\coarse_delay_reg_n_0_[6] ),
-        .I1(\coarse_delay[6]_i_2_n_0 ),
-        .I2(\coarse_delay_reg_n_0_[8] ),
-        .I3(\coarse_delay_reg_n_0_[7] ),
+       (.I0(\coarse_delay_reg_n_0_[7] ),
+        .I1(\coarse_delay_reg_n_0_[8] ),
+        .I2(\coarse_delay_reg_n_0_[6] ),
+        .I3(\coarse_delay[6]_i_2_n_0 ),
         .O(\coarse_delay[9]_i_2_n_0 ));
   FDCE \coarse_delay_reg[0] 
        (.C(clk),
@@ -1288,14 +1474,14 @@ module top_level_block_design_pulse_gen_0_0_pulse_gen
         .CLR(fifo_read_i_2_n_0),
         .D(\coarse_delay[9]_i_1_n_0 ),
         .Q(\coarse_delay_reg_n_0_[9] ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT5 #(
     .INIT(32'hFFF10001)) 
     fifo_read_i_1
        (.I0(state__0[0]),
         .I1(fifo_empty),
-        .I2(state__0[2]),
-        .I3(state__0[1]),
+        .I2(state__0[1]),
+        .I3(state__0[2]),
         .I4(fifo_read),
         .O(fifo_read_i_1_n_0));
   LUT1 #(
@@ -1310,14 +1496,14 @@ module top_level_block_design_pulse_gen_0_0_pulse_gen
         .D(fifo_read_i_1_n_0),
         .Q(fifo_read));
   LUT6 #(
-    .INIT(64'h0000000000040000)) 
+    .INIT(64'h0001000000000000)) 
     \fine_delay[3]_i_1 
-       (.I0(state__0[0]),
-        .I1(state__0[1]),
-        .I2(state__0[2]),
-        .I3(\FSM_sequential_state[1]_i_2_n_0 ),
+       (.I0(fifo_data[25]),
+        .I1(fifo_data[26]),
+        .I2(state__0[0]),
+        .I3(state__0[2]),
         .I4(fifo_data[24]),
-        .I5(fifo_data[25]),
+        .I5(\FSM_sequential_state[1]_i_3_n_0 ),
         .O(fine_delay));
   FDCE \fine_delay_reg[0] 
        (.C(clk),
@@ -1343,252 +1529,243 @@ module top_level_block_design_pulse_gen_0_0_pulse_gen
         .CLR(fifo_read_i_2_n_0),
         .D(fifo_data[3]),
         .Q(m_axis_tdata_int1[7]));
-  LUT5 #(
-    .INIT(32'hFF1F0010)) 
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  LUT4 #(
+    .INIT(16'h1F10)) 
     is_phase_meas_mode_i_1
-       (.I0(fifo_data[26]),
-        .I1(state__0[2]),
-        .I2(is_phase_meas_mode_i_2_n_0),
-        .I3(is_phase_meas_mode_i_3_n_0),
-        .I4(is_phase_meas_mode_reg_n_0),
+       (.I0(state__0[2]),
+        .I1(fifo_data[26]),
+        .I2(is_phase_meas_mode),
+        .I3(is_phase_meas_mode_reg_n_0),
         .O(is_phase_meas_mode_i_1_n_0));
   LUT6 #(
-    .INIT(64'h0004000000000400)) 
+    .INIT(64'h0000000000000820)) 
     is_phase_meas_mode_i_2
-       (.I0(state__0[0]),
-        .I1(state__0[1]),
-        .I2(state__0[2]),
-        .I3(fifo_data[26]),
-        .I4(fifo_data[25]),
-        .I5(fifo_data[24]),
-        .O(is_phase_meas_mode_i_2_n_0));
-  LUT5 #(
-    .INIT(32'hFFFFFFFE)) 
-    is_phase_meas_mode_i_3
-       (.I0(fifo_data[31]),
-        .I1(fifo_data[30]),
-        .I2(fifo_data[29]),
-        .I3(fifo_data[28]),
-        .I4(fifo_data[27]),
-        .O(is_phase_meas_mode_i_3_n_0));
+       (.I0(\FSM_sequential_state[1]_i_3_n_0 ),
+        .I1(fifo_data[25]),
+        .I2(fifo_data[26]),
+        .I3(fifo_data[24]),
+        .I4(state__0[2]),
+        .I5(state__0[0]),
+        .O(is_phase_meas_mode));
   FDCE is_phase_meas_mode_reg
        (.C(clk),
         .CE(1'b1),
         .CLR(fifo_read_i_2_n_0),
         .D(is_phase_meas_mode_i_1_n_0),
         .Q(is_phase_meas_mode_reg_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair41" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \m_axis_tdata[0]_INST_0 
        (.I0(\m_axis_tdata_int_reg_n_0_[14] ),
         .I1(is_phase_meas_mode_reg_n_0),
         .O(m_axis_tdata[0]));
-  (* SOFT_HLUTNM = "soft_lutpair38" *) 
+  (* SOFT_HLUTNM = "soft_lutpair42" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \m_axis_tdata[112]_INST_0 
        (.I0(\m_axis_tdata_int_reg_n_0_[126] ),
         .I1(is_phase_meas_mode_reg_n_0),
         .O(m_axis_tdata[7]));
-  (* SOFT_HLUTNM = "soft_lutpair37" *) 
+  (* SOFT_HLUTNM = "soft_lutpair42" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \m_axis_tdata[128]_INST_0 
        (.I0(\m_axis_tdata_int_reg_n_0_[142] ),
         .I1(is_phase_meas_mode_reg_n_0),
         .O(m_axis_tdata[8]));
-  (* SOFT_HLUTNM = "soft_lutpair37" *) 
+  (* SOFT_HLUTNM = "soft_lutpair41" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \m_axis_tdata[144]_INST_0 
        (.I0(\m_axis_tdata_int_reg_n_0_[158] ),
         .I1(is_phase_meas_mode_reg_n_0),
         .O(m_axis_tdata[9]));
-  (* SOFT_HLUTNM = "soft_lutpair36" *) 
+  (* SOFT_HLUTNM = "soft_lutpair41" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \m_axis_tdata[160]_INST_0 
        (.I0(\m_axis_tdata_int_reg_n_0_[174] ),
         .I1(is_phase_meas_mode_reg_n_0),
         .O(m_axis_tdata[10]));
-  (* SOFT_HLUTNM = "soft_lutpair41" *) 
+  (* SOFT_HLUTNM = "soft_lutpair45" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \m_axis_tdata[16]_INST_0 
        (.I0(\m_axis_tdata_int_reg_n_0_[30] ),
         .I1(is_phase_meas_mode_reg_n_0),
         .O(m_axis_tdata[1]));
-  (* SOFT_HLUTNM = "soft_lutpair36" *) 
+  (* SOFT_HLUTNM = "soft_lutpair40" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \m_axis_tdata[176]_INST_0 
        (.I0(\m_axis_tdata_int_reg_n_0_[190] ),
         .I1(is_phase_meas_mode_reg_n_0),
         .O(m_axis_tdata[11]));
-  (* SOFT_HLUTNM = "soft_lutpair35" *) 
+  (* SOFT_HLUTNM = "soft_lutpair40" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \m_axis_tdata[192]_INST_0 
        (.I0(\m_axis_tdata_int_reg_n_0_[206] ),
         .I1(is_phase_meas_mode_reg_n_0),
         .O(m_axis_tdata[12]));
-  (* SOFT_HLUTNM = "soft_lutpair35" *) 
+  (* SOFT_HLUTNM = "soft_lutpair39" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \m_axis_tdata[208]_INST_0 
        (.I0(\m_axis_tdata_int_reg_n_0_[222] ),
         .I1(is_phase_meas_mode_reg_n_0),
         .O(m_axis_tdata[13]));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  (* SOFT_HLUTNM = "soft_lutpair39" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \m_axis_tdata[224]_INST_0 
        (.I0(\m_axis_tdata_int_reg_n_0_[238] ),
         .I1(is_phase_meas_mode_reg_n_0),
         .O(m_axis_tdata[14]));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
+  LUT6 #(
+    .INIT(64'h8000FFFF80000000)) 
     \m_axis_tdata[240]_INST_0 
        (.I0(\m_axis_tdata[240]_INST_0_i_1_n_0 ),
-        .I1(is_phase_meas_mode_reg_n_0),
-        .I2(\m_axis_tdata_int_reg_n_0_[254] ),
+        .I1(\m_axis_tdata[240]_INST_0_i_2_n_0 ),
+        .I2(\m_axis_tdata[240]_INST_0_i_3_n_0 ),
+        .I3(\m_axis_tdata[240]_INST_0_i_4_n_0 ),
+        .I4(is_phase_meas_mode_reg_n_0),
+        .I5(\m_axis_tdata_int_reg_n_0_[254] ),
         .O(m_axis_tdata[15]));
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT5 #(
-    .INIT(32'h00000004)) 
+    .INIT(32'h00000008)) 
     \m_axis_tdata[240]_INST_0_i_1 
-       (.I0(\m_axis_tdata[240]_INST_0_i_2_n_0 ),
-        .I1(\m_axis_tdata[240]_INST_0_i_3_n_0 ),
-        .I2(\m_axis_tdata[240]_INST_0_i_4_n_0 ),
-        .I3(\m_axis_tdata[240]_INST_0_i_5_n_0 ),
-        .I4(\m_axis_tdata[240]_INST_0_i_6_n_0 ),
+       (.I0(\m_axis_tdata[240]_INST_0_i_5_n_0 ),
+        .I1(\m_axis_tdata[240]_INST_0_i_6_n_0 ),
+        .I2(main_clock[24]),
+        .I3(main_clock[25]),
+        .I4(main_clock[26]),
         .O(\m_axis_tdata[240]_INST_0_i_1_n_0 ));
   LUT4 #(
-    .INIT(16'hFFFE)) 
+    .INIT(16'h0001)) 
     \m_axis_tdata[240]_INST_0_i_10 
-       (.I0(main_clock[29]),
-        .I1(main_clock[28]),
-        .I2(main_clock[39]),
-        .I3(main_clock[38]),
+       (.I0(main_clock[13]),
+        .I1(main_clock[12]),
+        .I2(main_clock[15]),
+        .I3(main_clock[14]),
         .O(\m_axis_tdata[240]_INST_0_i_10_n_0 ));
   LUT4 #(
-    .INIT(16'hFFFE)) 
+    .INIT(16'h0001)) 
     \m_axis_tdata[240]_INST_0_i_11 
-       (.I0(main_clock[41]),
-        .I1(main_clock[40]),
-        .I2(main_clock[45]),
-        .I3(main_clock[44]),
+       (.I0(main_clock[7]),
+        .I1(main_clock[6]),
+        .I2(main_clock[5]),
+        .I3(main_clock[4]),
         .O(\m_axis_tdata[240]_INST_0_i_11_n_0 ));
   LUT4 #(
-    .INIT(16'hFFFE)) 
+    .INIT(16'h0001)) 
     \m_axis_tdata[240]_INST_0_i_12 
-       (.I0(main_clock[20]),
-        .I1(main_clock[15]),
-        .I2(main_clock[18]),
-        .I3(main_clock[6]),
-        .O(\m_axis_tdata[240]_INST_0_i_12_n_0 ));
-  LUT5 #(
-    .INIT(32'hFFFFFFFE)) 
-    \m_axis_tdata[240]_INST_0_i_2 
        (.I0(main_clock[1]),
-        .I1(main_clock[10]),
-        .I2(main_clock[0]),
+        .I1(main_clock[0]),
+        .I2(main_clock[3]),
         .I3(main_clock[2]),
-        .I4(\m_axis_tdata[240]_INST_0_i_7_n_0 ),
-        .O(\m_axis_tdata[240]_INST_0_i_2_n_0 ));
+        .O(\m_axis_tdata[240]_INST_0_i_12_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT5 #(
-    .INIT(32'h00000001)) 
+    .INIT(32'h00000008)) 
+    \m_axis_tdata[240]_INST_0_i_2 
+       (.I0(\m_axis_tdata[240]_INST_0_i_7_n_0 ),
+        .I1(\m_axis_tdata[240]_INST_0_i_8_n_0 ),
+        .I2(main_clock[35]),
+        .I3(main_clock[36]),
+        .I4(main_clock[37]),
+        .O(\m_axis_tdata[240]_INST_0_i_2_n_0 ));
+  LUT6 #(
+    .INIT(64'h0000000200000000)) 
     \m_axis_tdata[240]_INST_0_i_3 
-       (.I0(main_clock[8]),
-        .I1(main_clock[9]),
-        .I2(main_clock[5]),
-        .I3(main_clock[16]),
-        .I4(\m_axis_tdata[240]_INST_0_i_8_n_0 ),
+       (.I0(\m_axis_tdata[240]_INST_0_i_9_n_0 ),
+        .I1(main_clock[23]),
+        .I2(main_clock[22]),
+        .I3(main_clock[21]),
+        .I4(main_clock[20]),
+        .I5(\m_axis_tdata[240]_INST_0_i_10_n_0 ),
         .O(\m_axis_tdata[240]_INST_0_i_3_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFFFE)) 
+    .INIT(64'h0000000200000000)) 
     \m_axis_tdata[240]_INST_0_i_4 
-       (.I0(\m_axis_tdata[240]_INST_0_i_9_n_0 ),
-        .I1(\m_axis_tdata[240]_INST_0_i_10_n_0 ),
-        .I2(main_clock[35]),
-        .I3(main_clock[34]),
-        .I4(main_clock[37]),
-        .I5(main_clock[36]),
+       (.I0(\m_axis_tdata[240]_INST_0_i_11_n_0 ),
+        .I1(main_clock[11]),
+        .I2(main_clock[10]),
+        .I3(main_clock[9]),
+        .I4(main_clock[8]),
+        .I5(\m_axis_tdata[240]_INST_0_i_12_n_0 ),
         .O(\m_axis_tdata[240]_INST_0_i_4_n_0 ));
-  LUT5 #(
-    .INIT(32'hFFFFFFFE)) 
+  LUT4 #(
+    .INIT(16'h0001)) 
     \m_axis_tdata[240]_INST_0_i_5 
-       (.I0(main_clock[32]),
-        .I1(main_clock[33]),
-        .I2(main_clock[26]),
+       (.I0(main_clock[30]),
+        .I1(main_clock[29]),
+        .I2(main_clock[28]),
         .I3(main_clock[27]),
-        .I4(\m_axis_tdata[240]_INST_0_i_11_n_0 ),
         .O(\m_axis_tdata[240]_INST_0_i_5_n_0 ));
-  LUT5 #(
-    .INIT(32'hFFFFFFFE)) 
+  LUT4 #(
+    .INIT(16'h0001)) 
     \m_axis_tdata[240]_INST_0_i_6 
-       (.I0(main_clock[19]),
-        .I1(main_clock[23]),
-        .I2(main_clock[3]),
-        .I3(main_clock[12]),
-        .I4(\m_axis_tdata[240]_INST_0_i_12_n_0 ),
+       (.I0(main_clock[34]),
+        .I1(main_clock[33]),
+        .I2(main_clock[32]),
+        .I3(main_clock[31]),
         .O(\m_axis_tdata[240]_INST_0_i_6_n_0 ));
   LUT4 #(
-    .INIT(16'hFFFE)) 
+    .INIT(16'h0001)) 
     \m_axis_tdata[240]_INST_0_i_7 
-       (.I0(main_clock[11]),
-        .I1(main_clock[4]),
-        .I2(main_clock[21]),
-        .I3(main_clock[7]),
+       (.I0(main_clock[41]),
+        .I1(main_clock[40]),
+        .I2(main_clock[39]),
+        .I3(main_clock[38]),
         .O(\m_axis_tdata[240]_INST_0_i_7_n_0 ));
   LUT4 #(
-    .INIT(16'hFFFE)) 
+    .INIT(16'h0001)) 
     \m_axis_tdata[240]_INST_0_i_8 
-       (.I0(main_clock[17]),
-        .I1(main_clock[13]),
-        .I2(main_clock[22]),
-        .I3(main_clock[14]),
+       (.I0(main_clock[45]),
+        .I1(main_clock[44]),
+        .I2(main_clock[43]),
+        .I3(main_clock[42]),
         .O(\m_axis_tdata[240]_INST_0_i_8_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFFFE)) 
+  LUT4 #(
+    .INIT(16'h0001)) 
     \m_axis_tdata[240]_INST_0_i_9 
-       (.I0(main_clock[25]),
-        .I1(main_clock[24]),
-        .I2(main_clock[42]),
-        .I3(main_clock[43]),
-        .I4(main_clock[30]),
-        .I5(main_clock[31]),
+       (.I0(main_clock[19]),
+        .I1(main_clock[18]),
+        .I2(main_clock[17]),
+        .I3(main_clock[16]),
         .O(\m_axis_tdata[240]_INST_0_i_9_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair40" *) 
+  (* SOFT_HLUTNM = "soft_lutpair45" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \m_axis_tdata[32]_INST_0 
        (.I0(\m_axis_tdata_int_reg_n_0_[46] ),
         .I1(is_phase_meas_mode_reg_n_0),
         .O(m_axis_tdata[2]));
-  (* SOFT_HLUTNM = "soft_lutpair40" *) 
+  (* SOFT_HLUTNM = "soft_lutpair44" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \m_axis_tdata[48]_INST_0 
        (.I0(\m_axis_tdata_int_reg_n_0_[62] ),
         .I1(is_phase_meas_mode_reg_n_0),
         .O(m_axis_tdata[3]));
-  (* SOFT_HLUTNM = "soft_lutpair39" *) 
+  (* SOFT_HLUTNM = "soft_lutpair44" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \m_axis_tdata[64]_INST_0 
        (.I0(\m_axis_tdata_int_reg_n_0_[78] ),
         .I1(is_phase_meas_mode_reg_n_0),
         .O(m_axis_tdata[4]));
-  (* SOFT_HLUTNM = "soft_lutpair39" *) 
+  (* SOFT_HLUTNM = "soft_lutpair43" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \m_axis_tdata[80]_INST_0 
        (.I0(\m_axis_tdata_int_reg_n_0_[94] ),
         .I1(is_phase_meas_mode_reg_n_0),
         .O(m_axis_tdata[5]));
-  (* SOFT_HLUTNM = "soft_lutpair38" *) 
+  (* SOFT_HLUTNM = "soft_lutpair43" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \m_axis_tdata[96]_INST_0 
@@ -1596,205 +1773,206 @@ module top_level_block_design_pulse_gen_0_0_pulse_gen
         .I1(is_phase_meas_mode_reg_n_0),
         .O(m_axis_tdata[6]));
   LUT6 #(
-    .INIT(64'h0400000000000000)) 
+    .INIT(64'h0000004000000000)) 
     \m_axis_tdata_int[110]_i_1 
        (.I0(m_axis_tdata_int1[5]),
-        .I1(m_axis_tdata_int1[4]),
-        .I2(m_axis_tdata_int1[6]),
-        .I3(state__0[2]),
-        .I4(\m_axis_tdata_int[238]_i_2_n_0 ),
-        .I5(m_axis_tdata_int1[7]),
+        .I1(m_axis_tdata_int1[7]),
+        .I2(\coarse_delay[15]_i_8_n_0 ),
+        .I3(\FSM_sequential_state[0]_i_3_n_0 ),
+        .I4(m_axis_tdata_int1[6]),
+        .I5(m_axis_tdata_int1[4]),
         .O(\m_axis_tdata_int[110]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0100000000000000)) 
+    .INIT(64'h0000000000000040)) 
     \m_axis_tdata_int[126]_i_1 
        (.I0(m_axis_tdata_int1[5]),
-        .I1(m_axis_tdata_int1[4]),
-        .I2(m_axis_tdata_int1[6]),
-        .I3(state__0[2]),
-        .I4(\m_axis_tdata_int[238]_i_2_n_0 ),
-        .I5(m_axis_tdata_int1[7]),
+        .I1(m_axis_tdata_int1[7]),
+        .I2(\coarse_delay[15]_i_8_n_0 ),
+        .I3(\FSM_sequential_state[0]_i_3_n_0 ),
+        .I4(m_axis_tdata_int1[4]),
+        .I5(m_axis_tdata_int1[6]),
         .O(\m_axis_tdata_int[126]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h4000000000000000)) 
+    .INIT(64'h0008000000000000)) 
     \m_axis_tdata_int[142]_i_1 
-       (.I0(m_axis_tdata_int1[7]),
-        .I1(state__0[2]),
-        .I2(\m_axis_tdata_int[238]_i_2_n_0 ),
-        .I3(m_axis_tdata_int1[5]),
+       (.I0(m_axis_tdata_int1[5]),
+        .I1(\coarse_delay[15]_i_8_n_0 ),
+        .I2(\FSM_sequential_state[0]_i_3_n_0 ),
+        .I3(m_axis_tdata_int1[7]),
         .I4(m_axis_tdata_int1[4]),
         .I5(m_axis_tdata_int1[6]),
         .O(\m_axis_tdata_int[142]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h8000000000000000)) 
+    .INIT(64'h0080000000000000)) 
     \m_axis_tdata_int[14]_i_1 
        (.I0(m_axis_tdata_int1[5]),
-        .I1(m_axis_tdata_int1[4]),
-        .I2(m_axis_tdata_int1[6]),
-        .I3(state__0[2]),
-        .I4(\m_axis_tdata_int[238]_i_2_n_0 ),
-        .I5(m_axis_tdata_int1[7]),
+        .I1(m_axis_tdata_int1[7]),
+        .I2(\coarse_delay[15]_i_8_n_0 ),
+        .I3(\FSM_sequential_state[0]_i_3_n_0 ),
+        .I4(m_axis_tdata_int1[4]),
+        .I5(m_axis_tdata_int1[6]),
         .O(\m_axis_tdata_int[14]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0040000000000000)) 
+    .INIT(64'h0000000800000000)) 
     \m_axis_tdata_int[158]_i_1 
-       (.I0(m_axis_tdata_int1[7]),
-        .I1(state__0[2]),
-        .I2(\m_axis_tdata_int[238]_i_2_n_0 ),
-        .I3(m_axis_tdata_int1[4]),
-        .I4(m_axis_tdata_int1[5]),
+       (.I0(m_axis_tdata_int1[5]),
+        .I1(\coarse_delay[15]_i_8_n_0 ),
+        .I2(\FSM_sequential_state[0]_i_3_n_0 ),
+        .I3(m_axis_tdata_int1[7]),
+        .I4(m_axis_tdata_int1[4]),
         .I5(m_axis_tdata_int1[6]),
         .O(\m_axis_tdata_int[158]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0040000000000000)) 
+    .INIT(64'h0000004000000000)) 
     \m_axis_tdata_int[174]_i_1 
-       (.I0(m_axis_tdata_int1[7]),
-        .I1(state__0[2]),
-        .I2(\m_axis_tdata_int[238]_i_2_n_0 ),
-        .I3(m_axis_tdata_int1[5]),
-        .I4(m_axis_tdata_int1[4]),
-        .I5(m_axis_tdata_int1[6]),
+       (.I0(m_axis_tdata_int1[5]),
+        .I1(m_axis_tdata_int1[6]),
+        .I2(m_axis_tdata_int1[4]),
+        .I3(m_axis_tdata_int1[7]),
+        .I4(\FSM_sequential_state[0]_i_3_n_0 ),
+        .I5(\coarse_delay[15]_i_8_n_0 ),
         .O(\m_axis_tdata_int[174]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000004000000000)) 
+    .INIT(64'h0000000400000000)) 
     \m_axis_tdata_int[190]_i_1 
-       (.I0(m_axis_tdata_int1[7]),
-        .I1(state__0[2]),
-        .I2(\m_axis_tdata_int[238]_i_2_n_0 ),
-        .I3(m_axis_tdata_int1[5]),
-        .I4(m_axis_tdata_int1[4]),
-        .I5(m_axis_tdata_int1[6]),
+       (.I0(m_axis_tdata_int1[5]),
+        .I1(m_axis_tdata_int1[6]),
+        .I2(m_axis_tdata_int1[4]),
+        .I3(m_axis_tdata_int1[7]),
+        .I4(\FSM_sequential_state[0]_i_3_n_0 ),
+        .I5(\coarse_delay[15]_i_8_n_0 ),
         .O(\m_axis_tdata_int[190]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000040000000)) 
+    .INIT(64'h0000000800000000)) 
     \m_axis_tdata_int[206]_i_1 
-       (.I0(m_axis_tdata_int1[7]),
-        .I1(state__0[2]),
-        .I2(\m_axis_tdata_int[238]_i_2_n_0 ),
-        .I3(m_axis_tdata_int1[5]),
-        .I4(m_axis_tdata_int1[4]),
-        .I5(m_axis_tdata_int1[6]),
+       (.I0(m_axis_tdata_int1[5]),
+        .I1(\coarse_delay[15]_i_8_n_0 ),
+        .I2(\FSM_sequential_state[0]_i_3_n_0 ),
+        .I3(m_axis_tdata_int1[7]),
+        .I4(m_axis_tdata_int1[6]),
+        .I5(m_axis_tdata_int1[4]),
         .O(\m_axis_tdata_int[206]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000000400000)) 
+    .INIT(64'h0000000000000008)) 
     \m_axis_tdata_int[222]_i_1 
-       (.I0(m_axis_tdata_int1[7]),
-        .I1(state__0[2]),
-        .I2(\m_axis_tdata_int[238]_i_2_n_0 ),
-        .I3(m_axis_tdata_int1[4]),
-        .I4(m_axis_tdata_int1[5]),
+       (.I0(m_axis_tdata_int1[5]),
+        .I1(\coarse_delay[15]_i_8_n_0 ),
+        .I2(\FSM_sequential_state[0]_i_3_n_0 ),
+        .I3(m_axis_tdata_int1[7]),
+        .I4(m_axis_tdata_int1[4]),
         .I5(m_axis_tdata_int1[6]),
         .O(\m_axis_tdata_int[222]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000000400000)) 
+    .INIT(64'h0000000400000000)) 
     \m_axis_tdata_int[238]_i_1 
-       (.I0(m_axis_tdata_int1[7]),
-        .I1(state__0[2]),
-        .I2(\m_axis_tdata_int[238]_i_2_n_0 ),
-        .I3(m_axis_tdata_int1[5]),
-        .I4(m_axis_tdata_int1[4]),
-        .I5(m_axis_tdata_int1[6]),
+       (.I0(m_axis_tdata_int1[5]),
+        .I1(m_axis_tdata_int1[4]),
+        .I2(m_axis_tdata_int1[6]),
+        .I3(m_axis_tdata_int1[7]),
+        .I4(\FSM_sequential_state[0]_i_3_n_0 ),
+        .I5(\coarse_delay[15]_i_8_n_0 ),
         .O(\m_axis_tdata_int[238]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
-  LUT2 #(
-    .INIT(4'h1)) 
-    \m_axis_tdata_int[238]_i_2 
-       (.I0(state__0[1]),
-        .I1(state__0[0]),
-        .O(\m_axis_tdata_int[238]_i_2_n_0 ));
-  LUT4 #(
-    .INIT(16'hABAA)) 
+  LUT6 #(
+    .INIT(64'hFAEAEAEAEAEAEAEA)) 
     \m_axis_tdata_int[254]_i_1 
        (.I0(rst_clock),
-        .I1(state__0[1]),
-        .I2(state__0[0]),
-        .I3(\FSM_sequential_state[2]_i_3_n_0 ),
+        .I1(\m_axis_tdata_int[254]_i_4_n_0 ),
+        .I2(state__20),
+        .I3(\coarse_delay[15]_i_4_n_0 ),
+        .I4(\FSM_sequential_state[2]_i_3_n_0 ),
+        .I5(\FSM_sequential_state[2]_i_4_n_0 ),
         .O(m_axis_tdata_int));
-  LUT5 #(
-    .INIT(32'hAAAAAAAE)) 
+  LUT6 #(
+    .INIT(64'h000000101000FF00)) 
     \m_axis_tdata_int[254]_i_2 
-       (.I0(\m_axis_tdata_int[254]_i_4_n_0 ),
-        .I1(\m_axis_tdata_int[254]_i_5_n_0 ),
-        .I2(m_axis_tdata_int1[6]),
-        .I3(m_axis_tdata_int1[4]),
-        .I4(m_axis_tdata_int1[5]),
+       (.I0(m_axis_tdata_int1[7]),
+        .I1(m_axis_tdata_int1[5]),
+        .I2(\m_axis_tdata_int[254]_i_6_n_0 ),
+        .I3(state__0[1]),
+        .I4(state__0[0]),
+        .I5(state__0[2]),
         .O(\m_axis_tdata_int[254]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000111111111)) 
+    .INIT(64'h0001FFFF00000000)) 
     \m_axis_tdata_int[254]_i_3 
-       (.I0(state__0[0]),
-        .I1(state__0[2]),
-        .I2(\FSM_sequential_state[1]_i_2_n_0 ),
-        .I3(fifo_data[24]),
-        .I4(fifo_data[25]),
-        .I5(state__0[1]),
+       (.I0(\FSM_sequential_state[0]_i_2_n_0 ),
+        .I1(fifo_data[25]),
+        .I2(fifo_data[24]),
+        .I3(fifo_data[26]),
+        .I4(state__0[1]),
+        .I5(\FSM_sequential_state[0]_i_3_n_0 ),
         .O(rst_clock));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT3 #(
-    .INIT(8'h04)) 
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+  LUT2 #(
+    .INIT(4'h1)) 
     \m_axis_tdata_int[254]_i_4 
-       (.I0(state__0[2]),
+       (.I0(state__0[0]),
         .I1(state__0[1]),
-        .I2(state__0[0]),
         .O(\m_axis_tdata_int[254]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
-  LUT4 #(
-    .INIT(16'h0010)) 
+  LUT5 #(
+    .INIT(32'h00000080)) 
     \m_axis_tdata_int[254]_i_5 
-       (.I0(state__0[1]),
-        .I1(state__0[0]),
-        .I2(state__0[2]),
-        .I3(m_axis_tdata_int1[7]),
-        .O(\m_axis_tdata_int[254]_i_5_n_0 ));
+       (.I0(\FSM_sequential_state[2]_i_18_n_0 ),
+        .I1(\FSM_sequential_state[2]_i_17_n_0 ),
+        .I2(\FSM_sequential_state[2]_i_16_n_0 ),
+        .I3(\FSM_sequential_state[2]_i_15_n_0 ),
+        .I4(\FSM_sequential_state[2]_i_14_n_0 ),
+        .O(state__20));
+  LUT2 #(
+    .INIT(4'h1)) 
+    \m_axis_tdata_int[254]_i_6 
+       (.I0(m_axis_tdata_int1[6]),
+        .I1(m_axis_tdata_int1[4]),
+        .O(\m_axis_tdata_int[254]_i_6_n_0 ));
   LUT6 #(
-    .INIT(64'h4000000000000000)) 
+    .INIT(64'h0000008000000000)) 
     \m_axis_tdata_int[30]_i_1 
-       (.I0(m_axis_tdata_int1[4]),
-        .I1(m_axis_tdata_int1[5]),
-        .I2(m_axis_tdata_int1[6]),
-        .I3(state__0[2]),
-        .I4(\m_axis_tdata_int[238]_i_2_n_0 ),
-        .I5(m_axis_tdata_int1[7]),
+       (.I0(m_axis_tdata_int1[5]),
+        .I1(m_axis_tdata_int1[7]),
+        .I2(\coarse_delay[15]_i_8_n_0 ),
+        .I3(\FSM_sequential_state[0]_i_3_n_0 ),
+        .I4(m_axis_tdata_int1[4]),
+        .I5(m_axis_tdata_int1[6]),
         .O(\m_axis_tdata_int[30]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h4000000000000000)) 
+    .INIT(64'h0040000000000000)) 
     \m_axis_tdata_int[46]_i_1 
        (.I0(m_axis_tdata_int1[5]),
-        .I1(m_axis_tdata_int1[4]),
-        .I2(m_axis_tdata_int1[6]),
-        .I3(state__0[2]),
-        .I4(\m_axis_tdata_int[238]_i_2_n_0 ),
-        .I5(m_axis_tdata_int1[7]),
+        .I1(m_axis_tdata_int1[7]),
+        .I2(\coarse_delay[15]_i_8_n_0 ),
+        .I3(\FSM_sequential_state[0]_i_3_n_0 ),
+        .I4(m_axis_tdata_int1[4]),
+        .I5(m_axis_tdata_int1[6]),
         .O(\m_axis_tdata_int[46]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h1000000000000000)) 
+    .INIT(64'h0000004000000000)) 
     \m_axis_tdata_int[62]_i_1 
        (.I0(m_axis_tdata_int1[5]),
-        .I1(m_axis_tdata_int1[4]),
-        .I2(m_axis_tdata_int1[6]),
-        .I3(state__0[2]),
-        .I4(\m_axis_tdata_int[238]_i_2_n_0 ),
-        .I5(m_axis_tdata_int1[7]),
+        .I1(m_axis_tdata_int1[7]),
+        .I2(\coarse_delay[15]_i_8_n_0 ),
+        .I3(\FSM_sequential_state[0]_i_3_n_0 ),
+        .I4(m_axis_tdata_int1[4]),
+        .I5(m_axis_tdata_int1[6]),
         .O(\m_axis_tdata_int[62]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0800000000000000)) 
+    .INIT(64'h0000008000000000)) 
     \m_axis_tdata_int[78]_i_1 
        (.I0(m_axis_tdata_int1[5]),
-        .I1(m_axis_tdata_int1[4]),
-        .I2(m_axis_tdata_int1[6]),
-        .I3(state__0[2]),
-        .I4(\m_axis_tdata_int[238]_i_2_n_0 ),
-        .I5(m_axis_tdata_int1[7]),
+        .I1(m_axis_tdata_int1[7]),
+        .I2(\coarse_delay[15]_i_8_n_0 ),
+        .I3(\FSM_sequential_state[0]_i_3_n_0 ),
+        .I4(m_axis_tdata_int1[6]),
+        .I5(m_axis_tdata_int1[4]),
         .O(\m_axis_tdata_int[78]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0400000000000000)) 
+    .INIT(64'h0000000000000080)) 
     \m_axis_tdata_int[94]_i_1 
-       (.I0(m_axis_tdata_int1[4]),
-        .I1(m_axis_tdata_int1[5]),
-        .I2(m_axis_tdata_int1[6]),
-        .I3(state__0[2]),
-        .I4(\m_axis_tdata_int[238]_i_2_n_0 ),
-        .I5(m_axis_tdata_int1[7]),
+       (.I0(m_axis_tdata_int1[5]),
+        .I1(m_axis_tdata_int1[7]),
+        .I2(\coarse_delay[15]_i_8_n_0 ),
+        .I3(\FSM_sequential_state[0]_i_3_n_0 ),
+        .I4(m_axis_tdata_int1[4]),
+        .I5(m_axis_tdata_int1[6]),
         .O(\m_axis_tdata_int[94]_i_1_n_0 ));
   FDCE \m_axis_tdata_int_reg[110] 
        (.C(clk),
@@ -1957,32 +2135,32 @@ module top_level_block_design_pulse_gen_0_0_pulse_gen
         .O(NLW_main_clock1_carry__0_O_UNCONNECTED[7:0]),
         .S({main_clock1_carry__0_i_9_n_0,main_clock1_carry__0_i_10_n_0,main_clock1_carry__0_i_11_n_0,main_clock1_carry__0_i_12_n_0,main_clock1_carry__0_i_13_n_0,main_clock1_carry__0_i_14_n_0,main_clock1_carry__0_i_15_n_0,main_clock1_carry__0_i_16_n_0}));
   LUT3 #(
-    .INIT(8'hA8)) 
+    .INIT(8'hC8)) 
     main_clock1_carry__0_i_1
-       (.I0(main_clock2_carry__1_n_0),
-        .I1(main_clock[31]),
-        .I2(main_clock[30]),
+       (.I0(main_clock[30]),
+        .I1(main_clock2_carry__1_n_0),
+        .I2(main_clock[31]),
         .O(main_clock1_carry__0_i_1_n_0));
   LUT3 #(
-    .INIT(8'h18)) 
+    .INIT(8'h24)) 
     main_clock1_carry__0_i_10
        (.I0(main_clock[29]),
-        .I1(main_clock[28]),
-        .I2(main_clock2_carry__1_n_0),
+        .I1(main_clock2_carry__1_n_0),
+        .I2(main_clock[28]),
         .O(main_clock1_carry__0_i_10_n_0));
   LUT3 #(
-    .INIT(8'h18)) 
+    .INIT(8'h24)) 
     main_clock1_carry__0_i_11
        (.I0(main_clock[27]),
-        .I1(main_clock[26]),
-        .I2(main_clock2_carry__1_n_0),
+        .I1(main_clock2_carry__1_n_0),
+        .I2(main_clock[26]),
         .O(main_clock1_carry__0_i_11_n_0));
   LUT3 #(
-    .INIT(8'h18)) 
+    .INIT(8'h24)) 
     main_clock1_carry__0_i_12
        (.I0(main_clock[25]),
-        .I1(main_clock[24]),
-        .I2(main_clock2_carry__1_n_0),
+        .I1(main_clock2_carry__1_n_0),
+        .I2(main_clock[24]),
         .O(main_clock1_carry__0_i_12_n_0));
   LUT4 #(
     .INIT(16'h9009)) 
@@ -2017,64 +2195,64 @@ module top_level_block_design_pulse_gen_0_0_pulse_gen
         .I3(main_clock[16]),
         .O(main_clock1_carry__0_i_16_n_0));
   LUT3 #(
-    .INIT(8'hA8)) 
+    .INIT(8'hC8)) 
     main_clock1_carry__0_i_2
-       (.I0(main_clock2_carry__1_n_0),
-        .I1(main_clock[29]),
-        .I2(main_clock[28]),
+       (.I0(main_clock[28]),
+        .I1(main_clock2_carry__1_n_0),
+        .I2(main_clock[29]),
         .O(main_clock1_carry__0_i_2_n_0));
   LUT3 #(
-    .INIT(8'hA8)) 
+    .INIT(8'hC8)) 
     main_clock1_carry__0_i_3
-       (.I0(main_clock2_carry__1_n_0),
-        .I1(main_clock[27]),
-        .I2(main_clock[26]),
+       (.I0(main_clock[26]),
+        .I1(main_clock2_carry__1_n_0),
+        .I2(main_clock[27]),
         .O(main_clock1_carry__0_i_3_n_0));
   LUT3 #(
-    .INIT(8'hA8)) 
+    .INIT(8'hC8)) 
     main_clock1_carry__0_i_4
-       (.I0(main_clock2_carry__1_n_0),
-        .I1(main_clock[25]),
-        .I2(main_clock[24]),
+       (.I0(main_clock[24]),
+        .I1(main_clock2_carry__1_n_0),
+        .I2(main_clock[25]),
         .O(main_clock1_carry__0_i_4_n_0));
   LUT4 #(
-    .INIT(16'h22B2)) 
+    .INIT(16'h2F02)) 
     main_clock1_carry__0_i_5
-       (.I0(main_clock[23]),
-        .I1(main_clock2[23]),
-        .I2(main_clock[22]),
-        .I3(main_clock2[22]),
+       (.I0(main_clock[22]),
+        .I1(main_clock2[22]),
+        .I2(main_clock2[23]),
+        .I3(main_clock[23]),
         .O(main_clock1_carry__0_i_5_n_0));
   LUT4 #(
-    .INIT(16'h22B2)) 
+    .INIT(16'h2F02)) 
     main_clock1_carry__0_i_6
-       (.I0(main_clock[21]),
-        .I1(main_clock2[21]),
-        .I2(main_clock[20]),
-        .I3(main_clock2[20]),
+       (.I0(main_clock[20]),
+        .I1(main_clock2[20]),
+        .I2(main_clock2[21]),
+        .I3(main_clock[21]),
         .O(main_clock1_carry__0_i_6_n_0));
   LUT4 #(
-    .INIT(16'h22B2)) 
+    .INIT(16'h2F02)) 
     main_clock1_carry__0_i_7
-       (.I0(main_clock[19]),
-        .I1(main_clock2[19]),
-        .I2(main_clock[18]),
-        .I3(main_clock2[18]),
+       (.I0(main_clock[18]),
+        .I1(main_clock2[18]),
+        .I2(main_clock2[19]),
+        .I3(main_clock[19]),
         .O(main_clock1_carry__0_i_7_n_0));
   LUT4 #(
-    .INIT(16'h22B2)) 
+    .INIT(16'h2F02)) 
     main_clock1_carry__0_i_8
-       (.I0(main_clock[17]),
-        .I1(main_clock2[17]),
-        .I2(main_clock[16]),
-        .I3(main_clock2[16]),
+       (.I0(main_clock[16]),
+        .I1(main_clock2[16]),
+        .I2(main_clock2[17]),
+        .I3(main_clock[17]),
         .O(main_clock1_carry__0_i_8_n_0));
   LUT3 #(
-    .INIT(8'h18)) 
+    .INIT(8'h24)) 
     main_clock1_carry__0_i_9
        (.I0(main_clock[31]),
-        .I1(main_clock[30]),
-        .I2(main_clock2_carry__1_n_0),
+        .I1(main_clock2_carry__1_n_0),
+        .I2(main_clock[30]),
         .O(main_clock1_carry__0_i_9_n_0));
   (* COMPARATOR_THRESHOLD = "11" *) 
   CARRY8 main_clock1_carry__1
@@ -2085,110 +2263,110 @@ module top_level_block_design_pulse_gen_0_0_pulse_gen
         .O(NLW_main_clock1_carry__1_O_UNCONNECTED[7:0]),
         .S({1'b0,main_clock1_carry__1_i_8_n_0,main_clock1_carry__1_i_9_n_0,main_clock1_carry__1_i_10_n_0,main_clock1_carry__1_i_11_n_0,main_clock1_carry__1_i_12_n_0,main_clock1_carry__1_i_13_n_0,main_clock1_carry__1_i_14_n_0}));
   LUT3 #(
-    .INIT(8'hA8)) 
+    .INIT(8'hC8)) 
     main_clock1_carry__1_i_1
-       (.I0(main_clock2_carry__1_n_0),
-        .I1(main_clock[45]),
-        .I2(main_clock[44]),
+       (.I0(main_clock[44]),
+        .I1(main_clock2_carry__1_n_0),
+        .I2(main_clock[45]),
         .O(main_clock1_carry__1_i_1_n_0));
   LUT3 #(
-    .INIT(8'h18)) 
+    .INIT(8'h24)) 
     main_clock1_carry__1_i_10
        (.I0(main_clock[41]),
-        .I1(main_clock[40]),
-        .I2(main_clock2_carry__1_n_0),
+        .I1(main_clock2_carry__1_n_0),
+        .I2(main_clock[40]),
         .O(main_clock1_carry__1_i_10_n_0));
   LUT3 #(
-    .INIT(8'h18)) 
+    .INIT(8'h24)) 
     main_clock1_carry__1_i_11
        (.I0(main_clock[39]),
-        .I1(main_clock[38]),
-        .I2(main_clock2_carry__1_n_0),
+        .I1(main_clock2_carry__1_n_0),
+        .I2(main_clock[38]),
         .O(main_clock1_carry__1_i_11_n_0));
   LUT3 #(
-    .INIT(8'h18)) 
+    .INIT(8'h24)) 
     main_clock1_carry__1_i_12
        (.I0(main_clock[37]),
-        .I1(main_clock[36]),
-        .I2(main_clock2_carry__1_n_0),
+        .I1(main_clock2_carry__1_n_0),
+        .I2(main_clock[36]),
         .O(main_clock1_carry__1_i_12_n_0));
   LUT3 #(
-    .INIT(8'h18)) 
+    .INIT(8'h24)) 
     main_clock1_carry__1_i_13
        (.I0(main_clock[35]),
-        .I1(main_clock[34]),
-        .I2(main_clock2_carry__1_n_0),
+        .I1(main_clock2_carry__1_n_0),
+        .I2(main_clock[34]),
         .O(main_clock1_carry__1_i_13_n_0));
   LUT3 #(
-    .INIT(8'h18)) 
+    .INIT(8'h24)) 
     main_clock1_carry__1_i_14
        (.I0(main_clock[33]),
-        .I1(main_clock[32]),
-        .I2(main_clock2_carry__1_n_0),
+        .I1(main_clock2_carry__1_n_0),
+        .I2(main_clock[32]),
         .O(main_clock1_carry__1_i_14_n_0));
   LUT3 #(
-    .INIT(8'hA8)) 
+    .INIT(8'hC8)) 
     main_clock1_carry__1_i_2
-       (.I0(main_clock2_carry__1_n_0),
-        .I1(main_clock[43]),
-        .I2(main_clock[42]),
+       (.I0(main_clock[42]),
+        .I1(main_clock2_carry__1_n_0),
+        .I2(main_clock[43]),
         .O(main_clock1_carry__1_i_2_n_0));
   LUT3 #(
-    .INIT(8'hA8)) 
+    .INIT(8'hC8)) 
     main_clock1_carry__1_i_3
-       (.I0(main_clock2_carry__1_n_0),
-        .I1(main_clock[41]),
-        .I2(main_clock[40]),
+       (.I0(main_clock[40]),
+        .I1(main_clock2_carry__1_n_0),
+        .I2(main_clock[41]),
         .O(main_clock1_carry__1_i_3_n_0));
   LUT3 #(
-    .INIT(8'hA8)) 
+    .INIT(8'hC8)) 
     main_clock1_carry__1_i_4
-       (.I0(main_clock2_carry__1_n_0),
-        .I1(main_clock[39]),
-        .I2(main_clock[38]),
+       (.I0(main_clock[38]),
+        .I1(main_clock2_carry__1_n_0),
+        .I2(main_clock[39]),
         .O(main_clock1_carry__1_i_4_n_0));
   LUT3 #(
-    .INIT(8'hA8)) 
+    .INIT(8'hC8)) 
     main_clock1_carry__1_i_5
-       (.I0(main_clock2_carry__1_n_0),
-        .I1(main_clock[37]),
-        .I2(main_clock[36]),
+       (.I0(main_clock[36]),
+        .I1(main_clock2_carry__1_n_0),
+        .I2(main_clock[37]),
         .O(main_clock1_carry__1_i_5_n_0));
   LUT3 #(
-    .INIT(8'hA8)) 
+    .INIT(8'hC8)) 
     main_clock1_carry__1_i_6
-       (.I0(main_clock2_carry__1_n_0),
-        .I1(main_clock[35]),
-        .I2(main_clock[34]),
+       (.I0(main_clock[34]),
+        .I1(main_clock2_carry__1_n_0),
+        .I2(main_clock[35]),
         .O(main_clock1_carry__1_i_6_n_0));
   LUT3 #(
-    .INIT(8'hA8)) 
+    .INIT(8'hC8)) 
     main_clock1_carry__1_i_7
-       (.I0(main_clock2_carry__1_n_0),
-        .I1(main_clock[33]),
-        .I2(main_clock[32]),
+       (.I0(main_clock[32]),
+        .I1(main_clock2_carry__1_n_0),
+        .I2(main_clock[33]),
         .O(main_clock1_carry__1_i_7_n_0));
   LUT3 #(
-    .INIT(8'h18)) 
+    .INIT(8'h24)) 
     main_clock1_carry__1_i_8
        (.I0(main_clock[45]),
-        .I1(main_clock[44]),
-        .I2(main_clock2_carry__1_n_0),
+        .I1(main_clock2_carry__1_n_0),
+        .I2(main_clock[44]),
         .O(main_clock1_carry__1_i_8_n_0));
   LUT3 #(
-    .INIT(8'h18)) 
+    .INIT(8'h24)) 
     main_clock1_carry__1_i_9
        (.I0(main_clock[43]),
-        .I1(main_clock[42]),
-        .I2(main_clock2_carry__1_n_0),
+        .I1(main_clock2_carry__1_n_0),
+        .I2(main_clock[42]),
         .O(main_clock1_carry__1_i_9_n_0));
   LUT4 #(
-    .INIT(16'h22B2)) 
+    .INIT(16'h2F02)) 
     main_clock1_carry_i_1
-       (.I0(main_clock[15]),
-        .I1(main_clock2[15]),
-        .I2(main_clock[14]),
-        .I3(main_clock2[14]),
+       (.I0(main_clock[14]),
+        .I1(main_clock2[14]),
+        .I2(main_clock2[15]),
+        .I3(main_clock[15]),
         .O(main_clock1_carry_i_1_n_0));
   LUT4 #(
     .INIT(16'h9009)) 
@@ -2239,68 +2417,68 @@ module top_level_block_design_pulse_gen_0_0_pulse_gen
         .I3(main_clock[2]),
         .O(main_clock1_carry_i_15_n_0));
   LUT4 #(
-    .INIT(16'h6006)) 
+    .INIT(16'h0990)) 
     main_clock1_carry_i_16
+       (.I0(main_clock2[1]),
+        .I1(main_clock[1]),
+        .I2(main_clock[0]),
+        .I3(\clock_period_reg_n_0_[0] ),
+        .O(main_clock1_carry_i_16_n_0));
+  LUT4 #(
+    .INIT(16'h2F02)) 
+    main_clock1_carry_i_2
+       (.I0(main_clock[12]),
+        .I1(main_clock2[12]),
+        .I2(main_clock2[13]),
+        .I3(main_clock[13]),
+        .O(main_clock1_carry_i_2_n_0));
+  LUT4 #(
+    .INIT(16'h2F02)) 
+    main_clock1_carry_i_3
+       (.I0(main_clock[10]),
+        .I1(main_clock2[10]),
+        .I2(main_clock2[11]),
+        .I3(main_clock[11]),
+        .O(main_clock1_carry_i_3_n_0));
+  LUT4 #(
+    .INIT(16'h2F02)) 
+    main_clock1_carry_i_4
+       (.I0(main_clock[8]),
+        .I1(main_clock2[8]),
+        .I2(main_clock2[9]),
+        .I3(main_clock[9]),
+        .O(main_clock1_carry_i_4_n_0));
+  LUT4 #(
+    .INIT(16'h2F02)) 
+    main_clock1_carry_i_5
+       (.I0(main_clock[6]),
+        .I1(main_clock2[6]),
+        .I2(main_clock2[7]),
+        .I3(main_clock[7]),
+        .O(main_clock1_carry_i_5_n_0));
+  LUT4 #(
+    .INIT(16'h2F02)) 
+    main_clock1_carry_i_6
+       (.I0(main_clock[4]),
+        .I1(main_clock2[4]),
+        .I2(main_clock2[5]),
+        .I3(main_clock[5]),
+        .O(main_clock1_carry_i_6_n_0));
+  LUT4 #(
+    .INIT(16'h2F02)) 
+    main_clock1_carry_i_7
+       (.I0(main_clock[2]),
+        .I1(main_clock2[2]),
+        .I2(main_clock2[3]),
+        .I3(main_clock[3]),
+        .O(main_clock1_carry_i_7_n_0));
+  LUT4 #(
+    .INIT(16'h8F08)) 
+    main_clock1_carry_i_8
        (.I0(main_clock[0]),
         .I1(\clock_period_reg_n_0_[0] ),
         .I2(main_clock2[1]),
         .I3(main_clock[1]),
-        .O(main_clock1_carry_i_16_n_0));
-  LUT4 #(
-    .INIT(16'h22B2)) 
-    main_clock1_carry_i_2
-       (.I0(main_clock[13]),
-        .I1(main_clock2[13]),
-        .I2(main_clock[12]),
-        .I3(main_clock2[12]),
-        .O(main_clock1_carry_i_2_n_0));
-  LUT4 #(
-    .INIT(16'h22B2)) 
-    main_clock1_carry_i_3
-       (.I0(main_clock[11]),
-        .I1(main_clock2[11]),
-        .I2(main_clock[10]),
-        .I3(main_clock2[10]),
-        .O(main_clock1_carry_i_3_n_0));
-  LUT4 #(
-    .INIT(16'h22B2)) 
-    main_clock1_carry_i_4
-       (.I0(main_clock[9]),
-        .I1(main_clock2[9]),
-        .I2(main_clock[8]),
-        .I3(main_clock2[8]),
-        .O(main_clock1_carry_i_4_n_0));
-  LUT4 #(
-    .INIT(16'h22B2)) 
-    main_clock1_carry_i_5
-       (.I0(main_clock[7]),
-        .I1(main_clock2[7]),
-        .I2(main_clock[6]),
-        .I3(main_clock2[6]),
-        .O(main_clock1_carry_i_5_n_0));
-  LUT4 #(
-    .INIT(16'h22B2)) 
-    main_clock1_carry_i_6
-       (.I0(main_clock[5]),
-        .I1(main_clock2[5]),
-        .I2(main_clock[4]),
-        .I3(main_clock2[4]),
-        .O(main_clock1_carry_i_6_n_0));
-  LUT4 #(
-    .INIT(16'h22B2)) 
-    main_clock1_carry_i_7
-       (.I0(main_clock[3]),
-        .I1(main_clock2[3]),
-        .I2(main_clock[2]),
-        .I3(main_clock2[2]),
-        .O(main_clock1_carry_i_7_n_0));
-  LUT4 #(
-    .INIT(16'hB222)) 
-    main_clock1_carry_i_8
-       (.I0(main_clock[1]),
-        .I1(main_clock2[1]),
-        .I2(\clock_period_reg_n_0_[0] ),
-        .I3(main_clock[0]),
         .O(main_clock1_carry_i_8_n_0));
   LUT4 #(
     .INIT(16'h9009)) 
@@ -2446,373 +2624,373 @@ module top_level_block_design_pulse_gen_0_0_pulse_gen
     main_clock2_carry_i_8
        (.I0(\clock_period_reg_n_0_[1] ),
         .O(main_clock2_carry_i_8_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT3 #(
     .INIT(8'h01)) 
     \main_clock[0]_i_1 
-       (.I0(main_clock[0]),
+       (.I0(main_clock1),
         .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
+        .I2(main_clock[0]),
         .O(p_0_in[0]));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
   LUT3 #(
-    .INIT(8'h02)) 
+    .INIT(8'h10)) 
     \main_clock[10]_i_1 
-       (.I0(main_clock0[10]),
+       (.I0(main_clock1),
         .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
+        .I2(main_clock0[10]),
         .O(p_0_in[10]));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
   LUT3 #(
-    .INIT(8'h02)) 
+    .INIT(8'h10)) 
     \main_clock[11]_i_1 
-       (.I0(main_clock0[11]),
+       (.I0(main_clock1),
         .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
+        .I2(main_clock0[11]),
         .O(p_0_in[11]));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  (* SOFT_HLUTNM = "soft_lutpair22" *) 
   LUT3 #(
-    .INIT(8'h02)) 
+    .INIT(8'h10)) 
     \main_clock[12]_i_1 
-       (.I0(main_clock0[12]),
+       (.I0(main_clock1),
         .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
+        .I2(main_clock0[12]),
         .O(p_0_in[12]));
+  (* SOFT_HLUTNM = "soft_lutpair22" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[13]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[13]),
+        .O(p_0_in[13]));
+  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[14]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[14]),
+        .O(p_0_in[14]));
+  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[15]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[15]),
+        .O(p_0_in[15]));
+  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[16]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[16]),
+        .O(p_0_in[16]));
+  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[17]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[17]),
+        .O(p_0_in[17]));
+  (* SOFT_HLUTNM = "soft_lutpair25" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[18]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[18]),
+        .O(p_0_in[18]));
+  (* SOFT_HLUTNM = "soft_lutpair25" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[19]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[19]),
+        .O(p_0_in[19]));
   (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[13]_i_1 
-       (.I0(main_clock0[13]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[13]));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[14]_i_1 
-       (.I0(main_clock0[14]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[14]));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[15]_i_1 
-       (.I0(main_clock0[15]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[15]));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[16]_i_1 
-       (.I0(main_clock0[16]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[16]));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[17]_i_1 
-       (.I0(main_clock0[17]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[17]));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[18]_i_1 
-       (.I0(main_clock0[18]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[18]));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[19]_i_1 
-       (.I0(main_clock0[19]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[19]));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
+    .INIT(8'h10)) 
     \main_clock[1]_i_1 
-       (.I0(main_clock0[1]),
+       (.I0(main_clock1),
         .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
+        .I2(main_clock0[1]),
         .O(p_0_in[1]));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  (* SOFT_HLUTNM = "soft_lutpair26" *) 
   LUT3 #(
-    .INIT(8'h02)) 
+    .INIT(8'h10)) 
     \main_clock[20]_i_1 
-       (.I0(main_clock0[20]),
+       (.I0(main_clock1),
         .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
+        .I2(main_clock0[20]),
         .O(p_0_in[20]));
+  (* SOFT_HLUTNM = "soft_lutpair26" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[21]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[21]),
+        .O(p_0_in[21]));
+  (* SOFT_HLUTNM = "soft_lutpair27" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[22]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[22]),
+        .O(p_0_in[22]));
+  (* SOFT_HLUTNM = "soft_lutpair27" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[23]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[23]),
+        .O(p_0_in[23]));
+  (* SOFT_HLUTNM = "soft_lutpair28" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[24]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[24]),
+        .O(p_0_in[24]));
+  (* SOFT_HLUTNM = "soft_lutpair28" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[25]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[25]),
+        .O(p_0_in[25]));
+  (* SOFT_HLUTNM = "soft_lutpair29" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[26]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[26]),
+        .O(p_0_in[26]));
+  (* SOFT_HLUTNM = "soft_lutpair29" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[27]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[27]),
+        .O(p_0_in[27]));
+  (* SOFT_HLUTNM = "soft_lutpair30" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[28]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[28]),
+        .O(p_0_in[28]));
+  (* SOFT_HLUTNM = "soft_lutpair30" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[29]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[29]),
+        .O(p_0_in[29]));
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[2]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[2]),
+        .O(p_0_in[2]));
+  (* SOFT_HLUTNM = "soft_lutpair31" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[30]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[30]),
+        .O(p_0_in[30]));
+  (* SOFT_HLUTNM = "soft_lutpair31" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[31]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[31]),
+        .O(p_0_in[31]));
+  (* SOFT_HLUTNM = "soft_lutpair32" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[32]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[32]),
+        .O(p_0_in[32]));
+  (* SOFT_HLUTNM = "soft_lutpair32" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[33]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[33]),
+        .O(p_0_in[33]));
+  (* SOFT_HLUTNM = "soft_lutpair33" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[34]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[34]),
+        .O(p_0_in[34]));
+  (* SOFT_HLUTNM = "soft_lutpair33" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[35]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[35]),
+        .O(p_0_in[35]));
+  (* SOFT_HLUTNM = "soft_lutpair34" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[36]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[36]),
+        .O(p_0_in[36]));
+  (* SOFT_HLUTNM = "soft_lutpair34" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[37]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[37]),
+        .O(p_0_in[37]));
+  (* SOFT_HLUTNM = "soft_lutpair35" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[38]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[38]),
+        .O(p_0_in[38]));
+  (* SOFT_HLUTNM = "soft_lutpair35" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[39]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[39]),
+        .O(p_0_in[39]));
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[3]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[3]),
+        .O(p_0_in[3]));
+  (* SOFT_HLUTNM = "soft_lutpair36" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[40]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[40]),
+        .O(p_0_in[40]));
+  (* SOFT_HLUTNM = "soft_lutpair36" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[41]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[41]),
+        .O(p_0_in[41]));
+  (* SOFT_HLUTNM = "soft_lutpair37" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[42]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[42]),
+        .O(p_0_in[42]));
+  (* SOFT_HLUTNM = "soft_lutpair37" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[43]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[43]),
+        .O(p_0_in[43]));
+  (* SOFT_HLUTNM = "soft_lutpair38" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[44]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[44]),
+        .O(p_0_in[44]));
+  (* SOFT_HLUTNM = "soft_lutpair38" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[45]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[45]),
+        .O(p_0_in[45]));
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[4]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[4]),
+        .O(p_0_in[4]));
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[5]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[5]),
+        .O(p_0_in[5]));
+  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[6]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[6]),
+        .O(p_0_in[6]));
+  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    \main_clock[7]_i_1 
+       (.I0(main_clock1),
+        .I1(rst_clock_reg_n_0),
+        .I2(main_clock0[7]),
+        .O(p_0_in[7]));
   (* SOFT_HLUTNM = "soft_lutpair20" *) 
   LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[21]_i_1 
-       (.I0(main_clock0[21]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[21]));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[22]_i_1 
-       (.I0(main_clock0[22]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[22]));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[23]_i_1 
-       (.I0(main_clock0[23]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[23]));
-  (* SOFT_HLUTNM = "soft_lutpair22" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[24]_i_1 
-       (.I0(main_clock0[24]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[24]));
-  (* SOFT_HLUTNM = "soft_lutpair22" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[25]_i_1 
-       (.I0(main_clock0[25]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[25]));
-  (* SOFT_HLUTNM = "soft_lutpair23" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[26]_i_1 
-       (.I0(main_clock0[26]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[26]));
-  (* SOFT_HLUTNM = "soft_lutpair23" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[27]_i_1 
-       (.I0(main_clock0[27]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[27]));
-  (* SOFT_HLUTNM = "soft_lutpair24" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[28]_i_1 
-       (.I0(main_clock0[28]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[28]));
-  (* SOFT_HLUTNM = "soft_lutpair24" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[29]_i_1 
-       (.I0(main_clock0[29]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[29]));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[2]_i_1 
-       (.I0(main_clock0[2]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[2]));
-  (* SOFT_HLUTNM = "soft_lutpair25" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[30]_i_1 
-       (.I0(main_clock0[30]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[30]));
-  (* SOFT_HLUTNM = "soft_lutpair25" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[31]_i_1 
-       (.I0(main_clock0[31]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[31]));
-  (* SOFT_HLUTNM = "soft_lutpair26" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[32]_i_1 
-       (.I0(main_clock0[32]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[32]));
-  (* SOFT_HLUTNM = "soft_lutpair26" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[33]_i_1 
-       (.I0(main_clock0[33]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[33]));
-  (* SOFT_HLUTNM = "soft_lutpair27" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[34]_i_1 
-       (.I0(main_clock0[34]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[34]));
-  (* SOFT_HLUTNM = "soft_lutpair27" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[35]_i_1 
-       (.I0(main_clock0[35]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[35]));
-  (* SOFT_HLUTNM = "soft_lutpair28" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[36]_i_1 
-       (.I0(main_clock0[36]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[36]));
-  (* SOFT_HLUTNM = "soft_lutpair28" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[37]_i_1 
-       (.I0(main_clock0[37]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[37]));
-  (* SOFT_HLUTNM = "soft_lutpair29" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[38]_i_1 
-       (.I0(main_clock0[38]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[38]));
-  (* SOFT_HLUTNM = "soft_lutpair29" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[39]_i_1 
-       (.I0(main_clock0[39]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[39]));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[3]_i_1 
-       (.I0(main_clock0[3]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[3]));
-  (* SOFT_HLUTNM = "soft_lutpair30" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[40]_i_1 
-       (.I0(main_clock0[40]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[40]));
-  (* SOFT_HLUTNM = "soft_lutpair30" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[41]_i_1 
-       (.I0(main_clock0[41]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[41]));
-  (* SOFT_HLUTNM = "soft_lutpair31" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[42]_i_1 
-       (.I0(main_clock0[42]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[42]));
-  (* SOFT_HLUTNM = "soft_lutpair31" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[43]_i_1 
-       (.I0(main_clock0[43]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[43]));
-  (* SOFT_HLUTNM = "soft_lutpair32" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[44]_i_1 
-       (.I0(main_clock0[44]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[44]));
-  (* SOFT_HLUTNM = "soft_lutpair32" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[45]_i_1 
-       (.I0(main_clock0[45]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[45]));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[4]_i_1 
-       (.I0(main_clock0[4]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[4]));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[5]_i_1 
-       (.I0(main_clock0[5]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[5]));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[6]_i_1 
-       (.I0(main_clock0[6]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[6]));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \main_clock[7]_i_1 
-       (.I0(main_clock0[7]),
-        .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
-        .O(p_0_in[7]));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
+    .INIT(8'h10)) 
     \main_clock[8]_i_1 
-       (.I0(main_clock0[8]),
+       (.I0(main_clock1),
         .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
+        .I2(main_clock0[8]),
         .O(p_0_in[8]));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
   LUT3 #(
-    .INIT(8'h02)) 
+    .INIT(8'h10)) 
     \main_clock[9]_i_1 
-       (.I0(main_clock0[9]),
+       (.I0(main_clock1),
         .I1(rst_clock_reg_n_0),
-        .I2(main_clock1),
+        .I2(main_clock0[9]),
         .O(p_0_in[9]));
   FDCE \main_clock_reg[0] 
        (.C(clk),
@@ -3090,7 +3268,7 @@ module top_level_block_design_pulse_gen_0_0_pulse_gen
         .CLR(fifo_read_i_2_n_0),
         .D(p_0_in[9]),
         .Q(main_clock[9]));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT4 #(
     .INIT(16'h2F20)) 
     rst_clock_i_1
@@ -3105,26 +3283,27 @@ module top_level_block_design_pulse_gen_0_0_pulse_gen
         .CLR(fifo_read_i_2_n_0),
         .D(rst_clock_i_1_n_0),
         .Q(rst_clock_reg_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \state_out[0]_INST_0 
        (.I0(state__0[0]),
         .I1(state__0[2]),
         .O(state_out[0]));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \state_out[1]_INST_0 
        (.I0(state__0[1]),
         .I1(state__0[2]),
         .O(state_out[1]));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT3 #(
-    .INIT(8'h02)) 
+    .INIT(8'h10)) 
     \state_out[2]_INST_0 
-       (.I0(state__0[2]),
+       (.I0(state__0[1]),
         .I1(state__0[0]),
-        .I2(state__0[1]),
+        .I2(state__0[2]),
         .O(state_out[2]));
 endmodule
 `ifndef GLBL

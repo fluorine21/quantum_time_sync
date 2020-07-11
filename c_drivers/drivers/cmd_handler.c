@@ -177,7 +177,7 @@ void cmd_update_state()
 			cmd_state = STATE_WAIT_PREAMBLE;
 
 			#ifdef DEBUG_PRINT
-			xil_printf("Executing: 0x%x, with args 0x%x, 0x%x, 0x%x", curr_cmd, b0, b1, b2);
+			xil_printf("Executing: 0x%x, with args 0x%x, 0x%x, 0x%x\r\n", curr_cmd, b0, b1, b2);
 			#endif
 
 		}

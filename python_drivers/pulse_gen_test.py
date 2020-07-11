@@ -20,6 +20,7 @@ else:
     print("Connection to board is up!")
     
 #turn on phase measurement mode to get something on the stream output
-pg.phase_meas_off()
-    
+#pg.phase_meas_on()
+#pg.phase_meas_off()
+pg.send_pulse(5, 1)
 #pg.close_board()

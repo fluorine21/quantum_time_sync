@@ -10,15 +10,13 @@ import time_sync
 import time
 
 server_ip = "205.208.56.201"
-ts = time_sync.time_sync("COM3", server_ip, time_sync.CLIENT)
+ts = time_sync.time_sync("COM3", server_ip, time_sync.CLIENT, 1)
 
 
 ts.connect_to_server()
 
-ts.ping_server()
 
-
-time.sleep(20)
+ts.start_client_sync()
 
 
 ts.disconnect_from_server()

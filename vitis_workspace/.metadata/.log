@@ -6101,3 +6101,9 @@ Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-20: Launc
 
 !ENTRY com.xilinx.sdk.utils 0 0 2020-07-10 18:07:54.591
 !MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-20: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-11 12:12:03.597
+!MESSAGE XSCT Command: [disconnect tcfchan#15], Thread: Thread-1502
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-11 12:12:03.605
+!MESSAGE XSCT command with result: [disconnect tcfchan#15], Result: [null, ]. Thread: Thread-1502

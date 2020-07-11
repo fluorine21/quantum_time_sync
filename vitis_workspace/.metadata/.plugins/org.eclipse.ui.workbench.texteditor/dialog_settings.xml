@@ -2,16 +2,19 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="GPIO" key="selection"/>
+		<item value="Tile_Id" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Tile_id"/>
+			<item value="debug_print"/>
 			<item value="GPIO"/>
 			<item value="XUartPs_Recv"/>
 		</list>
 		<list key="replacehistory">
+			<item value="print"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

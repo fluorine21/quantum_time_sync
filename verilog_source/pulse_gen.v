@@ -185,7 +185,21 @@ always @ (posedge clk or negedge rst) begin
 			state_wait_tick: begin
 			
 			     if(clock_tick) begin
-			         state <= state_wait_pulse;
+				 
+					//If we have zero coarse delay
+					if(coarse_delay == 0) begin
+						//Send the pulse now at the clock tick and go back to idle
+						m_axis_tdata_int <= (default_pulse >> (fine_delay << 4));
+						state <= state_idle;
+					
+					end
+					
+					else begin
+						//Otherwise do normal counting
+						state <= state_wait_pulse;
+						coarse_delay <= coarse_delay - 1;
+					 
+					end
 			     end
 			
 			end 
@@ -198,7 +212,7 @@ always @ (posedge clk or negedge rst) begin
 			         state <= state_idle;
 			     end
 	             else begin 
-	                   coarse_delay <= coarse_delay - 1;
+	                 coarse_delay <= coarse_delay - 1;
 	             end
 	             		
 			end

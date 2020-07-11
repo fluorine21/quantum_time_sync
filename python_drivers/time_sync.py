@@ -31,10 +31,10 @@ SERVER_EXIT = 6
 SERVER_PING = 7
 
 #TDC Channels
-CHANNEL_ALICE_SEND = 0
-CHANNEL_ALICE_RECEIVE = 1
-CHANNEL_BOB_SEND = 0
-CHANNEL_BOB_RECEIVE = 1
+CHANNEL_ALICE_SEND = 104
+CHANNEL_ALICE_RECEIVE = 104
+CHANNEL_BOB_SEND = 104
+CHANNEL_BOB_RECEIVE = 104
 
 #Bob's responses
 TDC_SUCCESS = 8
@@ -73,9 +73,10 @@ class time_sync:
     t_b_s = 0
     
     socket_dead = 0
+    dummy_mode = 0
     
     
-    def __init__(self, COM_PORT, s_ip, m):
+    def __init__(self, COM_PORT, s_ip, m, dm):
         
         #save the other parameters
         self.server_ip = s_ip
@@ -88,7 +89,7 @@ class time_sync:
         self.board = pulse_gen_obj.pulse_gen(COM_PORT)
         
         #initialize the tdc
-        self.tdc = tdc_wrapper.tdc_wrapper(5)
+        self.tdc = tdc_wrapper.tdc_wrapper(5, dm)
         
         
         if(m == CLIENT):
@@ -334,6 +335,9 @@ class time_sync:
         
         #connect to the client
         #self.s.connect((self.server_ip, self.port))
+        if(self.ping_server()):
+            print("Error communicating with server, unable to perform time synchronization")
+            return -1
         
         print("Connected to server, performing time synchronization...")
         
@@ -437,6 +441,8 @@ class time_sync:
             print("Ran out of tries while trying to send pulse from Bob to Alice!")
             ret_val = -1
          
+        self.calc_path_len()
+        self.calc_time_diff()
         return ret_val
 
     #Returns 0 on success
@@ -506,7 +512,7 @@ class time_sync:
             
             print("Sending pulse to Alice...")
             
-            #Wait for a bit so bob's tdc is reay
+            #Wait for a bit so Alice's tdc is reay
             time.sleep(1)
             
             #Start bob's tdc
@@ -597,14 +603,12 @@ class time_sync:
     
     
     
-    def calc_path_len(self, t_a_r, t_a_s, t_b_r, t_b_s):
-        self.len_diff = 0
-        return 0
+    def calc_path_len(self):
+        self.len_diff = ((self.t_a_r - self.t_a_s) - (self.t_b_r - self.t_b_s)) / 2
     
     
-    def calc_time_diff(self, t_a_r, t_a_s, t_b_r, t_b_s):
-        
-        return 0
+    def calc_time_diff(self):
+        self.time_diff = (self.t_b_r + self.t_b_s - self.t_a_r - self.t_a_s) / 2
     
     
     def receive_bytes(self, c, num_bytes):
