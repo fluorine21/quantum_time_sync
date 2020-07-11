@@ -315,3 +315,6 @@ timestamp=[2020-07-10 15:18:24], mode=BUILD, duration=0:00:02.040, duration_ms=2
 timestamp=[2020-07-10 15:18:37], mode=BUILD, duration=0:00:12.871, duration_ms=12871, data={name=test_proj_pulse_ctrl_system, configuration=Debug, clean_build=false}
 timestamp=[2020-07-10 15:24:51], mode=BUILD, duration=0:00:01.663, duration_ms=1663, data={name=test_proj_pulse_ctrl, configuration=Debug, clean_build=false}
 timestamp=[2020-07-10 15:25:05], mode=BUILD, duration=0:00:12.811, duration_ms=12811, data={name=test_proj_pulse_ctrl_system, configuration=Debug, clean_build=false}
+timestamp=[2020-07-11 14:51:06], mode=WORKBENCH_START, duration=0:00:13.146, duration_ms=13146, data={}
+timestamp=[2020-07-11 14:51:07], mode=WORKBENCH_UI_INIT, duration=0:00:00.972, duration_ms=972, data={editors_count=8, platform_editors_count=2, projects_count=6, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,test_proj_ethernet,test_proj_ethernet_system,test_proj_plat,test_proj_pulse_ctrl,test_proj_pulse_ctrl_system}
+timestamp=[2020-07-11 14:51:08], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.147, duration_ms=147, data={}

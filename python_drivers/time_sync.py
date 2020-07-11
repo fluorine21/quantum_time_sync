@@ -343,10 +343,11 @@ class time_sync:
         
         if(self.do_sync(self.s) == -1):
             print("Time sync failed!")
+            return -1
+        else:
+            print("Time sync success! time_diff = " + str(self.time_diff) + ", path_len = " + str(self.path_len))
+            return 0
         
-        #self.s.close()
-        
-        return 0
     
     
     #returns 0 on success
@@ -391,7 +392,7 @@ class time_sync:
             print("Error, unable to connect to FPGA board")
             return -1
         
-        if( (not self.is_socket_alive(sck)) or self.ping_server()):
+        if( self.is_socket_alive(sck) or self.ping_server()):
             print("Error, not connected to server (Bob)")
             return -1
             
@@ -453,8 +454,6 @@ class time_sync:
         #If we are Alice
         if(self.mode == CLIENT):
             
-            print("Sending pulse from client to server...")
-            
             #Wait for a bit so bob's tdc is reay
             time.sleep(1)
             
@@ -463,7 +462,7 @@ class time_sync:
                 return -1
             
             #Send a pulse
-            print("Sending pulse from Alice to Bob")
+            print("Sending pulse to Bob")
             self.board.send_pulse(0,0)
             
             #Wait for the TDC to pick up the pulse
@@ -508,7 +507,7 @@ class time_sync:
         ret_val = 0
         
         #If we are Bob
-        if(self.mode == SERVER):
+        if(self.mode != CLIENT):
             
             print("Sending pulse to Alice...")
             
@@ -518,9 +517,8 @@ class time_sync:
             #Start bob's tdc
             if(self.tdc.start_record()):#If it fails to start
                 return -1
-            
-            #Send a pulse
-            print("Sending pulse from Alice to Bob")
+
+
             self.board.send_pulse(0,0)
             
             #Wait for the TDC to pick up the pulse
@@ -532,7 +530,7 @@ class time_sync:
                 print("Error, Bob did not detect his own pulse on her TDC")
                 ret_val = -1
             else:
-                print("Bob detected her own pulse! t_a_s = " + str(self.t_a_s))
+                print("Bob detected his own pulse! t_a_s = " + str(self.t_b_s))
                 
             #Send the timestamp to Alice
             self.send_timestamp(sck, self.t_b_s)
@@ -548,9 +546,15 @@ class time_sync:
                 print("Error, Alice did not receive a pulse from Bob!")
                 ret_val = -1
             else:
-                print("Alice received Bob's pulse! t_b_r = " + str(self.t_b_r))
+                print("Alice received Bob's pulse! t_a_r = " + str(self.t_a_r))
                 
-            self.send_timestamp(sck, self.t_b_r)
+            self.t_b_s = self.receive_timestamp(sck)
+            
+            if(self.t_b_s < 1):
+                print("Error ,Bob did not detect his own pulse!")
+                ret_val = -1
+            else:
+                print("Bob detected his own pulse! t_b_s = " + str(self.t_b_s))
             
         return ret_val
     
@@ -604,7 +608,7 @@ class time_sync:
     
     
     def calc_path_len(self):
-        self.len_diff = ((self.t_a_r - self.t_a_s) - (self.t_b_r - self.t_b_s)) / 2
+        self.path_len = ((self.t_a_r - self.t_a_s) - (self.t_b_r - self.t_b_s)) / 2
     
     
     def calc_time_diff(self):

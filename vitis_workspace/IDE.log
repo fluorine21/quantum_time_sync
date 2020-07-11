@@ -5970,3 +5970,11 @@ con
 
 18:07:54 INFO  : Launch script is exported to file 'C:\James\vitis_workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_test_proj_pulse_ctrl_system_no_fpga_flash_standalone.tcl'
 12:12:03 INFO  : Disconnected from the channel tcfchan#15.
+14:50:59 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\James\vitis_workspace\temp_xsdb_launch_script.tcl
+14:51:03 INFO  : XSCT server has started successfully.
+14:51:03 INFO  : plnx-install-location is set to ''
+14:51:03 INFO  : Successfully done setting XSCT server connection channel  
+14:51:03 INFO  : Successfully done setting workspace for the tool. 
+14:51:08 INFO  : Registering command handlers for Vitis TCF services
+14:51:08 INFO  : Platform repository initialization has completed.
+14:51:09 INFO  : Successfully done query RDI_DATADIR 
