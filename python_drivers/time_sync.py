@@ -7,7 +7,7 @@ Created on Wed Jul  1 10:46:08 2020
 
 
 import socket
-import pulse_gen_obj
+import pulse_gen
 import time
 import tdc_wrapper
 import ssl
@@ -86,7 +86,7 @@ class time_sync:
         self.init_socket()
         
         #Initialize the FPGA
-        self.board = pulse_gen_obj.pulse_gen(COM_PORT)
+        self.board = pulse_gen.pulse_gen(COM_PORT)
         
         #initialize the tdc
         self.tdc = tdc_wrapper.tdc_wrapper(5, dm)
