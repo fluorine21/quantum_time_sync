@@ -375,7 +375,11 @@ class time_sync:
     #Returns -1 on fail
     def receive_timestamp(self, sck):
         #Receive and reconstruct the whole number
-        return int.from_bytes(self.receive_bytes(sck, TIMESTAMP_BYTE_LEN), byteorder='big', signed = False)
+        res = self.receive_bytes(sck, TIMESTAMP_BYTE_LEN)
+        if(res == -1):
+            print("Timed out waiting for timestamp")
+            return -1
+        return int.from_bytes(res, byteorder='big', signed = False)
     
     def send_timestamp(self, sck, ts):        
         ts_bs = int(ts).to_bytes(TIMESTAMP_BYTE_LEN, byteorder='big', signed = False)        
