@@ -622,9 +622,7 @@ class time_sync:
     def receive_bytes(self, c, num_bytes):
         
         byte_res = []
-            
-        #Need our own timer to figure out if the socket is closed
-        
+                    
         while(1):
             
             try:
