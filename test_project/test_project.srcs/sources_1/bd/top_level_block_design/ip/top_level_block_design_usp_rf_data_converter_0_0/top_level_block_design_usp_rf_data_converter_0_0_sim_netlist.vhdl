@@ -1,10 +1,11 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Tue Jul  7 13:19:30 2020
+-- Date        : Sun Jun 28 13:58:25 2020
 -- Host        : pme10D0025 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_usp_rf_data_converter_0_0/top_level_block_design_usp_rf_data_converter_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top top_level_block_design_usp_rf_data_converter_0_0 -prefix
+--               top_level_block_design_usp_rf_data_converter_0_0_
+--               top_level_block_design_usp_rf_data_converter_0_0_sim_netlist.vhdl
 -- Design      : top_level_block_design_usp_rf_data_converter_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -440,8 +441,6 @@ entity top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_u
     s_axi_wready_reg_i_2_2 : in STD_LOGIC;
     s_axi_wready_reg_i_2_3 : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_address_decoder : entity is "top_level_block_design_usp_rf_data_converter_0_0_address_decoder";
 end top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_address_decoder;
 
 architecture STRUCTURE of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_address_decoder is
@@ -15514,8 +15513,6 @@ entity top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_u
     dac0_reset_i : in STD_LOGIC;
     p_46_in : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_bgt_fsm : entity is "top_level_block_design_usp_rf_data_converter_0_0_bgt_fsm";
 end top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_bgt_fsm;
 
 architecture STRUCTURE of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_bgt_fsm is
@@ -17165,8 +17162,6 @@ entity top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_u
     lopt_2 : in STD_LOGIC;
     lopt_3 : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_bufg_gt_ctrl : entity is "top_level_block_design_usp_rf_data_converter_0_0_bufg_gt_ctrl";
 end top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_bufg_gt_ctrl;
 
 architecture STRUCTURE of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_bufg_gt_ctrl is
@@ -17233,8 +17228,6 @@ entity top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_u
     s_axi_aclk : in STD_LOGIC;
     \icount_out_reg[11]_0\ : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_counter_f : entity is "top_level_block_design_usp_rf_data_converter_0_0_counter_f";
 end top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_counter_f;
 
 architecture STRUCTURE of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_counter_f is
@@ -18027,8 +18020,6 @@ entity top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_u
     \data_reg[27]_20\ : in STD_LOGIC_VECTOR ( 26 downto 0 );
     s_axi_aclk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_device_rom : entity is "top_level_block_design_usp_rf_data_converter_0_0_device_rom";
 end top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_device_rom;
 
 architecture STRUCTURE of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_device_rom is
@@ -20406,8 +20397,6 @@ entity top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_u
     \FSM_sequential_tc_sm_state[2]_i_5\ : in STD_LOGIC;
     \rdata_reg[0]\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_drp_arbiter : entity is "top_level_block_design_usp_rf_data_converter_0_0_drp_arbiter";
 end top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_drp_arbiter;
 
 architecture STRUCTURE of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_drp_arbiter is
@@ -25823,8 +25812,6 @@ entity top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_u
     user_drp_drdy : in STD_LOGIC;
     \FSM_onehot_state_reg[4]_2\ : in STD_LOGIC_VECTOR ( 2 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_drp_control : entity is "top_level_block_design_usp_rf_data_converter_0_0_drp_control";
 end top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_drp_control;
 
 architecture STRUCTURE of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_drp_control is
@@ -26954,8 +26941,6 @@ entity top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_u
     s_axi_aclk : in STD_LOGIC;
     s_axi_aresetn : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_irq_req_ack : entity is "top_level_block_design_usp_rf_data_converter_0_0_irq_req_ack";
 end top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_irq_req_ack;
 
 architecture STRUCTURE of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_irq_req_ack is
@@ -29000,8 +28985,6 @@ entity top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_u
     E : in STD_LOGIC_VECTOR ( 0 to 0 );
     adc0_do_mon : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_por_fsm_disabled : entity is "top_level_block_design_usp_rf_data_converter_0_0_por_fsm_disabled";
 end top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_por_fsm_disabled;
 
 architecture STRUCTURE of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_por_fsm_disabled is
@@ -36505,8 +36488,6 @@ entity top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_u
     \bus2ip_addr_reg_reg[8]_1\ : out STD_LOGIC;
     Q : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_register_decode : entity is "top_level_block_design_usp_rf_data_converter_0_0_register_decode";
 end top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_register_decode;
 
 architecture STRUCTURE of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_register_decode is
@@ -37051,8 +37032,6 @@ entity top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_u
     axi_RdAck_reg_0 : in STD_LOGIC;
     s_axi_aresetn : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_reset_count : entity is "top_level_block_design_usp_rf_data_converter_0_0_reset_count";
 end top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_reset_count;
 
 architecture STRUCTURE of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_reset_count is
@@ -37343,8 +37322,6 @@ entity top_level_block_design_usp_rf_data_converter_0_0_xpm_cdc_single is
   attribute DEST_SYNC_FF of top_level_block_design_usp_rf_data_converter_0_0_xpm_cdc_single : entity is 4;
   attribute INIT_SYNC_FF : integer;
   attribute INIT_SYNC_FF of top_level_block_design_usp_rf_data_converter_0_0_xpm_cdc_single : entity is 0;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_usp_rf_data_converter_0_0_xpm_cdc_single : entity is "xpm_cdc_single";
   attribute SIM_ASSERT_CHK : integer;
   attribute SIM_ASSERT_CHK of top_level_block_design_usp_rf_data_converter_0_0_xpm_cdc_single : entity is 0;
   attribute SRC_INPUT_REG : integer;
@@ -46898,8 +46875,6 @@ entity top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_u
     \FSM_onehot_state_reg[4]_10\ : in STD_LOGIC_VECTOR ( 2 downto 0 );
     \FSM_onehot_state_reg[4]_11\ : in STD_LOGIC_VECTOR ( 2 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_drp_control_top : entity is "top_level_block_design_usp_rf_data_converter_0_0_drp_control_top";
 end top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_drp_control_top;
 
 architecture STRUCTURE of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_drp_control_top is
@@ -47174,8 +47149,6 @@ entity top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_u
     adc32_status : in STD_LOGIC_VECTOR ( 3 downto 0 );
     adc33_status : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_irq_sync : entity is "top_level_block_design_usp_rf_data_converter_0_0_irq_sync";
 end top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_irq_sync;
 
 architecture STRUCTURE of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_irq_sync is
@@ -49322,8 +49295,6 @@ entity top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_u
     axi_read_req_tog_reg_2 : in STD_LOGIC;
     axi_read_req_tog_reg_3 : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_overvol_irq : entity is "top_level_block_design_usp_rf_data_converter_0_0_overvol_irq";
 end top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_overvol_irq;
 
 architecture STRUCTURE of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_overvol_irq is
@@ -49844,8 +49815,6 @@ entity top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_u
     clear_interrupt_reg_0 : in STD_LOGIC_VECTOR ( 3 downto 0 );
     dac0_do_mon : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_por_fsm : entity is "top_level_block_design_usp_rf_data_converter_0_0_por_fsm";
 end top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_por_fsm;
 
 architecture STRUCTURE of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_por_fsm is
@@ -59596,8 +59565,6 @@ entity top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_u
     axi_read_req_tog_reg_4 : in STD_LOGIC;
     axi_read_req_tog_reg_5 : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_powerup_state_irq : entity is "top_level_block_design_usp_rf_data_converter_0_0_powerup_state_irq";
 end top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_powerup_state_irq;
 
 architecture STRUCTURE of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_powerup_state_irq is
@@ -60079,8 +60046,6 @@ entity top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_u
     s_axi_wready_reg_i_2_1 : in STD_LOGIC;
     s_axi_wready_reg_i_2_2 : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_slave_attachment : entity is "top_level_block_design_usp_rf_data_converter_0_0_slave_attachment";
 end top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_slave_attachment;
 
 architecture STRUCTURE of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_slave_attachment is
@@ -62361,8 +62326,6 @@ entity top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_u
     dac1_restart_i_reg_0 : in STD_LOGIC;
     por_sm_reset : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_tile_config : entity is "top_level_block_design_usp_rf_data_converter_0_0_tile_config";
 end top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_tile_config;
 
 architecture STRUCTURE of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_tile_config is
@@ -62953,20 +62916,20 @@ dac1_restart_pending_i_1: unisim.vcomponents.LUT5
     );
 \data[2]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"000C44C000000700"
+      INIT => X"020A02A000010700"
     )
         port map (
-      I0 => \data_index_reg_n_0_[0]\,
-      I1 => \data_index_reg_n_0_[2]\,
-      I2 => \data_index_reg_n_0_[3]\,
+      I0 => \data_index_reg_n_0_[2]\,
+      I1 => \data_index_reg_n_0_[0]\,
+      I2 => \data_index_reg_n_0_[5]\,
       I3 => \data_index_reg_n_0_[4]\,
-      I4 => \data_index_reg_n_0_[5]\,
+      I4 => \data_index_reg_n_0_[3]\,
       I5 => \data_index_reg_n_0_[1]\,
       O => \data[2]_i_1_n_0\
     );
 \data[3]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"000806A000100B20"
+      INIT => X"000806A000110B20"
     )
         port map (
       I0 => \data_index_reg_n_0_[2]\,
@@ -63005,14 +62968,14 @@ dac1_restart_pending_i_1: unisim.vcomponents.LUT5
     );
 \data[6]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0008080000410B00"
+      INIT => X"0000088000400B00"
     )
         port map (
       I0 => \data_index_reg_n_0_[2]\,
       I1 => \data_index_reg_n_0_[0]\,
-      I2 => \data_index_reg_n_0_[4]\,
+      I2 => \data_index_reg_n_0_[3]\,
       I3 => \data_index_reg_n_0_[5]\,
-      I4 => \data_index_reg_n_0_[3]\,
+      I4 => \data_index_reg_n_0_[4]\,
       I5 => \data_index_reg_n_0_[1]\,
       O => \data[6]_i_1_n_0\
     );
@@ -63984,8 +63947,6 @@ entity top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_u
     s_axi_wready_reg_i_2_1 : in STD_LOGIC;
     s_axi_wready_reg_i_2_2 : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_axi_lite_ipif : entity is "top_level_block_design_usp_rf_data_converter_0_0_axi_lite_ipif";
 end top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_axi_lite_ipif;
 
 architecture STRUCTURE of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_axi_lite_ipif is
@@ -64564,8 +64525,6 @@ entity top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_u
     adc3_do_mon : in STD_LOGIC_VECTOR ( 15 downto 0 );
     done_reg_8 : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_por_fsm_top : entity is "top_level_block_design_usp_rf_data_converter_0_0_por_fsm_top";
 end top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_por_fsm_top;
 
 architecture STRUCTURE of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_por_fsm_top is
@@ -67299,8 +67258,6 @@ entity top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_u
     lopt_2 : out STD_LOGIC;
     lopt_3 : out STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_rf_wrapper : entity is "top_level_block_design_usp_rf_data_converter_0_0_rf_wrapper";
 end top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_rf_wrapper;
 
 architecture STRUCTURE of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_rf_wrapper is
@@ -68466,8 +68423,6 @@ entity top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_u
   );
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_block : entity is "yes";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_block : entity is "top_level_block_design_usp_rf_data_converter_0_0_block";
   attribute adc00_data_type : string;
   attribute adc00_data_type of top_level_block_design_usp_rf_data_converter_0_0_top_level_block_design_usp_rf_data_converter_0_0_block : entity is "1'b0";
   attribute adc00_decimation : string;
@@ -74569,13 +74524,13 @@ dac1_irq_en_reg: unisim.vcomponents.FDRE
       Q => dac1_ref_clk_freq(0),
       R => i_top_level_block_design_usp_rf_data_converter_0_0_overvol_irq_n_0
     );
-\dac1_ref_clk_freq_reg[10]\: unisim.vcomponents.FDSE
+\dac1_ref_clk_freq_reg[10]\: unisim.vcomponents.FDRE
      port map (
       C => s_axi_aclk,
       CE => bank3_write(192),
       D => s_axi_wdata(10),
       Q => dac1_ref_clk_freq(10),
-      S => i_top_level_block_design_usp_rf_data_converter_0_0_overvol_irq_n_0
+      R => i_top_level_block_design_usp_rf_data_converter_0_0_overvol_irq_n_0
     );
 \dac1_ref_clk_freq_reg[11]\: unisim.vcomponents.FDRE
      port map (
@@ -74625,13 +74580,13 @@ dac1_irq_en_reg: unisim.vcomponents.FDRE
       Q => dac1_ref_clk_freq(16),
       S => i_top_level_block_design_usp_rf_data_converter_0_0_overvol_irq_n_0
     );
-\dac1_ref_clk_freq_reg[17]\: unisim.vcomponents.FDRE
+\dac1_ref_clk_freq_reg[17]\: unisim.vcomponents.FDSE
      port map (
       C => s_axi_aclk,
       CE => bank3_write(192),
       D => s_axi_wdata(17),
       Q => dac1_ref_clk_freq(17),
-      R => i_top_level_block_design_usp_rf_data_converter_0_0_overvol_irq_n_0
+      S => i_top_level_block_design_usp_rf_data_converter_0_0_overvol_irq_n_0
     );
 \dac1_ref_clk_freq_reg[18]\: unisim.vcomponents.FDRE
      port map (
@@ -74769,13 +74724,13 @@ dac1_irq_en_reg: unisim.vcomponents.FDRE
       Q => dac1_ref_clk_freq(3),
       R => i_top_level_block_design_usp_rf_data_converter_0_0_overvol_irq_n_0
     );
-\dac1_ref_clk_freq_reg[4]\: unisim.vcomponents.FDRE
+\dac1_ref_clk_freq_reg[4]\: unisim.vcomponents.FDSE
      port map (
       C => s_axi_aclk,
       CE => bank3_write(192),
       D => s_axi_wdata(4),
       Q => dac1_ref_clk_freq(4),
-      R => i_top_level_block_design_usp_rf_data_converter_0_0_overvol_irq_n_0
+      S => i_top_level_block_design_usp_rf_data_converter_0_0_overvol_irq_n_0
     );
 \dac1_ref_clk_freq_reg[5]\: unisim.vcomponents.FDRE
      port map (
@@ -74785,13 +74740,13 @@ dac1_irq_en_reg: unisim.vcomponents.FDRE
       Q => dac1_ref_clk_freq(5),
       R => i_top_level_block_design_usp_rf_data_converter_0_0_overvol_irq_n_0
     );
-\dac1_ref_clk_freq_reg[6]\: unisim.vcomponents.FDSE
+\dac1_ref_clk_freq_reg[6]\: unisim.vcomponents.FDRE
      port map (
       C => s_axi_aclk,
       CE => bank3_write(192),
       D => s_axi_wdata(6),
       Q => dac1_ref_clk_freq(6),
-      S => i_top_level_block_design_usp_rf_data_converter_0_0_overvol_irq_n_0
+      R => i_top_level_block_design_usp_rf_data_converter_0_0_overvol_irq_n_0
     );
 \dac1_ref_clk_freq_reg[7]\: unisim.vcomponents.FDSE
      port map (

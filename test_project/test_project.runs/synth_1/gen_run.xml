@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xczu28dr-ffvg1517-2-e" LaunchTime="1594485529">
+<GenRun Id="synth_1" LaunchPart="xczu28dr-ffvg1517-2-e" LaunchTime="1594832295">
   <File Type="PA-TCL" Name="top_level_block_design_wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="top_level_block_design_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="top_level_block_design_wrapper_reports.tcl"/>
@@ -82,7 +82,6 @@
   <BlockFileSet Type="BlockSrcs" Name="top_level_block_design_zynq_ultra_ps_e_0_3"/>
   <BlockFileSet Type="BlockSrcs" Name="top_level_block_design_axi_gpio_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="top_level_block_design_proc_sys_reset_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="top_level_block_design_usp_rf_data_converter_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="top_level_block_design_clk_wiz_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="top_level_block_design_xbar_0"/>
   <BlockFileSet Type="BlockSrcs" Name="top_level_block_design_pulse_gen_0_0"/>

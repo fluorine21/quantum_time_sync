@@ -287,7 +287,7 @@ proc create_root_design { parentCell } {
    CONFIG.DAC1_Fabric_Freq {250.000} \
    CONFIG.DAC1_Outclk_Freq {250.000} \
    CONFIG.DAC1_PLL_Enable {true} \
-   CONFIG.DAC1_Refclk_Freq {120.000} \
+   CONFIG.DAC1_Refclk_Freq {250.000} \
    CONFIG.DAC1_Sampling_Rate {4} \
    CONFIG.DAC_Interpolation_Mode00 {0} \
    CONFIG.DAC_Interpolation_Mode10 {1} \

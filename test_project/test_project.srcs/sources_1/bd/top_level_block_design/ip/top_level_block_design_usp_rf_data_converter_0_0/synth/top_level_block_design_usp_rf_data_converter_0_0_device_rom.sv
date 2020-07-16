@@ -75,7 +75,7 @@ module top_level_block_design_usp_rf_data_converter_0_0_device_rom (
        30'h2728c980,  // SYSREF Distribution (DAC0)
        30'h2f230000,  // Clock Network Control 0 (DAC1)
        30'h2f240001,  // Clock Network Control 1 (DAC1)
-       30'h2f170062,  // PLL FB Div (DAC1)
+       30'h2f17002e,  // PLL FB Div (DAC1)
        30'h2f0c0081,  // PLL Output Divide (DAC1)
        30'h2f100010,  // PLL Ref clock divide (DAC1)
        30'h2f000080,  // PLL SDM CONFIG0 (DAC1)

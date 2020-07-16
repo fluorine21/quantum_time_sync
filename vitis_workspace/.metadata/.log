@@ -18196,3 +18196,16 @@ Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-3: Launch
 
 !ENTRY com.xilinx.sdk.utils 0 0 2020-07-11 14:51:52.667
 !MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-3: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash
+
+!ENTRY org.eclipse.tcf 4 0 2020-07-15 12:35:03.295
+!MESSAGE TCF channel terminated
+!STACK 0
+java.net.SocketException: Connection reset
+	at java.base/java.net.SocketInputStream.read(Unknown Source)
+	at java.base/java.net.SocketInputStream.read(Unknown Source)
+	at java.base/java.io.BufferedInputStream.read1(Unknown Source)
+	at java.base/java.io.BufferedInputStream.read(Unknown Source)
+	at java.base/java.io.FilterInputStream.read(Unknown Source)
+	at org.eclipse.tcf.core.ChannelTCP.get(ChannelTCP.java:186)
+	at org.eclipse.tcf.core.StreamChannel.read(StreamChannel.java:85)
+	at org.eclipse.tcf.core.AbstractChannel$1.run(AbstractChannel.java:329)

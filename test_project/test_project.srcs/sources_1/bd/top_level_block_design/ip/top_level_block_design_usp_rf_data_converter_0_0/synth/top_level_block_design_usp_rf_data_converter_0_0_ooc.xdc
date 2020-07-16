@@ -52,8 +52,8 @@
 # Set AXI-Lite Clock to 100.0MHz
 create_clock -period 10.000 -name top_level_block_design_usp_rf_data_converter_0_0_axi_aclk [get_ports s_axi_aclk]
 
-# DAC Reference Clock for Tile 1 running at 120.000 MHz
-create_clock -period 8.333 -name top_level_block_design_usp_rf_data_converter_0_0_dac1_clk [get_ports dac1_clk_p]
+# DAC Reference Clock for Tile 1 running at 250.000 MHz
+create_clock -period 4.000 -name top_level_block_design_usp_rf_data_converter_0_0_dac1_clk [get_ports dac1_clk_p]
 
 
 
