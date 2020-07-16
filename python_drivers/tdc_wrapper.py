@@ -11,6 +11,7 @@ import QuTAG
 from _thread import *
 import threading 
 import james_utils
+import random
 
 #Use secore mode?
 SECURE_MODE = 0
@@ -75,7 +76,7 @@ class tdc_wrapper:
         self.dummy_mode = dm
         self.mode = m
         self.server_ip = s_ip
-        
+        self.record_offset = 1#Record the offset first
         
         if(self.mode == MODE_SERVER):
             self.server_init()
@@ -88,15 +89,21 @@ class tdc_wrapper:
     #############The following functions may only be used in normal mode
     
     #Returns the timestamp of the first pulse seen on channel_num
-    #Returns on timeout
+    #Returns 0 on timeout
     def wait_pulse(self, channel_num):
         
-        if(self.mode != MODE_NORMAL):
-            print("Error, wait_pulse must be called in NORMAL mode")
-            return -1
-        
+                
         if(self.dummy_mode):
             return int(time.time() * 10000000)
+        
+        if(self.mode != MODE_NORMAL):
+            #If we're the client
+            if(self.mode == MODE_CLIENT):
+                return self.wait_pulse_client(channel_num)
+            else:
+                print("Error, cannot call wait_pulse in server mode!")
+                return -1
+
         
         if(self.device):
             print("Error, cannot call wait_pulse while recording, exiting")
@@ -161,13 +168,16 @@ class tdc_wrapper:
     #-1 if nothing found
     def end_record(self, channel_num):
         
-        if(self.mode != MODE_NORMAL):
-            print("Error, end_record must be called in NORMAL mode")
-            return -1
-        
         if(self.dummy_mode):
             return int(time.time() * 10000000)
         
+        if(self.mode != MODE_NORMAL):
+            if(self.mode == MODE_CLIENT):
+               return self.end_record_client(channnel_num)
+            else:
+                print("Error, end_record must be called in NORMAL mode")
+                return -1
+    
         ret_val = 0
         
         #Check the data loss
@@ -180,7 +190,7 @@ class tdc_wrapper:
         
         #If we didnt get any timestamps
         if(t_s[2] == 0):
-            print("No timestampe recieved after record!")
+            print("No timestamp recieved after record!")
             ret_val -1
         else:
             for i in range(0, t_s[2]):
@@ -196,6 +206,50 @@ class tdc_wrapper:
         
     ################################################################################
     
+    
+    def wait_pulse_client(self, channel_num):
+        
+        #get a random port going and connect
+        random.seed()
+        sck = socket.socket(socket.AF_INET, socket.SOCK_STREAM, 0) 
+        sck.connect((self.server_ip, random.randrange(1000, 2000)))
+        
+        time_now = time.time()
+        ret_val = 0
+        while(time.time() - time_now > self.timeout):
+            #Keep trying to get that timestamp
+            channel_byte = channel_num & 0xff
+            #Send the GET_AND_CLEAR command
+            sck.send(bytearray([COMMAND_GET_AND_CLEAR, channel_byte]))
+            
+            ret_val = james_utils.receive_timestamp(sck)
+            if(ret_val):
+                break
+        #gracefully close the connection
+        sck.send(bytearray([COMMAND_CLOSE_CONNECTION]))
+        sck.close()
+        return ret_val
+        
+    
+    
+    def end_record_client(self, channel_num):
+        
+        #get a random port going and connect
+        random.seed()
+        sck = socket.socket(socket.AF_INET, socket.SOCK_STREAM, 0) 
+        sck.connect((self.server_ip, random.randrange(1000, 2000)))
+        
+        channel_byte = channel_num & 0xff
+        #Send the GET_AND_CLEAR command
+        sck.send(bytearray([COMMAND_GET_AND_CLEAR, channel_byte]))
+        
+        ret_val = james_utils.receive_timestamp(sck)
+        
+        #gracefully close the connection
+        sck.send(bytearray([COMMAND_CLOSE_CONNECTION]))
+        sck.close()
+        return ret_val
+        
     
     def server_init(self):
         
@@ -237,7 +291,8 @@ class tdc_wrapper:
                 c_s.settimeout(SERVER_TIMEOUT)
                 
                 #Start a new thread to handle the client
-                start_new_thread(self.handle_client, (c_s,addr[0] + ":" + addr[1],)) 
+                #Also append the thread handle to our list of threads
+                self.threads.append(start_new_thread(self.handle_client, (c_s,addr[0] + ":" + addr[1],))) 
                 
             except socket.timeout:
                 print("Waiting for client connection...")
@@ -292,7 +347,7 @@ class tdc_wrapper:
                 
                 #If we find a timestamp that isn't the dummy channel
                 elif(t_s[1][i] != DUMMY_CHANNEL_NUM):
-                    self.timestamp_list.append(pulse_record(t_s[1][i], t_s[0][i]))
+                    self.timestamp_list.append(pulse_record(t_s[1][i], t_s[0][i] - self.offset_timestamp))
              
         #If we're here then the server shutdown command has been sent
         self.device.deInitialize()    
@@ -336,6 +391,7 @@ class tdc_wrapper:
                             ts = t.timestamp
                             self.timestamp_list.remove(t)
                     james_utils.send_timestamp(c, ts)
+                    print("Timestamp sent to client for channel " + str(channel_num) + " was " + str(ts))
                 
                 
         c.close()
