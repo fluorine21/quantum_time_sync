@@ -13,6 +13,7 @@ import tdc_wrapper
 import ssl
 import os.path
 from OpenSSL import crypto
+import james_utils
 
 #Open a secure socket?
 SECURE_MODE = 1
@@ -76,7 +77,7 @@ class time_sync:
     dummy_mode = 0
     
     
-    def __init__(self, COM_PORT, s_ip, m, dm, tdc_obj):
+    def __init__(self, COM_PORT, s_ip, m, tdc_obj):
         
         #save the other parameters
         self.server_ip = s_ip
@@ -150,8 +151,6 @@ class time_sync:
        
         print("Attempting to connect to server")
         #connect to the client
-        random.seed()#With a random port number
-        #self.s.connect((self.server_ip, random.randrange(3000, 4000)))
         self.s.connect((self.server_ip, self.port))
         time.sleep(0.5)
         if(self.is_socket_alive(self.s)):
@@ -268,7 +267,6 @@ class time_sync:
         print("Waiting for command from client...")
         
         while(self.server_handle_command(c)):
-            print("Checking socket...")
             if(self.is_socket_alive(c) or self.socket_dead):
                 self.socket_dead = 0
                 print("Dead socket, client has closed connection, waiting for new connection...")
@@ -291,9 +289,14 @@ class time_sync:
         #Receive one command byte from the client
         client_cmd = james_utils.receive_bytes(sck, 1)
         
-        if(client_cmd == -1):
-            print("Timed out waiting for command")
-            return 1
+        if(client_cmd == -1 or client_cmd == -2 or client_cmd == -3):
+            if(client_cmd == -1):
+                print("Timed out waiting for command")
+                return 1
+            else:
+                #print("Client socket closed")
+                self.socket_dead = 1
+                return 1
         
         if(client_cmd[0] == SERVER_SEND_PULSE):
             sck.send(SERVER_ACK)

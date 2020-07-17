@@ -11,7 +11,7 @@ import QuTAG
 from _thread import *
 import threading 
 import james_utils
-import random
+
 
 #Use secore mode?
 SECURE_MODE = 0
@@ -70,7 +70,7 @@ class tdc_wrapper:
     #List of currently running threads
     threads = []
     
-    port = 25565
+    port = 25567
     
     def __init__(self, tt, dm, m = MODE_NORMAL, s_ip = ""):
         
@@ -150,8 +150,7 @@ class tdc_wrapper:
     def start_record(self):
         
         if(self.mode != MODE_NORMAL):
-            print("Error, start_record must be called in NORMAL mode")
-            return -1
+            return 0
         
         if(self.dummy_mode):
             return 0
@@ -175,7 +174,7 @@ class tdc_wrapper:
         
         if(self.mode != MODE_NORMAL):
             if(self.mode == MODE_CLIENT):
-               return self.end_record_client(channnel_num)
+               return self.end_record_client(channel_num)
             else:
                 print("Error, end_record must be called in NORMAL mode")
                 return -1
