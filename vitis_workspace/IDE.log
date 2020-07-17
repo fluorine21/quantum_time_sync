@@ -6033,3 +6033,50 @@ con
 ----------------End of Script----------------
 
 14:51:52 INFO  : Launch script is exported to file 'C:\James\vitis_workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_test_proj_pulse_ctrl_system_no_fpga_flash_standalone.tcl'
+17:46:44 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\James\vitis_workspace\temp_xsdb_launch_script.tcl
+17:46:47 INFO  : XSCT server has started successfully.
+17:46:47 INFO  : Successfully done setting XSCT server connection channel  
+17:46:47 INFO  : plnx-install-location is set to ''
+17:46:47 INFO  : Successfully done setting workspace for the tool. 
+17:46:52 INFO  : Registering command handlers for Vitis TCF services
+17:46:52 INFO  : Platform repository initialization has completed.
+17:46:53 INFO  : Successfully done query RDI_DATADIR 
+17:48:10 INFO  : Hardware specification for platform project 'test_proj_plat' is updated.
+17:48:22 INFO  : Result from executing command 'getProjects': test_proj_plat
+17:48:22 INFO  : Result from executing command 'getPlatforms': test_proj_plat|C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm
+17:48:46 INFO  : Successfully done sdx_reload_mss "C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss"
+17:49:02 INFO  : Successfully done sdx_reload_mss "C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss"
+17:49:02 INFO  : No changes in MSS file content so sources will not be generated.
+17:49:18 INFO  : Checking for BSP changes to sync application flags for project 'test_proj_pulse_ctrl'...
+17:49:20 INFO  : The hardware specfication used by project 'test_proj_pulse_ctrl' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+17:49:20 INFO  : The file 'C:\James\vitis_workspace\test_proj_pulse_ctrl\_ide\bitstream\top_level_block_design_wrapper.bit' stored in project is removed.
+17:49:21 INFO  : The updated bitstream files are copied from platform to folder 'C:\James\vitis_workspace\test_proj_pulse_ctrl\_ide\bitstream' in project 'test_proj_pulse_ctrl'.
+17:49:21 INFO  : The file 'C:\James\vitis_workspace\test_proj_pulse_ctrl\_ide\psinit\psu_init.tcl' stored in project is removed.
+17:49:22 INFO  : The updated ps init files are copied from platform to folder 'C:\James\vitis_workspace\test_proj_pulse_ctrl\_ide\psinit' in project 'test_proj_pulse_ctrl'.
+19:39:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:39:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:39:57 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:40:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:40:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:44:46 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:44:50 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:47:26 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:47:27 INFO  : Jtag cable 'Xilinx HW-Z1-ZCU104 FT4232H 19395A' is selected.
+19:47:27 INFO  : 'jtag frequency' command is executed.
+19:47:27 INFO  : Sourcing of 'C:/Xilinx/Vitis/2020.1/scripts/vitis/util/zynqmp_utils.tcl' is done.
+19:47:27 ERROR : more than one targets found with "name =~"APU*"":
+    11  APU (L2 Cache Reset)
+    20  APU (L2 Cache Reset)
+19:47:27 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Xilinx/Vitis/2020.1/scripts/vitis/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*"}
+----------------End of Script----------------
+
+19:47:27 ERROR : more than one targets found with "name =~"APU*"":
+    11  APU (L2 Cache Reset)
+    20  APU (L2 Cache Reset)
+19:48:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:48:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:48:28 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:48:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.

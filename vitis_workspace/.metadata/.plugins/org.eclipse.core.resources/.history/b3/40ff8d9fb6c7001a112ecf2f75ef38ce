@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="test_proj_ethernet" location="C:/James/vitis_workspace/test_proj_ethernet" platform="C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm" platformUID="xilinx:zcu111::0.0(custom)" systemProject="test_proj_ethernet_system" sysConfig="test_proj_plat" runtime="C/C++" cpu="standalone_domain" cpuInstance="psu_cortexa53_0" os="standalone" mssSignature="e24d7cd5fe40ed1cd291184d2e48ae75">
+  <configuration name="Debug" id="xilinx.gnu.arm.a53.exe.debug.1757017440">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.arm.a53.exe.release.1795063595" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="lwip_echo_server" hasBspSettings="true"/>
+</sdkproject:SdkProject>

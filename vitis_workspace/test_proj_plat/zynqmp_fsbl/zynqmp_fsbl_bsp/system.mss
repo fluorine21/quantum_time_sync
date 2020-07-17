@@ -8,7 +8,6 @@ BEGIN OS
  PARAMETER PROC_INSTANCE = psu_cortexa53_0
  PARAMETER stdin = psu_uart_0
  PARAMETER stdout = psu_uart_0
- PARAMETER zynqmp_fsbl_bsp = true
 END
 
 

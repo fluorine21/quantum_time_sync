@@ -5975,3 +5975,1956 @@ C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|s
 C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
 
 TRACE::2020-07-10.14:05:51::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:47:19::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:19::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:19::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:22::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:22::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:22::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:22::SCWPlatform::Do not have an existing db opened. 
+TRACE::2020-07-16.17:47:31::SCWPlatform::Opened new HwDB with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:31::SCWReader::Active system found as  test_proj_plat
+TRACE::2020-07-16.17:47:31::SCWReader::Handling sysconfig test_proj_plat
+TRACE::2020-07-16.17:47:31::SCWDomain::checking for install qemu data   : 
+TRACE::2020-07-16.17:47:31::SCWDomain:: Using the QEMU Data from install at  : C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/
+TRACE::2020-07-16.17:47:31::SCWDomain:: Using the QEMU args  from install at  : C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/qemu_args.txt
+TRACE::2020-07-16.17:47:31::SCWDomain:: Using the PMUQEMU args from install at  : C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/pmu_args.txt
+TRACE::2020-07-16.17:47:31::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:31::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:31::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:31::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:31::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:31::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:31::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:31::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:31::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:31::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:31::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:31::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:31::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:31::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:31::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:31::SCWReader::Boot application domain added for zynqmp_fsbl
+TRACE::2020-07-16.17:47:31::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:31::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:31::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:31::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:31::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:31::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:47:31::SCWMssOS::DEBUG:  swdes dump  
+TRACE::2020-07-16.17:47:31::SCWMssOS::No sw design opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:47:31::SCWMssOS::mss exists loading the mss file  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:47:31::SCWMssOS::Opened the sw design from mss  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:47:31::SCWMssOS::Adding the swdes entry C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss with des name system
+TRACE::2020-07-16.17:47:31::SCWMssOS::updating the scw layer about changes
+TRACE::2020-07-16.17:47:31::SCWMssOS::Opened the sw design.  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:47:31::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:31::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:31::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:31::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:31::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:31::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:47:31::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+
+TRACE::2020-07-16.17:47:31::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:47:31::SCWMssOS:: library already available in sw design:  xilffs:4.3
+TRACE::2020-07-16.17:47:31::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:31::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:31::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:31::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:31::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:31::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:47:31::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+
+TRACE::2020-07-16.17:47:31::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:47:31::SCWMssOS:: library already available in sw design:  xilsecure:4.2
+TRACE::2020-07-16.17:47:31::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:31::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:31::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:31::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:31::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:31::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:47:31::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+
+TRACE::2020-07-16.17:47:31::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:47:31::SCWMssOS:: library already available in sw design:  xilpm:3.1
+TRACE::2020-07-16.17:47:31::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:31::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:31::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:31::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:31::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:31::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:47:31::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+
+TRACE::2020-07-16.17:47:31::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:47:31::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:31::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:31::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:31::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:31::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:31::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:47:31::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+
+TRACE::2020-07-16.17:47:31::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:47:31::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:31::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:31::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:31::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:31::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:31::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:47:31::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+
+TRACE::2020-07-16.17:47:31::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:47:31::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:31::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:31::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:31::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:31::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:31::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:47:31::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+
+TRACE::2020-07-16.17:47:31::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:47:31::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:31::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:31::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:31::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:31::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:31::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:31::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:47:31::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+
+TRACE::2020-07-16.17:47:31::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:47:31::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:32::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+
+TRACE::2020-07-16.17:47:32::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWMssOS::Saving the mss changes C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2020-07-16.17:47:32::SCWMssOS::Completed writemss as part of save.
+TRACE::2020-07-16.17:47:32::SCWMssOS::Commit changes completed.
+TRACE::2020-07-16.17:47:32::SCWReader::Adding prebuilt librarypaths as   
+TRACE::2020-07-16.17:47:32::SCWReader::Adding prebuilt incpaths  as   
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:32::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+
+TRACE::2020-07-16.17:47:32::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWReader::No isolation master present  
+TRACE::2020-07-16.17:47:32::SCWDomain::checking for install qemu data   : 
+TRACE::2020-07-16.17:47:32::SCWDomain:: Using the QEMU Data from install at  : C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/
+TRACE::2020-07-16.17:47:32::SCWDomain:: Using the QEMU args  from install at  : C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/qemu_args.txt
+TRACE::2020-07-16.17:47:32::SCWDomain:: Using the PMUQEMU args from install at  : C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/pmu_args.txt
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:32::SCWReader::Boot application domain added for zynqmp_pmufw
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:32::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+
+TRACE::2020-07-16.17:47:32::SCWMssOS::No sw design opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWMssOS::mss exists loading the mss file  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWMssOS::Opened the sw design from mss  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWMssOS::Adding the swdes entry C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss with des name system_0
+TRACE::2020-07-16.17:47:32::SCWMssOS::updating the scw layer about changes
+TRACE::2020-07-16.17:47:32::SCWMssOS::Opened the sw design.  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:32::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:47:32::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWMssOS:: library already available in sw design:  xilfpga:5.2
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:32::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:47:32::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWMssOS:: library already available in sw design:  xilsecure:4.2
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:32::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:47:32::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWMssOS:: library already available in sw design:  xilskey:6.9
+TRACE::2020-07-16.17:47:32::SCWMssOS::Saving the mss changes C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2020-07-16.17:47:32::SCWMssOS::Completed writemss as part of save.
+TRACE::2020-07-16.17:47:32::SCWMssOS::Commit changes completed.
+TRACE::2020-07-16.17:47:32::SCWReader::Adding prebuilt librarypaths as   
+TRACE::2020-07-16.17:47:32::SCWReader::Adding prebuilt incpaths  as   
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:32::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:47:32::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWReader::No isolation master present  
+TRACE::2020-07-16.17:47:32::SCWDomain::checking for install qemu data   : 
+TRACE::2020-07-16.17:47:32::SCWDomain:: Using the QEMU Data from install at  : C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/
+TRACE::2020-07-16.17:47:32::SCWDomain:: Using the QEMU args  from install at  : C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/qemu_args.txt
+TRACE::2020-07-16.17:47:32::SCWDomain:: Using the PMUQEMU args from install at  : C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/pmu_args.txt
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:32::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:47:32::SCWMssOS::No sw design opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWMssOS::mss exists loading the mss file  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWMssOS::Opened the sw design from mss  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWMssOS::Adding the swdes entry C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss with des name system_1
+TRACE::2020-07-16.17:47:32::SCWMssOS::updating the scw layer about changes
+TRACE::2020-07-16.17:47:32::SCWMssOS::Opened the sw design.  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:32::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:47:32::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWMssOS:: library already available in sw design:  libmetal:2.1
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:32::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:47:32::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWMssOS:: library already available in sw design:  lwip211:1.2
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:32::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:47:32::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:32::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:47:32::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:32::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:47:32::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:32::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:47:32::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:32::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:47:32::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:32::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:47:32::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWMssOS::Saving the mss changes C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2020-07-16.17:47:32::SCWMssOS::Completed writemss as part of save.
+TRACE::2020-07-16.17:47:32::SCWMssOS::Commit changes completed.
+TRACE::2020-07-16.17:47:32::SCWReader::Adding prebuilt librarypaths as   
+TRACE::2020-07-16.17:47:32::SCWReader::Adding prebuilt incpaths  as   
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:32::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:32::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:32::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:47:32::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:47:32::SCWReader::No isolation master present  
+TRACE::2020-07-16.17:47:48::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:48::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:48::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:48::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:48::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:48::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:48::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:48::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:48::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:49::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/tempdsa/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:49::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/tempdsa/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:49::SCWPlatform:: Platform location is C:/James/vitis_workspace/test_proj_plat/tempdsa
+TRACE::2020-07-16.17:47:49::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/tempdsa/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:49::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:59::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:59::SCWMssOS::Doing hw sync for the mss in domain: zynqmp_fsbl
+TRACE::2020-07-16.17:47:59::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:59::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:59::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:59::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:59::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:59::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:59::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:59::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:59::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:59::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:59::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:47:59::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:47:59::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:47:59::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/tempdsa/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/tempdsa/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/tempdsa/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/tempdsa
+TRACE::2020-07-16.17:47:59::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/tempdsa/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:59::SCWPlatform::update - Opened existing hwdb top_level_block_design_wrapper_0
+TRACE::2020-07-16.17:47:59::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:59::SCWMssOS::Doing hw sync for the mss in domain: zynqmp_pmufw
+TRACE::2020-07-16.17:47:59::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:59::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:59::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:59::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:59::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:59::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:59::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:59::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:59::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:59::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:59::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:47:59::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:47:59::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:47:59::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/tempdsa/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/tempdsa/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/tempdsa/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/tempdsa
+TRACE::2020-07-16.17:47:59::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/tempdsa/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:59::SCWPlatform::update - Opened existing hwdb top_level_block_design_wrapper_0
+TRACE::2020-07-16.17:47:59::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:59::SCWMssOS::Doing hw sync for the mss in domain: standalone_domain
+TRACE::2020-07-16.17:47:59::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:59::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:59::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:59::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:59::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:59::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:47:59::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:59::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:59::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper
+TRACE::2020-07-16.17:47:59::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:59::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:47:59::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:47:59::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:47:59::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/tempdsa/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/tempdsa/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/tempdsa/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/tempdsa
+TRACE::2020-07-16.17:47:59::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/tempdsa/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:47:59::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:47:59::SCWPlatform::update - Opened existing hwdb top_level_block_design_wrapper_0
+TRACE::2020-07-16.17:47:59::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:47:59::SCWMssOS::Saving the mss changes C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:47:59::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2020-07-16.17:47:59::SCWMssOS::Completed writemss as part of save.
+TRACE::2020-07-16.17:47:59::SCWMssOS::Commit changes completed.
+TRACE::2020-07-16.17:47:59::SCWMssOS::Completed hw sync for the mss in domain: zynqmp_fsbl
+TRACE::2020-07-16.17:47:59::SCWMssOS::Removing the swdes entry for  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:47:59::SCWMssOS::Saving the mss changes C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:47:59::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2020-07-16.17:47:59::SCWMssOS::Completed writemss as part of save.
+TRACE::2020-07-16.17:47:59::SCWMssOS::Commit changes completed.
+TRACE::2020-07-16.17:47:59::SCWMssOS::Completed hw sync for the mss in domain: zynqmp_pmufw
+TRACE::2020-07-16.17:47:59::SCWMssOS::Removing the swdes entry for  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:47:59::SCWMssOS::Saving the mss changes C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:47:59::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2020-07-16.17:47:59::SCWMssOS::Completed writemss as part of save.
+TRACE::2020-07-16.17:47:59::SCWMssOS::Commit changes completed.
+TRACE::2020-07-16.17:47:59::SCWMssOS::Completed hw sync for the mss in domain: standalone_domain
+TRACE::2020-07-16.17:47:59::SCWMssOS::Removing the swdes entry for  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:00::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:00::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:00::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:00::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:00::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:00::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:00::SCWPlatform::Do not have an existing db opened. 
+TRACE::2020-07-16.17:48:09::SCWPlatform::Opened new HwDB with name top_level_block_design_wrapper_1
+TRACE::2020-07-16.17:48:09::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:09::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:09::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:09::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:09::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:09::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:09::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_1
+TRACE::2020-07-16.17:48:09::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_1
+TRACE::2020-07-16.17:48:09::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:09::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:09::SCWMssOS::DEBUG:  swdes dump  
+TRACE::2020-07-16.17:48:09::SCWMssOS::No sw design opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:09::SCWMssOS::mss exists loading the mss file  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:09::SCWMssOS::Opened the sw design from mss  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:09::SCWMssOS::Adding the swdes entry C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss with des name system
+TRACE::2020-07-16.17:48:09::SCWMssOS::updating the scw layer about changes
+TRACE::2020-07-16.17:48:09::SCWMssOS::Opened the sw design.  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:09::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:09::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:09::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:09::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:09::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:09::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:09::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_1
+TRACE::2020-07-16.17:48:09::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_1
+TRACE::2020-07-16.17:48:09::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:09::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:48:09::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+
+TRACE::2020-07-16.17:48:09::SCWMssOS::No sw design opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:48:09::SCWMssOS::mss exists loading the mss file  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:48:09::SCWMssOS::Opened the sw design from mss  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:48:09::SCWMssOS::Adding the swdes entry C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss with des name system_0
+TRACE::2020-07-16.17:48:09::SCWMssOS::updating the scw layer about changes
+TRACE::2020-07-16.17:48:09::SCWMssOS::Opened the sw design.  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:48:09::SCWMssOS::Saving the mss changes C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:09::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2020-07-16.17:48:09::SCWMssOS::Completed writemss as part of save.
+TRACE::2020-07-16.17:48:09::SCWMssOS::Commit changes completed.
+TRACE::2020-07-16.17:48:09::SCWMssOS::Saving the mss changes C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:48:09::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2020-07-16.17:48:09::SCWMssOS::Completed writemss as part of save.
+TRACE::2020-07-16.17:48:09::SCWMssOS::Commit changes completed.
+TRACE::2020-07-16.17:48:09::SCWMssOS::Saving the mss changes C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:09::SCWMssOS::Adding the swdes entry, mss present, able to open swdb C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss with des name system_1
+TRACE::2020-07-16.17:48:09::SCWMssOS::Writing the mss file completed C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:09::SCWMssOS::Commit changes completed.
+TRACE::2020-07-16.17:48:09::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:09::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:09::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:09::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:09::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:09::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:09::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_1
+TRACE::2020-07-16.17:48:09::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_1
+TRACE::2020-07-16.17:48:09::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:09::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:09::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:48:09::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:09::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:09::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:09::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:09::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:09::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:09::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:09::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_1
+TRACE::2020-07-16.17:48:09::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_1
+TRACE::2020-07-16.17:48:09::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:09::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:48:09::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:48:09::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:48:09::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:09::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:09::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:09::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:09::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:09::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:09::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_1
+TRACE::2020-07-16.17:48:09::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_1
+TRACE::2020-07-16.17:48:09::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:09::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:09::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:48:09::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:09::SCWWriter::formatted JSON is {
+	"platformName":	"test_proj_plat",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"test_proj_plat",
+	"platHandOff":	"C:/James/test_project/top_level_block_design_wrapper.xsa",
+	"platIntHandOff":	"<platformDir>/hw/top_level_block_design_wrapper.xsa",
+	"deviceType":	"zynqMP",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"fsblExtraCompilerFlags":	"-MMD -MP      -Wall -fmessage-length=0 -DARMA53_64 -Os -flto -ffat-lto-objects  ",
+	"pmufwExtraCompilerFlags":	"-MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-objects  ",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"test_proj_plat",
+	"systems":	[{
+			"systemName":	"test_proj_plat",
+			"systemDesc":	"test_proj_plat",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"test_proj_plat",
+			"sysActiveDom":	"standalone_domain",
+			"sysDefaultDom":	"standalone_domain",
+			"domains":	[{
+					"domainName":	"zynqmp_fsbl",
+					"domainDispName":	"zynqmp_fsbl",
+					"domainDesc":	"FSBL Application BSP - Auto Generated.",
+					"processors":	"psu_cortexa53_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.2",
+					"mssFile":	"",
+					"md5Digest":	"9bd1196b3623da8a7f59f881ed9e474c",
+					"compatibleApp":	"zynqmp_fsbl",
+					"domType":	"bootDomain",
+					"arch":	"64-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	["xilffs:4.3", "xilsecure:4.2", "xilpm:3.1"],
+					"libOptions":	{
+						"xilffs":	{
+							"read_only":	"true",
+							"use_mkfs":	"false",
+							"libOptionNames":	["read_only", "use_mkfs"]
+						},
+						"libsContainingOptions":	["xilffs"]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}, {
+					"domainName":	"zynqmp_pmufw",
+					"domainDispName":	"zynqmp_pmufw",
+					"domainDesc":	"PMUFW Application BSP - Auto Generated.",
+					"processors":	"psu_pmu_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.2",
+					"mssFile":	"",
+					"md5Digest":	"450f401bdef1ba8f42dd7e8892fb54f6",
+					"compatibleApp":	"zynqmp_pmufw",
+					"domType":	"bootDomain",
+					"arch":	"64-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	["xilfpga:5.2", "xilsecure:4.2", "xilskey:6.9"],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}, {
+					"domainName":	"standalone_domain",
+					"domainDispName":	"standalone on psu_cortexa53_0",
+					"domainDesc":	"standalone_domain",
+					"processors":	"psu_cortexa53_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"qemuArgs":	"C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/qemu_args.txt",
+					"qemuData":	"C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/",
+					"pmuQemuArgs":	"C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/pmu_args.txt",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.2",
+					"mssFile":	"",
+					"md5Digest":	"653fcd8aa47007f69cbdf735039ced4d",
+					"compatibleApp":	"",
+					"domType":	"mssDomain",
+					"arch":	"64-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	["libmetal:2.1", "lwip211:1.2"],
+					"libOptions":	{
+						"lwip211":	{
+							"lwip_dhcp":	"true",
+							"libOptionNames":	["lwip_dhcp"]
+						},
+						"standalone":	{
+							"stdin":	"psu_coresight_0",
+							"stdout":	"psu_coresight_0",
+							"libOptionNames":	["stdin", "stdout"]
+						},
+						"libsContainingOptions":	["lwip211", "standalone"]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+LOG::2020-07-16.17:48:20::SCWPlatform::Started generating the artifacts platform test_proj_plat
+TRACE::2020-07-16.17:48:20::SCWPlatform::Sanity checking of platform is completed
+LOG::2020-07-16.17:48:21::SCWPlatform::Started generating the artifacts for system configuration test_proj_plat
+LOG::2020-07-16.17:48:21::SCWSystem::Checking the domain zynqmp_fsbl
+LOG::2020-07-16.17:48:21::SCWSystem::Doing application build for :  zynqmp_fsbl
+TRACE::2020-07-16.17:48:21::SCWBDomain::Not a forced makefile updation, No changes are present. 
+TRACE::2020-07-16.17:48:21::SCWDomain::Skipping the build for domain :  zynqmp_fsbl
+LOG::2020-07-16.17:48:21::SCWSystem::Checking the domain zynqmp_pmufw
+LOG::2020-07-16.17:48:21::SCWSystem::Doing application build for :  zynqmp_pmufw
+TRACE::2020-07-16.17:48:21::SCWBDomain::Not a forced makefile updation, No changes are present. 
+TRACE::2020-07-16.17:48:21::SCWDomain::Skipping the build for domain :  zynqmp_pmufw
+LOG::2020-07-16.17:48:21::SCWSystem::Checking the domain standalone_domain
+LOG::2020-07-16.17:48:21::SCWSystem::Not a boot domain 
+LOG::2020-07-16.17:48:21::SCWSystem::Started Processing the domain standalone_domain
+TRACE::2020-07-16.17:48:21::SCWDomain::Generating domain artifcats
+TRACE::2020-07-16.17:48:21::SCWMssOS::Generating standalone artifcats
+TRACE::2020-07-16.17:48:21::SCWMssOS::Copying the qemu file from  C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/qemu_args.txt To C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/qemu/
+TRACE::2020-07-16.17:48:21::SCWMssOS::Copying the qemu file from  C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/qemu_args.txt To C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/qemu/
+TRACE::2020-07-16.17:48:21::SCWMssOS::Copying the qemu file from  C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/qemu_args.txt To C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/qemu/
+TRACE::2020-07-16.17:48:21::SCWMssOS::Copying the qemu file from  C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/qemu_args.txt To C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/qemu/
+TRACE::2020-07-16.17:48:21::SCWMssOS:: Copying the user libraries. 
+TRACE::2020-07-16.17:48:21::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:21::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:21::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:21::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:21::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:21::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:21::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_1
+TRACE::2020-07-16.17:48:21::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_1
+TRACE::2020-07-16.17:48:21::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:21::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:21::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:48:21::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:21::SCWMssOS::Completed writing the mss file at C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp
+TRACE::2020-07-16.17:48:21::SCWMssOS::Mss edits present, copying mssfile into export location C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:21::SCWMssOS::bsp generated is upto date with the mss file. Skipping bsp generation.
+TRACE::2020-07-16.17:48:21::SCWMssOS::BSP is already built. skipping the bsp build ... 
+TRACE::2020-07-16.17:48:21::SCWDomain::Skipping the build for domain :  standalone_domain
+TRACE::2020-07-16.17:48:21::SCWMssOS::skipping the bsp build ... 
+TRACE::2020-07-16.17:48:21::SCWMssOS::Copying to export directory.
+TRACE::2020-07-16.17:48:22::SCWMssOS:: Checking if to create the Supporting Applications
+TRACE::2020-07-16.17:48:22::SCWMssOS:: No Linux domain exists, trying to generate FSBL 
+LOG::2020-07-16.17:48:22::SCWSystem::Completed Processing the domain standalone_domain
+LOG::2020-07-16.17:48:22::SCWSystem::Completed Processing the sysconfig test_proj_plat
+LOG::2020-07-16.17:48:22::SCWPlatform::Completed generating the artifacts for system configuration test_proj_plat
+TRACE::2020-07-16.17:48:22::SCWPlatform::Started preparing the platform 
+TRACE::2020-07-16.17:48:22::SCWSystem::Writing the bif file for system config test_proj_plat
+TRACE::2020-07-16.17:48:22::SCWSystem::dir created 
+TRACE::2020-07-16.17:48:22::SCWSystem::Writing the bif 
+TRACE::2020-07-16.17:48:22::SCWPlatform::Started writing the spfm file 
+TRACE::2020-07-16.17:48:22::SCWPlatform::Started writing the xpfm file 
+TRACE::2020-07-16.17:48:22::SCWPlatform::Completed generating the platform
+TRACE::2020-07-16.17:48:22::SCWMssOS::Saving the mss changes C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:22::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2020-07-16.17:48:22::SCWMssOS::Completed writemss as part of save.
+TRACE::2020-07-16.17:48:22::SCWMssOS::Commit changes completed.
+TRACE::2020-07-16.17:48:22::SCWMssOS::Saving the mss changes C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:48:22::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2020-07-16.17:48:22::SCWMssOS::Completed writemss as part of save.
+TRACE::2020-07-16.17:48:22::SCWMssOS::Commit changes completed.
+TRACE::2020-07-16.17:48:22::SCWMssOS::Saving the mss changes C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:22::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2020-07-16.17:48:22::SCWMssOS::Completed writemss as part of save.
+TRACE::2020-07-16.17:48:22::SCWMssOS::Commit changes completed.
+TRACE::2020-07-16.17:48:22::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:22::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:22::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:22::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:22::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:22::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:22::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_1
+TRACE::2020-07-16.17:48:22::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_1
+TRACE::2020-07-16.17:48:22::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:22::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:22::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:48:22::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:22::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:22::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:22::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:22::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:22::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:22::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:22::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_1
+TRACE::2020-07-16.17:48:22::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_1
+TRACE::2020-07-16.17:48:22::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:22::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:48:22::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:48:22::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:48:22::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:22::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:22::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:22::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:22::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:22::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:22::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_1
+TRACE::2020-07-16.17:48:22::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_1
+TRACE::2020-07-16.17:48:22::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:22::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:22::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:48:22::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:22::SCWWriter::formatted JSON is {
+	"platformName":	"test_proj_plat",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"test_proj_plat",
+	"platHandOff":	"C:/James/test_project/top_level_block_design_wrapper.xsa",
+	"platIntHandOff":	"<platformDir>/hw/top_level_block_design_wrapper.xsa",
+	"deviceType":	"zynqMP",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"fsblExtraCompilerFlags":	"-MMD -MP      -Wall -fmessage-length=0 -DARMA53_64 -Os -flto -ffat-lto-objects  ",
+	"pmufwExtraCompilerFlags":	"-MMD -MP      -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v9.2 -mxl-soft-mul -Os -flto -ffat-lto-objects  ",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"test_proj_plat",
+	"systems":	[{
+			"systemName":	"test_proj_plat",
+			"systemDesc":	"test_proj_plat",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"test_proj_plat",
+			"sysActiveDom":	"standalone_domain",
+			"sysDefaultDom":	"standalone_domain",
+			"domains":	[{
+					"domainName":	"zynqmp_fsbl",
+					"domainDispName":	"zynqmp_fsbl",
+					"domainDesc":	"FSBL Application BSP - Auto Generated.",
+					"processors":	"psu_cortexa53_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.2",
+					"mssFile":	"",
+					"md5Digest":	"9bd1196b3623da8a7f59f881ed9e474c",
+					"compatibleApp":	"zynqmp_fsbl",
+					"domType":	"bootDomain",
+					"arch":	"64-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	["xilffs:4.3", "xilsecure:4.2", "xilpm:3.1"],
+					"libOptions":	{
+						"xilffs":	{
+							"read_only":	"true",
+							"use_mkfs":	"false",
+							"libOptionNames":	["read_only", "use_mkfs"]
+						},
+						"libsContainingOptions":	["xilffs"]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}, {
+					"domainName":	"zynqmp_pmufw",
+					"domainDispName":	"zynqmp_pmufw",
+					"domainDesc":	"PMUFW Application BSP - Auto Generated.",
+					"processors":	"psu_pmu_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.2",
+					"mssFile":	"",
+					"md5Digest":	"450f401bdef1ba8f42dd7e8892fb54f6",
+					"compatibleApp":	"zynqmp_pmufw",
+					"domType":	"bootDomain",
+					"arch":	"64-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	["xilfpga:5.2", "xilsecure:4.2", "xilskey:6.9"],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}, {
+					"domainName":	"standalone_domain",
+					"domainDispName":	"standalone on psu_cortexa53_0",
+					"domainDesc":	"standalone_domain",
+					"processors":	"psu_cortexa53_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"qemuArgs":	"C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/qemu_args.txt",
+					"qemuData":	"C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/",
+					"pmuQemuArgs":	"C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/pmu_args.txt",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.2",
+					"mssFile":	"",
+					"md5Digest":	"653fcd8aa47007f69cbdf735039ced4d",
+					"compatibleApp":	"",
+					"domType":	"mssDomain",
+					"arch":	"64-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	["libmetal:2.1", "lwip211:1.2"],
+					"libOptions":	{
+						"lwip211":	{
+							"lwip_dhcp":	"true",
+							"libOptionNames":	["lwip_dhcp"]
+						},
+						"standalone":	{
+							"stdin":	"psu_coresight_0",
+							"stdout":	"psu_coresight_0",
+							"libOptionNames":	["stdin", "stdout"]
+						},
+						"libsContainingOptions":	["lwip211", "standalone"]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+KEYINFO::2020-07-16.17:48:22::SCWPlatform::updated the xpfm file.
+TRACE::2020-07-16.17:48:22::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:22::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:22::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:22::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:22::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:22::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:22::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_1
+TRACE::2020-07-16.17:48:22::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_1
+TRACE::2020-07-16.17:48:22::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:22::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:22::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:48:22::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:34::SCWPlatform::Clearing the existing platform
+TRACE::2020-07-16.17:48:34::SCWSystem::Clearing the existing sysconfig
+TRACE::2020-07-16.17:48:34::SCWBDomain::clearing the fsbl build
+TRACE::2020-07-16.17:48:34::SCWMssOS::Removing the swdes entry for  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:34::SCWBDomain::clearing the pmufw build
+TRACE::2020-07-16.17:48:34::SCWMssOS::Removing the swdes entry for  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:48:34::SCWMssOS::Removing the swdes entry for  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:34::SCWSystem::Clearing the domains completed.
+TRACE::2020-07-16.17:48:34::SCWPlatform::Clearing the opened hw db.
+TRACE::2020-07-16.17:48:34::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:34::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:34::SCWPlatform:: Platform location is C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:34::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:34::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:34::SCWPlatform::Removing the HwDB with name C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:34::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:34::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:34::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:34::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:34::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:34::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:34::SCWPlatform::Do not have an existing db opened. 
+TRACE::2020-07-16.17:48:43::SCWPlatform::Opened new HwDB with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:43::SCWReader::Active system found as  test_proj_plat
+TRACE::2020-07-16.17:48:43::SCWReader::Handling sysconfig test_proj_plat
+TRACE::2020-07-16.17:48:43::SCWDomain::checking for install qemu data   : 
+TRACE::2020-07-16.17:48:43::SCWDomain:: Using the QEMU Data from install at  : C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/
+TRACE::2020-07-16.17:48:43::SCWDomain:: Using the QEMU args  from install at  : C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/qemu_args.txt
+TRACE::2020-07-16.17:48:43::SCWDomain:: Using the PMUQEMU args from install at  : C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/pmu_args.txt
+TRACE::2020-07-16.17:48:43::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:43::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:43::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:43::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:43::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:43::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:43::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:43::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:43::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:43::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:43::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:43::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:43::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:43::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:43::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:43::SCWReader::Boot application domain added for zynqmp_fsbl
+TRACE::2020-07-16.17:48:43::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:43::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:43::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:43::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:43::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:43::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:43::SCWMssOS::DEBUG:  swdes dump  
+TRACE::2020-07-16.17:48:43::SCWMssOS::No sw design opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:43::SCWMssOS::mss exists loading the mss file  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:43::SCWMssOS::Opened the sw design from mss  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:43::SCWMssOS::Adding the swdes entry C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss with des name system
+TRACE::2020-07-16.17:48:43::SCWMssOS::updating the scw layer about changes
+TRACE::2020-07-16.17:48:43::SCWMssOS::Opened the sw design.  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:43::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:43::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:43::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:43::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:43::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:43::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:43::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+
+TRACE::2020-07-16.17:48:43::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:43::SCWMssOS:: library already available in sw design:  xilffs:4.3
+TRACE::2020-07-16.17:48:43::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:43::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:43::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:43::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:43::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:43::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:43::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+
+TRACE::2020-07-16.17:48:43::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:43::SCWMssOS:: library already available in sw design:  xilsecure:4.2
+TRACE::2020-07-16.17:48:43::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:43::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:43::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:43::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:43::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:43::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:43::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+
+TRACE::2020-07-16.17:48:43::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:43::SCWMssOS:: library already available in sw design:  xilpm:3.1
+TRACE::2020-07-16.17:48:43::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:43::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:43::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:43::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:43::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:43::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:43::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+
+TRACE::2020-07-16.17:48:43::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:43::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:43::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:43::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:43::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:43::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:43::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:43::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+
+TRACE::2020-07-16.17:48:43::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:43::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:43::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:43::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:43::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:43::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:43::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:43::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+
+TRACE::2020-07-16.17:48:43::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:43::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:43::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:44::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+
+TRACE::2020-07-16.17:48:44::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS::Saving the mss changes C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2020-07-16.17:48:44::SCWMssOS::Completed writemss as part of save.
+TRACE::2020-07-16.17:48:44::SCWMssOS::Commit changes completed.
+TRACE::2020-07-16.17:48:44::SCWReader::Adding prebuilt librarypaths as   
+TRACE::2020-07-16.17:48:44::SCWReader::Adding prebuilt incpaths  as   
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:44::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+
+TRACE::2020-07-16.17:48:44::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWReader::No isolation master present  
+TRACE::2020-07-16.17:48:44::SCWDomain::checking for install qemu data   : 
+TRACE::2020-07-16.17:48:44::SCWDomain:: Using the QEMU Data from install at  : C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/
+TRACE::2020-07-16.17:48:44::SCWDomain:: Using the QEMU args  from install at  : C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/qemu_args.txt
+TRACE::2020-07-16.17:48:44::SCWDomain:: Using the PMUQEMU args from install at  : C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/pmu_args.txt
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:44::SCWReader::Boot application domain added for zynqmp_pmufw
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:44::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+
+TRACE::2020-07-16.17:48:44::SCWMssOS::No sw design opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS::mss exists loading the mss file  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS::Opened the sw design from mss  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS::Adding the swdes entry C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss with des name system_0
+TRACE::2020-07-16.17:48:44::SCWMssOS::updating the scw layer about changes
+TRACE::2020-07-16.17:48:44::SCWMssOS::Opened the sw design.  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:44::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:48:44::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS:: library already available in sw design:  xilfpga:5.2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:44::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:48:44::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS:: library already available in sw design:  xilsecure:4.2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:44::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:48:44::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS:: library already available in sw design:  xilskey:6.9
+TRACE::2020-07-16.17:48:44::SCWMssOS::Saving the mss changes C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2020-07-16.17:48:44::SCWMssOS::Completed writemss as part of save.
+TRACE::2020-07-16.17:48:44::SCWMssOS::Commit changes completed.
+TRACE::2020-07-16.17:48:44::SCWReader::Adding prebuilt librarypaths as   
+TRACE::2020-07-16.17:48:44::SCWReader::Adding prebuilt incpaths  as   
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:44::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:48:44::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWReader::No isolation master present  
+TRACE::2020-07-16.17:48:44::SCWDomain::checking for install qemu data   : 
+TRACE::2020-07-16.17:48:44::SCWDomain:: Using the QEMU Data from install at  : C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/
+TRACE::2020-07-16.17:48:44::SCWDomain:: Using the QEMU args  from install at  : C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/qemu_args.txt
+TRACE::2020-07-16.17:48:44::SCWDomain:: Using the PMUQEMU args from install at  : C:/Xilinx/Vitis/2020.1/data/emulation/platforms/zynqmp/qemu/pmu_args.txt
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:44::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:48:44::SCWMssOS::No sw design opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS::mss exists loading the mss file  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS::Opened the sw design from mss  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS::Adding the swdes entry C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss with des name system_1
+TRACE::2020-07-16.17:48:44::SCWMssOS::updating the scw layer about changes
+TRACE::2020-07-16.17:48:44::SCWMssOS::Opened the sw design.  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:44::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:48:44::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS:: library already available in sw design:  libmetal:2.1
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:44::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:48:44::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS:: library already available in sw design:  lwip211:1.2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:44::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:48:44::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:44::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:48:44::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:44::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:48:44::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:44::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:48:44::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:44::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:48:44::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:44::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:48:44::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS::Saving the mss changes C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2020-07-16.17:48:44::SCWMssOS::Completed writemss as part of save.
+TRACE::2020-07-16.17:48:44::SCWMssOS::Commit changes completed.
+TRACE::2020-07-16.17:48:44::SCWReader::Adding prebuilt librarypaths as   
+TRACE::2020-07-16.17:48:44::SCWReader::Adding prebuilt incpaths  as   
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:44::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:48:44::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWReader::No isolation master present  
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:44::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:44::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:44::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:44::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:44::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:48:44::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:45::SCWMssOS::In reload Mss file.
+TRACE::2020-07-16.17:48:45::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:45::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:45::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:45::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:45::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:45::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:45::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:45::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:45::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:45::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:45::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+KEYINFO::2020-07-16.17:48:45::SCWMssOS::Could not open the swdb for system_1
+KEYINFO::2020-07-16.17:48:45::SCWMssOS::Could not open the sw design at  system_1
+ERROR: [Hsi 55-1558] Software Design system_1 is not found
+
+TRACE::2020-07-16.17:48:45::SCWMssOS::Cleared the swdb table entry
+TRACE::2020-07-16.17:48:45::SCWMssOS::No sw design opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:45::SCWMssOS::mss exists loading the mss file  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:46::SCWMssOS::Opened the sw design from mss  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:46::SCWMssOS::Adding the swdes entry C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss with des name system_1
+TRACE::2020-07-16.17:48:46::SCWMssOS::updating the scw layer about changes
+TRACE::2020-07-16.17:48:46::SCWMssOS::Opened the sw design.  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:46::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:46::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:46::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:46::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:46::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:46::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:46::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:48:46::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:46::SCWMssOS:: library already available in sw design:  libmetal:2.1
+TRACE::2020-07-16.17:48:46::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:46::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:46::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:46::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:46::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:46::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:46::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:48:46::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:46::SCWMssOS:: library already available in sw design:  lwip211:1.2
+TRACE::2020-07-16.17:48:46::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:46::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:46::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:46::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:46::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:46::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:46::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:48:46::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:46::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:46::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:46::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:46::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:46::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:46::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:46::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:48:46::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:46::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:46::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:46::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:46::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:46::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:46::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:46::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:48:46::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:46::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:46::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:46::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:46::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:46::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:46::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:46::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:48:46::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:46::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:46::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:46::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:46::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:46::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:46::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:46::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:48:46::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:46::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:46::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:46::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:46::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:46::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:46::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:46::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:48:46::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:46::SCWMssOS::Saving the mss changes C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:46::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2020-07-16.17:48:46::SCWMssOS::Completed writemss as part of save.
+TRACE::2020-07-16.17:48:46::SCWMssOS::Commit changes completed.
+TRACE::2020-07-16.17:48:46::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:46::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:46::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:46::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:46::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:46::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:46::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:46::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:48:46::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:46::SCWMssOS::Removing the swdes entry for  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:50::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:50::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:50::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:50::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:48:50::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:48:50::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:48:50::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:50::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:48:50::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:48:50::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:50::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:48:50::SCWMssOS::No sw design opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:50::SCWMssOS::mss exists loading the mss file  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:50::SCWMssOS::Opened the sw design from mss  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:48:50::SCWMssOS::Adding the swdes entry C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss with des name system_1
+TRACE::2020-07-16.17:48:50::SCWMssOS::updating the scw layer about changes
+TRACE::2020-07-16.17:48:50::SCWMssOS::Opened the sw design.  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:49:01::SCWMssOS::In reload Mss file.
+TRACE::2020-07-16.17:49:01::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:01::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:01::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:01::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:49:01::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:01::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:49:01::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:49:01::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:49:01::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:49:01::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:49:01::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+KEYINFO::2020-07-16.17:49:01::SCWMssOS::Could not open the swdb for system_1
+KEYINFO::2020-07-16.17:49:01::SCWMssOS::Could not open the sw design at  system_1
+ERROR: [Hsi 55-1558] Software Design system_1 is not found
+
+TRACE::2020-07-16.17:49:01::SCWMssOS::Cleared the swdb table entry
+TRACE::2020-07-16.17:49:01::SCWMssOS::No sw design opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:49:01::SCWMssOS::mss exists loading the mss file  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:49:01::SCWMssOS::Opened the sw design from mss  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:49:01::SCWMssOS::Adding the swdes entry C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss with des name system_1
+TRACE::2020-07-16.17:49:01::SCWMssOS::updating the scw layer about changes
+TRACE::2020-07-16.17:49:02::SCWMssOS::Opened the sw design.  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:49:02::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:49:02::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:49:02::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:49:02::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:49:02::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:49:02::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:49:02::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:49:02::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:49:02::SCWMssOS:: library already available in sw design:  libmetal:2.1
+TRACE::2020-07-16.17:49:02::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:49:02::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:49:02::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:49:02::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:49:02::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:49:02::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:49:02::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:49:02::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:49:02::SCWMssOS:: library already available in sw design:  lwip211:1.2
+TRACE::2020-07-16.17:49:02::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:49:02::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:49:02::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:49:02::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:49:02::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:49:02::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:49:02::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:49:02::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:49:02::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:49:02::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:49:02::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:49:02::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:49:02::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:49:02::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:49:02::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:49:02::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:49:02::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:49:02::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:49:02::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:49:02::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:49:02::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:49:02::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:49:02::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:49:02::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:49:02::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:49:02::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:49:02::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:49:02::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:49:02::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:49:02::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:49:02::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:49:02::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:49:02::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:49:02::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:49:02::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:49:02::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:49:02::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:49:02::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:49:02::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:49:02::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:49:02::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:49:02::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:49:02::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:49:02::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:49:02::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:49:02::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:49:02::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:49:02::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:49:02::SCWMssOS::Saving the mss changes C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:49:02::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2020-07-16.17:49:02::SCWMssOS::Completed writemss as part of save.
+TRACE::2020-07-16.17:49:02::SCWMssOS::Commit changes completed.
+TRACE::2020-07-16.17:49:02::SCWPlatform::Trying to open the hw design at C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform::DSA given C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform::DSA absoulate path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform::DSA directory C:/James/vitis_workspace/test_proj_plat/hw
+TRACE::2020-07-16.17:49:02::SCWPlatform:: Platform Path C:/James/vitis_workspace/test_proj_plat/hw/top_level_block_design_wrapper.xsa
+TRACE::2020-07-16.17:49:02::SCWPlatform:: Unique name xilinx:zcu111::0.0
+TRACE::2020-07-16.17:49:02::SCWPlatform::Trying to set the existing hwdb with name top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:49:02::SCWPlatform::Opened existing hwdb top_level_block_design_wrapper_2
+TRACE::2020-07-16.17:49:02::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2020-07-16.17:49:02::SCWMssOS::Checking the sw design at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:49:02::SCWMssOS::DEBUG:  swdes dump  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss|system_1||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_fsbl/zynqmp_fsbl_bsp/system.mss|system||
+C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/system.mss|system_0||
+
+TRACE::2020-07-16.17:49:02::SCWMssOS::Sw design exists and opened at  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss
+TRACE::2020-07-16.17:49:02::SCWMssOS::Removing the swdes entry for  C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/system.mss

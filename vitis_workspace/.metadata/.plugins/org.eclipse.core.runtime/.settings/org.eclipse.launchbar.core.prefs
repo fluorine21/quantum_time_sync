@@ -1,7 +1,7 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_test_proj_ethernet_system,org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_test_proj_pulse_ctrl_system,org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_test_proj_ethernet_system,org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_test_proj_pulse_ctrl_system,org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash,org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice,org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
 eclipse.preferences.version=1
 org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_test_proj_ethernet_system/activeLaunchMode=systemdebug
 org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_test_proj_ethernet_system/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local

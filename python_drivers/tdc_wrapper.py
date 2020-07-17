@@ -70,6 +70,8 @@ class tdc_wrapper:
     #List of currently running threads
     threads = []
     
+    port = 25565
+    
     def __init__(self, tt, dm, m = MODE_NORMAL, s_ip = ""):
         
         self.timeout = tt
@@ -86,7 +88,7 @@ class tdc_wrapper:
     
     
     ############################################################################
-    #############The following functions may only be used in normal mode
+    #############The following functions may only be called by a client or in normal mode
     
     #Returns the timestamp of the first pulse seen on channel_num
     #Returns 0 on timeout
@@ -117,7 +119,7 @@ class tdc_wrapper:
         ret_val = 0
         
         #While we're not out of time
-        while((time.time() - time_now) > self.timeout):
+        while((time.time() - time_now) < self.timeout):
             
             #Check the data loss
             d_loss = self.device.getDataLost()
@@ -209,14 +211,15 @@ class tdc_wrapper:
     
     def wait_pulse_client(self, channel_num):
         
-        #get a random port going and connect
-        random.seed()
-        sck = socket.socket(socket.AF_INET, socket.SOCK_STREAM, 0) 
-        sck.connect((self.server_ip, random.randrange(1000, 2000)))
+
+        sck = socket.socket()
+        sck.settimeout(SERVER_TIMEOUT)
+        sck.connect((self.server_ip, self.port))
+        time.sleep(0.1)
         
         time_now = time.time()
         ret_val = 0
-        while(time.time() - time_now > self.timeout):
+        while(time.time() - time_now < self.timeout):
             #Keep trying to get that timestamp
             channel_byte = channel_num & 0xff
             #Send the GET_AND_CLEAR command
@@ -234,10 +237,10 @@ class tdc_wrapper:
     
     def end_record_client(self, channel_num):
         
-        #get a random port going and connect
-        random.seed()
-        sck = socket.socket(socket.AF_INET, socket.SOCK_STREAM, 0) 
-        sck.connect((self.server_ip, random.randrange(1000, 2000)))
+        sck = socket.socket()
+        sck.settimeout(SERVER_TIMEOUT)
+        sck.connect((self.server_ip, self.port))
+        time.sleep(0.1)
         
         channel_byte = channel_num & 0xff
         #Send the GET_AND_CLEAR command
@@ -256,9 +259,12 @@ class tdc_wrapper:
         print("Initializing TDC in SERVER mode")
         
         #Start a new thread for the TDC service routine
-        start_new_thread(self.service_tdc) 
+        t = threading.Thread(target=self.service_tdc, args=(1,))
+        t.start()
+        self.threads.append(t)
         
-        sck = socket.socket(socket.AF_INET, socket.SOCK_STREAM, 0) 
+        sck = socket.socket() 
+        sck.settimeout(SERVER_TIMEOUT)
         
         #Bind the socket and listen for a connection
         host = socket.gethostname() # Get local machine name
@@ -277,7 +283,8 @@ class tdc_wrapper:
             try:
                  #Once a client connects we'll be here
                 c, addr = sck.accept()     # Establish connection with client.
-                print("Got a connection from " + addr[0] + ":" + addr[1])
+                name_str = str(addr[0]) + ":" + str(addr[1])
+                print("Got a connection from " + name_str)
                 
                 #if(SECURE_MODE):
                    #c_s = ssl.wrap_socket(c,
@@ -292,7 +299,11 @@ class tdc_wrapper:
                 
                 #Start a new thread to handle the client
                 #Also append the thread handle to our list of threads
-                self.threads.append(start_new_thread(self.handle_client, (c_s,addr[0] + ":" + addr[1],))) 
+                #self.threads.append(start_new_thread(self.handle_client, (c_s,addr[0] + ":" + addr[1],))) 
+                t = threading.Thread(target=self.handle_client, args=(c_s,name_str,))
+                t.start()
+                print("Starting client thread #" + str(t.ident))
+                self.threads.append(t)
                 
             except socket.timeout:
                 print("Waiting for client connection...")
@@ -316,7 +327,7 @@ class tdc_wrapper:
         return
         
     #This function  is called in its own thread to constantly offload data from the tdc
-    def service_tdc(self):
+    def service_tdc(self, arg1):
         
         print("service_tdc thread has started")
         
@@ -362,26 +373,28 @@ class tdc_wrapper:
     #This function handles a client connected at socket C   
     def handle_client(self, c, ip_str):
         
+        time.sleep(0.1)
+        
         while(not self.shutdown_flag):
             #Receive one command byte from the client
             client_cmd = james_utils.receive_bytes(c, 1)
             
             if(client_cmd == SOCKET_TIMEOUT):
-                print("Timed out waiting for client command from " + ip_str)
-            elif(client_cmd == SOCKET_DEAD):
-                print("Dead socket, dropping client at " + ip_str)
+                print("[CLIENT HANDLER] Timed out waiting for client command from " + ip_str)
+            elif(client_cmd == SOCKET_DEAD or client_cmd == -3):
+                print("[CLIENT HANDLER] Dead socket, dropping client at " + ip_str)
                 break
-            elif(client_cmd == COMMAND_PING):
-                print("Client at " + ip_str + ": COMMAND_PING")
+            elif(client_cmd[0] == COMMAND_PING):
+                print("[CLIENT HANDLER] Client at " + ip_str + ": COMMAND_PING")
                 c.send(SERVER_ACK)
-            elif(client_cmd == COMMAND_CLOSE_CONNECTION):
-                print("Client at " + ip_str + ": COMMAND_CLOSE_CONNECTION")
+            elif(client_cmd[0] == COMMAND_CLOSE_CONNECTION):
+                print("[CLIENT HANDLER] Client at " + ip_str + ": COMMAND_CLOSE_CONNECTION")
                 break
-            elif(client_cmd == COMMAND_GET_AND_CLEAR):
-                print("Client at " + ip_str + ": COMMAND_GET_AND_CLEAR")
-                res = self.receive_bytes(c, 1)
-                if(res.is_integer()):
-                    print("Unable to get channel from client at " + ip_str + ", dropping client")
+            elif(client_cmd[0] == COMMAND_GET_AND_CLEAR):
+                print("[CLIENT HANDLER] Client at " + ip_str + ": COMMAND_GET_AND_CLEAR")
+                res = james_utils.receive_bytes(c, 1)
+                if(res == -1 or res == -2 or res == -3):
+                    print("[CLIENT HANDLER] Unable to get channel from client at " + ip_str + ", dropping client")
                     break
                 else:
                     channel_num = res[0]
@@ -390,8 +403,15 @@ class tdc_wrapper:
                         if(t.channel_num == channel_num):
                             ts = t.timestamp
                             self.timestamp_list.remove(t)
+                            
+                    #If we're in dummy mode then just give the system time
+                    if(self.dummy_mode):
+                        ts = int(time.time() * 10000000)
+               
                     james_utils.send_timestamp(c, ts)
-                    print("Timestamp sent to client for channel " + str(channel_num) + " was " + str(ts))
+                    print("[CLIENT HANDLER] Timestamp sent to client for channel " + str(channel_num) + " was " + str(ts))
+            else:
+                print("[CLIENT HANDLER] Unknown command received from client: " + hex(client_cmd[0]))
                 
                 
         c.close()

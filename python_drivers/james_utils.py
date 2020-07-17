@@ -8,13 +8,22 @@ Created on Thu Jul 16 14:44:28 2020
 
 import socket
 
+#Constants for Alice and Bob
+ALICE_PORT = "COM4"
+BOB_PORT = "COM9"
+ALICE_CHANNEL_SEND = 1
+ALICE_CHANNEL_RECEIVE = 2
+BOB_CHANNEL_SEND = 3
+BOB_CHANNEL_RECEIVE = 4
+
+
 TIMESTAMP_BYTE_LEN = 20
 
 #Returns -1 on fail
 def receive_timestamp(sck):
     #Receive and reconstruct the whole number
     res = receive_bytes(sck, TIMESTAMP_BYTE_LEN)
-    if(res == -1):
+    if(res == -1 or res == -2 or res == -3):
         print("Timed out waiting for timestamp")
         return -1
     return int.from_bytes(res, byteorder='big', signed = False)

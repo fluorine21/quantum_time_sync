@@ -76,7 +76,7 @@ class time_sync:
     dummy_mode = 0
     
     
-    def __init__(self, COM_PORT, s_ip, m, dm):
+    def __init__(self, COM_PORT, s_ip, m, dm, tdc_obj):
         
         #save the other parameters
         self.server_ip = s_ip
@@ -89,7 +89,7 @@ class time_sync:
         self.board = pulse_gen.pulse_gen(COM_PORT)
         
         #initialize the tdc
-        self.tdc = tdc_wrapper.tdc_wrapper(5, dm)
+        self.tdc = tdc_obj
         
         
         if(m == CLIENT):
@@ -150,6 +150,8 @@ class time_sync:
        
         print("Attempting to connect to server")
         #connect to the client
+        random.seed()#With a random port number
+        #self.s.connect((self.server_ip, random.randrange(3000, 4000)))
         self.s.connect((self.server_ip, self.port))
         time.sleep(0.5)
         if(self.is_socket_alive(self.s)):
@@ -231,7 +233,7 @@ class time_sync:
             return -1
             
         #receive the timestamp
-        if(self.receive_timestamp(self.s) != 1234567890):
+        if(james_utils.receive_timestamp(self.s) != 1234567890):
             print("Error, bad timestamp received from server while pinging")
             return -1
         else:
@@ -287,7 +289,7 @@ class time_sync:
     def server_handle_command(self, sck):
         
         #Receive one command byte from the client
-        client_cmd = self.receive_bytes(sck, 1)
+        client_cmd = james_utils.receive_bytes(sck, 1)
         
         if(client_cmd == -1):
             print("Timed out waiting for command")
@@ -315,7 +317,7 @@ class time_sync:
             sck.send(SERVER_ACK)
             print("Command received: SERVER_PING")
             print("Sending timestamp 1234567890")
-            self.send_timestamp(sck, 1234567890)
+            james_utils.send_timestamp(sck, 1234567890)
             return 1
             
         else:
@@ -357,7 +359,7 @@ class time_sync:
     #Waits to receive an ACK from the server
     #Returns 0 on success
     def wait_ack(self, sck):
-        ack_res = self.receive_bytes(self.s, 1)
+        ack_res = james_utils.receive_bytes(self.s, 1)
         return self.check_ack(ack_res)
     
     #returns 0 on success
@@ -371,21 +373,7 @@ class time_sync:
          else:
             print("Bad ACK received: " + hex(ack_res[0]) + ", was an invalid command sent to the server?")
             return -1
-        
-    #Returns -1 on fail
-    def receive_timestamp(self, sck):
-        #Receive and reconstruct the whole number
-        res = self.receive_bytes(sck, TIMESTAMP_BYTE_LEN)
-        if(res == -1):
-            print("Timed out waiting for timestamp")
-            return -1
-        return int.from_bytes(res, byteorder='big', signed = False)
     
-    def send_timestamp(self, sck, ts):        
-        ts_bs = int(ts).to_bytes(TIMESTAMP_BYTE_LEN, byteorder='big', signed = False)        
-        #Then send the number itself
-        sck.send(ts_bs)        
-        return
     
     #Returns 0 on success
     def do_sync(self, sck):
@@ -481,7 +469,7 @@ class time_sync:
                 print("Alice detected her own pulse! t_a_s = " + str(self.t_a_s))
                 
             #Receive the timestamp sent by bob
-            self.t_b_r = self.receive_timestamp(sck)
+            self.t_b_r = james_utils.receive_timestamp(sck)
             if(self.t_b_r == 0):
                 print("Error, Bob did not detect Alice's pulse!")
                 ret_val = -1
@@ -501,7 +489,7 @@ class time_sync:
             else:
                 print("Bob received Alice's pulse! t_b_r = " + str(self.t_b_r))
                 
-            self.send_timestamp(sck, self.t_b_r)
+            james_utils.send_timestamp(sck, self.t_b_r)
             
         return ret_val
     
@@ -537,7 +525,7 @@ class time_sync:
                 print("Bob detected his own pulse! t_a_s = " + str(self.t_b_s))
                 
             #Send the timestamp to Alice
-            self.send_timestamp(sck, self.t_b_s)
+            james_utils.send_timestamp(sck, self.t_b_s)
                 
         #Must be Alice
         else:
@@ -552,7 +540,7 @@ class time_sync:
             else:
                 print("Alice received Bob's pulse! t_a_r = " + str(self.t_a_r))
                 
-            self.t_b_s = self.receive_timestamp(sck)
+            self.t_b_s = james_utils.receive_timestamp(sck)
             
             if(self.t_b_s < 1):
                 print("Error ,Bob did not detect his own pulse!")
@@ -619,34 +607,7 @@ class time_sync:
         self.time_diff = (self.t_b_r + self.t_b_s - self.t_a_r - self.t_a_s) / 2
     
     
-    def receive_bytes(self, c, num_bytes):
-        
-        byte_res = []
-                    
-        while(1):
-            
-            try:
-                #res = c.recv(1024)
-                res = c.recv(1)
-                
-                if(len(res) > 0):
-            
-                    #copy all bytes into the result array
-                    for b in res:
-                        byte_res.append(b)
-                    #If we have all of the bytes
-                    if(len(byte_res) >= num_bytes):
-                        return byte_res
-                else:
-                    print("Received an empty byte array from socket, socket is probably closed...")
-                    self.socket_dead = 1
-                    return -1
-            except socket.timeout:
-                print("Timed out while waiting for bytes...")
-                return -1
-            except Exception as e:
-                print("Unknown error occured while waiting for bytes")
-                return -1
+
                 
    
    
