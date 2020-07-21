@@ -31,11 +31,7 @@ SERVER_SEND_PULSE = 5
 SERVER_EXIT = 6
 SERVER_PING = 7
 
-#TDC Channels
-CHANNEL_ALICE_SEND = 104
-CHANNEL_ALICE_RECEIVE = 104
-CHANNEL_BOB_SEND = 104
-CHANNEL_BOB_RECEIVE = 104
+
 
 #Bob's responses
 TDC_SUCCESS = 8
@@ -95,12 +91,12 @@ class time_sync:
         
         if(m == CLIENT):
             print("Initialized time sync in CLIENT mode")
-            self.channel_send = CHANNEL_ALICE_SEND
-            self.channel_receive = CHANNEL_ALICE_RECEIVE
+            self.channel_send = james_utils.ALICE_CHANNEL_SEND
+            self.channel_receive = james_utils.ALICE_CHANNEL_RECEIVE
         else:
             print("Initialized time sync in SERVER mode")
-            self.channel_send = CHANNEL_BOB_SEND
-            self.channel_receive = CHANNEL_BOB_RECEIVE
+            self.channel_send = james_utils.BOB_CHANNEL_SEND
+            self.channel_receive = james_utils.BOB_CHANNEL_RECEIVE
         
         return
     

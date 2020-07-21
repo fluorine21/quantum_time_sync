@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- $Id: pset.ngc,v 1.2 2019/04/04 15:10:53 zaphod Exp $ -->
+<Panel Name="Pset" Icon="debug.xpm" >
+
+  <Widget Type="Box" Style="Flat"     X="0" Y="0" Align="Top Left" >
+    <Widget Type="Box" Caption="App FPGA"     X="0" Y="0" Align="Top Left" >
+      <Macro Type="Repeater" Count="15">
+        <Widget Type="Script" Caption="" X="0" Y="$+(Counter,0)$" Width="2" ValueBox="1" File="0" >
+          <Connect Name="FpgaPT"       Address="3" Index="4" />
+          <Connect Name="FpgaPI"       Address="3" Index="5" />
+          <Connect Name="FpgaPN"       Address="3" Index="6" />
+          <Connect Name="FpgaValue"    Address="3" Index="7" />
+          <Connect Name="FpgaCommand"  Address="3" Index="8" />
+          <Connect Name="CommitVal"    Address="3" Index="10" />
+          <Connect Name="CommitCmd"    Address="3" Index="9" />
+          <Connect Name="CommitGet"    Address="3" Index="11" />
+        </Widget>
+      </Macro>
+      <Widget Type="Label" Caption="cmd answer dec" Display="Decimal" Address="0x3" Index="7"  X="0" Y="17" Alignment="Left"/>
+      <Widget Type="Label" Caption="hex"            Display="Hex"     Address="0x3" Index="7"  X="1" Y="17" Alignment="Left"/>
+    </Widget>
+    
+    <Widget Type="Box" Caption="Core FPGA"     X="1" Y="0" Align="Top Left" >
+      <Macro Type="Repeater" Count="15">
+        <Widget Type="Script" Caption="" X="0" Y="$+(Counter,0)$" Width="2" ValueBox="1" File="0" >
+          <Connect Name="FpgaPT"       Address="8" Index="4" />
+          <Connect Name="FpgaPI"       Address="8" Index="5" />
+          <Connect Name="FpgaPN"       Address="8" Index="6" />
+          <Connect Name="FpgaValue"    Address="8" Index="7" />
+          <Connect Name="FpgaCommand"  Address="8" Index="8" />
+          <Connect Name="CommitVal"    Address="8" Index="10" />
+          <Connect Name="CommitCmd"    Address="8" Index="9" />
+          <Connect Name="CommitGet"    Address="8" Index="11" />
+        </Widget>
+      </Macro>
+      <Widget Type="Label" Caption="cmd answer dec" Display="Decimal" Address="0x8" Index="8"  X="0" Y="17" Alignment="Left"/>
+      <Widget Type="Label" Caption="hex"            Display="Hex"     Address="0x8" Index="8"  X="1" Y="17" Alignment="Left"/>
+    </Widget>
+    
+    <Widget Type="Box" Caption="Core FPGA"     X="2" Y="0" Align="Top Left" >
+      <Widget Type="Xedit" Caption="PT"  X="0" Y="0" Address="8" Index="4" />
+      <Widget Type="Xedit" Caption="PI"  X="0" Y="1" Address="8" Index="5" />
+      <Widget Type="Xedit" Caption="PN/PR"  X="0" Y="2" Address="8" Index="6" />
+      <Widget Type="Xedit" Caption="Value"  X="0" Y="3" Address="8" Index="7" />
+      
+      <Widget Type="Button" Caption="Get"  X="0" Y="4" Address="8" Index="11" />
+      
+      <Widget Type="Label" Caption="cmd answer dec" Display="Decimal" Address="0x8" Index="8"  X="0" Y="17" Alignment="Left"/>
+      <Widget Type="Label" Caption="hex"            Display="Hex"     Address="0x8" Index="8"  X="1" Y="17" Alignment="Left"/>
+    </Widget>
+  </Widget>
+
+</Panel>

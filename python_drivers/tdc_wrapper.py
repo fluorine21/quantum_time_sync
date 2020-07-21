@@ -80,6 +80,13 @@ class tdc_wrapper:
         self.server_ip = s_ip
         self.record_offset = 1#Record the offset first
         
+        
+        if((not self.dummy_mode) and (self.mode == MODE_NORMAL or self.mode == MODE_SERVER)):
+            if(self.check_tdc_clock()):
+                print("External TDC clock detected!")
+            else:
+                print("Warning, TDC did not detect an external clock, results will not be accurate!")
+        
         if(self.mode == MODE_SERVER):
             self.server_init()
         
@@ -89,6 +96,21 @@ class tdc_wrapper:
     
     ############################################################################
     #############The following functions may only be called by a client or in normal mode
+    
+    #Returns 1 if locked
+    def check_tdc_clock(self):
+        
+        self.device = QuTAG.QuTAG()
+        
+        ret_val = self.device.getClockState()
+        
+        self.device.deInitialize()    
+        
+        self.device = 0
+        
+        return ret_val
+        
+        
     
     #Returns the timestamp of the first pulse seen on channel_num
     #Returns 0 on timeout
@@ -113,6 +135,7 @@ class tdc_wrapper:
         
         #Open the TDC and start receiveing pulses
         self.device = QuTAG.QuTAG()
+        self.device.enableChannels((1,2,3,4))
         
         time_now = time.time()
         
@@ -142,7 +165,6 @@ class tdc_wrapper:
             
         #Close the TDC
         self.device.deInitialize()    
-        
         self.device = 0
         
         return ret_val
@@ -161,6 +183,7 @@ class tdc_wrapper:
         
         #Open the TDC and start receiveing pulses
         self.device = QuTAG.QuTAG()
+        self.device.enableChannels((1,2,3,4))
         
         return 0
     
@@ -332,6 +355,7 @@ class tdc_wrapper:
         
         #Start the TDC
         self.device = QuTAG.QuTAG()
+        self.device.enableChannels((1,2,3,4))
         
         while(not self.shutdown_flag):
         

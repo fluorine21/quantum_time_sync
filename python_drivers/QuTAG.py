@@ -1091,3 +1091,18 @@ class QuTAG:
         self.qutools_dll.TDC_analyseHbtFunction(hbtfunction,ctypes.byref(capacity),ctypes.byref(size),ctypes.byref(binWidth),ctypes.byref(iOffset),values.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),self._HBTBufferSize)
         
         return (capacity.value,size.value,binWidth.value,iOffset.value,values)
+    
+    
+    
+    #################James' code to find clock state
+    def getClockState(self):
+        lock_state = ctypes.c_int32()
+        dv = ctypes.c_int32()
+        
+        ans = self.qutools_dll.TDC_getClockState(ctypes.byref(lock_state), ctypes.byref(dv))
+        if ans != 0:
+            print("Error in TDC_getClockState: "+self.err_dict[ans])
+        return lock_state.value
+        
+        
+        

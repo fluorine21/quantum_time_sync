@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- N-Hands Product Spec for TDCEval -->
+<!-- $Id: qutag.nps,v 1.26 2019/11/27 15:37:56 trurl Exp $ -->
+<Productspec Code="0x08" Caption="quTAG">
+
+  <!-- Controller Properties -->
+  <Controller DataChannels="4" Interfaces="Usb3f Spi">
+    <Variant Code="0x6400" Caption="quTAG"/>
+  </Controller>
+
+  <!-- Server & Booting -->
+  <Server Name="daisysrv" Port="7650">
+    <Flash>
+      <File Target="Core FPGA" Name="qutag_core.bit" AddrFlash="0x176" AddrVer="0x117" AddrPrd="0x118"/>
+      <File Target="Appl FPGA" Name="qutag_r3_appl.bit" AddrFlash="0x172" AddrVer="0x119" AddrPrd="0x11A"/>
+      <File Target="DSP"       Name="qutag_dsp.ldr"  AddrFlash="0x171" AddrVer="0x111" AddrPrd="0x112"/>
+      <File Target="Disp"      Name="qutag_disp.bin" AddrFlash="0x17C" AddrVer="-1"    AddrPrd="-1"/>
+    </Flash>
+  </Server>
+  
+  <!-- Data Channels & Groups -->
+  <Data>
+    <Signals>
+      <Signal  Id="0"  Name="Soft AD"         Type="1"/>
+      <Signal  Id="1"  Name="Counter"         Type="1"/>
+      <Signal  Id="2"  Name="Timestamp60"     Type="25"/>
+      <Signal  Id="3"  Name="CoincHistogram"  Type="50"/>
+      <Signal  Id="4"  Name="CountHistogram"  Type="51"/>
+      <Signal  Id="5"  Name="DeviceTemp"      Type="52"/>
+      <Signal  Id="6"  Name="Timestamp56"     Type="24"/>
+      <Signal  Id="7"  Name="4D"              Type="53"/>
+    </Signals>
+    <Triggers>
+      <Trigger Id="0"  Name="Disabled"        Type="0"/>
+      <Trigger Id="1"  Name="Time"            Type="2"/>
+      <Trigger Id="2"  Name="Every"           Type="5"/>
+      <Trigger Id="4"  Name="Histogram"       Type="0"/>
+    </Triggers>
+    <Groups>
+      <Group Id="0"  Name="Disabled"  Abbrev="DIS"  Trigger="0"  ChannelDescr="Name"   Formats=""
+             Properties="HidePage" />
+      <Group Id="7"  Name="Time"      Abbrev="LN"   Trigger="1"  ChannelDescr="Name"  Formats=""
+             Properties="StoreContinous StoreLocal StoreRetrigger ShowStream"/>
+      <Group Id="12" Name="Timestamp" Abbrev="Ts"   Trigger="2"  ChannelDescr="Name"   Formats=""
+             Properties="StoreContinous StoreLocal StoreRetrigger ShowStream"/>
+      <Group Id="13" Name="Histogram" Abbrev="Hist" Trigger="4"  ChannelDescr="Name"   Formats=""
+             Properties="StoreLocal StoreRetrigger"/>
+    </Groups>
+    <SoftChannels Count="6"/>
+  </Data>
+
+  <!-- GUI settings -->
+  <GuiSettings AutoLoad="qutag.ngp"
+               ProgramName="Daisy"
+               MultiDevice="1"/>
+
+  <!-- Conditions for conditional GUI Elements -->
+  <Conditions>
+    <Condition Name="HbtAv"    Address="0x2AC" Index="0" Default="0"/>
+    <Condition Name="LifetmAv" Address="0x2AE" Index="0" Default="0"/>
+    <Condition Name="Ch5Av"    Address="0x2B1" Index="0" Default="0"/>
+    <Condition Name="Ch5Use"   Address="0x2B8" Index="0" Default="0"/>
+    <Condition Name="SingleSt" Address="0x2B9" Index="0" Default="0"/>
+    <Condition Name="Ch3Av"    Address="0x841" Index="0" Default="0"/>
+    <Condition Name="Ch4Av"    Address="0x843" Index="0" Default="0"/>
+    <Condition Name="MarkAv"   Address="0x845" Index="0" Default="0"/>
+    <Condition Name="SyncAv"   Address="0x847" Index="0" Default="0"/>
+    <Condition Name="FlimAv"   Address="0x84B" Index="0" Default="0"/>
+    <Condition Name="FltrAv"   Address="0x84D" Index="0" Default="0"/>
+    <Condition Name="HiResAv"  Address="0x84F" Index="0" Default="0"/>
+    <Condition Name="UClkAv"   Address="0x851" Index="0" Default="0"/>
+    <Condition Name="CfdAv"    Address="0x853" Index="0" Default="0"/>
+    <Condition Name="CndType0" Address="0x3C0" Index="0" Default="0"/>
+    <Condition Name="CndType1" Address="0x3C0" Index="1" Default="0"/>
+    <Condition Name="CndType2" Address="0x3C0" Index="2" Default="0"/>
+    <Condition Name="CndType3" Address="0x3C0" Index="3" Default="0"/>
+    <Condition Name="CndType4" Address="0x3C0" Index="4" Default="0"/>
+    <Condition Name="ChLink"   Address="0x805" Index="0" Default="0"/>
+    <Condition Name="CalibCh"  Address="0x810" Index="0" Default="31"/>
+  </Conditions>
+
+  <!-- String Constants -->
+  <Strings/>
+
+</Productspec>

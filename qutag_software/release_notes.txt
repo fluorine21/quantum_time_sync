@@ -1,0 +1,187 @@
+rquTAG Software Release Notes
+============================
+
+
+Version 1.5.1-CFD (DLL 3.4)
+=============================
+- New Feature: Constant Fraction Discriminator
+
+
+Version 1.5.1 (DLL 3.4)
+=============================
+- New Feature: Extra markers for falling edges
+
+
+Version 1.5.0 (DLL 3.3)
+=============================
+- New Feature: User defined clock input
+
+
+Version 1.4.5 (DLL 3.3)
+=============================
+- Bugfix: Firmware update from Version 1.4.2 failing.
+  Devices with firmware 1.4.2 can directly update only to this version
+
+
+Version 1.4.4 (DLL 3.3)
+=============================
+- Bugfix: External clock input not always indicated in GUI and device display
+
+
+Version 1.4.3 (DLL 3.3)
+=============================
+- Bugfix: When upgrading 1.4.1 to 1.4.2, the device configuration is lost
+
+
+Version 1.4.2 (DLL 3.3)
+=============================
+- Bugfix DLL: Deactivating HBT calculation leads to crash
+- Bugfix: Specific HBT parameter sets (like 2ns/2000Bins) become overwritten
+- Bugfix: Devices lose serial no and features at firmware update
+
+
+Version 1.4.1 (DLL 3.2)
+=============================
+- Bugfix: Performance leak triggered by short exposure time
+- Bugfix: Labview example hbt.vi: input channel identifier confused
+
+
+Version 1.4.0 (DLL 3.2)
+=============================
+- Jitter upgrade, calibration procedure. DLL: set/getChannelLink
+- Bugfix tarec: "old" data in the beginning of records after restarting
+- Bufix DLL/tarec: sometimes device not found at startup
+- Bugfix tdccli: correlation counts incomplete and with wrong labels
+- Added handbook in software package
+- Added example code for C# and python
+- Histogram bin count, bin width extended and unified
+
+
+Version 1.3.1 (DLL 3.1)
+=============================
+- Labview support
+- Bugfix DLL: libusb0.dll (required) has been missing; FTD3XX.dll loaded at startup
+- Bugfix DLL: measured exposure time always 0
+
+
+Version 1.3.0 (DLL 3.0)
+=============================
+- Bugfix: Start values for fit functions always 0 (HBT/Lifetime pages)
+- Bugfix: Wrong X axis labeling in histogram display when offset >> width
+- Tarec: Improved file / direcory handling
+- Tarec: Dead time per channel, added divider settings
+- Tarec: Disable unavailable settings
+- DLL: new function TDC_checkFeatures; removed TDC_checkFeatureFiveChan
+- DLL: TDC_setDeadTime, TDC_getDeadTime work on individual channels
+- DLL: TDC_getChannelsEnabled masks out unavailable channels
+
+
+Version 1.2.2 (DLL 2.0)
+=============================
+- Extended information shown on built-in displays
+
+
+Version 1.2.1 (DLL 2.0)
+=============================
+- Bugfix: synchronisation to external clock sometimes failed
+- Minor GUI changes
+
+
+Version 1.2.0 (DLL 2.0)
+=============================
+- New feature "output filters"
+- New feature calibration control
+- Markers can be individually enabled (if available)
+- Lifetime Option: Histograms no longer normalized by integration Time
+- Chain position and length can be retrieved in DLL
+
+
+Version 1.1.6 (DLL 1.3)
+=============================
+- Bugfix: Start channel divider compensation
+
+
+Version 1.1.5 (DLL 1.2)
+=============================
+- Bugfix: histogram output file of daisy was empty
+- Bugfix: initial device calibration sometimes failed
+- Bugfix: "compressed" data format of DLL can't encode markers
+
+
+Version 1.1.3 (DLL 1.1)
+=============================
+- Bugfix: Marker inputs have been confused
+
+
+Version 1.1.2 (DLL 1.1)
+=============================
+- Bugfix: Wrong single count rates in userlib
+
+
+Version 1.1.1 (DLL 1.0)
+=============================
+- Bugfixes in sync state display
+- Bugfix: Avoid artificial start events in calibration
+- Bugfix: Tarec's temporary files in temp directory
+
+
+Version 1.1.0 (DLL 1.0)
+=============================
+- GUI design update
+- "Lifetime" GUI in Daisy
+- Dead Time is channel specific
+- Binary time tag output in Daisy
+- Improved "Tarec" sample transfer rate
+- Sync state visible on front display
+- Sync on startup only if configured
+- Markers with more precise time information
+- Bugfix: Correlation searching
+
+
+Version 1.0.0  (DLL 1.0)
+=============================
+- Bugfix: Data loss indicator not reliable
+- Bugfix: HBT Demo Data Genaration, Formula display
+
+
+Version 18_02_21  (DLL 1.0)
+=============================
+- Sync in/out timing fix
+
+
+Version 18_02_13  (DLL 1.0)
+=============================
+- Fixed jitter problem with start channel
+- Added installer for Windows
+
+
+Version 18_02_08  (DLL 1.0)
+=============================
+- Bugfix: Signal preselections didn't work properly
+- Added precompiled tdccli(.exe)
+
+
+Version 18_01_31  (DLL 1.0)
+=============================
+- Fixed jitter problem with synchronized devices
+
+
+Version 18_01_18  (DLL 1.0)
+=============================
+- Fixed outdated userlib HTML documentation
+
+
+Version 18_01_11  (DLL 1.0)
+=============================
+- Small fix in channel number display
+- Fixed delay in count rates output
+- Daisy now displays firmware version warnings
+
+
+Version 18_01_05  (DLL 1.0)
+=============================
+- Many bugfixes in tag recorder "Tarec"
+- Adapted command line client "tdccli"
+- Avoid Markers and Timer Ticks to show up in histograms
+- Trigger Calibration at Daisy start
+

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- $Id: feature.ngc,v 1.9 2019/11/27 15:37:56 trurl Exp $ -->
+<Panel Name="quTAG Features" Icon="key16.xpm" Product="0x08" >
+
+  <Widget Type="Box" Style="Flat" X="0" Y="0" Align="Top Left" >
+    <Widget Type="Box" Caption="Device Info" X="0" Y="0" >
+      <Widget Type="Label"  Caption="Serial Number"   X="0" Y="0"  Alignment="Left" />
+      <Widget Type="Label"  Caption="HBT"             X="0" Y="1"  Alignment="Left" />
+      <Widget Type="Label"  Caption="Lifetime"        X="0" Y="2"  Alignment="Left" />
+      <Widget Type="Label"  Caption="FLIM"            X="0" Y="3"  Alignment="Left" />
+      <Widget Type="Label"  Caption="Start As Ch. 5"  X="0" Y="4"  Alignment="Left" />
+      <Widget Type="Label"  Caption="Ch. 3 Enabled"   X="0" Y="5"  Alignment="Left" />
+      <Widget Type="Label"  Caption="Ch. 4 Enabled"   X="0" Y="6"  Alignment="Left" />
+      <Widget Type="Label"  Caption="Marker Input"    X="0" Y="7"  Alignment="Left" />
+      <Widget Type="Label"  Caption="Device Sync."    X="0" Y="8"  Alignment="Left" />
+      <Widget Type="Label"  Caption="External Clock"  X="0" Y="9"  Alignment="Left" />
+      <Widget Type="Label"  Caption="User defined Ext Clock" X="0" Y="10"  Alignment="Left" />
+      <Widget Type="Label"  Caption="Filters"         X="0" Y="11" Alignment="Left" />
+      <Widget Type="Label"  Caption="Jitter Upgrade"  X="0" Y="12" Alignment="Left" />
+      <Widget Type="Label"  Caption="CFD"             X="0" Y="13" Alignment="Left" Condition="CfdAv"/>
+
+      <Widget Type="Edit"   Caption=""                X="1" Y="0"  Width="2" Address="0x66F" Display="Serial" ReadOnly="1" />
+      <Widget Type="Check"  Caption=""                X="1" Y="1"  Address="0x2AC"  ReadOnly="1" />
+      <Widget Type="Check"  Caption=""                X="1" Y="2"  Address="0x2AE"  ReadOnly="1" />
+      <Widget Type="Check"  Caption=""                X="1" Y="3"  Address="0x84B"  ReadOnly="1" />
+      <Widget Type="Check"  Caption=""                X="1" Y="4"  Address="0x2B1"  ReadOnly="1" />
+      <Widget Type="Check"  Caption=""                X="1" Y="5"  Address="0x841"  ReadOnly="1" />
+      <Widget Type="Check"  Caption=""                X="1" Y="6"  Address="0x843"  ReadOnly="1" />
+      <Widget Type="Check"  Caption=""                X="1" Y="7"  Address="0x845"  ReadOnly="1" />
+      <Widget Type="Check"  Caption=""                X="1" Y="8"  Address="0x847"  ReadOnly="1" />
+      <Widget Type="Check"  Caption=""                X="1" Y="9"  Address="0x849"  ReadOnly="1" />
+      <Widget Type="Check"  Caption=""                X="1" Y="10" Address="0x851"  ReadOnly="1" />
+      <Widget Type="Check"  Caption=""                X="1" Y="11" Address="0x84D"  ReadOnly="1" />
+      <Widget Type="Check"  Caption=""                X="1" Y="12" Address="0x84F"  ReadOnly="1" />
+      <Widget Type="Check"  Caption=""                X="1" Y="13" Address="0x853"  ReadOnly="1" Condition="CfdAv"/>
+    </Widget>
+  
+    <Widget Type="Box" Caption="Option Upgrade" X="0" Y="1" >
+      <Widget Type="Label"  Caption="Key"     X="0" Y="0" Alignment="Left" />
+      <Widget Type="Edit"   Caption=""        X="1" Y="0" Width="2" Address="0x18D" Display="Hex" />
+      <Widget Type="Label"  Caption="Enter the upgrade key, press enter and restart the device"     X="0" Y="1" Width="3" />
+    </Widget>
+  </Widget>
+
+</Panel>
