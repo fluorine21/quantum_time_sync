@@ -389,7 +389,7 @@ class time_sync:
             
         
         #Set the period to something fast
-        self.board.set_period(10)
+        #self.board.set_period(10)
         
         num_tries = 10
         while(num_tries):

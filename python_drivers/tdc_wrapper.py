@@ -112,6 +112,20 @@ class tdc_wrapper:
         
         
     
+    def init_device(self):
+        
+        #Open the TDC and start receiveing pulses
+        self.device = QuTAG.QuTAG()
+        self.device.enableChannels((1,2,3,4))
+        self.device.setSignalConditioning(1, 3, 1, 0.00)
+        self.device.setSignalConditioning(2, 3, 1, 0.00)
+        self.device.setSignalConditioning(3, 3, 1, 0.00)
+        self.device.setSignalConditioning(4, 3, 1, 0.00)
+        
+        return
+        
+        
+    
     #Returns the timestamp of the first pulse seen on channel_num
     #Returns 0 on timeout
     def wait_pulse(self, channel_num):
@@ -134,8 +148,7 @@ class tdc_wrapper:
             return -1
         
         #Open the TDC and start receiveing pulses
-        self.device = QuTAG.QuTAG()
-        self.device.enableChannels((1,2,3,4))
+        self.init_device()
         
         time_now = time.time()
         
@@ -182,8 +195,7 @@ class tdc_wrapper:
             return -1
         
         #Open the TDC and start receiveing pulses
-        self.device = QuTAG.QuTAG()
-        self.device.enableChannels((1,2,3,4))
+        self.init_device()
         
         return 0
     
@@ -354,8 +366,7 @@ class tdc_wrapper:
         print("service_tdc thread has started")
         
         #Start the TDC
-        self.device = QuTAG.QuTAG()
-        self.device.enableChannels((1,2,3,4))
+        self.init_device()
         
         while(not self.shutdown_flag):
         

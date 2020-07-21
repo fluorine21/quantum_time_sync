@@ -463,7 +463,7 @@ class QuTAG:
         return devCount.value
     
     def getCurrentAddress(self):
-        devNo = ctype.c_unit32()
+        devNo = ctypes.c_unit32()
         ans = self.qutools_dll.TDC_getCurrentAddress(ctypes.byref(devNo))
         if (ans!=0):
             print("Error in TDC_getCurrentAddress: "+self.ans_dict[ans])
@@ -472,7 +472,7 @@ class QuTAG:
     def getDeviceInfo(self,deviceNumber):
         devicetype = ctypes.c_int32()
         deviceid = ctypes.c_int32()
-        serialnumnber=ctypes.c_char_p()
+        serialnumber=ctypes.c_char_p()
         connected = ctypes.s_int32()
         
         ans = self.qutools_dll.TDC_getDeviceInfo(deviceNumber,ctypes.byref(devicetype), ctypes.byref(deviceid), ctypes.byref(serialnumber), ctypes.byref(connected))

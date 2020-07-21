@@ -25,6 +25,11 @@ except:
 
 # Initialize the quTAG device
 qutag = QuTAG.QuTAG()
+qutag.enableChannels((1,2,3,4))
+qutag.setSignalConditioning(1, 3, 1, 0.25)
+qutag.setSignalConditioning(2, 3, 1, 0.25)
+qutag.setSignalConditioning(3, 3, 1, 0.25)
+qutag.setSignalConditioning(4, 3, 1, 0.25)
 
 filename = r'quTAG_timestamps.txt'
 
@@ -42,12 +47,12 @@ filename = r'quTAG_timestamps.txt'
 
 
 
-
+print("Recording")
 # start writing Timestamps from the quTAG
 qutag.writeTimestamps(filename,qutag.FILEFORMAT_ASCII)
 
 # Give some time to accumulate data
-time.sleep(1) # 1 second sleep time
+time.sleep(5) # 1 second sleep time
 
 # stop writing Timestamps
 qutag.writeTimestamps('',qutag.FILEFORMAT_NONE)
