@@ -17,7 +17,7 @@ import james_utils
 SECURE_MODE = 0
 
 #Socket timeout in seconds
-SERVER_TIMEOUT = 15
+SERVER_TIMEOUT = 2
 SERVER_ACK = b'\x66'
 
 BYTES_PER_TIMESTAMP = 20
@@ -32,6 +32,7 @@ COMMAND_PING = 0
 COMMAND_GET_AND_CLEAR = 1 #Gets the latest timestamp for this channel and clears it from the list
 COMMAND_SHUTDOWN = 2
 COMMAND_CLOSE_CONNECTION = 3
+COMMAND_CLEAR_ALL = 4
 
 #channel number for the 1ms pulse
 DUMMY_CHANNEL_NUM = 104
@@ -88,6 +89,7 @@ class tdc_wrapper:
                 print("Warning, TDC did not detect an external clock, results will not be accurate!")
         
         if(self.mode == MODE_SERVER):
+            print("Starting TDC wrapper in SERVER mode")
             self.server_init()
         
         return
@@ -286,6 +288,21 @@ class tdc_wrapper:
         sck.send(bytearray([COMMAND_CLOSE_CONNECTION]))
         sck.close()
         return ret_val
+    
+    def clear_all(self):
+        
+        sck = socket.socket()
+        sck.settimeout(SERVER_TIMEOUT)
+        sck.connect((self.server_ip, self.port))
+        time.sleep(0.1)
+        
+        #Send the GET_AND_CLEAR command
+        sck.send(bytearray([COMMAND_CLEAR_ALL]))
+
+        #gracefully close the connection
+        sck.send(bytearray([COMMAND_CLOSE_CONNECTION]))
+        sck.close()
+        return 0
         
     
     def server_init(self):
@@ -294,6 +311,11 @@ class tdc_wrapper:
         
         #Start a new thread for the TDC service routine
         t = threading.Thread(target=self.service_tdc, args=(1,))
+        t.start()
+        self.threads.append(t)
+        
+        #Start the user shutdown handlong thread
+        t = threading.Thread(target=self.user_quit, args=(1,))
         t.start()
         self.threads.append(t)
         
@@ -340,7 +362,8 @@ class tdc_wrapper:
                 self.threads.append(t)
                 
             except socket.timeout:
-                print("Waiting for client connection...")
+                #print("Waiting for client connection...")
+                aaaa = 1
             except:
                 print("Unknown error while waiting for client connection")
                 raise
@@ -349,7 +372,7 @@ class tdc_wrapper:
         print("Waiting for threads to terminate before shutting down server")
         
         while(len(self.threads) > 0):
-            with self.threads[0] as t:
+            for t in self.threads:
                 t.join(0.1)
                 #If the thread has shut down
                 if(not t.is_alive()):
@@ -359,11 +382,18 @@ class tdc_wrapper:
         print("Shutting down server")
         sck.close()
         return
+    
+    def user_quit(self, arg1):
+        
+        res = input()
+        print("[USER] Local user has stopped server")
+        self.shutdown_flag = 1
+        return
         
     #This function  is called in its own thread to constantly offload data from the tdc
     def service_tdc(self, arg1):
         
-        print("service_tdc thread has started")
+        print("[TDC SERVICE] Thread has started")
         
         #Start the TDC
         self.init_device()
@@ -387,12 +417,15 @@ class tdc_wrapper:
                 
                 #If we need to record an offset timestamp
                 if(self.record_offset and t_s[1][i] == DUMMY_CHANNEL_NUM):
-                    self.record_offet = 0
+                    self.record_offset = 0
                     self.offset_timestamp = t_s[0][i]
+                    print("[TDC SERVICE] Recorded TDC offset as " + str(self.offset_timestamp))
+                    #self.offset_timestamp = 0
                 
                 #If we find a timestamp that isn't the dummy channel
                 elif(t_s[1][i] != DUMMY_CHANNEL_NUM):
                     self.timestamp_list.append(pulse_record(t_s[1][i], t_s[0][i] - self.offset_timestamp))
+                    print("[TDC SERVICE] Got pulse on channel #" + str(t_s[1][i]) + ", absolute = " + str(t_s[0][i]) + ", relative = " + str(t_s[0][i] - self.offset_timestamp))
              
         #If we're here then the server shutdown command has been sent
         self.device.deInitialize()    
@@ -424,6 +457,9 @@ class tdc_wrapper:
             elif(client_cmd[0] == COMMAND_CLOSE_CONNECTION):
                 print("[CLIENT HANDLER] Client at " + ip_str + ": COMMAND_CLOSE_CONNECTION")
                 break
+            elif(client_cmd[0] == COMMAND_CLEAR_ALL):
+                print("[CLIENT HANDLER] Client at " + ip_str + ": COMMAND_CLEAR_ALL")
+                self.timestamp_list = []
             elif(client_cmd[0] == COMMAND_GET_AND_CLEAR):
                 print("[CLIENT HANDLER] Client at " + ip_str + ": COMMAND_GET_AND_CLEAR")
                 res = james_utils.receive_bytes(c, 1)

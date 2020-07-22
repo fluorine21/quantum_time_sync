@@ -11,6 +11,6 @@ import tdc_wrapper
 
 tdc_client = tdc_wrapper.tdc_wrapper(15,0,tdc_wrapper.MODE_CLIENT,"192.168.56.1")
 
-ts = tdc_client.wait_pulse(0)
+ts = tdc_client.wait_pulse(3)
 
 print("Timestamp was " + str(ts))

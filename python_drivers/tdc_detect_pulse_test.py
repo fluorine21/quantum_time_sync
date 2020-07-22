@@ -6,9 +6,6 @@ Created on Tue Jul 21 11:38:33 2020
 """
 
 import QuTAG
-import time
-
-channel_num = 1 #Channel on which to look for pulse
 
 
 device = QuTAG.QuTAG()
@@ -18,15 +15,13 @@ device.setSignalConditioning(2, 3, 1, 0.00)
 device.setSignalConditioning(3, 3, 1, 0.00)
 device.setSignalConditioning(4, 3, 1, 0.00)
 
-print("Searching for timestamp on channel #" + str(channel_num))
+print("Searching for timestamp on all channels")
 
 
 while(1):
 #Check the data loss
     
     try:
-    
-        #time.sleep(1)
     
         d_loss = device.getDataLost()
         if(d_loss != 0):

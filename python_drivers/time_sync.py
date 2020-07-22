@@ -387,6 +387,9 @@ class time_sync:
             print("Error, not connected to server (Bob)")
             return -1
             
+        #If we're using the tdc server then clear all pulses before proceeding
+        if(self.tdc.mode == tdc_wrapper.MODE_CLIENT):
+            self.tdc.clear_all()
         
         #Set the period to something fast
         #self.board.set_period(10)
@@ -518,7 +521,7 @@ class time_sync:
             #Stop our TDC and recover the timestamp
             self.t_b_s = self.tdc.end_record(self.channel_send)
             if(self.t_b_s < 1):
-                print("Error, Bob did not detect his own pulse on her TDC")
+                print("Error, Bob did not detect his own pulse!")
                 ret_val = -1
             else:
                 print("Bob detected his own pulse! t_a_s = " + str(self.t_b_s))
