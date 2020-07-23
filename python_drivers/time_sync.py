@@ -5,7 +5,7 @@ Created on Wed Jul  1 10:46:08 2020
 @author: tianlab01
 """
 
-
+import math as Math
 import socket
 import pulse_gen
 import time
@@ -30,7 +30,9 @@ SERVER_RECEIVE_PULSE = 4
 SERVER_SEND_PULSE = 5
 SERVER_EXIT = 6
 SERVER_PING = 7
-
+SERVER_PHASE_MEAS = 8
+SERVER_SET_BIN_SIZE = 9 # bin size in picoseconds
+SERVER_SET_BIN_NUMBER = 10 #Must be a power of 2
 
 
 #Bob's responses
@@ -71,6 +73,13 @@ class time_sync:
     
     socket_dead = 0
     dummy_mode = 0
+    
+    
+    #Variables for current relative sync state
+    last_tick = 0
+    avg_period = 0
+    
+    bin_size = 10
     
     
     def __init__(self, COM_PORT, s_ip, m, tdc_obj):
@@ -146,6 +155,11 @@ class time_sync:
            return -1
        
         print("Attempting to connect to server")
+        
+        #Open a totally new socket every time
+        self.sck_u = socket.socket(socket.AF_INET, socket.SOCK_STREAM, 0)
+        self.s = ssl.wrap_socket(self.sck_u, ca_certs=pem_path)
+        
         #connect to the client
         self.s.connect((self.server_ip, self.port))
         time.sleep(0.5)
@@ -168,6 +182,10 @@ class time_sync:
            return -1
        
         print("Closing connection to server")
+        
+        if(SECURE_MODE):
+            self.s.shutdown(socket.SHUT_RDWR)
+ 
         self.s.close()
         
     #Returns socket object on successful connection
@@ -318,6 +336,30 @@ class time_sync:
             print("Sending timestamp 1234567890")
             james_utils.send_timestamp(sck, 1234567890)
             return 1
+        elif(client_cmd[0] == SERVER_PHASE_MEAS):
+            sck.send(SERVER_ACK)
+            print("Command received: SERVER_PHASE_MEAS")
+            if(self.bob_relative()):
+                print("Relative time sync failed!")
+            return 1
+        elif(client_cmd[0] == SERVER_SET_BIN_SIZE):
+            self.bin_size = james_utils.receive_timestamp(sck)
+            if(self.bin_size == -1):
+                print("Failed to receive bin size from Alice!")
+                return 1
+            sck.send(SERVER_ACK)
+            return 1
+        
+        elif(client_cmd[0] == SERVER_SET_BIN_NUMBER):
+            self.bin_number = james_utils.receive_timestamp(sck)
+            if(self.bin_number == -1):
+                print("Failed to receive bin number from Alice!")
+                return 1
+            elif(not Math.log2(self.bin_number).is_integer()):
+                print("Error, Alice's bin number must be a multiple of 2, defaulting to 2")
+                self.bin_number = 2
+            sck.send(SERVER_ACK)
+            return 1
             
         else:
             print("Invalid command received: " + hex(client_cmd[0]))
@@ -363,7 +405,7 @@ class time_sync:
     
     #returns 0 on success
     def check_ack(self, ack_res):
-         if(ack_res == -1):
+         if(isinstance(ack_res, int)):
             print("Timed out waiting for ACK")
             return -1
          elif(ack_res[0] == SERVER_ACK_BYTE):
@@ -402,6 +444,7 @@ class time_sync:
             
             if(self.wait_ack(sck)):
                 print("Error, no ACK received from server while telling it to receive a pulse")
+                return -1
             
             #Send a pulse
             if(self.pulse_alice_to_bob(sck)):
@@ -423,6 +466,7 @@ class time_sync:
             
             if(self.wait_ack(sck)):
                 print("Error, no ACK received from server while telling it to send a pulse")
+                return -1
             
             #Send a pulse
             if(self.pulse_bob_to_alice(sck)):
@@ -602,17 +646,108 @@ class time_sync:
     
     
     def calc_path_len(self):
-        self.path_len = ((self.t_a_r - self.t_a_s) - (self.t_b_r - self.t_b_s)) / 2
+        self.path_len = ((self.t_a_r - self.t_a_s) - (self.t_b_s - self.t_b_r)) / 2
     
     
     def calc_time_diff(self):
         self.time_diff = (self.t_b_r + self.t_b_s - self.t_a_r - self.t_a_s) / 2
     
     
+    ##############################################################
+    #Phase Measurement Routines for Relative Time Synchronization#
+    ##############################################################
+        
+    def relative_time_sync(self):
+    
+        
+        #Send the phase measurement command
+        self.s.send(bytearray[SERVER_PHASE_MEAS])
+        time.sleep(0.25)
+        if(self.wait_ack(self.s)):
+                print("Error, no ACK received from Bob while attempting relative synchronization")
+                return -1
 
+        #Otherwise just turn on phase measurement mode for a moment and leave
+        self.board.phase_meas_on()
+        self.board.phase_meas_off()
+        
+        self.s.send(bytearray[0x00])
+        
+        return 
                 
    
-   
+    #Bob's routine for synchronization
+    def bob_relative(self, socket):
+        
+        #wait until alice sends us an ack and then receive the pulses
+        ack = james_utils.receive_bytes(socket, 1)
+        
+        if(isinstance(ack, int) or ack[0] != 0x00):
+            print("Bad responce received from Alice while attempting relative synchronization")
+            return -1
+        
+        pulses = self.device.end_record(self.channnel_receive, 1)
+        
+        if(len(pulses) < 1):
+            print("Error, did not receive any pulses from Alice during relative phase synchronization")
+            return -1
+       
+        #Calculate the difference between all of the pulses
+        diffs = []
+        for i in range(0, len(pulses) - 1):
+            diffs.append(pulses[i+1]-pulses[i])
+        
+        #Throwous all of the differences that are greater than 1.5 times the smallest
+        diffs_final = []
+        for d in diffs:
+            if(d < min(diffs)*1.5):
+                diffs_final.append(d)
+            
+        #Calculate the average and stdev and report
+        self.last_tick = pulses[len(pulses) - 1]
+        self.avg_period = Math.mean(diffs)
+        
+        print("[RELATIVE SYNC] Pulses received: " + str(len(pulses)) + ", pulses rejected: " + str(len(diffs) - len(diffs_final)) + ", last tick: " + self.last_tick + ", avg period: " + self.avg_period)
+        
+
+        return 0
+    
+    
+    def send_encoded_photon(self):
+        
+        if(self.mode != CLIENT):
+            print("Error, send_encoded_photon must be called in client mode")
+            return -1
+        
+    def receive_encoded_photon(self):
+        
+        if(self.mode != SERVER):
+            print("Error, send_encoded_photon must be called in server mode")
+            return -1
+        
+        #Try to receive one photon
+        ts = self.device.wait_pulse(self.receive_channel)
+        
+        if(ts == 0):
+            print("Error, no encoded photon received!")
+            return -1
+        
+        #Subtract out the last tick
+        ts_rel = ts - self.last_tick
+        
+        #Determine the offset from the most recent dick
+        offset = ts_rel % self.avg_period
+        
+        #If the offset falls outside of the time bin
+        if(offset > self.bin_number * self.bin_size):
+            print("Error, received a photon which falls outside of the allowable range, offset was " + str(offset) + ", allowable range was " + str(self.bin_number * self.bin_size))
+            return -1
+        #Otherwise determine the time bin and 
+        final_val = Math.floor(float(offset) / float(self.bin_size))
+        print("Timestamp was " + str(ts) + ", relative timestamp was " + str(ts_rel) + ", offset was " + str(offset) + ", final value was " + str(final_val))
+        return final_val
+        
+    
     
     
 

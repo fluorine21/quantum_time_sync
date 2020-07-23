@@ -204,14 +204,14 @@ class tdc_wrapper:
     #Returns timestamp from that channel\
     #0 if not found
     #-1 if nothing found
-    def end_record(self, channel_num):
+    def end_record(self, channel_num, get_all = 0):
         
         if(self.dummy_mode):
             return int(time.time() * 10000000)
         
         if(self.mode != MODE_NORMAL):
             if(self.mode == MODE_CLIENT):
-               return self.end_record_client(channel_num)
+               return self.end_record_client(channel_num, get_all)
             else:
                 print("Error, end_record must be called in NORMAL mode")
                 return -1
@@ -231,10 +231,18 @@ class tdc_wrapper:
             print("No timestamp recieved after record!")
             ret_val -1
         else:
-            for i in range(0, t_s[2]):
-                #If we find a timestamp of this channel
-                if(t_s[1][i] == channel_num):
-                    ret_val = t_s[0][i]
+            if(get_all):
+                ret_val = []
+                for i in range(0, t_s[2]):
+                    #If we find a timestamp of this channel
+                    if(t_s[1][i] == channel_num):
+                        ret_val.append(t_s[0][i])
+            else:
+                for i in range(0, t_s[2]):
+                    #If we find a timestamp of this channel
+                    if(t_s[1][i] == channel_num):
+                        ret_val = t_s[0][i]
+                        break
                     
         #Close the TDC
         self.device.deInitialize()    
@@ -271,7 +279,7 @@ class tdc_wrapper:
         
     
     
-    def end_record_client(self, channel_num):
+    def end_record_client(self, channel_num, get_all):
         
         sck = socket.socket()
         sck.settimeout(SERVER_TIMEOUT)
@@ -280,9 +288,22 @@ class tdc_wrapper:
         
         channel_byte = channel_num & 0xff
         #Send the GET_AND_CLEAR command
-        sck.send(bytearray([COMMAND_GET_AND_CLEAR, channel_byte]))
         
-        ret_val = james_utils.receive_timestamp(sck)
+        #If we want to get all timestamps for this channel
+        if(get_all):
+            val_last = 1
+            ret_val = []
+            #Loop until we receive a timestamp of 0
+            while(val_last):
+                sck.send(bytearray([COMMAND_GET_AND_CLEAR, channel_byte]))
+                val_last = james_utils.receive_timestamp(sck)
+                if(val_last > 0):
+                    ret_val.append(val_last)
+                
+        else:
+            #Otherwise just get the first timestamp and leave
+            sck.send(bytearray([COMMAND_GET_AND_CLEAR, channel_byte]))
+            ret_val = james_utils.receive_timestamp(sck)
         
         #gracefully close the connection
         sck.send(bytearray([COMMAND_CLOSE_CONNECTION]))
