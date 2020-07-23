@@ -1,6 +1,6 @@
-2020-07-16T17:48:18.329184800255-17:48:18 **** Incremental Build of project test_proj_plat ****
+2020-07-23T16:56:04.809739800255-16:56:04 **** Incremental Build of project test_proj_plat ****
 000-buildplatform.bat 49978 test_proj_plat no_domain_build 
-000-XSDB Server Channel: tcfchan#1
+000-XSDB Server Channel: tcfchan#13
 00255-
-17:48:22 Build Finished (took 4s.502ms)
+16:56:10 Build Finished (took 5s.502ms)
 

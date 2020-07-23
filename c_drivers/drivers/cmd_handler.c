@@ -20,7 +20,8 @@
 #define CMD_SET_PERIOD 0x02
 #define CMD_PHASE_MEAS_ON 0x03
 #define CMD_PHASE_MEAS_OFF 0x04
-#define CMD_PING_BOARD 0x05
+#define CMD_PING_BOARD 0x06
+#define CMD_TOGGLE_PHASE_MEAS 0x05
 
 //Handler function states
 #define STATE_WAIT_PREAMBLE 0
@@ -28,6 +29,8 @@
 #define STATE_WAIT_PAYLOAD 2
 u8 cmd_state;
 u8 curr_cmd;
+
+u8 ack_byte;
 
 //Initializes UART, GPIO and RFSOC
 //Returns 0 on success
@@ -79,6 +82,9 @@ void debug_print(char* str);
 //Main command handler function
 void cmd_update_state()
 {
+
+	ack_byte = get_rf_clock_status();
+
 	switch(cmd_state)
 	{
 
@@ -114,7 +120,7 @@ void cmd_update_state()
 			case CMD_RST_CLK:
 				//Send the clock reset command
 				gpio_send_command( ((u32)CMD_RST_CLK) << 24);
-				uart_send_byte(0);//Send an ACK
+				uart_send_byte(ack_byte);//Send an ACK
 				cmd_state = STATE_WAIT_PREAMBLE;
 				debug_print("Resetting the clock");
 				break;
@@ -122,6 +128,7 @@ void cmd_update_state()
 				//These two are handled in the same manner
 			case CMD_SEND_PULSE:
 			case CMD_SET_PERIOD:
+			case CMD_TOGGLE_PHASE_MEAS:
 
 				//Handle these in their own FMS state
 				cmd_state = STATE_WAIT_PAYLOAD;
@@ -130,7 +137,7 @@ void cmd_update_state()
 			case CMD_PHASE_MEAS_ON:
 				//Send the set phase meas command
 				gpio_send_command( ((u32)CMD_PHASE_MEAS_ON) << 24);
-				uart_send_byte(0);//Send an ACK
+				uart_send_byte(ack_byte);//Send an ACK
 				cmd_state = STATE_WAIT_PREAMBLE;
 
 				debug_print("Turning on phase measurement mode");
@@ -140,7 +147,7 @@ void cmd_update_state()
 			case CMD_PHASE_MEAS_OFF:
 				//Send the set phase meas command
 				gpio_send_command( ((u32)CMD_PHASE_MEAS_OFF) << 24);
-				uart_send_byte(0);//Send an ACK
+				uart_send_byte(ack_byte);//Send an ACK
 				cmd_state = STATE_WAIT_PREAMBLE;
 
 				debug_print("Turning off phase measurement mode");
@@ -148,7 +155,7 @@ void cmd_update_state()
 				break;
 
 			case CMD_PING_BOARD:
-				uart_send_byte(0);//Send an ACK
+				uart_send_byte(ack_byte);//Send an ACK
 				debug_print("Responding to ping");
 				cmd_state = STATE_WAIT_PREAMBLE;
 				break;
@@ -173,7 +180,7 @@ void cmd_update_state()
 
 			u32 cmd_f = (((u32)curr_cmd) << 24) | (b0 << 16) | (b1 << 8) | b2;
 			gpio_send_command(cmd_f);//Send the command to the fifo
-			uart_send_byte(0);//Send an ACK
+			uart_send_byte(ack_byte);//Send an ACK
 			cmd_state = STATE_WAIT_PREAMBLE;
 
 			#ifdef DEBUG_PRINT

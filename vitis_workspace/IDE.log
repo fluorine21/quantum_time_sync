@@ -6471,3 +6471,258 @@ con
 ----------------End of Script----------------
 
 11:47:06 INFO  : Launch script is exported to file 'C:\James\vitis_workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice_standalone.tcl'
+13:05:48 INFO  : Checking for BSP changes to sync application flags for project 'test_proj_pulse_ctrl'...
+13:55:44 INFO  : Checking for BSP changes to sync application flags for project 'test_proj_pulse_ctrl'...
+16:40:12 INFO  : Checking for BSP changes to sync application flags for project 'test_proj_pulse_ctrl'...
+16:55:58 INFO  : Hardware specification for platform project 'test_proj_plat' is updated.
+16:56:10 INFO  : Result from executing command 'getProjects': test_proj_plat
+16:56:10 INFO  : Result from executing command 'getPlatforms': test_proj_plat|C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm
+16:56:52 INFO  : Checking for BSP changes to sync application flags for project 'test_proj_pulse_ctrl'...
+16:57:06 INFO  : The hardware specfication used by project 'test_proj_pulse_ctrl' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+16:57:06 INFO  : The file 'C:\James\vitis_workspace\test_proj_pulse_ctrl\_ide\bitstream\top_level_block_design_wrapper.bit' stored in project is removed.
+16:57:07 INFO  : The updated bitstream files are copied from platform to folder 'C:\James\vitis_workspace\test_proj_pulse_ctrl\_ide\bitstream' in project 'test_proj_pulse_ctrl'.
+16:57:07 INFO  : The file 'C:\James\vitis_workspace\test_proj_pulse_ctrl\_ide\psinit\psu_init.tcl' stored in project is removed.
+16:57:09 INFO  : The updated ps init files are copied from platform to folder 'C:\James\vitis_workspace\test_proj_pulse_ctrl\_ide\psinit' in project 'test_proj_pulse_ctrl'.
+16:57:26 INFO  : Checking for BSP changes to sync application flags for project 'test_proj_pulse_ctrl'...
+16:58:40 INFO  : Disconnected from the channel tcfchan#9.
+16:58:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:58:41 INFO  : Jtag cable 'Xilinx HW-Z1-ZCU104 FT4232H 19395A' is selected.
+16:58:41 INFO  : 'jtag frequency' command is executed.
+16:58:41 INFO  : Sourcing of 'C:/Xilinx/Vitis/2020.1/scripts/vitis/util/zynqmp_utils.tcl' is done.
+16:58:41 INFO  : Context for 'APU' is selected.
+16:58:41 INFO  : Cleared APU and A53 resets
+16:58:42 INFO  : Context for 'RPU' is selected.
+16:58:42 INFO  : Cleared RPU and R5 resets
+16:58:42 INFO  : Context for 'APU' is selected.
+16:58:42 INFO  : Hardware design and registers information is loaded from 'C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/hw/top_level_block_design_wrapper.xsa'.
+16:58:42 INFO  : 'configparams force-mem-access 1' command is executed.
+16:58:42 INFO  : Context for 'APU' is selected.
+16:58:42 INFO  : Boot mode is read from the target.
+16:58:42 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:58:42 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+16:58:43 INFO  : The application 'C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/boot/fsbl.elf' is downloaded to processor 'psu_cortexa53_0'.
+16:58:43 INFO  : 'set bp_58_43_fsbl_bp [bpadd -addr &XFsbl_Exit]' command is executed.
+16:58:44 INFO  : 'con -block -timeout 60' command is executed.
+16:58:44 INFO  : 'bpremove $bp_58_43_fsbl_bp' command is executed.
+16:58:44 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:58:44 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+16:58:45 INFO  : The application 'C:/James/vitis_workspace/test_proj_pulse_ctrl/Debug/test_proj_pulse_ctrl.elf' is downloaded to processor 'psu_cortexa53_0'.
+16:58:45 INFO  : 'configparams force-mem-access 0' command is executed.
+16:58:45 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Xilinx/Vitis/2020.1/scripts/vitis/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}
+reset_apu
+targets -set -nocase -filter {name =~"RPU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}
+clear_rpu_reset
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}
+loadhw -hw C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/hw/top_level_block_design_wrapper.xsa -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}
+set mode [expr [mrd -value 0xFF5E0200] & 0xf]
+targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}
+rst -processor
+dow C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/boot/fsbl.elf
+set bp_58_43_fsbl_bp [bpadd -addr &XFsbl_Exit]
+con -block -timeout 60
+bpremove $bp_58_43_fsbl_bp
+targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}
+rst -processor
+dow C:/James/vitis_workspace/test_proj_pulse_ctrl/Debug/test_proj_pulse_ctrl.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:58:46 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:58:46 INFO  : 'con' command is executed.
+16:58:46 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}
+con
+----------------End of Script----------------
+
+16:58:46 INFO  : Launch script is exported to file 'C:\James\vitis_workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice_standalone.tcl'
+16:59:33 INFO  : Disconnected from the channel tcfchan#16.
+16:59:34 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:59:34 INFO  : Jtag cable 'Xilinx HW-Z1-ZCU104 FT4232H 19640A' is selected.
+16:59:34 INFO  : 'jtag frequency' command is executed.
+16:59:34 INFO  : Sourcing of 'C:/Xilinx/Vitis/2020.1/scripts/vitis/util/zynqmp_utils.tcl' is done.
+16:59:34 INFO  : Context for 'APU' is selected.
+16:59:34 INFO  : Cleared APU and A53 resets
+16:59:34 INFO  : Context for 'RPU' is selected.
+16:59:34 INFO  : Cleared RPU and R5 resets
+16:59:34 INFO  : Context for 'APU' is selected.
+16:59:34 INFO  : Hardware design and registers information is loaded from 'C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/hw/top_level_block_design_wrapper.xsa'.
+16:59:34 INFO  : 'configparams force-mem-access 1' command is executed.
+16:59:34 INFO  : Context for 'APU' is selected.
+16:59:34 INFO  : Boot mode is read from the target.
+16:59:34 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:59:34 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+16:59:35 INFO  : The application 'C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/boot/fsbl.elf' is downloaded to processor 'psu_cortexa53_0'.
+16:59:35 INFO  : 'set bp_59_35_fsbl_bp [bpadd -addr &XFsbl_Exit]' command is executed.
+17:00:35 WARN  : Exit breakpoint of FSBL (XFsbl_Exit) is not hit within allocated wait time of '60' seconds.
+Note: To wait for a fixed amount of time specify the FSBL function as empty in launch configuration. Use 'IDE_FSBL_BP_HIT_WAIT_TIME' environment variable in launch configuration to modify the wait time (seconds).
+Reason: timeout: target has not halted
+17:00:35 INFO  : 'bpremove $bp_59_35_fsbl_bp' command is executed.
+17:00:40 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+17:00:40 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+17:00:42 INFO  : The application 'C:/James/vitis_workspace/test_proj_pulse_ctrl/Debug/test_proj_pulse_ctrl.elf' is downloaded to processor 'psu_cortexa53_0'.
+17:00:42 INFO  : 'configparams force-mem-access 0' command is executed.
+17:00:42 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Xilinx/Vitis/2020.1/scripts/vitis/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}
+reset_apu
+targets -set -nocase -filter {name =~"RPU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}
+clear_rpu_reset
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}
+loadhw -hw C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/hw/top_level_block_design_wrapper.xsa -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}
+set mode [expr [mrd -value 0xFF5E0200] & 0xf]
+targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}
+rst -processor
+dow C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/boot/fsbl.elf
+set bp_59_35_fsbl_bp [bpadd -addr &XFsbl_Exit]
+con -block -timeout 60
+bpremove $bp_59_35_fsbl_bp
+targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}
+rst -processor
+dow C:/James/vitis_workspace/test_proj_pulse_ctrl/Debug/test_proj_pulse_ctrl.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:00:42 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+17:00:42 INFO  : 'con' command is executed.
+17:00:42 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}
+con
+----------------End of Script----------------
+
+17:00:42 INFO  : Launch script is exported to file 'C:\James\vitis_workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob_standalone.tcl'
+17:01:03 INFO  : Disconnected from the channel tcfchan#17.
+17:01:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:01:03 INFO  : Jtag cable 'Xilinx HW-Z1-ZCU104 FT4232H 19640A' is selected.
+17:01:03 INFO  : 'jtag frequency' command is executed.
+17:01:03 INFO  : Sourcing of 'C:/Xilinx/Vitis/2020.1/scripts/vitis/util/zynqmp_utils.tcl' is done.
+17:01:03 INFO  : Context for 'APU' is selected.
+17:01:03 INFO  : Cleared APU and A53 resets
+17:01:03 INFO  : Context for 'RPU' is selected.
+17:01:03 INFO  : Cleared RPU and R5 resets
+17:01:03 INFO  : Context for 'APU' is selected.
+17:01:19 INFO  : Hardware design and registers information is loaded from 'C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/hw/top_level_block_design_wrapper.xsa'.
+17:01:21 INFO  : 'configparams force-mem-access 1' command is executed.
+17:01:21 INFO  : Context for 'APU' is selected.
+17:01:21 ERROR : Memory read error at 0xFF5E0200. AXI Memory access port is disabled
+17:01:21 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Xilinx/Vitis/2020.1/scripts/vitis/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}
+reset_apu
+targets -set -nocase -filter {name =~"RPU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}
+clear_rpu_reset
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}
+loadhw -hw C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/hw/top_level_block_design_wrapper.xsa -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}
+set mode [expr [mrd -value 0xFF5E0200] & 0xf]
+----------------End of Script----------------
+
+17:01:21 ERROR : Memory read error at 0xFF5E0200. AXI Memory access port is disabled
+17:01:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:01:38 INFO  : Jtag cable 'Xilinx HW-Z1-ZCU104 FT4232H 19395A' is selected.
+17:01:38 INFO  : 'jtag frequency' command is executed.
+17:01:38 INFO  : Sourcing of 'C:/Xilinx/Vitis/2020.1/scripts/vitis/util/zynqmp_utils.tcl' is done.
+17:01:38 INFO  : Context for 'APU' is selected.
+17:01:38 INFO  : Cleared APU and A53 resets
+17:01:38 INFO  : Context for 'RPU' is selected.
+17:01:38 INFO  : Cleared RPU and R5 resets
+17:01:38 INFO  : Context for 'APU' is selected.
+17:01:38 INFO  : Hardware design and registers information is loaded from 'C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/hw/top_level_block_design_wrapper.xsa'.
+17:01:38 INFO  : 'configparams force-mem-access 1' command is executed.
+17:01:38 INFO  : Context for 'APU' is selected.
+17:01:38 INFO  : Boot mode is read from the target.
+17:01:39 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+17:01:39 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+17:01:39 INFO  : The application 'C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/boot/fsbl.elf' is downloaded to processor 'psu_cortexa53_0'.
+17:01:39 INFO  : 'set bp_1_39_fsbl_bp [bpadd -addr &XFsbl_Exit]' command is executed.
+17:01:41 INFO  : 'con -block -timeout 60' command is executed.
+17:01:41 INFO  : 'bpremove $bp_1_39_fsbl_bp' command is executed.
+17:01:41 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+17:01:41 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+17:01:42 INFO  : The application 'C:/James/vitis_workspace/test_proj_pulse_ctrl/Debug/test_proj_pulse_ctrl.elf' is downloaded to processor 'psu_cortexa53_0'.
+17:01:42 INFO  : 'configparams force-mem-access 0' command is executed.
+17:01:42 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Xilinx/Vitis/2020.1/scripts/vitis/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}
+reset_apu
+targets -set -nocase -filter {name =~"RPU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}
+clear_rpu_reset
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}
+loadhw -hw C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/hw/top_level_block_design_wrapper.xsa -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}
+set mode [expr [mrd -value 0xFF5E0200] & 0xf]
+targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}
+rst -processor
+dow C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/boot/fsbl.elf
+set bp_1_39_fsbl_bp [bpadd -addr &XFsbl_Exit]
+con -block -timeout 60
+bpremove $bp_1_39_fsbl_bp
+targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}
+rst -processor
+dow C:/James/vitis_workspace/test_proj_pulse_ctrl/Debug/test_proj_pulse_ctrl.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:01:42 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+17:01:42 INFO  : 'con' command is executed.
+17:01:42 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}
+con
+----------------End of Script----------------
+
+17:01:42 INFO  : Launch script is exported to file 'C:\James\vitis_workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice_standalone.tcl'
+17:02:08 INFO  : Disconnected from the channel tcfchan#18.
+17:02:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:02:09 INFO  : Jtag cable 'Xilinx HW-Z1-ZCU104 FT4232H 19640A' is selected.
+17:02:09 INFO  : 'jtag frequency' command is executed.
+17:02:09 INFO  : Sourcing of 'C:/Xilinx/Vitis/2020.1/scripts/vitis/util/zynqmp_utils.tcl' is done.
+17:02:09 INFO  : Context for 'APU' is selected.
+17:02:09 ERROR : Cannot reset APU. AP transaction error, DAP status 0x30000021
+17:02:09 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Xilinx/Vitis/2020.1/scripts/vitis/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}
+reset_apu
+----------------End of Script----------------
+
+17:02:09 ERROR : Cannot reset APU. AP transaction error, DAP status 0x30000021
+17:04:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:04:09 INFO  : Jtag cable 'Xilinx HW-Z1-ZCU104 FT4232H 19640A' is selected.
+17:04:09 INFO  : 'jtag frequency' command is executed.
+17:04:09 INFO  : Sourcing of 'C:/Xilinx/Vitis/2020.1/scripts/vitis/util/zynqmp_utils.tcl' is done.
+17:04:09 INFO  : Context for 'APU' is selected.
+17:04:09 ERROR : Cannot reset APU. AP transaction error, DAP status 0x30000021
+17:04:09 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Xilinx/Vitis/2020.1/scripts/vitis/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}
+reset_apu
+----------------End of Script----------------
+
+17:04:09 ERROR : Cannot reset APU. AP transaction error, DAP status 0x30000021
+17:04:34 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:04:35 INFO  : Jtag cable 'Xilinx HW-Z1-ZCU104 FT4232H 19640A' is selected.
+17:04:35 INFO  : 'jtag frequency' command is executed.
+17:04:35 INFO  : Sourcing of 'C:/Xilinx/Vitis/2020.1/scripts/vitis/util/zynqmp_utils.tcl' is done.
+17:04:35 INFO  : Context for 'APU' is selected.
+17:04:35 ERROR : Cannot reset PSU. AP transaction error, DAP status 0x30000021
+17:04:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Xilinx/Vitis/2020.1/scripts/vitis/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}
+rst -system
+after 3000
+----------------End of Script----------------
+
+17:04:35 ERROR : Cannot reset PSU. AP transaction error, DAP status 0x30000021

@@ -36,6 +36,7 @@ SERVER_PHASE_MEAS = 8
 SERVER_SET_BIN_SIZE = 9 # bin size in picoseconds
 SERVER_SET_BIN_NUMBER = 10 #Must be a power of 2
 SERVER_RECEIVE_PHOTON = 11
+SERVER_CLOSE_CONNECTION = 12
 
 
 #Bob's responses
@@ -48,6 +49,9 @@ pem_path = 'C:\certs\certchain.pem'
 key_path = 'C:\certs\private.key'
 SSL_PATH = 'C:\certs'
 
+
+FAIL_TIMESTAMP_NO_PHOTON = 99999999999999
+FAIL_TIMESTAMP_BAD_RANGE = 99999999999998
 
 TIMESTAMP_BYTE_LEN = 20
 
@@ -177,7 +181,7 @@ class time_sync:
     def connect_to_server(self):
         
         if(self.mode != CLIENT):
-           print("Error, cannot ping server while in server mode")
+           print("Error, cannot connect to server while in server mode")
            return -1
        
         print("Attempting to connect to server")
@@ -185,6 +189,8 @@ class time_sync:
         #Open a totally new socket every time
         self.sck_u = socket.socket(socket.AF_INET, socket.SOCK_STREAM, 0)
         self.s = ssl.wrap_socket(self.sck_u, ca_certs=pem_path)
+        
+        self.s.settimeout(CLIENT_TIMEOUT)
         
         #connect to the client
         self.s.connect((self.server_ip, self.port))
@@ -208,6 +214,9 @@ class time_sync:
            return -1
        
         print("Closing connection to server")
+        self.s.send(bytearray([SERVER_CLOSE_CONNECTION]))
+        if(self.wait_ack(self.s)):
+            print("Error, no ACK received from server while closing connection")
         
         if(SECURE_MODE):
             self.s.shutdown(socket.SHUT_RDWR)
@@ -316,7 +325,7 @@ class time_sync:
         while(self.server_handle_command(c)):
             if(self.is_socket_alive(c) or self.socket_dead):
                 self.socket_dead = 0
-                print("Dead socket, client has closed connection, waiting for new connection...")
+                print("Client has closed connection, waiting for new connection...")
                 c = self.wait_connection(self.sck_u)
                 if(c == 0):
                     print("Closing server")
@@ -345,7 +354,7 @@ class time_sync:
         
         if(client_cmd == -1 or client_cmd == -2 or client_cmd == -3):
             if(client_cmd == -1):
-                print("Timed out waiting for command")
+                #print("Timed out waiting for command")
                 return 1
             else:
                 #print("Client socket closed")
@@ -363,7 +372,12 @@ class time_sync:
             print("Command received: SERVER_RECEIVE_PULSE")
             self.pulse_alice_to_bob(sck)
             return 1
-            
+        elif(client_cmd[0] == SERVER_CLOSE_CONNECTION):
+            sck.send(SERVER_ACK)
+            print("Command receved: SERVER_CLOSE_CONNECTION")
+            sck.close()
+            self.socket_dead = 1
+            return 1
         elif(client_cmd[0] == SERVER_EXIT):
             sck.send(SERVER_ACK)
             print("Command received: SERVER_EXIT")
@@ -379,7 +393,7 @@ class time_sync:
         elif(client_cmd[0] == SERVER_PHASE_MEAS):
             sck.send(SERVER_ACK)
             print("Command received: SERVER_PHASE_MEAS")
-            if(self.bob_relative()):
+            if(self.bob_relative(sck)):
                 print("Relative time sync failed!")
             return 1
         elif(client_cmd[0] == SERVER_SET_BIN_SIZE):
@@ -393,6 +407,7 @@ class time_sync:
             return 1
         
         elif(client_cmd[0] == SERVER_SET_BIN_NUMBER):
+            print("Command received: SERVER_SET_BIN_NUMBER")
             self.bin_number = james_utils.receive_timestamp(sck)
             if(self.bin_number == -1):
                 print("Failed to receive bin number from Alice!")
@@ -400,12 +415,14 @@ class time_sync:
             elif(not Math.log2(self.bin_number).is_integer()):
                 print("Error, Alice's bin number must be a multiple of 2, defaulting to 2")
                 self.bin_number = 2
+            else:
+                print("Bin number to " + str(self.bin_number))
             sck.send(SERVER_ACK)
             return 1
         
         elif(client_cmd[0]== SERVER_RECEIVE_PHOTON):
             print("Command received: SERVER_RECEIVE_PHOTON")
-            res = self.receive_encoded_photon()
+            res = self.receive_encoded_photon(sck)
             if(not isinstance(res, encoded_photon)):
                 print("Failed to receive photon")
             self.photons_received.append(res)
@@ -422,6 +439,8 @@ class time_sync:
     #Returns -1 on error
     def start_client_sync(self):
         
+        self.connect_to_server()
+        
         if(self.mode == SERVER):
            print("Error, start_time_sync must be called in client mode!")
            return -1
@@ -430,15 +449,18 @@ class time_sync:
         #self.s.connect((self.server_ip, self.port))
         if(self.ping_server()):
             print("Error communicating with server, unable to perform time synchronization")
+            self.disconnect_from_server()
             return -1
         
         print("Connected to server, performing time synchronization...")
         
         if(self.do_sync(self.s) == -1):
             print("Time sync failed!")
+            self.disconnect_from_server()
             return -1
         else:
             print("Time sync success! time_diff = " + str(self.time_diff) + ", path_len = " + str(self.path_len))
+            self.disconnect_from_server()
             return 0
         
     
@@ -474,17 +496,12 @@ class time_sync:
         if(self.board.ping_board()):
             print("Error, unable to connect to FPGA board")
             return -1
-        
-        if( self.is_socket_alive(sck) or self.ping_server()):
-            print("Error, not connected to server (Bob)")
-            return -1
             
         #If we're using the tdc server then clear all pulses before proceeding
-        if(self.tdc.mode == tdc_wrapper.MODE_CLIENT):
-            self.tdc.clear_all()
+        self.tdc.clear_all()
         
         #Set the period to something fast
-        #self.board.set_period(10)
+        self.board.set_period(10)
         
         num_tries = 10
         while(num_tries):
@@ -543,7 +560,7 @@ class time_sync:
         if(self.mode == CLIENT):
             
             #Wait for a bit so bob's tdc is reay
-            time.sleep(1)
+            #time.sleep(1)
             
             #Start alice's tdc
             if(self.tdc.start_record()):#If it fails to start
@@ -554,7 +571,7 @@ class time_sync:
             self.board.send_pulse(0,0)
             
             #Wait for the TDC to pick up the pulse
-            time.sleep(1)
+            #time.sleep(1)
             
             #Stop our TDC and recover the timestamp
             self.t_a_s = self.tdc.end_record(self.channel_send)
@@ -600,7 +617,7 @@ class time_sync:
             print("Sending pulse to Alice...")
             
             #Wait for a bit so Alice's tdc is reay
-            time.sleep(1)
+            #time.sleep(1)
             
             #Start bob's tdc
             if(self.tdc.start_record()):#If it fails to start
@@ -610,7 +627,7 @@ class time_sync:
             self.board.send_pulse(0,0)
             
             #Wait for the TDC to pick up the pulse
-            time.sleep(1)
+            #time.sleep(1)
             
             #Stop our TDC and recover the timestamp
             self.t_b_s = self.tdc.end_record(self.channel_send)
@@ -715,24 +732,98 @@ class time_sync:
     ##############################################################
     #Phase Measurement Routines for Relative Time Synchronization#
     ##############################################################
+    
+    #Returns 0 on success, val in picoseconds
+    def set_bin_size(self, val):
+        
+        if(val < 250 or val % 250 != 0):
+            print("Error, bin size must be a multiple of 250ps")
+            return -1
+        
+        self.bin_size = val
+        
+        if(self.connect_to_server()):
+            print("Failed to connect to server while setting bin size")
+            return -1
+        
+        self.s.send(bytearray([SERVER_SET_BIN_SIZE]))
+        james_utils.send_timestamp(self.s, self.bin_size)
+        
+        if(self.wait_ack(self.s)):
+            print("Bad ack receved from server while setting bin size")
+            self.disconnect_from_server()
+            return -1
+        self.disconnect_from_server()
+        return 0
+    
+    def set_bin_number(self, num):
+        
+        if(not Math.log2(num).is_integer()):
+            print("Error, bin number must be a multiple of 2")
+            return -1
+        
+        self.bin_number = num
+        
+        if(self.connect_to_server()):
+            print("Failed to connect to server while setting bin size")
+            return -1
+        self.s.send(bytearray([SERVER_SET_BIN_NUMBER]))
+        james_utils.send_timestamp(self.s, self.bin_number)
+        
+        if(self.wait_ack(self.s)):
+            print("Bad ack receved from server while setting bin number")
+            self.disconnect_from_server()
+            return -1
+        self.disconnect_from_server()
+        return 0
+        
+    #Val should be in picoseconds, returns 0 on success
+    def set_period(self, val):
+        
+        if(val < self.bin_size * self.bin_number):
+            print("Error, period must be larger than bin_size * bin_number, try setting those values first")
+            return -1
+        
+        if(self.board.set_period(val / 4000)):
+            print("Error setting bin size on board")
+            return -1
+        
+        return 0
         
     def relative_time_sync(self):
     
+        #Must be called as alice
+        if(self.mode != CLIENT):
+            print("Error, relative_time_sync must be called as Alice")
+            return -1
+        
+        if(self.connect_to_server()):
+            print("Error, could not connect to server (Bob)")
+            return -1
         
         #Send the phase measurement command
-        self.s.send(bytearray[SERVER_PHASE_MEAS])
-        time.sleep(0.25)
+        self.s.send(bytearray([SERVER_PHASE_MEAS]))
+        #time.sleep(0.25)
         if(self.wait_ack(self.s)):
                 print("Error, no ACK received from Bob while attempting relative synchronization")
                 return -1
+
+        self.tdc.clear_all()
 
         #Otherwise just turn on phase measurement mode for a moment and leave
         self.board.phase_meas_on()
         self.board.phase_meas_off()
         
-        self.s.send(bytearray[0x00])
+        self.s.send(bytearray([0x00]))
         
-        return 
+        time.sleep(5)
+        
+        if(self.wait_ack(self.s)):
+            print("Relative time synch failed!")
+            self.disconnect_from_server()
+            return -1
+        self.disconnect_from_server()
+        return 0
                 
    
     #Bob's routine for synchronization
@@ -745,10 +836,15 @@ class time_sync:
             print("Bad responce received from Alice while attempting relative synchronization")
             return -1
         
-        pulses = self.device.end_record(self.channnel_receive, 1)
+        print("Waiting for pulses to be collected")
+        #Give the server a moment to finish collecting pulses
+        time.sleep(5)
+        
+        pulses = self.tdc.end_record(self.channel_receive, 1)
         
         if(len(pulses) < 1):
             print("Error, did not receive any pulses from Alice during relative phase synchronization")
+            socket.send(bytearray([0xFF]))#Send a back ACK
             return -1
        
         #Calculate the difference between all of the pulses
@@ -768,39 +864,55 @@ class time_sync:
         
         print("[RELATIVE SYNC] Pulses received: " + str(len(pulses)) + ", pulses rejected: " + str(len(diffs) - len(diffs_final)) + ", last tick: " + self.last_tick + ", avg period: " + self.avg_period)
         
+        #Send an ack back to Alice indicating sucess
+        socket.send(SERVER_ACK)
 
         return 0
     
     
-    def send_encoded_photon(self, val, bin_num, bin_size):
+    def send_encoded_photon(self, val):
         
         if(self.mode != CLIENT):
             print("Error, send_encoded_photon must be called in client mode")
             return -1
                 
+        if(self.connect_to_server()):
+            print("Error connecting to server (Bob)")
+            return -1
+        
         #tell bob to receive a photon
         self.s.send(bytearray[SERVER_RECEIVE_PHOTON])
         
          #bin_size in picoseconds
         #Divide by 250 to get num samples
-        offset = bin_size * val # in picoseconds
-        if(offset >= bin_num * bin_size):
+        offset = self.bin_size * val # in picoseconds
+        if(offset >= self.bin_num * self.bin_size):
             print("Value too lange, must be smaller than bin_num * bin_size")   
             
         #convert offset to number of samples
         coarse_delay = offset / 4000
         fine_delay = (offset / 250) % 16
+        
         if(self.board.send_pulse(self, coarse_delay, fine_delay)):
             print("Error while sending encoded photon")
+        
+        #Return the value sent back from bob
+        res = james_utils.receive_timestamp(self.s)
+        self.disconnect_from_server()
+        if(res == FAIL_TIMESTAMP_NO_PHOTON):
+            print("Error, bob did not receive encoded photon!")
             return -1
-        return 0
+        elif(res == FAIL_TIMESTAMP_BAD_RANGE):
+            print("Error, Bob received the photon but it fell outside the allowable range!")
+        
+        return res
     
     
         
         
         
         
-    def receive_encoded_photon(self):
+    def receive_encoded_photon(self, sck):
         
         if(self.mode != SERVER):
             print("Error, send_encoded_photon must be called in server mode")
@@ -811,6 +923,7 @@ class time_sync:
         
         if(ts == 0):
             print("Error, no encoded photon received!")
+            james_utils.send_timestamp(sck, FAIL_TIMESTAMP_NO_PHOTON)
             return -1
         
         #Subtract out the last tick
@@ -822,10 +935,15 @@ class time_sync:
         #If the offset falls outside of the time bin
         if(offset > self.bin_number * self.bin_size):
             print("Error, received a photon which falls outside of the allowable range, offset was " + str(offset) + ", allowable range was " + str(self.bin_number * self.bin_size))
+            james_utils.send_timestamp(sck, FAIL_TIMESTAMP_BAD_RANGE)
             return -1
         #Otherwise determine the time bin and 
         final_val = Math.floor(float(offset) / float(self.bin_size))
         print("Timestamp was " + str(ts) + ", relative timestamp was " + str(ts_rel) + ", offset was " + str(offset) + ", final value was " + str(final_val))
+        
+        #Send the value back to alice
+        james_utils.sent_timestamp(sck, final_val)
+        
         return encoded_photon(self.bin_size, self.bin_num, ts, final_val, 1)
         
     

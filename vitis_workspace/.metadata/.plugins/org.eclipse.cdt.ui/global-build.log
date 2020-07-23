@@ -1,22 +1,20 @@
-17:49:18 **** Incremental Build of configuration Debug for project test_proj_pulse_ctrl ****
+16:57:05 **** Incremental Build of configuration Debug for project test_proj_pulse_ctrl ****
 make all 
-'Building file: C:/James/c_drivers/drivers/cmd_handler.c'
-'Invoking: ARM v8 gcc compiler'
-aarch64-none-elf-gcc -Wall -O0 -g3 -I"C:\James\c_drivers\drivers" -I"C:\James\vitis_workspace\test_proj_pulse_ctrl\src" -c -fmessage-length=0 -MT"drivers/cmd_handler.o" -D __BAREMETAL__ -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"drivers/cmd_handler.d" -MT"drivers/cmd_handler.o" -o "drivers/cmd_handler.o" "C:/James/c_drivers/drivers/cmd_handler.c"
-'Finished building: C:/James/c_drivers/drivers/cmd_handler.c'
-' '
-'Building target: test_proj_pulse_ctrl.elf'
-'Invoking: ARM v8 gcc linker'
-aarch64-none-elf-gcc -L"C:\James\c_drivers\drivers" -Wl,-T -Wl,../src/lscript.ld -LC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bsplib/lib -o "test_proj_pulse_ctrl.elf"  ./src/helloworld.o ./src/platform.o  ./drivers/cmd_handler.o ./drivers/gpio.o ./drivers/rf.o ./drivers/uart.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-lmetal,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-lgcc,-lc,-lmetal,--end-group
-'Finished building target: test_proj_pulse_ctrl.elf'
-' '
-'Invoking: ARM v8 Print Size'
-aarch64-none-elf-size test_proj_pulse_ctrl.elf  |tee "test_proj_pulse_ctrl.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 172764	   9520	  29084	 211368	  339a8	test_proj_pulse_ctrl.elf
-'Finished building: test_proj_pulse_ctrl.elf.size'
-' '
-17:49:22 **** Incremental Build of configuration Debug for project test_proj_pulse_ctrl_system ****
+make: Nothing to be done for 'all'.
+
+16:57:06 Build Finished (took 539ms)
+
+16:57:09 **** Incremental Build of configuration Debug for project test_proj_pulse_ctrl_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 49978 C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm standalone_domain C:/James/vitis_workspace/test_proj_pulse_ctrl_system/Debug/system.bif
+sdcard_gen --xpfm C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm --sys_config test_proj_plat --bif C:/James/vitis_workspace/test_proj_pulse_ctrl_system/Debug/system.bif --bitstream C:/James/vitis_workspace/test_proj_pulse_ctrl/_ide/bitstream/top_level_block_design_wrapper.bit --elf C:/James/vitis_workspace/test_proj_pulse_ctrl/Debug/test_proj_pulse_ctrl.elf,psu_cortexa53_0
+creating BOOT.BIN using C:/James/vitis_workspace/test_proj_pulse_ctrl/_ide/bitstream/top_level_block_design_wrapper.bit
+Running C:/Xilinx/Vitis/2020.1/bin/bootgen -arch zynqmp -image C:/James/vitis_workspace/test_proj_pulse_ctrl_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+16:57:26 **** Incremental Build of configuration Debug for project test_proj_pulse_ctrl ****
+make all 
+make: Nothing to be done for 'all'.
+16:57:27 **** Incremental Build of configuration Debug for project test_proj_pulse_ctrl_system ****
 make all 
 Generating bif file for the system project
 generate_system_bif.bat 49978 C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm standalone_domain C:/James/vitis_workspace/test_proj_pulse_ctrl_system/Debug/system.bif

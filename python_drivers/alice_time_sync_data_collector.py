@@ -24,9 +24,8 @@ while(1):
         
         file = open(logfile,'a')
     
-        ts.connect_to_server()
+
         ts.start_client_sync()
-        ts.disconnect_from_server()
         
         new_line = str(count) + ", " + str(ts.time_diff) + ", " + str(ts.path_len) + "\n"
         file.write(new_line)

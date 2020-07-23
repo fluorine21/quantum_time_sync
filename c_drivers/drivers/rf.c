@@ -10,7 +10,7 @@
 
 XRFdc RFdcInst;      /* RFdc driver instance */
 
-
+u8 rf_clock_status;//0 if ok, 0xFF if bad
 
 /*
  * The following constants map to the XPAR parameters created in the
@@ -47,6 +47,8 @@ XRFdc RFdcInst;      /* RFdc driver instance */
 
 uint8_t rf_init()
 {
+
+	rf_clock_status = 0xFF;
 
 	print("Running RF self test...\r\n");
 
@@ -88,6 +90,11 @@ uint8_t rf_init()
 
 	return 0;
 
+}
+//Returns 0 if clock is active
+u8 get_rf_clock_status()
+{
+	return rf_clock_status;
 }
 
 int rf_self_test()
@@ -206,6 +213,7 @@ int rf_self_test()
 		else
 		{
 			xil_printf("Clock found for DAC tile %x\r\n", tile_num);
+			rf_clock_status = 0;//We now have a working clock
 		}
 	}
 

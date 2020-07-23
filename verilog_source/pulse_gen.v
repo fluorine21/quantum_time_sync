@@ -55,7 +55,8 @@ localparam [7:0] command_reset_clock = 0,
 				 command_send_pulse = 1,
 				 command_set_period = 2,
 				 command_set_phase_meas_mode = 3,
-				 command_reset_phase_meas_mode = 4;
+				 command_reset_phase_meas_mode = 4,
+				 command_toggle_phase_meas_mode = 5;
 
 reg [15:0] coarse_delay;
 reg [7:0] fine_delay;
@@ -64,13 +65,16 @@ reg rst_clock;
 reg [45:0] main_clock; 
 reg [23:0] clock_period;
 
+reg [15:0] pulses_to_send;//Used for toggling phase measurement mode
+
 reg [7:0] state;
 assign state_out = state;
 localparam [7:0] state_idle  = 0,
 				 state_rst_read = 1,
 				 state_read = 2,
 				 state_wait_tick = 3, 
-				 state_wait_pulse = 4;
+				 state_wait_pulse = 4,
+				 state_toggle_end = 5;
 				 
 reg is_phase_meas_mode;//if 1, then pulse is emitted at each clock tick
 				 
@@ -85,6 +89,7 @@ begin
     fifo_read <= 0;
     m_axis_tdata_int <= 0;
 	is_phase_meas_mode <= 0;
+	pulses_to_send <= 0;
 
 end
 endtask
@@ -168,6 +173,12 @@ always @ (posedge clk or negedge rst) begin
 						is_phase_meas_mode <= 0;
 						state <= state_idle;
 					end
+					
+					command_toggle_phase_meas_mode: begin
+						pulses_to_send <= fifo_data[15:0];
+						is_phase_meas_mode <= 1;
+						state <= state_toggle_end;
+					end
 				
 					default begin
 					
@@ -180,6 +191,18 @@ always @ (posedge clk or negedge rst) begin
 			
 			end
 			
+			
+			state_toggle_end: begin
+			
+				if(pulses_to_send == 0) begin
+					is_phase_meas_mode <= 0;
+					state <= state_idle;
+				end
+				else if(clock_tick) begin
+					pulses_to_send = pulses_to_send - 1;
+				end
+			
+			end
 			
 			//Wait until the clock ticks
 			state_wait_tick: begin

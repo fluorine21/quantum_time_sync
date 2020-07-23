@@ -326,7 +326,7 @@ class tdc_wrapper:
             val_last = 1
             ret_val = []
             #Loop until we receive a timestamp of 0
-            while(val_last):
+            while(val_last > 0):
                 sck.send(bytearray([COMMAND_GET_AND_CLEAR, channel_byte]))
                 val_last = james_utils.receive_timestamp(sck)
                 if(val_last > 0):
@@ -344,17 +344,20 @@ class tdc_wrapper:
     
     def clear_all(self):
         
-        sck = socket.socket()
-        sck.settimeout(SERVER_TIMEOUT)
-        sck.connect((self.server_ip, self.port))
-        time.sleep(0.1)
-        
-        #Send the GET_AND_CLEAR command
-        sck.send(bytearray([COMMAND_CLEAR_ALL]))
-
-        #gracefully close the connection
-        sck.send(bytearray([COMMAND_CLOSE_CONNECTION]))
-        sck.close()
+        if(self.mode == MODE_NORMAL):
+            self.timestamp_list = []
+        else:
+            sck = socket.socket()
+            sck.settimeout(SERVER_TIMEOUT)
+            sck.connect((self.server_ip, self.port))
+            time.sleep(0.1)
+            
+            #Send the GET_AND_CLEAR command
+            sck.send(bytearray([COMMAND_CLEAR_ALL]))
+    
+            #gracefully close the connection
+            sck.send(bytearray([COMMAND_CLOSE_CONNECTION]))
+            sck.close()
         return 0
         
     

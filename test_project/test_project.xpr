@@ -95,29 +95,29 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="top_level_block_design.bd" FileRelPathName="ip/top_level_block_design_pulse_gen_0_0/top_level_block_design_pulse_gen_0_0.xci">
-          <Proxy FileSetName="top_level_block_design_pulse_gen_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="top_level_block_design.bd" FileRelPathName="ip/top_level_block_design_proc_sys_reset_0_0/top_level_block_design_proc_sys_reset_0_0.xci">
-          <Proxy FileSetName="top_level_block_design_proc_sys_reset_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="top_level_block_design.bd" FileRelPathName="ip/top_level_block_design_clk_wiz_0_0/top_level_block_design_clk_wiz_0_0.xci">
-          <Proxy FileSetName="top_level_block_design_clk_wiz_0_0"/>
+        <CompFileExtendedInfo CompFileName="top_level_block_design.bd" FileRelPathName="ip/top_level_block_design_zynq_ultra_ps_e_0_3/top_level_block_design_zynq_ultra_ps_e_0_3.xci">
+          <Proxy FileSetName="top_level_block_design_zynq_ultra_ps_e_0_3"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="top_level_block_design.bd" FileRelPathName="ip/top_level_block_design_fifo_generator_0_0/top_level_block_design_fifo_generator_0_0.xci">
           <Proxy FileSetName="top_level_block_design_fifo_generator_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="top_level_block_design.bd" FileRelPathName="ip/top_level_block_design_gpio_to_fifo_0_0/top_level_block_design_gpio_to_fifo_0_0.xci">
-          <Proxy FileSetName="top_level_block_design_gpio_to_fifo_0_0"/>
+        <CompFileExtendedInfo CompFileName="top_level_block_design.bd" FileRelPathName="ip/top_level_block_design_clk_wiz_0_0/top_level_block_design_clk_wiz_0_0.xci">
+          <Proxy FileSetName="top_level_block_design_clk_wiz_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="top_level_block_design.bd" FileRelPathName="ip/top_level_block_design_zynq_ultra_ps_e_0_3/top_level_block_design_zynq_ultra_ps_e_0_3.xci">
-          <Proxy FileSetName="top_level_block_design_zynq_ultra_ps_e_0_3"/>
+        <CompFileExtendedInfo CompFileName="top_level_block_design.bd" FileRelPathName="ip/top_level_block_design_axi_gpio_0_0/top_level_block_design_axi_gpio_0_0.xci">
+          <Proxy FileSetName="top_level_block_design_axi_gpio_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="top_level_block_design.bd" FileRelPathName="ip/top_level_block_design_xbar_0/top_level_block_design_xbar_0.xci">
           <Proxy FileSetName="top_level_block_design_xbar_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="top_level_block_design.bd" FileRelPathName="ip/top_level_block_design_axi_gpio_0_0/top_level_block_design_axi_gpio_0_0.xci">
-          <Proxy FileSetName="top_level_block_design_axi_gpio_0_0"/>
+        <CompFileExtendedInfo CompFileName="top_level_block_design.bd" FileRelPathName="ip/top_level_block_design_proc_sys_reset_0_0/top_level_block_design_proc_sys_reset_0_0.xci">
+          <Proxy FileSetName="top_level_block_design_proc_sys_reset_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="top_level_block_design.bd" FileRelPathName="ip/top_level_block_design_pulse_gen_0_0/top_level_block_design_pulse_gen_0_0.xci">
+          <Proxy FileSetName="top_level_block_design_pulse_gen_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="top_level_block_design.bd" FileRelPathName="ip/top_level_block_design_gpio_to_fifo_0_0/top_level_block_design_gpio_to_fifo_0_0.xci">
+          <Proxy FileSetName="top_level_block_design_gpio_to_fifo_0_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/top_level_block_design/hdl/top_level_block_design_wrapper.v">
