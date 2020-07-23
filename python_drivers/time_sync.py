@@ -14,6 +14,8 @@ import ssl
 import os.path
 from OpenSSL import crypto
 import james_utils
+import threading 
+
 
 #Open a secure socket?
 SECURE_MODE = 1
@@ -22,8 +24,8 @@ CLIENT = 0
 SERVER = 1
 SERVER_ACK = b'\x66'
 SERVER_ACK_BYTE = 0x66
-CLIENT_TIMEOUT = 15 #5 second timeout
-SERVER_TIMEOUT = 15 #Long timeout for the server
+CLIENT_TIMEOUT = 2 #5 second timeout
+SERVER_TIMEOUT = 2 #Long timeout for the server
 
 #Server commands
 SERVER_RECEIVE_PULSE = 4
@@ -33,6 +35,7 @@ SERVER_PING = 7
 SERVER_PHASE_MEAS = 8
 SERVER_SET_BIN_SIZE = 9 # bin size in picoseconds
 SERVER_SET_BIN_NUMBER = 10 #Must be a power of 2
+SERVER_RECEIVE_PHOTON = 11
 
 
 #Bob's responses
@@ -47,6 +50,24 @@ SSL_PATH = 'C:\certs'
 
 
 TIMESTAMP_BYTE_LEN = 20
+
+class encoded_photon:
+    
+    bin_size = 0 # in picoseconds
+    bin_number = 0
+    
+    timestamp = 0
+    value = 0
+    valid = 0
+    
+    def __init__(self, bin_size, bin_number, timestamp, value, valid):
+        
+        self.bin_size = bin_size
+        self.bin_number = bin_number
+        self.timestamp = timestamp
+        self.value = value
+        self.valid = valid
+    
 
 
 class time_sync:
@@ -79,7 +100,12 @@ class time_sync:
     last_tick = 0
     avg_period = 0
     
-    bin_size = 10
+    bin_size = 500
+    bin_number = 16
+    photons_received = []
+    
+    
+    shutdown_flag = 0
     
     
     def __init__(self, COM_PORT, s_ip, m, tdc_obj):
@@ -196,7 +222,7 @@ class time_sync:
             print("Error, cannot call wait_connection in client mode!")
             return 0
         #Keep trying to connect
-        while(1):
+        while(not self.shutdown_flag):
             try:
                  #Once a client connects we'll be here
                 c, addr = sck.accept()     # Establish connection with client.
@@ -214,11 +240,13 @@ class time_sync:
                 c_s.settimeout(SERVER_TIMEOUT)
                 return c_s
             except socket.timeout:
-                print("Waiting for client connection...")
+                #print("Waiting for client connection...")
+                aaa = 1
             except:
                 print("Unknown error while waiting for client connection")
                 raise
-        
+                
+        return 0 
     
     def check_key(self):
         #If the key already exists
@@ -262,6 +290,10 @@ class time_sync:
         if(self.mode == CLIENT):
             print("Error, start_server must be called with the object in server mode!")
             return -1
+        
+        #Start the user shutdown handlong thread
+        t = threading.Thread(target=self.user_quit, args=(1,))
+        t.start()
     
         host = socket.gethostname() # Get local machine name
         self.sck_u.bind((host, self.port))
@@ -276,6 +308,7 @@ class time_sync:
         #Once a client connects we'll be here
         c = self.wait_connection(self.sck_u)
         if(c == 0):
+            print("Server exit while waiting for client")
             return -1
         
         print("Waiting for command from client...")
@@ -286,12 +319,12 @@ class time_sync:
                 print("Dead socket, client has closed connection, waiting for new connection...")
                 c = self.wait_connection(self.sck_u)
                 if(c == 0):
-                    print("No socket returned while trying to connect to client, exiting...")
+                    print("Closing server")
                     self.sck_u.close()
                     return -1
-                print("Waiting for command from client...")
-            else:
-                print("Socket is alive, waiting for next command...")
+                #print("Waiting for command from client...")
+            #else:
+                #print("Socket is alive, waiting for next command...")
 
         print("Closing server...")
         return 0
@@ -299,6 +332,13 @@ class time_sync:
     #Server side command handler, handles incomming commands from client
     #Returns 0 on server exit
     def server_handle_command(self, sck):
+        
+        #If the shutdown flag is active:
+        if(self.shutdown_flag):
+            #Close the socket and stop the server
+            sck.close()
+            self.sck_u.close()
+            return 0
         
         #Receive one command byte from the client
         client_cmd = james_utils.receive_bytes(sck, 1)
@@ -343,11 +383,13 @@ class time_sync:
                 print("Relative time sync failed!")
             return 1
         elif(client_cmd[0] == SERVER_SET_BIN_SIZE):
+            print("Command received: SERVER_SET_BIN_SIZE")
             self.bin_size = james_utils.receive_timestamp(sck)
             if(self.bin_size == -1):
                 print("Failed to receive bin size from Alice!")
                 return 1
             sck.send(SERVER_ACK)
+            print("Bin size set to " + str(self.bin_size))
             return 1
         
         elif(client_cmd[0] == SERVER_SET_BIN_NUMBER):
@@ -359,6 +401,14 @@ class time_sync:
                 print("Error, Alice's bin number must be a multiple of 2, defaulting to 2")
                 self.bin_number = 2
             sck.send(SERVER_ACK)
+            return 1
+        
+        elif(client_cmd[0]== SERVER_RECEIVE_PHOTON):
+            print("Command received: SERVER_RECEIVE_PHOTON")
+            res = self.receive_encoded_photon()
+            if(not isinstance(res, encoded_photon)):
+                print("Failed to receive photon")
+            self.photons_received.append(res)
             return 1
             
         else:
@@ -651,6 +701,15 @@ class time_sync:
     
     def calc_time_diff(self):
         self.time_diff = (self.t_b_r + self.t_b_s - self.t_a_r - self.t_a_s) / 2
+        
+    
+    #Helper function to allow bob to quit via console
+    def user_quit(self, arg1):
+        
+        res = input()
+        print("[USER] Local user has stopped server")
+        self.shutdown_flag = 1
+        return
     
     
     ##############################################################
@@ -713,11 +772,33 @@ class time_sync:
         return 0
     
     
-    def send_encoded_photon(self):
+    def send_encoded_photon(self, val, bin_num, bin_size):
         
         if(self.mode != CLIENT):
             print("Error, send_encoded_photon must be called in client mode")
             return -1
+                
+        #tell bob to receive a photon
+        self.s.send(bytearray[SERVER_RECEIVE_PHOTON])
+        
+         #bin_size in picoseconds
+        #Divide by 250 to get num samples
+        offset = bin_size * val # in picoseconds
+        if(offset >= bin_num * bin_size):
+            print("Value too lange, must be smaller than bin_num * bin_size")   
+            
+        #convert offset to number of samples
+        coarse_delay = offset / 4000
+        fine_delay = (offset / 250) % 16
+        if(self.board.send_pulse(self, coarse_delay, fine_delay)):
+            print("Error while sending encoded photon")
+            return -1
+        return 0
+    
+    
+        
+        
+        
         
     def receive_encoded_photon(self):
         
@@ -745,7 +826,7 @@ class time_sync:
         #Otherwise determine the time bin and 
         final_val = Math.floor(float(offset) / float(self.bin_size))
         print("Timestamp was " + str(ts) + ", relative timestamp was " + str(ts_rel) + ", offset was " + str(offset) + ", final value was " + str(final_val))
-        return final_val
+        return encoded_photon(self.bin_size, self.bin_num, ts, final_val, 1)
         
     
     

@@ -62,7 +62,7 @@ def receive_bytes(c, num_bytes):
                 print("Received an empty byte array from socket, socket is probably closed...")
                 return -2
         except socket.timeout:
-            print("Timed out while waiting for bytes...")
+            #print("Timed out while waiting for bytes...")
             return -1
         except Exception as e:
             print("Unknown error occured while waiting for bytes")

@@ -10,16 +10,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="4097fs"></ZoomEndTime>
+      <ZoomEndTime time="28374fs"></ZoomEndTime>
       <Cursor1Time time="2051fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="325"></NameColumnWidth>
-      <ValueColumnWidth column_width="269"></ValueColumnWidth>
+      <ValueColumnWidth column_width="257"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="6" />
-   <wave_markers>
-   </wave_markers>
    <wvobject fp_name="top_level_block_design_i/system_ila_1/inst/probe3_1" type="array">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">top_level_block_design_i/system_ila_1/inst/probe3_1[7:0]</obj_property>

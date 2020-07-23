@@ -91,9 +91,26 @@ class tdc_wrapper:
         if(self.mode == MODE_SERVER):
             print("Starting TDC wrapper in SERVER mode")
             self.server_init()
+            
+        elif(self.mode == MODE_NORMAL):
+            #Start a new thread for the TDC service routine so we act like the server
+            t = threading.Thread(target=self.service_tdc, args=(1,))
+            t.start()
+            self.threads.append(t)
         
         return
     
+    def __del__(self):
+        
+        #Shutdown the worker thread if we're in normal mode
+        if(self.mode == MODE_NORMAL):
+            self.shutdown_flag = 1
+            if(len(self.threads)):
+                while(self.threads[0].is_alive()):
+                    print("Waiting for TDC thread to shutdown")
+                    time.sleep(1)
+            else:
+                print("Warning, could not shut down TDC worker thread")
     
     
     ############################################################################
@@ -145,65 +162,72 @@ class tdc_wrapper:
                 return -1
 
         
-        if(self.device):
-            print("Error, cannot call wait_pulse while recording, exiting")
-            return -1
+        #if(self.device):
+        #    print("Error, cannot call wait_pulse while recording, exiting")
+        #    return -1
         
         #Open the TDC and start receiveing pulses
-        self.init_device()
+        #self.init_device()
         
         time_now = time.time()
         
-        ret_val = 0
+        #ret_val = 0
         
         #While we're not out of time
         while((time.time() - time_now) < self.timeout):
             
+            for r in self.timestamp_list:
+                if(r.channel_num == channel_num):
+                    return r.timestamp
+            
             #Check the data loss
-            d_loss = self.device.getDataLost()
-            if(d_loss != 0):
-                print("Warning, data loss was " + str(d_loss) + ", some timestamps have been missed")
+            #d_loss = self.device.getDataLost()
+            #if(d_loss != 0):
+            #    print("Warning, data loss was " + str(d_loss) + ", some timestamps have been missed")
             
             #Readback timestamps from the device
-            t_s = self.device.getLastTimestamps(True)
+            #t_s = self.device.getLastTimestamps(True)
             
             #If we didnt get any timestamps
-            if(t_s[2] == 0):
-                continue#keep going
+            #if(t_s[2] == 0):
+               # continue#keep going
             
-            for i in range(0, t_s[2]):
+            #for i in range(0, t_s[2]):
                 #If we find a timestamp of this channel
-                if(t_s[1][i] == channel_num):
-                    ret_val = t_s[0][i]
-                    break
+            #    if(t_s[1][i] == channel_num):
+            #        ret_val = t_s[0][i]
+            #        break
                     
             
         #Close the TDC
-        self.device.deInitialize()    
-        self.device = 0
-        
-        return ret_val
+        #self.device.deInitialize()    
+        #self.device = 0
+                
+                
+        #Fail if we didn't find it
+        return 0
     
     def start_record(self):
         
-        if(self.mode != MODE_NORMAL):
-            return 0
+        #if(self.mode != MODE_NORMAL):
+        #    return 0
         
-        if(self.dummy_mode):
-            return 0
+        #if(self.dummy_mode):
+        #    return 0
         
-        if(self.device):
-            print("Error, cannot call this function while TDC is active!")
-            return -1
+        #if(self.device):
+        #    print("Error, cannot call this function while TDC is active!")
+        #    return -1
+        
+        ##Don't do anything, device is being handled in its own thread
         
         #Open the TDC and start receiveing pulses
-        self.init_device()
+        #self.init_device()
         
         return 0
     
     #Returns timestamp from that channel\
-    #0 if not found
-    #-1 if nothing found
+    #0 on fail for get all = 0, [] on fail for get_all = 1
     def end_record(self, channel_num, get_all = 0):
         
         if(self.dummy_mode):
@@ -224,30 +248,38 @@ class tdc_wrapper:
             print("Warning, data loss was " + str(d_loss) + ", some timestamps have been missed")
         
         #Readback timestamps from the device
-        t_s = self.device.getLastTimestamps(True)
+        #t_s = self.device.getLastTimestamps(True)
         
         #If we didnt get any timestamps
-        if(t_s[2] == 0):
+        if(len(self.timestamp_list) == 0):
             print("No timestamp recieved after record!")
-            ret_val -1
+            if(get_all):
+                ret_val = []
+            else:
+                ret_val = 0
         else:
             if(get_all):
                 ret_val = []
-                for i in range(0, t_s[2]):
+                done = 0
+                while(not done):
                     #If we find a timestamp of this channel
-                    if(t_s[1][i] == channel_num):
-                        ret_val.append(t_s[0][i])
+                    for i in range(0, len(self.timestamp_list)):#Loop throught all timestamps
+                        if(self.timestamp_list[i].channel_num == channel_num):#If we find one
+                            ret_val.append(self.timestamp_list[i].timestamp)#Append it to our list
+                            self.timestamp_list.remove(self.timestamp_list[i])#Remove it from the master list
+                            break#Go around again and find more timestamps
+                        if(i >= len(self.timestamp_list) - 1):
+                            done = 1
             else:
-                for i in range(0, t_s[2]):
-                    #If we find a timestamp of this channel
-                    if(t_s[1][i] == channel_num):
-                        ret_val = t_s[0][i]
-                        break
+                for i in range(0, len(self.timestamp_list)):#Look throigh all of the stuff
+                    if(self.timestamp_list[i].channel_num == channel_num):
+                        ret_val = self.timestamp_list[i].timestamp
+                        self.timestamp_list.remove(self.timestamp_list[i])
                     
         #Close the TDC
-        self.device.deInitialize()    
+        #self.device.deInitialize()    
         
-        self.device = 0
+        #self.device = 0
         return ret_val
         
     ################################################################################
@@ -482,11 +514,11 @@ class tdc_wrapper:
                 print("[CLIENT HANDLER] Client at " + ip_str + ": COMMAND_CLEAR_ALL")
                 self.timestamp_list = []
             elif(client_cmd[0] == COMMAND_GET_AND_CLEAR):
-                print("[CLIENT HANDLER] Client at " + ip_str + ": COMMAND_GET_AND_CLEAR")
+                #print("[CLIENT HANDLER] Client at " + ip_str + ": COMMAND_GET_AND_CLEAR")
                 res = james_utils.receive_bytes(c, 1)
                 if(res == -1 or res == -2 or res == -3):
-                    print("[CLIENT HANDLER] Unable to get channel from client at " + ip_str + ", dropping client")
-                    break
+                    print("[CLIENT HANDLER] Unable to get channel from client at " + ip_str)
+                    #break
                 else:
                     channel_num = res[0]
                     ts = 0
@@ -500,7 +532,8 @@ class tdc_wrapper:
                         ts = int(time.time() * 10000000)
                
                     james_utils.send_timestamp(c, ts)
-                    print("[CLIENT HANDLER] Timestamp sent to client for channel " + str(channel_num) + " was " + str(ts))
+                    if(ts):
+                        print("[CLIENT HANDLER] Timestamp sent to client for channel " + str(channel_num) + " was " + str(ts))
             else:
                 print("[CLIENT HANDLER] Unknown command received from client: " + hex(client_cmd[0]))
                 
