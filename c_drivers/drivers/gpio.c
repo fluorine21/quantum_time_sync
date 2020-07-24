@@ -13,6 +13,10 @@ XGpio Gpio; /* The Instance of the GPIO Driver */
 #define SCLK_BIT 0
 #define SDATA_BIT 1
 
+#define P_WRITE_BIT 4
+#define P_SCLK_BIT 5
+#define P_SDATA_BIT 6
+
 
 u32 gpio_state;
 
@@ -82,6 +86,25 @@ void gpio_send_command(uint32_t value)
 	//Then write the command into the fifo
 	gpio_set_pin(WRITE_BIT, 0x01);
 	gpio_set_pin(WRITE_BIT, 0x00);
+}
+
+//Sends a command to the pulse generator RTL via FIFO
+void gpio_queue_pulse(uint32_t value)
+{
+	//First shift the command into the register
+	for(int i = 0; i < 32; i++)
+	{
+		//Set the output to the correct bit
+		u8 current_bit = (value & (1 << i)) == 0 ? 0 : 1;
+		gpio_set_pin(P_SDATA_BIT, current_bit);
+		//cycle the cycles sclk
+		gpio_set_pin(P_SCLK_BIT, 0x01);
+		gpio_set_pin(P_SCLK_BIT, 0x00);
+	}
+
+	//Then write the command into the fifo
+	gpio_set_pin(P_WRITE_BIT, 0x01);
+	gpio_set_pin(P_WRITE_BIT, 0x00);
 }
 
 

@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
 -- Date        : Wed Jun 24 20:28:18 2020
 -- Host        : pme10D0025 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_clk_wiz_0_0/top_level_block_design_clk_wiz_0_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top top_level_block_design_clk_wiz_0_0 -prefix
+--               top_level_block_design_clk_wiz_0_0_ top_level_block_design_clk_wiz_0_0_stub.vhdl
 -- Design      : top_level_block_design_clk_wiz_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xczu28dr-ffvg1517-2-e

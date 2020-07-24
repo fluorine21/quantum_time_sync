@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
 -- Date        : Tue Jun 23 23:25:19 2020
 -- Host        : pme10D0025 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_proc_sys_reset_0_0/top_level_block_design_proc_sys_reset_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top top_level_block_design_proc_sys_reset_0_0 -prefix
+--               top_level_block_design_proc_sys_reset_0_0_ top_level_block_design_proc_sys_reset_0_0_sim_netlist.vhdl
 -- Design      : top_level_block_design_proc_sys_reset_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -25,8 +25,6 @@ entity top_level_block_design_proc_sys_reset_0_0_cdc_sync is
     aux_reset_in : in STD_LOGIC;
     slowest_sync_clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_proc_sys_reset_0_0_cdc_sync : entity is "cdc_sync";
 end top_level_block_design_proc_sys_reset_0_0_cdc_sync;
 
 architecture STRUCTURE of top_level_block_design_proc_sys_reset_0_0_cdc_sync is
@@ -237,8 +235,6 @@ entity top_level_block_design_proc_sys_reset_0_0_upcnt_n is
     seq_cnt_en : in STD_LOGIC;
     slowest_sync_clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_proc_sys_reset_0_0_upcnt_n : entity is "upcnt_n";
 end top_level_block_design_proc_sys_reset_0_0_upcnt_n;
 
 architecture STRUCTURE of top_level_block_design_proc_sys_reset_0_0_upcnt_n is
@@ -403,8 +399,6 @@ entity top_level_block_design_proc_sys_reset_0_0_lpf is
     ext_reset_in : in STD_LOGIC;
     aux_reset_in : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_proc_sys_reset_0_0_lpf : entity is "lpf";
 end top_level_block_design_proc_sys_reset_0_0_lpf;
 
 architecture STRUCTURE of top_level_block_design_proc_sys_reset_0_0_lpf is
@@ -591,8 +585,6 @@ entity top_level_block_design_proc_sys_reset_0_0_sequence_psr is
     lpf_int : in STD_LOGIC;
     slowest_sync_clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_proc_sys_reset_0_0_sequence_psr : entity is "sequence_psr";
 end top_level_block_design_proc_sys_reset_0_0_sequence_psr;
 
 architecture STRUCTURE of top_level_block_design_proc_sys_reset_0_0_sequence_psr is
@@ -931,8 +923,6 @@ entity top_level_block_design_proc_sys_reset_0_0_proc_sys_reset is
   attribute C_NUM_PERP_ARESETN of top_level_block_design_proc_sys_reset_0_0_proc_sys_reset : entity is 1;
   attribute C_NUM_PERP_RST : integer;
   attribute C_NUM_PERP_RST of top_level_block_design_proc_sys_reset_0_0_proc_sys_reset : entity is 1;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_proc_sys_reset_0_0_proc_sys_reset : entity is "proc_sys_reset";
 end top_level_block_design_proc_sys_reset_0_0_proc_sys_reset;
 
 architecture STRUCTURE of top_level_block_design_proc_sys_reset_0_0_proc_sys_reset is

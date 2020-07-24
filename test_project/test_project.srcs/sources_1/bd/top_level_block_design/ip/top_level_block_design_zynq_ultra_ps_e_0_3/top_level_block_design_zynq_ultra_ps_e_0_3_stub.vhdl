@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Thu Jun 25 12:32:53 2020
+-- Date        : Thu Jun 25 12:32:51 2020
 -- Host        : pme10D0025 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_zynq_ultra_ps_e_0_3/top_level_block_design_zynq_ultra_ps_e_0_3_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top top_level_block_design_zynq_ultra_ps_e_0_3 -prefix
+--               top_level_block_design_zynq_ultra_ps_e_0_3_ top_level_block_design_zynq_ultra_ps_e_0_3_stub.vhdl
 -- Design      : top_level_block_design_zynq_ultra_ps_e_0_3
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xczu28dr-ffvg1517-2-e

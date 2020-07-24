@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-//Date        : Thu Jul 23 16:42:30 2020
+//Date        : Thu Jul 23 20:06:35 2020
 //Host        : pme10D0025 running 64-bit major release  (build 9200)
 //Command     : generate_target top_level_block_design.bd
 //Design      : top_level_block_design
@@ -683,7 +683,7 @@ module s00_couplers_imp_1HUQ0NZ
         .s_axi_wvalid(auto_ds_to_auto_pc_WVALID));
 endmodule
 
-(* CORE_GENERATION_INFO = "top_level_block_design,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=top_level_block_design,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=17,numReposBlks=13,numNonXlnxBlks=0,numHierBlks=4,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=2,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=8,da_board_cnt=21,da_mb_cnt=1,da_rf_converter_usp_cnt=4,da_zynq_ultra_ps_e_cnt=4,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "top_level_block_design.hwdef" *) 
+(* CORE_GENERATION_INFO = "top_level_block_design,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=top_level_block_design,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=18,numReposBlks=14,numNonXlnxBlks=0,numHierBlks=4,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=2,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=8,da_board_cnt=21,da_mb_cnt=1,da_rf_converter_usp_cnt=4,da_zynq_ultra_ps_e_cnt=4,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "top_level_block_design.hwdef" *) 
 module top_level_block_design
    (dac1_clk_clk_n,
     dac1_clk_clk_p,
@@ -714,6 +714,8 @@ module top_level_block_design
   wire fifo_generator_0_full;
   wire [31:0]gpio_to_fifo_0_dout;
   wire gpio_to_fifo_0_fifo_write;
+  wire [31:0]gpio_to_fifo_0_pulse_fifo_dout;
+  wire gpio_to_fifo_0_pulse_fifo_wr_en;
   wire gpio_to_fifo_0_rst_pl;
   wire [0:0]proc_sys_reset_0_peripheral_aresetn;
   wire [39:0]ps8_0_axi_periph_M00_AXI_ARADDR;
@@ -750,10 +752,14 @@ module top_level_block_design
   wire ps8_0_axi_periph_M01_AXI_WREADY;
   wire [3:0]ps8_0_axi_periph_M01_AXI_WSTRB;
   wire ps8_0_axi_periph_M01_AXI_WVALID;
+  wire [31:0]pulse_fifo_dout;
+  wire pulse_fifo_empty;
+  wire pulse_fifo_full;
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire pulse_gen_0_fifo_read;
   (* CONN_BUS_INFO = "pulse_gen_0_m_axis xilinx.com:interface:axis:1.0 None TDATA" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire [255:0]pulse_gen_0_m_axis_TDATA;
   (* CONN_BUS_INFO = "pulse_gen_0_m_axis xilinx.com:interface:axis:1.0 None TREADY" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire pulse_gen_0_m_axis_TREADY;
   (* CONN_BUS_INFO = "pulse_gen_0_m_axis xilinx.com:interface:axis:1.0 None TVALID" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire pulse_gen_0_m_axis_TVALID;
+  wire pulse_gen_0_pulse_fifo_read;
   wire reset_1;
   wire [0:0]rst_ps8_0_99M_interconnect_aresetn;
   wire rst_ps8_0_99M_mb_reset;
@@ -837,7 +843,18 @@ module top_level_block_design
        (.clk_in1_n(default_sysclk3_100mhz_1_CLK_N),
         .clk_in1_p(default_sysclk3_100mhz_1_CLK_P),
         .clk_out1(zynq_ultra_ps_e_0_pl_clk0));
-  top_level_block_design_fifo_generator_0_0 fifo_generator_0
+  top_level_block_design_gpio_to_fifo_0_0 gpio_to_fifo_0
+       (.clk(zynq_ultra_ps_e_0_pl_clk0),
+        .emio_gpio_i(axi_gpio_0_gpio_io_o),
+        .instr_fifo_dout(gpio_to_fifo_0_dout),
+        .instr_fifo_full(fifo_generator_0_full),
+        .instr_fifo_wr_en(gpio_to_fifo_0_fifo_write),
+        .pulse_fifo_dout(gpio_to_fifo_0_pulse_fifo_dout),
+        .pulse_fifo_full(pulse_fifo_full),
+        .pulse_fifo_wr_en(gpio_to_fifo_0_pulse_fifo_wr_en),
+        .rst(rst_ps8_0_99M_peripheral_aresetn),
+        .rst_pl(gpio_to_fifo_0_rst_pl));
+  top_level_block_design_fifo_generator_0_0 instr_fifo
        (.din(gpio_to_fifo_0_dout),
         .dout(fifo_generator_0_dout),
         .empty(fifo_generator_0_empty),
@@ -847,14 +864,6 @@ module top_level_block_design
         .srst(rst_ps8_0_99M_mb_reset),
         .wr_clk(zynq_ultra_ps_e_0_pl_clk0),
         .wr_en(gpio_to_fifo_0_fifo_write));
-  top_level_block_design_gpio_to_fifo_0_0 gpio_to_fifo_0
-       (.clk(zynq_ultra_ps_e_0_pl_clk0),
-        .emio_gpio_i(axi_gpio_0_gpio_io_o),
-        .fifo_dout(gpio_to_fifo_0_dout),
-        .fifo_full(fifo_generator_0_full),
-        .fifo_wr_en(gpio_to_fifo_0_fifo_write),
-        .rst(rst_ps8_0_99M_peripheral_aresetn),
-        .rst_pl(gpio_to_fifo_0_rst_pl));
   top_level_block_design_proc_sys_reset_0_0 proc_sys_reset_0
        (.aux_reset_in(gpio_to_fifo_0_rst_pl),
         .dcm_locked(1'b1),
@@ -942,14 +951,27 @@ module top_level_block_design
         .S00_AXI_wready(zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_WREADY),
         .S00_AXI_wstrb(zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_WSTRB),
         .S00_AXI_wvalid(zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_WVALID));
+  top_level_block_design_instr_fifo_0 pulse_fifo
+       (.din(gpio_to_fifo_0_pulse_fifo_dout),
+        .dout(pulse_fifo_dout),
+        .empty(pulse_fifo_empty),
+        .full(pulse_fifo_full),
+        .rd_clk(usp_rf_data_converter_0_clk_dac1),
+        .rd_en(pulse_gen_0_pulse_fifo_read),
+        .srst(rst_ps8_0_99M_mb_reset),
+        .wr_clk(zynq_ultra_ps_e_0_pl_clk0),
+        .wr_en(gpio_to_fifo_0_pulse_fifo_wr_en));
   top_level_block_design_pulse_gen_0_0 pulse_gen_0
        (.clk(usp_rf_data_converter_0_clk_dac1),
-        .fifo_data(fifo_generator_0_dout),
-        .fifo_empty(fifo_generator_0_empty),
-        .fifo_read(pulse_gen_0_fifo_read),
+        .instr_fifo_data(fifo_generator_0_dout),
+        .instr_fifo_empty(fifo_generator_0_empty),
+        .instr_fifo_read(pulse_gen_0_fifo_read),
         .m_axis_tdata(pulse_gen_0_m_axis_TDATA),
         .m_axis_tready(pulse_gen_0_m_axis_TREADY),
         .m_axis_tvalid(pulse_gen_0_m_axis_TVALID),
+        .pulse_fifo_data(pulse_fifo_dout),
+        .pulse_fifo_empty(pulse_fifo_empty),
+        .pulse_fifo_read(pulse_gen_0_pulse_fifo_read),
         .rst(proc_sys_reset_0_peripheral_aresetn),
         .state_out(state_out));
   top_level_block_design_rst_ps8_0_99M_0 rst_ps8_0_99M

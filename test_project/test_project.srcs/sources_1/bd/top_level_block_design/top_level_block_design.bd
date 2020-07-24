@@ -22,13 +22,14 @@
         "m01_couplers": {}
       },
       "rst_ps8_0_99M": "",
-      "fifo_generator_0": "",
+      "instr_fifo": "",
       "proc_sys_reset_0": "",
-      "gpio_to_fifo_0": "",
       "clk_wiz_0": "",
       "axi_gpio_0": "",
       "system_ila_1": "",
-      "pulse_gen_0": ""
+      "pulse_gen_0": "",
+      "pulse_fifo": "",
+      "gpio_to_fifo_0": ""
     },
     "interface_ports": {
       "sysref_in": {
@@ -1300,6 +1301,12 @@
               }
             },
             "interface_nets": {
+              "s00_couplers_to_auto_ds": {
+                "interface_ports": [
+                  "S_AXI",
+                  "auto_ds/S_AXI"
+                ]
+              },
               "auto_pc_to_s00_couplers": {
                 "interface_ports": [
                   "M_AXI",
@@ -1310,12 +1317,6 @@
                 "interface_ports": [
                   "auto_ds/M_AXI",
                   "auto_pc/S_AXI"
-                ]
-              },
-              "s00_couplers_to_auto_ds": {
-                "interface_ports": [
-                  "S_AXI",
-                  "auto_ds/S_AXI"
                 ]
               }
             },
@@ -1446,6 +1447,30 @@
           }
         },
         "interface_nets": {
+          "ps8_0_axi_periph_to_s00_couplers": {
+            "interface_ports": [
+              "S00_AXI",
+              "s00_couplers/S_AXI"
+            ]
+          },
+          "m00_couplers_to_ps8_0_axi_periph": {
+            "interface_ports": [
+              "M00_AXI",
+              "m00_couplers/M_AXI"
+            ]
+          },
+          "s00_couplers_to_xbar": {
+            "interface_ports": [
+              "s00_couplers/M_AXI",
+              "xbar/S00_AXI"
+            ]
+          },
+          "xbar_to_m00_couplers": {
+            "interface_ports": [
+              "xbar/M00_AXI",
+              "m00_couplers/S_AXI"
+            ]
+          },
           "m01_couplers_to_ps8_0_axi_periph": {
             "interface_ports": [
               "M01_AXI",
@@ -1456,30 +1481,6 @@
             "interface_ports": [
               "xbar/M01_AXI",
               "m01_couplers/S_AXI"
-            ]
-          },
-          "ps8_0_axi_periph_to_s00_couplers": {
-            "interface_ports": [
-              "S00_AXI",
-              "s00_couplers/S_AXI"
-            ]
-          },
-          "s00_couplers_to_xbar": {
-            "interface_ports": [
-              "s00_couplers/M_AXI",
-              "xbar/S00_AXI"
-            ]
-          },
-          "m00_couplers_to_ps8_0_axi_periph": {
-            "interface_ports": [
-              "M00_AXI",
-              "m00_couplers/M_AXI"
-            ]
-          },
-          "xbar_to_m00_couplers": {
-            "interface_ports": [
-              "xbar/M00_AXI",
-              "m00_couplers/S_AXI"
             ]
           }
         },
@@ -1522,7 +1523,7 @@
           }
         }
       },
-      "fifo_generator_0": {
+      "instr_fifo": {
         "vlnv": "xilinx.com:ip:fifo_generator:13.2",
         "xci_name": "top_level_block_design_fifo_generator_0_0",
         "parameters": {
@@ -1537,74 +1538,6 @@
       "proc_sys_reset_0": {
         "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
         "xci_name": "top_level_block_design_proc_sys_reset_0_0"
-      },
-      "gpio_to_fifo_0": {
-        "vlnv": "xilinx.com:module_ref:gpio_to_fifo:1.0",
-        "xci_name": "top_level_block_design_gpio_to_fifo_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "gpio_to_fifo",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "rst",
-                "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "top_level_block_design_clk_wiz_0_0_clk_out1",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
-              }
-            }
-          },
-          "rst": {
-            "type": "rst",
-            "direction": "I",
-            "parameters": {
-              "POLARITY": {
-                "value": "ACTIVE_LOW",
-                "value_src": "const_prop"
-              }
-            }
-          },
-          "emio_gpio_i": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "rst_pl": {
-            "direction": "O",
-            "parameters": {
-              "POLARITY": {
-                "value": "",
-                "value_src": "weak"
-              }
-            }
-          },
-          "fifo_full": {
-            "direction": "I"
-          },
-          "fifo_dout": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "fifo_wr_en": {
-            "direction": "O"
-          }
-        }
       },
       "clk_wiz_0": {
         "vlnv": "xilinx.com:ip:clk_wiz:6.0",
@@ -1783,21 +1716,123 @@
               }
             }
           },
-          "fifo_empty": {
+          "instr_fifo_empty": {
             "direction": "I"
           },
-          "fifo_data": {
+          "instr_fifo_data": {
             "direction": "I",
             "left": "31",
             "right": "0"
           },
-          "fifo_read": {
+          "instr_fifo_read": {
+            "direction": "O"
+          },
+          "pulse_fifo_empty": {
+            "direction": "I"
+          },
+          "pulse_fifo_data": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "pulse_fifo_read": {
             "direction": "O"
           },
           "state_out": {
             "direction": "O",
             "left": "7",
             "right": "0"
+          }
+        }
+      },
+      "pulse_fifo": {
+        "vlnv": "xilinx.com:ip:fifo_generator:13.2",
+        "xci_name": "top_level_block_design_instr_fifo_0",
+        "parameters": {
+          "Fifo_Implementation": {
+            "value": "Independent_Clocks_Builtin_FIFO"
+          },
+          "Input_Data_Width": {
+            "value": "32"
+          }
+        }
+      },
+      "gpio_to_fifo_0": {
+        "vlnv": "xilinx.com:module_ref:gpio_to_fifo:1.0",
+        "xci_name": "top_level_block_design_gpio_to_fifo_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "gpio_to_fifo",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "top_level_block_design_clk_wiz_0_0_clk_out1",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "const_prop"
+              }
+            }
+          },
+          "emio_gpio_i": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "rst_pl": {
+            "direction": "O",
+            "parameters": {
+              "POLARITY": {
+                "value": "",
+                "value_src": "weak"
+              }
+            }
+          },
+          "instr_fifo_full": {
+            "direction": "I"
+          },
+          "instr_fifo_dout": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "instr_fifo_wr_en": {
+            "direction": "O"
+          },
+          "pulse_fifo_full": {
+            "direction": "I"
+          },
+          "pulse_fifo_dout": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "pulse_fifo_wr_en": {
+            "direction": "O"
           }
         }
       }
@@ -1871,10 +1906,11 @@
           "rst_ps8_0_99M/slowest_sync_clk",
           "usp_rf_data_converter_0/s_axi_aclk",
           "ps8_0_axi_periph/M00_ACLK",
-          "fifo_generator_0/wr_clk",
-          "gpio_to_fifo_0/clk",
+          "instr_fifo/wr_clk",
           "axi_gpio_0/s_axi_aclk",
-          "ps8_0_axi_periph/M01_ACLK"
+          "ps8_0_axi_periph/M01_ACLK",
+          "pulse_fifo/wr_clk",
+          "gpio_to_fifo_0/clk"
         ]
       },
       "rst_ps8_0_99M_peripheral_aresetn": {
@@ -1884,40 +1920,41 @@
           "usp_rf_data_converter_0/s_axi_aresetn",
           "ps8_0_axi_periph/M00_ARESETN",
           "ps8_0_axi_periph/ARESETN",
-          "gpio_to_fifo_0/rst",
           "axi_gpio_0/s_axi_aresetn",
-          "ps8_0_axi_periph/M01_ARESETN"
+          "ps8_0_axi_periph/M01_ARESETN",
+          "gpio_to_fifo_0/rst"
         ]
       },
       "gpio_to_fifo_0_fifo_write": {
         "ports": [
-          "gpio_to_fifo_0/fifo_wr_en",
-          "fifo_generator_0/wr_en"
+          "gpio_to_fifo_0/instr_fifo_wr_en",
+          "instr_fifo/wr_en"
         ]
       },
       "gpio_to_fifo_0_dout": {
         "ports": [
-          "gpio_to_fifo_0/fifo_dout",
-          "fifo_generator_0/din"
+          "gpio_to_fifo_0/instr_fifo_dout",
+          "instr_fifo/din"
         ]
       },
       "fifo_generator_0_full": {
         "ports": [
-          "fifo_generator_0/full",
-          "gpio_to_fifo_0/fifo_full"
+          "instr_fifo/full",
+          "gpio_to_fifo_0/instr_fifo_full"
         ]
       },
       "rst_ps8_0_99M_mb_reset": {
         "ports": [
           "rst_ps8_0_99M/mb_reset",
-          "fifo_generator_0/srst"
+          "instr_fifo/srst",
+          "pulse_fifo/srst"
         ]
       },
       "fifo_generator_0_empty": {
         "ports": [
-          "fifo_generator_0/empty",
+          "instr_fifo/empty",
           "system_ila_1/probe2",
-          "pulse_gen_0/fifo_empty"
+          "pulse_gen_0/instr_fifo_empty"
         ],
         "hdl_attributes": {
           "DEBUG": {
@@ -1930,9 +1967,9 @@
       },
       "fifo_generator_0_dout": {
         "ports": [
-          "fifo_generator_0/dout",
+          "instr_fifo/dout",
           "system_ila_1/probe0",
-          "pulse_gen_0/fifo_data"
+          "pulse_gen_0/instr_fifo_data"
         ],
         "hdl_attributes": {
           "DEBUG": {
@@ -1945,8 +1982,8 @@
       },
       "pulse_gen_0_fifo_read": {
         "ports": [
-          "pulse_gen_0/fifo_read",
-          "fifo_generator_0/rd_en",
+          "pulse_gen_0/instr_fifo_read",
+          "instr_fifo/rd_en",
           "system_ila_1/probe1"
         ],
         "hdl_attributes": {
@@ -1994,10 +2031,11 @@
         "ports": [
           "usp_rf_data_converter_0/clk_dac1",
           "usp_rf_data_converter_0/s1_axis_aclk",
-          "fifo_generator_0/rd_clk",
+          "instr_fifo/rd_clk",
           "proc_sys_reset_0/slowest_sync_clk",
           "system_ila_1/clk",
-          "pulse_gen_0/clk"
+          "pulse_gen_0/clk",
+          "pulse_fifo/rd_clk"
         ]
       },
       "state_out": {
@@ -2013,6 +2051,42 @@
             "value": "true"
           }
         }
+      },
+      "gpio_to_fifo_0_pulse_fifo_wr_en": {
+        "ports": [
+          "gpio_to_fifo_0/pulse_fifo_wr_en",
+          "pulse_fifo/wr_en"
+        ]
+      },
+      "gpio_to_fifo_0_pulse_fifo_dout": {
+        "ports": [
+          "gpio_to_fifo_0/pulse_fifo_dout",
+          "pulse_fifo/din"
+        ]
+      },
+      "pulse_fifo_full": {
+        "ports": [
+          "pulse_fifo/full",
+          "gpio_to_fifo_0/pulse_fifo_full"
+        ]
+      },
+      "pulse_fifo_empty": {
+        "ports": [
+          "pulse_fifo/empty",
+          "pulse_gen_0/pulse_fifo_empty"
+        ]
+      },
+      "pulse_fifo_dout": {
+        "ports": [
+          "pulse_fifo/dout",
+          "pulse_gen_0/pulse_fifo_data"
+        ]
+      },
+      "pulse_gen_0_pulse_fifo_read": {
+        "ports": [
+          "pulse_gen_0/pulse_fifo_read",
+          "pulse_fifo/rd_en"
+        ]
       }
     },
     "addressing": {

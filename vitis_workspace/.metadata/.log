@@ -16938,3 +16938,27 @@ Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-183: Laun
 
 !ENTRY com.xilinx.sdk.utils 0 0 2020-07-23 17:50:21.304
 !MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-183: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-23 23:03:21.931
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/hw/top_level_block_design_wrapper.xsa C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/system.mss ], Thread: Worker-196: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-23 23:03:21.993
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/hw/top_level_block_design_wrapper.xsa C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/system.mss ], Result: [null, ]. Thread: Worker-196: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-23 23:03:21.994
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/hw/top_level_block_design_wrapper.xsa C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/system.mss], Thread: Worker-196: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-23 23:03:22.015
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/hw/top_level_block_design_wrapper.xsa C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/system.mss], Result: [null, {"procname": "psu_cortexa53_0",
+"osname": "standalone",
+"osver": "7.2",
+}]. Thread: Worker-196: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2020-07-23 23:03:22.017
+!MESSAGE Generating MD5 hash for file: C:\James\vitis_workspace\test_proj_plat\export\test_proj_plat\sw\test_proj_plat\standalone_domain\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-23 23:03:22.021
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/system.mss], Thread: Worker-196: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-23 23:03:22.027
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/system.mss], Result: [null, ]. Thread: Worker-196: Build Project

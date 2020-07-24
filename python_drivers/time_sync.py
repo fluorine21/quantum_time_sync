@@ -20,6 +20,8 @@ import threading
 #Open a secure socket?
 SECURE_MODE = 1
 
+REL_NUM_PULSES = 100 #Use 10 pulses to do phase measurement
+
 CLIENT = 0
 SERVER = 1
 SERVER_ACK = b'\x66'
@@ -37,6 +39,7 @@ SERVER_SET_BIN_SIZE = 9 # bin size in picoseconds
 SERVER_SET_BIN_NUMBER = 10 #Must be a power of 2
 SERVER_RECEIVE_PHOTON = 11
 SERVER_CLOSE_CONNECTION = 12
+SERVER_RECEIVE_STREAM = 13
 
 
 #Bob's responses
@@ -238,11 +241,15 @@ class time_sync:
                 print("Got a connection from " + addr[0])
                 
                 if(SECURE_MODE):
-                   c_s = ssl.wrap_socket(c,
+                    try:
+                        c_s = ssl.wrap_socket(c,
                                 server_side=True,
                                 certfile=pem_path,
                                 keyfile=key_path,
                                 ssl_version=ssl.PROTOCOL_TLS)
+                    except:
+                        print("Unknown error while receiving client connection")
+                        continue
                 else:
                     c_s = c
                 
@@ -426,6 +433,11 @@ class time_sync:
             if(not isinstance(res, encoded_photon)):
                 print("Failed to receive photon")
             self.photons_received.append(res)
+            return 1
+        elif(client_cmd[0] == SERVER_RECEIVE_STREAM):
+            print("Command received: SERVER_RECEIVE_STREAM")
+            sck.send(SERVER_ACK)
+            self.receive_stream(sck)
             return 1
             
         else:
@@ -733,6 +745,11 @@ class time_sync:
     #Phase Measurement Routines for Relative Time Synchronization#
     ##############################################################
     
+    def set_protocol(self, bin_size, bin_number, period):
+        self.set_bin_size(bin_size)
+        self.set_bin_number(bin_number)
+        self.set_period(period)
+    
     #Returns 0 on success, val in picoseconds
     def set_bin_size(self, val):
         
@@ -811,12 +828,11 @@ class time_sync:
         self.tdc.clear_all()
 
         #Otherwise just turn on phase measurement mode for a moment and leave
-        self.board.phase_meas_on()
-        self.board.phase_meas_off()
+        self.board.toggle_phase_meas(REL_NUM_PULSES)
         
         self.s.send(bytearray([0x00]))
         
-        time.sleep(5)
+        #time.sleep(5)
         
         if(self.wait_ack(self.s)):
             print("Relative time synch failed!")
@@ -838,9 +854,13 @@ class time_sync:
         
         print("Waiting for pulses to be collected")
         #Give the server a moment to finish collecting pulses
-        time.sleep(5)
-        
-        pulses = self.tdc.end_record(self.channel_receive, 1)
+        #time.sleep(0.5)
+        time_now = time.time()
+        pulses = []
+        while(time.time() < time_now + 5):
+            pulses = self.tdc.end_record(self.channel_receive, 1)
+            if(len(pulses) > 1):
+                break
         
         if(len(pulses) < 1):
             print("Error, did not receive any pulses from Alice during relative phase synchronization")
@@ -860,9 +880,9 @@ class time_sync:
             
         #Calculate the average and stdev and report
         self.last_tick = pulses[len(pulses) - 1]
-        self.avg_period = Math.mean(diffs)
+        self.avg_period = round(sum(diffs_final)/len(diffs_final))
         
-        print("[RELATIVE SYNC] Pulses received: " + str(len(pulses)) + ", pulses rejected: " + str(len(diffs) - len(diffs_final)) + ", last tick: " + self.last_tick + ", avg period: " + self.avg_period)
+        print("[RELATIVE SYNC] Pulses received: " + str(len(pulses)) + ", pulses rejected: " + str(len(diffs) - len(diffs_final)) + ", last tick: " + str(self.last_tick) + ", avg period: " + str(self.avg_period))
         
         #Send an ack back to Alice indicating sucess
         socket.send(SERVER_ACK)
@@ -881,19 +901,19 @@ class time_sync:
             return -1
         
         #tell bob to receive a photon
-        self.s.send(bytearray[SERVER_RECEIVE_PHOTON])
+        self.s.send(bytearray([SERVER_RECEIVE_PHOTON]))
         
          #bin_size in picoseconds
         #Divide by 250 to get num samples
-        offset = self.bin_size * val # in picoseconds
-        if(offset >= self.bin_num * self.bin_size):
+        offset = round((self.bin_size * val)  + (self.bin_size * 0.5))# in picoseconds
+        if(offset >= self.bin_number * self.bin_size):
             print("Value too lange, must be smaller than bin_num * bin_size")   
             
         #convert offset to number of samples
         coarse_delay = offset / 4000
         fine_delay = (offset / 250) % 16
         
-        if(self.board.send_pulse(self, coarse_delay, fine_delay)):
+        if(self.board.send_pulse(coarse_delay, fine_delay)):
             print("Error while sending encoded photon")
         
         #Return the value sent back from bob
@@ -919,7 +939,7 @@ class time_sync:
             return -1
         
         #Try to receive one photon
-        ts = self.device.wait_pulse(self.receive_channel)
+        ts = self.tdc.wait_pulse(self.channel_receive)
         
         if(ts == 0):
             print("Error, no encoded photon received!")
@@ -935,6 +955,7 @@ class time_sync:
         #If the offset falls outside of the time bin
         if(offset > self.bin_number * self.bin_size):
             print("Error, received a photon which falls outside of the allowable range, offset was " + str(offset) + ", allowable range was " + str(self.bin_number * self.bin_size))
+            print("TS was " + str(ts) + ", TS rel was " + str(ts_rel)) 
             james_utils.send_timestamp(sck, FAIL_TIMESTAMP_BAD_RANGE)
             return -1
         #Otherwise determine the time bin and 
@@ -942,13 +963,111 @@ class time_sync:
         print("Timestamp was " + str(ts) + ", relative timestamp was " + str(ts_rel) + ", offset was " + str(offset) + ", final value was " + str(final_val))
         
         #Send the value back to alice
-        james_utils.sent_timestamp(sck, final_val)
+        james_utils.send_timestamp(sck, final_val)
         
-        return encoded_photon(self.bin_size, self.bin_num, ts, final_val, 1)
+        return encoded_photon(self.bin_size, self.bin_number, ts, final_val, 1)
+    
+    
+    
+    def send_stream(self, vals):
+        
+        val_coarse = []
+        val_fine = []
+        
+        for v in vals:
+            if(v > self.bin_number-1 or v < 0):
+                print("Bad value " + str(v) + ", too large, must be smaller than number of bins")
+                return -1
+            c, f = self.val_to_coarse_fine(v)
+            val_coarse.append(c)
+            val_fine.append(f)
+        
+        total_pulses = len(val_coarse) + REL_NUM_PULSES
+        
+        #Load the values to be sent
+        for i in range(0, len(val_coarse)):
+            self.board.load_pulse(val_coarse[i], val_fine[i])
+    
+        #Send the pulses
+        self.board.sync_and_stream(REL_NUM_PULSES)
+        
         
     
+    def receive_stream(self, sck):
+        
+        #TDC fires on Alice's side here
+        
+        #Receive the expected number of pulses
+        num_pulses = james_utils.receive_timestamp(sck)
+        
+        if(num_pulses < 5 ):
+            print("Error, number of expected pulses less than 5")
+            return -1
+        
+        #Check our tdc
+        pulse_list = self.tdc.end_record(self.channel_receive,1)
+        
+        if(len(pulse_list) < 2):
+            print("Error, did not receive pulses!")
+            return -1
+        print("Expected " + str(num_pulses) + ", got " + str(len(pulse_list)) + " pulses")
+        
+        extracted_vals, missed_vals = self.analyze_pulse_list(pulse_list)
+        
     
+    def val_to_coarse_fine(self, val):
+        
+        offset = (val * self.bin_size) + (0.5 + self.bin_size)
+        c = Math.floor(offset / 4000)
+        f = Math.floor((offset/250)%16)
+        return c,f
     
+    def offset_to_val(self, offset):
+        
+        if(offset > self.bin_number * self.bin_size):
+            print("Error, received photon outside of allowed range, should not happen here")
+            return -2
+        
+        val = Math.floor(offset/self.bin_size)
+        return val    
+    
+        #-1 is did not detect, -2 is fell outsize allowable range
+    def analyze_pulse_list(self, pulse_list):
+        
+        
+        diffs = []
+        
+        first_encoded_index = 0
+        
+        for i in range(0, len(pulse_list)):
+            
+            if(len(diffs) < 5):
+                diffs.append(pulse_list[i+1] - pulse_list[i])
+            else:
+                d = pulse_list[i+1] - pulse_list[i]
+                m = sum(diffs) / len(diffs)
+                if(d > m*1.5):
+                    #We have arrived at the first encoded photon
+                    first_encoded_index = i
+                    break
+          
+        #Start the time bin counter
+        avg_period = sum(diffs) / len(diffs)
+        current_clock_tick = pulse_list[first_encoded_index - 1]
+        decoded_vals = []
+        
+        for j in range(first_encoded_index, len(pulse_list))
+        
+            while(current_clock_tick < pulse_list[j] - avg_period):
+                if(j != 0):
+                    print("Detected missing pulse in bin " + str(j - first_encoded_index))
+                    decoded_vals.append(-1)
+                current_clock_tick += avg_period
+            
+            offset = pulse_list[j] - current_clock_tick
+            
+            decoded_vals.append(self.offset_to_val(offset))
+                
 
 
 def cert_gen(

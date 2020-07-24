@@ -13,7 +13,7 @@ source top_level_block_design_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/data/ip'.
-add_files: Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 1060.520 ; gain = 0.000
+add_files: Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 1061.004 ; gain = 0.000
 Command: synth_design -top top_level_block_design_wrapper -part xczu28dr-ffvg1517-2-e
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xczu28dr'
@@ -22,87 +22,92 @@ INFO: [Common 17-86] Your Synthesis license expires in 5 day(s)
 INFO: [Device 21-403] Loading part xczu28dr-ffvg1517-2-e
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 6808
+INFO: [Synth 8-7075] Helper process launched with PID 7040
 load diablo GTM unisim library
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 1735.793 ; gain = 183.016
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1735.777 ; gain = 182.559
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top_level_block_design_wrapper' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/hdl/top_level_block_design_wrapper.v:12]
 INFO: [Synth 8-6157] synthesizing module 'top_level_block_design' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:687]
-INFO: [Synth 8-6157] synthesizing module 'top_level_block_design_axi_gpio_0_0' [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-10764-pme10D0025/realtime/top_level_block_design_axi_gpio_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_level_block_design_axi_gpio_0_0' (1#1) [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-10764-pme10D0025/realtime/top_level_block_design_axi_gpio_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'top_level_block_design_clk_wiz_0_0' [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-10764-pme10D0025/realtime/top_level_block_design_clk_wiz_0_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'top_level_block_design_clk_wiz_0_0' (2#1) [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-10764-pme10D0025/realtime/top_level_block_design_clk_wiz_0_0_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'top_level_block_design_fifo_generator_0_0' [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-10764-pme10D0025/realtime/top_level_block_design_fifo_generator_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_level_block_design_fifo_generator_0_0' (3#1) [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-10764-pme10D0025/realtime/top_level_block_design_fifo_generator_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'wr_rst_busy' of module 'top_level_block_design_fifo_generator_0_0' is unconnected for instance 'fifo_generator_0' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:840]
-WARNING: [Synth 8-7071] port 'rd_rst_busy' of module 'top_level_block_design_fifo_generator_0_0' is unconnected for instance 'fifo_generator_0' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:840]
-WARNING: [Synth 8-7023] instance 'fifo_generator_0' of module 'top_level_block_design_fifo_generator_0_0' has 11 connections declared, but only 9 given [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:840]
-INFO: [Synth 8-6157] synthesizing module 'top_level_block_design_gpio_to_fifo_0_0' [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-10764-pme10D0025/realtime/top_level_block_design_gpio_to_fifo_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_level_block_design_gpio_to_fifo_0_0' (4#1) [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-10764-pme10D0025/realtime/top_level_block_design_gpio_to_fifo_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'top_level_block_design_proc_sys_reset_0_0' [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-10764-pme10D0025/realtime/top_level_block_design_proc_sys_reset_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_level_block_design_proc_sys_reset_0_0' (5#1) [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-10764-pme10D0025/realtime/top_level_block_design_proc_sys_reset_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'mb_reset' of module 'top_level_block_design_proc_sys_reset_0_0' is unconnected for instance 'proc_sys_reset_0' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:858]
-WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'top_level_block_design_proc_sys_reset_0_0' is unconnected for instance 'proc_sys_reset_0' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:858]
-WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'top_level_block_design_proc_sys_reset_0_0' is unconnected for instance 'proc_sys_reset_0' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:858]
-WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'top_level_block_design_proc_sys_reset_0_0' is unconnected for instance 'proc_sys_reset_0' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:858]
-WARNING: [Synth 8-7023] instance 'proc_sys_reset_0' of module 'top_level_block_design_proc_sys_reset_0_0' has 10 connections declared, but only 6 given [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:858]
-INFO: [Synth 8-6157] synthesizing module 'top_level_block_design_ps8_0_axi_periph_0' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:1048]
+INFO: [Synth 8-6157] synthesizing module 'top_level_block_design_axi_gpio_0_0' [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-18232-pme10D0025/realtime/top_level_block_design_axi_gpio_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_level_block_design_axi_gpio_0_0' (1#1) [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-18232-pme10D0025/realtime/top_level_block_design_axi_gpio_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'top_level_block_design_clk_wiz_0_0' [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-18232-pme10D0025/realtime/top_level_block_design_clk_wiz_0_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'top_level_block_design_clk_wiz_0_0' (2#1) [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-18232-pme10D0025/realtime/top_level_block_design_clk_wiz_0_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'top_level_block_design_gpio_to_fifo_0_0' [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-18232-pme10D0025/realtime/top_level_block_design_gpio_to_fifo_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_level_block_design_gpio_to_fifo_0_0' (3#1) [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-18232-pme10D0025/realtime/top_level_block_design_gpio_to_fifo_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'top_level_block_design_fifo_generator_0_0' [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-18232-pme10D0025/realtime/top_level_block_design_fifo_generator_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_level_block_design_fifo_generator_0_0' (4#1) [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-18232-pme10D0025/realtime/top_level_block_design_fifo_generator_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'wr_rst_busy' of module 'top_level_block_design_fifo_generator_0_0' is unconnected for instance 'instr_fifo' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:857]
+WARNING: [Synth 8-7071] port 'rd_rst_busy' of module 'top_level_block_design_fifo_generator_0_0' is unconnected for instance 'instr_fifo' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:857]
+WARNING: [Synth 8-7023] instance 'instr_fifo' of module 'top_level_block_design_fifo_generator_0_0' has 11 connections declared, but only 9 given [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:857]
+INFO: [Synth 8-6157] synthesizing module 'top_level_block_design_proc_sys_reset_0_0' [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-18232-pme10D0025/realtime/top_level_block_design_proc_sys_reset_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_level_block_design_proc_sys_reset_0_0' (5#1) [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-18232-pme10D0025/realtime/top_level_block_design_proc_sys_reset_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'mb_reset' of module 'top_level_block_design_proc_sys_reset_0_0' is unconnected for instance 'proc_sys_reset_0' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:867]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'top_level_block_design_proc_sys_reset_0_0' is unconnected for instance 'proc_sys_reset_0' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:867]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'top_level_block_design_proc_sys_reset_0_0' is unconnected for instance 'proc_sys_reset_0' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:867]
+WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'top_level_block_design_proc_sys_reset_0_0' is unconnected for instance 'proc_sys_reset_0' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:867]
+WARNING: [Synth 8-7023] instance 'proc_sys_reset_0' of module 'top_level_block_design_proc_sys_reset_0_0' has 10 connections declared, but only 6 given [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:867]
+INFO: [Synth 8-6157] synthesizing module 'top_level_block_design_ps8_0_axi_periph_0' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:1070]
 INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_1IBVSXL' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:12]
 INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_1IBVSXL' (6#1) [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:12]
 INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_DW9DW3' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:144]
 INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_DW9DW3' (7#1) [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:144]
 INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_1HUQ0NZ' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:276]
-INFO: [Synth 8-6157] synthesizing module 'top_level_block_design_auto_ds_0' [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-10764-pme10D0025/realtime/top_level_block_design_auto_ds_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_level_block_design_auto_ds_0' (8#1) [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-10764-pme10D0025/realtime/top_level_block_design_auto_ds_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'top_level_block_design_auto_pc_0' [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-10764-pme10D0025/realtime/top_level_block_design_auto_pc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_level_block_design_auto_pc_0' (9#1) [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-10764-pme10D0025/realtime/top_level_block_design_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'top_level_block_design_auto_ds_0' [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-18232-pme10D0025/realtime/top_level_block_design_auto_ds_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_level_block_design_auto_ds_0' (8#1) [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-18232-pme10D0025/realtime/top_level_block_design_auto_ds_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'top_level_block_design_auto_pc_0' [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-18232-pme10D0025/realtime/top_level_block_design_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_level_block_design_auto_pc_0' (9#1) [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-18232-pme10D0025/realtime/top_level_block_design_auto_pc_0_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_1HUQ0NZ' (10#1) [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:276]
-INFO: [Synth 8-6157] synthesizing module 'top_level_block_design_xbar_0' [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-10764-pme10D0025/realtime/top_level_block_design_xbar_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_level_block_design_xbar_0' (11#1) [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-10764-pme10D0025/realtime/top_level_block_design_xbar_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'top_level_block_design_xbar_0' is unconnected for instance 'xbar' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:1547]
-WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'top_level_block_design_xbar_0' is unconnected for instance 'xbar' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:1547]
-WARNING: [Synth 8-7023] instance 'xbar' of module 'top_level_block_design_xbar_0' has 40 connections declared, but only 38 given [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:1547]
-INFO: [Synth 8-6155] done synthesizing module 'top_level_block_design_ps8_0_axi_periph_0' (12#1) [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:1048]
-INFO: [Synth 8-6157] synthesizing module 'top_level_block_design_pulse_gen_0_0' [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-10764-pme10D0025/realtime/top_level_block_design_pulse_gen_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_level_block_design_pulse_gen_0_0' (13#1) [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-10764-pme10D0025/realtime/top_level_block_design_pulse_gen_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'top_level_block_design_rst_ps8_0_99M_0' [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-10764-pme10D0025/realtime/top_level_block_design_rst_ps8_0_99M_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_level_block_design_rst_ps8_0_99M_0' (14#1) [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-10764-pme10D0025/realtime/top_level_block_design_rst_ps8_0_99M_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'top_level_block_design_rst_ps8_0_99M_0' is unconnected for instance 'rst_ps8_0_99M' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:955]
-WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'top_level_block_design_rst_ps8_0_99M_0' is unconnected for instance 'rst_ps8_0_99M' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:955]
-WARNING: [Synth 8-7023] instance 'rst_ps8_0_99M' of module 'top_level_block_design_rst_ps8_0_99M_0' has 10 connections declared, but only 8 given [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:955]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:964]
-INFO: [Synth 8-6157] synthesizing module 'top_level_block_design_system_ila_1_0' [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-10764-pme10D0025/realtime/top_level_block_design_system_ila_1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_level_block_design_system_ila_1_0' (15#1) [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-10764-pme10D0025/realtime/top_level_block_design_system_ila_1_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'top_level_block_design_usp_rf_data_converter_0_0' [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-10764-pme10D0025/realtime/top_level_block_design_usp_rf_data_converter_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_level_block_design_usp_rf_data_converter_0_0' (16#1) [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-10764-pme10D0025/realtime/top_level_block_design_usp_rf_data_converter_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'irq' of module 'top_level_block_design_usp_rf_data_converter_0_0' is unconnected for instance 'usp_rf_data_converter_0' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:975]
-WARNING: [Synth 8-7023] instance 'usp_rf_data_converter_0' of module 'top_level_block_design_usp_rf_data_converter_0_0' has 32 connections declared, but only 31 given [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:975]
-INFO: [Synth 8-6157] synthesizing module 'top_level_block_design_zynq_ultra_ps_e_0_3' [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-10764-pme10D0025/realtime/top_level_block_design_zynq_ultra_ps_e_0_3_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_level_block_design_zynq_ultra_ps_e_0_3' (17#1) [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-10764-pme10D0025/realtime/top_level_block_design_zynq_ultra_ps_e_0_3_stub.v:6]
-WARNING: [Synth 8-7071] port 'maxigp0_awuser' of module 'top_level_block_design_zynq_ultra_ps_e_0_3' is unconnected for instance 'zynq_ultra_ps_e_0' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:1007]
-WARNING: [Synth 8-7071] port 'maxigp0_aruser' of module 'top_level_block_design_zynq_ultra_ps_e_0_3' is unconnected for instance 'zynq_ultra_ps_e_0' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:1007]
-WARNING: [Synth 8-7071] port 'pl_resetn0' of module 'top_level_block_design_zynq_ultra_ps_e_0_3' is unconnected for instance 'zynq_ultra_ps_e_0' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:1007]
-WARNING: [Synth 8-7023] instance 'zynq_ultra_ps_e_0' of module 'top_level_block_design_zynq_ultra_ps_e_0_3' has 41 connections declared, but only 38 given [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:1007]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'fifo_generator_0'. This will prevent further optimization [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:840]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'system_ila_1'. This will prevent further optimization [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:964]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'pulse_gen_0'. This will prevent further optimization [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:945]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'usp_rf_data_converter_0'. This will prevent further optimization [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:975]
-INFO: [Synth 8-6155] done synthesizing module 'top_level_block_design' (18#1) [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:687]
-INFO: [Synth 8-6155] done synthesizing module 'top_level_block_design_wrapper' (19#1) [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/hdl/top_level_block_design_wrapper.v:12]
+INFO: [Synth 8-6157] synthesizing module 'top_level_block_design_xbar_0' [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-18232-pme10D0025/realtime/top_level_block_design_xbar_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_level_block_design_xbar_0' (11#1) [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-18232-pme10D0025/realtime/top_level_block_design_xbar_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'top_level_block_design_xbar_0' is unconnected for instance 'xbar' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:1569]
+WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'top_level_block_design_xbar_0' is unconnected for instance 'xbar' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:1569]
+WARNING: [Synth 8-7023] instance 'xbar' of module 'top_level_block_design_xbar_0' has 40 connections declared, but only 38 given [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:1569]
+INFO: [Synth 8-6155] done synthesizing module 'top_level_block_design_ps8_0_axi_periph_0' (12#1) [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:1070]
+INFO: [Synth 8-6157] synthesizing module 'top_level_block_design_instr_fifo_0' [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-18232-pme10D0025/realtime/top_level_block_design_instr_fifo_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_level_block_design_instr_fifo_0' (13#1) [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-18232-pme10D0025/realtime/top_level_block_design_instr_fifo_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'wr_rst_busy' of module 'top_level_block_design_instr_fifo_0' is unconnected for instance 'pulse_fifo' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:954]
+WARNING: [Synth 8-7071] port 'rd_rst_busy' of module 'top_level_block_design_instr_fifo_0' is unconnected for instance 'pulse_fifo' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:954]
+WARNING: [Synth 8-7023] instance 'pulse_fifo' of module 'top_level_block_design_instr_fifo_0' has 11 connections declared, but only 9 given [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:954]
+INFO: [Synth 8-6157] synthesizing module 'top_level_block_design_pulse_gen_0_0' [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-18232-pme10D0025/realtime/top_level_block_design_pulse_gen_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_level_block_design_pulse_gen_0_0' (14#1) [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-18232-pme10D0025/realtime/top_level_block_design_pulse_gen_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'top_level_block_design_rst_ps8_0_99M_0' [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-18232-pme10D0025/realtime/top_level_block_design_rst_ps8_0_99M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_level_block_design_rst_ps8_0_99M_0' (15#1) [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-18232-pme10D0025/realtime/top_level_block_design_rst_ps8_0_99M_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'top_level_block_design_rst_ps8_0_99M_0' is unconnected for instance 'rst_ps8_0_99M' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:977]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'top_level_block_design_rst_ps8_0_99M_0' is unconnected for instance 'rst_ps8_0_99M' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:977]
+WARNING: [Synth 8-7023] instance 'rst_ps8_0_99M' of module 'top_level_block_design_rst_ps8_0_99M_0' has 10 connections declared, but only 8 given [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:977]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:986]
+INFO: [Synth 8-6157] synthesizing module 'top_level_block_design_system_ila_1_0' [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-18232-pme10D0025/realtime/top_level_block_design_system_ila_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_level_block_design_system_ila_1_0' (16#1) [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-18232-pme10D0025/realtime/top_level_block_design_system_ila_1_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'top_level_block_design_usp_rf_data_converter_0_0' [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-18232-pme10D0025/realtime/top_level_block_design_usp_rf_data_converter_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_level_block_design_usp_rf_data_converter_0_0' (17#1) [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-18232-pme10D0025/realtime/top_level_block_design_usp_rf_data_converter_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'irq' of module 'top_level_block_design_usp_rf_data_converter_0_0' is unconnected for instance 'usp_rf_data_converter_0' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:997]
+WARNING: [Synth 8-7023] instance 'usp_rf_data_converter_0' of module 'top_level_block_design_usp_rf_data_converter_0_0' has 32 connections declared, but only 31 given [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:997]
+INFO: [Synth 8-6157] synthesizing module 'top_level_block_design_zynq_ultra_ps_e_0_3' [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-18232-pme10D0025/realtime/top_level_block_design_zynq_ultra_ps_e_0_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_level_block_design_zynq_ultra_ps_e_0_3' (18#1) [C:/James/test_project/test_project.runs/synth_1/.Xil/Vivado-18232-pme10D0025/realtime/top_level_block_design_zynq_ultra_ps_e_0_3_stub.v:6]
+WARNING: [Synth 8-7071] port 'maxigp0_awuser' of module 'top_level_block_design_zynq_ultra_ps_e_0_3' is unconnected for instance 'zynq_ultra_ps_e_0' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:1029]
+WARNING: [Synth 8-7071] port 'maxigp0_aruser' of module 'top_level_block_design_zynq_ultra_ps_e_0_3' is unconnected for instance 'zynq_ultra_ps_e_0' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:1029]
+WARNING: [Synth 8-7071] port 'pl_resetn0' of module 'top_level_block_design_zynq_ultra_ps_e_0_3' is unconnected for instance 'zynq_ultra_ps_e_0' [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:1029]
+WARNING: [Synth 8-7023] instance 'zynq_ultra_ps_e_0' of module 'top_level_block_design_zynq_ultra_ps_e_0_3' has 41 connections declared, but only 38 given [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:1029]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'instr_fifo'. This will prevent further optimization [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:857]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'system_ila_1'. This will prevent further optimization [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:986]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'pulse_gen_0'. This will prevent further optimization [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:964]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'usp_rf_data_converter_0'. This will prevent further optimization [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:997]
+INFO: [Synth 8-6155] done synthesizing module 'top_level_block_design' (19#1) [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/synth/top_level_block_design.v:687]
+INFO: [Synth 8-6155] done synthesizing module 'top_level_block_design_wrapper' (20#1) [C:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/hdl/top_level_block_design_wrapper.v:12]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1776.219 ; gain = 223.441
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1777.043 ; gain = 223.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1794.086 ; gain = 241.309
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1794.910 ; gain = 241.691
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1794.086 ; gain = 241.309
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1794.910 ; gain = 241.691
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.042 . Memory (MB): peak = 1794.086 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.043 . Memory (MB): peak = 1794.910 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -116,8 +121,8 @@ Parsing XDC File [c:/James/test_project/test_project.srcs/sources_1/bd/top_level
 Finished Parsing XDC File [c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_rst_ps8_0_99M_0/top_level_block_design_rst_ps8_0_99M_0/top_level_block_design_rst_clk_wiz_1_100M_0_in_context.xdc] for cell 'top_level_block_design_i/rst_ps8_0_99M'
 Parsing XDC File [c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_gpio_to_fifo_0_0/top_level_block_design_gpio_to_fifo_0_0/top_level_block_design_gpio_to_fifo_0_0_in_context.xdc] for cell 'top_level_block_design_i/gpio_to_fifo_0'
 Finished Parsing XDC File [c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_gpio_to_fifo_0_0/top_level_block_design_gpio_to_fifo_0_0/top_level_block_design_gpio_to_fifo_0_0_in_context.xdc] for cell 'top_level_block_design_i/gpio_to_fifo_0'
-Parsing XDC File [c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_fifo_generator_0_0/top_level_block_design_fifo_generator_0_0/top_level_block_design_fifo_generator_0_0_in_context.xdc] for cell 'top_level_block_design_i/fifo_generator_0'
-Finished Parsing XDC File [c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_fifo_generator_0_0/top_level_block_design_fifo_generator_0_0/top_level_block_design_fifo_generator_0_0_in_context.xdc] for cell 'top_level_block_design_i/fifo_generator_0'
+Parsing XDC File [c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_fifo_generator_0_0/top_level_block_design_fifo_generator_0_0/top_level_block_design_fifo_generator_0_0_in_context.xdc] for cell 'top_level_block_design_i/instr_fifo'
+Finished Parsing XDC File [c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_fifo_generator_0_0/top_level_block_design_fifo_generator_0_0/top_level_block_design_fifo_generator_0_0_in_context.xdc] for cell 'top_level_block_design_i/instr_fifo'
 Parsing XDC File [c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_pulse_gen_0_0/top_level_block_design_pulse_gen_0_0/top_level_block_design_pulse_gen_0_0_in_context.xdc] for cell 'top_level_block_design_i/pulse_gen_0'
 Finished Parsing XDC File [c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_pulse_gen_0_0/top_level_block_design_pulse_gen_0_0/top_level_block_design_pulse_gen_0_0_in_context.xdc] for cell 'top_level_block_design_i/pulse_gen_0'
 Parsing XDC File [c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_proc_sys_reset_0_0/top_level_block_design_proc_sys_reset_0_0/top_level_block_design_proc_sys_reset_0_0_in_context.xdc] for cell 'top_level_block_design_i/proc_sys_reset_0'
@@ -132,6 +137,8 @@ Parsing XDC File [c:/James/test_project/test_project.srcs/sources_1/bd/top_level
 Finished Parsing XDC File [c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_axi_gpio_0_0/top_level_block_design_axi_gpio_0_0/top_level_block_design_axi_gpio_0_0_in_context.xdc] for cell 'top_level_block_design_i/axi_gpio_0'
 Parsing XDC File [c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_system_ila_1_0/top_level_block_design_system_ila_1_0/top_level_block_design_system_ila_1_0_in_context.xdc] for cell 'top_level_block_design_i/system_ila_1'
 Finished Parsing XDC File [c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_system_ila_1_0/top_level_block_design_system_ila_1_0/top_level_block_design_system_ila_1_0_in_context.xdc] for cell 'top_level_block_design_i/system_ila_1'
+Parsing XDC File [c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_instr_fifo_0/top_level_block_design_instr_fifo_0/top_level_block_design_fifo_generator_0_0_in_context.xdc] for cell 'top_level_block_design_i/pulse_fifo'
+Finished Parsing XDC File [c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_instr_fifo_0/top_level_block_design_instr_fifo_0/top_level_block_design_fifo_generator_0_0_in_context.xdc] for cell 'top_level_block_design_i/pulse_fifo'
 Parsing XDC File [c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_auto_ds_0/top_level_block_design_auto_ds_0/top_level_block_design_auto_ds_0_in_context.xdc] for cell 'top_level_block_design_i/ps8_0_axi_periph/s00_couplers/auto_ds'
 Finished Parsing XDC File [c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_auto_ds_0/top_level_block_design_auto_ds_0/top_level_block_design_auto_ds_0_in_context.xdc] for cell 'top_level_block_design_i/ps8_0_axi_periph/s00_couplers/auto_ds'
 Parsing XDC File [c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_auto_pc_0/top_level_block_design_auto_pc_0/top_level_block_design_auto_pc_0_in_context.xdc] for cell 'top_level_block_design_i/ps8_0_axi_periph/s00_couplers/auto_pc'
@@ -140,14 +147,14 @@ Parsing XDC File [C:/James/test_project/test_project.runs/synth_1/dont_touch.xdc
 Finished Parsing XDC File [C:/James/test_project/test_project.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1885.813 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1892.039 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.062 . Memory (MB): peak = 1885.813 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.060 . Memory (MB): peak = 1892.039 ; gain = 0.000
 load diablo GTM unisim library
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1885.813 ; gain = 333.035
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1892.039 ; gain = 338.820
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -155,7 +162,7 @@ Start Loading Part and Timing Information
 Loading part: xczu28dr-ffvg1517-2-e
 INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1885.813 ; gain = 333.035
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1892.039 ; gain = 338.820
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -182,20 +189,21 @@ Applied set_property DONT_TOUCH = true for top_level_block_design_i/usp_rf_data_
 Applied set_property DONT_TOUCH = true for top_level_block_design_i/ps8_0_axi_periph. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for top_level_block_design_i/rst_ps8_0_99M. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for top_level_block_design_i/gpio_to_fifo_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for top_level_block_design_i/fifo_generator_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for top_level_block_design_i/instr_fifo. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for top_level_block_design_i/pulse_gen_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for top_level_block_design_i/proc_sys_reset_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for top_level_block_design_i/clk_wiz_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for top_level_block_design_i/ps8_0_axi_periph/xbar. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for top_level_block_design_i/axi_gpio_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for top_level_block_design_i/system_ila_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for top_level_block_design_i/pulse_fifo. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for top_level_block_design_i/ps8_0_axi_periph/s00_couplers/auto_ds. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for top_level_block_design_i/ps8_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1885.813 ; gain = 333.035
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1892.039 ; gain = 338.820
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1885.813 ; gain = 333.035
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1892.039 ; gain = 338.820
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -217,25 +225,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1885.813 ; gain = 333.035
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1892.039 ; gain = 338.820
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 2355.797 ; gain = 803.020
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 2350.426 ; gain = 797.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 2355.949 ; gain = 803.172
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 2350.648 ; gain = 797.430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 2375.414 ; gain = 822.637
+Finished Technology Mapping : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 2370.133 ; gain = 816.914
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -253,37 +261,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2380.199 ; gain = 827.422
+Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 2375.344 ; gain = 822.125
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2380.199 ; gain = 827.422
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 2375.344 ; gain = 822.125
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2380.199 ; gain = 827.422
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 2375.344 ; gain = 822.125
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2380.199 ; gain = 827.422
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 2375.344 ; gain = 822.125
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2380.199 ; gain = 827.422
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 2375.344 ; gain = 822.125
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2380.199 ; gain = 827.422
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 2375.344 ; gain = 822.125
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -298,14 +306,15 @@ Report BlackBoxes:
 |3     |top_level_block_design_auto_pc_0                 |         1|
 |4     |top_level_block_design_axi_gpio_0_0              |         1|
 |5     |top_level_block_design_clk_wiz_0_0               |         1|
-|6     |top_level_block_design_fifo_generator_0_0        |         1|
-|7     |top_level_block_design_gpio_to_fifo_0_0          |         1|
+|6     |top_level_block_design_gpio_to_fifo_0_0          |         1|
+|7     |top_level_block_design_fifo_generator_0_0        |         1|
 |8     |top_level_block_design_proc_sys_reset_0_0        |         1|
-|9     |top_level_block_design_pulse_gen_0_0             |         1|
-|10    |top_level_block_design_rst_ps8_0_99M_0           |         1|
-|11    |top_level_block_design_system_ila_1_0            |         1|
-|12    |top_level_block_design_usp_rf_data_converter_0_0 |         1|
-|13    |top_level_block_design_zynq_ultra_ps_e_0_3       |         1|
+|9     |top_level_block_design_instr_fifo_0              |         1|
+|10    |top_level_block_design_pulse_gen_0_0             |         1|
+|11    |top_level_block_design_rst_ps8_0_99M_0           |         1|
+|12    |top_level_block_design_system_ila_1_0            |         1|
+|13    |top_level_block_design_usp_rf_data_converter_0_0 |         1|
+|14    |top_level_block_design_zynq_ultra_ps_e_0_3       |         1|
 +------+-------------------------------------------------+----------+
 
 Report Cell Usage: 
@@ -318,38 +327,39 @@ Report Cell Usage:
 |4     |top_level_block_design_clk_wiz_0               |     1|
 |5     |top_level_block_design_fifo_generator_0        |     1|
 |6     |top_level_block_design_gpio_to_fifo_0          |     1|
-|7     |top_level_block_design_proc_sys_reset_0        |     1|
-|8     |top_level_block_design_pulse_gen_0             |     1|
-|9     |top_level_block_design_rst_ps8_0_99M           |     1|
-|10    |top_level_block_design_system_ila_1            |     1|
-|11    |top_level_block_design_usp_rf_data_converter_0 |     1|
-|12    |top_level_block_design_xbar                    |     1|
-|13    |top_level_block_design_zynq_ultra_ps_e_0       |     1|
-|14    |IBUF                                           |     1|
+|7     |top_level_block_design_instr_fifo              |     1|
+|8     |top_level_block_design_proc_sys_reset_0        |     1|
+|9     |top_level_block_design_pulse_gen_0             |     1|
+|10    |top_level_block_design_rst_ps8_0_99M           |     1|
+|11    |top_level_block_design_system_ila_1            |     1|
+|12    |top_level_block_design_usp_rf_data_converter_0 |     1|
+|13    |top_level_block_design_xbar                    |     1|
+|14    |top_level_block_design_zynq_ultra_ps_e_0       |     1|
+|15    |IBUF                                           |     1|
 +------+-----------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2380.199 ; gain = 827.422
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 2375.344 ; gain = 822.125
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 2380.199 ; gain = 735.695
-Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 2380.199 ; gain = 827.422
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:26 . Memory (MB): peak = 2375.344 ; gain = 724.996
+Synthesis Optimization Complete : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 2375.344 ; gain = 822.125
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 2393.246 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 2388.395 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2432.395 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2426.926 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   IBUF => IBUF (IBUFCTRL, INBUF): 1 instance 
 
 INFO: [Common 17-83] Releasing license: Synthesis
-61 Infos, 24 Warnings, 0 Critical Warnings and 0 Errors encountered.
+63 Infos, 27 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:42 ; elapsed = 00:00:49 . Memory (MB): peak = 2432.395 ; gain = 1371.875
+synth_design: Time (s): cpu = 00:00:41 ; elapsed = 00:00:47 . Memory (MB): peak = 2426.926 ; gain = 1365.922
 INFO: [Common 17-600] The following parameters have non-default value.
 tcl.collectionResultDisplayLimit
 INFO: [Common 17-1381] The checkpoint 'C:/James/test_project/test_project.runs/synth_1/top_level_block_design_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_level_block_design_wrapper_utilization_synth.rpt -pb top_level_block_design_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Jul 23 16:45:31 2020...
+INFO: [Common 17-206] Exiting Vivado at Thu Jul 23 20:09:52 2020...

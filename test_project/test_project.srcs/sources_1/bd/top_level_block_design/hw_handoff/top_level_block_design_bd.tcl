@@ -199,16 +199,6 @@ proc create_root_design { parentCell } {
    CONFIG.USE_RESET {false} \
  ] $clk_wiz_0
 
-  # Create instance: fifo_generator_0, and set properties
-  set fifo_generator_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:fifo_generator:13.2 fifo_generator_0 ]
-  set_property -dict [ list \
-   CONFIG.Empty_Threshold_Assert_Value {5} \
-   CONFIG.Empty_Threshold_Negate_Value {6} \
-   CONFIG.Fifo_Implementation {Independent_Clocks_Builtin_FIFO} \
-   CONFIG.Input_Data_Width {32} \
-   CONFIG.Output_Data_Width {32} \
- ] $fifo_generator_0
-
   # Create instance: gpio_to_fifo_0, and set properties
   set block_name gpio_to_fifo
   set block_cell_name gpio_to_fifo_0
@@ -220,6 +210,16 @@ proc create_root_design { parentCell } {
      return 1
    }
   
+  # Create instance: instr_fifo, and set properties
+  set instr_fifo [ create_bd_cell -type ip -vlnv xilinx.com:ip:fifo_generator:13.2 instr_fifo ]
+  set_property -dict [ list \
+   CONFIG.Empty_Threshold_Assert_Value {5} \
+   CONFIG.Empty_Threshold_Negate_Value {6} \
+   CONFIG.Fifo_Implementation {Independent_Clocks_Builtin_FIFO} \
+   CONFIG.Input_Data_Width {32} \
+   CONFIG.Output_Data_Width {32} \
+ ] $instr_fifo
+
   # Create instance: proc_sys_reset_0, and set properties
   set proc_sys_reset_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_0 ]
 
@@ -228,6 +228,16 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.NUM_MI {2} \
  ] $ps8_0_axi_periph
+
+  # Create instance: pulse_fifo, and set properties
+  set pulse_fifo [ create_bd_cell -type ip -vlnv xilinx.com:ip:fifo_generator:13.2 pulse_fifo ]
+  set_property -dict [ list \
+   CONFIG.Empty_Threshold_Assert_Value {5} \
+   CONFIG.Empty_Threshold_Negate_Value {6} \
+   CONFIG.Fifo_Implementation {Independent_Clocks_Builtin_FIFO} \
+   CONFIG.Input_Data_Width {32} \
+   CONFIG.Output_Data_Width {32} \
+ ] $pulse_fifo
 
   # Create instance: pulse_gen_0, and set properties
   set block_name pulse_gen
@@ -996,25 +1006,31 @@ connect_bd_intf_net -intf_net [get_bd_intf_nets pulse_gen_0_m_axis] [get_bd_intf
 
   # Create port connections
   connect_bd_net -net axi_gpio_0_gpio_io_o [get_bd_pins axi_gpio_0/gpio_io_o] [get_bd_pins gpio_to_fifo_0/emio_gpio_i]
-  connect_bd_net -net fifo_generator_0_dout [get_bd_pins fifo_generator_0/dout] [get_bd_pins pulse_gen_0/fifo_data] [get_bd_pins system_ila_1/probe0]
+  connect_bd_net -net fifo_generator_0_dout [get_bd_pins instr_fifo/dout] [get_bd_pins pulse_gen_0/instr_fifo_data] [get_bd_pins system_ila_1/probe0]
   set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets fifo_generator_0_dout]
-  connect_bd_net -net fifo_generator_0_empty [get_bd_pins fifo_generator_0/empty] [get_bd_pins pulse_gen_0/fifo_empty] [get_bd_pins system_ila_1/probe2]
+  connect_bd_net -net fifo_generator_0_empty [get_bd_pins instr_fifo/empty] [get_bd_pins pulse_gen_0/instr_fifo_empty] [get_bd_pins system_ila_1/probe2]
   set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets fifo_generator_0_empty]
-  connect_bd_net -net fifo_generator_0_full [get_bd_pins fifo_generator_0/full] [get_bd_pins gpio_to_fifo_0/fifo_full]
-  connect_bd_net -net gpio_to_fifo_0_dout [get_bd_pins fifo_generator_0/din] [get_bd_pins gpio_to_fifo_0/fifo_dout]
-  connect_bd_net -net gpio_to_fifo_0_fifo_write [get_bd_pins fifo_generator_0/wr_en] [get_bd_pins gpio_to_fifo_0/fifo_wr_en]
+  connect_bd_net -net fifo_generator_0_full [get_bd_pins gpio_to_fifo_0/instr_fifo_full] [get_bd_pins instr_fifo/full]
+  connect_bd_net -net gpio_to_fifo_0_dout [get_bd_pins gpio_to_fifo_0/instr_fifo_dout] [get_bd_pins instr_fifo/din]
+  connect_bd_net -net gpio_to_fifo_0_fifo_write [get_bd_pins gpio_to_fifo_0/instr_fifo_wr_en] [get_bd_pins instr_fifo/wr_en]
+  connect_bd_net -net gpio_to_fifo_0_pulse_fifo_dout [get_bd_pins gpio_to_fifo_0/pulse_fifo_dout] [get_bd_pins pulse_fifo/din]
+  connect_bd_net -net gpio_to_fifo_0_pulse_fifo_wr_en [get_bd_pins gpio_to_fifo_0/pulse_fifo_wr_en] [get_bd_pins pulse_fifo/wr_en]
   connect_bd_net -net gpio_to_fifo_0_rst_pl [get_bd_pins gpio_to_fifo_0/rst_pl] [get_bd_pins proc_sys_reset_0/aux_reset_in]
   connect_bd_net -net proc_sys_reset_0_peripheral_aresetn [get_bd_pins proc_sys_reset_0/peripheral_aresetn] [get_bd_pins pulse_gen_0/rst] [get_bd_pins system_ila_1/resetn] [get_bd_pins usp_rf_data_converter_0/s1_axis_aresetn]
-  connect_bd_net -net pulse_gen_0_fifo_read [get_bd_pins fifo_generator_0/rd_en] [get_bd_pins pulse_gen_0/fifo_read] [get_bd_pins system_ila_1/probe1]
+  connect_bd_net -net pulse_fifo_dout [get_bd_pins pulse_fifo/dout] [get_bd_pins pulse_gen_0/pulse_fifo_data]
+  connect_bd_net -net pulse_fifo_empty [get_bd_pins pulse_fifo/empty] [get_bd_pins pulse_gen_0/pulse_fifo_empty]
+  connect_bd_net -net pulse_fifo_full [get_bd_pins gpio_to_fifo_0/pulse_fifo_full] [get_bd_pins pulse_fifo/full]
+  connect_bd_net -net pulse_gen_0_fifo_read [get_bd_pins instr_fifo/rd_en] [get_bd_pins pulse_gen_0/instr_fifo_read] [get_bd_pins system_ila_1/probe1]
   set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets pulse_gen_0_fifo_read]
+  connect_bd_net -net pulse_gen_0_pulse_fifo_read [get_bd_pins pulse_fifo/rd_en] [get_bd_pins pulse_gen_0/pulse_fifo_read]
   connect_bd_net -net reset_1 [get_bd_ports reset] [get_bd_pins rst_ps8_0_99M/ext_reset_in]
   connect_bd_net -net rst_ps8_0_99M_interconnect_aresetn [get_bd_pins proc_sys_reset_0/ext_reset_in] [get_bd_pins rst_ps8_0_99M/interconnect_aresetn]
-  connect_bd_net -net rst_ps8_0_99M_mb_reset [get_bd_pins fifo_generator_0/srst] [get_bd_pins rst_ps8_0_99M/mb_reset]
+  connect_bd_net -net rst_ps8_0_99M_mb_reset [get_bd_pins instr_fifo/srst] [get_bd_pins pulse_fifo/srst] [get_bd_pins rst_ps8_0_99M/mb_reset]
   connect_bd_net -net rst_ps8_0_99M_peripheral_aresetn [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins gpio_to_fifo_0/rst] [get_bd_pins ps8_0_axi_periph/ARESETN] [get_bd_pins ps8_0_axi_periph/M00_ARESETN] [get_bd_pins ps8_0_axi_periph/M01_ARESETN] [get_bd_pins ps8_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps8_0_99M/peripheral_aresetn] [get_bd_pins usp_rf_data_converter_0/s_axi_aresetn]
   connect_bd_net -net state_out [get_bd_pins pulse_gen_0/state_out] [get_bd_pins system_ila_1/probe3]
   set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets state_out]
-  connect_bd_net -net usp_rf_data_converter_0_clk_dac1 [get_bd_pins fifo_generator_0/rd_clk] [get_bd_pins proc_sys_reset_0/slowest_sync_clk] [get_bd_pins pulse_gen_0/clk] [get_bd_pins system_ila_1/clk] [get_bd_pins usp_rf_data_converter_0/clk_dac1] [get_bd_pins usp_rf_data_converter_0/s1_axis_aclk]
-  connect_bd_net -net zynq_ultra_ps_e_0_pl_clk0 [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins fifo_generator_0/wr_clk] [get_bd_pins gpio_to_fifo_0/clk] [get_bd_pins ps8_0_axi_periph/ACLK] [get_bd_pins ps8_0_axi_periph/M00_ACLK] [get_bd_pins ps8_0_axi_periph/M01_ACLK] [get_bd_pins ps8_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps8_0_99M/slowest_sync_clk] [get_bd_pins usp_rf_data_converter_0/s_axi_aclk] [get_bd_pins zynq_ultra_ps_e_0/maxihpm0_fpd_aclk]
+  connect_bd_net -net usp_rf_data_converter_0_clk_dac1 [get_bd_pins instr_fifo/rd_clk] [get_bd_pins proc_sys_reset_0/slowest_sync_clk] [get_bd_pins pulse_fifo/rd_clk] [get_bd_pins pulse_gen_0/clk] [get_bd_pins system_ila_1/clk] [get_bd_pins usp_rf_data_converter_0/clk_dac1] [get_bd_pins usp_rf_data_converter_0/s1_axis_aclk]
+  connect_bd_net -net zynq_ultra_ps_e_0_pl_clk0 [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins gpio_to_fifo_0/clk] [get_bd_pins instr_fifo/wr_clk] [get_bd_pins ps8_0_axi_periph/ACLK] [get_bd_pins ps8_0_axi_periph/M00_ACLK] [get_bd_pins ps8_0_axi_periph/M01_ACLK] [get_bd_pins ps8_0_axi_periph/S00_ACLK] [get_bd_pins pulse_fifo/wr_clk] [get_bd_pins rst_ps8_0_99M/slowest_sync_clk] [get_bd_pins usp_rf_data_converter_0/s_axi_aclk] [get_bd_pins zynq_ultra_ps_e_0/maxihpm0_fpd_aclk]
 
   # Create address segments
   assign_bd_address -offset 0xA0040000 -range 0x00010000 -target_address_space [get_bd_addr_spaces zynq_ultra_ps_e_0/Data] [get_bd_addr_segs axi_gpio_0/S_AXI/Reg] -force

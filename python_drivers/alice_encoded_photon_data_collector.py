@@ -23,9 +23,9 @@ logfile = "time_sync_stats.csv"
 count = 0
 
 #Encoding scheme values
-bin_size = 1000 #1ns
-bin_number = 16#can encode values between 0 and 15
-period = 2000000 #2000ns
+bin_size = 100000 #in ps
+bin_number = 4#can encode values between 0 and 15
+period = 2000000 #in ps
 
 res = 0
 res += ts.set_bin_size(bin_size)
@@ -37,18 +37,21 @@ if(res):
 elif(ts.relative_time_sync()):
     print("Relative time synchronization failed, aborting...")
 else:
-    
+    print("Relative time synchronization success!")
     #Set the bin number and bin length
 
     while(1):
         
         try:
             
-            rand_val = random.ranint(0,15)
+            rand_val = random.randint(0,bin_number - 1)
             
             file = open(logfile,'a')
         
-    
+            if(ts.relative_time_sync()):
+                print("Relative time sync failed")
+                continue
+            
             ret_val = ts.send_encoded_photon(rand_val)
             
             error = 0
@@ -56,7 +59,10 @@ else:
                 error = 1
             succ = 0
             if(ret_val == rand_val):
+                print("Photon decode success, sent " + str(rand_val) + ", got " + str(ret_val))
                 succ = 1
+            else:
+                print("Photon decode failed, sent " + str(rand_val) + ", got " + str(ret_val))
            
             new_line = str(count) + ", " + str(rand_val) + ", " + str(ret_val) + ", " + str(error) + ", " + str(succ) + "\n"
             file.write(new_line)

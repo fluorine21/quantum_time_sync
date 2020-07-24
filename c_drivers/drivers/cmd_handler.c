@@ -20,8 +20,10 @@
 #define CMD_SET_PERIOD 0x02
 #define CMD_PHASE_MEAS_ON 0x03
 #define CMD_PHASE_MEAS_OFF 0x04
-#define CMD_PING_BOARD 0x06
+#define CMD_PING_BOARD 0xFE
 #define CMD_TOGGLE_PHASE_MEAS 0x05
+#define CMD_QUEUE_PULSE 0x07
+#define CMD_SYNC_AND_STREAM 0x06
 
 //Handler function states
 #define STATE_WAIT_PREAMBLE 0
@@ -129,6 +131,7 @@ void cmd_update_state()
 			case CMD_SEND_PULSE:
 			case CMD_SET_PERIOD:
 			case CMD_TOGGLE_PHASE_MEAS:
+			case CMD_SYNC_AND_STREAM:
 
 				//Handle these in their own FMS state
 				cmd_state = STATE_WAIT_PAYLOAD;
@@ -179,7 +182,13 @@ void cmd_update_state()
 			b2 = uart_get_buffer_byte();
 
 			u32 cmd_f = (((u32)curr_cmd) << 24) | (b0 << 16) | (b1 << 8) | b2;
-			gpio_send_command(cmd_f);//Send the command to the fifo
+			if(curr_cmd == CMD_QUEUE_PULSE)
+			{
+				gpio_queue_pulse(cmd_f);
+			}
+			else{
+				gpio_send_command(cmd_f);//Send the command to the fifo
+			}
 			uart_send_byte(ack_byte);//Send an ACK
 			cmd_state = STATE_WAIT_PREAMBLE;
 

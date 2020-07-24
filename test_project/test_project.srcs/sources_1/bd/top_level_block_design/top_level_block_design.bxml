@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="39">
   <CompositeFile CompositeFileTopName="top_level_block_design" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1595540562"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1595540562"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1595540562"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1595540562"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1595552806"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1595552806"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1595552806"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1595552806"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\top_level_block_design_zynq_ultra_ps_e_0_3\top_level_block_design_zynq_ultra_ps_e_0_3.xci" Type="IP">
         <Instance HierarchyPath="zynq_ultra_ps_e_0"/>
@@ -48,7 +48,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\top_level_block_design_fifo_generator_0_0\top_level_block_design_fifo_generator_0_0.xci" Type="IP">
-        <Instance HierarchyPath="fifo_generator_0"/>
+        <Instance HierarchyPath="instr_fifo"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -97,6 +97,14 @@
       </File>
       <File Name="ip\top_level_block_design_system_ila_1_0\top_level_block_design_system_ila_1_0.xci" Type="IP">
         <Instance HierarchyPath="system_ila_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\top_level_block_design_instr_fifo_0\top_level_block_design_instr_fifo_0.xci" Type="IP">
+        <Instance HierarchyPath="pulse_fifo"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>

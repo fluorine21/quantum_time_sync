@@ -335,3 +335,5 @@ timestamp=[2020-07-23 16:57:06], mode=BUILD, duration=0:00:00.569, duration_ms=5
 timestamp=[2020-07-23 16:57:25], mode=BUILD, duration=0:00:16.473, duration_ms=16473, data={name=test_proj_pulse_ctrl_system, configuration=Debug, clean_build=false}
 timestamp=[2020-07-23 16:57:26], mode=BUILD, duration=0:00:00.485, duration_ms=485, data={name=test_proj_pulse_ctrl, configuration=Debug, clean_build=false}
 timestamp=[2020-07-23 16:57:44], mode=BUILD, duration=0:00:16.967, duration_ms=16967, data={name=test_proj_pulse_ctrl_system, configuration=Debug, clean_build=false}
+timestamp=[2020-07-23 23:03:24], mode=BUILD, duration=0:00:02.460, duration_ms=2460, data={name=test_proj_pulse_ctrl, configuration=Debug, clean_build=false}
+timestamp=[2020-07-23 23:03:39], mode=BUILD, duration=0:00:14.099, duration_ms=14099, data={name=test_proj_pulse_ctrl_system, configuration=Debug, clean_build=false}

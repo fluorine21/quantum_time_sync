@@ -60,12 +60,15 @@ module top_level_block_design_gpio_to_fifo_0_0 (
   rst,
   emio_gpio_i,
   rst_pl,
-  fifo_full,
-  fifo_dout,
-  fifo_wr_en
+  instr_fifo_full,
+  instr_fifo_dout,
+  instr_fifo_wr_en,
+  pulse_fifo_full,
+  pulse_fifo_dout,
+  pulse_fifo_wr_en
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 99999001, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN top_level_block_design_zynq_ultra_ps_e_0_3_pl_clk0, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN top_level_block_design_clk_wiz_0_0_clk_out1, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
 input wire clk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
@@ -73,17 +76,23 @@ input wire clk;
 input wire rst;
 input wire [31 : 0] emio_gpio_i;
 output wire rst_pl;
-input wire fifo_full;
-output wire [31 : 0] fifo_dout;
-output wire fifo_wr_en;
+input wire instr_fifo_full;
+output wire [31 : 0] instr_fifo_dout;
+output wire instr_fifo_wr_en;
+input wire pulse_fifo_full;
+output wire [31 : 0] pulse_fifo_dout;
+output wire pulse_fifo_wr_en;
 
   gpio_to_fifo inst (
     .clk(clk),
     .rst(rst),
     .emio_gpio_i(emio_gpio_i),
     .rst_pl(rst_pl),
-    .fifo_full(fifo_full),
-    .fifo_dout(fifo_dout),
-    .fifo_wr_en(fifo_wr_en)
+    .instr_fifo_full(instr_fifo_full),
+    .instr_fifo_dout(instr_fifo_dout),
+    .instr_fifo_wr_en(instr_fifo_wr_en),
+    .pulse_fifo_full(pulse_fifo_full),
+    .pulse_fifo_dout(pulse_fifo_dout),
+    .pulse_fifo_wr_en(pulse_fifo_wr_en)
   );
 endmodule

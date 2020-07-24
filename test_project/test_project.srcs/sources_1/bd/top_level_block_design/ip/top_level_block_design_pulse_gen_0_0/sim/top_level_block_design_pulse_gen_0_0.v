@@ -57,9 +57,12 @@
 module top_level_block_design_pulse_gen_0_0 (
   clk,
   rst,
-  fifo_empty,
-  fifo_data,
-  fifo_read,
+  instr_fifo_empty,
+  instr_fifo_data,
+  instr_fifo_read,
+  pulse_fifo_empty,
+  pulse_fifo_data,
+  pulse_fifo_read,
   m_axis_tdata,
   m_axis_tvalid,
   m_axis_tready,
@@ -72,9 +75,12 @@ input wire clk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst RST" *)
 input wire rst;
-input wire fifo_empty;
-input wire [31 : 0] fifo_data;
-output wire fifo_read;
+input wire instr_fifo_empty;
+input wire [31 : 0] instr_fifo_data;
+output wire instr_fifo_read;
+input wire pulse_fifo_empty;
+input wire [31 : 0] pulse_fifo_data;
+output wire pulse_fifo_read;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TDATA" *)
 output wire [255 : 0] m_axis_tdata;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TVALID" *)
@@ -87,9 +93,12 @@ output wire [7 : 0] state_out;
   pulse_gen inst (
     .clk(clk),
     .rst(rst),
-    .fifo_empty(fifo_empty),
-    .fifo_data(fifo_data),
-    .fifo_read(fifo_read),
+    .instr_fifo_empty(instr_fifo_empty),
+    .instr_fifo_data(instr_fifo_data),
+    .instr_fifo_read(instr_fifo_read),
+    .pulse_fifo_empty(pulse_fifo_empty),
+    .pulse_fifo_data(pulse_fifo_data),
+    .pulse_fifo_read(pulse_fifo_read),
     .m_axis_tdata(m_axis_tdata),
     .m_axis_tvalid(m_axis_tvalid),
     .m_axis_tready(m_axis_tready),

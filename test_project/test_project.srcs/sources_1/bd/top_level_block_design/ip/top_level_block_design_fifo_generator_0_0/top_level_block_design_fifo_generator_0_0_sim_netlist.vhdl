@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Wed Jun 24 20:25:40 2020
+-- Date        : Wed Jun 24 20:25:39 2020
 -- Host        : pme10D0025 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_fifo_generator_0_0/top_level_block_design_fifo_generator_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top top_level_block_design_fifo_generator_0_0 -prefix
+--               top_level_block_design_fifo_generator_0_0_ top_level_block_design_fifo_generator_0_0_sim_netlist.vhdl
 -- Design      : top_level_block_design_fifo_generator_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -28,8 +28,6 @@ entity top_level_block_design_fifo_generator_0_0_builtin_prim is
     wr_en : in STD_LOGIC;
     din : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_fifo_generator_0_0_builtin_prim : entity is "builtin_prim";
 end top_level_block_design_fifo_generator_0_0_builtin_prim;
 
 architecture STRUCTURE of top_level_block_design_fifo_generator_0_0_builtin_prim is
@@ -347,8 +345,6 @@ entity top_level_block_design_fifo_generator_0_0_builtin_extdepth is
     wr_en : in STD_LOGIC;
     din : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_fifo_generator_0_0_builtin_extdepth : entity is "builtin_extdepth";
 end top_level_block_design_fifo_generator_0_0_builtin_extdepth;
 
 architecture STRUCTURE of top_level_block_design_fifo_generator_0_0_builtin_extdepth is
@@ -407,8 +403,6 @@ entity top_level_block_design_fifo_generator_0_0_builtin_top is
     wr_en : in STD_LOGIC;
     din : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_fifo_generator_0_0_builtin_top : entity is "builtin_top";
 end top_level_block_design_fifo_generator_0_0_builtin_top;
 
 architecture STRUCTURE of top_level_block_design_fifo_generator_0_0_builtin_top is
@@ -446,8 +440,6 @@ entity top_level_block_design_fifo_generator_0_0_fifo_generator_v13_2_5_builtin 
     wr_en : in STD_LOGIC;
     din : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_fifo_generator_0_0_fifo_generator_v13_2_5_builtin : entity is "fifo_generator_v13_2_5_builtin";
 end top_level_block_design_fifo_generator_0_0_fifo_generator_v13_2_5_builtin;
 
 architecture STRUCTURE of top_level_block_design_fifo_generator_0_0_fifo_generator_v13_2_5_builtin is
@@ -506,8 +498,6 @@ entity top_level_block_design_fifo_generator_0_0_fifo_generator_top is
     wr_en : in STD_LOGIC;
     din : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_fifo_generator_0_0_fifo_generator_top : entity is "fifo_generator_top";
 end top_level_block_design_fifo_generator_0_0_fifo_generator_top;
 
 architecture STRUCTURE of top_level_block_design_fifo_generator_0_0_fifo_generator_top is
@@ -545,8 +535,6 @@ entity top_level_block_design_fifo_generator_0_0_fifo_generator_v13_2_5_synth is
     wr_en : in STD_LOGIC;
     din : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_fifo_generator_0_0_fifo_generator_v13_2_5_synth : entity is "fifo_generator_v13_2_5_synth";
 end top_level_block_design_fifo_generator_0_0_fifo_generator_v13_2_5_synth;
 
 architecture STRUCTURE of top_level_block_design_fifo_generator_0_0_fifo_generator_v13_2_5_synth is
@@ -1208,8 +1196,6 @@ entity top_level_block_design_fifo_generator_0_0_fifo_generator_v13_2_5 is
   attribute C_WR_PNTR_WIDTH_WRCH of top_level_block_design_fifo_generator_0_0_fifo_generator_v13_2_5 : entity is 4;
   attribute C_WR_RESPONSE_LATENCY : integer;
   attribute C_WR_RESPONSE_LATENCY of top_level_block_design_fifo_generator_0_0_fifo_generator_v13_2_5 : entity is 1;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_fifo_generator_0_0_fifo_generator_v13_2_5 : entity is "fifo_generator_v13_2_5";
 end top_level_block_design_fifo_generator_0_0_fifo_generator_v13_2_5;
 
 architecture STRUCTURE of top_level_block_design_fifo_generator_0_0_fifo_generator_v13_2_5 is

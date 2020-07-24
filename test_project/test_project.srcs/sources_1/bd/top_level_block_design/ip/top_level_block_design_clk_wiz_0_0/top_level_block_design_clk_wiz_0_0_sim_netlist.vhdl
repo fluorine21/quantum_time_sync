@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
 -- Date        : Wed Jun 24 20:28:18 2020
 -- Host        : pme10D0025 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_clk_wiz_0_0/top_level_block_design_clk_wiz_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top top_level_block_design_clk_wiz_0_0 -prefix
+--               top_level_block_design_clk_wiz_0_0_ top_level_block_design_clk_wiz_0_0_sim_netlist.vhdl
 -- Design      : top_level_block_design_clk_wiz_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -20,8 +20,6 @@ entity top_level_block_design_clk_wiz_0_0_top_level_block_design_clk_wiz_0_0_clk
     clk_in1_p : in STD_LOGIC;
     clk_in1_n : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of top_level_block_design_clk_wiz_0_0_top_level_block_design_clk_wiz_0_0_clk_wiz : entity is "top_level_block_design_clk_wiz_0_0_clk_wiz";
 end top_level_block_design_clk_wiz_0_0_top_level_block_design_clk_wiz_0_0_clk_wiz;
 
 architecture STRUCTURE of top_level_block_design_clk_wiz_0_0_top_level_block_design_clk_wiz_0_0_clk_wiz is

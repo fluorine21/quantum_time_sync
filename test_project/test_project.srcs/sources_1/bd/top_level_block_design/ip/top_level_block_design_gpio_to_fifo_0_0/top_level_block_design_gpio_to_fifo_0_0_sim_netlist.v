@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Wed Jun 24 16:21:25 2020
+// Date        : Thu Jul 23 20:08:27 2020
 // Host        : pme10D0025 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_gpio_to_fifo_0_0/top_level_block_design_gpio_to_fifo_0_0_sim_netlist.v
@@ -20,101 +20,141 @@ module top_level_block_design_gpio_to_fifo_0_0
     rst,
     emio_gpio_i,
     rst_pl,
-    fifo_full,
-    fifo_dout,
-    fifo_wr_en);
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 99999001, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN top_level_block_design_zynq_ultra_ps_e_0_3_pl_clk0, INSERT_VIP 0" *) input clk;
+    instr_fifo_full,
+    instr_fifo_dout,
+    instr_fifo_wr_en,
+    pulse_fifo_full,
+    pulse_fifo_dout,
+    pulse_fifo_wr_en);
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN top_level_block_design_clk_wiz_0_0_clk_out1, INSERT_VIP 0" *) input clk;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input rst;
   input [31:0]emio_gpio_i;
   output rst_pl;
-  input fifo_full;
-  output [31:0]fifo_dout;
-  output fifo_wr_en;
+  input instr_fifo_full;
+  output [31:0]instr_fifo_dout;
+  output instr_fifo_wr_en;
+  input pulse_fifo_full;
+  output [31:0]pulse_fifo_dout;
+  output pulse_fifo_wr_en;
 
   wire clk;
   wire [31:0]emio_gpio_i;
-  wire [31:0]fifo_dout;
-  wire fifo_wr_en;
+  wire [31:0]instr_fifo_dout;
+  wire instr_fifo_wr_en;
+  wire [31:0]pulse_fifo_dout;
+  wire pulse_fifo_wr_en;
   wire rst;
 
   assign rst_pl = emio_gpio_i[3];
   top_level_block_design_gpio_to_fifo_0_0_gpio_to_fifo inst
        (.clk(clk),
-        .emio_gpio_i(emio_gpio_i[2:0]),
-        .fifo_dout(fifo_dout),
-        .fifo_wr_en(fifo_wr_en),
+        .emio_gpio_i({emio_gpio_i[6:4],emio_gpio_i[2:0]}),
+        .instr_fifo_dout(instr_fifo_dout),
+        .instr_fifo_wr_en(instr_fifo_wr_en),
+        .pulse_fifo_dout(pulse_fifo_dout),
+        .pulse_fifo_wr_en(pulse_fifo_wr_en),
         .rst(rst));
 endmodule
 
 (* ORIG_REF_NAME = "gpio_to_fifo" *) 
 module top_level_block_design_gpio_to_fifo_0_0_gpio_to_fifo
-   (fifo_dout,
-    fifo_wr_en,
+   (instr_fifo_dout,
+    pulse_fifo_dout,
+    instr_fifo_wr_en,
+    pulse_fifo_wr_en,
     emio_gpio_i,
     clk,
     rst);
-  output [31:0]fifo_dout;
-  output fifo_wr_en;
-  input [2:0]emio_gpio_i;
+  output [31:0]instr_fifo_dout;
+  output [31:0]pulse_fifo_dout;
+  output instr_fifo_wr_en;
+  output pulse_fifo_wr_en;
+  input [5:0]emio_gpio_i;
   input clk;
   input rst;
 
   wire clk;
-  wire [2:0]emio_gpio_i;
-  wire [31:0]fifo_dout;
-  wire fifo_wr_en;
-  wire fifo_wr_en_i_1_n_0;
+  wire [5:0]emio_gpio_i;
+  wire [31:0]instr_fifo_dout;
+  wire instr_fifo_wr_en;
+  wire instr_fifo_wr_en_i_1_n_0;
+  wire [31:0]pulse_fifo_dout;
+  wire pulse_fifo_wr_en;
+  wire pulse_fifo_wr_en_i_1_n_0;
   wire rst;
-  wire sr0_n_0;
-  wire state;
+  wire sr1_n_0;
+  wire state_i;
+  wire state_p;
 
   LUT4 #(
     .INIT(16'h7720)) 
-    fifo_wr_en_i_1
+    instr_fifo_wr_en_i_1
        (.I0(rst),
-        .I1(state),
+        .I1(state_i),
         .I2(emio_gpio_i[2]),
-        .I3(fifo_wr_en),
-        .O(fifo_wr_en_i_1_n_0));
-  FDRE fifo_wr_en_reg
+        .I3(instr_fifo_wr_en),
+        .O(instr_fifo_wr_en_i_1_n_0));
+  FDRE instr_fifo_wr_en_reg
        (.C(clk),
         .CE(1'b1),
-        .D(fifo_wr_en_i_1_n_0),
-        .Q(fifo_wr_en),
+        .D(instr_fifo_wr_en_i_1_n_0),
+        .Q(instr_fifo_wr_en),
+        .R(1'b0));
+  LUT4 #(
+    .INIT(16'h7720)) 
+    pulse_fifo_wr_en_i_1
+       (.I0(rst),
+        .I1(state_p),
+        .I2(emio_gpio_i[3]),
+        .I3(pulse_fifo_wr_en),
+        .O(pulse_fifo_wr_en_i_1_n_0));
+  FDRE pulse_fifo_wr_en_reg
+       (.C(clk),
+        .CE(1'b1),
+        .D(pulse_fifo_wr_en_i_1_n_0),
+        .Q(pulse_fifo_wr_en),
         .R(1'b0));
   top_level_block_design_gpio_to_fifo_0_0_shift_register sr0
        (.clk(clk),
+        .\data_out_reg[31]_0 (sr1_n_0),
         .emio_gpio_i(emio_gpio_i[1:0]),
-        .fifo_dout(fifo_dout),
+        .instr_fifo_dout(instr_fifo_dout));
+  top_level_block_design_gpio_to_fifo_0_0_shift_register_0 sr1
+       (.clk(clk),
+        .emio_gpio_i(emio_gpio_i[5:4]),
+        .pulse_fifo_dout(pulse_fifo_dout),
         .rst(rst),
-        .rst_0(sr0_n_0));
-  FDCE state_reg
+        .rst_0(sr1_n_0));
+  FDCE state_i_reg
        (.C(clk),
         .CE(1'b1),
-        .CLR(sr0_n_0),
+        .CLR(sr1_n_0),
         .D(emio_gpio_i[2]),
-        .Q(state));
+        .Q(state_i));
+  FDCE state_p_reg
+       (.C(clk),
+        .CE(1'b1),
+        .CLR(sr1_n_0),
+        .D(emio_gpio_i[3]),
+        .Q(state_p));
 endmodule
 
 (* ORIG_REF_NAME = "shift_register" *) 
 module top_level_block_design_gpio_to_fifo_0_0_shift_register
-   (rst_0,
-    fifo_dout,
+   (instr_fifo_dout,
     emio_gpio_i,
     clk,
-    rst);
-  output rst_0;
-  output [31:0]fifo_dout;
+    \data_out_reg[31]_0 );
+  output [31:0]instr_fifo_dout;
   input [1:0]emio_gpio_i;
   input clk;
-  input rst;
+  input \data_out_reg[31]_0 ;
 
   wire clk;
   wire \data_out[31]_i_1_n_0 ;
+  wire \data_out_reg[31]_0 ;
   wire [1:0]emio_gpio_i;
-  wire [31:0]fifo_dout;
-  wire rst;
-  wire rst_0;
+  wire [31:0]instr_fifo_dout;
   wire state;
 
   LUT2 #(
@@ -123,6 +163,299 @@ module top_level_block_design_gpio_to_fifo_0_0_shift_register
        (.I0(emio_gpio_i[0]),
         .I1(state),
         .O(\data_out[31]_i_1_n_0 ));
+  FDCE #(
+    .INIT(1'b0)) 
+    \data_out_reg[0] 
+       (.C(clk),
+        .CE(\data_out[31]_i_1_n_0 ),
+        .CLR(\data_out_reg[31]_0 ),
+        .D(instr_fifo_dout[1]),
+        .Q(instr_fifo_dout[0]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \data_out_reg[10] 
+       (.C(clk),
+        .CE(\data_out[31]_i_1_n_0 ),
+        .CLR(\data_out_reg[31]_0 ),
+        .D(instr_fifo_dout[11]),
+        .Q(instr_fifo_dout[10]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \data_out_reg[11] 
+       (.C(clk),
+        .CE(\data_out[31]_i_1_n_0 ),
+        .CLR(\data_out_reg[31]_0 ),
+        .D(instr_fifo_dout[12]),
+        .Q(instr_fifo_dout[11]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \data_out_reg[12] 
+       (.C(clk),
+        .CE(\data_out[31]_i_1_n_0 ),
+        .CLR(\data_out_reg[31]_0 ),
+        .D(instr_fifo_dout[13]),
+        .Q(instr_fifo_dout[12]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \data_out_reg[13] 
+       (.C(clk),
+        .CE(\data_out[31]_i_1_n_0 ),
+        .CLR(\data_out_reg[31]_0 ),
+        .D(instr_fifo_dout[14]),
+        .Q(instr_fifo_dout[13]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \data_out_reg[14] 
+       (.C(clk),
+        .CE(\data_out[31]_i_1_n_0 ),
+        .CLR(\data_out_reg[31]_0 ),
+        .D(instr_fifo_dout[15]),
+        .Q(instr_fifo_dout[14]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \data_out_reg[15] 
+       (.C(clk),
+        .CE(\data_out[31]_i_1_n_0 ),
+        .CLR(\data_out_reg[31]_0 ),
+        .D(instr_fifo_dout[16]),
+        .Q(instr_fifo_dout[15]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \data_out_reg[16] 
+       (.C(clk),
+        .CE(\data_out[31]_i_1_n_0 ),
+        .CLR(\data_out_reg[31]_0 ),
+        .D(instr_fifo_dout[17]),
+        .Q(instr_fifo_dout[16]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \data_out_reg[17] 
+       (.C(clk),
+        .CE(\data_out[31]_i_1_n_0 ),
+        .CLR(\data_out_reg[31]_0 ),
+        .D(instr_fifo_dout[18]),
+        .Q(instr_fifo_dout[17]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \data_out_reg[18] 
+       (.C(clk),
+        .CE(\data_out[31]_i_1_n_0 ),
+        .CLR(\data_out_reg[31]_0 ),
+        .D(instr_fifo_dout[19]),
+        .Q(instr_fifo_dout[18]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \data_out_reg[19] 
+       (.C(clk),
+        .CE(\data_out[31]_i_1_n_0 ),
+        .CLR(\data_out_reg[31]_0 ),
+        .D(instr_fifo_dout[20]),
+        .Q(instr_fifo_dout[19]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \data_out_reg[1] 
+       (.C(clk),
+        .CE(\data_out[31]_i_1_n_0 ),
+        .CLR(\data_out_reg[31]_0 ),
+        .D(instr_fifo_dout[2]),
+        .Q(instr_fifo_dout[1]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \data_out_reg[20] 
+       (.C(clk),
+        .CE(\data_out[31]_i_1_n_0 ),
+        .CLR(\data_out_reg[31]_0 ),
+        .D(instr_fifo_dout[21]),
+        .Q(instr_fifo_dout[20]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \data_out_reg[21] 
+       (.C(clk),
+        .CE(\data_out[31]_i_1_n_0 ),
+        .CLR(\data_out_reg[31]_0 ),
+        .D(instr_fifo_dout[22]),
+        .Q(instr_fifo_dout[21]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \data_out_reg[22] 
+       (.C(clk),
+        .CE(\data_out[31]_i_1_n_0 ),
+        .CLR(\data_out_reg[31]_0 ),
+        .D(instr_fifo_dout[23]),
+        .Q(instr_fifo_dout[22]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \data_out_reg[23] 
+       (.C(clk),
+        .CE(\data_out[31]_i_1_n_0 ),
+        .CLR(\data_out_reg[31]_0 ),
+        .D(instr_fifo_dout[24]),
+        .Q(instr_fifo_dout[23]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \data_out_reg[24] 
+       (.C(clk),
+        .CE(\data_out[31]_i_1_n_0 ),
+        .CLR(\data_out_reg[31]_0 ),
+        .D(instr_fifo_dout[25]),
+        .Q(instr_fifo_dout[24]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \data_out_reg[25] 
+       (.C(clk),
+        .CE(\data_out[31]_i_1_n_0 ),
+        .CLR(\data_out_reg[31]_0 ),
+        .D(instr_fifo_dout[26]),
+        .Q(instr_fifo_dout[25]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \data_out_reg[26] 
+       (.C(clk),
+        .CE(\data_out[31]_i_1_n_0 ),
+        .CLR(\data_out_reg[31]_0 ),
+        .D(instr_fifo_dout[27]),
+        .Q(instr_fifo_dout[26]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \data_out_reg[27] 
+       (.C(clk),
+        .CE(\data_out[31]_i_1_n_0 ),
+        .CLR(\data_out_reg[31]_0 ),
+        .D(instr_fifo_dout[28]),
+        .Q(instr_fifo_dout[27]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \data_out_reg[28] 
+       (.C(clk),
+        .CE(\data_out[31]_i_1_n_0 ),
+        .CLR(\data_out_reg[31]_0 ),
+        .D(instr_fifo_dout[29]),
+        .Q(instr_fifo_dout[28]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \data_out_reg[29] 
+       (.C(clk),
+        .CE(\data_out[31]_i_1_n_0 ),
+        .CLR(\data_out_reg[31]_0 ),
+        .D(instr_fifo_dout[30]),
+        .Q(instr_fifo_dout[29]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \data_out_reg[2] 
+       (.C(clk),
+        .CE(\data_out[31]_i_1_n_0 ),
+        .CLR(\data_out_reg[31]_0 ),
+        .D(instr_fifo_dout[3]),
+        .Q(instr_fifo_dout[2]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \data_out_reg[30] 
+       (.C(clk),
+        .CE(\data_out[31]_i_1_n_0 ),
+        .CLR(\data_out_reg[31]_0 ),
+        .D(instr_fifo_dout[31]),
+        .Q(instr_fifo_dout[30]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \data_out_reg[31] 
+       (.C(clk),
+        .CE(\data_out[31]_i_1_n_0 ),
+        .CLR(\data_out_reg[31]_0 ),
+        .D(emio_gpio_i[1]),
+        .Q(instr_fifo_dout[31]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \data_out_reg[3] 
+       (.C(clk),
+        .CE(\data_out[31]_i_1_n_0 ),
+        .CLR(\data_out_reg[31]_0 ),
+        .D(instr_fifo_dout[4]),
+        .Q(instr_fifo_dout[3]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \data_out_reg[4] 
+       (.C(clk),
+        .CE(\data_out[31]_i_1_n_0 ),
+        .CLR(\data_out_reg[31]_0 ),
+        .D(instr_fifo_dout[5]),
+        .Q(instr_fifo_dout[4]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \data_out_reg[5] 
+       (.C(clk),
+        .CE(\data_out[31]_i_1_n_0 ),
+        .CLR(\data_out_reg[31]_0 ),
+        .D(instr_fifo_dout[6]),
+        .Q(instr_fifo_dout[5]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \data_out_reg[6] 
+       (.C(clk),
+        .CE(\data_out[31]_i_1_n_0 ),
+        .CLR(\data_out_reg[31]_0 ),
+        .D(instr_fifo_dout[7]),
+        .Q(instr_fifo_dout[6]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \data_out_reg[7] 
+       (.C(clk),
+        .CE(\data_out[31]_i_1_n_0 ),
+        .CLR(\data_out_reg[31]_0 ),
+        .D(instr_fifo_dout[8]),
+        .Q(instr_fifo_dout[7]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \data_out_reg[8] 
+       (.C(clk),
+        .CE(\data_out[31]_i_1_n_0 ),
+        .CLR(\data_out_reg[31]_0 ),
+        .D(instr_fifo_dout[9]),
+        .Q(instr_fifo_dout[8]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \data_out_reg[9] 
+       (.C(clk),
+        .CE(\data_out[31]_i_1_n_0 ),
+        .CLR(\data_out_reg[31]_0 ),
+        .D(instr_fifo_dout[10]),
+        .Q(instr_fifo_dout[9]));
+  FDCE #(
+    .INIT(1'b0)) 
+    state_reg
+       (.C(clk),
+        .CE(1'b1),
+        .CLR(\data_out_reg[31]_0 ),
+        .D(emio_gpio_i[0]),
+        .Q(state));
+endmodule
+
+(* ORIG_REF_NAME = "shift_register" *) 
+module top_level_block_design_gpio_to_fifo_0_0_shift_register_0
+   (rst_0,
+    pulse_fifo_dout,
+    emio_gpio_i,
+    clk,
+    rst);
+  output rst_0;
+  output [31:0]pulse_fifo_dout;
+  input [1:0]emio_gpio_i;
+  input clk;
+  input rst;
+
+  wire clk;
+  wire \data_out[31]_i_1__0_n_0 ;
+  wire [1:0]emio_gpio_i;
+  wire [31:0]pulse_fifo_dout;
+  wire rst;
+  wire rst_0;
+  wire state;
+
+  LUT2 #(
+    .INIT(4'h2)) 
+    \data_out[31]_i_1__0 
+       (.I0(emio_gpio_i[0]),
+        .I1(state),
+        .O(\data_out[31]_i_1__0_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
     \data_out[31]_i_2 
@@ -132,258 +465,258 @@ module top_level_block_design_gpio_to_fifo_0_0_shift_register
     .INIT(1'b0)) 
     \data_out_reg[0] 
        (.C(clk),
-        .CE(\data_out[31]_i_1_n_0 ),
+        .CE(\data_out[31]_i_1__0_n_0 ),
         .CLR(rst_0),
-        .D(fifo_dout[1]),
-        .Q(fifo_dout[0]));
+        .D(pulse_fifo_dout[1]),
+        .Q(pulse_fifo_dout[0]));
   FDCE #(
     .INIT(1'b0)) 
     \data_out_reg[10] 
        (.C(clk),
-        .CE(\data_out[31]_i_1_n_0 ),
+        .CE(\data_out[31]_i_1__0_n_0 ),
         .CLR(rst_0),
-        .D(fifo_dout[11]),
-        .Q(fifo_dout[10]));
+        .D(pulse_fifo_dout[11]),
+        .Q(pulse_fifo_dout[10]));
   FDCE #(
     .INIT(1'b0)) 
     \data_out_reg[11] 
        (.C(clk),
-        .CE(\data_out[31]_i_1_n_0 ),
+        .CE(\data_out[31]_i_1__0_n_0 ),
         .CLR(rst_0),
-        .D(fifo_dout[12]),
-        .Q(fifo_dout[11]));
+        .D(pulse_fifo_dout[12]),
+        .Q(pulse_fifo_dout[11]));
   FDCE #(
     .INIT(1'b0)) 
     \data_out_reg[12] 
        (.C(clk),
-        .CE(\data_out[31]_i_1_n_0 ),
+        .CE(\data_out[31]_i_1__0_n_0 ),
         .CLR(rst_0),
-        .D(fifo_dout[13]),
-        .Q(fifo_dout[12]));
+        .D(pulse_fifo_dout[13]),
+        .Q(pulse_fifo_dout[12]));
   FDCE #(
     .INIT(1'b0)) 
     \data_out_reg[13] 
        (.C(clk),
-        .CE(\data_out[31]_i_1_n_0 ),
+        .CE(\data_out[31]_i_1__0_n_0 ),
         .CLR(rst_0),
-        .D(fifo_dout[14]),
-        .Q(fifo_dout[13]));
+        .D(pulse_fifo_dout[14]),
+        .Q(pulse_fifo_dout[13]));
   FDCE #(
     .INIT(1'b0)) 
     \data_out_reg[14] 
        (.C(clk),
-        .CE(\data_out[31]_i_1_n_0 ),
+        .CE(\data_out[31]_i_1__0_n_0 ),
         .CLR(rst_0),
-        .D(fifo_dout[15]),
-        .Q(fifo_dout[14]));
+        .D(pulse_fifo_dout[15]),
+        .Q(pulse_fifo_dout[14]));
   FDCE #(
     .INIT(1'b0)) 
     \data_out_reg[15] 
        (.C(clk),
-        .CE(\data_out[31]_i_1_n_0 ),
+        .CE(\data_out[31]_i_1__0_n_0 ),
         .CLR(rst_0),
-        .D(fifo_dout[16]),
-        .Q(fifo_dout[15]));
+        .D(pulse_fifo_dout[16]),
+        .Q(pulse_fifo_dout[15]));
   FDCE #(
     .INIT(1'b0)) 
     \data_out_reg[16] 
        (.C(clk),
-        .CE(\data_out[31]_i_1_n_0 ),
+        .CE(\data_out[31]_i_1__0_n_0 ),
         .CLR(rst_0),
-        .D(fifo_dout[17]),
-        .Q(fifo_dout[16]));
+        .D(pulse_fifo_dout[17]),
+        .Q(pulse_fifo_dout[16]));
   FDCE #(
     .INIT(1'b0)) 
     \data_out_reg[17] 
        (.C(clk),
-        .CE(\data_out[31]_i_1_n_0 ),
+        .CE(\data_out[31]_i_1__0_n_0 ),
         .CLR(rst_0),
-        .D(fifo_dout[18]),
-        .Q(fifo_dout[17]));
+        .D(pulse_fifo_dout[18]),
+        .Q(pulse_fifo_dout[17]));
   FDCE #(
     .INIT(1'b0)) 
     \data_out_reg[18] 
        (.C(clk),
-        .CE(\data_out[31]_i_1_n_0 ),
+        .CE(\data_out[31]_i_1__0_n_0 ),
         .CLR(rst_0),
-        .D(fifo_dout[19]),
-        .Q(fifo_dout[18]));
+        .D(pulse_fifo_dout[19]),
+        .Q(pulse_fifo_dout[18]));
   FDCE #(
     .INIT(1'b0)) 
     \data_out_reg[19] 
        (.C(clk),
-        .CE(\data_out[31]_i_1_n_0 ),
+        .CE(\data_out[31]_i_1__0_n_0 ),
         .CLR(rst_0),
-        .D(fifo_dout[20]),
-        .Q(fifo_dout[19]));
+        .D(pulse_fifo_dout[20]),
+        .Q(pulse_fifo_dout[19]));
   FDCE #(
     .INIT(1'b0)) 
     \data_out_reg[1] 
        (.C(clk),
-        .CE(\data_out[31]_i_1_n_0 ),
+        .CE(\data_out[31]_i_1__0_n_0 ),
         .CLR(rst_0),
-        .D(fifo_dout[2]),
-        .Q(fifo_dout[1]));
+        .D(pulse_fifo_dout[2]),
+        .Q(pulse_fifo_dout[1]));
   FDCE #(
     .INIT(1'b0)) 
     \data_out_reg[20] 
        (.C(clk),
-        .CE(\data_out[31]_i_1_n_0 ),
+        .CE(\data_out[31]_i_1__0_n_0 ),
         .CLR(rst_0),
-        .D(fifo_dout[21]),
-        .Q(fifo_dout[20]));
+        .D(pulse_fifo_dout[21]),
+        .Q(pulse_fifo_dout[20]));
   FDCE #(
     .INIT(1'b0)) 
     \data_out_reg[21] 
        (.C(clk),
-        .CE(\data_out[31]_i_1_n_0 ),
+        .CE(\data_out[31]_i_1__0_n_0 ),
         .CLR(rst_0),
-        .D(fifo_dout[22]),
-        .Q(fifo_dout[21]));
+        .D(pulse_fifo_dout[22]),
+        .Q(pulse_fifo_dout[21]));
   FDCE #(
     .INIT(1'b0)) 
     \data_out_reg[22] 
        (.C(clk),
-        .CE(\data_out[31]_i_1_n_0 ),
+        .CE(\data_out[31]_i_1__0_n_0 ),
         .CLR(rst_0),
-        .D(fifo_dout[23]),
-        .Q(fifo_dout[22]));
+        .D(pulse_fifo_dout[23]),
+        .Q(pulse_fifo_dout[22]));
   FDCE #(
     .INIT(1'b0)) 
     \data_out_reg[23] 
        (.C(clk),
-        .CE(\data_out[31]_i_1_n_0 ),
+        .CE(\data_out[31]_i_1__0_n_0 ),
         .CLR(rst_0),
-        .D(fifo_dout[24]),
-        .Q(fifo_dout[23]));
+        .D(pulse_fifo_dout[24]),
+        .Q(pulse_fifo_dout[23]));
   FDCE #(
     .INIT(1'b0)) 
     \data_out_reg[24] 
        (.C(clk),
-        .CE(\data_out[31]_i_1_n_0 ),
+        .CE(\data_out[31]_i_1__0_n_0 ),
         .CLR(rst_0),
-        .D(fifo_dout[25]),
-        .Q(fifo_dout[24]));
+        .D(pulse_fifo_dout[25]),
+        .Q(pulse_fifo_dout[24]));
   FDCE #(
     .INIT(1'b0)) 
     \data_out_reg[25] 
        (.C(clk),
-        .CE(\data_out[31]_i_1_n_0 ),
+        .CE(\data_out[31]_i_1__0_n_0 ),
         .CLR(rst_0),
-        .D(fifo_dout[26]),
-        .Q(fifo_dout[25]));
+        .D(pulse_fifo_dout[26]),
+        .Q(pulse_fifo_dout[25]));
   FDCE #(
     .INIT(1'b0)) 
     \data_out_reg[26] 
        (.C(clk),
-        .CE(\data_out[31]_i_1_n_0 ),
+        .CE(\data_out[31]_i_1__0_n_0 ),
         .CLR(rst_0),
-        .D(fifo_dout[27]),
-        .Q(fifo_dout[26]));
+        .D(pulse_fifo_dout[27]),
+        .Q(pulse_fifo_dout[26]));
   FDCE #(
     .INIT(1'b0)) 
     \data_out_reg[27] 
        (.C(clk),
-        .CE(\data_out[31]_i_1_n_0 ),
+        .CE(\data_out[31]_i_1__0_n_0 ),
         .CLR(rst_0),
-        .D(fifo_dout[28]),
-        .Q(fifo_dout[27]));
+        .D(pulse_fifo_dout[28]),
+        .Q(pulse_fifo_dout[27]));
   FDCE #(
     .INIT(1'b0)) 
     \data_out_reg[28] 
        (.C(clk),
-        .CE(\data_out[31]_i_1_n_0 ),
+        .CE(\data_out[31]_i_1__0_n_0 ),
         .CLR(rst_0),
-        .D(fifo_dout[29]),
-        .Q(fifo_dout[28]));
+        .D(pulse_fifo_dout[29]),
+        .Q(pulse_fifo_dout[28]));
   FDCE #(
     .INIT(1'b0)) 
     \data_out_reg[29] 
        (.C(clk),
-        .CE(\data_out[31]_i_1_n_0 ),
+        .CE(\data_out[31]_i_1__0_n_0 ),
         .CLR(rst_0),
-        .D(fifo_dout[30]),
-        .Q(fifo_dout[29]));
+        .D(pulse_fifo_dout[30]),
+        .Q(pulse_fifo_dout[29]));
   FDCE #(
     .INIT(1'b0)) 
     \data_out_reg[2] 
        (.C(clk),
-        .CE(\data_out[31]_i_1_n_0 ),
+        .CE(\data_out[31]_i_1__0_n_0 ),
         .CLR(rst_0),
-        .D(fifo_dout[3]),
-        .Q(fifo_dout[2]));
+        .D(pulse_fifo_dout[3]),
+        .Q(pulse_fifo_dout[2]));
   FDCE #(
     .INIT(1'b0)) 
     \data_out_reg[30] 
        (.C(clk),
-        .CE(\data_out[31]_i_1_n_0 ),
+        .CE(\data_out[31]_i_1__0_n_0 ),
         .CLR(rst_0),
-        .D(fifo_dout[31]),
-        .Q(fifo_dout[30]));
+        .D(pulse_fifo_dout[31]),
+        .Q(pulse_fifo_dout[30]));
   FDCE #(
     .INIT(1'b0)) 
     \data_out_reg[31] 
        (.C(clk),
-        .CE(\data_out[31]_i_1_n_0 ),
+        .CE(\data_out[31]_i_1__0_n_0 ),
         .CLR(rst_0),
         .D(emio_gpio_i[1]),
-        .Q(fifo_dout[31]));
+        .Q(pulse_fifo_dout[31]));
   FDCE #(
     .INIT(1'b0)) 
     \data_out_reg[3] 
        (.C(clk),
-        .CE(\data_out[31]_i_1_n_0 ),
+        .CE(\data_out[31]_i_1__0_n_0 ),
         .CLR(rst_0),
-        .D(fifo_dout[4]),
-        .Q(fifo_dout[3]));
+        .D(pulse_fifo_dout[4]),
+        .Q(pulse_fifo_dout[3]));
   FDCE #(
     .INIT(1'b0)) 
     \data_out_reg[4] 
        (.C(clk),
-        .CE(\data_out[31]_i_1_n_0 ),
+        .CE(\data_out[31]_i_1__0_n_0 ),
         .CLR(rst_0),
-        .D(fifo_dout[5]),
-        .Q(fifo_dout[4]));
+        .D(pulse_fifo_dout[5]),
+        .Q(pulse_fifo_dout[4]));
   FDCE #(
     .INIT(1'b0)) 
     \data_out_reg[5] 
        (.C(clk),
-        .CE(\data_out[31]_i_1_n_0 ),
+        .CE(\data_out[31]_i_1__0_n_0 ),
         .CLR(rst_0),
-        .D(fifo_dout[6]),
-        .Q(fifo_dout[5]));
+        .D(pulse_fifo_dout[6]),
+        .Q(pulse_fifo_dout[5]));
   FDCE #(
     .INIT(1'b0)) 
     \data_out_reg[6] 
        (.C(clk),
-        .CE(\data_out[31]_i_1_n_0 ),
+        .CE(\data_out[31]_i_1__0_n_0 ),
         .CLR(rst_0),
-        .D(fifo_dout[7]),
-        .Q(fifo_dout[6]));
+        .D(pulse_fifo_dout[7]),
+        .Q(pulse_fifo_dout[6]));
   FDCE #(
     .INIT(1'b0)) 
     \data_out_reg[7] 
        (.C(clk),
-        .CE(\data_out[31]_i_1_n_0 ),
+        .CE(\data_out[31]_i_1__0_n_0 ),
         .CLR(rst_0),
-        .D(fifo_dout[8]),
-        .Q(fifo_dout[7]));
+        .D(pulse_fifo_dout[8]),
+        .Q(pulse_fifo_dout[7]));
   FDCE #(
     .INIT(1'b0)) 
     \data_out_reg[8] 
        (.C(clk),
-        .CE(\data_out[31]_i_1_n_0 ),
+        .CE(\data_out[31]_i_1__0_n_0 ),
         .CLR(rst_0),
-        .D(fifo_dout[9]),
-        .Q(fifo_dout[8]));
+        .D(pulse_fifo_dout[9]),
+        .Q(pulse_fifo_dout[8]));
   FDCE #(
     .INIT(1'b0)) 
     \data_out_reg[9] 
        (.C(clk),
-        .CE(\data_out[31]_i_1_n_0 ),
+        .CE(\data_out[31]_i_1__0_n_0 ),
         .CLR(rst_0),
-        .D(fifo_dout[10]),
-        .Q(fifo_dout[9]));
+        .D(pulse_fifo_dout[10]),
+        .Q(pulse_fifo_dout[9]));
   FDCE #(
     .INIT(1'b0)) 
     state_reg

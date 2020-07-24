@@ -517,7 +517,7 @@ class tdc_wrapper:
                 print("[CLIENT HANDLER] Client at " + ip_str + ": COMMAND_CLEAR_ALL")
                 self.timestamp_list = []
             elif(client_cmd[0] == COMMAND_GET_AND_CLEAR):
-                #print("[CLIENT HANDLER] Client at " + ip_str + ": COMMAND_GET_AND_CLEAR")
+                print("[CLIENT HANDLER] Client at " + ip_str + ": COMMAND_GET_AND_CLEAR")
                 res = james_utils.receive_bytes(c, 1)
                 if(res == -1 or res == -2 or res == -3):
                     print("[CLIENT HANDLER] Unable to get channel from client at " + ip_str)
@@ -529,13 +529,14 @@ class tdc_wrapper:
                         if(t.channel_num == channel_num):
                             ts = t.timestamp
                             self.timestamp_list.remove(t)
+                            break
                             
                     #If we're in dummy mode then just give the system time
                     if(self.dummy_mode):
                         ts = int(time.time() * 10000000)
                
                     james_utils.send_timestamp(c, ts)
-                    if(ts):
+                    if(ts >= 0):
                         print("[CLIENT HANDLER] Timestamp sent to client for channel " + str(channel_num) + " was " + str(ts))
             else:
                 print("[CLIENT HANDLER] Unknown command received from client: " + hex(client_cmd[0]))

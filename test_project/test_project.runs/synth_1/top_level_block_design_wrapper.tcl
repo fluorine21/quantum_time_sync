@@ -71,6 +71,7 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param tcl.collectionResultDisplayLimit 0
+set_param chipscope.maxJobs 2
 set_param xicom.use_bs_reader 1
 set_msg_config -id {HDL-1065} -limit 10000
 set_msg_config  -id {[BD 41-1306]}  -suppress 
@@ -124,6 +125,9 @@ set_property used_in_implementation false [get_files -all c:/James/test_project/
 set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_system_ila_1_0/bd_0/ip/ip_0/bd_da80_ila_lib_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_system_ila_1_0/bd_0/bd_da80_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_system_ila_1_0/top_level_block_design_system_ila_1_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_instr_fifo_0/top_level_block_design_instr_fifo_0.xdc]
+set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_instr_fifo_0/top_level_block_design_instr_fifo_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_instr_fifo_0/top_level_block_design_instr_fifo_0_ooc.xdc]
 set_property used_in_synthesis false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_auto_ds_0/top_level_block_design_auto_ds_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_auto_ds_0/top_level_block_design_auto_ds_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_auto_ds_0/top_level_block_design_auto_ds_0_ooc.xdc]

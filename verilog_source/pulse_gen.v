@@ -17,9 +17,13 @@ module pulse_gen
 	input wire clk, rst,//Clock from RFSoC module
 
 	//Input from FIFO
-	input wire fifo_empty,
-	input wire [31:0] fifo_data,
-	output reg fifo_read,
+	input wire instr_fifo_empty,
+	input wire [31:0] instr_fifo_data,
+	output reg instr_fifo_read,
+	
+	input wire pulse_fifo_empty,
+	input wire [31:0] pulse_fifo_data,
+	output reg pulse_fifo_read,
 	
 	
 	//output to RFSoC module
@@ -46,9 +50,9 @@ wire [255:0] default_pulse = 256'h7FFF000000000000000000000000000000000000000000
 wire clock_tick = main_clock == 0;
 
 //Macros for decoding fifo data
-wire [7:0] FIFO_COMMAND = fifo_data[31:24];
-wire [15:0] FIFO_COARSE = fifo_data[23:8];
-wire [7:0] FIFO_FINE = fifo_data[7:0];
+wire [7:0] FIFO_COMMAND = instr_fifo_data[31:24];
+wire [15:0] FIFO_COARSE = instr_fifo_data[23:8];
+wire [7:0] FIFO_FINE = instr_fifo_data[7:0];
 
 //Command definitons
 localparam [7:0] command_reset_clock = 0, 
@@ -56,7 +60,8 @@ localparam [7:0] command_reset_clock = 0,
 				 command_set_period = 2,
 				 command_set_phase_meas_mode = 3,
 				 command_reset_phase_meas_mode = 4,
-				 command_toggle_phase_meas_mode = 5;
+				 command_toggle_phase_meas_mode = 5,
+				 command_sync_and_stream = 6;
 
 reg [15:0] coarse_delay;
 reg [7:0] fine_delay;
@@ -74,7 +79,13 @@ localparam [7:0] state_idle  = 0,
 				 state_read = 2,
 				 state_wait_tick = 3, 
 				 state_wait_pulse = 4,
-				 state_toggle_end = 5;
+				 state_toggle_end = 5,
+				 state_ss_0 = 6,
+				 state_ss_1 = 7,
+				 state_ss_2 = 8,
+				 state_ss_3 = 9,
+				 state_ss_4 = 10,
+				 state_ss_5 = 11;
 				 
 reg is_phase_meas_mode;//if 1, then pulse is emitted at each clock tick
 				 
@@ -86,7 +97,7 @@ begin
     rst_clock <= 0;
     clock_period <= 10;
     state <= state_idle;
-    fifo_read <= 0;
+    instr_fifo_read <= 0;
     m_axis_tdata_int <= 0;
 	is_phase_meas_mode <= 0;
 	pulses_to_send <= 0;
@@ -107,15 +118,15 @@ always @ (posedge clk or negedge rst) begin
 			state_idle: begin
 			
 				//Default state for outputs
-				fifo_read <= 0;
+				instr_fifo_read <= 0;
 				m_axis_tdata_int <= 0;
 				rst_clock <= 0;
 				
 				//If there is data in the fifo
-				if(!fifo_empty) begin
+				if(!instr_fifo_empty) begin
 				
 					//Tell the FIFO we're reading out this entry
-					fifo_read <= 1;
+					instr_fifo_read <= 1;
 					
 					//Go to the read state
 					state <= state_rst_read;
@@ -125,7 +136,7 @@ always @ (posedge clk or negedge rst) begin
 			end
 			
 			state_rst_read: begin
-				fifo_read <= 0;
+				instr_fifo_read <= 0;
 				state <= state_read;
 			end
 		
@@ -158,7 +169,7 @@ always @ (posedge clk or negedge rst) begin
 					command_set_period: begin
 					
 						//Just set the clock period
-						clock_period <= fifo_data[23:0];
+						clock_period <= instr_fifo_data[23:0];
 						
 						state <= state_idle;
 					
@@ -175,9 +186,15 @@ always @ (posedge clk or negedge rst) begin
 					end
 					
 					command_toggle_phase_meas_mode: begin
-						pulses_to_send <= fifo_data[15:0];
+						pulses_to_send <= instr_fifo_data[15:0];
 						is_phase_meas_mode <= 1;
 						state <= state_toggle_end;
+					end
+					
+					command_sync_and_stream: begin
+						pulses_to_send <= instr_fifo_data[23:0];
+						is_phase_meas_mode <= 1;
+						state <= state_ss_0;
 					end
 				
 					default begin
@@ -203,6 +220,96 @@ always @ (posedge clk or negedge rst) begin
 				end
 			
 			end
+			
+			///////////////////////////////////////////////////////////////////////////////////
+			
+			state_ss_1: begin
+			
+				if(pulses_to_send == 0) begin
+					is_phase_meas_mode <= 0;
+					if(!pulse_fifo_empty) begin//If there are data pulses to send
+						state <= state_ss_2;
+						pulse_fifo_read <= 1;
+					end
+					else begin
+						state <= state_idle;//No pulses to send
+					end
+				end
+				else if(clock_tick) begin
+					pulses_to_send = pulses_to_send - 1;
+				end
+			
+			end
+			
+			//Reset the read flag 
+			state_ss_2: begin
+			
+				pulse_fifo_read <= 0;
+				state <= state_ss_3;
+			
+			end
+			
+			state_ss_3: begin//Readout the value 
+			
+				coarse_delay <= pulse_fifo_data[23:8];
+				fine_delay <= pulse_fifo_data[7:0];
+				state <= state_ss_4;
+				
+			end
+			
+			
+			state_ss_4: begin//Send the pulse at the correct time and 
+			
+				if(clock_tick) begin
+				 
+					//If we have zero coarse delay
+					if(coarse_delay == 0) begin
+						//Send the pulse now at the clock tick and go back to idle
+						m_axis_tdata_int <= (default_pulse >> (fine_delay << 4));
+						
+						//If there is another pulse to send
+						if(!pulse_fifo_empty) begin
+							pulse_fifo_read <= 1;
+							state <= state_ss_2;
+						end
+						else begin
+							state <= state_idle;
+						end
+					end
+					
+					else begin
+						//Otherwise do normal counting
+						state <= state_ss_5;
+						coarse_delay <= coarse_delay - 1;
+					 
+					end
+			     end
+			
+			end
+			
+			state_ss_5: begin
+			
+			
+				if(coarse_delay == 0) begin
+			         //Set the pulse
+			         m_axis_tdata_int <= (default_pulse >> (fine_delay << 4));
+			         //If there is another pulse to send
+					if(!pulse_fifo_empty) begin
+						pulse_fifo_read <= 1;
+						state <= state_ss_2;
+					end
+					else begin
+						state <= state_idle;
+					end
+			     end
+	             else begin 
+	                 coarse_delay <= coarse_delay - 1;
+	             end
+			
+			
+			end
+			
+			/////////////////////////////////////////////////
 			
 			//Wait until the clock ticks
 			state_wait_tick: begin
