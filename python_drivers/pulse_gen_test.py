@@ -24,7 +24,7 @@ pg.set_period(5)
 
 #List of values to send
 for i in range(0,10):
-    pg.load_pulse(0, i)
+    pg.load_pulse(0, 10-i)
     
 #Send the pulses with 10 leading ticks, 5 dead ticks
 pg.sync_and_stream(10, 5)

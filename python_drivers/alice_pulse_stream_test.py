@@ -22,14 +22,19 @@ logfile = "time_sync_stats.csv"
 
 count = 0
 
-#Encoding scheme values
-bin_size = 100000 #in ps
-bin_number = 4#can encode values between 0 and 15
-period = 2000000 #in ps
+#is working and tested
+#bin_size = 16000 #in ps
+#bin_number = 4#can encode values between 0 and 15
+#period = 64000 #in ps
 
-num_sync_pulse = 10
-num_dead_pulse = 5
-test_stream = [0, 1, 2, 3]
+#Faster with 16 bins
+bin_size = 16000 #in ps
+bin_number = 16#can encode values between 0 and 15
+period = 256000 #in ps
+
+num_sync_pulse = 20
+num_dead_pulse = 20
+test_stream = [0, 5, 10, 12]
 
 res = 0
 res += ts.set_bin_size(bin_size)
@@ -55,12 +60,12 @@ else:
                 print("Stream transmission success")
 
             sent_str = "Sent: "
-            for i in test_stream
+            for i in test_stream:
                 sent_str += str(i) + ", "
                 
             res_str = "Got: "
-            for i in test_stream
-                sent_str += str(i) + ", "
+            for i in res:
+                res_str += str(i) + ", "
 
             print(sent_str)
             print(res_str)

@@ -252,7 +252,7 @@ class time_sync:
                                 keyfile=key_path,
                                 ssl_version=ssl.PROTOCOL_TLS)
                     except:
-                        print("Unknown error while receiving client connection")
+                        print("Unknown error while performing TLS handshake, still waiting for client connection")
                         continue
                 else:
                     c_s = c
@@ -989,7 +989,10 @@ class time_sync:
         self.s.send(bytearray([SERVER_RECEIVE_STREAM]))
         if(self.wait_ack(self.s)):
             print("Bad ack received from Bob while telling him to receive a stream of photons")
+            self.disconnect_from_server()
             return -1
+        
+        self.tdc.clear_all()#Clear any old pulses
         
         val_coarse = []
         val_fine = []
@@ -997,21 +1000,25 @@ class time_sync:
         for v in vals:
             if(v > self.bin_number-1 or v < 0):
                 print("Bad value " + str(v) + ", too large, must be smaller than number of bins")
+                self.disconnect_from_server()
                 return -1
             c, f = self.val_to_coarse_fine(v)
             val_coarse.append(c)
             val_fine.append(f)
+            print("Val " + str(v) + " has coarse: " + str(c) + ", fine: " + str(f))
         
-        total_pulses = len(val_coarse) + REL_NUM_PULSES
+        total_pulses = len(val_coarse) + num_sync_pulse
         
         #Load the values to be sent
         for i in range(0, len(val_coarse)):
             self.board.load_pulse(val_coarse[i], val_fine[i])
+            
     
         #Send the pulses
         self.board.sync_and_stream(num_sync_pulse, num_dead_pulse)
         
         #Tell bob the expected number of pulses
+        time.sleep(1)
         james_utils.send_timestamp(self.s, total_pulses)
         
         #Set the socket timeout to something long
@@ -1019,12 +1026,20 @@ class time_sync:
         
         #Wait to get back the number of extracted values
         bob_extracted_values_len = james_utils.receive_timestamp(self.s)
+        
+        if(bob_extracted_values_len < 1):
+            print("Failed to receive extracted values from bob")
+            self.disconnect_from_server()
+            return -1
+        
         self.s.settimeout(CLIENT_TIMEOUT)
         bob_extracted_values = []
         #Loop and receive all values
         for i in range(0, bob_extracted_values_len):
             bob_extracted_values.append(james_utils.receive_timestamp(self.s))
             
+            
+        self.disconnect_from_server()
         return bob_extracted_values
         
     
@@ -1062,7 +1077,7 @@ class time_sync:
     
     def val_to_coarse_fine(self, val):
         
-        offset = (val * self.bin_size) + (0.5 + self.bin_size)
+        offset = (val * self.bin_size) + (0.5 * self.bin_size)
         c = Math.floor(offset / 4000)
         f = Math.floor((offset/250)%16)
         return c,f
@@ -1071,7 +1086,7 @@ class time_sync:
         
         if(offset > self.bin_number * self.bin_size):
             print("Error, received photon outside of allowed range, should not happen here")
-            return -2
+            return FAIL_TIMESTAMP_BAD_RANGE
         
         val = Math.floor(offset/self.bin_size)
         return val    
@@ -1079,18 +1094,18 @@ class time_sync:
     #-1 is did not detect, -2 is fell outsize allowable range
     def analyze_pulse_list(self, pulse_list):
         
-        file = open("pulse_list_analysis_log.txt",'a')
-        file.write(datetime.datetime.now().strftime("\n================\n%I:%M%p on %B %d, %Y"))
-        for p in pulse_list:
-            file.write(str(p) + ",")
-        file.close()
+        #Convert pulses to relative first
+        p_offset = pulse_list[0]
+        for i in range(0, len(pulse_list)):
+            #print("Got pulse: " + str(pulse_list[i]))
+            pulse_list[i] -= p_offset
         
         
         diffs = []
         
         first_encoded_index = 0
         
-        for i in range(0, len(pulse_list)):
+        for i in range(0, len(pulse_list)-1):
             
             if(len(diffs) < 5):
                 diffs.append(pulse_list[i+1] - pulse_list[i])
@@ -1108,22 +1123,39 @@ class time_sync:
         avg_period = sum(diffs) / len(diffs)
         current_clock_tick = pulse_list[first_encoded_index - 1]
         decoded_vals = []
-        
+        offsets = []
+        succ_vals = 0
         for j in range(first_encoded_index, len(pulse_list)):
         
             while(current_clock_tick < pulse_list[j] - avg_period):
                 #If we're having to increment after the first pulse then we've missed one
                 if(j != first_encoded_index):
                     print("Detected missing pulse in bin " + str(j - first_encoded_index))
-                    decoded_vals.append(-1)
+                    decoded_vals.append(FAIL_TIMESTAMP_NO_PHOTON)
                 current_clock_tick += avg_period
             
             offset = pulse_list[j] - current_clock_tick
+            offsets.append(offset)
             
             decoded_vals.append(self.offset_to_val(offset))
+            succ_vals += 1
+            current_clock_tick += avg_period#Go to next pulse
             
-        print("[ANALYZE STREAM RESULTS] Rel sync pulses: " + str(first_encoded_index) + ", encoded pulses: " + str(len(pulse_list) - first_encoded_index) + ", avg period: " + str(avg_period))
-            
+        print("[ANALYZE STREAM RESULTS] Rel sync pulses: " + str(first_encoded_index) + ", decoded pulses: " + str(succ_vals) + ", avg period: " + str(avg_period))
+        dv_str = "Decoded values: "
+        for d in decoded_vals:
+            dv_str += str(d)  + ", "
+        print(dv_str)
+        
+        #log to file
+        file = open("pulse_list_analysis_log.txt",'a')
+        file.write(datetime.datetime.now().strftime("\n================\n%I:%M%p on %B %d, %Y\n"))
+        for p in pulse_list:
+            file.write(str(p) + "\n")
+        for o in offsets:
+            file.write("offset: " + str(o) + "\n")
+        file.close()
+        
         return decoded_vals
             
         
