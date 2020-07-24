@@ -33,6 +33,7 @@ COMMAND_GET_AND_CLEAR = 1 #Gets the latest timestamp for this channel and clears
 COMMAND_SHUTDOWN = 2
 COMMAND_CLOSE_CONNECTION = 3
 COMMAND_CLEAR_ALL = 4
+COMMAND_GET_BUSY = 5
 
 #channel number for the 1ms pulse
 DUMMY_CHANNEL_NUM = 104
@@ -72,6 +73,8 @@ class tdc_wrapper:
     threads = []
     
     port = 25567
+    
+    busy = 0#1 if tdc is offloading pulses
     
     def __init__(self, tt, dm, m = MODE_NORMAL, s_ip = ""):
         
@@ -143,6 +146,28 @@ class tdc_wrapper:
         
         return
         
+        
+    
+    def is_busy(self):
+        
+        if(self.mode == MODE_NORMAL):
+            return self.busy
+        
+        sck = socket.socket()
+        sck.settimeout(SERVER_TIMEOUT)
+        sck.connect((self.server_ip, self.port))
+        time.sleep(0.1)
+        
+        #Send the GET_AND_CLEAR command
+        sck.send(bytearray([COMMAND_GET_BUSY]))
+
+        res = james_utils.receive_timestamp(sck)
+
+        #gracefully close the connection
+        sck.send(bytearray([COMMAND_CLOSE_CONNECTION]))
+        sck.close()
+        
+        return res
         
     
     #Returns the timestamp of the first pulse seen on channel_num
@@ -467,6 +492,7 @@ class tdc_wrapper:
             
             #If we didnt get any timestamps
             if(t_s[2] == 0):
+                self.busy = 0
                 continue#keep going
             
             for i in range(0, t_s[2]):
@@ -480,6 +506,7 @@ class tdc_wrapper:
                 
                 #If we find a timestamp that isn't the dummy channel
                 elif(t_s[1][i] != DUMMY_CHANNEL_NUM):
+                    self.busy = 1
                     self.timestamp_list.append(pulse_record(t_s[1][i], t_s[0][i] - self.offset_timestamp))
                     print("[TDC SERVICE] Got pulse on channel #" + str(t_s[1][i]) + ", absolute = " + str(t_s[0][i]) + ", relative = " + str(t_s[0][i] - self.offset_timestamp))
              
@@ -516,6 +543,9 @@ class tdc_wrapper:
             elif(client_cmd[0] == COMMAND_CLEAR_ALL):
                 print("[CLIENT HANDLER] Client at " + ip_str + ": COMMAND_CLEAR_ALL")
                 self.timestamp_list = []
+            elif(client_cmd[0] == COMMAND_GET_BUSY):
+                print("[CLIENT HANDLER] Client at " + ip_str + ": COMMAND_GET_BUSY")
+                james_utils.send_timestamp(c, self.busy)
             elif(client_cmd[0] == COMMAND_GET_AND_CLEAR):
                 print("[CLIENT HANDLER] Client at " + ip_str + ": COMMAND_GET_AND_CLEAR")
                 res = james_utils.receive_bytes(c, 1)

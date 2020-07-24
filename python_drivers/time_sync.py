@@ -22,7 +22,7 @@ import datetime
 SECURE_MODE = 1
 
 REL_NUM_PULSES = 100 #Use 10 pulses to do phase measurement
-
+PERIOD_DIFF_THRESHOLD = 0.1
 CLIENT = 0
 SERVER = 1
 SERVER_ACK = b'\x66'
@@ -1005,7 +1005,7 @@ class time_sync:
             c, f = self.val_to_coarse_fine(v)
             val_coarse.append(c)
             val_fine.append(f)
-            print("Val " + str(v) + " has coarse: " + str(c) + ", fine: " + str(f))
+            #print("Val " + str(v) + " has coarse: " + str(c) + ", fine: " + str(f))
         
         total_pulses = len(val_coarse) + num_sync_pulse
         
@@ -1018,8 +1018,16 @@ class time_sync:
         self.board.sync_and_stream(num_sync_pulse, num_dead_pulse)
         
         #Tell bob the expected number of pulses
-        time.sleep(1)
+        #time.sleep(1)
+        print("Waiting for TDC to finish...")
+        while(self.tdc.is_busy()):
+            a = 1
+        
+        #Send over the stream information
         james_utils.send_timestamp(self.s, total_pulses)
+        james_utils.send_timestamp(self.s, num_sync_pulse)
+        james_utils.send_timestamp(self.s, num_dead_pulse)
+        james_utils.send_timestamp(self.s, self.period)
         
         #Set the socket timeout to something long
         self.s.settimeout(TIMEOUT_LONG)
@@ -1028,7 +1036,7 @@ class time_sync:
         bob_extracted_values_len = james_utils.receive_timestamp(self.s)
         
         if(bob_extracted_values_len < 1):
-            print("Failed to receive extracted values from bob")
+            print("Failed to receive extracted values from Bob")
             self.disconnect_from_server()
             return -1
         
@@ -1052,6 +1060,10 @@ class time_sync:
         sck.settimeout(TIMEOUT_LONG)
         num_pulses = james_utils.receive_timestamp(sck)
         sck.settimeout(SERVER_TIMEOUT)
+        num_sync_pulses = james_utils.receive_timestamp(sck)
+        num_dead_pulses = james_utils.receive_timestamp(sck)
+        self.period = james_utils.receive_timestamp(sck)
+
         
         if(num_pulses < 5 ):
             print("Error, number of expected pulses less than 5")
@@ -1062,10 +1074,11 @@ class time_sync:
         
         if(len(pulse_list) < 2):
             print("Error, did not receive pulses!")
+            james_utils.send_timestamp(sck, 0)
             return -1
         print("Expected " + str(num_pulses) + ", got " + str(len(pulse_list)) + " pulses")
         
-        decoded_vals = self.analyze_pulse_list(pulse_list)
+        decoded_vals = self.analyze_pulse_list(pulse_list, num_pulses, num_sync_pulses, num_dead_pulses)
         
         #Send the length of decoded vals and then each val
         james_utils.send_timestamp(sck, len(decoded_vals))
@@ -1092,7 +1105,7 @@ class time_sync:
         return val    
     
     #-1 is did not detect, -2 is fell outsize allowable range
-    def analyze_pulse_list(self, pulse_list):
+    def analyze_pulse_list(self, pulse_list, expected_num_pulses, num_sync_pulses, num_dead_pulses):
         
         #Convert pulses to relative first
         p_offset = pulse_list[0]
@@ -1100,27 +1113,66 @@ class time_sync:
             #print("Got pulse: " + str(pulse_list[i]))
             pulse_list[i] -= p_offset
         
-        
-        diffs = []
-        
+        ##################################################
+        ##Relative synchronization happening here
+        diffs_pre = []
+        max_diff = 0
         first_encoded_index = 0
-        
+        #Figure out the largest difference to find the first encoded photon
         for i in range(0, len(pulse_list)-1):
             
-            if(len(diffs) < 5):
-                diffs.append(pulse_list[i+1] - pulse_list[i])
-            else:
-                d = pulse_list[i+1] - pulse_list[i]
-                m = sum(diffs) / len(diffs)
-                if(d > m*FEI_THRESHOLD):
-                    #We have arrived at the first encoded photon
-                    first_encoded_index = i+1#Actually the next pulse
-                    break
-                else:#Otherwise just add this difference in
-                    diffs.append(d)
-          
+            d = pulse_list[i+1] - pulse_list[i]
+            
+            #If we find a larger difference
+            if(d > max_diff):
+                max_diff = d
+                first_encoded_index = i+1#Record this index
+
+        #Calculate the calibration differences
+        for i in range(0, first_encoded_index - 1):
+            diffs_pre.append(pulse_list[i+1] - pulse_list[i])
+            
+        diffs = []
+        
+        
+        #Throw out any that are too large
+        for i in range(0, len(diffs_pre)):
+            if(diffs_pre[i] < min(diffs_pre) *1.5):
+                diffs.append(diffs_pre[i])
+                
+                
+        #Sanity check on diffs
+        if(len(diffs) > num_sync_pulses):
+            print("Error, too many sync pulses received, aborting decode")
+            file = open("bob_pulse_analysis_log.txt",'a')
+            file.write(datetime.datetime.now().strftime("\n================\n%I:%M%p on %B %d, %Y\nError, too many sync pulses received, aborting decode\n"))
+            file.close()
+            return []
+        
+        ####################################################
+        
+        
         #Start the time bin counter
         avg_period = sum(diffs) / len(diffs)
+        
+        #If the avg period is too far off
+        if(abs((avg_period - self.period)/min(avg_period, self.period)) > PERIOD_DIFF_THRESHOLD):
+            
+            print("Average period too far outsize of allowable bounds, aborting")
+            file = open("bob_pulse_analysis_log.txt",'a')
+            file.write(datetime.datetime.now().strftime("\n================\n%I:%M%p on %B %d, %Y\nAverage period too far outsize of allowable bounds, aborting\n"))
+            file.close()
+            return []
+        
+        #If the time between the last sync pulse and first encoded pulse is too small
+        if(pulse_list[first_encoded_index] - pulse_list[first_encoded_index-1] < self.period):
+            
+            print("Time between sync pulses and first encoded pulse was too short")
+            file = open("bob_pulse_analysis_log.txt",'a')
+            file.write(datetime.datetime.now().strftime("\n================\n%I:%M%p on %B %d, %Y\nTime between sync pulses and first encoded pulse was too short, aborting\n"))
+            file.close()
+            return []
+        
         current_clock_tick = pulse_list[first_encoded_index - 1]
         decoded_vals = []
         offsets = []
@@ -1137,6 +1189,9 @@ class time_sync:
             offset = pulse_list[j] - current_clock_tick
             offsets.append(offset)
             
+            if(offset < 0):
+                print("Fatal error, offset was less than 0!")
+            
             decoded_vals.append(self.offset_to_val(offset))
             succ_vals += 1
             current_clock_tick += avg_period#Go to next pulse
@@ -1148,12 +1203,13 @@ class time_sync:
         print(dv_str)
         
         #log to file
-        file = open("pulse_list_analysis_log.txt",'a')
+        file = open("bob_pulse_analysis_log.txt",'a')
         file.write(datetime.datetime.now().strftime("\n================\n%I:%M%p on %B %d, %Y\n"))
+        file.write("Expected " + str(expected_num_pulses) + ", got " + str(len(pulse_list)) + " pulses, used " + str(len(diffs) + 1) + " pulses to calculate period")
         for p in pulse_list:
             file.write(str(p) + "\n")
-        for o in offsets:
-            file.write("offset: " + str(o) + "\n")
+        for i in range(0, len(offsets)):
+            file.write("offset: " + str(offsets[i]) + ", became value " + str(decoded_vals[i]) + "\n")
         file.close()
         
         return decoded_vals
