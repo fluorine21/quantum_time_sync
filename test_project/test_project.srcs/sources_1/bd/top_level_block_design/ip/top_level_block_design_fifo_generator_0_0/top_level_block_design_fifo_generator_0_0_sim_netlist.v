@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Wed Jun 24 20:25:39 2020
+// Date        : Fri Jul 24 10:17:47 2020
 // Host        : pme10D0025 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim -rename_top top_level_block_design_fifo_generator_0_0 -prefix
-//               top_level_block_design_fifo_generator_0_0_ top_level_block_design_fifo_generator_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim
+//               c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_fifo_generator_0_0/top_level_block_design_fifo_generator_0_0_sim_netlist.v
 // Design      : top_level_block_design_fifo_generator_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -28,7 +28,7 @@ module top_level_block_design_fifo_generator_0_0
     rd_rst_busy);
   input srst;
   (* x_interface_info = "xilinx.com:signal:clock:1.0 write_clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME write_clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN top_level_block_design_clk_wiz_0_0_clk_out1, INSERT_VIP 0" *) input wr_clk;
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 read_clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME read_clk, FREQ_HZ 250000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN top_level_block_design_usp_rf_data_converter_0_0_clk_dac0, INSERT_VIP 0" *) input rd_clk;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 read_clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME read_clk, FREQ_HZ 250000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN top_level_block_design_usp_rf_data_converter_0_0_clk_dac1, INSERT_VIP 0" *) input rd_clk;
   (* x_interface_info = "xilinx.com:interface:fifo_write:1.0 FIFO_WRITE WR_DATA" *) input [31:0]din;
   (* x_interface_info = "xilinx.com:interface:fifo_write:1.0 FIFO_WRITE WR_EN" *) input wr_en;
   (* x_interface_info = "xilinx.com:interface:fifo_read:1.0 FIFO_READ RD_EN" *) input rd_en;
@@ -325,7 +325,7 @@ module top_level_block_design_fifo_generator_0_0
   (* C_RDCH_TYPE = "0" *) 
   (* C_RD_DATA_COUNT_WIDTH = "10" *) 
   (* C_RD_DEPTH = "1024" *) 
-  (* C_RD_FREQ = "1" *) 
+  (* C_RD_FREQ = "250" *) 
   (* C_RD_PNTR_WIDTH = "10" *) 
   (* C_REG_SLICE_MODE_AXIS = "0" *) 
   (* C_REG_SLICE_MODE_RACH = "0" *) 
@@ -608,6 +608,7 @@ module top_level_block_design_fifo_generator_0_0
         .wr_rst_busy(wr_rst_busy));
 endmodule
 
+(* ORIG_REF_NAME = "builtin_extdepth" *) 
 module top_level_block_design_fifo_generator_0_0_builtin_extdepth
    (empty,
     full,
@@ -669,6 +670,7 @@ module top_level_block_design_fifo_generator_0_0_builtin_extdepth
         .O(srst_qr[0]));
 endmodule
 
+(* ORIG_REF_NAME = "builtin_prim" *) 
 module top_level_block_design_fifo_generator_0_0_builtin_prim
    (empty,
     full,
@@ -891,6 +893,7 @@ module top_level_block_design_fifo_generator_0_0_builtin_prim
         .WRRSTBUSY(wr_rst_busy));
 endmodule
 
+(* ORIG_REF_NAME = "builtin_top" *) 
 module top_level_block_design_fifo_generator_0_0_builtin_top
    (empty,
     full,
@@ -941,6 +944,7 @@ module top_level_block_design_fifo_generator_0_0_builtin_top
         .wr_rst_busy(wr_rst_busy));
 endmodule
 
+(* ORIG_REF_NAME = "fifo_generator_top" *) 
 module top_level_block_design_fifo_generator_0_0_fifo_generator_top
    (empty,
     full,
@@ -1042,7 +1046,7 @@ endmodule
 (* C_PROG_FULL_TYPE_AXIS = "0" *) (* C_PROG_FULL_TYPE_RACH = "0" *) (* C_PROG_FULL_TYPE_RDCH = "0" *) 
 (* C_PROG_FULL_TYPE_WACH = "0" *) (* C_PROG_FULL_TYPE_WDCH = "0" *) (* C_PROG_FULL_TYPE_WRCH = "0" *) 
 (* C_RACH_TYPE = "0" *) (* C_RDCH_TYPE = "0" *) (* C_RD_DATA_COUNT_WIDTH = "10" *) 
-(* C_RD_DEPTH = "1024" *) (* C_RD_FREQ = "1" *) (* C_RD_PNTR_WIDTH = "10" *) 
+(* C_RD_DEPTH = "1024" *) (* C_RD_FREQ = "250" *) (* C_RD_PNTR_WIDTH = "10" *) 
 (* C_REG_SLICE_MODE_AXIS = "0" *) (* C_REG_SLICE_MODE_RACH = "0" *) (* C_REG_SLICE_MODE_RDCH = "0" *) 
 (* C_REG_SLICE_MODE_WACH = "0" *) (* C_REG_SLICE_MODE_WDCH = "0" *) (* C_REG_SLICE_MODE_WRCH = "0" *) 
 (* C_SELECT_XPM = "0" *) (* C_SYNCHRONIZER_STAGE = "2" *) (* C_UNDERFLOW_LOW = "0" *) 
@@ -1058,7 +1062,7 @@ endmodule
 (* C_WR_DEPTH_WRCH = "16" *) (* C_WR_FREQ = "1" *) (* C_WR_PNTR_WIDTH = "10" *) 
 (* C_WR_PNTR_WIDTH_AXIS = "10" *) (* C_WR_PNTR_WIDTH_RACH = "4" *) (* C_WR_PNTR_WIDTH_RDCH = "10" *) 
 (* C_WR_PNTR_WIDTH_WACH = "4" *) (* C_WR_PNTR_WIDTH_WDCH = "10" *) (* C_WR_PNTR_WIDTH_WRCH = "4" *) 
-(* C_WR_RESPONSE_LATENCY = "1" *) 
+(* C_WR_RESPONSE_LATENCY = "1" *) (* ORIG_REF_NAME = "fifo_generator_v13_2_5" *) 
 module top_level_block_design_fifo_generator_0_0_fifo_generator_v13_2_5
    (backup,
     backup_marker,
@@ -2078,6 +2082,7 @@ module top_level_block_design_fifo_generator_0_0_fifo_generator_v13_2_5
         .wr_rst_busy(wr_rst_busy));
 endmodule
 
+(* ORIG_REF_NAME = "fifo_generator_v13_2_5_builtin" *) 
 module top_level_block_design_fifo_generator_0_0_fifo_generator_v13_2_5_builtin
    (empty,
     full,
@@ -2139,6 +2144,7 @@ module top_level_block_design_fifo_generator_0_0_fifo_generator_v13_2_5_builtin
         .wr_rst_busy(wr_rst_busy));
 endmodule
 
+(* ORIG_REF_NAME = "fifo_generator_v13_2_5_synth" *) 
 module top_level_block_design_fifo_generator_0_0_fifo_generator_v13_2_5_synth
    (empty,
     full,

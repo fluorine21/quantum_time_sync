@@ -75,6 +75,15 @@ u8 cmd_init()
 	//Clear the buffer once
 	uart_clear_buffer();
 
+	if(get_rf_clock_status())
+	{
+		print("No running clock detected in RF section\r\n");
+	}
+	else
+	{
+		print("Clock for RF section is running\r\n");
+	}
+
 	return 0;
 
 }
@@ -104,7 +113,7 @@ void cmd_update_state()
 			}
 			else
 			{
-				xil_printf("Got bad preamble byte: 0x%x", p_b);
+				xil_printf("Got bad preamble byte: 0x%x\r\n", p_b);
 			}
 		}
 		break;
@@ -127,11 +136,12 @@ void cmd_update_state()
 				debug_print("Resetting the clock");
 				break;
 
-				//These two are handled in the same manner
+			//These are handled in the same manner
 			case CMD_SEND_PULSE:
 			case CMD_SET_PERIOD:
 			case CMD_TOGGLE_PHASE_MEAS:
 			case CMD_SYNC_AND_STREAM:
+			case CMD_QUEUE_PULSE:
 
 				//Handle these in their own FMS state
 				cmd_state = STATE_WAIT_PAYLOAD;

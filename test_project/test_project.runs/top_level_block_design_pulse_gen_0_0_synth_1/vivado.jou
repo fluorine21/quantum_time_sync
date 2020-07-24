@@ -2,8 +2,8 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Thu Jul 23 20:07:26 2020
-# Process ID: 684
+# Start of session at: Fri Jul 24 11:08:56 2020
+# Process ID: 4440
 # Current directory: C:/James/test_project/test_project.runs/top_level_block_design_pulse_gen_0_0_synth_1
 # Command line: vivado.exe -log top_level_block_design_pulse_gen_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_level_block_design_pulse_gen_0_0.tcl
 # Log file: C:/James/test_project/test_project.runs/top_level_block_design_pulse_gen_0_0_synth_1/top_level_block_design_pulse_gen_0_0.vds

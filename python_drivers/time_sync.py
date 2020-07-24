@@ -15,6 +15,7 @@ import os.path
 from OpenSSL import crypto
 import james_utils
 import threading 
+import datetime
 
 
 #Open a secure socket?
@@ -28,6 +29,7 @@ SERVER_ACK = b'\x66'
 SERVER_ACK_BYTE = 0x66
 CLIENT_TIMEOUT = 2 #5 second timeout
 SERVER_TIMEOUT = 2 #Long timeout for the server
+TIMEOUT_LONG = 10
 
 #Server commands
 SERVER_RECEIVE_PULSE = 4
@@ -40,6 +42,8 @@ SERVER_SET_BIN_NUMBER = 10 #Must be a power of 2
 SERVER_RECEIVE_PHOTON = 11
 SERVER_CLOSE_CONNECTION = 12
 SERVER_RECEIVE_STREAM = 13
+
+FEI_THRESHOLD = 5 #First encoded photon theshold, number of avg periods over which next pulse will be treated as the first encoded photon
 
 
 #Bob's responses
@@ -746,9 +750,10 @@ class time_sync:
     ##############################################################
     
     def set_protocol(self, bin_size, bin_number, period):
-        self.set_bin_size(bin_size)
-        self.set_bin_number(bin_number)
-        self.set_period(period)
+        rv = self.set_bin_size(bin_size)
+        rv += self.set_bin_number(bin_number)
+        rv += self.set_period(period)
+        return
     
     #Returns 0 on success, val in picoseconds
     def set_bin_size(self, val):
@@ -968,8 +973,23 @@ class time_sync:
         return encoded_photon(self.bin_size, self.bin_number, ts, final_val, 1)
     
     
-    
-    def send_stream(self, vals):
+    #Returns -1 on fail
+    #Returns bob's decoded values on success
+    def send_stream(self, vals, num_sync_pulse, num_dead_pulse):
+        
+        if(self.mode != CLIENT):
+            print("Error, send_encoded_photon must be called in client mode")
+            return -1
+                
+        if(self.connect_to_server()):
+            print("Error connecting to server (Bob)")
+            return -1
+        
+        #tell bob to receive a photon
+        self.s.send(bytearray([SERVER_RECEIVE_STREAM]))
+        if(self.wait_ack(self.s)):
+            print("Bad ack received from Bob while telling him to receive a stream of photons")
+            return -1
         
         val_coarse = []
         val_fine = []
@@ -989,8 +1009,23 @@ class time_sync:
             self.board.load_pulse(val_coarse[i], val_fine[i])
     
         #Send the pulses
-        self.board.sync_and_stream(REL_NUM_PULSES)
+        self.board.sync_and_stream(num_sync_pulse, num_dead_pulse)
         
+        #Tell bob the expected number of pulses
+        james_utils.send_timestamp(self.s, total_pulses)
+        
+        #Set the socket timeout to something long
+        self.s.settimeout(TIMEOUT_LONG)
+        
+        #Wait to get back the number of extracted values
+        bob_extracted_values_len = james_utils.receive_timestamp(self.s)
+        self.s.settimeout(CLIENT_TIMEOUT)
+        bob_extracted_values = []
+        #Loop and receive all values
+        for i in range(0, bob_extracted_values_len):
+            bob_extracted_values.append(james_utils.receive_timestamp(self.s))
+            
+        return bob_extracted_values
         
     
     def receive_stream(self, sck):
@@ -998,7 +1033,10 @@ class time_sync:
         #TDC fires on Alice's side here
         
         #Receive the expected number of pulses
+        print("Waiting to receive number of expected pulses from Alice")
+        sck.settimeout(TIMEOUT_LONG)
         num_pulses = james_utils.receive_timestamp(sck)
+        sck.settimeout(SERVER_TIMEOUT)
         
         if(num_pulses < 5 ):
             print("Error, number of expected pulses less than 5")
@@ -1012,8 +1050,15 @@ class time_sync:
             return -1
         print("Expected " + str(num_pulses) + ", got " + str(len(pulse_list)) + " pulses")
         
-        extracted_vals, missed_vals = self.analyze_pulse_list(pulse_list)
+        decoded_vals = self.analyze_pulse_list(pulse_list)
         
+        #Send the length of decoded vals and then each val
+        james_utils.send_timestamp(sck, len(decoded_vals))
+        
+        for v in decoded_vals:
+            james_utils.send_timestamp(sck, v)
+
+        return 0 #We're done       
     
     def val_to_coarse_fine(self, val):
         
@@ -1031,8 +1076,14 @@ class time_sync:
         val = Math.floor(offset/self.bin_size)
         return val    
     
-        #-1 is did not detect, -2 is fell outsize allowable range
+    #-1 is did not detect, -2 is fell outsize allowable range
     def analyze_pulse_list(self, pulse_list):
+        
+        file = open("pulse_list_analysis_log.txt",'a')
+        file.write(datetime.datetime.now().strftime("\n================\n%I:%M%p on %B %d, %Y"))
+        for p in pulse_list:
+            file.write(str(p) + ",")
+        file.close()
         
         
         diffs = []
@@ -1046,20 +1097,23 @@ class time_sync:
             else:
                 d = pulse_list[i+1] - pulse_list[i]
                 m = sum(diffs) / len(diffs)
-                if(d > m*1.5):
+                if(d > m*FEI_THRESHOLD):
                     #We have arrived at the first encoded photon
-                    first_encoded_index = i
+                    first_encoded_index = i+1#Actually the next pulse
                     break
+                else:#Otherwise just add this difference in
+                    diffs.append(d)
           
         #Start the time bin counter
         avg_period = sum(diffs) / len(diffs)
         current_clock_tick = pulse_list[first_encoded_index - 1]
         decoded_vals = []
         
-        for j in range(first_encoded_index, len(pulse_list))
+        for j in range(first_encoded_index, len(pulse_list)):
         
             while(current_clock_tick < pulse_list[j] - avg_period):
-                if(j != 0):
+                #If we're having to increment after the first pulse then we've missed one
+                if(j != first_encoded_index):
                     print("Detected missing pulse in bin " + str(j - first_encoded_index))
                     decoded_vals.append(-1)
                 current_clock_tick += avg_period
@@ -1067,7 +1121,12 @@ class time_sync:
             offset = pulse_list[j] - current_clock_tick
             
             decoded_vals.append(self.offset_to_val(offset))
-                
+            
+        print("[ANALYZE STREAM RESULTS] Rel sync pulses: " + str(first_encoded_index) + ", encoded pulses: " + str(len(pulse_list) - first_encoded_index) + ", avg period: " + str(avg_period))
+            
+        return decoded_vals
+            
+        
 
 
 def cert_gen(

@@ -11,7 +11,7 @@ import pulse_gen
 
 pg = pulse_gen.pulse_gen("COM4")
 
-#pg.open_board()
+
 
 #try pinging the board
 if(pg.ping_board()):
@@ -19,8 +19,13 @@ if(pg.ping_board()):
 else:
     print("Connection to board is up!")
     
-#turn on phase measurement mode to get something on the stream output
-#pg.phase_meas_on()
-#pg.phase_meas_off()
-pg.send_pulse(5, 1)
-#pg.close_board()
+#Set the period to something reasonable
+pg.set_period(5)    
+
+#List of values to send
+for i in range(0,10):
+    pg.load_pulse(0, i)
+    
+#Send the pulses with 10 leading ticks, 5 dead ticks
+pg.sync_and_stream(10, 5)
+

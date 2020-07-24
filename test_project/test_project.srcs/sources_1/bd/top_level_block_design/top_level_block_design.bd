@@ -27,9 +27,9 @@
       "clk_wiz_0": "",
       "axi_gpio_0": "",
       "system_ila_1": "",
-      "pulse_gen_0": "",
       "pulse_fifo": "",
-      "gpio_to_fifo_0": ""
+      "gpio_to_fifo_0": "",
+      "pulse_gen_0": ""
     },
     "interface_ports": {
       "sysref_in": {
@@ -1301,10 +1301,10 @@
               }
             },
             "interface_nets": {
-              "s00_couplers_to_auto_ds": {
+              "auto_ds_to_auto_pc": {
                 "interface_ports": [
-                  "S_AXI",
-                  "auto_ds/S_AXI"
+                  "auto_ds/M_AXI",
+                  "auto_pc/S_AXI"
                 ]
               },
               "auto_pc_to_s00_couplers": {
@@ -1313,10 +1313,10 @@
                   "auto_pc/M_AXI"
                 ]
               },
-              "auto_ds_to_auto_pc": {
+              "s00_couplers_to_auto_ds": {
                 "interface_ports": [
-                  "auto_ds/M_AXI",
-                  "auto_pc/S_AXI"
+                  "S_AXI",
+                  "auto_ds/S_AXI"
                 ]
               }
             },
@@ -1447,24 +1447,6 @@
           }
         },
         "interface_nets": {
-          "ps8_0_axi_periph_to_s00_couplers": {
-            "interface_ports": [
-              "S00_AXI",
-              "s00_couplers/S_AXI"
-            ]
-          },
-          "m00_couplers_to_ps8_0_axi_periph": {
-            "interface_ports": [
-              "M00_AXI",
-              "m00_couplers/M_AXI"
-            ]
-          },
-          "s00_couplers_to_xbar": {
-            "interface_ports": [
-              "s00_couplers/M_AXI",
-              "xbar/S00_AXI"
-            ]
-          },
           "xbar_to_m00_couplers": {
             "interface_ports": [
               "xbar/M00_AXI",
@@ -1481,6 +1463,24 @@
             "interface_ports": [
               "xbar/M01_AXI",
               "m01_couplers/S_AXI"
+            ]
+          },
+          "ps8_0_axi_periph_to_s00_couplers": {
+            "interface_ports": [
+              "S00_AXI",
+              "s00_couplers/S_AXI"
+            ]
+          },
+          "s00_couplers_to_xbar": {
+            "interface_ports": [
+              "s00_couplers/M_AXI",
+              "xbar/S00_AXI"
+            ]
+          },
+          "m00_couplers_to_ps8_0_axi_periph": {
+            "interface_ports": [
+              "M00_AXI",
+              "m00_couplers/M_AXI"
             ]
           }
         },
@@ -1532,6 +1532,9 @@
           },
           "Input_Data_Width": {
             "value": "32"
+          },
+          "Read_Clock_Frequency": {
+            "value": "250"
           }
         }
       },
@@ -1571,7 +1574,7 @@
         "xci_name": "top_level_block_design_system_ila_1_0",
         "parameters": {
           "C_DATA_DEPTH": {
-            "value": "4096"
+            "value": "8192"
           },
           "C_MON_TYPE": {
             "value": "MIX"
@@ -1580,7 +1583,7 @@
             "value": "1"
           },
           "C_NUM_OF_PROBES": {
-            "value": "4"
+            "value": "7"
           },
           "C_PROBE0_TYPE": {
             "value": "0"
@@ -1589,6 +1592,9 @@
             "value": "0"
           },
           "C_PROBE3_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE4_TYPE": {
             "value": "0"
           },
           "C_SLOT_0_APC_EN": {
@@ -1608,6 +1614,103 @@
           "SLOT_0_AXIS": {
             "mode": "Monitor",
             "vlnv": "xilinx.com:interface:axis_rtl:1.0"
+          }
+        }
+      },
+      "pulse_fifo": {
+        "vlnv": "xilinx.com:ip:fifo_generator:13.2",
+        "xci_name": "top_level_block_design_instr_fifo_0",
+        "parameters": {
+          "Fifo_Implementation": {
+            "value": "Independent_Clocks_Builtin_FIFO"
+          },
+          "Input_Data_Width": {
+            "value": "32"
+          },
+          "Read_Clock_Frequency": {
+            "value": "250"
+          },
+          "Write_Clock_Frequency": {
+            "value": "100"
+          }
+        }
+      },
+      "gpio_to_fifo_0": {
+        "vlnv": "xilinx.com:module_ref:gpio_to_fifo:1.0",
+        "xci_name": "top_level_block_design_gpio_to_fifo_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "gpio_to_fifo",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "top_level_block_design_clk_wiz_0_0_clk_out1",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "const_prop"
+              }
+            }
+          },
+          "emio_gpio_i": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "rst_pl": {
+            "direction": "O",
+            "parameters": {
+              "POLARITY": {
+                "value": "",
+                "value_src": "weak"
+              }
+            }
+          },
+          "instr_fifo_full": {
+            "direction": "I"
+          },
+          "instr_fifo_dout": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "instr_fifo_wr_en": {
+            "direction": "O"
+          },
+          "pulse_fifo_full": {
+            "direction": "I"
+          },
+          "pulse_fifo_dout": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "pulse_fifo_wr_en": {
+            "direction": "O"
           }
         }
       },
@@ -1742,97 +1845,6 @@
             "direction": "O",
             "left": "7",
             "right": "0"
-          }
-        }
-      },
-      "pulse_fifo": {
-        "vlnv": "xilinx.com:ip:fifo_generator:13.2",
-        "xci_name": "top_level_block_design_instr_fifo_0",
-        "parameters": {
-          "Fifo_Implementation": {
-            "value": "Independent_Clocks_Builtin_FIFO"
-          },
-          "Input_Data_Width": {
-            "value": "32"
-          }
-        }
-      },
-      "gpio_to_fifo_0": {
-        "vlnv": "xilinx.com:module_ref:gpio_to_fifo:1.0",
-        "xci_name": "top_level_block_design_gpio_to_fifo_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "gpio_to_fifo",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "rst",
-                "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "top_level_block_design_clk_wiz_0_0_clk_out1",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
-              }
-            }
-          },
-          "rst": {
-            "type": "rst",
-            "direction": "I",
-            "parameters": {
-              "POLARITY": {
-                "value": "ACTIVE_LOW",
-                "value_src": "const_prop"
-              }
-            }
-          },
-          "emio_gpio_i": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "rst_pl": {
-            "direction": "O",
-            "parameters": {
-              "POLARITY": {
-                "value": "",
-                "value_src": "weak"
-              }
-            }
-          },
-          "instr_fifo_full": {
-            "direction": "I"
-          },
-          "instr_fifo_dout": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "instr_fifo_wr_en": {
-            "direction": "O"
-          },
-          "pulse_fifo_full": {
-            "direction": "I"
-          },
-          "pulse_fifo_dout": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "pulse_fifo_wr_en": {
-            "direction": "O"
           }
         }
       }
@@ -2034,8 +2046,8 @@
           "instr_fifo/rd_clk",
           "proc_sys_reset_0/slowest_sync_clk",
           "system_ila_1/clk",
-          "pulse_gen_0/clk",
-          "pulse_fifo/rd_clk"
+          "pulse_fifo/rd_clk",
+          "pulse_gen_0/clk"
         ]
       },
       "state_out": {
@@ -2073,20 +2085,47 @@
       "pulse_fifo_empty": {
         "ports": [
           "pulse_fifo/empty",
+          "system_ila_1/probe6",
           "pulse_gen_0/pulse_fifo_empty"
-        ]
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
       },
       "pulse_fifo_dout": {
         "ports": [
           "pulse_fifo/dout",
+          "system_ila_1/probe5",
           "pulse_gen_0/pulse_fifo_data"
-        ]
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
       },
       "pulse_gen_0_pulse_fifo_read": {
         "ports": [
           "pulse_gen_0/pulse_fifo_read",
-          "pulse_fifo/rd_en"
-        ]
+          "pulse_fifo/rd_en",
+          "system_ila_1/probe4"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
       }
     },
     "addressing": {

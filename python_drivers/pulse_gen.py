@@ -195,14 +195,16 @@ class pulse_gen:
             print("Bad ACK while sending pulse, is the FPGA programmed with the C firmware?")
             return -1
         
-    def sync_and_stream(self, num_pulses):
+    #Num sync pulses is the number of pulses used to synchronize with server before data is sent(max 65535)
+    #num dead_pulses is number of clock cycles between synchronization and data (max 256)
+    def sync_and_stream(self, num_sync_pulses, num_dead_pulses):
         
         
         self.port.open()
         
-        b0 = (num_pulses >> 16) & 0xFF
-        b1 = (num_pulses >> 8) & 0xFF
-        b2 = num_pulses & 0xFF
+        b0 = num_dead_pulses & 0xFF
+        b1 = (num_sync_pulses >> 8) & 0xFF
+        b2 = num_sync_pulses & 0xFF
         
         self.port.write([CMD_PREAMBLE,CMD_SYNC_AND_STREAM, b0, b1, b2])
         #Wait for the ack

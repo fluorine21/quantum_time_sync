@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-//Date        : Thu Jul 23 20:06:35 2020
+//Date        : Fri Jul 24 11:08:25 2020
 //Host        : pme10D0025 running 64-bit major release  (build 9200)
 //Command     : generate_target top_level_block_design.bd
 //Design      : top_level_block_design
@@ -752,14 +752,14 @@ module top_level_block_design
   wire ps8_0_axi_periph_M01_AXI_WREADY;
   wire [3:0]ps8_0_axi_periph_M01_AXI_WSTRB;
   wire ps8_0_axi_periph_M01_AXI_WVALID;
-  wire [31:0]pulse_fifo_dout;
-  wire pulse_fifo_empty;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire [31:0]pulse_fifo_dout;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire pulse_fifo_empty;
   wire pulse_fifo_full;
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire pulse_gen_0_fifo_read;
   (* CONN_BUS_INFO = "pulse_gen_0_m_axis xilinx.com:interface:axis:1.0 None TDATA" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire [255:0]pulse_gen_0_m_axis_TDATA;
   (* CONN_BUS_INFO = "pulse_gen_0_m_axis xilinx.com:interface:axis:1.0 None TREADY" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire pulse_gen_0_m_axis_TREADY;
   (* CONN_BUS_INFO = "pulse_gen_0_m_axis xilinx.com:interface:axis:1.0 None TVALID" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire pulse_gen_0_m_axis_TVALID;
-  wire pulse_gen_0_pulse_fifo_read;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire pulse_gen_0_pulse_fifo_read;
   wire reset_1;
   wire [0:0]rst_ps8_0_99M_interconnect_aresetn;
   wire rst_ps8_0_99M_mb_reset;
@@ -993,6 +993,9 @@ module top_level_block_design
         .probe1(pulse_gen_0_fifo_read),
         .probe2(fifo_generator_0_empty),
         .probe3(state_out),
+        .probe4(pulse_gen_0_pulse_fifo_read),
+        .probe5(pulse_fifo_dout),
+        .probe6(pulse_fifo_empty),
         .resetn(proc_sys_reset_0_peripheral_aresetn));
   top_level_block_design_usp_rf_data_converter_0_0 usp_rf_data_converter_0
        (.clk_dac1(usp_rf_data_converter_0_clk_dac1),

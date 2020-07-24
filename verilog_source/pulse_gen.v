@@ -48,6 +48,7 @@ wire [255:0] default_pulse = 256'h7FFF000000000000000000000000000000000000000000
 //wire clock_tick = main_clock[23:0] & clock_period == 0;//Only powers of 2
 //wire clock_tick = main_clock % clock_period == 0;
 wire clock_tick = main_clock == 0;
+wire clock_pre_tick = main_clock >= (clock_period - 1);//Happens one cycle before the clock tick
 
 //Macros for decoding fifo data
 wire [7:0] FIFO_COMMAND = instr_fifo_data[31:24];
@@ -71,6 +72,7 @@ reg [45:0] main_clock;
 reg [23:0] clock_period;
 
 reg [15:0] pulses_to_send;//Used for toggling phase measurement mode
+reg [7:0] dead_pulses;//Number of pulses between phase measurement and data
 
 reg [7:0] state;
 assign state_out = state;
@@ -80,12 +82,12 @@ localparam [7:0] state_idle  = 0,
 				 state_wait_tick = 3, 
 				 state_wait_pulse = 4,
 				 state_toggle_end = 5,
-				 state_ss_0 = 6,
-				 state_ss_1 = 7,
-				 state_ss_2 = 8,
-				 state_ss_3 = 9,
-				 state_ss_4 = 10,
-				 state_ss_5 = 11;
+				 state_ss_1 = 6,
+				 state_ss_2 = 7,
+				 state_ss_3 = 8,
+				 state_ss_4 = 9,
+				 state_ss_5 = 10,
+				 state_ss_wait = 11;
 				 
 reg is_phase_meas_mode;//if 1, then pulse is emitted at each clock tick
 				 
@@ -101,6 +103,7 @@ begin
     m_axis_tdata_int <= 0;
 	is_phase_meas_mode <= 0;
 	pulses_to_send <= 0;
+	dead_pulses <= 0;
 
 end
 endtask
@@ -192,9 +195,10 @@ always @ (posedge clk or negedge rst) begin
 					end
 					
 					command_sync_and_stream: begin
-						pulses_to_send <= instr_fifo_data[23:0];
+						pulses_to_send <= instr_fifo_data[15:0];
+						dead_pulses <= instr_fifo_data[23:16];
 						is_phase_meas_mode <= 1;
-						state <= state_ss_0;
+						state <= state_ss_1;
 					end
 				
 					default begin
@@ -223,13 +227,12 @@ always @ (posedge clk or negedge rst) begin
 			
 			///////////////////////////////////////////////////////////////////////////////////
 			
-			state_ss_1: begin
+			state_ss_1: begin//Send out the initial sync pulses
 			
 				if(pulses_to_send == 0) begin
-					is_phase_meas_mode <= 0;
+					is_phase_meas_mode <= 0;//Turn off phase measurement mode
 					if(!pulse_fifo_empty) begin//If there are data pulses to send
-						state <= state_ss_2;
-						pulse_fifo_read <= 1;
+						state <= state_ss_wait;
 					end
 					else begin
 						state <= state_idle;//No pulses to send
@@ -241,9 +244,23 @@ always @ (posedge clk or negedge rst) begin
 			
 			end
 			
+			
+			state_ss_wait: begin
+			
+				if(dead_pulses == 0) begin
+					state <= state_ss_2;
+					pulse_fifo_read <= 1;
+				end
+				else if(clock_tick) begin
+					dead_pulses <= dead_pulses - 1;
+				end
+			
+			end
+			
 			//Reset the read flag 
 			state_ss_2: begin
 			
+				m_axis_tdata_int <= 0;//Reset the pulse output
 				pulse_fifo_read <= 0;
 				state <= state_ss_3;
 			
@@ -260,7 +277,7 @@ always @ (posedge clk or negedge rst) begin
 			
 			state_ss_4: begin//Send the pulse at the correct time and 
 			
-				if(clock_tick) begin
+				if(clock_pre_tick) begin
 				 
 					//If we have zero coarse delay
 					if(coarse_delay == 0) begin
@@ -314,7 +331,7 @@ always @ (posedge clk or negedge rst) begin
 			//Wait until the clock ticks
 			state_wait_tick: begin
 			
-			     if(clock_tick) begin
+			     if(clock_pre_tick) begin
 				 
 					//If we have zero coarse delay
 					if(coarse_delay == 0) begin

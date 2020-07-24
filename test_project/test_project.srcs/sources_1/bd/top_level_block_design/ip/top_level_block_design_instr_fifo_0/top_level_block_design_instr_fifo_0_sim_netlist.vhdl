@@ -1,11 +1,11 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Wed Jun 24 20:25:39 2020
+-- Date        : Fri Jul 24 10:17:47 2020
 -- Host        : pme10D0025 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top top_level_block_design_instr_fifo_0 -prefix
---               top_level_block_design_instr_fifo_0_ top_level_block_design_fifo_generator_0_0_sim_netlist.vhdl
--- Design      : top_level_block_design_fifo_generator_0_0
+-- Command     : write_vhdl -force -mode funcsim
+--               c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_instr_fifo_0/top_level_block_design_instr_fifo_0_sim_netlist.vhdl
+-- Design      : top_level_block_design_instr_fifo_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
 -- Device      : xczu28dr-ffvg1517-2-e
@@ -28,6 +28,8 @@ entity top_level_block_design_instr_fifo_0_builtin_prim is
     wr_en : in STD_LOGIC;
     din : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of top_level_block_design_instr_fifo_0_builtin_prim : entity is "builtin_prim";
 end top_level_block_design_instr_fifo_0_builtin_prim;
 
 architecture STRUCTURE of top_level_block_design_instr_fifo_0_builtin_prim is
@@ -345,6 +347,8 @@ entity top_level_block_design_instr_fifo_0_builtin_extdepth is
     wr_en : in STD_LOGIC;
     din : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of top_level_block_design_instr_fifo_0_builtin_extdepth : entity is "builtin_extdepth";
 end top_level_block_design_instr_fifo_0_builtin_extdepth;
 
 architecture STRUCTURE of top_level_block_design_instr_fifo_0_builtin_extdepth is
@@ -403,6 +407,8 @@ entity top_level_block_design_instr_fifo_0_builtin_top is
     wr_en : in STD_LOGIC;
     din : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of top_level_block_design_instr_fifo_0_builtin_top : entity is "builtin_top";
 end top_level_block_design_instr_fifo_0_builtin_top;
 
 architecture STRUCTURE of top_level_block_design_instr_fifo_0_builtin_top is
@@ -440,6 +446,8 @@ entity top_level_block_design_instr_fifo_0_fifo_generator_v13_2_5_builtin is
     wr_en : in STD_LOGIC;
     din : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of top_level_block_design_instr_fifo_0_fifo_generator_v13_2_5_builtin : entity is "fifo_generator_v13_2_5_builtin";
 end top_level_block_design_instr_fifo_0_fifo_generator_v13_2_5_builtin;
 
 architecture STRUCTURE of top_level_block_design_instr_fifo_0_fifo_generator_v13_2_5_builtin is
@@ -498,6 +506,8 @@ entity top_level_block_design_instr_fifo_0_fifo_generator_top is
     wr_en : in STD_LOGIC;
     din : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of top_level_block_design_instr_fifo_0_fifo_generator_top : entity is "fifo_generator_top";
 end top_level_block_design_instr_fifo_0_fifo_generator_top;
 
 architecture STRUCTURE of top_level_block_design_instr_fifo_0_fifo_generator_top is
@@ -535,6 +545,8 @@ entity top_level_block_design_instr_fifo_0_fifo_generator_v13_2_5_synth is
     wr_en : in STD_LOGIC;
     din : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of top_level_block_design_instr_fifo_0_fifo_generator_v13_2_5_synth : entity is "fifo_generator_v13_2_5_synth";
 end top_level_block_design_instr_fifo_0_fifo_generator_v13_2_5_synth;
 
 architecture STRUCTURE of top_level_block_design_instr_fifo_0_fifo_generator_v13_2_5_synth is
@@ -1101,7 +1113,7 @@ entity top_level_block_design_instr_fifo_0_fifo_generator_v13_2_5 is
   attribute C_RD_DEPTH : integer;
   attribute C_RD_DEPTH of top_level_block_design_instr_fifo_0_fifo_generator_v13_2_5 : entity is 1024;
   attribute C_RD_FREQ : integer;
-  attribute C_RD_FREQ of top_level_block_design_instr_fifo_0_fifo_generator_v13_2_5 : entity is 1;
+  attribute C_RD_FREQ of top_level_block_design_instr_fifo_0_fifo_generator_v13_2_5 : entity is 250;
   attribute C_RD_PNTR_WIDTH : integer;
   attribute C_RD_PNTR_WIDTH of top_level_block_design_instr_fifo_0_fifo_generator_v13_2_5 : entity is 10;
   attribute C_REG_SLICE_MODE_AXIS : integer;
@@ -1179,7 +1191,7 @@ entity top_level_block_design_instr_fifo_0_fifo_generator_v13_2_5 is
   attribute C_WR_DEPTH_WRCH : integer;
   attribute C_WR_DEPTH_WRCH of top_level_block_design_instr_fifo_0_fifo_generator_v13_2_5 : entity is 16;
   attribute C_WR_FREQ : integer;
-  attribute C_WR_FREQ of top_level_block_design_instr_fifo_0_fifo_generator_v13_2_5 : entity is 1;
+  attribute C_WR_FREQ of top_level_block_design_instr_fifo_0_fifo_generator_v13_2_5 : entity is 100;
   attribute C_WR_PNTR_WIDTH : integer;
   attribute C_WR_PNTR_WIDTH of top_level_block_design_instr_fifo_0_fifo_generator_v13_2_5 : entity is 10;
   attribute C_WR_PNTR_WIDTH_AXIS : integer;
@@ -1196,6 +1208,8 @@ entity top_level_block_design_instr_fifo_0_fifo_generator_v13_2_5 is
   attribute C_WR_PNTR_WIDTH_WRCH of top_level_block_design_instr_fifo_0_fifo_generator_v13_2_5 : entity is 4;
   attribute C_WR_RESPONSE_LATENCY : integer;
   attribute C_WR_RESPONSE_LATENCY of top_level_block_design_instr_fifo_0_fifo_generator_v13_2_5 : entity is 1;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of top_level_block_design_instr_fifo_0_fifo_generator_v13_2_5 : entity is "fifo_generator_v13_2_5";
 end top_level_block_design_instr_fifo_0_fifo_generator_v13_2_5;
 
 architecture STRUCTURE of top_level_block_design_instr_fifo_0_fifo_generator_v13_2_5 is
@@ -1769,7 +1783,7 @@ entity top_level_block_design_instr_fifo_0 is
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of top_level_block_design_instr_fifo_0 : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of top_level_block_design_instr_fifo_0 : entity is "top_level_block_design_fifo_generator_0_0,fifo_generator_v13_2_5,{}";
+  attribute CHECK_LICENSE_TYPE of top_level_block_design_instr_fifo_0 : entity is "top_level_block_design_instr_fifo_0,fifo_generator_v13_2_5,{}";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of top_level_block_design_instr_fifo_0 : entity is "yes";
   attribute x_core_info : string;
@@ -2207,7 +2221,7 @@ architecture STRUCTURE of top_level_block_design_instr_fifo_0 is
   attribute C_RD_DEPTH : integer;
   attribute C_RD_DEPTH of U0 : label is 1024;
   attribute C_RD_FREQ : integer;
-  attribute C_RD_FREQ of U0 : label is 1;
+  attribute C_RD_FREQ of U0 : label is 250;
   attribute C_RD_PNTR_WIDTH : integer;
   attribute C_RD_PNTR_WIDTH of U0 : label is 10;
   attribute C_REG_SLICE_MODE_AXIS : integer;
@@ -2285,7 +2299,7 @@ architecture STRUCTURE of top_level_block_design_instr_fifo_0 is
   attribute C_WR_DEPTH_WRCH : integer;
   attribute C_WR_DEPTH_WRCH of U0 : label is 16;
   attribute C_WR_FREQ : integer;
-  attribute C_WR_FREQ of U0 : label is 1;
+  attribute C_WR_FREQ of U0 : label is 100;
   attribute C_WR_PNTR_WIDTH : integer;
   attribute C_WR_PNTR_WIDTH of U0 : label is 10;
   attribute C_WR_PNTR_WIDTH_AXIS : integer;
@@ -2309,7 +2323,7 @@ architecture STRUCTURE of top_level_block_design_instr_fifo_0 is
   attribute x_interface_info of full : signal is "xilinx.com:interface:fifo_write:1.0 FIFO_WRITE FULL";
   attribute x_interface_info of rd_clk : signal is "xilinx.com:signal:clock:1.0 read_clk CLK";
   attribute x_interface_parameter : string;
-  attribute x_interface_parameter of rd_clk : signal is "XIL_INTERFACENAME read_clk, FREQ_HZ 250000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN top_level_block_design_usp_rf_data_converter_0_0_clk_dac0, INSERT_VIP 0";
+  attribute x_interface_parameter of rd_clk : signal is "XIL_INTERFACENAME read_clk, FREQ_HZ 250000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN top_level_block_design_usp_rf_data_converter_0_0_clk_dac1, INSERT_VIP 0";
   attribute x_interface_info of rd_en : signal is "xilinx.com:interface:fifo_read:1.0 FIFO_READ RD_EN";
   attribute x_interface_info of wr_clk : signal is "xilinx.com:signal:clock:1.0 write_clk CLK";
   attribute x_interface_parameter of wr_clk : signal is "XIL_INTERFACENAME write_clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN top_level_block_design_clk_wiz_0_0_clk_out1, INSERT_VIP 0";
