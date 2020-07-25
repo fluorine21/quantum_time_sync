@@ -369,6 +369,8 @@ class tdc_wrapper:
     
     def clear_all(self):
         
+        print("Clearing tdc")
+        
         if(self.mode == MODE_NORMAL):
             self.timestamp_list = []
         else:
@@ -379,9 +381,16 @@ class tdc_wrapper:
             
             #Send the GET_AND_CLEAR command
             sck.send(bytearray([COMMAND_CLEAR_ALL]))
+            
+            res = james_utils.receive_bytes(sck,1)
+            if(isinstance(res, int)):
+                print("Error waiting for confirmation of clear from server:"+str(res))
+            elif(res[0] != 0x66):
+                print("Bad timeout received from server while clearing tdc")
     
             #gracefully close the connection
             sck.send(bytearray([COMMAND_CLOSE_CONNECTION]))
+            #sck.flush()
             sck.close()
         return 0
         
@@ -543,6 +552,7 @@ class tdc_wrapper:
             elif(client_cmd[0] == COMMAND_CLEAR_ALL):
                 print("[CLIENT HANDLER] Client at " + ip_str + ": COMMAND_CLEAR_ALL")
                 self.timestamp_list = []
+                c.send(SERVER_ACK)
             elif(client_cmd[0] == COMMAND_GET_BUSY):
                 print("[CLIENT HANDLER] Client at " + ip_str + ": COMMAND_GET_BUSY")
                 james_utils.send_timestamp(c, self.busy)
@@ -556,6 +566,9 @@ class tdc_wrapper:
                     channel_num = res[0]
                     ts = 0
                     for t in self.timestamp_list:
+                        if(t.channel_num == channel_num and t.timestamp == 0):
+                            self.timestamp_list.remove(t)
+                            continue
                         if(t.channel_num == channel_num):
                             ts = t.timestamp
                             self.timestamp_list.remove(t)

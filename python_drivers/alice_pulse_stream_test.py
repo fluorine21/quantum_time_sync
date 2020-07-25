@@ -14,12 +14,12 @@ import random
 import datetime
 logfile = "stream_test_results.csv"
 
-def log_to_file(test_num, test_series_num, stream_len, succ, sent_stream, received_stream):
+def log_to_file(test_num, test_series_num, stream_len, succ, num_errors, sent_stream, received_stream):
     
     file = open(logfile,'a')
     
     
-    new_line = str(test_num) + ", " + str(test_series_num) + ", " + str(stream_len) + ", success: " + str(succ) + ", Sent:, " 
+    new_line = str(test_num) + ", " + str(test_series_num) + ", " + str(stream_len) + ", success: " + str(succ) + ", num errors:," + str(num_errors)+ ", Sent:, " 
     
     for s in sent_stream:
         new_line += str(s) + ", "
@@ -79,7 +79,7 @@ if(res):
     print("Failed to set encoding parameters, aborting..")
 else:
     
-    for stream_len in range(30, 1001):
+    for stream_len in range(220, 1001, 50):
         
         if(exit_test):
                 break
@@ -122,24 +122,25 @@ else:
                 print(res_str)
                 
                 succ = 1
+                ers = 0
                 if(len(test_stream) == len(res)):
                     for i in range(0, len(test_stream)):
                         if(test_stream[i] != res[i]):
                             succ = 0
-                            break
+                            ers += 1
                 else:
                     succ = 0
                         
                 if(succ):
                     print("Stream decoded successfully by Bob!")
                 else:
-                    print("Bob did not correctly decode stream")
+                    print("Bob did not correctly decode stream, " + str(ers) + " errors")
                     
-                log_to_file(count, test_num, stream_len, succ, test_stream, res)
+                log_to_file(count, test_num, stream_len, succ, ers, test_stream, res)
                 
                 count += 1
-                print("Waiting 3 seconds...")
-                time.sleep(3)
+                #print("Waiting 3 seconds...")
+                #time.sleep(3)
                 
             except KeyboardInterrupt:
                 print("Exiting")
@@ -147,5 +148,5 @@ else:
                 break
             
             
-            
+ts.board.close_board()           
 print("Done testing")       

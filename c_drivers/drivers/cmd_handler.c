@@ -4,7 +4,7 @@
 #include "gpio.h"
 #include "rf.h"
 
-#define DEBUG_PRINT
+//#define DEBUG_PRINT
 
 //localparam [7:0] command_reset_clock = 0,
 ///				 command_send_pulse = 1,

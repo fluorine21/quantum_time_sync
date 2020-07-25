@@ -6952,3 +6952,4 @@ con
 ----------------End of Script----------------
 
 10:58:44 INFO  : Launch script is exported to file 'C:\James\vitis_workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice_standalone.tcl'
+22:28:18 INFO  : Checking for BSP changes to sync application flags for project 'test_proj_pulse_ctrl'...

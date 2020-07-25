@@ -24,7 +24,7 @@ ACK_FAIL = 0xFF
 
 
 DEFAULT_BAUD = 115200
-UART_TIMEOUT = 0.1
+UART_TIMEOUT = 1
 
 
 class pulse_gen:
@@ -38,20 +38,27 @@ class pulse_gen:
         self.port.port = portname
         self.port.timeout = UART_TIMEOUT
         
-    def open_board(self):
         self.port.open()
+        
+    def __del__(self):
+        print("Closing port")
+        self.port.close()
+        
+    #def open_board(self):
+        #self.port.open()
         
     def close_board(self):
         self.port.close()
         
     #Returns 0 if connection to board is up
     def ping_board(self):
-        self.port.open()
+        self.port.reset_input_buffer()
+        #self.port.open()
         #send the command
         self.port.write([CMD_PREAMBLE, CMD_PING_BOARD])
         #Wait for the ack
         result = self.wait_ack()
-        self.port.close()
+       #self.port.close()
         if result == ACK_RESPONSE:
             return 0
         elif result == ACK_FAIL:
@@ -62,65 +69,65 @@ class pulse_gen:
         
     #returns ACK_RESPONSE if ack successfully recieved
     def wait_ack(self):
-        try:
-            rv = self.port.read(1)
-            #self.port.reset_input_buffer()
-            return rv[0]
-        except:
-            print("Error waiting for ACK from board")
-            return -1
+        #try:
+        rv = self.port.read(1)
+        #self.port.reset_input_buffer()
+        return rv[0]
+        #except:
+        #    print("Error waiting for ACK from board")
+        #    raise
         
     def phase_meas_on(self):
-        self.port.open()
+        self.port.reset_input_buffer()
         #Send the phase meas on command
         self.port.write([CMD_PREAMBLE, CMD_PHASE_MEAS_ON])
         #Wait for the ack
         result = self.wait_ack()
-        self.port.close()
+        #self.port.close()
         if result == ACK_RESPONSE:
             return 0
         elif result == ACK_FAIL:
             print("No running clock detected on the FPGA, is the RF clock input plugged in and running?")
             return -1
         else:
-            print("Bad ACK while turning phase measurement on, is the FPGA programmed with the C firmware?")
+            print("[PHASE_MEAS_ON]Bad ACK while turning phase measurement on, is the FPGA programmed with the C firmware?")
             return -1
         
     def phase_meas_off(self):
-        
-        self.port.open()
+        self.port.reset_input_buffer()
+        #self.port.open()
         #Send the phase meas on command
         self.port.write([CMD_PREAMBLE, CMD_PHASE_MEAS_OFF])
         #Wait for the ack
         result = self.wait_ack()
-        self.port.close()
+        #self.port.close()
         if result == ACK_RESPONSE:
             return 0
         elif result == ACK_FAIL:
             print("No running clock detected on the FPGA, is the RF clock input plugged in and running?")
             return -1
         else:
-            print("Bad ACK while turning phase measurement off, is the FPGA programmed with the C firmware?")
+            print("[PHASE_MEAS_OFF]Bad ACK while turning phase measurement off, is the FPGA programmed with the C firmware?")
             return -1
         
     def toggle_phase_meas(self, num_pulses):
         
         pb1 = (round(num_pulses) >> 8) & 0xFF
         pb0 = round(num_pulses) & 0xFF
-        
-        self.port.open()
+        self.port.reset_input_buffer()
+        #self.port.open()
         #Send the phase meas on command
         self.port.write([CMD_PREAMBLE, CMD_TOGGLE_PHASE_MEAS, 0, pb1, pb0])
         #Wait for the ack
         result = self.wait_ack()
-        self.port.close()
+        #self.port.close()
         if result == ACK_RESPONSE:
             return 0
         elif result == ACK_FAIL:
             print("No running clock detected on the FPGA, is the RF clock input plugged in and running?")
             return -1
         else:
-            print("Bad ACK while toggling phase measurement mode, is the FPGA programmed with the C firmware?")
+            print("[TOGGLE_PHASE_MEAS]Bad ACK while toggling phase measurement mode, is the FPGA programmed with the C firmware?")
             return -1
         
         
@@ -128,8 +135,8 @@ class pulse_gen:
         #Returns 0 on success
     def set_period(self, period):
         
-        self.port.open()
-    
+        #self.port.open()
+        self.port.reset_input_buffer()
         period_r = round(period)
         
         b0 = (period_r >> 16) & 0xFF
@@ -139,14 +146,14 @@ class pulse_gen:
         self.port.write([CMD_PREAMBLE, CMD_SET_PERIOD, b0, b1, b2])
         #Wait for the ack
         result = self.wait_ack()
-        self.port.close()
+        #self.port.close()
         if result == ACK_RESPONSE:
             return 0
         elif result == ACK_FAIL:
             print("No running clock detected on the FPGA, is the RF clock input plugged in and running?")
             return -1
         else:
-            print("Bad ACK while setting period, is the FPGA programmed with the C firmware?")
+            print("[SET_PERIOD]Bad ACK while setting period, is the FPGA programmed with the C firmware?")
             return -1
         
         #returns 0 on success
@@ -154,8 +161,8 @@ class pulse_gen:
         #fine delay is in DAC samples (1 = 250ps)
     def send_pulse(self, coarse_delay, fine_delay):
         
-        self.port.open()
-        
+        #self.port.open()
+        self.port.reset_input_buffer()
         b0 = (round(coarse_delay) >> 8) & 0xFF
         b1 = round(coarse_delay) & 0xFF
         b2 = round(fine_delay) & 0xFF
@@ -163,21 +170,21 @@ class pulse_gen:
         self.port.write([CMD_PREAMBLE, CMD_SEND_PULSE, b0, b1, b2])
         #Wait for the ack
         result = self.wait_ack()
-        self.port.close()
+        #self.port.close()
         if result == ACK_RESPONSE:
             return 0
         elif result == ACK_FAIL:
             print("No running clock detected on the FPGA, is the RF clock input plugged in and running?")
             return -1
         else:
-            print("Bad ACK while sending pulse, is the FPGA programmed with the C firmware?")
+            print("[Send Pulse]Bad ACK while sending pulse, is the FPGA programmed with the C firmware?")
             return -1
         
         
     def load_pulse(self, coarse_delay, fine_delay):
         
-        self.port.open()
-        
+        #self.port.open()
+        self.port.reset_input_buffer()
         b0 = (round(coarse_delay) >> 8) & 0xFF
         b1 = round(coarse_delay) & 0xFF
         b2 = round(fine_delay) & 0xFF
@@ -185,23 +192,23 @@ class pulse_gen:
         self.port.write([CMD_PREAMBLE, CMD_QUEUE_PULSE, b0, b1, b2])
         #Wait for the ack
         result = self.wait_ack()
-        self.port.close()
+        #self.port.close()
         if result == ACK_RESPONSE:
             return 0
         elif result == ACK_FAIL:
             print("No running clock detected on the FPGA, is the RF clock input plugged in and running?")
             return -1
         else:
-            print("Bad ACK while sending pulse, is the FPGA programmed with the C firmware?")
+            print("[Load Pulse]Bad ACK while sending pulse, is the FPGA programmed with the C firmware?")
             return -1
         
     #Num sync pulses is the number of pulses used to synchronize with server before data is sent(max 65535)
     #num dead_pulses is number of clock cycles between synchronization and data (max 256)
     def sync_and_stream(self, num_sync_pulses, num_dead_pulses):
         
-        
-        self.port.open()
-        
+        self.port.reset_input_buffer()
+        #self.port.open()
+        self.port.flush
         b0 = num_dead_pulses & 0xFF
         b1 = (num_sync_pulses >> 8) & 0xFF
         b2 = num_sync_pulses & 0xFF
@@ -209,13 +216,13 @@ class pulse_gen:
         self.port.write([CMD_PREAMBLE,CMD_SYNC_AND_STREAM, b0, b1, b2])
         #Wait for the ack
         result = self.wait_ack()
-        self.port.close()
+        #self.port.close()
         if result == ACK_RESPONSE:
             return 0
         elif result == ACK_FAIL:
             print("No running clock detected on the FPGA, is the RF clock input plugged in and running?")
             return -1
         else:
-            print("Bad ACK while sending pulse, is the FPGA programmed with the C firmware?")
+            print("[sync and stream]Bad ACK while sending pulse, is the FPGA programmed with the C firmware?")
             return -1
         

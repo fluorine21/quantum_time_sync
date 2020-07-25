@@ -21,7 +21,7 @@ import datetime
 #Open a secure socket?
 SECURE_MODE = 1
 
-REL_NUM_PULSES = 100 #Use 10 pulses to do phase measurement
+REL_NUM_PULSES = 15 #Use 10 pulses to do phase measurement
 PERIOD_DIFF_THRESHOLD = 0.1
 CLIENT = 0
 SERVER = 1
@@ -29,7 +29,7 @@ SERVER_ACK = b'\x66'
 SERVER_ACK_BYTE = 0x66
 CLIENT_TIMEOUT = 2 #5 second timeout
 SERVER_TIMEOUT = 2 #Long timeout for the server
-TIMEOUT_LONG = 10
+TIMEOUT_LONG = 100
 
 #Server commands
 SERVER_RECEIVE_PULSE = 4
@@ -991,6 +991,10 @@ class time_sync:
             print("Error connecting to server (Bob)")
             return -1
         
+        
+        self.tdc.clear_all()#Clear any old pulses
+        
+        
         #tell bob to receive a photon
         self.s.send(bytearray([SERVER_RECEIVE_STREAM]))
         if(self.wait_ack(self.s)):
@@ -998,7 +1002,7 @@ class time_sync:
             self.disconnect_from_server()
             return -1
         
-        self.tdc.clear_all()#Clear any old pulses
+        
         
         val_coarse = []
         val_fine = []
@@ -1021,6 +1025,7 @@ class time_sync:
             
     
         #Send the pulses
+        print("Sending pulses")
         self.board.sync_and_stream(num_sync_pulse, num_dead_pulse)
         
         #Tell bob the expected number of pulses
@@ -1029,12 +1034,14 @@ class time_sync:
         while(self.tdc.is_busy()):
             a = 1
         
+        print("Sending timing info to Bob")
         #Send over the stream information
         james_utils.send_timestamp(self.s, total_pulses)
         james_utils.send_timestamp(self.s, num_sync_pulse)
         james_utils.send_timestamp(self.s, num_dead_pulse)
         james_utils.send_timestamp(self.s, self.period)
         
+        print("Waiting for Bob to finish")
         #Set the socket timeout to something long
         self.s.settimeout(TIMEOUT_LONG)
         
@@ -1065,10 +1072,10 @@ class time_sync:
         print("Waiting to receive number of expected pulses from Alice")
         sck.settimeout(TIMEOUT_LONG)
         num_pulses = james_utils.receive_timestamp(sck)
-        sck.settimeout(SERVER_TIMEOUT)
         num_sync_pulses = james_utils.receive_timestamp(sck)
         num_dead_pulses = james_utils.receive_timestamp(sck)
         self.period = james_utils.receive_timestamp(sck)
+        sck.settimeout(SERVER_TIMEOUT)
 
         
         if(num_pulses < 5 ):

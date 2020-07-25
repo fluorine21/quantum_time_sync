@@ -1,4 +1,4 @@
-10:58:00 **** Incremental Build of configuration Debug for project test_proj_pulse_ctrl ****
+22:28:18 **** Incremental Build of configuration Debug for project test_proj_pulse_ctrl ****
 make all 
 'Building file: C:/James/c_drivers/drivers/cmd_handler.c'
 'Invoking: ARM v8 gcc compiler'
@@ -13,10 +13,10 @@ aarch64-none-elf-gcc -L"C:\James\c_drivers\drivers" -Wl,-T -Wl,../src/lscript.ld
 'Invoking: ARM v8 Print Size'
 aarch64-none-elf-size test_proj_pulse_ctrl.elf  |tee "test_proj_pulse_ctrl.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 173204	   9520	  29124	 211848	  33b88	test_proj_pulse_ctrl.elf
+ 173084	   9520	  29116	 211720	  33b08	test_proj_pulse_ctrl.elf
 'Finished building: test_proj_pulse_ctrl.elf.size'
 ' '
-10:58:02 **** Incremental Build of configuration Debug for project test_proj_pulse_ctrl_system ****
+22:28:21 **** Incremental Build of configuration Debug for project test_proj_pulse_ctrl_system ****
 make all 
 Generating bif file for the system project
 generate_system_bif.bat 49978 C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm standalone_domain C:/James/vitis_workspace/test_proj_pulse_ctrl_system/Debug/system.bif
