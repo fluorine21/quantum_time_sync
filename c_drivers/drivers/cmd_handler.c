@@ -22,8 +22,9 @@
 #define CMD_PHASE_MEAS_OFF 0x04
 #define CMD_PING_BOARD 0xFE
 #define CMD_TOGGLE_PHASE_MEAS 0x05
-#define CMD_QUEUE_PULSE 0x07
+#define CMD_QUEUE_PULSE 0xFD
 #define CMD_SYNC_AND_STREAM 0x06
+#define CMD_CLEAR_QUEUE 0x07
 
 //Handler function states
 #define STATE_WAIT_PREAMBLE 0
@@ -171,6 +172,14 @@ void cmd_update_state()
 				uart_send_byte(ack_byte);//Send an ACK
 				debug_print("Responding to ping");
 				cmd_state = STATE_WAIT_PREAMBLE;
+				break;
+
+			case CMD_CLEAR_QUEUE:
+				//Send the set phase meas command
+				gpio_send_command( ((u32)CMD_CLEAR_QUEUE) << 24);
+				cmd_state = STATE_WAIT_PREAMBLE;
+				uart_send_byte(ack_byte);//Send an ACK
+				debug_print("Clearing pulse queue");
 				break;
 			default:
 				xil_printf("Invalid command byte: 0x%x\r\n", curr_cmd);

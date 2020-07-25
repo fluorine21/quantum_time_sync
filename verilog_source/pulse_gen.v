@@ -62,7 +62,8 @@ localparam [7:0] command_reset_clock = 0,
 				 command_set_phase_meas_mode = 3,
 				 command_reset_phase_meas_mode = 4,
 				 command_toggle_phase_meas_mode = 5,
-				 command_sync_and_stream = 6;
+				 command_sync_and_stream = 6,
+				 command_clear_queue = 7;//Clears all queued data pulses
 
 reg [15:0] coarse_delay;
 reg [7:0] fine_delay;
@@ -87,7 +88,8 @@ localparam [7:0] state_idle  = 0,
 				 state_ss_3 = 8,
 				 state_ss_4 = 9,
 				 state_ss_5 = 10,
-				 state_ss_wait = 11;
+				 state_ss_wait = 11,
+				 state_wait_clear = 12;
 				 
 reg is_phase_meas_mode;//if 1, then pulse is emitted at each clock tick
 				 
@@ -200,6 +202,17 @@ always @ (posedge clk or negedge rst) begin
 						is_phase_meas_mode <= 1;
 						state <= state_ss_1;
 					end
+					
+					command_clear_queue: begin
+					
+						if(pulse_fifo_empty) begin
+							state <= state_idle;
+						end
+						else begin
+							state <= state_wait_clear;
+							pulse_fifo_read <= 1;//Read out and clear all pulses
+						end
+					end
 				
 					default begin
 					
@@ -213,13 +226,21 @@ always @ (posedge clk or negedge rst) begin
 			end
 			
 			
+			state_wait_clear: begin
+			
+				if(pulse_fifo_empty) begin//If we're done clearing pulses
+					state <= state_idle;//Go back to idle state
+					pulse_fifo_read <= 0;//Stop clearing pulses
+				end
+			end
+			
 			state_toggle_end: begin
 			
-				if(pulses_to_send == 0) begin
-					is_phase_meas_mode <= 0;
+				if(pulses_to_send == 0) begin//If there are no more pulses to send
+					is_phase_meas_mode <= 0;//Go back to idle and stop sending pulses
 					state <= state_idle;
 				end
-				else if(clock_tick) begin
+				else if(clock_tick) begin//If a pulse was just sent
 					pulses_to_send = pulses_to_send - 1;
 				end
 			

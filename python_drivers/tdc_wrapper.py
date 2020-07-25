@@ -13,6 +13,8 @@ import threading
 import james_utils
 
 
+TIMEOUT_LONG = 15#For waiting on TDC to finish
+
 #Use secore mode?
 SECURE_MODE = 0
 
@@ -154,7 +156,7 @@ class tdc_wrapper:
             return self.busy
         
         sck = socket.socket()
-        sck.settimeout(SERVER_TIMEOUT)
+        sck.settimeout(TIMEOUT_LONG)
         sck.connect((self.server_ip, self.port))
         time.sleep(0.1)
         
@@ -314,7 +316,7 @@ class tdc_wrapper:
         
 
         sck = socket.socket()
-        sck.settimeout(SERVER_TIMEOUT)
+        sck.settimeout(TIMEOUT_LONG)
         sck.connect((self.server_ip, self.port))
         time.sleep(0.1)
         
@@ -339,7 +341,7 @@ class tdc_wrapper:
     def end_record_client(self, channel_num, get_all):
         
         sck = socket.socket()
-        sck.settimeout(SERVER_TIMEOUT)
+        sck.settimeout(TIMEOUT_LONG)
         sck.connect((self.server_ip, self.port))
         time.sleep(0.1)
         
@@ -375,7 +377,7 @@ class tdc_wrapper:
             self.timestamp_list = []
         else:
             sck = socket.socket()
-            sck.settimeout(SERVER_TIMEOUT)
+            sck.settimeout(TIMEOUT_LONG)
             sck.connect((self.server_ip, self.port))
             time.sleep(0.1)
             
@@ -494,7 +496,7 @@ class tdc_wrapper:
             #Check the data loss
             d_loss = self.device.getDataLost()
             if(d_loss != 0):
-                print("Warning, data loss was " + str(d_loss) + ", some timestamps have been missed")
+                print("[TDC SERVICE] Warning, data loss was " + str(d_loss) + ", some timestamps have been missed")
             
             #Readback timestamps from the device
             t_s = self.device.getLastTimestamps(True)
@@ -517,7 +519,7 @@ class tdc_wrapper:
                 elif(t_s[1][i] != DUMMY_CHANNEL_NUM):
                     self.busy = 1
                     self.timestamp_list.append(pulse_record(t_s[1][i], t_s[0][i] - self.offset_timestamp))
-                    print("[TDC SERVICE] Got pulse on channel #" + str(t_s[1][i]) + ", absolute = " + str(t_s[0][i]) + ", relative = " + str(t_s[0][i] - self.offset_timestamp))
+                    #print("[TDC SERVICE] Got pulse on channel #" + str(t_s[1][i]) + ", absolute = " + str(t_s[0][i]) + ", relative = " + str(t_s[0][i] - self.offset_timestamp))
              
         #If we're here then the server shutdown command has been sent
         self.device.deInitialize()    
@@ -557,7 +559,7 @@ class tdc_wrapper:
                 print("[CLIENT HANDLER] Client at " + ip_str + ": COMMAND_GET_BUSY")
                 james_utils.send_timestamp(c, self.busy)
             elif(client_cmd[0] == COMMAND_GET_AND_CLEAR):
-                print("[CLIENT HANDLER] Client at " + ip_str + ": COMMAND_GET_AND_CLEAR")
+                #print("[CLIENT HANDLER] Client at " + ip_str + ": COMMAND_GET_AND_CLEAR")
                 res = james_utils.receive_bytes(c, 1)
                 if(res == -1 or res == -2 or res == -3):
                     print("[CLIENT HANDLER] Unable to get channel from client at " + ip_str)
@@ -579,8 +581,8 @@ class tdc_wrapper:
                         ts = int(time.time() * 10000000)
                
                     james_utils.send_timestamp(c, ts)
-                    if(ts >= 0):
-                        print("[CLIENT HANDLER] Timestamp sent to client for channel " + str(channel_num) + " was " + str(ts))
+                    #if(ts >= 0):
+                        #print("[CLIENT HANDLER] Timestamp sent to client for channel " + str(channel_num) + " was " + str(ts))
             else:
                 print("[CLIENT HANDLER] Unknown command received from client: " + hex(client_cmd[0]))
                 

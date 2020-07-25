@@ -80,6 +80,6 @@ else:
         #file.close()
     
     print("Done.")
-              
+    ts.board.close_board()
         
             

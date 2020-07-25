@@ -17628,3 +17628,843 @@ Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-224: Laun
 
 !ENTRY com.xilinx.sdk.utils 0 0 2020-07-24 22:28:46.952
 !MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-224: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:31:34.619
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/hw/top_level_block_design_wrapper.xsa C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/system.mss ], Thread: Worker-230: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:31:34.651
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/hw/top_level_block_design_wrapper.xsa C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/system.mss ], Result: [null, ]. Thread: Worker-230: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:31:34.656
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/hw/top_level_block_design_wrapper.xsa C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/system.mss], Thread: Worker-230: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:31:34.668
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/hw/top_level_block_design_wrapper.xsa C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/system.mss], Result: [null, {"procname": "psu_cortexa53_0",
+"osname": "standalone",
+"osver": "7.2",
+}]. Thread: Worker-230: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2020-07-25 11:31:34.669
+!MESSAGE Generating MD5 hash for file: C:\James\vitis_workspace\test_proj_plat\export\test_proj_plat\sw\test_proj_plat\standalone_domain\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:31:34.674
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/system.mss], Thread: Worker-230: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:31:34.679
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/system.mss], Result: [null, ]. Thread: Worker-230: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.099
+!MESSAGE XSCT Command: [disconnect tcfchan#27], Thread: Thread-1867
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.107
+!MESSAGE XSCT command with result: [disconnect tcfchan#27], Result: [null, ]. Thread: Thread-1867
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.259
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.266
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#29]. Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.268
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.301
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Xilinx HW-Z1-ZCU104 FT4232H 19395A
+  7  Xilinx HW-Z1-ZCU104 FT4232H 19640A]. Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.303
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.311
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Xilinx HW-Z1-ZCU104 FT4232H 19395A
+  7  Xilinx HW-Z1-ZCU104 FT4232H 19640A]. Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.313
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && level==1}], Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.336
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && level==1}], Result: [null,      2  xczu28dr (idcode 147e0093 irlen 12 fpga)
+     5  arm_dap (idcode 5ba00477 irlen 4)]. Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.338
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && level==1}], Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.360
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && level==1}], Result: [null,      8  xczu28dr (idcode 147e0093 irlen 12 fpga)
+    11  arm_dap (idcode 5ba00477 irlen 4)]. Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.425
+!MESSAGE XSCT Command: [version -server], Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.428
+!MESSAGE XSCT command with result: [version -server], Result: [null, 2020.1]. Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.429
+!MESSAGE XSCT Command: [version], Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.430
+!MESSAGE XSCT command with result: [version], Result: [null, xsct 2020.1
+SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.432
+!MESSAGE XSCT Command: [jtag targets -set -filter {name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && level == 0}], Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.454
+!MESSAGE XSCT command with result: [jtag targets -set -filter {name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && level == 0}], Result: [null, ]. Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.456
+!MESSAGE XSCT Command: [jtag frequency], Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.462
+!MESSAGE XSCT command with result: [jtag frequency], Result: [null, 15000000]. Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.463
+!MESSAGE XSCT Command: [source C:/Xilinx/Vitis/2020.1/scripts/vitis/util/zynqmp_utils.tcl], Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.467
+!MESSAGE XSCT command with result: [source C:/Xilinx/Vitis/2020.1/scripts/vitis/util/zynqmp_utils.tcl], Result: [null, ]. Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.469
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}], Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.536
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}], Result: [null, ]. Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.538
+!MESSAGE XSCT Command: [reset_apu], Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.559
+!MESSAGE XSCT command with result: [reset_apu], Result: [null, ]. Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.561
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"RPU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}], Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.671
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"RPU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}], Result: [null, ]. Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.673
+!MESSAGE XSCT Command: [clear_rpu_reset], Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.706
+!MESSAGE XSCT command with result: [clear_rpu_reset], Result: [null, ]. Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.708
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}], Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.759
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}], Result: [null, ]. Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.760
+!MESSAGE XSCT Command: [loadhw -hw C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/hw/top_level_block_design_wrapper.xsa -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}] -regs], Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.862
+!MESSAGE XSCT command with result: [loadhw -hw C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/hw/top_level_block_design_wrapper.xsa -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}] -regs], Result: [null, top_level_block_design_wrapper_8]. Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.864
+!MESSAGE XSCT Command: [configparams force-mem-access 1], Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.867
+!MESSAGE XSCT command with result: [configparams force-mem-access 1], Result: [null, ]. Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.869
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}], Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.925
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}], Result: [null, ]. Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.926
+!MESSAGE XSCT Command: [set mode [expr [mrd -value 0xFF5E0200] & 0xf]], Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.929
+!MESSAGE XSCT command with result: [set mode [expr [mrd -value 0xFF5E0200] & 0xf]], Result: [null, 0]. Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.931
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}], Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.984
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}], Result: [null, ]. Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:33.986
+!MESSAGE XSCT Command: [rst -processor], Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:34.008
+!MESSAGE XSCT command with result: [rst -processor], Result: [null, ]. Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:34.011
+!MESSAGE XSCT Command: [dow C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/boot/fsbl.elf], Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:34.757
+!MESSAGE XSCT command with result: [dow C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/boot/fsbl.elf], Result: [null, ]. Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:34.758
+!MESSAGE XSCT Command: [set bp_49_34_fsbl_bp [bpadd -addr &XFsbl_Exit]], Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:34.818
+!MESSAGE XSCT command with result: [set bp_49_34_fsbl_bp [bpadd -addr &XFsbl_Exit]], Result: [null, 15]. Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:34.820
+!MESSAGE XSCT Command: [con -block -timeout 60], Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:35.864
+!MESSAGE XSCT command with result: [con -block -timeout 60], Result: [null, ]. Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:35.866
+!MESSAGE XSCT Command: [bpremove $bp_49_34_fsbl_bp], Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:35.887
+!MESSAGE XSCT command with result: [bpremove $bp_49_34_fsbl_bp], Result: [null, ]. Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:35.889
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}], Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:35.939
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}], Result: [null, ]. Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:35.941
+!MESSAGE XSCT Command: [rst -processor], Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:35.971
+!MESSAGE XSCT command with result: [rst -processor], Result: [null, ]. Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:35.972
+!MESSAGE XSCT Command: [dow C:/James/vitis_workspace/test_proj_pulse_ctrl/Debug/test_proj_pulse_ctrl.elf], Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:37.029
+!MESSAGE XSCT command with result: [dow C:/James/vitis_workspace/test_proj_pulse_ctrl/Debug/test_proj_pulse_ctrl.elf], Result: [null, ]. Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:37.032
+!MESSAGE XSCT Command: [configparams force-mem-access 0], Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:37.038
+!MESSAGE XSCT command with result: [configparams force-mem-access 0], Result: [null, ]. Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:37.081
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}], Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:37.146
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}], Result: [null, ]. Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:37.148
+!MESSAGE XSCT Command: [con], Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:49:37.290
+!MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-234: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:11.455
+!MESSAGE XSCT Command: [disconnect tcfchan#29], Thread: Thread-1932
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:11.495
+!MESSAGE XSCT command with result: [disconnect tcfchan#29], Result: [null, ]. Thread: Thread-1932
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:12.469
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:12.475
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#30]. Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:12.477
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:12.519
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Xilinx HW-Z1-ZCU104 FT4232H 19395A
+  7  Xilinx HW-Z1-ZCU104 FT4232H 19640A]. Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:12.521
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:12.527
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Xilinx HW-Z1-ZCU104 FT4232H 19395A
+  7  Xilinx HW-Z1-ZCU104 FT4232H 19640A]. Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:12.529
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && level==1}], Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:12.548
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && level==1}], Result: [null,      2  xczu28dr (idcode 147e0093 irlen 12 fpga)
+     5  arm_dap (idcode 5ba00477 irlen 4)]. Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:12.549
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && level==1}], Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:12.568
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && level==1}], Result: [null,      8  xczu28dr (idcode 147e0093 irlen 12 fpga)
+    11  arm_dap (idcode 5ba00477 irlen 4)]. Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:12.631
+!MESSAGE XSCT Command: [version -server], Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:12.634
+!MESSAGE XSCT command with result: [version -server], Result: [null, 2020.1]. Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:12.636
+!MESSAGE XSCT Command: [version], Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:12.637
+!MESSAGE XSCT command with result: [version], Result: [null, xsct 2020.1
+SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:12.638
+!MESSAGE XSCT Command: [jtag targets -set -filter {name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && level == 0}], Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:12.657
+!MESSAGE XSCT command with result: [jtag targets -set -filter {name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && level == 0}], Result: [null, ]. Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:12.658
+!MESSAGE XSCT Command: [jtag frequency], Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:12.660
+!MESSAGE XSCT command with result: [jtag frequency], Result: [null, 15000000]. Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:12.662
+!MESSAGE XSCT Command: [source C:/Xilinx/Vitis/2020.1/scripts/vitis/util/zynqmp_utils.tcl], Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:12.665
+!MESSAGE XSCT command with result: [source C:/Xilinx/Vitis/2020.1/scripts/vitis/util/zynqmp_utils.tcl], Result: [null, ]. Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:12.667
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}], Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:12.738
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}], Result: [null, ]. Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:12.740
+!MESSAGE XSCT Command: [reset_apu], Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:12.765
+!MESSAGE XSCT command with result: [reset_apu], Result: [null, ]. Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:12.767
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"RPU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}], Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:12.910
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"RPU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}], Result: [null, ]. Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:12.911
+!MESSAGE XSCT Command: [clear_rpu_reset], Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:12.926
+!MESSAGE XSCT command with result: [clear_rpu_reset], Result: [null, ]. Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:12.928
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}], Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:12.980
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}], Result: [null, ]. Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:12.982
+!MESSAGE XSCT Command: [loadhw -hw C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/hw/top_level_block_design_wrapper.xsa -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}] -regs], Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:13.071
+!MESSAGE XSCT command with result: [loadhw -hw C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/hw/top_level_block_design_wrapper.xsa -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}] -regs], Result: [null, top_level_block_design_wrapper_8]. Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:13.073
+!MESSAGE XSCT Command: [configparams force-mem-access 1], Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:13.075
+!MESSAGE XSCT command with result: [configparams force-mem-access 1], Result: [null, ]. Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:13.077
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}], Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:13.122
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}], Result: [null, ]. Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:13.124
+!MESSAGE XSCT Command: [set mode [expr [mrd -value 0xFF5E0200] & 0xf]], Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:13.130
+!MESSAGE XSCT command with result: [set mode [expr [mrd -value 0xFF5E0200] & 0xf]], Result: [null, 0]. Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:13.132
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}], Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:13.186
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}], Result: [null, ]. Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:13.188
+!MESSAGE XSCT Command: [rst -processor], Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:13.211
+!MESSAGE XSCT command with result: [rst -processor], Result: [null, ]. Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:13.213
+!MESSAGE XSCT Command: [dow C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/boot/fsbl.elf], Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:14.053
+!MESSAGE XSCT command with result: [dow C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/boot/fsbl.elf], Result: [null, ]. Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:14.054
+!MESSAGE XSCT Command: [set bp_50_14_fsbl_bp [bpadd -addr &XFsbl_Exit]], Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:14.110
+!MESSAGE XSCT command with result: [set bp_50_14_fsbl_bp [bpadd -addr &XFsbl_Exit]], Result: [null, 16]. Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:14.111
+!MESSAGE XSCT Command: [con -block -timeout 60], Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:15.154
+!MESSAGE XSCT command with result: [con -block -timeout 60], Result: [null, ]. Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:15.156
+!MESSAGE XSCT Command: [bpremove $bp_50_14_fsbl_bp], Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:15.172
+!MESSAGE XSCT command with result: [bpremove $bp_50_14_fsbl_bp], Result: [null, ]. Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:15.173
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}], Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:15.215
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}], Result: [null, ]. Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:15.216
+!MESSAGE XSCT Command: [rst -processor], Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:15.239
+!MESSAGE XSCT command with result: [rst -processor], Result: [null, ]. Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:15.240
+!MESSAGE XSCT Command: [dow C:/James/vitis_workspace/test_proj_pulse_ctrl/Debug/test_proj_pulse_ctrl.elf], Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:16.320
+!MESSAGE XSCT command with result: [dow C:/James/vitis_workspace/test_proj_pulse_ctrl/Debug/test_proj_pulse_ctrl.elf], Result: [null, ]. Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:16.322
+!MESSAGE XSCT Command: [configparams force-mem-access 0], Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:16.324
+!MESSAGE XSCT command with result: [configparams force-mem-access 0], Result: [null, ]. Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:16.367
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}], Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:16.422
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}], Result: [null, ]. Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:16.424
+!MESSAGE XSCT Command: [con], Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 11:50:16.565
+!MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-205: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:13:43.546
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/hw/top_level_block_design_wrapper.xsa C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/system.mss ], Thread: Worker-240: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:13:43.567
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/hw/top_level_block_design_wrapper.xsa C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/system.mss ], Result: [null, ]. Thread: Worker-240: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:13:43.573
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/hw/top_level_block_design_wrapper.xsa C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/system.mss], Thread: Worker-240: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:13:43.582
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/hw/top_level_block_design_wrapper.xsa C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/system.mss], Result: [null, {"procname": "psu_cortexa53_0",
+"osname": "standalone",
+"osver": "7.2",
+}]. Thread: Worker-240: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2020-07-25 13:13:43.584
+!MESSAGE Generating MD5 hash for file: C:\James\vitis_workspace\test_proj_plat\export\test_proj_plat\sw\test_proj_plat\standalone_domain\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:13:43.588
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/system.mss], Thread: Worker-240: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:13:43.592
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/system.mss], Result: [null, ]. Thread: Worker-240: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:12.067
+!MESSAGE XSCT Command: [disconnect tcfchan#30], Thread: Thread-2005
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:12.121
+!MESSAGE XSCT command with result: [disconnect tcfchan#30], Result: [null, ]. Thread: Thread-2005
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.082
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.091
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#32]. Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.095
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.112
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Xilinx HW-Z1-ZCU104 FT4232H 19395A
+  7* Xilinx HW-Z1-ZCU104 FT4232H 19640A]. Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.113
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.120
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Xilinx HW-Z1-ZCU104 FT4232H 19395A
+  7* Xilinx HW-Z1-ZCU104 FT4232H 19640A]. Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.121
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && level==1}], Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.141
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && level==1}], Result: [null,      2  xczu28dr (idcode 147e0093 irlen 12 fpga)
+     5  arm_dap (idcode 5ba00477 irlen 4)]. Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.142
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && level==1}], Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.165
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && level==1}], Result: [null,      8  xczu28dr (idcode 147e0093 irlen 12 fpga)
+    11  arm_dap (idcode 5ba00477 irlen 4)]. Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.228
+!MESSAGE XSCT Command: [version -server], Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.232
+!MESSAGE XSCT command with result: [version -server], Result: [null, 2020.1]. Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.233
+!MESSAGE XSCT Command: [version], Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.235
+!MESSAGE XSCT command with result: [version], Result: [null, xsct 2020.1
+SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.236
+!MESSAGE XSCT Command: [jtag targets -set -filter {name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && level == 0}], Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.258
+!MESSAGE XSCT command with result: [jtag targets -set -filter {name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && level == 0}], Result: [null, ]. Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.259
+!MESSAGE XSCT Command: [jtag frequency], Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.261
+!MESSAGE XSCT command with result: [jtag frequency], Result: [null, 15000000]. Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.263
+!MESSAGE XSCT Command: [source C:/Xilinx/Vitis/2020.1/scripts/vitis/util/zynqmp_utils.tcl], Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.267
+!MESSAGE XSCT command with result: [source C:/Xilinx/Vitis/2020.1/scripts/vitis/util/zynqmp_utils.tcl], Result: [null, ]. Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.269
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}], Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.350
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}], Result: [null, ]. Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.352
+!MESSAGE XSCT Command: [reset_apu], Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.392
+!MESSAGE XSCT command with result: [reset_apu], Result: [null, ]. Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.394
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"RPU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}], Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.524
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"RPU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}], Result: [null, ]. Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.525
+!MESSAGE XSCT Command: [clear_rpu_reset], Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.539
+!MESSAGE XSCT command with result: [clear_rpu_reset], Result: [null, ]. Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.540
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}], Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.597
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}], Result: [null, ]. Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.599
+!MESSAGE XSCT Command: [loadhw -hw C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/hw/top_level_block_design_wrapper.xsa -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}] -regs], Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.687
+!MESSAGE XSCT command with result: [loadhw -hw C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/hw/top_level_block_design_wrapper.xsa -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}] -regs], Result: [null, top_level_block_design_wrapper_8]. Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.688
+!MESSAGE XSCT Command: [configparams force-mem-access 1], Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.691
+!MESSAGE XSCT command with result: [configparams force-mem-access 1], Result: [null, ]. Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.693
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}], Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.743
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}], Result: [null, ]. Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.744
+!MESSAGE XSCT Command: [set mode [expr [mrd -value 0xFF5E0200] & 0xf]], Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.749
+!MESSAGE XSCT command with result: [set mode [expr [mrd -value 0xFF5E0200] & 0xf]], Result: [null, 0]. Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.751
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}], Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.804
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}], Result: [null, ]. Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.806
+!MESSAGE XSCT Command: [rst -processor], Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.823
+!MESSAGE XSCT command with result: [rst -processor], Result: [null, ]. Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:13.826
+!MESSAGE XSCT Command: [dow C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/boot/fsbl.elf], Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:14.673
+!MESSAGE XSCT command with result: [dow C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/boot/fsbl.elf], Result: [null, ]. Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:14.675
+!MESSAGE XSCT Command: [set bp_14_14_fsbl_bp [bpadd -addr &XFsbl_Exit]], Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:14.736
+!MESSAGE XSCT command with result: [set bp_14_14_fsbl_bp [bpadd -addr &XFsbl_Exit]], Result: [null, 17]. Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:14.737
+!MESSAGE XSCT Command: [con -block -timeout 60], Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:15.778
+!MESSAGE XSCT command with result: [con -block -timeout 60], Result: [null, ]. Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:15.780
+!MESSAGE XSCT Command: [bpremove $bp_14_14_fsbl_bp], Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:15.801
+!MESSAGE XSCT command with result: [bpremove $bp_14_14_fsbl_bp], Result: [null, ]. Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:15.802
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}], Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:15.853
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}], Result: [null, ]. Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:15.855
+!MESSAGE XSCT Command: [rst -processor], Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:15.868
+!MESSAGE XSCT command with result: [rst -processor], Result: [null, ]. Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:15.870
+!MESSAGE XSCT Command: [dow C:/James/vitis_workspace/test_proj_pulse_ctrl/Debug/test_proj_pulse_ctrl.elf], Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:16.949
+!MESSAGE XSCT command with result: [dow C:/James/vitis_workspace/test_proj_pulse_ctrl/Debug/test_proj_pulse_ctrl.elf], Result: [null, ]. Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:16.951
+!MESSAGE XSCT Command: [configparams force-mem-access 0], Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:17.013
+!MESSAGE XSCT command with result: [configparams force-mem-access 0], Result: [null, ]. Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:17.054
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}], Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:17.140
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19395A-5ba00477-0"}], Result: [null, ]. Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:17.142
+!MESSAGE XSCT Command: [con], Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:17.298
+!MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-238: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_alice
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:37.682
+!MESSAGE XSCT Command: [disconnect tcfchan#32], Thread: Thread-2071
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:37.693
+!MESSAGE XSCT command with result: [disconnect tcfchan#32], Result: [null, ]. Thread: Thread-2071
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:38.698
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:38.706
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#33]. Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:38.709
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:38.729
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Xilinx HW-Z1-ZCU104 FT4232H 19395A
+  7  Xilinx HW-Z1-ZCU104 FT4232H 19640A]. Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:38.731
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:38.740
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Xilinx HW-Z1-ZCU104 FT4232H 19395A
+  7  Xilinx HW-Z1-ZCU104 FT4232H 19640A]. Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:38.742
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && level==1}], Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:38.762
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19395A" && level==1}], Result: [null,      2  xczu28dr (idcode 147e0093 irlen 12 fpga)
+     5  arm_dap (idcode 5ba00477 irlen 4)]. Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:38.763
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && level==1}], Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:38.783
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && level==1}], Result: [null,      8  xczu28dr (idcode 147e0093 irlen 12 fpga)
+    11  arm_dap (idcode 5ba00477 irlen 4)]. Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:38.847
+!MESSAGE XSCT Command: [version -server], Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:38.850
+!MESSAGE XSCT command with result: [version -server], Result: [null, 2020.1]. Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:38.851
+!MESSAGE XSCT Command: [version], Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:38.853
+!MESSAGE XSCT command with result: [version], Result: [null, xsct 2020.1
+SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:38.854
+!MESSAGE XSCT Command: [jtag targets -set -filter {name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && level == 0}], Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:38.876
+!MESSAGE XSCT command with result: [jtag targets -set -filter {name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && level == 0}], Result: [null, ]. Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:38.877
+!MESSAGE XSCT Command: [jtag frequency], Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:38.879
+!MESSAGE XSCT command with result: [jtag frequency], Result: [null, 15000000]. Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:38.881
+!MESSAGE XSCT Command: [source C:/Xilinx/Vitis/2020.1/scripts/vitis/util/zynqmp_utils.tcl], Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:38.885
+!MESSAGE XSCT command with result: [source C:/Xilinx/Vitis/2020.1/scripts/vitis/util/zynqmp_utils.tcl], Result: [null, ]. Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:38.887
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}], Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:38.955
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}], Result: [null, ]. Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:38.956
+!MESSAGE XSCT Command: [reset_apu], Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:38.999
+!MESSAGE XSCT command with result: [reset_apu], Result: [null, ]. Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:39.001
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"RPU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}], Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:39.108
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"RPU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}], Result: [null, ]. Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:39.110
+!MESSAGE XSCT Command: [clear_rpu_reset], Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:39.132
+!MESSAGE XSCT command with result: [clear_rpu_reset], Result: [null, ]. Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:39.134
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}], Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:39.193
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}], Result: [null, ]. Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:39.195
+!MESSAGE XSCT Command: [loadhw -hw C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/hw/top_level_block_design_wrapper.xsa -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}] -regs], Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:39.273
+!MESSAGE XSCT command with result: [loadhw -hw C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/hw/top_level_block_design_wrapper.xsa -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}] -regs], Result: [null, top_level_block_design_wrapper_8]. Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:39.275
+!MESSAGE XSCT Command: [configparams force-mem-access 1], Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:39.277
+!MESSAGE XSCT command with result: [configparams force-mem-access 1], Result: [null, ]. Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:39.279
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}], Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:39.330
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}], Result: [null, ]. Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:39.332
+!MESSAGE XSCT Command: [set mode [expr [mrd -value 0xFF5E0200] & 0xf]], Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:39.334
+!MESSAGE XSCT command with result: [set mode [expr [mrd -value 0xFF5E0200] & 0xf]], Result: [null, 0]. Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:39.336
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}], Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:39.380
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}], Result: [null, ]. Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:39.381
+!MESSAGE XSCT Command: [rst -processor], Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:39.397
+!MESSAGE XSCT command with result: [rst -processor], Result: [null, ]. Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:39.400
+!MESSAGE XSCT Command: [dow C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/boot/fsbl.elf], Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:40.215
+!MESSAGE XSCT command with result: [dow C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/boot/fsbl.elf], Result: [null, ]. Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:40.220
+!MESSAGE XSCT Command: [set bp_14_40_fsbl_bp [bpadd -addr &XFsbl_Exit]], Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:40.311
+!MESSAGE XSCT command with result: [set bp_14_40_fsbl_bp [bpadd -addr &XFsbl_Exit]], Result: [null, 18]. Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:40.315
+!MESSAGE XSCT Command: [con -block -timeout 60], Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:41.369
+!MESSAGE XSCT command with result: [con -block -timeout 60], Result: [null, ]. Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:41.371
+!MESSAGE XSCT Command: [bpremove $bp_14_40_fsbl_bp], Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:41.386
+!MESSAGE XSCT command with result: [bpremove $bp_14_40_fsbl_bp], Result: [null, ]. Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:41.388
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}], Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:41.435
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}], Result: [null, ]. Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:41.436
+!MESSAGE XSCT Command: [rst -processor], Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:41.450
+!MESSAGE XSCT command with result: [rst -processor], Result: [null, ]. Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:41.452
+!MESSAGE XSCT Command: [dow C:/James/vitis_workspace/test_proj_pulse_ctrl/Debug/test_proj_pulse_ctrl.elf], Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:42.539
+!MESSAGE XSCT command with result: [dow C:/James/vitis_workspace/test_proj_pulse_ctrl/Debug/test_proj_pulse_ctrl.elf], Result: [null, ]. Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:42.541
+!MESSAGE XSCT Command: [configparams force-mem-access 0], Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:42.543
+!MESSAGE XSCT command with result: [configparams force-mem-access 0], Result: [null, ]. Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:42.599
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}], Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:42.660
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 19640A" && jtag_device_ctx=="jsn-HW-Z1-ZCU104 FT4232H-19640A-5ba00477-0"}], Result: [null, ]. Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:42.662
+!MESSAGE XSCT Command: [con], Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-07-25 13:14:42.842
+!MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-235: Launching SystemDebugger_test_proj_pulse_ctrl_system_no_fpga_flash_bob

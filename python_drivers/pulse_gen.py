@@ -17,8 +17,9 @@ CMD_PHASE_MEAS_ON = 0x03
 CMD_PHASE_MEAS_OFF = 0x04
 CMD_PING_BOARD = 0xFE
 CMD_TOGGLE_PHASE_MEAS = 0x05
-CMD_QUEUE_PULSE = 0x07
+CMD_QUEUE_PULSE = 0xFD
 CMD_SYNC_AND_STREAM = 0x06
+CMD_CLEAR_QUEUE = 0x07
 ACK_RESPONSE = 0x00
 ACK_FAIL = 0xFF
 
@@ -71,6 +72,10 @@ class pulse_gen:
     def wait_ack(self):
         #try:
         rv = self.port.read(1)
+        
+        if(len(rv) < 1):
+            print("Error, no ACK received from FPGA")
+            return -1
         #self.port.reset_input_buffer()
         return rv[0]
         #except:
@@ -191,6 +196,22 @@ class pulse_gen:
         
         self.port.write([CMD_PREAMBLE, CMD_QUEUE_PULSE, b0, b1, b2])
         #Wait for the ack
+        #result = self.wait_ack()
+        #self.port.close()
+        #if result == ACK_RESPONSE:
+        #    return 0
+        #elif result == ACK_FAIL:
+        #    print("[Load pulse]No running clock detected on the FPGA, is the RF clock input plugged in and running?")
+        #    return -1
+        #else:
+        #    print("[Load Pulse]Bad ACK while sending pulse, is the FPGA programmed with the C firmware?")
+        #    return -1
+        return 0
+        
+    def clear_queue(self):
+        
+        self.port.reset_input_buffer()
+        self.port.write([CMD_PREAMBLE, CMD_CLEAR_QUEUE])
         result = self.wait_ack()
         #self.port.close()
         if result == ACK_RESPONSE:
@@ -199,7 +220,7 @@ class pulse_gen:
             print("No running clock detected on the FPGA, is the RF clock input plugged in and running?")
             return -1
         else:
-            print("[Load Pulse]Bad ACK while sending pulse, is the FPGA programmed with the C firmware?")
+            print("[Clear queue] Bad ACK while sending pulse, is the FPGA programmed with the C firmware?")
             return -1
         
     #Num sync pulses is the number of pulses used to synchronize with server before data is sent(max 65535)

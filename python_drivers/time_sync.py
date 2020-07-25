@@ -64,6 +64,7 @@ SSL_PATH = 'C:\certs'
 
 FAIL_TIMESTAMP_NO_PHOTON = 99999999999999
 FAIL_TIMESTAMP_BAD_RANGE = 99999999999998
+FAIL_TIMESTAMP_NEG_OFFSET = 99999999999997
 
 TIMESTAMP_BYTE_LEN = 20
 
@@ -207,7 +208,7 @@ class time_sync:
         
         #connect to the client
         self.s.connect((self.server_ip, self.port))
-        time.sleep(0.5)
+        time.sleep(0.1)
         if(self.is_socket_alive(self.s)):
             print("Error, failed to connect to server")
             return -1
@@ -991,6 +992,12 @@ class time_sync:
             print("Error connecting to server (Bob)")
             return -1
         
+        if(self.board.ping_board()):
+            print("Unable to communicate with FPGA, cannot send stream")
+            return -1
+        
+        self.board.clear_queue()
+        
         
         self.tdc.clear_all()#Clear any old pulses
         
@@ -1206,8 +1213,9 @@ class time_sync:
             while(current_clock_tick < pulse_list[j] - avg_period):
                 #If we're having to increment after the first pulse then we've missed one
                 if(j != first_encoded_index):
-                    print("Detected missing pulse in bin " + str(j - first_encoded_index))
+                    print("Detected missing pulse number " + str(j - first_encoded_index))
                     decoded_vals.append(FAIL_TIMESTAMP_NO_PHOTON)
+                    offsets.append(FAIL_TIMESTAMP_NO_PHOTON)
                 current_clock_tick += avg_period
             
             offset = pulse_list[j] - current_clock_tick
@@ -1215,14 +1223,14 @@ class time_sync:
             
             if(offset < 0):
                 print("Fatal error, offset was less than 0!")
-                decoded_vals.append(-3)
+                decoded_vals.append(FAIL_TIMESTAMP_NEG_OFFSET)
                 current_clock_tick += avg_period#Go to next pulse
             elif(INFER_TICK):
                 #Figure out the offset we should have had
                 val = self.offset_to_val(offset)
                 decoded_vals.append(val)
                 exact_offset = self.val_to_offset(val)
-                if(val >= 0):#If the decode is valid
+                if(val >= 0 and val < self.bin_number):#If the decode is valid
                     succ_vals += 1
                     current_clock_tick = pulse_list[j] - exact_offset + avg_period#nfer the last clock tick and update
                 else:

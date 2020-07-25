@@ -57,8 +57,8 @@ count = 0
 
 #Faster with 16 bins
 bin_size = 8000 #in ps
-bin_number = 16#can encode values between 0 and 15
-period = 140000 #in ps
+bin_number = 32#can encode values between 0 and 15
+period = 280000 #in ps
 
 num_sync_pulse = 20
 num_dead_pulse = 20
@@ -79,18 +79,19 @@ if(res):
     print("Failed to set encoding parameters, aborting..")
 else:
     
-    for stream_len in range(220, 1001, 50):
+    for stream_len in range(50, 2001, 50):
         
         if(exit_test):
                 break
         
-        for test_num in range(0, 100):
+        for test_num in range(0, 50):
     
             if(exit_test):
                 break
         
             try:
                 
+                print("================================================================")
                 print("Test num: " + str(count) + ", series num: " + str(test_num) + ", num values: " + str(stream_len))
                 
                 test_stream = []
@@ -139,8 +140,10 @@ else:
                 log_to_file(count, test_num, stream_len, succ, ers, test_stream, res)
                 
                 count += 1
-                #print("Waiting 3 seconds...")
-                #time.sleep(3)
+                print("Waiting 3 seconds...")
+                time.sleep(3)
+                
+                #exit_test = 1
                 
             except KeyboardInterrupt:
                 print("Exiting")
