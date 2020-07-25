@@ -59,6 +59,20 @@ else:
     
         print(sent_str)
         print(res_str)
+        
+        succ = 1
+        if(len(test_stream) == len(res)):
+            for i in range(0, len(test_stream)):
+                if(test_stream[i] != res[i]):
+                    succ = 0
+                    break
+        else:
+            succ = 0
+                
+        if(succ):
+            print("Stream decoded successfully by Bob!")
+        else:
+            print("Bob did not correctly decode stream")
             
         #file = open(logfile,'a')
         #new_line = str(count) + ", " + str(rand_val) + ", " + str(ret_val) + ", " + str(error) + ", " + str(succ) + "\n"

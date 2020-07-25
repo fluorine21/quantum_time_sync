@@ -79,7 +79,7 @@ if(res):
     print("Failed to set encoding parameters, aborting..")
 else:
     
-    for stream_len in range(2, 1001):
+    for stream_len in range(30, 1001):
         
         if(exit_test):
                 break
@@ -106,6 +106,7 @@ else:
                 res = ts.send_stream(test_stream, num_sync_pulse, num_dead_pulse)
                 if(res == -1):
                     print("Stream transmission failed, exiting")
+                    exit_test = 1
                     break
                 else:
                     print("Stream transmission success")
@@ -117,8 +118,7 @@ else:
                 res_str = "Got: "
                 for i in res:
                     res_str += str(i) + ", "
-    
-                
+                print(sent_str)
                 print(res_str)
                 
                 succ = 1

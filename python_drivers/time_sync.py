@@ -43,7 +43,12 @@ SERVER_RECEIVE_PHOTON = 11
 SERVER_CLOSE_CONNECTION = 12
 SERVER_RECEIVE_STREAM = 13
 
+
+#Stream variables
 FEI_THRESHOLD = 5 #First encoded photon theshold, number of avg periods over which next pulse will be treated as the first encoded photon
+INFER_TICK = 1 #Calculate the expected tick position every time we decode a photon
+PERIOD_OVERRIDE = 1#Use the internal period instead of the measured period
+
 
 
 #Bob's responses
@@ -114,6 +119,7 @@ class time_sync:
     bin_size = 500
     bin_number = 16
     photons_received = []
+    period = 0#from client
     
     
     shutdown_flag = 0
@@ -809,7 +815,7 @@ class time_sync:
         if(self.board.set_period(val / 4000)):
             print("Error setting bin size on board")
             return -1
-        
+        self.period = val
         return 0
         
     def relative_time_sync(self):
@@ -1090,10 +1096,14 @@ class time_sync:
     
     def val_to_coarse_fine(self, val):
         
-        offset = (val * self.bin_size) + (0.5 * self.bin_size)
+        offset = self.val_to_offset(val)
         c = Math.floor(offset / 4000)
         f = Math.floor((offset/250)%16)
         return c,f
+    
+    def val_to_offset(self, val):
+        
+        return (val * self.bin_size) + (0.5 * self.bin_size)
     
     def offset_to_val(self, offset):
         
@@ -1106,6 +1116,10 @@ class time_sync:
     
     #-1 is did not detect, -2 is fell outsize allowable range
     def analyze_pulse_list(self, pulse_list, expected_num_pulses, num_sync_pulses, num_dead_pulses):
+        
+        if(self.period < 5):
+            print("Expected period too small, aborting decode")
+            return []
         
         #Convert pulses to relative first
         p_offset = pulse_list[0]
@@ -1164,6 +1178,9 @@ class time_sync:
             file.close()
             return []
         
+        if(PERIOD_OVERRIDE):
+            avg_period = self.period #Use this period for stability
+        
         #If the time between the last sync pulse and first encoded pulse is too small
         if(pulse_list[first_encoded_index] - pulse_list[first_encoded_index-1] < self.period):
             
@@ -1191,12 +1208,24 @@ class time_sync:
             
             if(offset < 0):
                 print("Fatal error, offset was less than 0!")
+                decoded_vals.append(-3)
+                current_clock_tick += avg_period#Go to next pulse
+            elif(INFER_TICK):
+                #Figure out the offset we should have had
+                val = self.offset_to_val(offset)
+                decoded_vals.append(val)
+                exact_offset = self.val_to_offset(val)
+                if(val >= 0):#If the decode is valid
+                    succ_vals += 1
+                    current_clock_tick = pulse_list[j] - exact_offset + avg_period#nfer the last clock tick and update
+                else:
+                    current_clock_tick += avg_period#Go to next pulse
+            else:
+                decoded_vals.append(self.offset_to_val(offset))
+                succ_vals += 1
+                current_clock_tick += avg_period#Go to next pulse
             
-            decoded_vals.append(self.offset_to_val(offset))
-            succ_vals += 1
-            current_clock_tick += avg_period#Go to next pulse
-            
-        print("[ANALYZE STREAM RESULTS] Rel sync pulses: " + str(first_encoded_index) + ", decoded pulses: " + str(succ_vals) + ", avg period: " + str(avg_period))
+        print("[ANALYZE STREAM RESULTS] Sync pulses: " + str(first_encoded_index) + ", decoded pulses: " + str(succ_vals) + ", avg period: " + str(avg_period))
         dv_str = "Decoded values: "
         for d in decoded_vals:
             dv_str += str(d)  + ", "
