@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Sat Jul 25 11:41:20 2020
+| Date         : Sun Jul 26 11:49:18 2020
 | Host         : pme10D0025 running 64-bit major release  (build 9200)
 | Command      : report_drc -file top_level_block_design_wrapper_drc_opted.rpt -pb top_level_block_design_wrapper_drc_opted.pb -rpx top_level_block_design_wrapper_drc_opted.rpx
 | Design       : top_level_block_design_wrapper
@@ -24,12 +24,53 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 0
-+------+----------+-------------+------------+
-| Rule | Severity | Description | Violations |
-+------+----------+-------------+------------+
-+------+----------+-------------+------------+
+             Violations found: 8
++---------+----------+---------------+------------+
+| Rule    | Severity | Description   | Violations |
++---------+----------+---------------+------------+
+| CASC-14 | Advisory | CLOCK_DOMAINS | 8          |
++---------+----------+---------------+------------+
 
 2. REPORT DETAILS
 -----------------
+CASC-14#1 Advisory
+CLOCK_DOMAINS  
+The FIFO36E2 cell top_level_block_design_i/pulse_fifo/U0/inst_fifo_gen/gconvfifo.rf/gbi.bi/v8_fifo.fblk/rst_val_sym.gextw_sym[1].inst_extd/gmult_prim.gbi_chain.gp1[1].gbi_top.top_inst_prim/gf36e2_inst.sngfifo36e2 is cascaded in series to expand the FIFO depth. The cell has CLOCK_DOMAINS=INDEPENDENT. For the target hardware architecture, common-clock FIFOs are preferred for cascaded FIFOs, because they have less latency than independent-clock FIFOs.
+Related violations: <none>
+
+CASC-14#2 Advisory
+CLOCK_DOMAINS  
+The FIFO36E2 cell top_level_block_design_i/pulse_fifo/U0/inst_fifo_gen/gconvfifo.rf/gbi.bi/v8_fifo.fblk/rst_val_sym.gextw_sym[2].inst_extd/gmult_prim.gbi_chain.gp1[1].gbi_top.top_inst_prim/gf36e2_inst.sngfifo36e2 is cascaded in series to expand the FIFO depth. The cell has CLOCK_DOMAINS=INDEPENDENT. For the target hardware architecture, common-clock FIFOs are preferred for cascaded FIFOs, because they have less latency than independent-clock FIFOs.
+Related violations: <none>
+
+CASC-14#3 Advisory
+CLOCK_DOMAINS  
+The FIFO36E2 cell top_level_block_design_i/pulse_fifo/U0/inst_fifo_gen/gconvfifo.rf/gbi.bi/v8_fifo.fblk/rst_val_sym.gextw_sym[3].inst_extd/gmult_prim.gbi_chain.gp1[1].gbi_top.top_inst_prim/gf36e2_inst.sngfifo36e2 is cascaded in series to expand the FIFO depth. The cell has CLOCK_DOMAINS=INDEPENDENT. For the target hardware architecture, common-clock FIFOs are preferred for cascaded FIFOs, because they have less latency than independent-clock FIFOs.
+Related violations: <none>
+
+CASC-14#4 Advisory
+CLOCK_DOMAINS  
+The FIFO36E2 cell top_level_block_design_i/pulse_fifo/U0/inst_fifo_gen/gconvfifo.rf/gbi.bi/v8_fifo.fblk/rst_val_sym.gextw_sym[4].inst_extd/gmult_prim.gbi_chain.gp1[1].gbi_top.top_inst_prim/gf36e2_inst.sngfifo36e2 is cascaded in series to expand the FIFO depth. The cell has CLOCK_DOMAINS=INDEPENDENT. For the target hardware architecture, common-clock FIFOs are preferred for cascaded FIFOs, because they have less latency than independent-clock FIFOs.
+Related violations: <none>
+
+CASC-14#5 Advisory
+CLOCK_DOMAINS  
+The FIFO36E2 cell top_level_block_design_i/pulse_fifo/U0/inst_fifo_gen/gconvfifo.rf/gbi.bi/v8_fifo.fblk/rst_val_sym.gextw_sym[5].inst_extd/gmult_prim.gbi_chain.gp1[1].gbi_top.top_inst_prim/gf36e2_inst.sngfifo36e2 is cascaded in series to expand the FIFO depth. The cell has CLOCK_DOMAINS=INDEPENDENT. For the target hardware architecture, common-clock FIFOs are preferred for cascaded FIFOs, because they have less latency than independent-clock FIFOs.
+Related violations: <none>
+
+CASC-14#6 Advisory
+CLOCK_DOMAINS  
+The FIFO36E2 cell top_level_block_design_i/pulse_fifo/U0/inst_fifo_gen/gconvfifo.rf/gbi.bi/v8_fifo.fblk/rst_val_sym.gextw_sym[6].inst_extd/gmult_prim.gbi_chain.gp1[1].gbi_top.top_inst_prim/gf36e2_inst.sngfifo36e2 is cascaded in series to expand the FIFO depth. The cell has CLOCK_DOMAINS=INDEPENDENT. For the target hardware architecture, common-clock FIFOs are preferred for cascaded FIFOs, because they have less latency than independent-clock FIFOs.
+Related violations: <none>
+
+CASC-14#7 Advisory
+CLOCK_DOMAINS  
+The FIFO36E2 cell top_level_block_design_i/pulse_fifo/U0/inst_fifo_gen/gconvfifo.rf/gbi.bi/v8_fifo.fblk/rst_val_sym.gextw_sym[7].inst_extd/gmult_prim.gbi_chain.gp1[1].gbi_top.top_inst_prim/gf36e2_inst.sngfifo36e2 is cascaded in series to expand the FIFO depth. The cell has CLOCK_DOMAINS=INDEPENDENT. For the target hardware architecture, common-clock FIFOs are preferred for cascaded FIFOs, because they have less latency than independent-clock FIFOs.
+Related violations: <none>
+
+CASC-14#8 Advisory
+CLOCK_DOMAINS  
+The FIFO36E2 cell top_level_block_design_i/pulse_fifo/U0/inst_fifo_gen/gconvfifo.rf/gbi.bi/v8_fifo.fblk/rst_val_sym.gextw_sym[8].inst_extd/gmult_prim.gbi_chain.gp1[1].gbi_top.top_inst_prim/gf36e2_inst.sngfifo36e2 is cascaded in series to expand the FIFO depth. The cell has CLOCK_DOMAINS=INDEPENDENT. For the target hardware architecture, common-clock FIFOs are preferred for cascaded FIFOs, because they have less latency than independent-clock FIFOs.
+Related violations: <none>
+
 

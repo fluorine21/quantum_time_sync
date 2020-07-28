@@ -12,7 +12,7 @@
     <stringAttribute key="com.xilinx.sdk.tcf.debug.uicrosstrigger.bpcontainer" value="{&quot;arch&quot;:&quot;zynq_mp&quot;,&quot;isSelected&quot;:false,&quot;breakPoints&quot;:[]}"/>
     <stringAttribute key="com.xilinx.sdk.tcf.debug.uidebug.type" value="STANDALONE_DEBUG"/>
     <booleanAttribute key="com.xilinx.sdk.tcf.debug.uienable.crosstrigger" value="false"/>
-    <stringAttribute key="com.xilinx.sdk.tcf.debug.uifpga.device" value="Xilinx HW-Z1-ZCU104 FT4232H 19640A/6-xczu28dr"/>
+    <stringAttribute key="com.xilinx.sdk.tcf.debug.uifpga.device" value="Xilinx HW-Z1-ZCU104 FT4232H 19640A/8-xczu28dr"/>
     <stringAttribute key="com.xilinx.sdk.tcf.debug.uihw.bit.file" value="${project_loc:test_proj_pulse_ctrl}/_ide/bitstream/top_level_block_design_wrapper.bit"/>
     <stringAttribute key="com.xilinx.sdk.tcf.debug.uihw.init.tcl" value="${project_loc:test_proj_pulse_ctrl}/_ide/psinit/psu_init.tcl"/>
     <booleanAttribute key="com.xilinx.sdk.tcf.debug.uipl.powerup" value="true"/>
@@ -20,7 +20,7 @@
     <stringAttribute key="com.xilinx.sdk.tcf.debug.uiproc.selection" value="psu_cortexa53_0"/>
     <booleanAttribute key="com.xilinx.sdk.tcf.debug.uiprogram.fpga" value="false"/>
     <stringAttribute key="com.xilinx.sdk.tcf.debug.uiproject.name" value="test_proj_pulse_ctrl"/>
-    <stringAttribute key="com.xilinx.sdk.tcf.debug.uips.device" value="Xilinx HW-Z1-ZCU104 FT4232H 19640A/7-arm_dap"/>
+    <stringAttribute key="com.xilinx.sdk.tcf.debug.uips.device" value="Xilinx HW-Z1-ZCU104 FT4232H 19640A/11-arm_dap"/>
     <booleanAttribute key="com.xilinx.sdk.tcf.debug.uips7.init" value="true"/>
     <booleanAttribute key="com.xilinx.sdk.tcf.debug.uips7.post" value="false"/>
     <booleanAttribute key="com.xilinx.sdk.tcf.debug.uireset.apu" value="true"/>

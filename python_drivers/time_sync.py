@@ -27,9 +27,9 @@ CLIENT = 0
 SERVER = 1
 SERVER_ACK = b'\x66'
 SERVER_ACK_BYTE = 0x66
-CLIENT_TIMEOUT = 2 #5 second timeout
-SERVER_TIMEOUT = 2 #Long timeout for the server
-TIMEOUT_LONG = 100
+CLIENT_TIMEOUT = 30 #5 second timeout
+SERVER_TIMEOUT = 30 #Long timeout for the server
+TIMEOUT_LONG = 60
 
 #Server commands
 SERVER_RECEIVE_PULSE = 4
@@ -47,7 +47,7 @@ SERVER_RECEIVE_STREAM = 13
 #Stream variables
 FEI_THRESHOLD = 5 #First encoded photon theshold, number of avg periods over which next pulse will be treated as the first encoded photon
 INFER_TICK = 1 #Calculate the expected tick position every time we decode a photon
-PERIOD_OVERRIDE = 1#Use the internal period instead of the measured period
+PERIOD_OVERRIDE = 0#Use the internal period instead of the measured period
 
 
 
@@ -228,7 +228,12 @@ class time_sync:
            return -1
        
         print("Closing connection to server")
+        
+        
         self.s.send(bytearray([SERVER_CLOSE_CONNECTION]))
+        #self.s.send(bytearray([SERVER_EXIT]))
+        
+        
         if(self.wait_ack(self.s)):
             print("Error, no ACK received from server while closing connection")
         
@@ -449,10 +454,11 @@ class time_sync:
             print("Command received: SERVER_RECEIVE_STREAM")
             sck.send(SERVER_ACK)
             self.receive_stream(sck)
+            #self.shutdown_flag = 1
             return 1
             
         else:
-            print("Invalid command received: " + hex(client_cmd[0]))
+            print("Invalid command received: " + str(client_cmd[0]))
             return 1
         
 
@@ -746,6 +752,7 @@ class time_sync:
     #Helper function to allow bob to quit via console
     def user_quit(self, arg1):
         
+        #return
         res = input()
         print("[USER] Local user has stopped server")
         self.shutdown_flag = 1
@@ -1067,6 +1074,10 @@ class time_sync:
             bob_extracted_values.append(james_utils.receive_timestamp(self.s))
             
             
+        #For profiling purposes
+        #self.s.send(bytearray([SERVER_EXIT]))
+        
+        
         self.disconnect_from_server()
         return bob_extracted_values
         
@@ -1090,7 +1101,8 @@ class time_sync:
             return -1
         
         #Check our tdc
-        pulse_list = self.tdc.end_record(self.channel_receive,1)
+        #pulse_list = self.tdc.end_record(self.channel_receive,1)
+        pulse_list = self.tdc.dump_all(self.channel_receive)
         
         if(len(pulse_list) < 2):
             print("Error, did not receive pulses!")
@@ -1130,6 +1142,10 @@ class time_sync:
     
     #-1 is did not detect, -2 is fell outsize allowable range
     def analyze_pulse_list(self, pulse_list, expected_num_pulses, num_sync_pulses, num_dead_pulses):
+        
+        
+        #For profiling purposes
+        #self.shutdown_flag = 1
         
         if(self.period < 5):
             print("Expected period too small, aborting decode")
@@ -1244,7 +1260,7 @@ class time_sync:
         dv_str = "Decoded values: "
         for d in decoded_vals:
             dv_str += str(d)  + ", "
-        print(dv_str)
+        #print(dv_str)
         
         #log to file
         file = open("bob_pulse_analysis_log.txt",'a')

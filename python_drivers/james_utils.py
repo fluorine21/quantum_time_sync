@@ -20,6 +20,35 @@ BOB_CHANNEL_RECEIVE = 4
 
 
 TIMESTAMP_BYTE_LEN = 20
+#Rerutns list of bytes object  
+def timestamps_to_bytes(list_of_timestamps):
+            
+    byte_array = []
+    for l in list_of_timestamps:
+        res = int(l).to_bytes(TIMESTAMP_BYTE_LEN, byteorder='big', signed = False)  
+        byte_array += list(res)
+    return byte_array
+            
+            
+            
+def bytes_to_timestamps(byte_array):
+    
+    #byte_array = list(b_a)
+    timestamp_list = []
+    
+    if(len(byte_array) % 20 != 0):
+        print("Error, byte array for bytes_to_timestamp was of the wrong size")
+        return []
+    
+    for i in range(0, len(byte_array), TIMESTAMP_BYTE_LEN):
+        ts_b = byte_array[i:i+TIMESTAMP_BYTE_LEN]
+        res = int.from_bytes(ts_b, byteorder='big', signed = False)
+        timestamp_list.append(res)
+        
+    return timestamp_list
+    
+    
+    
 
 #Returns -1 on fail
 def receive_timestamp(sck):
@@ -47,14 +76,19 @@ def receive_bytes(c, num_bytes):
     while(1):
         
         try:
+            
+            num_bytes_to_receive = num_bytes - len(byte_res)
+            if(num_bytes_to_receive > 1024):
+                num_bytes_to_receive = 1024
+            
             #res = c.recv(1024)
-            res = c.recv(1)
+            res = c.recv(num_bytes_to_receive)
             
             if(len(res) > 0):
         
                 #copy all bytes into the result array
-                for b in res:
-                    byte_res.append(b)
+                #for b in res:
+                byte_res += list(res)
                 #If we have all of the bytes
                 if(len(byte_res) >= num_bytes):
                     return byte_res
@@ -64,6 +98,6 @@ def receive_bytes(c, num_bytes):
         except socket.timeout:
             #print("Timed out while waiting for bytes...")
             return -1
-        except Exception as e:
-            print("Unknown error occured while waiting for bytes")
-            return -3
+        #except Exception as e:
+            #print("Unknown error occured while waiting for bytes")
+            #return -3

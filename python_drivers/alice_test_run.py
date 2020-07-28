@@ -19,3 +19,4 @@ ts = time_sync.time_sync(james_utils.ALICE_PORT, server_ip, time_sync.CLIENT, td
 ts.start_client_sync()
 
 
+ts.board.close_board()

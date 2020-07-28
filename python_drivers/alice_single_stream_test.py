@@ -32,6 +32,7 @@ period = 140000 #in ps
 num_sync_pulse = 20
 num_dead_pulse = 20
 test_stream = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+#test_stream = [0,1,2,3,0,1,2,3,0,1,2,3]
 
 res = 0
 res += ts.set_bin_size(bin_size)

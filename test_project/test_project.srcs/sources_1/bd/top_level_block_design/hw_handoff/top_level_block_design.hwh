@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Jul 25 11:35:55 2020" VIVADOVERSION="2020.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Jul 26 11:43:41 2020" VIVADOVERSION="2020.1">
 
   <SYSTEMINFO ARCH="zynquplusRFSOC" BOARD="xilinx.com:zcu111:part0:1.2" DEVICE="xczu28dr" NAME="top_level_block_design" PACKAGE="ffvg1517" SPEEDGRADE="-2"/>
 
@@ -2434,7 +2434,7 @@
         <PARAMETER NAME="C_COMMON_CLOCK" VALUE="0"/>
         <PARAMETER NAME="C_SELECT_XPM" VALUE="0"/>
         <PARAMETER NAME="C_COUNT_TYPE" VALUE="0"/>
-        <PARAMETER NAME="C_DATA_COUNT_WIDTH" VALUE="10"/>
+        <PARAMETER NAME="C_DATA_COUNT_WIDTH" VALUE="15"/>
         <PARAMETER NAME="C_DEFAULT_VALUE" VALUE="BlankString"/>
         <PARAMETER NAME="C_DIN_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_DOUT_RST_VAL" VALUE="0"/>
@@ -2466,17 +2466,17 @@
         <PARAMETER NAME="C_OVERFLOW_LOW" VALUE="0"/>
         <PARAMETER NAME="C_PRELOAD_LATENCY" VALUE="2"/>
         <PARAMETER NAME="C_PRELOAD_REGS" VALUE="1"/>
-        <PARAMETER NAME="C_PRIM_FIFO_TYPE" VALUE="1kx36"/>
+        <PARAMETER NAME="C_PRIM_FIFO_TYPE" VALUE="8kx4"/>
         <PARAMETER NAME="C_PROG_EMPTY_THRESH_ASSERT_VAL" VALUE="5"/>
         <PARAMETER NAME="C_PROG_EMPTY_THRESH_NEGATE_VAL" VALUE="6"/>
         <PARAMETER NAME="C_PROG_EMPTY_TYPE" VALUE="0"/>
-        <PARAMETER NAME="C_PROG_FULL_THRESH_ASSERT_VAL" VALUE="1023"/>
-        <PARAMETER NAME="C_PROG_FULL_THRESH_NEGATE_VAL" VALUE="1022"/>
+        <PARAMETER NAME="C_PROG_FULL_THRESH_ASSERT_VAL" VALUE="32764"/>
+        <PARAMETER NAME="C_PROG_FULL_THRESH_NEGATE_VAL" VALUE="32763"/>
         <PARAMETER NAME="C_PROG_FULL_TYPE" VALUE="0"/>
-        <PARAMETER NAME="C_RD_DATA_COUNT_WIDTH" VALUE="10"/>
-        <PARAMETER NAME="C_RD_DEPTH" VALUE="1024"/>
+        <PARAMETER NAME="C_RD_DATA_COUNT_WIDTH" VALUE="15"/>
+        <PARAMETER NAME="C_RD_DEPTH" VALUE="32768"/>
         <PARAMETER NAME="C_RD_FREQ" VALUE="250"/>
-        <PARAMETER NAME="C_RD_PNTR_WIDTH" VALUE="10"/>
+        <PARAMETER NAME="C_RD_PNTR_WIDTH" VALUE="15"/>
         <PARAMETER NAME="C_UNDERFLOW_LOW" VALUE="0"/>
         <PARAMETER NAME="C_USE_DOUT_RST" VALUE="1"/>
         <PARAMETER NAME="C_USE_ECC" VALUE="0"/>
@@ -2487,10 +2487,10 @@
         <PARAMETER NAME="C_USE_FWFT_DATA_COUNT" VALUE="0"/>
         <PARAMETER NAME="C_VALID_LOW" VALUE="0"/>
         <PARAMETER NAME="C_WR_ACK_LOW" VALUE="0"/>
-        <PARAMETER NAME="C_WR_DATA_COUNT_WIDTH" VALUE="10"/>
-        <PARAMETER NAME="C_WR_DEPTH" VALUE="1024"/>
+        <PARAMETER NAME="C_WR_DATA_COUNT_WIDTH" VALUE="15"/>
+        <PARAMETER NAME="C_WR_DEPTH" VALUE="32768"/>
         <PARAMETER NAME="C_WR_FREQ" VALUE="100"/>
-        <PARAMETER NAME="C_WR_PNTR_WIDTH" VALUE="10"/>
+        <PARAMETER NAME="C_WR_PNTR_WIDTH" VALUE="15"/>
         <PARAMETER NAME="C_WR_RESPONSE_LATENCY" VALUE="1"/>
         <PARAMETER NAME="C_MSGON_VAL" VALUE="1"/>
         <PARAMETER NAME="C_ENABLE_RST_SYNC" VALUE="1"/>
@@ -2641,9 +2641,9 @@
         <PARAMETER NAME="Performance_Options" VALUE="Standard_FIFO"/>
         <PARAMETER NAME="asymmetric_port_width" VALUE="false"/>
         <PARAMETER NAME="Input_Data_Width" VALUE="32"/>
-        <PARAMETER NAME="Input_Depth" VALUE="1024"/>
+        <PARAMETER NAME="Input_Depth" VALUE="32768"/>
         <PARAMETER NAME="Output_Data_Width" VALUE="32"/>
-        <PARAMETER NAME="Output_Depth" VALUE="1024"/>
+        <PARAMETER NAME="Output_Depth" VALUE="32768"/>
         <PARAMETER NAME="Enable_ECC" VALUE="false"/>
         <PARAMETER NAME="Use_Embedded_Registers" VALUE="true"/>
         <PARAMETER NAME="Reset_Pin" VALUE="true"/>
@@ -2668,17 +2668,17 @@
         <PARAMETER NAME="ecc_pipeline_reg" VALUE="false"/>
         <PARAMETER NAME="Use_Extra_Logic" VALUE="false"/>
         <PARAMETER NAME="Data_Count" VALUE="false"/>
-        <PARAMETER NAME="Data_Count_Width" VALUE="10"/>
+        <PARAMETER NAME="Data_Count_Width" VALUE="15"/>
         <PARAMETER NAME="Write_Data_Count" VALUE="false"/>
-        <PARAMETER NAME="Write_Data_Count_Width" VALUE="10"/>
+        <PARAMETER NAME="Write_Data_Count_Width" VALUE="15"/>
         <PARAMETER NAME="Read_Data_Count" VALUE="false"/>
-        <PARAMETER NAME="Read_Data_Count_Width" VALUE="10"/>
+        <PARAMETER NAME="Read_Data_Count_Width" VALUE="15"/>
         <PARAMETER NAME="Disable_Timing_Violations" VALUE="false"/>
         <PARAMETER NAME="Read_Clock_Frequency" VALUE="250"/>
         <PARAMETER NAME="Write_Clock_Frequency" VALUE="100"/>
         <PARAMETER NAME="Programmable_Full_Type" VALUE="No_Programmable_Full_Threshold"/>
-        <PARAMETER NAME="Full_Threshold_Assert_Value" VALUE="1023"/>
-        <PARAMETER NAME="Full_Threshold_Negate_Value" VALUE="1022"/>
+        <PARAMETER NAME="Full_Threshold_Assert_Value" VALUE="32764"/>
+        <PARAMETER NAME="Full_Threshold_Negate_Value" VALUE="32763"/>
         <PARAMETER NAME="Programmable_Empty_Type" VALUE="No_Programmable_Empty_Threshold"/>
         <PARAMETER NAME="Empty_Threshold_Assert_Value" VALUE="5"/>
         <PARAMETER NAME="Empty_Threshold_Negate_Value" VALUE="6"/>

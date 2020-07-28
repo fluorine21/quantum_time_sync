@@ -233,13 +233,20 @@ proc create_root_design { parentCell } {
   # Create instance: pulse_fifo, and set properties
   set pulse_fifo [ create_bd_cell -type ip -vlnv xilinx.com:ip:fifo_generator:13.2 pulse_fifo ]
   set_property -dict [ list \
+   CONFIG.Data_Count_Width {15} \
    CONFIG.Empty_Threshold_Assert_Value {5} \
    CONFIG.Empty_Threshold_Negate_Value {6} \
    CONFIG.Fifo_Implementation {Independent_Clocks_Builtin_FIFO} \
+   CONFIG.Full_Threshold_Assert_Value {32764} \
+   CONFIG.Full_Threshold_Negate_Value {32763} \
    CONFIG.Input_Data_Width {32} \
+   CONFIG.Input_Depth {32768} \
    CONFIG.Output_Data_Width {32} \
+   CONFIG.Output_Depth {32768} \
    CONFIG.Read_Clock_Frequency {250} \
+   CONFIG.Read_Data_Count_Width {15} \
    CONFIG.Write_Clock_Frequency {100} \
+   CONFIG.Write_Data_Count_Width {15} \
  ] $pulse_fifo
 
   # Create instance: pulse_gen_0, and set properties

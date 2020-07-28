@@ -36,6 +36,7 @@ COMMAND_SHUTDOWN = 2
 COMMAND_CLOSE_CONNECTION = 3
 COMMAND_CLEAR_ALL = 4
 COMMAND_GET_BUSY = 5
+COMMAND_DUMP_ALL = 6
 
 #channel number for the 1ms pulse
 DUMMY_CHANNEL_NUM = 104
@@ -526,8 +527,36 @@ class tdc_wrapper:
         self.device = 0
         
         return
+    
+    
+    def dump_all(self, channel_num):
         
+        if(self.mode != MODE_CLIENT):
+            
+            print("Error, must be in CLIENT mode to call dump all")
+            return []
         
+        sck = socket.socket()
+        sck.settimeout(TIMEOUT_LONG)
+        sck.connect((self.server_ip, self.port))
+        time.sleep(0.1)
+        channel_byte = channel_num & 0xFF
+        #Send the GET_AND_CLEAR command
+        sck.send(bytearray([COMMAND_DUMP_ALL, channel_byte]))
+        
+        #Receive the size
+        stream_size = james_utils.receive_timestamp(sck)
+        
+        byte_result = james_utils.receive_bytes(sck, stream_size)
+        
+        timestamp_list = james_utils.bytes_to_timestamps(byte_result)
+
+        #gracefully close the connection
+        sck.send(bytearray([COMMAND_CLOSE_CONNECTION]))
+        #sck.flush()
+        sck.close()
+        
+        return timestamp_list
         
         
     
@@ -583,6 +612,32 @@ class tdc_wrapper:
                     james_utils.send_timestamp(c, ts)
                     #if(ts >= 0):
                         #print("[CLIENT HANDLER] Timestamp sent to client for channel " + str(channel_num) + " was " + str(ts))
+            elif(client_cmd[0] == COMMAND_DUMP_ALL):
+                
+                res = james_utils.receive_bytes(c, 1)
+                if(res == -1 or res == -2 or res == -3):
+                    print("[CLIENT HANDLER] Unable to get channel from client at " + ip_str)
+                    #break
+                else:
+                    cn = res[0]
+                    timestamp_lc = []
+                    for e in self.timestamp_list:#Get all timestamps for this channel
+                        if(e.channel_num == cn):
+                            timestamp_lc.append(e.timestamp)
+                            self.timestamp_list.remove(e)
+                            
+                    if(len(timestamp_lc) == 0):
+                        print("Error, length of timestamp list was 0")
+                        timestamp_lc.append(0)
+                    
+                     #Serialize and send them
+                    array_to_send = james_utils.timestamps_to_bytes(timestamp_lc)
+                    #print("Len was " + str(len(array_to_send)))
+                    #print(str(array_to_send))
+                    james_utils.send_timestamp(c, len(array_to_send))
+                    to_send = bytearray(array_to_send)
+                    c.send(to_send)
+            
             else:
                 print("[CLIENT HANDLER] Unknown command received from client: " + hex(client_cmd[0]))
                 
@@ -592,7 +647,7 @@ class tdc_wrapper:
 
         
 
-                
+        
         
         
     

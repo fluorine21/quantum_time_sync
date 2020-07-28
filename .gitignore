@@ -1,1 +1,3 @@
 python_drivers/time_sync_stats.csv
+python_drivers/stream_test_results.txt
+python_drivers/bob_pulse_analysis_log.txt
