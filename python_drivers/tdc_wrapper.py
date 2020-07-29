@@ -341,6 +341,9 @@ class tdc_wrapper:
     
     def end_record_client(self, channel_num, get_all):
         
+        if(get_all):
+            return self.dump_all(channel_num)
+        
         sck = socket.socket()
         sck.settimeout(TIMEOUT_LONG)
         sck.connect((self.server_ip, self.port))
@@ -350,20 +353,20 @@ class tdc_wrapper:
         #Send the GET_AND_CLEAR command
         
         #If we want to get all timestamps for this channel
-        if(get_all):
-            val_last = 1
-            ret_val = []
-            #Loop until we receive a timestamp of 0
-            while(val_last > 0):
-                sck.send(bytearray([COMMAND_GET_AND_CLEAR, channel_byte]))
-                val_last = james_utils.receive_timestamp(sck)
-                if(val_last > 0):
-                    ret_val.append(val_last)
-                
-        else:
-            #Otherwise just get the first timestamp and leave
-            sck.send(bytearray([COMMAND_GET_AND_CLEAR, channel_byte]))
-            ret_val = james_utils.receive_timestamp(sck)
+        #if(get_all):
+        #    val_last = 1
+        #    ret_val = []
+        #    #Loop until we receive a timestamp of 0
+        #    while(val_last > 0):
+        #        sck.send(bytearray([COMMAND_GET_AND_CLEAR, channel_byte]))
+        #        val_last = james_utils.receive_timestamp(sck)
+        #        if(val_last > 0):
+        #            ret_val.append(val_last)
+        #        
+        #else:
+        #Otherwise just get the first timestamp and leave
+        sck.send(bytearray([COMMAND_GET_AND_CLEAR, channel_byte]))
+        ret_val = james_utils.receive_timestamp(sck)
         
         #gracefully close the connection
         sck.send(bytearray([COMMAND_CLOSE_CONNECTION]))
@@ -396,6 +399,36 @@ class tdc_wrapper:
             #sck.flush()
             sck.close()
         return 0
+    
+        
+    def dump_all(self, channel_num):
+        
+        if(self.mode != MODE_CLIENT):
+            
+            print("Error, must be in CLIENT mode to call dump all")
+            return []
+        
+        sck = socket.socket()
+        sck.settimeout(TIMEOUT_LONG)
+        sck.connect((self.server_ip, self.port))
+        time.sleep(0.1)
+        channel_byte = channel_num & 0xFF
+        #Send the GET_AND_CLEAR command
+        sck.send(bytearray([COMMAND_DUMP_ALL, channel_byte]))
+        
+        #Receive the size
+        stream_size = james_utils.receive_timestamp(sck)
+        
+        byte_result = james_utils.receive_bytes(sck, stream_size)
+        
+        timestamp_list = james_utils.bytes_to_timestamps(byte_result)
+
+        #gracefully close the connection
+        sck.send(bytearray([COMMAND_CLOSE_CONNECTION]))
+        #sck.flush()
+        sck.close()
+        
+        return timestamp_list
         
     
     def server_init(self):
@@ -528,35 +561,7 @@ class tdc_wrapper:
         
         return
     
-    
-    def dump_all(self, channel_num):
-        
-        if(self.mode != MODE_CLIENT):
-            
-            print("Error, must be in CLIENT mode to call dump all")
-            return []
-        
-        sck = socket.socket()
-        sck.settimeout(TIMEOUT_LONG)
-        sck.connect((self.server_ip, self.port))
-        time.sleep(0.1)
-        channel_byte = channel_num & 0xFF
-        #Send the GET_AND_CLEAR command
-        sck.send(bytearray([COMMAND_DUMP_ALL, channel_byte]))
-        
-        #Receive the size
-        stream_size = james_utils.receive_timestamp(sck)
-        
-        byte_result = james_utils.receive_bytes(sck, stream_size)
-        
-        timestamp_list = james_utils.bytes_to_timestamps(byte_result)
 
-        #gracefully close the connection
-        sck.send(bytearray([COMMAND_CLOSE_CONNECTION]))
-        #sck.flush()
-        sck.close()
-        
-        return timestamp_list
         
         
     

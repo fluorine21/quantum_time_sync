@@ -18,6 +18,10 @@ import threading
 import datetime
 
 
+
+#Should bob log the received time bin encoded frames to a file?
+BOB_FILE_DEBUG = 0
+
 #Open a secure socket?
 SECURE_MODE = 1
 
@@ -1101,8 +1105,8 @@ class time_sync:
             return -1
         
         #Check our tdc
-        #pulse_list = self.tdc.end_record(self.channel_receive,1)
-        pulse_list = self.tdc.dump_all(self.channel_receive)
+        pulse_list = self.tdc.end_record(self.channel_receive,1)
+        #pulse_list = self.tdc.dump_all(self.channel_receive)
         
         if(len(pulse_list) < 2):
             print("Error, did not receive pulses!")
@@ -1263,14 +1267,15 @@ class time_sync:
         #print(dv_str)
         
         #log to file
-        file = open("bob_pulse_analysis_log.txt",'a')
-        file.write(datetime.datetime.now().strftime("\n================\n%I:%M%p on %B %d, %Y\n"))
-        file.write("Expected " + str(expected_num_pulses) + ", got " + str(len(pulse_list)) + " pulses, used " + str(len(diffs) + 1) + " pulses to calculate period")
-        for p in pulse_list:
-            file.write(str(p) + "\n")
-        for i in range(0, len(offsets)):
-            file.write("offset: " + str(offsets[i]) + ", became value " + str(decoded_vals[i]) + "\n")
-        file.close()
+        if(BOB_FILE_DEBUG):
+            file = open("bob_pulse_analysis_log.txt",'a')
+            file.write(datetime.datetime.now().strftime("\n================\n%I:%M%p on %B %d, %Y\n"))
+            file.write("Expected " + str(expected_num_pulses) + ", got " + str(len(pulse_list)) + " pulses, used " + str(len(diffs) + 1) + " pulses to calculate period")
+            for p in pulse_list:
+                file.write(str(p) + "\n")
+            for i in range(0, len(offsets)):
+                file.write("offset: " + str(offsets[i]) + ", became value " + str(decoded_vals[i]) + "\n")
+            file.close()
         
         return decoded_vals
             

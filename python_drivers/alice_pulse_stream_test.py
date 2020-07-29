@@ -20,15 +20,15 @@ def log_to_file(test_num, test_series_num, stream_len, succ, num_errors, num_no_
     
     
     new_line = str(test_num) + ", " + str(test_series_num) + ", " + str(stream_len) + ", success:, " + str(succ) + ", num errors:," + str(num_errors)
-    new_line += ", num_no_photon" + str(num_no_photon) + ", num_bad_range" + str(num_bad_range) +  ", num_neg_offset" + str(num_neg_offset)
-    new_line += ", Sent:, "
-    for s in sent_stream:
-        new_line += str(s) + ", "
+    new_line += ", num_no_photon," + str(num_no_photon) + ", num_bad_range," + str(num_bad_range) +  ", num_neg_offset," + str(num_neg_offset)
+    #new_line += ", Sent:, "
+    #for s in sent_stream:
+    #    new_line += str(s) + ", "
     
-    new_line += "Received:, "
+    #new_line += "Received:, "
     
-    for s in received_stream:
-       new_line += str(s) + ", " 
+    #for s in received_stream:
+    #   new_line += str(s) + ", " 
     
     
     file.write(new_line + "\n")
@@ -68,6 +68,7 @@ num_dead_pulse = 20
 file = open(logfile,'a')
 file.write(datetime.datetime.now().strftime("\n================\n%I:%M%p on %B %d, %Y\n"))
 file.write("bin_size = " + str(bin_size) + ", bin_number = " + str(bin_number) + ", period = " + str(period) +"\n")
+file.write("test num, test num for this # of photons, number of photons\n")
 file.close()
 
 
