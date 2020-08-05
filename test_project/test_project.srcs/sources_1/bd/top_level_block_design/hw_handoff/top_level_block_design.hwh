@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Jul 26 11:43:41 2020" VIVADOVERSION="2020.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Aug  5 09:59:57 2020" VIVADOVERSION="2020.1">
 
   <SYSTEMINFO ARCH="zynquplusRFSOC" BOARD="xilinx.com:zcu111:part0:1.2" DEVICE="xczu28dr" NAME="top_level_block_design" PACKAGE="ffvg1517" SPEEDGRADE="-2"/>
 
@@ -19,16 +19,6 @@
         <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_in1_p"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="sysref_in_diff_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_sysref_in_n">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="sysref_in_n"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="sysref_in_diff_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_sysref_in_p">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="sysref_in_p"/>
-      </CONNECTIONS>
-    </PORT>
     <PORT DIR="O" NAME="vout10_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout10_n">
       <CONNECTIONS>
         <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout10_n"/>
@@ -37,6 +27,16 @@
     <PORT DIR="O" NAME="vout10_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout10_p">
       <CONNECTIONS>
         <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout10_p"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="sysref_in_diff_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_sysref_in_n">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="sysref_in_n"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="sysref_in_diff_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_sysref_in_p">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="sysref_in_p"/>
       </CONNECTIONS>
     </PORT>
     <PORT CLKFREQUENCY="100000000" DIR="I" NAME="dac1_clk_clk_n" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_dac1_clk_n">
@@ -6886,15 +6886,6 @@
             <CONNECTION INSTANCE="pulse_gen_0" PORT="state_out"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="255" NAME="SLOT_0_AXIS_tdata" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" NAME="SLOT_0_AXIS_tlast" SIGIS="undef"/>
-        <PORT DIR="I" NAME="SLOT_0_AXIS_tvalid" SIGIS="undef"/>
-        <PORT DIR="I" NAME="SLOT_0_AXIS_tready" SIGIS="undef"/>
-        <PORT DIR="I" NAME="resetn" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="proc_sys_reset_0_peripheral_aresetn">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="proc_sys_reset_0" PORT="peripheral_aresetn"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="I" LEFT="0" NAME="probe4" RIGHT="0" SIGIS="undef" SIGNAME="pulse_gen_0_pulse_fifo_read">
           <CONNECTIONS>
             <CONNECTION INSTANCE="pulse_gen_0" PORT="pulse_fifo_read"/>
@@ -6908,6 +6899,15 @@
         <PORT DIR="I" LEFT="0" NAME="probe6" RIGHT="0" SIGIS="undef" SIGNAME="pulse_fifo_empty">
           <CONNECTIONS>
             <CONNECTION INSTANCE="pulse_fifo" PORT="empty"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="255" NAME="SLOT_0_AXIS_tdata" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" NAME="SLOT_0_AXIS_tlast" SIGIS="undef"/>
+        <PORT DIR="I" NAME="SLOT_0_AXIS_tvalid" SIGIS="undef"/>
+        <PORT DIR="I" NAME="SLOT_0_AXIS_tready" SIGIS="undef"/>
+        <PORT DIR="I" NAME="resetn" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="proc_sys_reset_0_peripheral_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="proc_sys_reset_0" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

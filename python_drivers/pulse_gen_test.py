@@ -7,10 +7,12 @@ Created on Fri Jul 10 17:01:34 2020
 
 
 import pulse_gen
-
+import time
 
 pg = pulse_gen.pulse_gen("COM4")
 
+
+#minbias 3.94V
 
 
 #try pinging the board
@@ -20,12 +22,25 @@ else:
     print("Connection to board is up!")
     
 #Set the period to something reasonable
-pg.set_period(5)    
+pg.set_period(10)   
+pg.set_amplitude(0x7AAA) 
+#pg.set_period(5)
 
 #List of values to send
-for i in range(0,10):
-    pg.load_pulse(0, 10-i)
+#for i in range(0,10):
+#    pg.load_pulse(0, 10-i)
     
 #Send the pulses with 10 leading ticks, 5 dead ticks
-pg.sync_and_stream(10, 5)
+#pg.sync_and_stream(10, 5)
 
+pg.toggle_phase_meas(10)
+
+#print("Blasting...")
+
+#pg.phase_meas_on()
+
+#time.sleep(5)
+
+#pg.phase_meas_off()
+
+pg.close_board()

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="top_level_block_design_gpio_to_fifo_0_0_synth_1" LaunchPart="xczu28dr-ffvg1517-2-e" LaunchTime="1595552830">
+<GenRun Id="top_level_block_design_gpio_to_fifo_0_0_synth_1" LaunchPart="xczu28dr-ffvg1517-2-e" LaunchTime="1596639609">
   <File Type="PA-TCL" Name="top_level_block_design_gpio_to_fifo_0_0.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="top_level_block_design_gpio_to_fifo_0_0_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="top_level_block_design_gpio_to_fifo_0_0_reports.tcl"/>
@@ -46,9 +46,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

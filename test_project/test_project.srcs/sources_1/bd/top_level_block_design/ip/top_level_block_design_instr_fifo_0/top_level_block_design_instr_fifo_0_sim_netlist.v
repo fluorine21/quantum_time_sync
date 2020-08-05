@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Sun Jul 26 11:45:19 2020
+// Date        : Sun Jul 26 11:45:18 2020
 // Host        : pme10D0025 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_instr_fifo_0/top_level_block_design_instr_fifo_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top top_level_block_design_instr_fifo_0 -prefix
+//               top_level_block_design_instr_fifo_0_ top_level_block_design_instr_fifo_0_sim_netlist.v
 // Design      : top_level_block_design_instr_fifo_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -608,7 +608,6 @@ module top_level_block_design_instr_fifo_0
         .wr_rst_busy(wr_rst_busy));
 endmodule
 
-(* ORIG_REF_NAME = "builtin_extdepth" *) 
 module top_level_block_design_instr_fifo_0_builtin_extdepth
    (ful,
     rrst_busy_i,
@@ -1528,7 +1527,6 @@ module top_level_block_design_instr_fifo_0_builtin_extdepth_6
         .re_3(re_3));
 endmodule
 
-(* ORIG_REF_NAME = "builtin_prim" *) 
 module top_level_block_design_instr_fifo_0_builtin_prim
    (emp_1,
     rd_clk_0,
@@ -8326,7 +8324,6 @@ module top_level_block_design_instr_fifo_0_builtin_prim__parameterized1_35
         .WRRSTBUSY(\gf36e2_inst.sngfifo36e2_n_11 ));
 endmodule
 
-(* ORIG_REF_NAME = "builtin_top" *) 
 module top_level_block_design_instr_fifo_0_builtin_top
    (dout,
     wr_rst_busy,
@@ -8515,7 +8512,6 @@ module top_level_block_design_instr_fifo_0_builtin_top
         .O(wr_rst_busy_INST_0_i_1_n_0));
 endmodule
 
-(* ORIG_REF_NAME = "fifo_generator_top" *) 
 module top_level_block_design_instr_fifo_0_fifo_generator_top
    (dout,
     wr_rst_busy,
@@ -8633,7 +8629,7 @@ endmodule
 (* C_WR_DEPTH_WRCH = "16" *) (* C_WR_FREQ = "100" *) (* C_WR_PNTR_WIDTH = "15" *) 
 (* C_WR_PNTR_WIDTH_AXIS = "10" *) (* C_WR_PNTR_WIDTH_RACH = "4" *) (* C_WR_PNTR_WIDTH_RDCH = "10" *) 
 (* C_WR_PNTR_WIDTH_WACH = "4" *) (* C_WR_PNTR_WIDTH_WDCH = "10" *) (* C_WR_PNTR_WIDTH_WRCH = "4" *) 
-(* C_WR_RESPONSE_LATENCY = "1" *) (* ORIG_REF_NAME = "fifo_generator_v13_2_5" *) 
+(* C_WR_RESPONSE_LATENCY = "1" *) 
 module top_level_block_design_instr_fifo_0_fifo_generator_v13_2_5
    (backup,
     backup_marker,
@@ -9668,7 +9664,6 @@ module top_level_block_design_instr_fifo_0_fifo_generator_v13_2_5
         .wr_rst_busy(wr_rst_busy));
 endmodule
 
-(* ORIG_REF_NAME = "fifo_generator_v13_2_5_builtin" *) 
 module top_level_block_design_instr_fifo_0_fifo_generator_v13_2_5_builtin
    (dout,
     wr_rst_busy,
@@ -9730,7 +9725,6 @@ module top_level_block_design_instr_fifo_0_fifo_generator_v13_2_5_builtin
         .wr_rst_busy(wr_rst_busy));
 endmodule
 
-(* ORIG_REF_NAME = "fifo_generator_v13_2_5_synth" *) 
 module top_level_block_design_instr_fifo_0_fifo_generator_v13_2_5_synth
    (dout,
     wr_rst_busy,

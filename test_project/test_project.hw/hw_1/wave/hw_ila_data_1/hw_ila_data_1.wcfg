@@ -11,11 +11,11 @@
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
       <ZoomEndTime time="8193fs"></ZoomEndTime>
-      <Cursor1Time time="4215fs"></Cursor1Time>
+      <Cursor1Time time="4099fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="297"></NameColumnWidth>
-      <ValueColumnWidth column_width="154"></ValueColumnWidth>
+      <ValueColumnWidth column_width="134"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="9" />
    <wave_markers>
@@ -88,16 +88,16 @@
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="group454" type="group">
+   <wvobject fp_name="group49" type="group">
       <obj_property name="label">slot_0 : pulse_gen_0_m_axis : Interface</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="Detail_Data">Interface_(i1:s0)_(pulse_gen_0_m_axis)_tooltip</obj_property>
       <obj_property name="Render_Data">Interface_(i1:s0)_(pulse_gen_0_m_axis)</obj_property>
       <obj_property name="EnumTransactionColorTable">0=blank</obj_property>
-      <obj_property name="CustomSignalColor">Cornsilk</obj_property>
+      <obj_property name="CustomSignalColor">OliveDrab</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
-      <wvobject fp_name="group455" type="group">
+      <wvobject fp_name="group50" type="group">
          <obj_property name="label">slot_0 : pulse_gen_0_m_axis : T Channel</obj_property>
          <obj_property name="DisplayName">label</obj_property>
          <obj_property name="Detail_Data">T_Channel_(i1:s0)_(pulse_gen_0_m_axis)_tooltip</obj_property>

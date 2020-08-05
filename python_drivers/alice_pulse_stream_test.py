@@ -52,14 +52,14 @@ count = 0
 #period = 64000 #in ps
 
 #Working with 16 bins#
-bin_size = 8000 #in ps
-bin_number = 16#can encode values between 0 and 15
-period = 140000 #in ps
+#bin_size = 8000 #in ps
+#bin_number = 16#can encode values between 0 and 15
+#period = 140000 #in ps
 
 #Faster with 32 bins, working
-#bin_size = 8000 #in ps
-#bin_number = 32#can encode values between 0 and 15
-#period = 280000 #in ps
+bin_size = 8000 #in ps
+bin_number = 32#can encode values between 0 and 15
+period = 280000 #in ps
 
 num_sync_pulse = 20
 num_dead_pulse = 20

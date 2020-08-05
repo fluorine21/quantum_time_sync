@@ -20,6 +20,7 @@ CMD_TOGGLE_PHASE_MEAS = 0x05
 CMD_QUEUE_PULSE = 0xFD
 CMD_SYNC_AND_STREAM = 0x06
 CMD_CLEAR_QUEUE = 0x07
+CMD_SET_AMPLITUDE = 0x08
 ACK_RESPONSE = 0x00
 ACK_FAIL = 0xFF
 
@@ -246,4 +247,32 @@ class pulse_gen:
         else:
             print("[sync and stream]Bad ACK while sending pulse, is the FPGA programmed with the C firmware?")
             return -1
+        
+    def set_amplitude(self, amp):
+        
+        if(amp < 0 or amp > 0x7fff):
+            print("Error, board amplitude must be between 0 and 0x7FFF")
+            return
+        
+        self.port.reset_input_buffer()
+        #self.port.open()
+        self.port.flush
+        b0 = 0
+        b1 = (amp >> 8) & 0xFF
+        b2 = amp & 0xFF
+        
+        self.port.write([CMD_PREAMBLE,CMD_SET_AMPLITUDE, b0, b1, b2])
+        #Wait for the ack
+        result = self.wait_ack()
+        #self.port.close()
+        if result == ACK_RESPONSE:
+            return 0
+        elif result == ACK_FAIL:
+            print("No running clock detected on the FPGA, is the RF clock input plugged in and running?")
+            return -1
+        else:
+            print("[set amplitude]Bad ACK while sending pulse, is the FPGA programmed with the C firmware?")
+            return -1
+        
+        
         

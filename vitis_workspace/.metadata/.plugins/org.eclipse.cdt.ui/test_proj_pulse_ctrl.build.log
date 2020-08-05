@@ -1,4 +1,4 @@
-13:13:43 **** Incremental Build of configuration Debug for project test_proj_pulse_ctrl ****
+12:32:53 **** Incremental Build of configuration Debug for project test_proj_pulse_ctrl ****
 make all 
 'Building file: C:/James/c_drivers/drivers/cmd_handler.c'
 'Invoking: ARM v8 gcc compiler'
@@ -13,9 +13,9 @@ aarch64-none-elf-gcc -L"C:\James\c_drivers\drivers" -Wl,-T -Wl,../src/lscript.ld
 'Invoking: ARM v8 Print Size'
 aarch64-none-elf-size test_proj_pulse_ctrl.elf  |tee "test_proj_pulse_ctrl.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 173188	   9520	  29156	 211864	  33b98	test_proj_pulse_ctrl.elf
+ 173204	   9520	  29156	 211880	  33ba8	test_proj_pulse_ctrl.elf
 'Finished building: test_proj_pulse_ctrl.elf.size'
 ' '
 
-13:13:45 Build Finished (took 1s.843ms)
+12:32:56 Build Finished (took 2s.856ms)
 

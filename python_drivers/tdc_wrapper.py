@@ -142,10 +142,11 @@ class tdc_wrapper:
         #Open the TDC and start receiveing pulses
         self.device = QuTAG.QuTAG()
         self.device.enableChannels((1,2,3,4))
-        self.device.setSignalConditioning(1, 3, 1, 0.00)
-        self.device.setSignalConditioning(2, 3, 1, 0.00)
-        self.device.setSignalConditioning(3, 3, 1, 0.00)
-        self.device.setSignalConditioning(4, 3, 1, 0.00)
+        thresh = james_utils.TDC_THRESHOLD
+        self.device.setSignalConditioning(1, 3, 1, thresh)
+        self.device.setSignalConditioning(2, 3, 1, thresh)
+        self.device.setSignalConditioning(3, 3, 1, thresh)
+        self.device.setSignalConditioning(4, 3, 1, thresh)
         
         return
         

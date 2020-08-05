@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="39">
   <CompositeFile CompositeFileTopName="top_level_block_design" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1595781821"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1595781821"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1595781821"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1595781821"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1596639598"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1596639598"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1596639598"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1596639598"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\top_level_block_design_zynq_ultra_ps_e_0_3\top_level_block_design_zynq_ultra_ps_e_0_3.xci" Type="IP">
         <Instance HierarchyPath="zynq_ultra_ps_e_0"/>
@@ -111,17 +111,6 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="synth\top_level_block_design.v" Type="Verilog">
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-      </File>
-      <File Name="sim\top_level_block_design.v" Type="Verilog">
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="ip\top_level_block_design_auto_ds_0\top_level_block_design_auto_ds_0.xci" Type="IP">
         <Instance HierarchyPath="ps8_0_axi_periph/s00_couplers/auto_ds"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
@@ -136,6 +125,17 @@
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="synth\top_level_block_design.v" Type="Verilog">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+      </File>
+      <File Name="sim\top_level_block_design.v" Type="Verilog">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="top_level_block_design_ooc.xdc" Type="XDC">
