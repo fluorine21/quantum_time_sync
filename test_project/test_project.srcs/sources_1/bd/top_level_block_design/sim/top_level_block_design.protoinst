@@ -529,14 +529,14 @@
 						"TVALID": { "actual": "m_axis_tvalid"}
 					}
 				},
-				"/usp_rf_data_converter_0/s10_axis": {
+				"/usp_rf_data_converter_0/s12_axis": {
 					"interface": "xilinx.com:interface:axis:1.0",
 					"ports": {
 						"ACLK": { "actual": "s1_axis_aclk"},
 						"ARESETN": { "actual": "s1_axis_aresetn"},
-						"TDATA": { "actual": "s10_axis_tdata"},
-						"TREADY": { "actual": "s10_axis_tready"},
-						"TVALID": { "actual": "s10_axis_tvalid"}
+						"TDATA": { "actual": "s12_axis_tdata"},
+						"TREADY": { "actual": "s12_axis_tready"},
+						"TVALID": { "actual": "s12_axis_tvalid"}
 					}
 				},
 				"/usp_rf_data_converter_0/s_axi": {

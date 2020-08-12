@@ -26,6 +26,7 @@
 #define CMD_SYNC_AND_STREAM 0x06
 #define CMD_CLEAR_QUEUE 0x07
 #define CMD_SET_AMPLITUDE 0x08
+#define CMD_SET_PULSE_LEN 0x09
 
 //Handler function states
 #define STATE_WAIT_PREAMBLE 0
@@ -145,6 +146,7 @@ void cmd_update_state()
 			case CMD_SYNC_AND_STREAM:
 			case CMD_QUEUE_PULSE:
 			case CMD_SET_AMPLITUDE:
+			case CMD_SET_PULSE_LEN:
 
 				//Handle these in their own FMS state
 				cmd_state = STATE_WAIT_PAYLOAD;

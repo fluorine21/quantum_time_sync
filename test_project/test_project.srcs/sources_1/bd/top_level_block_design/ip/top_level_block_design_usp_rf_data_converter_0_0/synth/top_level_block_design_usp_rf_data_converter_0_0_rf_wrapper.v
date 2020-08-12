@@ -188,8 +188,8 @@ module top_level_block_design_usp_rf_data_converter_0_0_rf_wrapper (
 
   // DAC Common Status for Tile 1
   output  [15:0]    dac1_common_stat,
-  output            vout10_p,
-  output            vout10_n,
+  output            vout12_p,
+  output            vout12_n,
 
   // DAC AXI Streaming Data for DAC13
   input  [255:0]    dac00_data_in,
@@ -822,9 +822,9 @@ module top_level_block_design_usp_rf_data_converter_0_0_rf_wrapper (
   assign dac01_ready_out = 1'b0;
   assign dac02_ready_out = 1'b0;
   assign dac03_ready_out = 1'b0;
-  assign dac10_ready_out = dac1_done_sync;
+  assign dac10_ready_out = 1'b0;
   assign dac11_ready_out = 1'b0;
-  assign dac12_ready_out = 1'b0;
+  assign dac12_ready_out = dac1_done_sync;
   assign dac13_ready_out = 1'b0;
 
   // Assign ADC signals
@@ -1405,12 +1405,12 @@ module top_level_block_design_usp_rf_data_converter_0_0_rf_wrapper (
     .DATA_DAC1          ( data_dac1[511:256] ),            // input  [255:0]
     .DATA_DAC2          ( data_dac2[511:256] ),            // input  [255:0]
     .DATA_DAC3          ( data_dac3[511:256] ),            // input  [255:0]
-    .VOUT0_N            (vout10_n),                      // output
-    .VOUT0_P            (vout10_p),                      // output
+    .VOUT0_N            (),                               // output
+    .VOUT0_P            (),                               // output
     .VOUT1_N            (),                               // output
     .VOUT1_P            (),                               // output
-    .VOUT2_N            (),                               // output
-    .VOUT2_P            (),                               // output
+    .VOUT2_N            (vout12_n),                      // output
+    .VOUT2_P            (vout12_p),                      // output
     .VOUT3_N            (),                               // output
     .VOUT3_P            ()                                // output
   );

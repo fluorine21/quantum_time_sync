@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xCF7BA98440C55E4",
+      "boundary_crc": "0x3535202CEEF979CB",
       "device": "xczu28dr-ffvg1517-2-e",
       "name": "top_level_block_design",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
@@ -62,7 +62,7 @@
           }
         }
       },
-      "vout10": {
+      "vout12_0": {
         "mode": "Master",
         "vlnv": "xilinx.com:interface:diff_analog_io_rtl:1.0"
       }
@@ -1083,16 +1083,19 @@
           "DAC1_Sampling_Rate": {
             "value": "4"
           },
-          "DAC_Interpolation_Mode10": {
+          "DAC_Interpolation_Mode12": {
             "value": "1"
           },
-          "DAC_Mixer_Type10": {
+          "DAC_Mixer_Type12": {
             "value": "0"
           },
           "DAC_Slice00_Enable": {
             "value": "false"
           },
           "DAC_Slice10_Enable": {
+            "value": "false"
+          },
+          "DAC_Slice12_Enable": {
             "value": "true"
           }
         }
@@ -1301,6 +1304,12 @@
               }
             },
             "interface_nets": {
+              "s00_couplers_to_auto_ds": {
+                "interface_ports": [
+                  "S_AXI",
+                  "auto_ds/S_AXI"
+                ]
+              },
               "auto_pc_to_s00_couplers": {
                 "interface_ports": [
                   "M_AXI",
@@ -1311,12 +1320,6 @@
                 "interface_ports": [
                   "auto_ds/M_AXI",
                   "auto_pc/S_AXI"
-                ]
-              },
-              "s00_couplers_to_auto_ds": {
-                "interface_ports": [
-                  "S_AXI",
-                  "auto_ds/S_AXI"
                 ]
               }
             },
@@ -1459,6 +1462,18 @@
               "xbar/S00_AXI"
             ]
           },
+          "xbar_to_m00_couplers": {
+            "interface_ports": [
+              "xbar/M00_AXI",
+              "m00_couplers/S_AXI"
+            ]
+          },
+          "m00_couplers_to_ps8_0_axi_periph": {
+            "interface_ports": [
+              "M00_AXI",
+              "m00_couplers/M_AXI"
+            ]
+          },
           "m01_couplers_to_ps8_0_axi_periph": {
             "interface_ports": [
               "M01_AXI",
@@ -1469,18 +1484,6 @@
             "interface_ports": [
               "xbar/M01_AXI",
               "m01_couplers/S_AXI"
-            ]
-          },
-          "m00_couplers_to_ps8_0_axi_periph": {
-            "interface_ports": [
-              "M00_AXI",
-              "m00_couplers/M_AXI"
-            ]
-          },
-          "xbar_to_m00_couplers": {
-            "interface_ports": [
-              "xbar/M00_AXI",
-              "m00_couplers/S_AXI"
             ]
           }
         },
@@ -1853,10 +1856,34 @@
       }
     },
     "interface_nets": {
+      "sysref_in_1": {
+        "interface_ports": [
+          "sysref_in",
+          "usp_rf_data_converter_0/sysref_in"
+        ]
+      },
+      "default_sysclk3_100mhz_1": {
+        "interface_ports": [
+          "default_sysclk3_100mhz",
+          "clk_wiz_0/CLK_IN1_D"
+        ]
+      },
+      "usp_rf_data_converter_0_vout12": {
+        "interface_ports": [
+          "vout12_0",
+          "usp_rf_data_converter_0/vout12"
+        ]
+      },
       "dac1_clk_1": {
         "interface_ports": [
           "dac1_clk",
           "usp_rf_data_converter_0/dac1_clk"
+        ]
+      },
+      "ps8_0_axi_periph_M00_AXI": {
+        "interface_ports": [
+          "ps8_0_axi_periph/M00_AXI",
+          "usp_rf_data_converter_0/s_axi"
         ]
       },
       "ps8_0_axi_periph_M01_AXI": {
@@ -1865,22 +1892,16 @@
           "axi_gpio_0/S_AXI"
         ]
       },
-      "usp_rf_data_converter_0_vout10": {
+      "zynq_ultra_ps_e_0_M_AXI_HPM0_FPD": {
         "interface_ports": [
-          "vout10",
-          "usp_rf_data_converter_0/vout10"
-        ]
-      },
-      "sysref_in_1": {
-        "interface_ports": [
-          "sysref_in",
-          "usp_rf_data_converter_0/sysref_in"
+          "zynq_ultra_ps_e_0/M_AXI_HPM0_FPD",
+          "ps8_0_axi_periph/S00_AXI"
         ]
       },
       "pulse_gen_0_m_axis": {
         "interface_ports": [
           "pulse_gen_0/m_axis",
-          "usp_rf_data_converter_0/s10_axis",
+          "usp_rf_data_converter_0/s12_axis",
           "system_ila_1/SLOT_0_AXIS"
         ],
         "hdl_attributes": {
@@ -1891,24 +1912,6 @@
             "value": "true"
           }
         }
-      },
-      "zynq_ultra_ps_e_0_M_AXI_HPM0_FPD": {
-        "interface_ports": [
-          "zynq_ultra_ps_e_0/M_AXI_HPM0_FPD",
-          "ps8_0_axi_periph/S00_AXI"
-        ]
-      },
-      "default_sysclk3_100mhz_1": {
-        "interface_ports": [
-          "default_sysclk3_100mhz",
-          "clk_wiz_0/CLK_IN1_D"
-        ]
-      },
-      "ps8_0_axi_periph_M00_AXI": {
-        "interface_ports": [
-          "ps8_0_axi_periph/M00_AXI",
-          "usp_rf_data_converter_0/s_axi"
-        ]
       }
     },
     "nets": {

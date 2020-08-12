@@ -358,3 +358,8 @@ timestamp=[2020-08-04 10:56:14], mode=WORKBENCH_UI_INIT, duration=0:00:00.765, d
 timestamp=[2020-08-04 10:56:15], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.179, duration_ms=179, data={}
 timestamp=[2020-08-05 12:32:56], mode=BUILD, duration=0:00:02.924, duration_ms=2924, data={name=test_proj_pulse_ctrl, configuration=Debug, clean_build=false}
 timestamp=[2020-08-05 12:33:17], mode=BUILD, duration=0:00:19.990, duration_ms=19990, data={name=test_proj_pulse_ctrl_system, configuration=Debug, clean_build=false}
+timestamp=[2020-08-11 10:40:34], mode=WORKBENCH_START, duration=0:00:13.297, duration_ms=13297, data={}
+timestamp=[2020-08-11 10:40:35], mode=WORKBENCH_UI_INIT, duration=0:00:00.716, duration_ms=716, data={editors_count=6, platform_editors_count=0, projects_count=6, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,test_proj_ethernet,test_proj_ethernet_system,test_proj_plat,test_proj_pulse_ctrl,test_proj_pulse_ctrl_system}
+timestamp=[2020-08-11 10:40:36], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.165, duration_ms=165, data={}
+timestamp=[2020-08-12 10:54:45], mode=BUILD, duration=0:00:02.868, duration_ms=2868, data={name=test_proj_pulse_ctrl, configuration=Debug, clean_build=false}
+timestamp=[2020-08-12 10:55:06], mode=BUILD, duration=0:00:20.230, duration_ms=20230, data={name=test_proj_pulse_ctrl_system, configuration=Debug, clean_build=false}

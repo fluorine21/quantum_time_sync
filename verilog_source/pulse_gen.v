@@ -4,9 +4,8 @@
 
 
 //TODO
-//Do adjustable output for DAC (change 7FFF from
-//Write software for detecting coincidences a set time apart to measure entanglement count
-//Look into using adjustable gain for amp (pic on phone)
+//Add variable pulse length for FPGA
+//Check output on hw ILA
 
 
 
@@ -52,16 +51,20 @@ reg [23:0] clock_period;
 reg [15:0] pulses_to_send;//Used for toggling phase measurement mode
 reg [7:0] dead_pulses;//Number of pulses between phase measurement and data
 
+reg [7:0] pulse_len_reg;//Holds user-defined pulse length in number of samples 
+
 reg [255:0] m_axis_tdata_int;
 
 assign m_axis_tvalid = 1;
 
-assign m_axis_tdata = is_phase_meas_mode ? (clock_tick ? default_pulse : 0) : m_axis_tdata_int;
+//If we're in phase measurement mode, put out one pulse each clock tick
+assign m_axis_tdata = is_phase_meas_mode ? (clock_tick ? get_default_pulse(pulse_len_reg, amplitude) : 0) : m_axis_tdata_int;
 
 //Default pulse shape
 //wire [255:0] default_pulse = 256'h7FFF000000000000000000000000000000000000000000000000000000000000;
 //wire [255:0] default_pulse =   256'h7FFF7FFF7FFF7FFF7FFF7FFF7FFF7FFF7FFF7FFF7FFF7FFF7FFF7FFF7FFF7FFF;
-wire [255:0] default_pulse = {amplitude ,240'h000000000000000000000000000000000000000000000000000000000000};
+//wire [255:0] default_pulse = {amplitude ,240'h000000000000000000000000000000000000000000000000000000000000};
+wire [255:0] default_pulse = {amplitude,amplitude,amplitude,amplitude,amplitude,amplitude,amplitude,amplitude,amplitude,amplitude,amplitude,amplitude,amplitude,amplitude,amplitude,amplitude};
 
 //Signal for clock tick
 //wire clock_tick = main_clock[23:0] & clock_period == 0;//Only powers of 2
@@ -74,6 +77,8 @@ wire [7:0] FIFO_COMMAND = instr_fifo_data[31:24];
 wire [15:0] FIFO_COARSE = instr_fifo_data[23:8];
 wire [7:0] FIFO_FINE = instr_fifo_data[7:0];
 
+reg [7:0] pulse_end_return_vector;//State to go to after transmitting falling edge of pulse
+
 //Command definitons
 localparam [7:0] command_reset_clock = 0, 
 				 command_send_pulse = 1,
@@ -82,8 +87,9 @@ localparam [7:0] command_reset_clock = 0,
 				 command_reset_phase_meas_mode = 4,
 				 command_toggle_phase_meas_mode = 5,
 				 command_sync_and_stream = 6,
-				 command_clear_queue = 7,
-				 command_set_amplitude = 8;//Clears all queued data pulses
+				 command_clear_queue = 7,//Clears all queued data pulses
+				 command_set_amplitude = 8,
+				 command_set_pulse_len = 9;
 
 
 
@@ -100,10 +106,30 @@ localparam [7:0] state_idle  = 0,
 				 state_ss_3 = 8,
 				 state_ss_4 = 9,
 				 state_ss_5 = 10,
-				 state_ss_wait = 11,
-				 state_wait_clear = 12;
+				 state_ss_6 = 11,
+				 state_ss_wait = 12,
+				 state_wait_clear = 13;
 				 
 reg is_phase_meas_mode;//if 1, then pulse is emitted at each clock tick
+
+
+
+//Generates correct pulse shape based on pulse len
+function [255:0] get_default_pulse;
+input [7:0] pulse_len; //in number of samples
+input [15:0] amp;//Pulse amplitude
+integer i;
+begin
+	for(i = 0; i < 16; i = i + 1) begin
+		if(i < pulse_len) begin
+			get_default_pulse[((15-i)<<4)+:16] = amp;
+		end
+		else begin
+			get_default_pulse[((15-i)<<4)+:16] = 16'h0;
+		end
+	end
+end
+endfunction
 				 
 task reset_regs();
 begin
@@ -118,7 +144,9 @@ begin
 	is_phase_meas_mode <= 0;
 	pulses_to_send <= 0;
 	dead_pulses <= 0;
-	amplitude <= 0;
+	amplitude <= 16'h7FFF;
+	pulse_len_reg <= 1;
+	pulse_end_return_vector <= state_idle;
 end
 endtask
 
@@ -167,7 +195,7 @@ always @ (posedge clk or negedge rst) begin
 						//Just strobe the rst_clock line and output a single pulse
 						rst_clock <= 1;
 						
-						m_axis_tdata_int <= default_pulse;
+						m_axis_tdata_int <= get_default_pulse(pulse_len_reg, amplitude);
 						
 						state <= state_idle;
 						
@@ -232,6 +260,11 @@ always @ (posedge clk or negedge rst) begin
 						state <= state_idle;
 					
 					end
+					
+					command_set_pulse_len: begin
+						pulse_len_reg <= instr_fifo_data[7:0];
+						state <= state_idle;
+					end
 				
 					default begin
 					
@@ -285,7 +318,7 @@ always @ (posedge clk or negedge rst) begin
 			end
 			
 			
-			state_ss_wait: begin
+			state_ss_wait: begin//Wait for the dead pulse period to end
 			
 				if(dead_pulses == 0) begin
 					state <= state_ss_2;
@@ -322,16 +355,9 @@ always @ (posedge clk or negedge rst) begin
 					//If we have zero coarse delay
 					if(coarse_delay == 0) begin
 						//Send the pulse now at the clock tick and go back to idle
-						m_axis_tdata_int <= (default_pulse >> (fine_delay << 4));
+						m_axis_tdata_int <= (get_default_pulse(pulse_len_reg, amplitude) >> (fine_delay << 4));
 						
-						//If there is another pulse to send
-						if(!pulse_fifo_empty) begin
-							pulse_fifo_read <= 1;
-							state <= state_ss_2;
-						end
-						else begin
-							state <= state_idle;
-						end
+						state <= state_ss_6;
 					end
 					
 					else begin
@@ -348,21 +374,29 @@ always @ (posedge clk or negedge rst) begin
 			
 			
 				if(coarse_delay == 0) begin
-			         //Set the pulse
-			         m_axis_tdata_int <= (default_pulse >> (fine_delay << 4));
-			         //If there is another pulse to send
-					if(!pulse_fifo_empty) begin
-						pulse_fifo_read <= 1;
-						state <= state_ss_2;
-					end
-					else begin
-						state <= state_idle;
-					end
+			        //Set the pulse
+			        m_axis_tdata_int <= (get_default_pulse(pulse_len_reg, amplitude) >> (fine_delay << 4));
+					state <= state_ss_6;
+					
 			     end
 	             else begin 
 	                 coarse_delay <= coarse_delay - 1;
 	             end
 			
+			
+			end
+			
+			state_ss_6: begin
+				//Send the trailing edge of the pulse
+				m_axis_tdata_int <= (get_default_pulse(pulse_len_reg, amplitude) << ((16 - fine_delay[3:0]) << 4));
+				//If there is another pulse to send
+				if(!pulse_fifo_empty) begin
+					pulse_fifo_read <= 1;
+					state <= state_ss_2;
+				end
+				else begin
+					state <= state_idle;
+				end
 			
 			end
 			

@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-//Date        : Wed Aug  5 09:59:51 2020
+//Date        : Wed Aug 12 13:09:54 2020
 //Host        : pme10D0025 running 64-bit major release  (build 9200)
 //Command     : generate_target top_level_block_design.bd
 //Design      : top_level_block_design
@@ -692,8 +692,8 @@ module top_level_block_design
     reset,
     sysref_in_diff_n,
     sysref_in_diff_p,
-    vout10_v_n,
-    vout10_v_p);
+    vout12_0_v_n,
+    vout12_0_v_p);
   (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 dac1_clk CLK_N" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME dac1_clk, CAN_DEBUG false, FREQ_HZ 250000000.0" *) input dac1_clk_clk_n;
   (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 dac1_clk CLK_P" *) input dac1_clk_clk_p;
   (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 default_sysclk3_100mhz CLK_N" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME default_sysclk3_100mhz, CAN_DEBUG false, FREQ_HZ 100000000" *) input default_sysclk3_100mhz_clk_n;
@@ -701,8 +701,8 @@ module top_level_block_design
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.RESET RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RESET, INSERT_VIP 0, POLARITY ACTIVE_HIGH" *) input reset;
   (* X_INTERFACE_INFO = "xilinx.com:display_usp_rf_data_converter:diff_pins:1.0 sysref_in diff_n" *) input sysref_in_diff_n;
   (* X_INTERFACE_INFO = "xilinx.com:display_usp_rf_data_converter:diff_pins:1.0 sysref_in diff_p" *) input sysref_in_diff_p;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:diff_analog_io:1.0 vout10 V_N" *) output vout10_v_n;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:diff_analog_io:1.0 vout10 V_P" *) output vout10_v_p;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:diff_analog_io:1.0 vout12_0 V_N" *) output vout12_0_v_n;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:diff_analog_io:1.0 vout12_0 V_P" *) output vout12_0_v_p;
 
   wire [31:0]axi_gpio_0_gpio_io_o;
   wire dac1_clk_1_CLK_N;
@@ -768,8 +768,8 @@ module top_level_block_design
   wire sysref_in_1_diff_n;
   wire sysref_in_1_diff_p;
   wire usp_rf_data_converter_0_clk_dac1;
-  wire usp_rf_data_converter_0_vout10_V_N;
-  wire usp_rf_data_converter_0_vout10_V_P;
+  wire usp_rf_data_converter_0_vout12_V_N;
+  wire usp_rf_data_converter_0_vout12_V_P;
   wire [39:0]zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARADDR;
   wire [1:0]zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARBURST;
   wire [3:0]zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARCACHE;
@@ -816,8 +816,8 @@ module top_level_block_design
   assign reset_1 = reset;
   assign sysref_in_1_diff_n = sysref_in_diff_n;
   assign sysref_in_1_diff_p = sysref_in_diff_p;
-  assign vout10_v_n = usp_rf_data_converter_0_vout10_V_N;
-  assign vout10_v_p = usp_rf_data_converter_0_vout10_V_P;
+  assign vout12_0_v_n = usp_rf_data_converter_0_vout12_V_N;
+  assign vout12_0_v_p = usp_rf_data_converter_0_vout12_V_P;
   top_level_block_design_axi_gpio_0_0 axi_gpio_0
        (.gpio_io_o(axi_gpio_0_gpio_io_o),
         .s_axi_aclk(zynq_ultra_ps_e_0_pl_clk0),
@@ -1001,9 +1001,9 @@ module top_level_block_design
        (.clk_dac1(usp_rf_data_converter_0_clk_dac1),
         .dac1_clk_n(dac1_clk_1_CLK_N),
         .dac1_clk_p(dac1_clk_1_CLK_P),
-        .s10_axis_tdata(pulse_gen_0_m_axis_TDATA),
-        .s10_axis_tready(pulse_gen_0_m_axis_TREADY),
-        .s10_axis_tvalid(pulse_gen_0_m_axis_TVALID),
+        .s12_axis_tdata(pulse_gen_0_m_axis_TDATA),
+        .s12_axis_tready(pulse_gen_0_m_axis_TREADY),
+        .s12_axis_tvalid(pulse_gen_0_m_axis_TVALID),
         .s1_axis_aclk(usp_rf_data_converter_0_clk_dac1),
         .s1_axis_aresetn(proc_sys_reset_0_peripheral_aresetn),
         .s_axi_aclk(zynq_ultra_ps_e_0_pl_clk0),
@@ -1027,8 +1027,8 @@ module top_level_block_design
         .s_axi_wvalid(ps8_0_axi_periph_M00_AXI_WVALID),
         .sysref_in_n(sysref_in_1_diff_n),
         .sysref_in_p(sysref_in_1_diff_p),
-        .vout10_n(usp_rf_data_converter_0_vout10_V_N),
-        .vout10_p(usp_rf_data_converter_0_vout10_V_P));
+        .vout12_n(usp_rf_data_converter_0_vout12_V_N),
+        .vout12_p(usp_rf_data_converter_0_vout12_V_P));
   top_level_block_design_zynq_ultra_ps_e_0_3 zynq_ultra_ps_e_0
        (.maxigp0_araddr(zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARADDR),
         .maxigp0_arburst(zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARBURST),

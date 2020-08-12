@@ -22,20 +22,21 @@ else:
     print("Connection to board is up!")
     
 #Set the period to something reasonable
-pg.set_period(10)   
-pg.set_amplitude(0x7AAA) 
-#pg.set_period(5)
+pg.set_period(100)   
+pg.set_amplitude(0x3FFF) 
+pg.set_pulse_len(16)
+
 
 #List of values to send
-#for i in range(0,10):
-#    pg.load_pulse(0, 10-i)
+for i in range(0,10):
+    pg.load_pulse(0, 10-i)
     
 #Send the pulses with 10 leading ticks, 5 dead ticks
-#pg.sync_and_stream(10, 5)
+pg.sync_and_stream(5, 5)
 
-pg.toggle_phase_meas(10)
+#pg.toggle_phase_meas(10)
 
-#print("Blasting...")
+print("Blasting...")
 
 #pg.phase_meas_on()
 

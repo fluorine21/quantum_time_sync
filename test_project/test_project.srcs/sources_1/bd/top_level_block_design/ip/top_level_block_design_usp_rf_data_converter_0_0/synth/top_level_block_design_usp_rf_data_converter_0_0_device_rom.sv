@@ -73,7 +73,7 @@ module top_level_block_design_usp_rf_data_converter_0_0_device_rom (
        30'h1f281700,  // SYSREF Distribution (ADC3)
        30'h27240000,  // Clock Network Control 1 (DAC0)
        30'h2728c980,  // SYSREF Distribution (DAC0)
-       30'h2f230000,  // Clock Network Control 0 (DAC1)
+       30'h2f238000,  // Clock Network Control 0 (DAC1)
        30'h2f240001,  // Clock Network Control 1 (DAC1)
        30'h2f17002e,  // PLL FB Div (DAC1)
        30'h2f0c0081,  // PLL Output Divide (DAC1)
@@ -93,21 +93,21 @@ module top_level_block_design_usp_rf_data_converter_0_0_device_rom (
        30'h2f2c0012,  // CLK_DIV (DAC1)
        30'h2f280100,  // SYSREF Distribution (DAC1)
        30'h2f2dffc0,  // HSCOM_PWR_MASK (DAC1)
-       30'h28020810,  // DAC10 Data Width
-       30'h28100001,  // DAC10 Interpolation Control
-       30'h28110000,  // DAC10 Interpolation Data
-       30'h28200000,  // DAC10 Mixer Config 0
-       30'h28210924,  // DAC10 Mixer Config 1
-       30'h28300000,  // DAC10 Inv Sinc Filter
-       30'h28310040,  // DAC10 Multiband Config
-       30'h28600001,  // DAC10 Decoder Control
-       30'h28610001,  // DAC10 Decoder Clock Enable
-       30'h28710000,  // DAC10 MC_CONFIG0
-       30'h28734858,  // DAC10 MC_CONFIG2
-       30'h287487c0,  // DAC10 MC_CONFIG3
-       30'h2806000f,  // DAC10 FABRIC_IMR
-       30'h280f0fff,  // DAC10 DATAPATH_IMR
-       30'h28070008,  // DAC10 FABRIC_DEBUG
+       30'h2a020810,  // DAC12 Data Width
+       30'h2a100001,  // DAC12 Interpolation Control
+       30'h2a110000,  // DAC12 Interpolation Data
+       30'h2a200000,  // DAC12 Mixer Config 0
+       30'h2a210924,  // DAC12 Mixer Config 1
+       30'h2a300000,  // DAC12 Inv Sinc Filter
+       30'h2a310040,  // DAC12 Multiband Config
+       30'h2a600001,  // DAC12 Decoder Control
+       30'h2a610001,  // DAC12 Decoder Clock Enable
+       30'h2a710000,  // DAC12 MC_CONFIG0
+       30'h2a734858,  // DAC12 MC_CONFIG2
+       30'h2a7487c0,  // DAC12 MC_CONFIG3
+       30'h2a06000f,  // DAC12 FABRIC_IMR
+       30'h2a0f0fff,  // DAC12 DATAPATH_IMR
+       30'h2a070008,  // DAC12 FABRIC_DEBUG
        30'h00000000};
 
     //-------------------------------------------------------------------------

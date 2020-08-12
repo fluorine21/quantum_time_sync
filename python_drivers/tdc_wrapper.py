@@ -103,10 +103,14 @@ class tdc_wrapper:
             t = threading.Thread(target=self.service_tdc, args=(1,))
             t.start()
             self.threads.append(t)
-        
+            time.sleep(2)#Give the thread a moment to start
         return
     
     def __del__(self):
+        
+        self.shutdown()
+        
+    def shutdown(self):
         
         #Shutdown the worker thread if we're in normal mode
         if(self.mode == MODE_NORMAL):
@@ -117,6 +121,7 @@ class tdc_wrapper:
                     time.sleep(1)
             else:
                 print("Warning, could not shut down TDC worker thread")
+            print("TDC shutdown complete")
     
     
     ############################################################################
@@ -259,6 +264,9 @@ class tdc_wrapper:
     #0 on fail for get all = 0, [] on fail for get_all = 1
     def end_record(self, channel_num, get_all = 0):
         
+        #Testing
+        #return [1,2,3,4,5,6,7,8,9,10]
+        
         if(self.dummy_mode):
             return int(time.time() * 10000000)
         
@@ -272,9 +280,9 @@ class tdc_wrapper:
         ret_val = 0
         
         #Check the data loss
-        d_loss = self.device.getDataLost()
-        if(d_loss != 0):
-            print("Warning, data loss was " + str(d_loss) + ", some timestamps have been missed")
+        #d_loss = self.device.getDataLost()
+        #if(d_loss != 0):
+        #    print("Warning, data loss was " + str(d_loss) + ", some timestamps have been missed")
         
         #Readback timestamps from the device
         #t_s = self.device.getLastTimestamps(True)
@@ -290,7 +298,7 @@ class tdc_wrapper:
             if(get_all):
                 ret_val = []
                 done = 0
-                while(not done):
+                while(not done and len(self.timestamp_list) != 0):
                     #If we find a timestamp of this channel
                     for i in range(0, len(self.timestamp_list)):#Loop throught all timestamps
                         if(self.timestamp_list[i].channel_num == channel_num):#If we find one
@@ -431,6 +439,8 @@ class tdc_wrapper:
         
         return timestamp_list
         
+    
+    
     
     def server_init(self):
         
