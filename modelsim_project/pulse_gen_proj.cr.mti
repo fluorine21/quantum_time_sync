@@ -1,0 +1,22 @@
+C:/James/verilog_source/shift_register.v {1 {vlog -work work -stats=none C:/James/verilog_source/shift_register.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1_3 Compiler 2020.04 Apr 28 2020
+-- Compiling module shift_register
+
+Top level modules:
+	shift_register
+
+} {} {}} C:/James/verilog_source/pulse_gen_tb.v {1 {vlog -work work -stats=none C:/James/verilog_source/pulse_gen_tb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1_3 Compiler 2020.04 Apr 28 2020
+-- Compiling module pulse_gen_tb
+
+Top level modules:
+	pulse_gen_tb
+
+} {} {}} C:/James/verilog_source/gpio_to_fifo.v {1 {vlog -work work -stats=none C:/James/verilog_source/gpio_to_fifo.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1_3 Compiler 2020.04 Apr 28 2020
+-- Compiling module gpio_to_fifo
+
+Top level modules:
+	gpio_to_fifo
+
+} {} {}}

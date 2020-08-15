@@ -1468,16 +1468,16 @@
               "m00_couplers/S_AXI"
             ]
           },
-          "m00_couplers_to_ps8_0_axi_periph": {
-            "interface_ports": [
-              "M00_AXI",
-              "m00_couplers/M_AXI"
-            ]
-          },
           "m01_couplers_to_ps8_0_axi_periph": {
             "interface_ports": [
               "M01_AXI",
               "m01_couplers/M_AXI"
+            ]
+          },
+          "m00_couplers_to_ps8_0_axi_periph": {
+            "interface_ports": [
+              "M00_AXI",
+              "m00_couplers/M_AXI"
             ]
           },
           "xbar_to_m01_couplers": {
@@ -1862,18 +1862,6 @@
           "usp_rf_data_converter_0/sysref_in"
         ]
       },
-      "default_sysclk3_100mhz_1": {
-        "interface_ports": [
-          "default_sysclk3_100mhz",
-          "clk_wiz_0/CLK_IN1_D"
-        ]
-      },
-      "usp_rf_data_converter_0_vout12": {
-        "interface_ports": [
-          "vout12_0",
-          "usp_rf_data_converter_0/vout12"
-        ]
-      },
       "dac1_clk_1": {
         "interface_ports": [
           "dac1_clk",
@@ -1912,6 +1900,18 @@
             "value": "true"
           }
         }
+      },
+      "usp_rf_data_converter_0_vout12": {
+        "interface_ports": [
+          "vout12_0",
+          "usp_rf_data_converter_0/vout12"
+        ]
+      },
+      "default_sysclk3_100mhz_1": {
+        "interface_ports": [
+          "default_sysclk3_100mhz",
+          "clk_wiz_0/CLK_IN1_D"
+        ]
       }
     },
     "nets": {

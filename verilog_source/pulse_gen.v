@@ -40,6 +40,7 @@ module pulse_gen
 output wire [7:0] state_out	
 );
 
+reg is_phase_meas_mode;//if 1, then pulse is emitted at each clock tick
 reg [15:0] amplitude;
 reg [15:0] coarse_delay;
 reg [7:0] fine_delay;
@@ -51,14 +52,14 @@ reg [23:0] clock_period;
 reg [15:0] pulses_to_send;//Used for toggling phase measurement mode
 reg [7:0] dead_pulses;//Number of pulses between phase measurement and data
 
-reg [7:0] pulse_len_reg;//Holds user-defined pulse length in number of samples 
+reg [15:0] pulse_len_reg;//Holds user-defined pulse length in number of samples 
 
 reg [255:0] m_axis_tdata_int;
 
+reg [15:0] pulse_samples_left;//In number of samples
+
 assign m_axis_tvalid = 1;
 
-//If we're in phase measurement mode, put out one pulse each clock tick
-assign m_axis_tdata = is_phase_meas_mode ? (clock_tick ? get_default_pulse(pulse_len_reg, amplitude) : 0) : m_axis_tdata_int;
 
 //Default pulse shape
 //wire [255:0] default_pulse = 256'h7FFF000000000000000000000000000000000000000000000000000000000000;
@@ -108,25 +109,37 @@ localparam [7:0] state_idle  = 0,
 				 state_ss_5 = 10,
 				 state_ss_6 = 11,
 				 state_ss_wait = 12,
-				 state_wait_clear = 13;
+				 state_wait_clear = 13,
+				 state_ss_sync_send = 14,
+				 state_toggle_send = 15;
 				 
-reg is_phase_meas_mode;//if 1, then pulse is emitted at each clock tick
 
 
+//If we're in phase measurement mode, put out one pulse each clock tick
+assign m_axis_tdata = is_phase_meas_mode ? (clock_tick ? get_default_pulse(pulse_len_reg, amplitude) : 0) : m_axis_tdata_int;
 
-//Generates correct pulse shape based on pulse len
+
+//Generates a pulse of length pulse_len with amplitude amp
 function [255:0] get_default_pulse;
 input [7:0] pulse_len; //in number of samples
 input [15:0] amp;//Pulse amplitude
 integer i;
 begin
-	for(i = 0; i < 16; i = i + 1) begin
-		if(i < pulse_len) begin
-			get_default_pulse[((15-i)<<4)+:16] = amp;
+
+	if(pulse_len < 16) begin//if we need to cut up the pulse
+
+		for(i = 0; i < 16; i = i + 1) begin
+			if(i < pulse_len) begin
+				get_default_pulse[((15-i)<<4)+:16] = amp;
+			end
+			else begin
+				get_default_pulse[((15-i)<<4)+:16] = 16'h0;
+			end
 		end
-		else begin
-			get_default_pulse[((15-i)<<4)+:16] = 16'h0;
-		end
+	
+	end
+	else begin//If we just want the max length
+		get_default_pulse = {amp,amp,amp,amp,amp,amp,amp,amp,amp,amp,amp,amp,amp,amp,amp,amp};
 	end
 end
 endfunction
@@ -137,7 +150,7 @@ begin
     coarse_delay <= 0;
     fine_delay <= 0;
     rst_clock <= 0;
-    clock_period <= 10;
+    clock_period <= 10;//default clock period
     state <= state_idle;
     instr_fifo_read <= 0;
     m_axis_tdata_int <= 0;
@@ -145,8 +158,10 @@ begin
 	pulses_to_send <= 0;
 	dead_pulses <= 0;
 	amplitude <= 16'h7FFF;
-	pulse_len_reg <= 1;
+	pulse_len_reg <= 18;//default pulse length
 	pulse_end_return_vector <= state_idle;
+	pulse_samples_left <= 0;
+	pulse_fifo_read <= 0;
 end
 endtask
 
@@ -232,14 +247,14 @@ always @ (posedge clk or negedge rst) begin
 					
 					command_toggle_phase_meas_mode: begin
 						pulses_to_send <= instr_fifo_data[15:0];
-						is_phase_meas_mode <= 1;
+						is_phase_meas_mode <= 0;
 						state <= state_toggle_end;
 					end
 					
 					command_sync_and_stream: begin
 						pulses_to_send <= instr_fifo_data[15:0];
 						dead_pulses <= instr_fifo_data[23:16];
-						is_phase_meas_mode <= 1;
+						//is_phase_meas_mode <= 1;
 						state <= state_ss_1;
 					end
 					
@@ -262,7 +277,7 @@ always @ (posedge clk or negedge rst) begin
 					end
 					
 					command_set_pulse_len: begin
-						pulse_len_reg <= instr_fifo_data[7:0];
+						pulse_len_reg <= instr_fifo_data[15:0];
 						state <= state_idle;
 					end
 				
@@ -288,22 +303,44 @@ always @ (posedge clk or negedge rst) begin
 			
 			state_toggle_end: begin
 			
-				if(pulses_to_send == 0) begin//If there are no more pulses to send
-					is_phase_meas_mode <= 0;//Go back to idle and stop sending pulses
-					state <= state_idle;
+				m_axis_tdata_int <= 0;//Reset the pulse output by default
+				if(pulses_to_send == 0) begin
+					state <= state_idle;//No pulses to send
 				end
-				else if(clock_tick) begin//If a pulse was just sent
-					pulses_to_send = pulses_to_send - 1;
+				else if(clock_pre_tick) begin//If we need to start sending a pulse here
+					pulses_to_send = pulses_to_send - 1;//We now have one less pulse to send
+					//Set the number of pulse cycles remaining
+					pulse_samples_left <= pulse_len_reg < 16 ? 0 : pulse_len_reg - 16;//If we have less than 16 samples just set this to 0
+					//Set the output
+					m_axis_tdata_int <= get_default_pulse(pulse_len_reg, amplitude);
+					//Go to the sync pulse send state
+					state <= state_toggle_send;
+				end
+			
+			end
+			
+			state_toggle_send: begin
+			
+				if(pulse_samples_left < 16) begin
+					//Send the trailing edge of the pulse
+					m_axis_tdata_int <= get_default_pulse(pulse_samples_left, amplitude);
+					state <= state_toggle_end;
+				end
+				else begin
+					pulse_samples_left <= pulse_samples_left - 16;
+					m_axis_tdata_int <= default_pulse;
 				end
 			
 			end
 			
 			///////////////////////////////////////////////////////////////////////////////////
+			///State machine for sync and stream, sends sync pulses and then encoded pulses////
+			///////////////////////////////////////////////////////////////////////////////////
 			
 			state_ss_1: begin//Send out the initial sync pulses
 			
 				if(pulses_to_send == 0) begin
-					is_phase_meas_mode <= 0;//Turn off phase measurement mode
+					m_axis_tdata_int <= 0;//Reset the pulse output
 					if(!pulse_fifo_empty) begin//If there are data pulses to send
 						state <= state_ss_wait;
 					end
@@ -311,12 +348,30 @@ always @ (posedge clk or negedge rst) begin
 						state <= state_idle;//No pulses to send
 					end
 				end
-				else if(clock_tick) begin
-					pulses_to_send = pulses_to_send - 1;
+				else if(clock_pre_tick) begin//If we need to start sending a pulse here
+					pulses_to_send = pulses_to_send - 1;//We now have one less pulse to send
+					//Set the number of pulse cycles remaining
+					pulse_samples_left <= pulse_len_reg < 16 ? 0 : pulse_len_reg - 16;//If we have less than 16 samples just set this to 0
+					//Set the output
+					m_axis_tdata_int <= get_default_pulse(pulse_len_reg, amplitude);
+					//Go to the sync pulse send state
+					state <= state_ss_sync_send;
 				end
 			
 			end
 			
+			state_ss_sync_send: begin
+			
+				if(pulse_samples_left < 16) begin
+					//Send the trailing edge of the pulse
+					m_axis_tdata_int <= get_default_pulse(pulse_samples_left, amplitude);
+					state <= state_ss_1;
+				end
+				else begin
+					pulse_samples_left <= pulse_samples_left - 16;
+					m_axis_tdata_int <= default_pulse;
+				end
+			end
 			
 			state_ss_wait: begin//Wait for the dead pulse period to end
 			
@@ -342,65 +397,63 @@ always @ (posedge clk or negedge rst) begin
 			state_ss_3: begin//Readout the value 
 			
 				coarse_delay <= pulse_fifo_data[23:8];
-				fine_delay <= pulse_fifo_data[7:0];
+				fine_delay <= pulse_fifo_data[7:0] & 8'h0F;//Max fine delay is 16
 				state <= state_ss_4;
 				
 			end
 			
 			
 			state_ss_4: begin//Send the pulse at the correct time and 
-			
 				if(clock_pre_tick) begin
-				 
 					//If we have zero coarse delay
 					if(coarse_delay == 0) begin
-						//Send the pulse now at the clock tick and go back to idle
-						m_axis_tdata_int <= (get_default_pulse(pulse_len_reg, amplitude) >> (fine_delay << 4));
-						
-						state <= state_ss_6;
+						start_encoded_pulse();
 					end
-					
 					else begin
 						//Otherwise do normal counting
 						state <= state_ss_5;
-						coarse_delay <= coarse_delay - 1;
-					 
+						coarse_delay <= coarse_delay - 1; 
 					end
 			     end
-			
 			end
 			
 			state_ss_5: begin
-			
-			
 				if(coarse_delay == 0) begin
 			        //Set the pulse
-			        m_axis_tdata_int <= (get_default_pulse(pulse_len_reg, amplitude) >> (fine_delay << 4));
-					state <= state_ss_6;
-					
+			        start_encoded_pulse();
 			     end
 	             else begin 
 	                 coarse_delay <= coarse_delay - 1;
 	             end
-			
-			
 			end
 			
 			state_ss_6: begin
-				//Send the trailing edge of the pulse
-				m_axis_tdata_int <= (get_default_pulse(pulse_len_reg, amplitude) << ((16 - fine_delay[3:0]) << 4));
-				//If there is another pulse to send
-				if(!pulse_fifo_empty) begin
-					pulse_fifo_read <= 1;
-					state <= state_ss_2;
+			
+			
+				//If we're done with this pulse
+				if(pulse_samples_left < 16) begin
+					//Send the trailing edge of the pulse
+					//m_axis_tdata_int <= (get_default_pulse(pulse_samples_left, amplitude) << ((16 - fine_delay[3:0]) << 4));
+					m_axis_tdata_int <= get_default_pulse(pulse_samples_left, amplitude);
+					//If there is another pulse to send
+					if(!pulse_fifo_empty) begin
+						pulse_fifo_read <= 1;
+						state <= state_ss_2;
+					end
+					else begin
+						state <= state_idle;
+					end
 				end
-				else begin
-					state <= state_idle;
+				else begin//Otherwise just send out a flat pulse of amplitude values
+					pulse_samples_left <= pulse_samples_left - 16;
+					m_axis_tdata_int <= default_pulse;
 				end
 			
 			end
 			
-			/////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////
+			///Old FSM for sending a single encoded pulse, do not use!//
+			////////////////////////////////////////////////////////////
 			
 			//Wait until the clock ticks
 			state_wait_tick: begin
@@ -468,6 +521,33 @@ always @ (posedge clk or negedge rst) begin
 	end
 end
 
+//Starts the encoded pulse for states 4 and 5
+task start_encoded_pulse();
+begin
+//Send the pulse now at the clock tick and go back to idle
+m_axis_tdata_int <= (get_default_pulse(pulse_len_reg, amplitude) >> (fine_delay << 4));
+
+//Set the number of pulse cycles remaining
+
+if(pulse_len_reg > 15) begin//If our pulse is longer than 1 DAC word (16 samples)
+	//Then we'll have pulse_len_reg - 16 + fine_delay cycles left
+	pulse_samples_left = pulse_len_reg - 16 + fine_delay;
+end
+else begin
+	//If the pulse won't fit in one DAC word
+	if(fine_delay + pulse_len_reg > 16) begin
+		pulse_samples_left <= fine_delay + pulse_len_reg - 16;
+	end
+	else begin
+		pulse_samples_left <= 0;
+	end
+
+end
+
+
+state <= state_ss_6;
+end
+endtask
 
 
 endmodule

@@ -1,0 +1,622 @@
+# Compile of pulse_gen.v failed with 5 errors.
+# Compile of pulse_gen.v failed with 1 errors.
+# Compile of pulse_gen.v was successful.
+# Compile of pulse_gen_tb.v failed with 1 errors.
+# Compile of pulse_gen_tb.v was successful.
+# Compile of shift_register.v was successful.
+# Compile of gpio_to_fifo.v was successful.
+# Load canceled
+# Compile of pulse_gen_tb.v was successful.
+vsim -gui work.pulse_gen_tb
+# vsim -gui work.pulse_gen_tb 
+# Start time: 19:41:22 on Aug 14,2020
+# Loading work.pulse_gen_tb
+# Loading work.pulse_gen
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (1) for port 'state_out'. The port definition is at: C:/James/verilog_source/pulse_gen.v(40).
+#    Time: 0 ps  Iteration: 0  Instance: /pulse_gen_tb/dut File: C:/James/verilog_source/pulse_gen_tb.v Line: 21
+add wave -position insertpoint  \
+sim:/pulse_gen_tb/clk \
+sim:/pulse_gen_tb/rst \
+sim:/pulse_gen_tb/instr_fifo_empty \
+sim:/pulse_gen_tb/instr_fifo_data \
+sim:/pulse_gen_tb/instr_fifo_read \
+sim:/pulse_gen_tb/pulse_fifo_empty \
+sim:/pulse_gen_tb/pulse_fifo_data \
+sim:/pulse_gen_tb/pulse_fifo_read \
+sim:/pulse_gen_tb/m_axis_tdata \
+sim:/pulse_gen_tb/m_axis_tvalid \
+sim:/pulse_gen_tb/m_axis_tready \
+sim:/pulse_gen_tb/state_out
+run -all
+# Compile of pulse_gen_tb.v was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.pulse_gen_tb
+restart -f
+run -all
+# Compile of pulse_gen.v failed with 1 errors.
+# Compile of pulse_gen.v was successful.
+# Break key hit
+# Break in Function get_default_pulse at C:/James/verilog_source/pulse_gen.v line 130
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.pulse_gen
+restart -f
+# Compile of gpio_to_fifo.v was successful.
+# Compile of pulse_gen.v was successful.
+# Compile of pulse_gen_tb.v was successful.
+# Compile of shift_register.v was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.pulse_gen_tb
+# Loading work.pulse_gen
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 73
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 75
+# Compile of pulse_gen.v was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.pulse_gen
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 75
+# Compile of pulse_gen_tb.v was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.pulse_gen_tb
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+# Compile of pulse_gen.v was successful.
+# Compile of pulse_gen_tb.v was successful with warnings.
+# 2 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.pulse_gen_tb
+# Loading work.pulse_gen
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+# Compile of pulse_gen_tb.v was successful with warnings.
+# Compile of pulse_gen_tb.v was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.pulse_gen_tb
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen at C:/James/verilog_source/pulse_gen.v line 392
+step -over
+step -over
+step -over
+run -all
+# Break in Module pulse_gen at C:/James/verilog_source/pulse_gen.v line 392
+run -all
+# Break in Module pulse_gen at C:/James/verilog_source/pulse_gen.v line 392
+run -all
+# Break in Module pulse_gen at C:/James/verilog_source/pulse_gen.v line 392
+run -all
+# Break in Module pulse_gen at C:/James/verilog_source/pulse_gen.v line 392
+run -all
+# Break in Module pulse_gen at C:/James/verilog_source/pulse_gen.v line 392
+run -all
+# Break in Module pulse_gen at C:/James/verilog_source/pulse_gen.v line 392
+run -all
+# Break in Module pulse_gen at C:/James/verilog_source/pulse_gen.v line 392
+run -all
+# Break in Module pulse_gen at C:/James/verilog_source/pulse_gen.v line 392
+run -all
+# Break in Module pulse_gen at C:/James/verilog_source/pulse_gen.v line 392
+run -all
+# Break in Module pulse_gen at C:/James/verilog_source/pulse_gen.v line 392
+run -all
+# Break in Module pulse_gen at C:/James/verilog_source/pulse_gen.v line 392
+run -all
+# Break in Module pulse_gen at C:/James/verilog_source/pulse_gen.v line 392
+step -over
+step -over
+step -over
+run -all
+# Break in Module pulse_gen at C:/James/verilog_source/pulse_gen.v line 445
+# Compile of pulse_gen.v was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.pulse_gen
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+# Compile of pulse_gen.v was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.pulse_gen
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+# Compile of pulse_gen.v was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.pulse_gen
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 77
+# Compile of pulse_gen_tb.v failed with 1 errors.
+# Compile of pulse_gen_tb.v was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.pulse_gen_tb
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 71
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 71
+run -all
+# Break in Module pulse_gen_tb at C:/James/verilog_source/pulse_gen_tb.v line 71
+run -all
+# Compile of pulse_gen.v was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.pulse_gen
+run -all

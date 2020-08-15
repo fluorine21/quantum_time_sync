@@ -277,8 +277,8 @@ class pulse_gen:
         
     def set_pulse_len(self, num_samples):
         
-        if(num_samples < 1 or num_samples > 16):
-            print("Error, number of pulse samples must be between 1 and 16")
+        if(num_samples < 1 or num_samples > 65535):
+            print("Error, number of pulse samples must be between 1 and 2^16")
             return 
         
         self.port.reset_input_buffer()

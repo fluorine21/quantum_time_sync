@@ -1,0 +1,103 @@
+m255
+K4
+z2
+!s11f vlog 2020.1_3 2020.04, Apr 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/windows/system32
+vgpio_to_fifo
+!s110 1597452493
+!i10b 1
+!s100 :LB;KSJnTV[kY80fEVFR=1
+Z0 !s11b Dg1SIo80bB@j0V0VzS_@n1
+In=48iBNz19H`N`0gc1fe83
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/James/modelsim_project
+w1595552688
+8C:/James/verilog_source/gpio_to_fifo.v
+FC:/James/verilog_source/gpio_to_fifo.v
+!i122 7
+L0 4 84
+Z3 OV;L;2020.1_3;71
+r1
+!s85 0
+31
+Z4 !s108 1597452493.000000
+!s107 C:/James/verilog_source/gpio_to_fifo.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/James/verilog_source/gpio_to_fifo.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vpulse_gen
+!s110 1597511286
+!i10b 1
+!s100 7EES9e=[2?h`QFFAXQMJ53
+R0
+IjSoUQBh;i9=aR5<U]3ZYo3
+R1
+R2
+w1597511275
+8C:/James/verilog_source/pulse_gen.v
+FC:/James/verilog_source/pulse_gen.v
+!i122 21
+L0 21 533
+R3
+r1
+!s85 0
+31
+!s108 1597511285.000000
+!s107 C:/James/verilog_source/pulse_gen.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/James/verilog_source/pulse_gen.v|
+!i113 1
+R5
+R6
+vpulse_gen_tb
+!s110 1597511187
+!i10b 1
+!s100 VIkaJ<EED<Klm;^O2KzMa1
+R0
+I6lKhd?JjPMnd8I1RHohg>0
+R1
+R2
+w1597511184
+8C:/James/verilog_source/pulse_gen_tb.v
+FC:/James/verilog_source/pulse_gen_tb.v
+!i122 20
+L0 4 101
+R3
+r1
+!s85 0
+31
+!s108 1597511187.000000
+!s107 C:/James/verilog_source/pulse_gen_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/James/verilog_source/pulse_gen_tb.v|
+!i113 1
+R5
+R6
+vshift_register
+!s110 1597452494
+!i10b 1
+!s100 bnojb6anmzKgk9JgNcH_H1
+R0
+I8mc^bC5V1NRFM>[ijoab50
+R1
+R2
+w1593025379
+8C:/James/verilog_source/shift_register.v
+FC:/James/verilog_source/shift_register.v
+!i122 10
+L0 23 66
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/James/verilog_source/shift_register.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/James/verilog_source/shift_register.v|
+!i113 1
+R5
+R6
