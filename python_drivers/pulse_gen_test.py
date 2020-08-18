@@ -24,25 +24,25 @@ else:
 #Set the period to something reasonable
 pg.set_period(10)   
 pg.set_amplitude(0x7FFF) 
-pg.set_pulse_len(17)
+pg.set_pulse_len(16)
 
 
 #List of values to send
-for j in range(0, 2):
-    for i in range(0,15):
-        pg.load_pulse(j, i)
+#for j in range(0, 2):
+#    for i in range(0,15):
+#        pg.load_pulse(j, i)
     
 #Send the pulses with 10 leading ticks, 5 dead ticks
-pg.sync_and_stream(5, 5)
+#pg.sync_and_stream(5, 5)
 
 #pg.toggle_phase_meas(10)
 
 print("Blasting...")
 
-#pg.phase_meas_on()
+pg.phase_meas_on()
 
-#time.sleep(5)
+time.sleep(5)
 
-#pg.phase_meas_off()
+pg.phase_meas_off()
 
 pg.close_board()

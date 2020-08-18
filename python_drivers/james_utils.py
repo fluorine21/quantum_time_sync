@@ -7,6 +7,7 @@ Created on Thu Jul 16 14:44:28 2020
 
 
 import socket
+import random
 
 #Constants for Alice and Bob
 ALICE_PORT = "COM4"
@@ -103,3 +104,65 @@ def receive_bytes(c, num_bytes):
         #except Exception as e:
             #print("Unknown error occured while waiting for bytes")
             #return -3
+        
+def random_percent(percent=50):
+    if(percent == 0):
+        return 0
+    return random.randrange(100) < percent   
+        
+def decode_pulse_list(pulses):
+    
+    #Fist thing to do is figure out where the sync pulses end and encoded pulses start
+    
+    
+    return []
+
+
+
+#period in ps
+#loss rate between 0 and 100
+#num dark counts is number of dark coutns to inject
+#bin size in ps
+def generate_pulse_list(period, num_sync, num_dead, num_bins, bin_size, vals, loss_rate, num_dark_counts):
+    
+    random.seed()
+    
+    pulse_list = [0]
+    
+    
+    #Adding sync pulses
+    for i in range(0, num_sync-1):
+        pulse_list.append(pulse_list[-1] + period)
+        
+        
+    #Time period in which we're looking to insert a pulse
+    bin_ptr = pulse_list[-1] + (period * num_dead)#Adding dead pulses here
+    bin_offset = bin_size / 2
+    
+    #Adding encoded values
+    for v in vals:
+        #Figure out the encoding based on current period
+        encoded_val = (v * bin_size) + bin_offset + bin_ptr
+        bin_ptr += period#Go to the next bin
+        pulse_list.append(encoded_val)
+        
+    
+    #Loss Function
+    pulse_list_final = []
+    for p in pulse_list:
+        #If we sho333
+        if(not random_percent(loss_rate)):
+            pulse_list_final.append(p)
+    
+    #dark count addition
+    for i in range(0, num_dark_counts):
+        val = random.choice(pulse_list_final)#Get a random valid pulse
+        val += random.randint(period*(-2), period*2)#Offset it by some ammmount
+        pulse_list_final.append(val)#Add it back in
+            
+    #Make sure the timestamps are in order
+    pulse_list_final = pulse_list_final.sort()
+    
+    return pulse_list_final
+        
+            
