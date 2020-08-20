@@ -8,6 +8,7 @@ Created on Thu Jul 16 14:44:28 2020
 
 import socket
 import random
+import math as Math
 
 #Constants for Alice and Bob
 ALICE_PORT = "COM4"
@@ -19,6 +20,15 @@ BOB_CHANNEL_SEND = 1
 BOB_CHANNEL_RECEIVE = 4
 
 TDC_THRESHOLD = 0.1 #100mV for SNSPDs
+
+PERIOD_THRESHOLD = 0.1
+SYNC_PERIOD_THRESHOLD = 0.01#Tighter for determining which sync pulses are valid
+
+
+#Timestamps denoting decode failiure
+FAIL_TIMESTAMP_NO_PHOTON = 99999999999999
+FAIL_TIMESTAMP_BAD_RANGE = 99999999999998
+FAIL_TIMESTAMP_NEG_OFFSET = 99999999999997
 
 
 
@@ -49,7 +59,6 @@ def bytes_to_timestamps(byte_array):
         timestamp_list.append(res)
         
     return timestamp_list
-    
     
     
 
@@ -110,12 +119,151 @@ def random_percent(percent=50):
         return 0
     return random.randrange(100) < percent   
         
-def decode_pulse_list(pulses):
+
+class sync_pulse:
+    
+    val = 0 #timestamp value
+    diffs = [] #List of differences to every other possible sync pulse
+    
+    
+def val_to_coarse_fine(self, val):
+    
+    offset = self.val_to_offset(val)
+    c = Math.floor(offset / 4000)
+    f = Math.floor((offset/250)%16)
+    return c,f
+
+def val_to_offset(self, val):
+    
+    return (val * self.bin_size) + (0.5 * self.bin_size)
+
+def offset_to_val(self, offset):
+    
+    if(offset > self.bin_number * self.bin_size):
+        print("Error, received photon outside of allowed range, should not happen here")
+        return FAIL_TIMESTAMP_BAD_RANGE
+    
+    val = Math.floor(offset/self.bin_size)
+    return val  
+
+
+#pulses must be a sorted list
+def decode_pulse_list(pulses, expected_period):
     
     #Fist thing to do is figure out where the sync pulses end and encoded pulses start
     
+    max_diff = 0
+    max_diff_pos = 0
+    for i in range(0, len(pulses)):
+        d = pulses[i+1] - pulses[i]
+        if(d > max_diff):
+            max_diff = d
+            max_diff_pos = i
+            
+    first_encoded_pulse_pos = max_diff_pos + 1;
     
-    return []
+    
+    #Now we're going to create objects for each pulse which store a list of their time differences to every other sync pulse
+    #If any pulse has two differences which are close enough to the expected period then we'll mark those as valid
+    
+    #Now we calculate the period based on the measured differences of the first max_diff_pos pulses
+    sync_pulse_vals = pulses[0:max_diff_pos]
+    period_diffs = []
+    sync_pulse_objs= []
+    for i in range(0, len(sync_pulse_vals)):
+        
+        #Create a new object for pulse i
+        spo = sync_pulse()
+        spo.val = sync_pulse_vals[i]
+        for j in range(0, len(sync_pulse_vals)):
+            if (j != i):
+                d = abs(sync_pulse_vals[j] - sync_pulse_vals[i])
+                period_diffs.append(d)
+                spo.diffs.append(d)#Append this also to the list for this pulse
+        #Record that pulse in our list
+        sync_pulse_objs.apppend(spo)
+                
+    periods_final = []
+    for p in period_diffs:
+        
+        #If this period is within allowable limits
+        thresh = abs(p - expected_period) / expected_period 
+        if(thresh < PERIOD_THRESHOLD):
+            periods_final.append(p)
+                
+    #Calculate the measured period
+    measured_period = sum(periods_final) / len(periods_final)
+    
+    #Now go through the list of sync pulses and determine if they are valid
+    valid_sync_pulses = []
+    for sp in sync_pulse_objs:
+        
+        num_valid_diffs = 0
+        
+        #Loop through differences and look for those that meet threshold
+        for d in sp.diffs:    
+            thresh = abs(d - measured_period)/measured_period
+            if(thresh < SYNC_PERIOD_THRESHOLD):
+                num_valid_diffs += 1
+            
+        #If we have exactly two differences that meet the threshold
+        if(num_valid_diffs == 2):
+            #Add it to the list of valid pulses
+            valid_sync_pulses.append(sp)
+            
+    #If there were no valid sync pulses then we fail
+    if(len(valid_sync_pulses) < 2):
+        print("Cannot decode pulse list, not enough valid sync pulses!")
+        return []
+        
+    #now we figure out which was the last valid pulse
+    last_valid_sync_pulse = 0
+    for p in valid_sync_pulses:
+        if(p.val > last_valid_sync_pulse):
+            last_valid_sync_pulse = p.val
+            
+    encoded_pulses = pulses[first_encoded_pulse_pos:len(pulses)-1]
+    #Fail if there are no encoded pulses to decode
+    if(len(encoded_pulses) < 1):
+        print("Cannot decode pulse list, no encoded pulses found!")
+        return []
+    #Now we know where the last valid clock tick was, so we extrapolate to determine the start of the first bin set
+    while(encoded_pulses[0] - last_valid_sync_pulse > measured_period):
+        last_valid_sync_pulse += measured_period
+        
+        
+    decoded_vals = []
+    encoded_pulse_index = 0
+    while(last_valid_sync_pulse < max(encoded_pulses)):
+        
+        #Take care of empty bin sets here
+        while(encoded_pulses[encoded_pulse_index] - last_valid_sync_pulse > measured_period):
+            last_valid_sync_pulse += measured_period
+            decoded_vals.append(FAIL_TIMESTAMP_NO_PHOTON)
+        
+        
+        #We always assume the first pulse here is valid
+        offset = encoded_pulses[encoded_pulse_index] - last_valid_sync_pulse;
+        #Append the decoded value to our next index
+        decoded_vals.append(offset_to_val(offset))
+        
+        
+        #Figure out the next valid timestamp
+        last_valid_sync_pulse += measured_period
+        encoded_pulse_index += 1
+        
+        #If we're not on the last pulse
+        if(encoded_pulse_index + 1 < len(encoded_pulses)):
+            
+            #while the next pulse is before last_valid_sync_pulse and there is a next pulse
+            while(encoded_pulse_index + 1 < len(encoded_pulses) and encoded_pulses[encoded_pulse_index] < last_valid_sync_pulse):
+                encoded_pulse_index += 1
+        
+        #otherwise we're done
+        else:
+            break
+    
+    return decoded_vals
 
 
 
