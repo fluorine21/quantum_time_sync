@@ -125,6 +125,9 @@ class sync_pulse:
     val = 0 #timestamp value
     diffs = [] #List of differences to every other possible sync pulse
     
+    def __init__(self, v):
+        self.val = v
+        self.diffs = []
     
 def val_to_coarse_fine(self, val):
     
@@ -137,24 +140,24 @@ def val_to_offset(self, val):
     
     return (val * self.bin_size) + (0.5 * self.bin_size)
 
-def offset_to_val(self, offset):
+def offset_to_val(offset, bin_number, bin_size):
     
-    if(offset > self.bin_number * self.bin_size):
+    if(offset > bin_number * bin_size):
         print("Error, received photon outside of allowed range, should not happen here")
         return FAIL_TIMESTAMP_BAD_RANGE
     
-    val = Math.floor(offset/self.bin_size)
+    val = Math.floor(offset/bin_size)
     return val  
 
 
 #pulses must be a sorted list
-def decode_pulse_list(pulses, expected_period):
+def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_size):
     
     #Fist thing to do is figure out where the sync pulses end and encoded pulses start
     
     max_diff = 0
     max_diff_pos = 0
-    for i in range(0, len(pulses)):
+    for i in range(0, len(pulses)-1):
         d = pulses[i+1] - pulses[i]
         if(d > max_diff):
             max_diff = d
@@ -167,21 +170,20 @@ def decode_pulse_list(pulses, expected_period):
     #If any pulse has two differences which are close enough to the expected period then we'll mark those as valid
     
     #Now we calculate the period based on the measured differences of the first max_diff_pos pulses
-    sync_pulse_vals = pulses[0:max_diff_pos]
+    sync_pulse_vals = pulses[0:max_diff_pos+1]
     period_diffs = []
     sync_pulse_objs= []
     for i in range(0, len(sync_pulse_vals)):
         
         #Create a new object for pulse i
-        spo = sync_pulse()
-        spo.val = sync_pulse_vals[i]
+        spo = sync_pulse(sync_pulse_vals[i])
         for j in range(0, len(sync_pulse_vals)):
             if (j != i):
                 d = abs(sync_pulse_vals[j] - sync_pulse_vals[i])
                 period_diffs.append(d)
                 spo.diffs.append(d)#Append this also to the list for this pulse
         #Record that pulse in our list
-        sync_pulse_objs.apppend(spo)
+        sync_pulse_objs.append(spo)
                 
     periods_final = []
     for p in period_diffs:
@@ -193,6 +195,8 @@ def decode_pulse_list(pulses, expected_period):
                 
     #Calculate the measured period
     measured_period = sum(periods_final) / len(periods_final)
+    #adjust the bin size to match
+    measured_bin_size = (measured_period/expected_period) * expected_bin_size
     
     #Now go through the list of sync pulses and determine if they are valid
     valid_sync_pulses = []
@@ -212,7 +216,7 @@ def decode_pulse_list(pulses, expected_period):
             valid_sync_pulses.append(sp)
             
     #If there were no valid sync pulses then we fail
-    if(len(valid_sync_pulses) < 2):
+    if(len(valid_sync_pulses) < 1):
         print("Cannot decode pulse list, not enough valid sync pulses!")
         return []
         
@@ -222,7 +226,7 @@ def decode_pulse_list(pulses, expected_period):
         if(p.val > last_valid_sync_pulse):
             last_valid_sync_pulse = p.val
             
-    encoded_pulses = pulses[first_encoded_pulse_pos:len(pulses)-1]
+    encoded_pulses = pulses[first_encoded_pulse_pos:len(pulses)]
     #Fail if there are no encoded pulses to decode
     if(len(encoded_pulses) < 1):
         print("Cannot decode pulse list, no encoded pulses found!")
@@ -245,7 +249,7 @@ def decode_pulse_list(pulses, expected_period):
         #We always assume the first pulse here is valid
         offset = encoded_pulses[encoded_pulse_index] - last_valid_sync_pulse;
         #Append the decoded value to our next index
-        decoded_vals.append(offset_to_val(offset))
+        decoded_vals.append(offset_to_val(offset, expected_bin_num, measured_bin_size))
         
         
         #Figure out the next valid timestamp
@@ -253,7 +257,7 @@ def decode_pulse_list(pulses, expected_period):
         encoded_pulse_index += 1
         
         #If we're not on the last pulse
-        if(encoded_pulse_index + 1 < len(encoded_pulses)):
+        if(encoded_pulse_index < len(encoded_pulses)):
             
             #while the next pulse is before last_valid_sync_pulse and there is a next pulse
             while(encoded_pulse_index + 1 < len(encoded_pulses) and encoded_pulses[encoded_pulse_index] < last_valid_sync_pulse):
@@ -309,7 +313,7 @@ def generate_pulse_list(period, num_sync, num_dead, num_bins, bin_size, vals, lo
         pulse_list_final.append(val)#Add it back in
             
     #Make sure the timestamps are in order
-    pulse_list_final = pulse_list_final.sort()
+    pulse_list_final.sort()
     
     return pulse_list_final
         
