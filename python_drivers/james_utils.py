@@ -143,15 +143,40 @@ def val_to_offset(self, val):
 def offset_to_val(offset, bin_number, bin_size):
     
     if(offset > bin_number * bin_size):
-        print("Error, received photon outside of allowed range, should not happen here")
+        #print("Error, received photon outside of allowed range, should not happen here")
         return FAIL_TIMESTAMP_BAD_RANGE
     
     val = Math.floor(offset/bin_size)
     return val  
 
 
+def check_results(sent, recv):
+    
+    correct = 0
+    #loop through all offsets
+    for offset in range(-1*(len(recv) - 1), len(recv)):
+        #Loop through sent string
+        c = 0
+        for j in range(0, len(sent)):
+            
+            #Calculate the relative index for recv
+            recv_i = j + offset
+            
+            
+            #If we're in the correct range
+            if(recv_i > -1 and recv_i < len(recv)):
+                #Compare these two values and update c 
+                if(sent[j] == recv[recv_i]):
+                    c += 1
+        if(c > correct):
+            correct = c
+            
+    return correct 
+            
+
 #pulses must be a sorted list
-def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_size):
+    #expected encoded pulses is the number of these we expect to find
+def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_size, expected_encoded_pulses):
     
     #Fist thing to do is figure out where the sync pulses end and encoded pulses start
     
@@ -193,6 +218,11 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
         if(thresh < PERIOD_THRESHOLD):
             periods_final.append(p)
                 
+    #If we end up with no successfull period measurement
+    if(len(periods_final) == 0):
+        print("Error, could not identify any synchronization pulses")
+        return []
+            
     #Calculate the measured period
     measured_period = sum(periods_final) / len(periods_final)
     #adjust the bin size to match
@@ -213,7 +243,7 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
         #If we have exactly two differences that meet the threshold
         if(num_valid_diffs == 2):
             #Add it to the list of valid pulses
-            valid_sync_pulses.append(sp)
+            valid_sync_pulses.append(sp.val)
             
     #If there were no valid sync pulses then we fail
     if(len(valid_sync_pulses) < 1):
@@ -223,8 +253,8 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
     #now we figure out which was the last valid pulse
     last_valid_sync_pulse = 0
     for p in valid_sync_pulses:
-        if(p.val > last_valid_sync_pulse):
-            last_valid_sync_pulse = p.val
+        if(p > last_valid_sync_pulse):
+            last_valid_sync_pulse = p
             
     encoded_pulses = pulses[first_encoded_pulse_pos:len(pulses)]
     #Fail if there are no encoded pulses to decode
@@ -238,8 +268,9 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
         
     decoded_vals = []
     encoded_pulse_index = 0
-    while(last_valid_sync_pulse < max(encoded_pulses)):
-        
+    #While we haven't run out of pulses to decode and we haven't decoded more than the expected number
+    #while(last_valid_sync_pulse < max(encoded_pulses) and encoded_pulse_index < expected_encoded_pulses):
+    while(last_valid_sync_pulse < max(encoded_pulses)):  
         #Take care of empty bin sets here
         while(encoded_pulses[encoded_pulse_index] - last_valid_sync_pulse > measured_period):
             last_valid_sync_pulse += measured_period
