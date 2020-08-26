@@ -58,11 +58,11 @@ count = 0
 #period = 140000 #in ps
 
 #Faster with 32 bins, working
-bin_size = 80000 #in ps
+bin_size = 8000 #in ps
 bin_number = 16#can encode values between 0 and 15
-period = 2800000 #in ps
+period = 280000 #in ps
 
-num_sync_pulse = 20
+num_sync_pulse = 200
 num_dead_pulse = 20
 
 
@@ -84,7 +84,7 @@ else:
     
     #2600
     #16300
-    for stream_len in range(10000, 20001, 200):
+    for stream_len in range(1000, 20001, 200):
         
         if(exit_test):
                 break
@@ -101,7 +101,8 @@ else:
                 
                 test_stream = []
                 for i in range(0, stream_len):
-                    test_stream.append(random.randint(0,bin_number - 1))
+                    #test_stream.append(random.randint(0,bin_number - 1))
+                    test_stream.append(i%16)
                     
                     
                 sent_str = "Sending: "
@@ -125,7 +126,7 @@ else:
                 res_str = "Got: "
                 for i in res:
                     res_str += str(i) + ", "
-                #print(sent_str)
+                print(sent_str)
                 #print(res_str)
                 
                 # succ = 1
@@ -177,9 +178,9 @@ else:
                 
                 count += 1
                 print("Waiting 3 seconds...")
-                time.sleep(3)
+                #time.sleep(3)
                 
-                exit_test = 0
+                exit_test = 1
                 
             except KeyboardInterrupt:
                 print("Exiting")

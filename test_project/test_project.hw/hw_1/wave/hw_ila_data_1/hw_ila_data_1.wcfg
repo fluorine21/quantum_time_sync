@@ -10,12 +10,12 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="8193fs"></ZoomEndTime>
+      <ZoomEndTime time="8192fs"></ZoomEndTime>
       <Cursor1Time time="4264fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="283"></NameColumnWidth>
-      <ValueColumnWidth column_width="217"></ValueColumnWidth>
+      <ValueColumnWidth column_width="213"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="9" />
    <wave_markers>
@@ -94,7 +94,7 @@
       <obj_property name="Detail_Data">Interface_(i1:s0)_(pulse_gen_0_m_axis)_tooltip</obj_property>
       <obj_property name="Render_Data">Interface_(i1:s0)_(pulse_gen_0_m_axis)</obj_property>
       <obj_property name="EnumTransactionColorTable">0=blank</obj_property>
-      <obj_property name="CustomSignalColor">OliveDrab</obj_property>
+      <obj_property name="CustomSignalColor">Cornsilk</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
       <wvobject fp_name="group16" type="group">

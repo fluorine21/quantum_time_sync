@@ -11,8 +11,8 @@ import matplotlib.pyplot as plt
 import time
 
 
-pulses_to_send = 2000
-amplitude = 0x7FFF
+pulses_to_send = 10000
+amplitude = 0x8000
 period = 100 #in clock cycles
 channel_num = 2 #TDC channel connected to SNSPD
 
@@ -33,13 +33,19 @@ else:
     #Set the board amplitude and period
     board.set_amplitude(amplitude)
     board.set_period(period)
-    board.set_pulse_len(64)
+    board.set_pulse_len(16)
     
     #Clear the TDC
     tdc.clear_all()
+    tdc.set_record(1)
     
     #Send the pulses
     board.toggle_phase_meas(pulses_to_send)
+    
+    #while(tdc.is_busy()):
+    #    a = 1
+    time.sleep(0.01)
+    tdc.set_record(0)
     
     tdc.shutdown()
     
@@ -54,20 +60,20 @@ else:
     
     print("Got " + str(len(pulses)) + " counts")
     
-    diffs = []
-    for i in range(0, len(pulses)-1):
-        for j in range(0, len(pulses)-1):
-            if(i != j):
-                diffs.append(pulses[i+1] - pulses[i])
+    # diffs = []
+    # for i in range(0, len(pulses)-1):
+    #     for j in range(0, len(pulses)-1):
+    #         if(i != j):
+    #             diffs.append(pulses[i+1] - pulses[i])
         
-    avg_diff = sum(diffs)/len(diffs)
+    # avg_diff = sum(diffs)/len(diffs)
     
-    print("Average difference was " + str(avg_diff/1000) +"ns")
+    # print("Average difference was " + str(avg_diff/1000) +"ns")
     
-    plt.hist(diffs, bins = 10000000)
+    # plt.hist(diffs, bins = 10000000)
     
-    plt.title('Histogram of time differences between adjacent pulses')
-    plt.show()
+    # plt.title('Histogram of time differences between adjacent pulses')
+    # plt.show()
     
     
     

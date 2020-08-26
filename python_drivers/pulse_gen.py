@@ -251,9 +251,9 @@ class pulse_gen:
         
     def set_amplitude(self, amp):
         
-        if(amp < 0 or amp > 0x7fff):
-            print("Error, board amplitude must be between 0 and 0x7FFF")
-            return
+        #if(amp < 0 or amp > 0x7fff):
+        #    print("Error, board amplitude must be between 0 and 0x7FFF")
+        #    return
         
         self.port.reset_input_buffer()
         #self.port.open()

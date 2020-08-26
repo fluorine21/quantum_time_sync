@@ -26,7 +26,7 @@ SYNC_PERIOD_THRESHOLD = 0.01#Tighter for determining which sync pulses are valid
 
 
 LOG_TO_FILE = 1
-logfile = "received_pulse_streams.txt"
+logfile = "received_pulse_streams_cw_light.txt"
 
 
 #Timestamps denoting decode failiure

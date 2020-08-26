@@ -140,7 +140,8 @@ class time_sync:
         self.init_socket()
         
         #Initialize the FPGA
-        self.board = pulse_gen.pulse_gen(COM_PORT)
+        if(m == CLIENT):
+            self.board = pulse_gen.pulse_gen(COM_PORT)
         
         #initialize the tdc
         self.tdc = tdc_obj
@@ -1008,8 +1009,8 @@ class time_sync:
             return -1
         
         self.board.clear_queue()
-        self.board.set_pulse_len(64)
-        self.board.set_amplitude(0x7FFF)
+        self.board.set_pulse_len(16)
+        self.board.set_amplitude(0x8000)
         
         
         
@@ -1056,7 +1057,7 @@ class time_sync:
         print("Waiting for TDC to finish...")
         #while(self.tdc.is_busy()):
         #    a = 1
-            
+        time.sleep(0.001)
         self.tdc.set_record(0)
         
         print("Sending timing info to Bob")
@@ -1125,6 +1126,12 @@ class time_sync:
         decoded_vals = james_utils.decode_pulse_list(pulse_list, self.period, self.bin_number, self.bin_size)
         
         print("Done decoding")
+        
+        res_str = "got: "
+        for i in decoded_vals:
+            if(i < 100):
+                res_str += str(i) + ","
+        print(res_str)
         
         #Send the length of decoded vals and then each val
         james_utils.send_timestamp(sck, len(decoded_vals))

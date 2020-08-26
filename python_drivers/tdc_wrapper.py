@@ -389,6 +389,10 @@ class tdc_wrapper:
     
     def set_record(self, choice):
         
+        if(self.mode == MODE_NORMAL):
+            self.record_pulses = choice
+            return
+        
         sck = socket.socket()
         sck.settimeout(TIMEOUT_LONG)
         sck.connect((self.server_ip, self.port))
