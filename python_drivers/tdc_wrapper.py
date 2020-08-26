@@ -37,6 +37,8 @@ COMMAND_CLOSE_CONNECTION = 3
 COMMAND_CLEAR_ALL = 4
 COMMAND_GET_BUSY = 5
 COMMAND_DUMP_ALL = 6
+COMMAND_RECORD_PULSES = 7
+COMMAND_STOP_RECORD = 8
 
 #channel number for the 1ms pulse
 DUMMY_CHANNEL_NUM = 104
@@ -78,6 +80,8 @@ class tdc_wrapper:
     port = 25567
     
     busy = 0#1 if tdc is offloading pulses
+    
+    record_pulses = 0
     
     def __init__(self, tt, dm, m = MODE_NORMAL, s_ip = ""):
         
@@ -382,6 +386,26 @@ class tdc_wrapper:
         sck.close()
         return ret_val
     
+    
+    def set_record(self, choice):
+        
+        sck = socket.socket()
+        sck.settimeout(TIMEOUT_LONG)
+        sck.connect((self.server_ip, self.port))
+        time.sleep(0.1)
+    
+        if(choice):
+            sck.send(bytearray([COMMAND_RECORD_PULSES]))
+        else:
+            sck.send(bytearray([COMMAND_STOP_RECORD]))
+        
+        ret_val = james_utils.receive_timestamp(sck)
+        #gracefully close the connection
+        sck.send(bytearray([COMMAND_CLOSE_CONNECTION]))
+        sck.close()
+        return ret_val
+        
+    
     def clear_all(self):
         
         print("Clearing tdc")
@@ -427,6 +451,8 @@ class tdc_wrapper:
         
         #Receive the size
         stream_size = james_utils.receive_timestamp(sck)
+        
+        print("Stream size was " + str(stream_size))
         
         byte_result = james_utils.receive_bytes(sck, stream_size)
         
@@ -561,7 +587,7 @@ class tdc_wrapper:
                     #self.offset_timestamp = 0
                 
                 #If we find a timestamp that isn't the dummy channel
-                elif(t_s[1][i] != DUMMY_CHANNEL_NUM):
+                elif(t_s[1][i] != DUMMY_CHANNEL_NUM and self.record_pulses == 1):
                     self.busy = 1
                     self.timestamp_list.append(pulse_record(t_s[1][i], t_s[0][i] - self.offset_timestamp))
                     #print("[TDC SERVICE] Got pulse on channel #" + str(t_s[1][i]) + ", absolute = " + str(t_s[0][i]) + ", relative = " + str(t_s[0][i] - self.offset_timestamp))
@@ -640,7 +666,8 @@ class tdc_wrapper:
                     for e in self.timestamp_list:#Get all timestamps for this channel
                         if(e.channel_num == cn):
                             timestamp_lc.append(e.timestamp)
-                            self.timestamp_list.remove(e)
+                            #self.timestamp_list.remove(e)
+                    self.timestamp_list = []
                             
                     if(len(timestamp_lc) == 0):
                         print("Error, length of timestamp list was 0")
@@ -653,6 +680,18 @@ class tdc_wrapper:
                     james_utils.send_timestamp(c, len(array_to_send))
                     to_send = bytearray(array_to_send)
                     c.send(to_send)
+            
+            
+            elif(client_cmd[0] == COMMAND_RECORD_PULSES):
+                print("[CLIENT HANDLER] Client at " + ip_str + ": COMMAND_RECORD")
+                self.record_pulses = 1
+                #c.send(SERVER_ACK)
+                james_utils.send_timestamp(c, 0)
+            elif(client_cmd[0] == COMMAND_STOP_RECORD):
+                print("[CLIENT HANDLER] Client at " + ip_str + ": COMMAND_STOP_RECORD")
+                self.record_pulses = 0
+                #c.send(SERVER_ACK)
+                james_utils.send_timestamp(c, 0)
             
             else:
                 print("[CLIENT HANDLER] Unknown command received from client: " + hex(client_cmd[0]))

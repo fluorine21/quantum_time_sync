@@ -14,15 +14,19 @@ import math as Math
 ALICE_PORT = "COM4"
 BOB_PORT = "COM9"
 
-ALICE_CHANNEL_SEND = 3
+ALICE_CHANNEL_SEND = 2
 ALICE_CHANNEL_RECEIVE = 2
-BOB_CHANNEL_SEND = 1
-BOB_CHANNEL_RECEIVE = 4
+BOB_CHANNEL_SEND = 2
+BOB_CHANNEL_RECEIVE = 2
 
 TDC_THRESHOLD = 0.1 #100mV for SNSPDs
 
 PERIOD_THRESHOLD = 0.1
 SYNC_PERIOD_THRESHOLD = 0.01#Tighter for determining which sync pulses are valid
+
+
+LOG_TO_FILE = 1
+logfile = "received_pulse_streams.txt"
 
 
 #Timestamps denoting decode failiure
@@ -175,8 +179,30 @@ def check_results(sent, recv):
             
 
 #pulses must be a sorted list
-    #expected encoded pulses is the number of these we expect to find
-def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_size, expected_encoded_pulses):
+    #expected encoded pulses is the number of these we expect to  find
+def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_size):
+    
+    
+    print("Starting decode")
+    
+    #pre-thing to do is subtract out offset
+    pulses.sort()
+    
+    ofs = pulses[0]
+    for i in range(0, len(pulses)):
+        pulses[i] -= ofs
+    
+    
+    
+    if(LOG_TO_FILE):
+        file = open(logfile,'a')
+        new_line = ""
+        for p in pulses:
+            new_line += str(p) + ","
+        file.write(new_line + "\n")
+        file.close()
+        return [1]
+    
     
     #Fist thing to do is figure out where the sync pulses end and encoded pulses start
     
@@ -190,6 +216,8 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
             
     first_encoded_pulse_pos = max_diff_pos + 1;
     
+    
+    print("Done separating list of pulses")
     
     #Now we're going to create objects for each pulse which store a list of their time differences to every other sync pulse
     #If any pulse has two differences which are close enough to the expected period then we'll mark those as valid
@@ -228,6 +256,9 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
     #adjust the bin size to match
     measured_bin_size = (measured_period/expected_period) * expected_bin_size
     
+    
+    print("Measured period was " + str(measured_period) + ", measured bin size was " + str(measured_bin_size))
+    
     #Now go through the list of sync pulses and determine if they are valid
     valid_sync_pulses = []
     for sp in sync_pulse_objs:
@@ -250,6 +281,8 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
         print("Cannot decode pulse list, not enough valid sync pulses!")
         return []
         
+    
+    print("Found " + str(len(valid_sync_pulses)) + " valid sync pulses")
     #now we figure out which was the last valid pulse
     last_valid_sync_pulse = 0
     for p in valid_sync_pulses:

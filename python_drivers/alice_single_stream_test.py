@@ -25,12 +25,12 @@ ts = time_sync.time_sync(james_utils.ALICE_PORT, server_ip, time_sync.CLIENT, td
 #period = 64000 #in ps
 
 #Faster with 16 bins
-bin_size = 8000 #in ps
+bin_size = 80000 #in ps
 bin_number = 16#can encode values between 0 and 15
-period = 140000 #in ps
+period = 1400000 #in ps
 
-num_sync_pulse = 20
-num_dead_pulse = 20
+num_sync_pulse = 200
+num_dead_pulse = 200
 test_stream = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
 #test_stream = [0,1,2,3,0,1,2,3,0,1,2,3]
 

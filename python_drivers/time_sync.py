@@ -1008,9 +1008,10 @@ class time_sync:
             return -1
         
         self.board.clear_queue()
+        self.board.set_pulse_len(64)
+        self.board.set_amplitude(0x7FFF)
         
         
-        self.tdc.clear_all()#Clear any old pulses
         
         
         #tell bob to receive a photon
@@ -1041,7 +1042,11 @@ class time_sync:
         for i in range(0, len(val_coarse)):
             self.board.load_pulse(val_coarse[i], val_fine[i])
             
-    
+        
+        self.tdc.clear_all()#Clear any old pulses
+        
+        self.tdc.set_record(1)
+        
         #Send the pulses
         print("Sending pulses")
         self.board.sync_and_stream(num_sync_pulse, num_dead_pulse)
@@ -1049,8 +1054,10 @@ class time_sync:
         #Tell bob the expected number of pulses
         #time.sleep(1)
         print("Waiting for TDC to finish...")
-        while(self.tdc.is_busy()):
-            a = 1
+        #while(self.tdc.is_busy()):
+        #    a = 1
+            
+        self.tdc.set_record(0)
         
         print("Sending timing info to Bob")
         #Send over the stream information
@@ -1114,7 +1121,10 @@ class time_sync:
             return -1
         print("Expected " + str(num_pulses) + ", got " + str(len(pulse_list)) + " pulses")
         
-        decoded_vals = self.analyze_pulse_list(pulse_list, num_pulses, num_sync_pulses, num_dead_pulses)
+        #decoded_vals = self.analyze_pulse_list(pulse_list, num_pulses, num_sync_pulses, num_dead_pulses)
+        decoded_vals = james_utils.decode_pulse_list(pulse_list, self.period, self.bin_number, self.bin_size)
+        
+        print("Done decoding")
         
         #Send the length of decoded vals and then each val
         james_utils.send_timestamp(sck, len(decoded_vals))

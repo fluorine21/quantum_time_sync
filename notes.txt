@@ -1,0 +1,13 @@
+Settings for 8/25/2020
+
+
+Getting 352k counts on Ch1, 530k on Ch2
+Coincidence is 13k
+
+Laser power: 6dBm Id photonics laser
+EDFA: 371.3mW with bias off
+I1 = 550mA
+I2 = 2.834A
+R_SHG = 2.3kOhms
+T_spdc = 56.17 - 56.23
+Pulse length was 250ps * 64

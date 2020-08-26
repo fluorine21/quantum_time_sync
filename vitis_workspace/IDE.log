@@ -8529,3 +8529,13 @@ con
 ----------------End of Script----------------
 
 17:50:30 INFO  : Launch script is exported to file 'C:\James\vitis_workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_test_proj_pulse_ctrl_system_no_fpga_flash_standalone.tcl'
+10:29:22 INFO  : Disconnected from the channel tcfchan#2.
+10:29:23 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:29:23 INFO  : Jtag cable 'Xilinx HW-Z1-ZCU104 FT4232H 19395A' is selected.
+10:29:23 INFO  : 'jtag frequency' command is executed.
+10:29:23 INFO  : Sourcing of 'C:/Xilinx/Vitis/2020.1/scripts/vitis/util/zynqmp_utils.tcl' is done.
+10:29:23 INFO  : Context for 'APU' is selected.
+10:29:23 INFO  : Cleared APU and A53 resets
+10:29:23 INFO  : Context for 'RPU' is selected.
+10:29:23 INFO  : Cleared RPU and R5 resets
+10:29:23 INFO  : Context for 'APU' is selected.
