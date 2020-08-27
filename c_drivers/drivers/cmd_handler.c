@@ -27,6 +27,7 @@
 #define CMD_CLEAR_QUEUE 0x07
 #define CMD_SET_AMPLITUDE 0x08
 #define CMD_SET_PULSE_LEN 0x09
+#define CMD_GET_BUSY 0x0A
 
 //Handler function states
 #define STATE_WAIT_PREAMBLE 0
@@ -185,6 +186,15 @@ void cmd_update_state()
 				uart_send_byte(ack_byte);//Send an ACK
 				debug_print("Clearing pulse queue");
 				break;
+
+			case CMD_GET_BUSY:
+
+				uart_send_byte(gpio_get_busy());
+				cmd_state = STATE_WAIT_PREAMBLE;//Go back to waiting for next command
+				debug_print("Sending busy state");
+
+				break;
+
 			default:
 				xil_printf("Invalid command byte: 0x%x\r\n", curr_cmd);
 				cmd_state = STATE_WAIT_PREAMBLE;

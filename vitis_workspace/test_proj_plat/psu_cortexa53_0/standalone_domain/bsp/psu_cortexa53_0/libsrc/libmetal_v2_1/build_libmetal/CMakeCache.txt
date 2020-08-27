@@ -148,8 +148,8 @@ CMAKE_SYSTEM_NAME:STRING=Generic
 
 CMAKE_SYSTEM_PROCESSOR:STRING=arm
 
-//No help, variable specified on the command line.
-CMAKE_TOOLCHAIN_FILE:UNINITIALIZED=toolchain
+//The CMake toolchain file
+CMAKE_TOOLCHAIN_FILE:FILEPATH=C:/James/vitis_workspace/test_proj_plat/psu_cortexa53_0/standalone_domain/bsp/psu_cortexa53_0/libsrc/libmetal_v2_1/src/libmetal/cmake/platforms/toolchain.cmake
 
 //If true, cmake will use relative paths in makefiles and projects.
 CMAKE_USE_RELATIVE_PATHS:BOOL=OFF

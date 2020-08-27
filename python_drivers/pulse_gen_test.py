@@ -40,7 +40,17 @@ pg.set_pulse_len(16)
 
 print("Blasting...")
 
+
+res = pg.get_busy()
+
+print("Busy w/o phase meas was: " + str(res))
+
 pg.phase_meas_on()
+
+res = pg.get_busy()
+
+print("Busy w/ phase meas was: " + str(res))
+
 
 time.sleep(5)
 

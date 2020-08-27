@@ -274,7 +274,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:a3df1d25</spirit:value>
+            <spirit:value>9:29dc7ca6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -285,7 +285,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:a3df1d25</spirit:value>
+            <spirit:value>9:29dc7ca6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -301,11 +301,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Aug 15 17:10:24 UTC 2020</spirit:value>
+            <spirit:value>Thu Aug 27 15:25:13 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:a3df1d25</spirit:value>
+            <spirit:value>9:29dc7ca6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -317,7 +317,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:50cefcdf</spirit:value>
+            <spirit:value>9:5a7146f5</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -333,11 +333,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Aug 15 17:10:24 UTC 2020</spirit:value>
+            <spirit:value>Thu Aug 27 15:25:13 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:50cefcdf</spirit:value>
+            <spirit:value>9:5a7146f5</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -351,11 +351,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Aug 15 17:11:58 UTC 2020</spirit:value>
+            <spirit:value>Thu Aug 27 15:26:46 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:a3df1d25</spirit:value>
+            <spirit:value>9:29dc7ca6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -527,6 +527,19 @@
             <spirit:left spirit:format="long">7</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>busy</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>wire</spirit:typeName>

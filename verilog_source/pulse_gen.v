@@ -37,7 +37,9 @@ module pulse_gen
     output wire m_axis_tvalid,
     input wire m_axis_tready,
 
-output wire [7:0] state_out	
+	output wire [7:0] state_out,
+
+	output wire busy
 );
 
 reg is_phase_meas_mode;//if 1, then pulse is emitted at each clock tick
@@ -118,6 +120,9 @@ localparam [7:0] state_idle  = 0,
 //If we're in phase measurement mode, put out one pulse each clock tick
 assign m_axis_tdata = is_phase_meas_mode ? (clock_tick ? get_default_pulse(pulse_len_reg, amplitude) : 0) : m_axis_tdata_int;
 
+
+//Busy if not idle
+assign busy = (state != state_idle) || is_phase_meas_mode;
 
 //Generates a pulse of length pulse_len with amplitude amp
 function [255:0] get_default_pulse;

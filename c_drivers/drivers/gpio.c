@@ -33,8 +33,11 @@ uint8_t gpio_init()
 	//set channel 1 to be all outputs
 	XGpio_SetDataDirection(&Gpio, 1, 0);
 
+	XGpio_SetDataDirection(&Gpio, 2, 0x1);
+
 	//Turn all outputs off by default
 	XGpio_DiscreteWrite(&Gpio, 1, 0);
+	XGpio_DiscreteWrite(&Gpio, 2, 0);
 
 	//Put the reset line in the correct state
 	gpio_reset_pulse_gen();
@@ -58,6 +61,12 @@ void gpio_set_pin(u8 bit, u8 value)
 	XGpio_DiscreteWrite(&Gpio, 1, new_gpio_state);
 	gpio_state = new_gpio_state;
 
+}
+
+u8 gpio_get_busy()
+{
+	u32 result = XGpio_DiscreteRead(&Gpio, 2);
+	return (u8)(result & 0x01);
 }
 
 //Resets the fabric in the 250MHz clock domain

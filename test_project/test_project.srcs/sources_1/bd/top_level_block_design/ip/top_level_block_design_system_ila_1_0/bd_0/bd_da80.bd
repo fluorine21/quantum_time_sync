@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x399E0BE0F07263A",
+      "boundary_crc": "0xED177079ACA09F",
       "design_src": "SBD",
       "device": "xczu28dr-ffvg1517-2-e",
       "name": "bd_da80",
@@ -143,6 +143,11 @@
         "left": "0",
         "right": "0"
       },
+      "probe7": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
       "resetn": {
         "type": "rst",
         "direction": "I",
@@ -191,7 +196,7 @@
             "value": "Native"
           },
           "C_NUM_OF_PROBES": {
-            "value": "11"
+            "value": "12"
           },
           "C_PROBE0_MU_CNT": {
             "value": "1"
@@ -206,6 +211,12 @@
             "value": "0"
           },
           "C_PROBE10_WIDTH": {
+            "value": "1"
+          },
+          "C_PROBE11_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE11_WIDTH": {
             "value": "1"
           },
           "C_PROBE1_MU_CNT": {
@@ -262,17 +273,20 @@
           "C_PROBE6_WIDTH": {
             "value": "1"
           },
+          "C_PROBE7_MU_CNT": {
+            "value": "1"
+          },
           "C_PROBE7_TYPE": {
             "value": "0"
           },
           "C_PROBE7_WIDTH": {
-            "value": "256"
+            "value": "1"
           },
           "C_PROBE8_TYPE": {
             "value": "0"
           },
           "C_PROBE8_WIDTH": {
-            "value": "1"
+            "value": "256"
           },
           "C_PROBE9_TYPE": {
             "value": "0"
@@ -395,6 +409,12 @@
           "ila_lib/probe6"
         ]
       },
+      "probe7_1": {
+        "ports": [
+          "probe7",
+          "ila_lib/probe7"
+        ]
+      },
       "resetn_1": {
         "ports": [
           "resetn",
@@ -404,25 +424,25 @@
       "net_slot_0_axis_tdata": {
         "ports": [
           "g_inst/m_slot_0_axis_tdata",
-          "ila_lib/probe7"
+          "ila_lib/probe8"
         ]
       },
       "net_slot_0_axis_tvalid": {
         "ports": [
           "g_inst/m_slot_0_axis_tvalid",
-          "ila_lib/probe8"
+          "ila_lib/probe9"
         ]
       },
       "net_slot_0_axis_tready": {
         "ports": [
           "g_inst/m_slot_0_axis_tready",
-          "ila_lib/probe9"
+          "ila_lib/probe10"
         ]
       },
       "net_slot_0_axis_tlast": {
         "ports": [
           "g_inst/m_slot_0_axis_tlast",
-          "ila_lib/probe10"
+          "ila_lib/probe11"
         ]
       }
     }

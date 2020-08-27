@@ -1310,16 +1310,16 @@
                   "auto_ds/S_AXI"
                 ]
               },
-              "auto_pc_to_s00_couplers": {
-                "interface_ports": [
-                  "M_AXI",
-                  "auto_pc/M_AXI"
-                ]
-              },
               "auto_ds_to_auto_pc": {
                 "interface_ports": [
                   "auto_ds/M_AXI",
                   "auto_pc/S_AXI"
+                ]
+              },
+              "auto_pc_to_s00_couplers": {
+                "interface_ports": [
+                  "M_AXI",
+                  "auto_pc/M_AXI"
                 ]
               }
             },
@@ -1450,10 +1450,10 @@
           }
         },
         "interface_nets": {
-          "ps8_0_axi_periph_to_s00_couplers": {
+          "m00_couplers_to_ps8_0_axi_periph": {
             "interface_ports": [
-              "S00_AXI",
-              "s00_couplers/S_AXI"
+              "M00_AXI",
+              "m00_couplers/M_AXI"
             ]
           },
           "s00_couplers_to_xbar": {
@@ -1474,16 +1474,16 @@
               "m01_couplers/M_AXI"
             ]
           },
-          "m00_couplers_to_ps8_0_axi_periph": {
-            "interface_ports": [
-              "M00_AXI",
-              "m00_couplers/M_AXI"
-            ]
-          },
           "xbar_to_m01_couplers": {
             "interface_ports": [
               "xbar/M01_AXI",
               "m01_couplers/S_AXI"
+            ]
+          },
+          "ps8_0_axi_periph_to_s00_couplers": {
+            "interface_ports": [
+              "S00_AXI",
+              "s00_couplers/S_AXI"
             ]
           }
         },
@@ -1567,7 +1567,16 @@
         "vlnv": "xilinx.com:ip:axi_gpio:2.0",
         "xci_name": "top_level_block_design_axi_gpio_0_0",
         "parameters": {
+          "C_ALL_INPUTS_2": {
+            "value": "1"
+          },
           "C_ALL_OUTPUTS": {
+            "value": "1"
+          },
+          "C_GPIO2_WIDTH": {
+            "value": "1"
+          },
+          "C_IS_DUAL": {
             "value": "1"
           }
         }
@@ -1586,7 +1595,7 @@
             "value": "1"
           },
           "C_NUM_OF_PROBES": {
-            "value": "7"
+            "value": "8"
           },
           "C_PROBE0_TYPE": {
             "value": "0"
@@ -1851,21 +1860,24 @@
             "direction": "O",
             "left": "7",
             "right": "0"
+          },
+          "busy": {
+            "direction": "O"
           }
         }
       }
     },
     "interface_nets": {
-      "sysref_in_1": {
-        "interface_ports": [
-          "sysref_in",
-          "usp_rf_data_converter_0/sysref_in"
-        ]
-      },
       "dac1_clk_1": {
         "interface_ports": [
           "dac1_clk",
           "usp_rf_data_converter_0/dac1_clk"
+        ]
+      },
+      "sysref_in_1": {
+        "interface_ports": [
+          "sysref_in",
+          "usp_rf_data_converter_0/sysref_in"
         ]
       },
       "ps8_0_axi_periph_M00_AXI": {
@@ -1886,6 +1898,12 @@
           "ps8_0_axi_periph/S00_AXI"
         ]
       },
+      "usp_rf_data_converter_0_vout12": {
+        "interface_ports": [
+          "vout12_0",
+          "usp_rf_data_converter_0/vout12"
+        ]
+      },
       "pulse_gen_0_m_axis": {
         "interface_ports": [
           "pulse_gen_0/m_axis",
@@ -1900,12 +1918,6 @@
             "value": "true"
           }
         }
-      },
-      "usp_rf_data_converter_0_vout12": {
-        "interface_ports": [
-          "vout12_0",
-          "usp_rf_data_converter_0/vout12"
-        ]
       },
       "default_sysclk3_100mhz_1": {
         "interface_ports": [
@@ -2123,6 +2135,21 @@
           "pulse_gen_0/pulse_fifo_read",
           "pulse_fifo/rd_en",
           "system_ila_1/probe4"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
+      },
+      "pulse_gen_0_busy": {
+        "ports": [
+          "pulse_gen_0/busy",
+          "axi_gpio_0/gpio2_io_i",
+          "system_ila_1/probe7"
         ],
         "hdl_attributes": {
           "DEBUG": {

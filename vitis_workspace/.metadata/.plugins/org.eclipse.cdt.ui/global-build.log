@@ -1,10 +1,54 @@
-17:50:00 **** Incremental Build of configuration Debug for project test_proj_pulse_ctrl ****
+12:20:09 **** Incremental Build of configuration Debug for project test_proj_pulse_ctrl ****
 make all 
-make: Nothing to be done for 'all'.
-17:50:01 **** Incremental Build of configuration Debug for project test_proj_pulse_ctrl_system ****
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v8 gcc compiler'
+aarch64-none-elf-gcc -Wall -O0 -g3 -I"C:\James\c_drivers\drivers" -I"C:\James\vitis_workspace\test_proj_pulse_ctrl\src" -c -fmessage-length=0 -MT"src/helloworld.o" -D __BAREMETAL__ -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v8 gcc compiler'
+aarch64-none-elf-gcc -Wall -O0 -g3 -I"C:\James\c_drivers\drivers" -I"C:\James\vitis_workspace\test_proj_pulse_ctrl\src" -c -fmessage-length=0 -MT"src/platform.o" -D __BAREMETAL__ -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building file: C:/James/c_drivers/drivers/cmd_handler.c'
+'Invoking: ARM v8 gcc compiler'
+aarch64-none-elf-gcc -Wall -O0 -g3 -I"C:\James\c_drivers\drivers" -I"C:\James\vitis_workspace\test_proj_pulse_ctrl\src" -c -fmessage-length=0 -MT"drivers/cmd_handler.o" -D __BAREMETAL__ -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"drivers/cmd_handler.d" -MT"drivers/cmd_handler.o" -o "drivers/cmd_handler.o" "C:/James/c_drivers/drivers/cmd_handler.c"
+'Finished building: C:/James/c_drivers/drivers/cmd_handler.c'
+' '
+'Building file: C:/James/c_drivers/drivers/gpio.c'
+'Invoking: ARM v8 gcc compiler'
+aarch64-none-elf-gcc -Wall -O0 -g3 -I"C:\James\c_drivers\drivers" -I"C:\James\vitis_workspace\test_proj_pulse_ctrl\src" -c -fmessage-length=0 -MT"drivers/gpio.o" -D __BAREMETAL__ -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"drivers/gpio.d" -MT"drivers/gpio.o" -o "drivers/gpio.o" "C:/James/c_drivers/drivers/gpio.c"
+'Finished building: C:/James/c_drivers/drivers/gpio.c'
+' '
+'Building file: C:/James/c_drivers/drivers/rf.c'
+'Invoking: ARM v8 gcc compiler'
+aarch64-none-elf-gcc -Wall -O0 -g3 -I"C:\James\c_drivers\drivers" -I"C:\James\vitis_workspace\test_proj_pulse_ctrl\src" -c -fmessage-length=0 -MT"drivers/rf.o" -D __BAREMETAL__ -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"drivers/rf.d" -MT"drivers/rf.o" -o "drivers/rf.o" "C:/James/c_drivers/drivers/rf.c"
+C:/James/c_drivers/drivers/rf.c: In function 'rf_self_test':
+C:/James/c_drivers/drivers/rf.c:165:13: warning: implicit declaration of function 'CompareFabricRate' [-Wimplicit-function-declaration]
+  165 |    Status = CompareFabricRate(SetFabricRate, GetFabricRate);
+      |             ^~~~~~~~~~~~~~~~~
+'Finished building: C:/James/c_drivers/drivers/rf.c'
+' '
+'Building file: C:/James/c_drivers/drivers/uart.c'
+'Invoking: ARM v8 gcc compiler'
+aarch64-none-elf-gcc -Wall -O0 -g3 -I"C:\James\c_drivers\drivers" -I"C:\James\vitis_workspace\test_proj_pulse_ctrl\src" -c -fmessage-length=0 -MT"drivers/uart.o" -D __BAREMETAL__ -IC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bspinclude/include -MMD -MP -MF"drivers/uart.d" -MT"drivers/uart.o" -o "drivers/uart.o" "C:/James/c_drivers/drivers/uart.c"
+'Finished building: C:/James/c_drivers/drivers/uart.c'
+' '
+'Building target: test_proj_pulse_ctrl.elf'
+'Invoking: ARM v8 gcc linker'
+aarch64-none-elf-gcc -L"C:\James\c_drivers\drivers" -Wl,-T -Wl,../src/lscript.ld -LC:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/sw/test_proj_plat/standalone_domain/bsplib/lib -o "test_proj_pulse_ctrl.elf"  ./src/helloworld.o ./src/platform.o  ./drivers/cmd_handler.o ./drivers/gpio.o ./drivers/rf.o ./drivers/uart.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-lgcc,-lc,-lmetal,--end-group
+'Finished building target: test_proj_pulse_ctrl.elf'
+' '
+'Invoking: ARM v8 Print Size'
+aarch64-none-elf-size test_proj_pulse_ctrl.elf  |tee "test_proj_pulse_ctrl.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 173380	   9520	  29132	 212032	  33c40	test_proj_pulse_ctrl.elf
+'Finished building: test_proj_pulse_ctrl.elf.size'
+' '
+12:20:16 **** Incremental Build of configuration Debug for project test_proj_pulse_ctrl_system ****
 make all 
 Generating bif file for the system project
-generate_system_bif.bat 51457 C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm standalone_domain C:/James/vitis_workspace/test_proj_pulse_ctrl_system/Debug/system.bif
+generate_system_bif.bat 50256 C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm standalone_domain C:/James/vitis_workspace/test_proj_pulse_ctrl_system/Debug/system.bif
 sdcard_gen --xpfm C:/James/vitis_workspace/test_proj_plat/export/test_proj_plat/test_proj_plat.xpfm --sys_config test_proj_plat --bif C:/James/vitis_workspace/test_proj_pulse_ctrl_system/Debug/system.bif --bitstream C:/James/vitis_workspace/test_proj_pulse_ctrl/_ide/bitstream/top_level_block_design_wrapper.bit --elf C:/James/vitis_workspace/test_proj_pulse_ctrl/Debug/test_proj_pulse_ctrl.elf,psu_cortexa53_0
 creating BOOT.BIN using C:/James/vitis_workspace/test_proj_pulse_ctrl/_ide/bitstream/top_level_block_design_wrapper.bit
 Running C:/Xilinx/Vitis/2020.1/bin/bootgen -arch zynqmp -image C:/James/vitis_workspace/test_proj_pulse_ctrl_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN

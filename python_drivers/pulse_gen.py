@@ -22,6 +22,7 @@ CMD_SYNC_AND_STREAM = 0x06
 CMD_CLEAR_QUEUE = 0x07
 CMD_SET_AMPLITUDE = 0x08
 CMD_SET_PULSE_LEN = 0x09
+CMD_GET_BUSY = 0x0A
 ACK_RESPONSE = 0x00
 ACK_FAIL = 0xFF
 
@@ -300,6 +301,16 @@ class pulse_gen:
         else:
             print("[set pulse len]Bad ACK while sending pulse, is the FPGA programmed with the C firmware?")
             return -1
+        
+        
+    #Returns 1 if board is busy sending something
+    def get_busy(self):
+        
+        self.port.reset_input_buffer()
+        
+        self.port.write([CMD_PREAMBLE,CMD_GET_BUSY])
+        
+        return self.wait_ack()
         
         
         

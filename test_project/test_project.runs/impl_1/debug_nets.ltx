@@ -364,10 +364,26 @@
                                 "id": 7,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 7,
+                                "nets": [
+                                    {
+                                        "name": "top_level_block_design_i/system_ila_1/inst/probe7_1",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe8",
+                                "id": 8,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
                                 "isVector": true,
                                 "leftIndex": 0,
                                 "rightIndex": 255,
-                                "portIndex": 7,
+                                "portIndex": 8,
                                 "nets": [
                                     {
                                         "name": "top_level_block_design_i/system_ila_1/inst/net_slot_0_axis_tdata",
@@ -1146,22 +1162,6 @@
                                 ]
                             },
                             {
-                                "name": "probe8",
-                                "id": 8,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": false,
-                                "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 8,
-                                "nets": [
-                                    {
-                                        "name": "top_level_block_design_i/system_ila_1/inst/net_slot_0_axis_tvalid",
-                                        "isBus": false
-                                    }
-                                ]
-                            },
-                            {
                                 "name": "probe9",
                                 "id": 9,
                                 "type": "DATA_TRIGGER",
@@ -1172,7 +1172,7 @@
                                 "portIndex": 9,
                                 "nets": [
                                     {
-                                        "name": "top_level_block_design_i/system_ila_1/inst/net_slot_0_axis_tready",
+                                        "name": "top_level_block_design_i/system_ila_1/inst/net_slot_0_axis_tvalid",
                                         "isBus": false
                                     }
                                 ]
@@ -1186,6 +1186,22 @@
                                 "leftIndex": 0,
                                 "rightIndex": 0,
                                 "portIndex": 10,
+                                "nets": [
+                                    {
+                                        "name": "top_level_block_design_i/system_ila_1/inst/net_slot_0_axis_tready",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe11",
+                                "id": 11,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 11,
                                 "nets": [
                                     {
                                         "name": "top_level_block_design_i/system_ila_1/inst/net_slot_0_axis_tlast",
@@ -1203,14 +1219,23 @@
                                     {
                                         "logical_port": "TDATA",
                                         "physical_pin": {
-                                            "id": 7,
-                                            "name": "probe7",
+                                            "id": 8,
+                                            "name": "probe8",
                                             "leftBit": 0,
                                             "width": 256
                                         }
                                     },
                                     {
                                         "logical_port": "TLAST",
+                                        "physical_pin": {
+                                            "id": 11,
+                                            "name": "probe11",
+                                            "leftBit": 0,
+                                            "width": 1
+                                        }
+                                    },
+                                    {
+                                        "logical_port": "TREADY",
                                         "physical_pin": {
                                             "id": 10,
                                             "name": "probe10",
@@ -1219,19 +1244,10 @@
                                         }
                                     },
                                     {
-                                        "logical_port": "TREADY",
+                                        "logical_port": "TVALID",
                                         "physical_pin": {
                                             "id": 9,
                                             "name": "probe9",
-                                            "leftBit": 0,
-                                            "width": 1
-                                        }
-                                    },
-                                    {
-                                        "logical_port": "TVALID",
-                                        "physical_pin": {
-                                            "id": 8,
-                                            "name": "probe8",
                                             "leftBit": 0,
                                             "width": 1
                                         }
@@ -1346,6 +1362,22 @@
                                         "physical_pin": {
                                             "id": 6,
                                             "name": "probe6",
+                                            "leftBit": 0,
+                                            "width": 1
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe7",
+                                "connectedBus": "pulse_gen_0_busy",
+                                "protocol": "PROBE",
+                                "port_maps": [
+                                    {
+                                        "logical_port": "probe7",
+                                        "physical_pin": {
+                                            "id": 7,
+                                            "name": "probe7",
                                             "leftBit": 0,
                                             "width": 1
                                         }

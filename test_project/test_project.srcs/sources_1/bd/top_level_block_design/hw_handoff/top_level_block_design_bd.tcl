@@ -187,7 +187,10 @@ proc create_root_design { parentCell } {
   # Create instance: axi_gpio_0, and set properties
   set axi_gpio_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0 ]
   set_property -dict [ list \
+   CONFIG.C_ALL_INPUTS_2 {1} \
    CONFIG.C_ALL_OUTPUTS {1} \
+   CONFIG.C_GPIO2_WIDTH {1} \
+   CONFIG.C_IS_DUAL {1} \
  ] $axi_gpio_0
 
   # Create instance: clk_wiz_0, and set properties
@@ -270,11 +273,11 @@ proc create_root_design { parentCell } {
   # Create instance: system_ila_1, and set properties
   set system_ila_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_1 ]
   set_property -dict [ list \
-   CONFIG.C_BRAM_CNT {4} \
+   CONFIG.C_BRAM_CNT {59.5} \
    CONFIG.C_DATA_DEPTH {8192} \
    CONFIG.C_MON_TYPE {MIX} \
    CONFIG.C_NUM_MONITOR_SLOTS {1} \
-   CONFIG.C_NUM_OF_PROBES {7} \
+   CONFIG.C_NUM_OF_PROBES {8} \
    CONFIG.C_PROBE0_TYPE {0} \
    CONFIG.C_PROBE1_TYPE {0} \
    CONFIG.C_PROBE3_TYPE {0} \
@@ -1036,6 +1039,8 @@ connect_bd_intf_net -intf_net [get_bd_intf_nets pulse_gen_0_m_axis] [get_bd_intf
   connect_bd_net -net pulse_fifo_empty [get_bd_pins pulse_fifo/empty] [get_bd_pins pulse_gen_0/pulse_fifo_empty] [get_bd_pins system_ila_1/probe6]
   set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets pulse_fifo_empty]
   connect_bd_net -net pulse_fifo_full [get_bd_pins gpio_to_fifo_0/pulse_fifo_full] [get_bd_pins pulse_fifo/full]
+  connect_bd_net -net pulse_gen_0_busy [get_bd_pins axi_gpio_0/gpio2_io_i] [get_bd_pins pulse_gen_0/busy] [get_bd_pins system_ila_1/probe7]
+  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets pulse_gen_0_busy]
   connect_bd_net -net pulse_gen_0_fifo_read [get_bd_pins instr_fifo/rd_en] [get_bd_pins pulse_gen_0/instr_fifo_read] [get_bd_pins system_ila_1/probe1]
   set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets pulse_gen_0_fifo_read]
   connect_bd_net -net pulse_gen_0_pulse_fifo_read [get_bd_pins pulse_fifo/rd_en] [get_bd_pins pulse_gen_0/pulse_fifo_read] [get_bd_pins system_ila_1/probe4]

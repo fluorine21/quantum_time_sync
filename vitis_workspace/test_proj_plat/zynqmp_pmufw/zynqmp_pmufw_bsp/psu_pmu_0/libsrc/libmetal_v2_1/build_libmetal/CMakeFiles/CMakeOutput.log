@@ -3,32 +3,32 @@ The host system is: Windows - 6.2 - AMD64
 Determining if files xintc.h exist passed with the following output:
 Change Dir: C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/libmetal_v2_1/build_libmetal/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/Xilinx/Vitis/2020.1/gnuwin/bin/make.exe" "cmTC_91a8e/fast"
-C:/Xilinx/Vitis/2020.1/gnuwin/bin/make.exe -f CMakeFiles/cmTC_91a8e.dir/build.make CMakeFiles/cmTC_91a8e.dir/build
+Run Build Command:"C:/Xilinx/Vitis/2020.1/gnuwin/bin/make.exe" "cmTC_e5657/fast"
+C:/Xilinx/Vitis/2020.1/gnuwin/bin/make.exe -f CMakeFiles/cmTC_e5657.dir/build.make CMakeFiles/cmTC_e5657.dir/build
 make.exe[1]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/libmetal_v2_1/build_libmetal/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_91a8e.dir/CheckIncludeFiles.c.obj
-C:/Xilinx/Vitis/2020.1/gnu/microblaze/nt/bin/mb-gcc.exe   -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2  -mlittle-endian -g -ffunction-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects -IC:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/include    -o CMakeFiles/cmTC_91a8e.dir/CheckIncludeFiles.c.obj   -c C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/libmetal_v2_1/build_libmetal/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Building C object CMakeFiles/cmTC_e5657.dir/CheckIncludeFiles.c.obj
+C:/Xilinx/Vitis/2020.1/gnu/microblaze/nt/bin/mb-gcc.exe   -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2  -mlittle-endian -g -ffunction-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects -IC:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/include    -o CMakeFiles/cmTC_e5657.dir/CheckIncludeFiles.c.obj   -c C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/libmetal_v2_1/build_libmetal/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
 C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/libmetal_v2_1/build_libmetal/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:2:10: fatal error: xintc.h: No such file or directory
     2 | #include <xintc.h>
       |          ^~~~~~~~~
 compilation terminated.
-Linking C executable cmTC_91a8e
-C:/Xilinx/Vitis/2020.1/gnu/microblaze/nt/bin/mb-gcc.exe   -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2  -mlittle-endian -g -ffunction-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects -IC:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/include     "CMakeFiles/cmTC_91a8e.dir/CheckIncludeFiles.c.obj"   -o cmTC_91a8e  
-microblaze-xilinx-elf-gcc.exe: error: CMakeFiles/cmTC_91a8e.dir/CheckIncludeFiles.c.obj: No such file or directory
+Linking C executable cmTC_e5657
+C:/Xilinx/Vitis/2020.1/gnu/microblaze/nt/bin/mb-gcc.exe   -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2  -mlittle-endian -g -ffunction-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects -IC:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/include     "CMakeFiles/cmTC_e5657.dir/CheckIncludeFiles.c.obj"   -o cmTC_e5657  
+microblaze-xilinx-elf-gcc.exe: error: CMakeFiles/cmTC_e5657.dir/CheckIncludeFiles.c.obj: No such file or directory
 make.exe[1]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/libmetal_v2_1/build_libmetal/CMakeFiles/CMakeTmp'
 
 
 Determining if files stdatomic.h exist passed with the following output:
 Change Dir: C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/libmetal_v2_1/build_libmetal/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/Xilinx/Vitis/2020.1/gnuwin/bin/make.exe" "cmTC_6fba7/fast"
-C:/Xilinx/Vitis/2020.1/gnuwin/bin/make.exe -f CMakeFiles/cmTC_6fba7.dir/build.make CMakeFiles/cmTC_6fba7.dir/build
+Run Build Command:"C:/Xilinx/Vitis/2020.1/gnuwin/bin/make.exe" "cmTC_a2a5b/fast"
+C:/Xilinx/Vitis/2020.1/gnuwin/bin/make.exe -f CMakeFiles/cmTC_a2a5b.dir/build.make CMakeFiles/cmTC_a2a5b.dir/build
 make.exe[1]: Entering directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/libmetal_v2_1/build_libmetal/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_6fba7.dir/CheckIncludeFiles.c.obj
-C:/Xilinx/Vitis/2020.1/gnu/microblaze/nt/bin/mb-gcc.exe   -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2  -mlittle-endian -g -ffunction-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects -IC:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/include -c   -o CMakeFiles/cmTC_6fba7.dir/CheckIncludeFiles.c.obj   -c C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/libmetal_v2_1/build_libmetal/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
-Linking C executable cmTC_6fba7
-C:/Xilinx/Vitis/2020.1/gnu/microblaze/nt/bin/mb-gcc.exe   -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2  -mlittle-endian -g -ffunction-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects -IC:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/include -c    "CMakeFiles/cmTC_6fba7.dir/CheckIncludeFiles.c.obj"   -o cmTC_6fba7  
-microblaze-xilinx-elf-gcc.exe: warning: CMakeFiles/cmTC_6fba7.dir/CheckIncludeFiles.c.obj: linker input file unused because linking not done
+Building C object CMakeFiles/cmTC_a2a5b.dir/CheckIncludeFiles.c.obj
+C:/Xilinx/Vitis/2020.1/gnu/microblaze/nt/bin/mb-gcc.exe   -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2  -mlittle-endian -g -ffunction-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects -IC:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/include -c   -o CMakeFiles/cmTC_a2a5b.dir/CheckIncludeFiles.c.obj   -c C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/libmetal_v2_1/build_libmetal/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTC_a2a5b
+C:/Xilinx/Vitis/2020.1/gnu/microblaze/nt/bin/mb-gcc.exe   -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mxl-soft-mul -mcpu=v9.2  -mlittle-endian -g -ffunction-sections -fdata-sections -Wall -Wextra -Os -flto -ffat-lto-objects -IC:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/include -c    "CMakeFiles/cmTC_a2a5b.dir/CheckIncludeFiles.c.obj"   -o cmTC_a2a5b  
+microblaze-xilinx-elf-gcc.exe: warning: CMakeFiles/cmTC_a2a5b.dir/CheckIncludeFiles.c.obj: linker input file unused because linking not done
 make.exe[1]: Leaving directory 'C:/James/vitis_workspace/test_proj_plat/zynqmp_pmufw/zynqmp_pmufw_bsp/psu_pmu_0/libsrc/libmetal_v2_1/build_libmetal/CMakeFiles/CMakeTmp'
 
 

@@ -66,7 +66,8 @@ module top_level_block_design_pulse_gen_0_0 (
   m_axis_tdata,
   m_axis_tvalid,
   m_axis_tready,
-  state_out
+  state_out,
+  busy
 );
 
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_BUSIF m_axis, ASSOCIATED_RESET rst, FREQ_HZ 250000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN top_level_block_design_usp_rf_data_converter_0_0_clk_dac1, INSERT_VIP 0" *)
@@ -89,6 +90,7 @@ output wire m_axis_tvalid;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TREADY" *)
 input wire m_axis_tready;
 output wire [7 : 0] state_out;
+output wire busy;
 
   pulse_gen inst (
     .clk(clk),
@@ -102,6 +104,7 @@ output wire [7 : 0] state_out;
     .m_axis_tdata(m_axis_tdata),
     .m_axis_tvalid(m_axis_tvalid),
     .m_axis_tready(m_axis_tready),
-    .state_out(state_out)
+    .state_out(state_out),
+    .busy(busy)
   );
 endmodule
