@@ -65,6 +65,9 @@ period = 280000 #in ps
 num_sync_pulse = 200
 num_dead_pulse = 20
 
+pulse_len = 16
+pulse_amp = 0x7FFF
+
 
 file = open(logfile,'a')
 file.write(datetime.datetime.now().strftime("\n================\n%I:%M%p on %B %d, %Y\n"))
@@ -110,7 +113,7 @@ else:
                     sent_str += str(i) + ", "
                 #print(sent_str)
                 
-                res = ts.send_stream(test_stream, num_sync_pulse, num_dead_pulse)
+                res = ts.send_stream(test_stream, num_sync_pulse, num_dead_pulse, pulse_len, pulse_amp)
                 if(res == -1):
                     print("Stream transmission failed, exiting")
                     print(sent_str)
@@ -125,49 +128,13 @@ else:
                     
                 res_str = "Got: "
                 for i in res:
-                    res_str += str(i) + ", "
+                    if(i < 100):
+                        res_str += str(i) + ", "
+                    else:
+                        res_str += ".,"
                 print(sent_str)
-                #print(res_str)
-                
-                # succ = 1
-                # ers = 0
-                # num_bad_range = 0
-                # num_no_photon = 0
-                # num_neg_offset = 0
-                # if(len(test_stream) == len(res)):
-                #     for i in range(0, len(test_stream)):
-                        
-                        
-                            
-                #         if(res[i] == time_sync.FAIL_TIMESTAMP_BAD_RANGE):
-                #             succ = 0
-                #             ers += 1
-                #             num_bad_range += 1
-                #         elif(res[i] == time_sync.FAIL_TIMESTAMP_NO_PHOTON):
-                #             succ = 0
-                #             ers += 1
-                #             num_no_photon += 1
-                            
-                #         elif(res[i] == time_sync.FAIL_TIMESTAMP_NEG_OFFSET):
-                #             succ = 0
-                #             ers += 1
-                #             num_neg_offset += 1
-                #         elif(test_stream[i] != res[i]):
-                #             succ = 0
-                #             ers += 1
-                            
-                            
-                # else:
-                #     succ = 0
-                #     ers = len(res) - len(test_stream)
-                        
-                # if(succ):
-                #     print("Stream decoded successfully by Bob!")
-                # else:
-                #     print("Bob did not correctly decode stream, " + str(ers) + " errors")
-                #     print("num_no_photon" + str(num_no_photon) + ", num_bad_range" + str(num_bad_range) +  ", num_neg_offset" + str(num_neg_offset))
-                    
-                    
+                print(res_str)
+
                 errs = len(test_stream) - james_utils.check_results(test_stream, res)
                 
                 print("Errors: " + str(errs))

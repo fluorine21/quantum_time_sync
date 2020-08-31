@@ -994,7 +994,7 @@ class time_sync:
     
     #Returns -1 on fail
     #Returns bob's decoded values on success
-    def send_stream(self, vals, num_sync_pulse, num_dead_pulse):
+    def send_stream(self, vals, num_sync_pulse, num_dead_pulse, pulse_len, pulse_amp):
         
         if(self.mode != CLIENT):
             print("Error, send_encoded_photon must be called in client mode")
@@ -1009,8 +1009,8 @@ class time_sync:
             return -1
         
         self.board.clear_queue()
-        self.board.set_pulse_len(16)
-        self.board.set_amplitude(0x8000)
+        self.board.set_pulse_len(pulse_len)
+        self.board.set_amplitude(pulse_amp)
         
         
         
@@ -1124,7 +1124,7 @@ class time_sync:
         print("Expected " + str(num_pulses) + ", got " + str(len(pulse_list)) + " pulses")
         
         #decoded_vals = self.analyze_pulse_list(pulse_list, num_pulses, num_sync_pulses, num_dead_pulses)
-        decoded_vals = james_utils.decode_pulse_list(pulse_list, self.period, self.bin_number, self.bin_size)
+        decoded_vals = james_utils.decode_pulse_list(pulse_list, self.period, self.bin_number, self.bin_size, num_sync_pulses)
         
         print("Done decoding")
         

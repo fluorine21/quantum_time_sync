@@ -24,7 +24,7 @@ else:
 #Set the period to something reasonable
 pg.set_period(200)   
 #pg.set_amplitude(0x1FFF)
-pg.set_amplitude(0x8000)  
+pg.set_amplitude(0x7FFF)  
 pg.set_pulse_len(16)
 
 

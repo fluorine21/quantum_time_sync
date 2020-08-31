@@ -9,6 +9,7 @@ Created on Thu Jul 16 14:44:28 2020
 import socket
 import random
 import math as Math
+import matplotlib as plt
 
 #Constants for Alice and Bob
 ALICE_PORT = "COM4"
@@ -180,7 +181,7 @@ def check_results(sent, recv):
 
 #pulses must be a sorted list
     #expected encoded pulses is the number of these we expect to  find
-def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_size, expected_num_sync_pulses):
+def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_size, expected_num_sync_pulses, missing_timestamp_limit = 100):
     
     
     print("Starting decode")
@@ -219,12 +220,12 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
     #Find the first difference between two pulses which is close to the period
     for i in range(0, len(pulses)-1):
         diff = pulses[i+1] - pulses[i]
-        tol = (diff - expected_period)/expected_period
+        tol = abs((diff - expected_period))/expected_period
         if(tol < PERIOD_THRESHOLD):
             first_sync_pulse_index = i
             break
         
-    end_of_sync_pulses_timestamp = pulses[i] + (expected_period * (expected_num_sync_pulses + 3))
+    end_of_sync_pulses_timestamp = pulses[first_sync_pulse_index] + (expected_period * (expected_num_sync_pulses + 3))
     
     first_encoded_pulse_pos = 0
     for i in range(0, len(pulses)):
@@ -325,14 +326,18 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
     
     bin_start_timestamps = [last_valid_sync_pulse]
     
+    
+    missing_count = 0
     #While we haven't run out of pulses to decode and we haven't decoded more than the expected number
     #while(last_valid_sync_pulse < max(encoded_pulses) and encoded_pulse_index < expected_encoded_pulses):
+    
     while(last_valid_sync_pulse < max(encoded_pulses)):  
         #Take care of empty bin sets here
-        while(encoded_pulses[encoded_pulse_index] - last_valid_sync_pulse > measured_period):
+        while(encoded_pulses[encoded_pulse_index] - last_valid_sync_pulse > measured_period and missing_count < missing_timestamp_limit):
             last_valid_sync_pulse += measured_period
             bin_start_timestamps.append(last_valid_sync_pulse)
             decoded_vals.append(FAIL_TIMESTAMP_NO_PHOTON)
+            missing_count += 1
         
         
         #We always assume the first pulse here is valid
@@ -352,6 +357,7 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
             #while the next pulse is before last_valid_sync_pulse and there is a next pulse
             while(encoded_pulse_index + 1 < len(encoded_pulses) and encoded_pulses[encoded_pulse_index] < last_valid_sync_pulse):
                 encoded_pulse_index += 1
+                
         
         #otherwise we're done
         else:
@@ -406,9 +412,6 @@ def generate_pulse_list(period, num_sync, num_dead, num_bins, bin_size, vals, lo
     pulse_list_final.sort()
     
     return pulse_list_final
-
-
-
 
 
 
