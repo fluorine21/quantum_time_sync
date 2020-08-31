@@ -47,6 +47,8 @@ DUMMY_CHANNEL_NUM = 104
 SOCKET_TIMEOUT = -1
 SOCKET_DEAD = -2
 
+SOCKET_WAIT_TIME = 0.000000000001
+
 #Record object for getting pulses out of the TDC
 class pulse_record:
     
@@ -169,7 +171,7 @@ class tdc_wrapper:
         sck = socket.socket()
         sck.settimeout(TIMEOUT_LONG)
         sck.connect((self.server_ip, self.port))
-        time.sleep(0.1)
+        time.sleep(SOCKET_WAIT_TIME)
         
         #Send the GET_AND_CLEAR command
         sck.send(bytearray([COMMAND_GET_BUSY]))
@@ -332,7 +334,7 @@ class tdc_wrapper:
         sck = socket.socket()
         sck.settimeout(TIMEOUT_LONG)
         sck.connect((self.server_ip, self.port))
-        time.sleep(0.1)
+        time.sleep(SOCKET_WAIT_TIME)
         
         time_now = time.time()
         ret_val = 0
@@ -360,7 +362,7 @@ class tdc_wrapper:
         sck = socket.socket()
         sck.settimeout(TIMEOUT_LONG)
         sck.connect((self.server_ip, self.port))
-        time.sleep(0.1)
+        time.sleep(SOCKET_WAIT_TIME)
         
         channel_byte = channel_num & 0xff
         #Send the GET_AND_CLEAR command
@@ -396,7 +398,7 @@ class tdc_wrapper:
         sck = socket.socket()
         sck.settimeout(TIMEOUT_LONG)
         sck.connect((self.server_ip, self.port))
-        time.sleep(0.1)
+        time.sleep(SOCKET_WAIT_TIME)
     
         if(choice):
             sck.send(bytearray([COMMAND_RECORD_PULSES]))
@@ -420,7 +422,7 @@ class tdc_wrapper:
             sck = socket.socket()
             sck.settimeout(TIMEOUT_LONG)
             sck.connect((self.server_ip, self.port))
-            time.sleep(0.1)
+            time.sleep(SOCKET_WAIT_TIME)
             
             #Send the GET_AND_CLEAR command
             sck.send(bytearray([COMMAND_CLEAR_ALL]))
@@ -448,7 +450,7 @@ class tdc_wrapper:
         sck = socket.socket()
         sck.settimeout(TIMEOUT_LONG)
         sck.connect((self.server_ip, self.port))
-        time.sleep(0.1)
+        time.sleep(SOCKET_WAIT_TIME)
         channel_byte = channel_num & 0xFF
         #Send the GET_AND_CLEAR command
         sck.send(bytearray([COMMAND_DUMP_ALL, channel_byte]))
@@ -609,7 +611,7 @@ class tdc_wrapper:
     #This function handles a client connected at socket C   
     def handle_client(self, c, ip_str):
         
-        time.sleep(0.1)
+        time.sleep(SOCKET_WAIT_TIME)
         
         while(not self.shutdown_flag):
             #Receive one command byte from the client

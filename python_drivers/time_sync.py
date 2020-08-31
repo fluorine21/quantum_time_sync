@@ -1057,7 +1057,8 @@ class time_sync:
         print("Waiting for TDC to finish...")
         #while(self.tdc.is_busy()):
         #    a = 1
-        time.sleep(0.001)
+        while(self.board.get_busy()):
+            a = 1
         self.tdc.set_record(0)
         
         print("Sending timing info to Bob")
