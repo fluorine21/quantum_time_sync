@@ -8,15 +8,20 @@ Created on Tue Jul 21 11:38:33 2020
 import QuTAG
 
 
+threshold_voltage = 0.1 #100mV
+
 device = QuTAG.QuTAG()
 device.enableChannels((1,2,3,4))
-device.setSignalConditioning(1, 3, 1, 0.00)
-device.setSignalConditioning(2, 3, 1, 0.00)
-device.setSignalConditioning(3, 3, 1, 0.00)
-device.setSignalConditioning(4, 3, 1, 0.00)
+#Set threshold voltage on all channels
+device.setSignalConditioning(1, 3, 1, threshold_voltage)
+device.setSignalConditioning(2, 3, 1, threshold_voltage)
+device.setSignalConditioning(3, 3, 1, threshold_voltage)
+device.setSignalConditioning(4, 3, 1, threshold_voltage)
 
 print("Searching for timestamp on all channels")
 
+
+timestamp_list = []
 
 while(1):
 #Check the data loss
@@ -39,6 +44,7 @@ while(1):
             #If we find a timestamp of this channel
             if(t_s[1][i] != 104):
                 ret_val = t_s[0][i]
+                timestamp_list.append(ret_val)
                 print("Timestamp found for channel #" + str(t_s[1][i]) + ", timestamp was: " + str(ret_val))
                 
                 
@@ -46,10 +52,10 @@ while(1):
 
          print("TDC interrupted by user, exiting...")
          break
-           
-            
 
 
 
-device.deInitialize()           
+device.deInitialize()  
+
+print("Timestamp list was: " + str(timestamp_list))         
             

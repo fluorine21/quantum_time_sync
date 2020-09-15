@@ -37,9 +37,10 @@ def log_to_file(test_num, test_series_num, stream_len, succ, num_errors, num_no_
     
     return
 
-server_ip = "192.168.56.1"
-tdc = tdc_wrapper.tdc_wrapper(3,0,tdc_wrapper.MODE_CLIENT,"192.168.56.1")
-ts = time_sync.time_sync(james_utils.ALICE_PORT, server_ip, time_sync.CLIENT, tdc)
+bob_ip = "192.168.56.1"
+tdc_ip = "192.168.56.1"
+tdc = tdc_wrapper.tdc_wrapper(3,0,tdc_wrapper.MODE_CLIENT,bob_ip)
+ts = time_sync.time_sync(james_utils.ALICE_PORT, bob_ip, time_sync.CLIENT, tdc)
 
 
 

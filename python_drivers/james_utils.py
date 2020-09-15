@@ -28,7 +28,7 @@ SYNC_PERIOD_THRESHOLD = 0.01#Tighter for determining which sync pulses are valid
 
 LOG_TO_FILE = 0
 logfile = "received_pulse_streams_cw_light.txt"
-
+INFER_TICK = 0 #If 1, next tick will be inferred from decoded value
 
 #Timestamps denoting decode failiure
 FAIL_TIMESTAMP_NO_PHOTON = 99999999999999
