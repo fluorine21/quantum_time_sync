@@ -146,7 +146,7 @@ else:
                 
                 count += 1
                 print("Waiting 3 seconds...")
-                #time.sleep(3)
+                time.sleep(3)
                 
                 exit_test = 1
                 

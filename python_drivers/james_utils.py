@@ -15,6 +15,7 @@ import matplotlib as plt
 ALICE_PORT = "COM4"
 BOB_PORT = "COM9"
 
+#Channel definitions for Alice and Bob, can all be set to a single channel if you're just doing key transmission
 ALICE_CHANNEL_SEND = 2
 ALICE_CHANNEL_RECEIVE = 2
 BOB_CHANNEL_SEND = 2
@@ -22,13 +23,13 @@ BOB_CHANNEL_RECEIVE = 2
 
 TDC_THRESHOLD = 0.1 #100mV for SNSPDs
 
-PERIOD_THRESHOLD = 0.1
+PERIOD_THRESHOLD = 0.1 #If the measured and expected periods differ by more than this fracion then decode fails
 SYNC_PERIOD_THRESHOLD = 0.01#Tighter for determining which sync pulses are valid
 
 
 LOG_TO_FILE = 0
 logfile = "received_pulse_streams_cw_light.txt"
-INFER_TICK = 0 #If 1, next tick will be inferred from decoded value
+INFER_TICK = 0 #If 1, next tick will be inferred from decoded value, do not use
 
 #Timestamps denoting decode failiure
 FAIL_TIMESTAMP_NO_PHOTON = 99999999999999
@@ -47,8 +48,7 @@ def timestamps_to_bytes(list_of_timestamps):
         byte_array += list(res)
     return byte_array
             
-            
-            
+#Converts a list of bytes into a list of timestamps, 20 bytes per timestamp
 def bytes_to_timestamps(byte_array):
     
     #byte_array = list(b_a)
@@ -68,6 +68,7 @@ def bytes_to_timestamps(byte_array):
     
 
 #Returns -1 on fail
+#Should only be called internally
 def receive_timestamp(sck):
     #Receive and reconstruct the whole number
     res = receive_bytes(sck, TIMESTAMP_BYTE_LEN)
@@ -76,12 +77,15 @@ def receive_timestamp(sck):
         return -1
     return int.from_bytes(res, byteorder='big', signed = False)
 
+#Sends a timestamp
+#Should only be called internally
 def send_timestamp(sck, ts):        
     ts_bs = int(ts).to_bytes(TIMESTAMP_BYTE_LEN, byteorder='big', signed = False)        
     #Then send the number itself
     sck.send(ts_bs)        
     return
 
+#Receives a user-defined number of bytes from an open socket c
 #Returns bytestream on success
 #Returns -1 on timeout
 #Returns -2 on dead socket
@@ -119,12 +123,13 @@ def receive_bytes(c, num_bytes):
             #print("Unknown error occured while waiting for bytes")
             #return -3
         
+#Used for randomly deleting pulses in dummy pulse list generation for algorithm testing
 def random_percent(percent=50):
     if(percent == 0):
         return 0
     return random.randrange(100) < percent   
         
-
+#Record for keeping track of suspected synchronization pulses
 class sync_pulse:
     
     val = 0 #timestamp value
@@ -134,6 +139,7 @@ class sync_pulse:
         self.val = v
         self.diffs = []
     
+#Converts a value to be encoded to a coarse and fine offset used by the FPGA
 def val_to_coarse_fine(self, val):
     
     offset = self.val_to_offset(val)
@@ -141,10 +147,12 @@ def val_to_coarse_fine(self, val):
     f = Math.floor((offset/250)%16)
     return c,f
 
+#Converts a value to an offset in picoseconds
 def val_to_offset(self, val):
     
     return (val * self.bin_size) + (0.5 * self.bin_size)
 
+#Converts an offset value from the last bin start in picoseconds to the encoded value
 def offset_to_val(offset, bin_number, bin_size):
     
     if(offset > bin_number * bin_size):
@@ -154,7 +162,8 @@ def offset_to_val(offset, bin_number, bin_size):
     val = Math.floor(offset/bin_size)
     return val  
 
-
+#Checks two keys against eachother and returns number of succesfully transmittred values
+#Tries all permutations of key allignment and returns the best result
 def check_results(sent, recv):
     
     correct = 0
@@ -179,8 +188,9 @@ def check_results(sent, recv):
     return correct 
             
 
-#pulses must be a sorted list
-    #expected encoded pulses is the number of these we expect to  find
+#Decodes a list of pulses sourced from the TDC
+#expected encoded pulses is the number of these we expect to  find
+#All units in picoseconds
 def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_size, expected_num_sync_pulses, missing_timestamp_limit = 100):
     
     
@@ -367,6 +377,7 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
 
 
 
+#Generates a dummy list of pulses used to test the decode algorithm
 #period in ps
 #loss rate between 0 and 100
 #num dark counts is number of dark coutns to inject

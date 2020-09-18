@@ -158,6 +158,8 @@ class time_sync:
         
         return
     
+    #Sets up the secure socket for client and server modes
+    #Should only be called from inside this object, not by user
     def init_socket(self):
         
         if(SECURE_MODE):
@@ -197,6 +199,8 @@ class time_sync:
             
         return
     
+    #Connects Alice to Bob
+    #Should only be called from inside this object, not by user
     def connect_to_server(self):
         
         if(self.mode != CLIENT):
@@ -226,6 +230,8 @@ class time_sync:
                     print("Warning, socket is NOT SECURE!")
             return 0
         
+    #Disconnects Alice from Bob
+    #Should only be called from inside this object, not by user
     def disconnect_from_server(self):
     
         if(self.mode != CLIENT):
@@ -249,6 +255,7 @@ class time_sync:
         
     #Returns socket object on successful connection
     #Returns 0 otherwise
+    #Should only be called from inside this object, not by user
     def wait_connection(self, sck):
         
         if(self.mode == CLIENT):
@@ -285,6 +292,8 @@ class time_sync:
                 
         return 0 
     
+    #Checks if the SSL key exists and generates a new one if it does not
+    #Should only be called from inside this object, not by user
     def check_key(self):
         #If the key already exists
         if(os.path.exists(key_path) and os.path.exists(pem_path)):
@@ -296,7 +305,8 @@ class time_sync:
         
         return
         
-        
+    #Checks the connection between Alice and Bob
+    #Should only be called from inside this object, not by user
     def ping_server(self):
         
         if(self.mode != CLIENT):
@@ -321,7 +331,7 @@ class time_sync:
             
     #Starts the server's command handler
     #Returns 0 on success
-    #must be called in server mode
+    #must be called in server mode, should not be called by user
     def start_server(self):
         
         if(self.mode == CLIENT):
@@ -368,6 +378,7 @@ class time_sync:
         
     #Server side command handler, handles incomming commands from client
     #Returns 0 on server exit
+    #Should not be called by user
     def server_handle_command(self, sck):
         
         #If the shutdown flag is active:
@@ -471,6 +482,7 @@ class time_sync:
     #CLIENT SIDE SYNC PROCEDURE
     #Returns the time difference between server and client in picoseconds
     #Returns -1 on error
+    #This function can be called by the user to do an absolute time synchronization
     def start_client_sync(self):
         
         self.connect_to_server()
@@ -499,17 +511,20 @@ class time_sync:
         
     
     
+    #Checks the connection to the FPGA
     #returns 0 on success
     def check_board(self):
         return self.board.ping_board()
     
     #Waits to receive an ACK from the server
     #Returns 0 on success
+    #Should not be called by user
     def wait_ack(self, sck):
         ack_res = james_utils.receive_bytes(self.s, 1)
         return self.check_ack(ack_res)
     
     #returns 0 on success
+    #Should not be called by user
     def check_ack(self, ack_res):
          if(isinstance(ack_res, int)):
             print("Timed out waiting for ACK")
@@ -523,6 +538,8 @@ class time_sync:
     
     
     #Returns 0 on success
+    #Internal function for absolute time synchronization
+    #Should not be called by user
     def do_sync(self, sck):
         
         ret_val = 0
@@ -586,6 +603,8 @@ class time_sync:
         return ret_val
 
     #Returns 0 on success
+    #Sends a pulse from Alice to Bob, used for absolute sync
+    #Should not be called by user
     def pulse_alice_to_bob(self, sck):
         
         ret_val = 0
@@ -641,6 +660,8 @@ class time_sync:
         return ret_val
     
     #Returns 0 on success
+    #Sends a pulse from Bob to Alice, used for abolute time sync
+    #Should not be called by user
     def pulse_bob_to_alice(self, sck):
         
         ret_val = 0
@@ -698,6 +719,7 @@ class time_sync:
         return ret_val
     
     #Returns 0 if connection is active
+    #Should only be called by object, not by user
     def is_socket_alive(self, sock):
         
         if(SECURE_MODE):
@@ -745,16 +767,19 @@ class time_sync:
             return retval
     
     
-    
+    #Calculates path length based on arrival times
+        #Should only be called by object
     def calc_path_len(self):
         self.path_len = ((self.t_a_r - self.t_a_s) - (self.t_b_s - self.t_b_r)) / 2
     
-    
+    #Calculates time difference based on arrival times
+    #Should only be called by object
     def calc_time_diff(self):
         self.time_diff = (self.t_b_r + self.t_b_s - self.t_a_r - self.t_a_s) / 2
         
     
     #Helper function to allow bob to quit via console
+    #Should only be called by object
     def user_quit(self, arg1):
         
         #return
@@ -768,13 +793,17 @@ class time_sync:
     #Phase Measurement Routines for Relative Time Synchronization#
     ##############################################################
     
+    #Sets the protocol parameters for transmitting keys
+    #Should be called by user before doing key transmission
     def set_protocol(self, bin_size, bin_number, period):
         rv = self.set_bin_size(bin_size)
         rv += self.set_bin_number(bin_number)
         rv += self.set_period(period)
         return
     
+    #Sets bin size for both Alice and Bob
     #Returns 0 on success, val in picoseconds
+    #Should only be called by object
     def set_bin_size(self, val):
         
         if(val < 250 or val % 250 != 0):
@@ -797,6 +826,9 @@ class time_sync:
         self.disconnect_from_server()
         return 0
     
+    #Sets bin number for both Alice and Bob
+    #Returns 0 on success
+    #Should only be called by object
     def set_bin_number(self, num):
         
         if(not Math.log2(num).is_integer()):
@@ -818,6 +850,8 @@ class time_sync:
         self.disconnect_from_server()
         return 0
         
+    #Sets period for both Alice and Bob
+    #Should only be called by object
     #Val should be in picoseconds, returns 0 on success
     def set_period(self, val):
         
@@ -831,6 +865,7 @@ class time_sync:
         self.period = val
         return 0
         
+    #Depreciated, do not use
     def relative_time_sync(self):
     
         #Must be called as alice
@@ -867,6 +902,7 @@ class time_sync:
                 
    
     #Bob's routine for synchronization
+    #Depreciated, do not use
     def bob_relative(self, socket):
         
         #wait until alice sends us an ack and then receive the pulses
@@ -913,7 +949,7 @@ class time_sync:
 
         return 0
     
-    
+    #Depreciated, do not use
     def send_encoded_photon(self, val):
         
         if(self.mode != CLIENT):
@@ -951,11 +987,7 @@ class time_sync:
         
         return res
     
-    
-        
-        
-        
-        
+    #Depreciated, do not use
     def receive_encoded_photon(self, sck):
         
         if(self.mode != SERVER):
@@ -992,6 +1024,8 @@ class time_sync:
         return encoded_photon(self.bin_size, self.bin_number, ts, final_val, 1)
     
     
+    #Sends a stream of encoded pulses from Alice to Bob
+    #Should be used by user to test encoded pulse transmission
     #Returns -1 on fail
     #Returns bob's decoded values on success
     def send_stream(self, vals, num_sync_pulse, num_dead_pulse, pulse_len, pulse_amp):
@@ -1095,6 +1129,8 @@ class time_sync:
         return bob_extracted_values
         
     
+    #Receives a stream at Bob's end and decodes it
+    #Should only be called by object, not by user
     def receive_stream(self, sck):
         
         #TDC fires on Alice's side here
@@ -1142,6 +1178,7 @@ class time_sync:
 
         return 0 #We're done       
     
+    #depreciated, do not use
     def val_to_coarse_fine(self, val):
         
         offset = self.val_to_offset(val)
@@ -1149,10 +1186,11 @@ class time_sync:
         f = Math.floor((offset/250)%16)
         return c,f
     
+    #Depreciated, do not use
     def val_to_offset(self, val):
         
         return (val * self.bin_size) + (0.5 * self.bin_size)
-    
+    #Depreciated, do not use
     def offset_to_val(self, offset):
         
         if(offset > self.bin_number * self.bin_size):
@@ -1162,6 +1200,7 @@ class time_sync:
         val = Math.floor(offset/self.bin_size)
         return val    
     
+    #Depreciated, do not use
     #-1 is did not detect, -2 is fell outsize allowable range
     def analyze_pulse_list(self, pulse_list, expected_num_pulses, num_sync_pulses, num_dead_pulses):
         
@@ -1298,8 +1337,7 @@ class time_sync:
         return decoded_vals
             
         
-
-
+#Does certificate generation for SSL socket
 def cert_gen(
     emailAddress="a@g.co",
     commonName="cn",

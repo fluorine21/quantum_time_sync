@@ -30,15 +30,15 @@ MODE_CLIENT = 1
 MODE_SERVER = 2
 
 #Commands the server will process
-COMMAND_PING = 0
+COMMAND_PING = 0 #Chekcs server connection
 COMMAND_GET_AND_CLEAR = 1 #Gets the latest timestamp for this channel and clears it from the list
-COMMAND_SHUTDOWN = 2
-COMMAND_CLOSE_CONNECTION = 3
-COMMAND_CLEAR_ALL = 4
-COMMAND_GET_BUSY = 5
-COMMAND_DUMP_ALL = 6
-COMMAND_RECORD_PULSES = 7
-COMMAND_STOP_RECORD = 8
+COMMAND_SHUTDOWN = 2 #Stops server
+COMMAND_CLOSE_CONNECTION = 3 #Closes connection between server and client
+COMMAND_CLEAR_ALL = 4 #Clears all recorded timestamps
+COMMAND_GET_BUSY = 5 #Checks if the server is busy offloading timestamps from TDC
+COMMAND_DUMP_ALL = 6 #Returns all timestamps from a given channel
+COMMAND_RECORD_PULSES = 7 #Starts recording pulses received by the TDC
+COMMAND_STOP_RECORD = 8 #Stops recording pulses received by the TDC
 
 #channel number for the 1ms pulse
 DUMMY_CHANNEL_NUM = 104
@@ -47,7 +47,7 @@ DUMMY_CHANNEL_NUM = 104
 SOCKET_TIMEOUT = -1
 SOCKET_DEAD = -2
 
-SOCKET_WAIT_TIME = 0.000000000001
+SOCKET_WAIT_TIME = 0.000000000001 #Should be super sort just to give socket enough time to start working
 
 #Record object for getting pulses out of the TDC
 class pulse_record:
@@ -116,6 +116,7 @@ class tdc_wrapper:
         
         self.shutdown()
         
+    #Shuts down the TDC worker threads
     def shutdown(self):
         
         #Shutdown the worker thread if we're in normal mode
@@ -133,6 +134,7 @@ class tdc_wrapper:
     ############################################################################
     #############The following functions may only be called by a client or in normal mode
     
+    #Checks if an external clock is connected to the TDC
     #Returns 1 if locked
     def check_tdc_clock(self):
         
@@ -147,7 +149,7 @@ class tdc_wrapper:
         return ret_val
         
         
-    
+    #Initializes the TDC device and sets the channel thresholds
     def init_device(self):
         
         #Open the TDC and start receiveing pulses
@@ -162,7 +164,7 @@ class tdc_wrapper:
         return
         
         
-    
+    #Used by TDC clients to check if the TDC is busy offloading pulses
     def is_busy(self):
         
         if(self.mode == MODE_NORMAL):
@@ -247,6 +249,7 @@ class tdc_wrapper:
         #Fail if we didn't find it
         return 0
     
+    #depreciated, do not use
     def start_record(self):
         
         #if(self.mode != MODE_NORMAL):
@@ -327,7 +330,7 @@ class tdc_wrapper:
         
     ################################################################################
     
-    
+    #Polls the TDC until a pulse is received for a given channel number
     def wait_pulse_client(self, channel_num):
         
 
@@ -353,7 +356,7 @@ class tdc_wrapper:
         return ret_val
         
     
-    
+    #Gets last or all timestamps for a given channel number
     def end_record_client(self, channel_num, get_all):
         
         if(get_all):
@@ -388,7 +391,8 @@ class tdc_wrapper:
         sck.close()
         return ret_val
     
-    
+    #Starts or stops timestamp recording
+    #choice = 0 will stop recording
     def set_record(self, choice):
         
         if(self.mode == MODE_NORMAL):
@@ -412,6 +416,7 @@ class tdc_wrapper:
         return ret_val
         
     
+    #Clears all timestamps recorded by the TDC
     def clear_all(self):
         
         print("Clearing tdc")
@@ -439,7 +444,7 @@ class tdc_wrapper:
             sck.close()
         return 0
     
-        
+    #Gets all recorded timestamps for a particular channel from the TDC
     def dump_all(self, channel_num):
         
         if(self.mode != MODE_CLIENT):
@@ -473,7 +478,7 @@ class tdc_wrapper:
         
     
     
-    
+    #Initializes the server and dispatches client and TDC service threads
     def server_init(self):
         
         print("Initializing TDC in SERVER mode")
@@ -552,6 +557,7 @@ class tdc_wrapper:
         sck.close()
         return
     
+    #Allows the TDC server to be stopped gracefully from console
     def user_quit(self, arg1):
         
         res = input()
@@ -603,9 +609,6 @@ class tdc_wrapper:
         self.device = 0
         
         return
-    
-
-        
         
     
     #This function handles a client connected at socket C   
