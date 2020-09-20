@@ -13,7 +13,7 @@ import tdc_wrapper
 import random 
 import datetime
 import james_utils
-logfile = "stream_test_results.txt"
+logfile = "stream_test_results_9_20.txt"
 
 def log_to_file(test_num, test_series_num, stream_len, succ, num_errors, num_no_photon, num_bad_range, num_neg_offset, sent_stream, received_stream):
     
@@ -64,7 +64,7 @@ bin_number = 16#can encode values between 0 and 15
 period = 280000 #in ps
 
 num_sync_pulse = 200
-num_dead_pulse = 20
+num_dead_pulse = 100
 
 pulse_len = 16
 pulse_amp = 0x7FFF
@@ -88,7 +88,7 @@ else:
     
     #2600
     #16300
-    for stream_len in range(1000, 20001, 200):
+    for stream_len in range(200, 20001, 200):
         
         if(exit_test):
                 break
@@ -105,8 +105,8 @@ else:
                 
                 test_stream = []
                 for i in range(0, stream_len):
-                    #test_stream.append(random.randint(0,bin_number - 1))
-                    test_stream.append(i%16)
+                    test_stream.append(random.randint(0,bin_number - 1))
+                    #test_stream.append(i%16)
                     
                     
                 sent_str = "Sending: "
@@ -148,7 +148,7 @@ else:
                 print("Waiting 3 seconds...")
                 time.sleep(3)
                 
-                exit_test = 1
+                #exit_test = 1
                 
             except KeyboardInterrupt:
                 print("Exiting")

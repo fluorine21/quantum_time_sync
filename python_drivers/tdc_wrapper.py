@@ -18,6 +18,9 @@ TIMEOUT_LONG = 15#For waiting on TDC to finish
 #Use secore mode?
 SECURE_MODE = 0
 
+#Print each pulse received?
+PRINT_PULSES = 1
+
 #Socket timeout in seconds
 SERVER_TIMEOUT = 2
 SERVER_ACK = b'\x66'
@@ -39,6 +42,7 @@ COMMAND_GET_BUSY = 5 #Checks if the server is busy offloading timestamps from TD
 COMMAND_DUMP_ALL = 6 #Returns all timestamps from a given channel
 COMMAND_RECORD_PULSES = 7 #Starts recording pulses received by the TDC
 COMMAND_STOP_RECORD = 8 #Stops recording pulses received by the TDC
+COMMAND_GET_NUM_PULSES = 9 #Gets the number of pulses the TDC server has recorded
 
 #channel number for the 1ms pulse
 DUMMY_CHANNEL_NUM = 104
@@ -154,7 +158,7 @@ class tdc_wrapper:
         
         #Open the TDC and start receiveing pulses
         self.device = QuTAG.QuTAG()
-        self.device.enableChannels((1,2,3,4))
+        self.device.enableChannels(james_utils.TDC_CHANNEL_LIST)
         thresh = james_utils.TDC_THRESHOLD
         self.device.setSignalConditioning(1, 3, 1, thresh)
         self.device.setSignalConditioning(2, 3, 1, thresh)
@@ -416,6 +420,24 @@ class tdc_wrapper:
         return ret_val
         
     
+    def get_num_pulses(self):
+        
+        sck = socket.socket()
+        sck.settimeout(TIMEOUT_LONG)
+        sck.connect((self.server_ip, self.port))
+        time.sleep(SOCKET_WAIT_TIME)
+
+        sck.send(bytearray([COMMAND_GET_NUM_PULSES]))
+
+        
+        ret_val = james_utils.receive_timestamp(sck)
+        #gracefully close the connection
+        sck.send(bytearray([COMMAND_CLOSE_CONNECTION]))
+        sck.close()
+        return ret_val
+        
+        
+    
     #Clears all timestamps recorded by the TDC
     def clear_all(self):
         
@@ -600,9 +622,11 @@ class tdc_wrapper:
                 
                 #If we find a timestamp that isn't the dummy channel
                 elif(t_s[1][i] != DUMMY_CHANNEL_NUM and self.record_pulses == 1):
+                #elif(t_s[1][i] != DUMMY_CHANNEL_NUM):
                     self.busy = 1
                     self.timestamp_list.append(pulse_record(t_s[1][i], t_s[0][i] - self.offset_timestamp))
-                    #print("[TDC SERVICE] Got pulse on channel #" + str(t_s[1][i]) + ", absolute = " + str(t_s[0][i]) + ", relative = " + str(t_s[0][i] - self.offset_timestamp))
+                    if(PRINT_PULSES):
+                        print("[TDC SERVICE] Got pulse on channel #" + str(t_s[1][i]) + ", absolute = " + str(t_s[0][i]) + ", relative = " + str(t_s[0][i] - self.offset_timestamp))
              
         #If we're here then the server shutdown command has been sent
         self.device.deInitialize()    
@@ -701,6 +725,9 @@ class tdc_wrapper:
                 self.record_pulses = 0
                 #c.send(SERVER_ACK)
                 james_utils.send_timestamp(c, 0)
+            elif(client_cmd[0] == COMMAND_GET_NUM_PULSES):
+                print("[CLIENT HANDLER] Client at " + ip_str + ": COMMAND_STOP_RECORD")
+                james_utils.send_timestamp(c, len(self.timestamp_list))
             
             else:
                 print("[CLIENT HANDLER] Unknown command received from client: " + hex(client_cmd[0]))

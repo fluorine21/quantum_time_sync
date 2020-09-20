@@ -1,0 +1,5 @@
+
+================
+05:52PM on September 20, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons

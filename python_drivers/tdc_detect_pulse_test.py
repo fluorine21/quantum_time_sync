@@ -8,10 +8,11 @@ Created on Tue Jul 21 11:38:33 2020
 import QuTAG
 
 
-threshold_voltage = 0.1 #100mV
+threshold_voltage = 0.0 #100mV
 
 device = QuTAG.QuTAG()
-device.enableChannels((1,2,3,4))
+#device.enableChannels((1,2,3,4))
+device.enableChannels((2,3,4))
 #Set threshold voltage on all channels
 device.setSignalConditioning(1, 3, 1, threshold_voltage)
 device.setSignalConditioning(2, 3, 1, threshold_voltage)

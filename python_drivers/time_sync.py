@@ -1087,12 +1087,20 @@ class time_sync:
         self.board.sync_and_stream(num_sync_pulse, num_dead_pulse)
         
         #Tell bob the expected number of pulses
-        #time.sleep(1)
+        #wait_time = ((num_sync_pulse + len(vals) + num_dead_pulse) * self.period)/1000000000000
+        #print("Waiting " + str(wait_time) + " seconds")
+        #time.sleep(wait_time + 0.1)
         print("Waiting for TDC to finish...")
         #while(self.tdc.is_busy()):
         #    a = 1
         while(self.board.get_busy()):
-            a = 1
+            print("Board was busy")
+            
+        expected_num_pulses = (num_sync_pulse + len(vals)) * 0.95
+        while(self.tdc.get_num_pulses() < expected_num_pulses):
+            print("Still waiting on TDC...")
+            time.sleep(0.5)
+        
         self.tdc.set_record(0)
         
         print("Sending timing info to Bob")
@@ -1160,15 +1168,16 @@ class time_sync:
         print("Expected " + str(num_pulses) + ", got " + str(len(pulse_list)) + " pulses")
         
         #decoded_vals = self.analyze_pulse_list(pulse_list, num_pulses, num_sync_pulses, num_dead_pulses)
-        decoded_vals = james_utils.decode_pulse_list(pulse_list, self.period, self.bin_number, self.bin_size, num_sync_pulses)
+        decoded_vals, a, b = james_utils.decode_pulse_list(pulse_list, self.period, self.bin_number, self.bin_size, num_sync_pulses)
         
         print("Done decoding")
-        
-        res_str = "got: "
-        for i in decoded_vals:
-            if(i < 100):
-                res_str += str(i) + ","
-        print(res_str)
+        print("Got: ")
+        #res_str = "got: "
+        #for i in decoded_vals:
+        #    if(i < 100):
+        #        res_str += str(i) + ","
+        #print(res_str)
+        print(str(decoded_vals))
         
         #Send the length of decoded vals and then each val
         james_utils.send_timestamp(sck, len(decoded_vals))
