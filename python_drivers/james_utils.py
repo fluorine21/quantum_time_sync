@@ -196,6 +196,9 @@ def check_results(sent, recv):
 def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_size, expected_num_sync_pulses, missing_timestamp_limit = 100):
     
     
+    #Used later on to get correct timestamp for entangled pulse
+    orig_pulses = pulses.copy()
+    
     print("Starting decode")
     
     #pre-thing to do is subtract out offset
@@ -323,7 +326,18 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
         if(p > last_valid_sync_pulse):
             last_valid_sync_pulse = p
             
-    encoded_pulses = pulses[first_encoded_pulse_pos:len(pulses)]
+            
+    #The first encoded pulse is actually a synchrionization photon, so we're saving and returning it to the user and skipping the decode for it
+    entangled_pulse_timestamp = orig_pulses[first_encoded_pulse_pos]
+    
+    #If this pulse is not far enough from the rest of the pulses we treat it as an encoded pulse instead
+    if(abs(entangled_pulse_timestamp - orig_pulses[first_encoded_pulse_pos+1]) < measured_period*3):
+        encoded_pulses = pulses[first_encoded_pulse_pos:len(pulses)]
+        print("Unable to determine which encoded pluse was an entangled photon.")
+        entangled_pulse_timestamp = 0
+    else:
+        encoded_pulses = pulses[first_encoded_pulse_pos+1:len(pulses)]
+
     #Fail if there are no encoded pulses to decode
     if(len(encoded_pulses) < 1):
         print("Cannot decode pulse list, no encoded pulses found!")
@@ -375,7 +389,7 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
         else:
             break
     
-    return decoded_vals, bin_start_timestamps, end_of_sync_pulses_timestamp
+    return decoded_vals, bin_start_timestamps, end_of_sync_pulses_timestamp, entangled_pulse_timestamp
 
 
 
