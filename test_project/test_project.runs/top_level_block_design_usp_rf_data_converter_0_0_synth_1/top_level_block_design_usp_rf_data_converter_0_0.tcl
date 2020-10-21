@@ -70,9 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "top_level_block_design_usp_rf_data_converter_0_0_synth_1" START { ROLLUP_AUTO }
-set_param tcl.collectionResultDisplayLimit 0
-set_param chipscope.maxJobs 2
-set_param xicom.use_bs_reader 1
 set_msg_config -id {HDL-1065} -limit 10000
 set_msg_config  -id {[BD 41-1306]}  -suppress 
 set_msg_config  -id {[BD 41-1271]}  -suppress 

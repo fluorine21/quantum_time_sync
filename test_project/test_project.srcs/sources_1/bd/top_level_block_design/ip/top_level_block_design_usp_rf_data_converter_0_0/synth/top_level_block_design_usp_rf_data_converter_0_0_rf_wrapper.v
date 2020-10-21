@@ -191,6 +191,9 @@ module top_level_block_design_usp_rf_data_converter_0_0_rf_wrapper (
   output            vout12_p,
   output            vout12_n,
 
+  output            vout13_p,
+  output            vout13_n,
+
   // DAC AXI Streaming Data for DAC13
   input  [255:0]    dac00_data_in,
   input             dac00_valid_in,
@@ -825,7 +828,7 @@ module top_level_block_design_usp_rf_data_converter_0_0_rf_wrapper (
   assign dac10_ready_out = 1'b0;
   assign dac11_ready_out = 1'b0;
   assign dac12_ready_out = dac1_done_sync;
-  assign dac13_ready_out = 1'b0;
+  assign dac13_ready_out = dac1_done_sync;
 
   // Assign ADC signals
   assign adc_drpen       = {adc3_drp_en_i, adc2_drp_en_i, adc1_drp_en_i, adc0_drp_en_i};
@@ -1355,7 +1358,7 @@ module top_level_block_design_usp_rf_data_converter_0_0_rf_wrapper (
   HSDAC #(
     .SIM_DEVICE           ("ULTRASCALE_PLUS"),
     .XPA_SAMPLE_RATE_MSPS (4000.0),
-    .XPA_NUM_DACS         (1),
+    .XPA_NUM_DACS         (2),
     .XPA_PLL_USED         ("Yes"),
     .XPA_NUM_DUCS         (0),
     .XPA_CFG0             (1),
@@ -1411,8 +1414,8 @@ module top_level_block_design_usp_rf_data_converter_0_0_rf_wrapper (
     .VOUT1_P            (),                               // output
     .VOUT2_N            (vout12_n),                      // output
     .VOUT2_P            (vout12_p),                      // output
-    .VOUT3_N            (),                               // output
-    .VOUT3_P            ()                                // output
+    .VOUT3_N            (vout13_n),                      // output
+    .VOUT3_P            (vout13_p)                       // output
   );
 
   HSADC #(

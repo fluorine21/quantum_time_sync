@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Thu Aug 27 10:26:46 2020
+// Date        : Wed Oct 21 15:13:41 2020
 // Host        : pme10D0025 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               c:/James/test_project/test_project.srcs/sources_1/bd/top_level_block_design/ip/top_level_block_design_pulse_gen_0_0/top_level_block_design_pulse_gen_0_0_stub.v
@@ -16,8 +16,8 @@
 (* X_CORE_INFO = "pulse_gen,Vivado 2020.1" *)
 module top_level_block_design_pulse_gen_0_0(clk, rst, instr_fifo_empty, instr_fifo_data, 
   instr_fifo_read, pulse_fifo_empty, pulse_fifo_data, pulse_fifo_read, m_axis_tdata, 
-  m_axis_tvalid, m_axis_tready, state_out, busy)
-/* synthesis syn_black_box black_box_pad_pin="clk,rst,instr_fifo_empty,instr_fifo_data[31:0],instr_fifo_read,pulse_fifo_empty,pulse_fifo_data[31:0],pulse_fifo_read,m_axis_tdata[255:0],m_axis_tvalid,m_axis_tready,state_out[7:0],busy" */;
+  m_axis_tvalid, m_axis_tready, m0_axis_tdata, m0_axis_tvalid, m0_axis_tready, state_out, busy)
+/* synthesis syn_black_box black_box_pad_pin="clk,rst,instr_fifo_empty,instr_fifo_data[31:0],instr_fifo_read,pulse_fifo_empty,pulse_fifo_data[31:0],pulse_fifo_read,m_axis_tdata[255:0],m_axis_tvalid,m_axis_tready,m0_axis_tdata[255:0],m0_axis_tvalid,m0_axis_tready,state_out[7:0],busy" */;
   input clk;
   input rst;
   input instr_fifo_empty;
@@ -29,6 +29,9 @@ module top_level_block_design_pulse_gen_0_0(clk, rst, instr_fifo_empty, instr_fi
   output [255:0]m_axis_tdata;
   output m_axis_tvalid;
   input m_axis_tready;
+  output [255:0]m0_axis_tdata;
+  output m0_axis_tvalid;
+  input m0_axis_tready;
   output [7:0]state_out;
   output busy;
 endmodule

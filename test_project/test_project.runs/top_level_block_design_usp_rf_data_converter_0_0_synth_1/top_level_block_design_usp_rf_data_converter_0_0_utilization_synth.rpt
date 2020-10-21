@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Tue Aug 11 18:19:53 2020
+| Date         : Wed Oct 21 12:39:39 2020
 | Host         : pme10D0025 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_level_block_design_usp_rf_data_converter_0_0_utilization_synth.rpt -pb top_level_block_design_usp_rf_data_converter_0_0_utilization_synth.pb
 | Design       : top_level_block_design_usp_rf_data_converter_0_0
@@ -34,8 +34,8 @@ Table of Contents
 | CLB LUTs*               | 2485 |     0 |    425280 |  0.58 |
 |   LUT as Logic          | 2485 |     0 |    425280 |  0.58 |
 |   LUT as Memory         |    0 |     0 |    213600 |  0.00 |
-| CLB Registers           | 2409 |     0 |    850560 |  0.28 |
-|   Register as Flip Flop | 2409 |     0 |    850560 |  0.28 |
+| CLB Registers           | 2410 |     0 |    850560 |  0.28 |
+|   Register as Flip Flop | 2410 |     0 |    850560 |  0.28 |
 |   Register as Latch     |    0 |     0 |    850560 |  0.00 |
 | CARRY8                  |   23 |     0 |     53160 |  0.04 |
 | F7 Muxes                |    4 |     0 |    212640 | <0.01 |
@@ -59,8 +59,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 257   |          Yes |         Set |            - |
-| 2152  |          Yes |       Reset |            - |
+| 256   |          Yes |         Set |            - |
+| 2154  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -161,13 +161,13 @@ Table of Contents
 +--------------+------+---------------------+
 |   Ref Name   | Used | Functional Category |
 +--------------+------+---------------------+
-| FDRE         | 2152 |            Register |
-| LUT6         | 1214 |                 CLB |
-| LUT4         |  601 |                 CLB |
-| LUT5         |  481 |                 CLB |
-| LUT2         |  415 |                 CLB |
-| LUT3         |  315 |                 CLB |
-| FDSE         |  257 |            Register |
+| FDRE         | 2154 |            Register |
+| LUT6         | 1228 |                 CLB |
+| LUT4         |  615 |                 CLB |
+| LUT5         |  452 |                 CLB |
+| LUT2         |  407 |                 CLB |
+| LUT3         |  320 |                 CLB |
+| FDSE         |  256 |            Register |
 | LUT1         |   40 |                 CLB |
 | CARRY8       |   23 |                 CLB |
 | MUXF7        |    4 |                 CLB |

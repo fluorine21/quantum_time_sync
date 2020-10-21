@@ -66,7 +66,7 @@ module top_level_block_design_usp_rf_data_converter_0_0_device_rom (
     // 29:27 |  26:24  |    23:16    |    15:0
     // Tile  |  Slice  | DRP Address |  DRP Data
 
-    (* rom_style = "distributed" *) reg [29:0] data_array [0:41] = '{
+    (* rom_style = "distributed" *) reg [29:0] data_array [0:56] = '{
        30'h07280280,  // SYSREF Distribution (ADC0)
        30'h0f280600,  // SYSREF Distribution (ADC1)
        30'h17288880,  // SYSREF Distribution (ADC2)
@@ -108,6 +108,21 @@ module top_level_block_design_usp_rf_data_converter_0_0_device_rom (
        30'h2a06000f,  // DAC12 FABRIC_IMR
        30'h2a0f0fff,  // DAC12 DATAPATH_IMR
        30'h2a070008,  // DAC12 FABRIC_DEBUG
+       30'h2b020810,  // DAC13 Data Width
+       30'h2b100001,  // DAC13 Interpolation Control
+       30'h2b110000,  // DAC13 Interpolation Data
+       30'h2b200000,  // DAC13 Mixer Config 0
+       30'h2b210924,  // DAC13 Mixer Config 1
+       30'h2b300000,  // DAC13 Inv Sinc Filter
+       30'h2b310040,  // DAC13 Multiband Config
+       30'h2b600001,  // DAC13 Decoder Control
+       30'h2b610001,  // DAC13 Decoder Clock Enable
+       30'h2b710000,  // DAC13 MC_CONFIG0
+       30'h2b734858,  // DAC13 MC_CONFIG2
+       30'h2b7487c0,  // DAC13 MC_CONFIG3
+       30'h2b06000f,  // DAC13 FABRIC_IMR
+       30'h2b0f0fff,  // DAC13 DATAPATH_IMR
+       30'h2b070008,  // DAC13 FABRIC_DEBUG
        30'h00000000};
 
     //-------------------------------------------------------------------------

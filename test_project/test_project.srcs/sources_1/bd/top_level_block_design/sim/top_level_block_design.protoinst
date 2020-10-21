@@ -519,6 +519,16 @@
 						"WVALID": { "actual": "s_axi_wvalid[0:0]"}
 					}
 				},
+				"/pulse_gen_0/m0_axis": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "clk"},
+						"ARESETN": { "actual": "rst"},
+						"TDATA": { "actual": "m0_axis_tdata"},
+						"TREADY": { "actual": "m0_axis_tready"},
+						"TVALID": { "actual": "m0_axis_tvalid"}
+					}
+				},
 				"/pulse_gen_0/m_axis": {
 					"interface": "xilinx.com:interface:axis:1.0",
 					"ports": {
@@ -537,6 +547,16 @@
 						"TDATA": { "actual": "s12_axis_tdata"},
 						"TREADY": { "actual": "s12_axis_tready"},
 						"TVALID": { "actual": "s12_axis_tvalid"}
+					}
+				},
+				"/usp_rf_data_converter_0/s13_axis": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "s1_axis_aclk"},
+						"ARESETN": { "actual": "s1_axis_aresetn"},
+						"TDATA": { "actual": "s13_axis_tdata"},
+						"TREADY": { "actual": "s13_axis_tready"},
+						"TVALID": { "actual": "s13_axis_tvalid"}
 					}
 				},
 				"/usp_rf_data_converter_0/s_axi": {

@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date                      : Thu Aug 27 10:33:08 2020
+| Date                      : Wed Oct 21 15:20:11 2020
 | Host                      : pme10D0025 running 64-bit major release  (build 9200)
 | Command                   : report_io -file top_level_block_design_wrapper_io_placed.rpt
 | Design                    : top_level_block_design_wrapper
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|             9 |
+|            11 |
 +---------------+
 
 
@@ -850,8 +850,8 @@ Table of Contents
 | B37        |                              |                  | MGTYRXN3_131                       | Gigabit       |             |         |            |                         |      |                   |                      |           |            |           |          |      |                  |              |                   |              |
 | B38        |                              |                  | GND                                | GND           |             |         |            |                         |      |                   |                      |       0.0 |            |           |          |      |                  |              |                   |              |
 | B39        |                              |                  | GND                                | GND           |             |         |            |                         |      |                   |                      |       0.0 |            |           |          |      |                  |              |                   |              |
-| C1         |                              | DAC              | DAC_VOUT3_N_229                    | DAC           |             |     229 |            |                         |      |                   |                      |           |            |           |          |      |                  |              |                   |              |
-| C2         |                              | DAC              | DAC_VOUT3_P_229                    | DAC           |             |     229 |            |                         |      |                   |                      |           |            |           |          |      |                  |              |                   |              |
+| C1         | vout13_0_v_n                 | DAC              | DAC_VOUT3_N_229                    | OUTPUT        | LVCMOS18*   |     229 |         12 |                         | SLOW |                   |                 NONE |           | FIXED      |           |          |      | NONE             |              |                   |              |
+| C2         | vout13_0_v_p                 | DAC              | DAC_VOUT3_P_229                    | OUTPUT        | LVCMOS18*   |     229 |         12 |                         | SLOW |                   |                 NONE |           | FIXED      |           |          |      | NONE             |              |                   |              |
 | C3         |                              |                  | DAC_GND                            | DAC           |             |         |            |                         |      |                   |                      |           |            |           |          |      |                  |              |                   |              |
 | C4         |                              |                  | GND                                | GND           |             |         |            |                         |      |                   |                      |       0.0 |            |           |          |      |                  |              |                   |              |
 | C5         |                              | High Density     | IO_L9N_AD11N_87                    | User IO       |             |      87 |            |                         |      |                   |                      |           |            |           |          |      |                  |              |                   |              |

@@ -19,7 +19,7 @@ TIMEOUT_LONG = 15#For waiting on TDC to finish
 SECURE_MODE = 0
 
 #Print each pulse received?
-PRINT_PULSES = 1
+PRINT_PULSES = 0
 
 #Socket timeout in seconds
 SERVER_TIMEOUT = 2

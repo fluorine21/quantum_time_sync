@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-//Date        : Thu Aug 27 10:25:12 2020
+//Date        : Wed Oct 21 15:12:03 2020
 //Host        : pme10D0025 running 64-bit major release  (build 9200)
 //Command     : generate_target top_level_block_design.bd
 //Design      : top_level_block_design
@@ -693,7 +693,9 @@ module top_level_block_design
     sysref_in_diff_n,
     sysref_in_diff_p,
     vout12_0_v_n,
-    vout12_0_v_p);
+    vout12_0_v_p,
+    vout13_0_v_n,
+    vout13_0_v_p);
   (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 dac1_clk CLK_N" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME dac1_clk, CAN_DEBUG false, FREQ_HZ 250000000.0" *) input dac1_clk_clk_n;
   (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 dac1_clk CLK_P" *) input dac1_clk_clk_p;
   (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 default_sysclk3_100mhz CLK_N" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME default_sysclk3_100mhz, CAN_DEBUG false, FREQ_HZ 100000000" *) input default_sysclk3_100mhz_clk_n;
@@ -703,6 +705,8 @@ module top_level_block_design
   (* X_INTERFACE_INFO = "xilinx.com:display_usp_rf_data_converter:diff_pins:1.0 sysref_in diff_p" *) input sysref_in_diff_p;
   (* X_INTERFACE_INFO = "xilinx.com:interface:diff_analog_io:1.0 vout12_0 V_N" *) output vout12_0_v_n;
   (* X_INTERFACE_INFO = "xilinx.com:interface:diff_analog_io:1.0 vout12_0 V_P" *) output vout12_0_v_p;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:diff_analog_io:1.0 vout13_0 V_N" *) output vout13_0_v_n;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:diff_analog_io:1.0 vout13_0 V_P" *) output vout13_0_v_p;
 
   wire [31:0]axi_gpio_0_gpio_io_o;
   wire dac1_clk_1_CLK_N;
@@ -757,6 +761,9 @@ module top_level_block_design
   wire pulse_fifo_full;
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire pulse_gen_0_busy;
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire pulse_gen_0_fifo_read;
+  (* CONN_BUS_INFO = "pulse_gen_0_m0_axis xilinx.com:interface:axis:1.0 None TDATA" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire [255:0]pulse_gen_0_m0_axis_TDATA;
+  (* CONN_BUS_INFO = "pulse_gen_0_m0_axis xilinx.com:interface:axis:1.0 None TREADY" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire pulse_gen_0_m0_axis_TREADY;
+  (* CONN_BUS_INFO = "pulse_gen_0_m0_axis xilinx.com:interface:axis:1.0 None TVALID" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire pulse_gen_0_m0_axis_TVALID;
   (* CONN_BUS_INFO = "pulse_gen_0_m_axis xilinx.com:interface:axis:1.0 None TDATA" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire [255:0]pulse_gen_0_m_axis_TDATA;
   (* CONN_BUS_INFO = "pulse_gen_0_m_axis xilinx.com:interface:axis:1.0 None TREADY" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire pulse_gen_0_m_axis_TREADY;
   (* CONN_BUS_INFO = "pulse_gen_0_m_axis xilinx.com:interface:axis:1.0 None TVALID" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire pulse_gen_0_m_axis_TVALID;
@@ -771,6 +778,8 @@ module top_level_block_design
   wire usp_rf_data_converter_0_clk_dac1;
   wire usp_rf_data_converter_0_vout12_V_N;
   wire usp_rf_data_converter_0_vout12_V_P;
+  wire usp_rf_data_converter_0_vout13_V_N;
+  wire usp_rf_data_converter_0_vout13_V_P;
   wire [39:0]zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARADDR;
   wire [1:0]zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARBURST;
   wire [3:0]zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARCACHE;
@@ -819,6 +828,8 @@ module top_level_block_design
   assign sysref_in_1_diff_p = sysref_in_diff_p;
   assign vout12_0_v_n = usp_rf_data_converter_0_vout12_V_N;
   assign vout12_0_v_p = usp_rf_data_converter_0_vout12_V_P;
+  assign vout13_0_v_n = usp_rf_data_converter_0_vout13_V_N;
+  assign vout13_0_v_p = usp_rf_data_converter_0_vout13_V_P;
   top_level_block_design_axi_gpio_0_0 axi_gpio_0
        (.gpio2_io_i(pulse_gen_0_busy),
         .gpio_io_o(axi_gpio_0_gpio_io_o),
@@ -969,6 +980,9 @@ module top_level_block_design
         .instr_fifo_data(fifo_generator_0_dout),
         .instr_fifo_empty(fifo_generator_0_empty),
         .instr_fifo_read(pulse_gen_0_fifo_read),
+        .m0_axis_tdata(pulse_gen_0_m0_axis_TDATA),
+        .m0_axis_tready(pulse_gen_0_m0_axis_TREADY),
+        .m0_axis_tvalid(pulse_gen_0_m0_axis_TVALID),
         .m_axis_tdata(pulse_gen_0_m_axis_TDATA),
         .m_axis_tready(pulse_gen_0_m_axis_TREADY),
         .m_axis_tvalid(pulse_gen_0_m_axis_TVALID),
@@ -991,6 +1005,10 @@ module top_level_block_design
         .SLOT_0_AXIS_tlast(1'b0),
         .SLOT_0_AXIS_tready(pulse_gen_0_m_axis_TREADY),
         .SLOT_0_AXIS_tvalid(pulse_gen_0_m_axis_TVALID),
+        .SLOT_1_AXIS_tdata(pulse_gen_0_m0_axis_TDATA),
+        .SLOT_1_AXIS_tlast(1'b0),
+        .SLOT_1_AXIS_tready(pulse_gen_0_m0_axis_TREADY),
+        .SLOT_1_AXIS_tvalid(pulse_gen_0_m0_axis_TVALID),
         .clk(usp_rf_data_converter_0_clk_dac1),
         .probe0(fifo_generator_0_dout),
         .probe1(pulse_gen_0_fifo_read),
@@ -1008,6 +1026,9 @@ module top_level_block_design
         .s12_axis_tdata(pulse_gen_0_m_axis_TDATA),
         .s12_axis_tready(pulse_gen_0_m_axis_TREADY),
         .s12_axis_tvalid(pulse_gen_0_m_axis_TVALID),
+        .s13_axis_tdata(pulse_gen_0_m0_axis_TDATA),
+        .s13_axis_tready(pulse_gen_0_m0_axis_TREADY),
+        .s13_axis_tvalid(pulse_gen_0_m0_axis_TVALID),
         .s1_axis_aclk(usp_rf_data_converter_0_clk_dac1),
         .s1_axis_aresetn(proc_sys_reset_0_peripheral_aresetn),
         .s_axi_aclk(zynq_ultra_ps_e_0_pl_clk0),
@@ -1032,7 +1053,9 @@ module top_level_block_design
         .sysref_in_n(sysref_in_1_diff_n),
         .sysref_in_p(sysref_in_1_diff_p),
         .vout12_n(usp_rf_data_converter_0_vout12_V_N),
-        .vout12_p(usp_rf_data_converter_0_vout12_V_P));
+        .vout12_p(usp_rf_data_converter_0_vout12_V_P),
+        .vout13_n(usp_rf_data_converter_0_vout13_V_N),
+        .vout13_p(usp_rf_data_converter_0_vout13_V_P));
   top_level_block_design_zynq_ultra_ps_e_0_3 zynq_ultra_ps_e_0
        (.maxigp0_araddr(zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARADDR),
         .maxigp0_arburst(zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARBURST),

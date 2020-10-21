@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Aug 27 10:25:18 2020" VIVADOVERSION="2020.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Oct 21 15:12:09 2020" VIVADOVERSION="2020.1">
 
   <SYSTEMINFO ARCH="zynquplusRFSOC" BOARD="xilinx.com:zcu111:part0:1.2" DEVICE="xczu28dr" NAME="top_level_block_design" PACKAGE="ffvg1517" SPEEDGRADE="-2"/>
 
@@ -7,16 +7,6 @@
     <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="External_Ports_reset">
       <CONNECTIONS>
         <CONNECTION INSTANCE="rst_ps8_0_99M" PORT="ext_reset_in"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="sysref_in_diff_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_sysref_in_n">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="sysref_in_n"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="sysref_in_diff_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_sysref_in_p">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="sysref_in_p"/>
       </CONNECTIONS>
     </PORT>
     <PORT CLKFREQUENCY="100000000" DIR="I" NAME="dac1_clk_clk_n" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_dac1_clk_n">
@@ -27,6 +17,16 @@
     <PORT CLKFREQUENCY="100000000" DIR="I" NAME="dac1_clk_clk_p" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_dac1_clk_p">
       <CONNECTIONS>
         <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="dac1_clk_p"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="sysref_in_diff_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_sysref_in_n">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="sysref_in_n"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="sysref_in_diff_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_sysref_in_p">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="sysref_in_p"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="O" NAME="vout12_0_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout12_n">
@@ -47,6 +47,16 @@
     <PORT CLKFREQUENCY="100000000" DIR="I" NAME="default_sysclk3_100mhz_clk_p" SIGIS="clk" SIGNAME="clk_wiz_0_clk_in1_p">
       <CONNECTIONS>
         <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_in1_p"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="vout13_0_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout13_n">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout13_n"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="vout13_0_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout13_p">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout13_p"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -78,6 +88,12 @@
       <PORTMAPS>
         <PORTMAP LOGICAL="V_N" PHYSICAL="vout12_0_v_n"/>
         <PORTMAP LOGICAL="V_P" PHYSICAL="vout12_0_v_p"/>
+      </PORTMAPS>
+    </BUSINTERFACE>
+    <BUSINTERFACE BUSNAME="usp_rf_data_converter_0_vout13" NAME="vout13_0" TYPE="INITIATOR">
+      <PORTMAPS>
+        <PORTMAP LOGICAL="V_N" PHYSICAL="vout13_0_v_n"/>
+        <PORTMAP LOGICAL="V_P" PHYSICAL="vout13_0_v_p"/>
       </PORTMAPS>
     </BUSINTERFACE>
   </EXTERNALINTERFACES>
@@ -1982,6 +1998,180 @@
             <CONNECTION INSTANCE="rst_ps8_0_99M" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" LEFT="39" NAME="M00_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M00_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M00_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M00_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M00_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M00_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M00_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M00_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M00_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M00_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M00_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="39" NAME="M00_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M00_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M00_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M00_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M00_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M00_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M00_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M00_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="39" NAME="M01_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M01_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M01_AXI_awvalid" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M01_AXI_awready" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M01_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M01_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M01_AXI_wvalid" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M01_AXI_wready" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M01_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M01_AXI_bvalid" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M01_AXI_bready" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="39" NAME="M01_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M01_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M01_AXI_arvalid" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M01_AXI_arready" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M01_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M01_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M01_AXI_rvalid" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M01_AXI_rready" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_rready"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" LEFT="15" NAME="S00_AXI_awid" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_S00_AXI_awid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="maxigp0_awid"/>
@@ -2167,180 +2357,6 @@
         <PORT DIR="I" NAME="S00_AXI_rready" SIGIS="undef" SIGNAME="ps8_0_axi_periph_S00_AXI_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="maxigp0_rready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="39" NAME="M00_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M00_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M00_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M00_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M00_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M00_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_wstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M00_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M00_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M00_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M00_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M00_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="39" NAME="M00_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M00_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M00_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M00_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M00_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M00_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M00_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M00_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M00_AXI_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_rready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="39" NAME="M01_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M01_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M01_AXI_awvalid" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M01_AXI_awready" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M01_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M01_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_wstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M01_AXI_wvalid" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M01_AXI_wready" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M01_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M01_AXI_bvalid" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M01_AXI_bready" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="39" NAME="M01_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M01_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M01_AXI_arvalid" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M01_AXI_arready" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M01_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M01_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M01_AXI_rvalid" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M01_AXI_rready" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_rready"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -2944,6 +2960,21 @@
             <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s12_axis_tready"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" LEFT="255" NAME="m0_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="pulse_gen_0_m0_axis_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s13_axis_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m0_axis_tvalid" SIGIS="undef" SIGNAME="pulse_gen_0_m0_axis_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s13_axis_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="m0_axis_tready" SIGIS="undef" SIGNAME="pulse_gen_0_m0_axis_tready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s13_axis_tready"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" LEFT="7" NAME="state_out" RIGHT="0" SIGIS="undef" SIGNAME="pulse_gen_0_state_out">
           <CONNECTIONS>
             <CONNECTION INSTANCE="system_ila_1" PORT="probe3"/>
@@ -2957,7 +2988,8 @@
         </PORT>
       </PORTS>
       <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="pulse_gen_0_m_axis" NAME="m_axis" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+        <BUSINTERFACE BUSNAME="pulse_gen_0_m0_axis" NAME="m0_axis" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="FREQ_HZ" VALUE="250000000"/>
           <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="32"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
@@ -2966,7 +2998,26 @@
           <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="top_level_block_design_usp_rf_data_converter_0_0_clk_dac1"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="m0_axis_tdata"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="m0_axis_tvalid"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="m0_axis_tready"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="pulse_gen_0_m_axis" NAME="m_axis" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="FREQ_HZ" VALUE="250000000"/>
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="32"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="top_level_block_design_usp_rf_data_converter_0_0_clk_dac1"/>
           <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
@@ -6646,7 +6697,7 @@
         <PARAMETER NAME="EN_BRAM_DRC" VALUE="TRUE"/>
         <PARAMETER NAME="ALL_PROBE_SAME_MU" VALUE="TRUE"/>
         <PARAMETER NAME="ALL_PROBE_SAME_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_NUM_MONITOR_SLOTS" VALUE="1"/>
+        <PARAMETER NAME="C_NUM_MONITOR_SLOTS" VALUE="2"/>
         <PARAMETER NAME="C_SLOT_0_AXI_ARUSER_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_SLOT_0_AXI_RUSER_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_SLOT_0_AXI_AWUSER_WIDTH" VALUE="1"/>
@@ -6674,7 +6725,7 @@
         <PARAMETER NAME="C_SLOT_1_AXIS_TUSER_WIDTH" VALUE="AUTO"/>
         <PARAMETER NAME="C_SLOT_1_AXIS_TDEST_WIDTH" VALUE="AUTO"/>
         <PARAMETER NAME="C_SLOT_0_INTF_TYPE" VALUE="xilinx.com:interface:axis_rtl:1.0"/>
-        <PARAMETER NAME="C_SLOT_1_INTF_TYPE" VALUE="xilinx.com:interface:aximm_rtl:1.0"/>
+        <PARAMETER NAME="C_SLOT_1_INTF_TYPE" VALUE="xilinx.com:interface:axis_rtl:1.0"/>
         <PARAMETER NAME="C_SLOT_2_INTF_TYPE" VALUE="xilinx.com:interface:aximm_rtl:1.0"/>
         <PARAMETER NAME="C_SLOT_3_INTF_TYPE" VALUE="xilinx.com:interface:aximm_rtl:1.0"/>
         <PARAMETER NAME="C_SLOT_4_INTF_TYPE" VALUE="xilinx.com:interface:aximm_rtl:1.0"/>
@@ -6917,6 +6968,11 @@
             <CONNECTION INSTANCE="pulse_fifo" PORT="empty"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="I" LEFT="0" NAME="probe7" RIGHT="0" SIGIS="undef" SIGNAME="pulse_gen_0_busy">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pulse_gen_0" PORT="busy"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" LEFT="255" NAME="SLOT_0_AXIS_tdata" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="I" NAME="SLOT_0_AXIS_tlast" SIGIS="undef"/>
         <PORT DIR="I" NAME="SLOT_0_AXIS_tvalid" SIGIS="undef"/>
@@ -6926,11 +6982,10 @@
             <CONNECTION INSTANCE="proc_sys_reset_0" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="probe7" RIGHT="0" SIGIS="undef" SIGNAME="pulse_gen_0_busy">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="pulse_gen_0" PORT="busy"/>
-          </CONNECTIONS>
-        </PORT>
+        <PORT DIR="I" LEFT="255" NAME="SLOT_1_AXIS_tdata" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" NAME="SLOT_1_AXIS_tlast" SIGIS="undef"/>
+        <PORT DIR="I" NAME="SLOT_1_AXIS_tvalid" SIGIS="undef"/>
+        <PORT DIR="I" NAME="SLOT_1_AXIS_tready" SIGIS="undef"/>
       </PORTS>
       <BUSINTERFACES>
         <BUSINTERFACE BUSNAME="pulse_gen_0_m_axis" NAME="SLOT_0_AXIS" TYPE="MONITOR" VLNV="xilinx.com:interface:axis:1.0">
@@ -6952,6 +7007,27 @@
             <PORTMAP LOGICAL="TLAST" PHYSICAL="SLOT_0_AXIS_tlast"/>
             <PORTMAP LOGICAL="TVALID" PHYSICAL="SLOT_0_AXIS_tvalid"/>
             <PORTMAP LOGICAL="TREADY" PHYSICAL="SLOT_0_AXIS_tready"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="pulse_gen_0_m0_axis" NAME="SLOT_1_AXIS" TYPE="MONITOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="32"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="250000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="top_level_block_design_usp_rf_data_converter_0_0_clk_dac1"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="SLOT_1_AXIS_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="SLOT_1_AXIS_tlast"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="SLOT_1_AXIS_tvalid"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="SLOT_1_AXIS_tready"/>
           </PORTMAPS>
         </BUSINTERFACE>
       </BUSINTERFACES>
@@ -7475,12 +7551,12 @@
         <PARAMETER NAME="C_DAC_Mode12" VALUE="0"/>
         <PARAMETER NAME="C_DAC_RESERVED_1_12" VALUE="false"/>
         <PARAMETER NAME="C_DAC_TDD_RTS12" VALUE="0"/>
-        <PARAMETER NAME="C_DAC_Slice13_Enable" VALUE="false"/>
+        <PARAMETER NAME="C_DAC_Slice13_Enable" VALUE="true"/>
         <PARAMETER NAME="C_DAC_Data_Type13" VALUE="0"/>
         <PARAMETER NAME="C_DAC_Data_Width13" VALUE="16"/>
-        <PARAMETER NAME="C_DAC_Interpolation_Mode13" VALUE="0"/>
+        <PARAMETER NAME="C_DAC_Interpolation_Mode13" VALUE="1"/>
         <PARAMETER NAME="C_DAC_Decoder_Mode13" VALUE="0"/>
-        <PARAMETER NAME="C_DAC_Mixer_Type13" VALUE="3"/>
+        <PARAMETER NAME="C_DAC_Mixer_Type13" VALUE="0"/>
         <PARAMETER NAME="C_DAC_Mixer_Mode13" VALUE="2"/>
         <PARAMETER NAME="C_DAC_Invsinc_Ctrl13" VALUE="false"/>
         <PARAMETER NAME="C_DAC_Coarse_Mixer_Freq13" VALUE="0"/>
@@ -8208,12 +8284,12 @@
         <PARAMETER NAME="DAC_Mode12" VALUE="0"/>
         <PARAMETER NAME="DAC_RESERVED_1_12" VALUE="false"/>
         <PARAMETER NAME="DAC_TDD_RTS12" VALUE="0"/>
-        <PARAMETER NAME="DAC_Slice13_Enable" VALUE="false"/>
+        <PARAMETER NAME="DAC_Slice13_Enable" VALUE="true"/>
         <PARAMETER NAME="DAC_Data_Type13" VALUE="0"/>
         <PARAMETER NAME="DAC_Data_Width13" VALUE="16"/>
-        <PARAMETER NAME="DAC_Interpolation_Mode13" VALUE="0"/>
+        <PARAMETER NAME="DAC_Interpolation_Mode13" VALUE="1"/>
         <PARAMETER NAME="DAC_Decoder_Mode13" VALUE="0"/>
-        <PARAMETER NAME="DAC_Mixer_Type13" VALUE="3"/>
+        <PARAMETER NAME="DAC_Mixer_Type13" VALUE="0"/>
         <PARAMETER NAME="DAC_Mixer_Mode13" VALUE="2"/>
         <PARAMETER NAME="DAC_Invsinc_Ctrl13" VALUE="false"/>
         <PARAMETER NAME="DAC_Coarse_Mixer_Freq13" VALUE="0"/>
@@ -8596,6 +8672,16 @@
             <CONNECTION INSTANCE="top_level_block_design_imp" PORT="vout12_0_v_n"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" NAME="vout13_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout13_p">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="top_level_block_design_imp" PORT="vout13_0_v_p"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="vout13_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout13_n">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="top_level_block_design_imp" PORT="vout13_0_v_n"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" NAME="s1_axis_aresetn" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="proc_sys_reset_0_peripheral_aresetn">
           <CONNECTIONS>
             <CONNECTION INSTANCE="proc_sys_reset_0" PORT="peripheral_aresetn"/>
@@ -8619,6 +8705,21 @@
         <PORT DIR="O" NAME="s12_axis_tready" SIGIS="undef" SIGNAME="pulse_gen_0_m_axis_tready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="pulse_gen_0" PORT="m_axis_tready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="255" NAME="s13_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="pulse_gen_0_m0_axis_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pulse_gen_0" PORT="m0_axis_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s13_axis_tvalid" SIGIS="undef" SIGNAME="pulse_gen_0_m0_axis_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pulse_gen_0" PORT="m0_axis_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="s13_axis_tready" SIGIS="undef" SIGNAME="pulse_gen_0_m0_axis_tready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pulse_gen_0" PORT="m0_axis_tready"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -8695,6 +8796,26 @@
             <PORTMAP LOGICAL="TVALID" PHYSICAL="s12_axis_tvalid"/>
           </PORTMAPS>
         </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="pulse_gen_0_m0_axis" NAME="s13_axis" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="32"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="250000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="top_level_block_design_usp_rf_data_converter_0_0_clk_dac1"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="s13_axis_tdata"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="s13_axis_tready"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="s13_axis_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="External_Interface_dac1_clk" NAME="dac1_clk" TYPE="TARGET" VLNV="xilinx.com:interface:diff_clock:1.0">
           <PARAMETER NAME="CAN_DEBUG" VALUE="false"/>
           <PARAMETER NAME="FREQ_HZ" VALUE="250000000.0"/>
@@ -8707,6 +8828,12 @@
           <PORTMAPS>
             <PORTMAP LOGICAL="V_N" PHYSICAL="vout12_n"/>
             <PORTMAP LOGICAL="V_P" PHYSICAL="vout12_p"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="usp_rf_data_converter_0_vout13" NAME="vout13" TYPE="INITIATOR" VLNV="xilinx.com:interface:diff_analog_io:1.0">
+          <PORTMAPS>
+            <PORTMAP LOGICAL="V_N" PHYSICAL="vout13_n"/>
+            <PORTMAP LOGICAL="V_P" PHYSICAL="vout13_p"/>
           </PORTMAPS>
         </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="External_Interface_sysref_in" NAME="sysref_in" TYPE="TARGET" VLNV="xilinx.com:display_usp_rf_data_converter:diff_pins:1.0">

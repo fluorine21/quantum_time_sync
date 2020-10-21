@@ -22,7 +22,7 @@ BOB_CHANNEL_SEND = 2
 BOB_CHANNEL_RECEIVE = 2
 
 #TDC_THRESHOLD = 0.1 #100mV for SNSPDs
-TDC_THRESHOLD = 0.0 #100mV for SNSPDs
+TDC_THRESHOLD = 0.0 #0mV for just FPGA
 TDC_CHANNEL_LIST = (2,3,4)
 
 PERIOD_THRESHOLD = 0.1 #If the measured and expected periods differ by more than this fracion then decode fails

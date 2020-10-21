@@ -4352,6 +4352,15 @@ module bd_da80_g_inst_0_gigantic_mux # (
      assign m_slot_0_axis_tid = slot_0_axis_tid ;
      assign m_slot_0_axis_tkeep = slot_0_axis_tkeep ;
      assign m_slot_0_axis_tdest = slot_0_axis_tdest ;
+     assign m_slot_1_axis_tvalid = slot_1_axis_tvalid ;
+     assign m_slot_1_axis_tready = slot_1_axis_tready ;
+     assign m_slot_1_axis_tdata = slot_1_axis_tdata ;
+     assign m_slot_1_axis_tstrb = slot_1_axis_tstrb ;
+     assign m_slot_1_axis_tlast = slot_1_axis_tlast ;
+     assign m_slot_1_axis_tuser = slot_1_axis_tuser ;
+     assign m_slot_1_axis_tid = slot_1_axis_tid ;
+     assign m_slot_1_axis_tkeep = slot_1_axis_tkeep ;
+     assign m_slot_1_axis_tdest = slot_1_axis_tdest ;
 
     
     

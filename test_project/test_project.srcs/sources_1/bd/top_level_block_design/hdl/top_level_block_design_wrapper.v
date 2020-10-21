@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-//Date        : Thu Aug 27 10:25:12 2020
+//Date        : Wed Oct 21 15:12:04 2020
 //Host        : pme10D0025 running 64-bit major release  (build 9200)
 //Command     : generate_target top_level_block_design_wrapper.bd
 //Design      : top_level_block_design_wrapper
@@ -18,7 +18,9 @@ module top_level_block_design_wrapper
     sysref_in_diff_n,
     sysref_in_diff_p,
     vout12_0_v_n,
-    vout12_0_v_p);
+    vout12_0_v_p,
+    vout13_0_v_n,
+    vout13_0_v_p);
   input dac1_clk_clk_n;
   input dac1_clk_clk_p;
   input default_sysclk3_100mhz_clk_n;
@@ -28,6 +30,8 @@ module top_level_block_design_wrapper
   input sysref_in_diff_p;
   output vout12_0_v_n;
   output vout12_0_v_p;
+  output vout13_0_v_n;
+  output vout13_0_v_p;
 
   wire dac1_clk_clk_n;
   wire dac1_clk_clk_p;
@@ -38,6 +42,8 @@ module top_level_block_design_wrapper
   wire sysref_in_diff_p;
   wire vout12_0_v_n;
   wire vout12_0_v_p;
+  wire vout13_0_v_n;
+  wire vout13_0_v_p;
 
   top_level_block_design top_level_block_design_i
        (.dac1_clk_clk_n(dac1_clk_clk_n),
@@ -48,5 +54,7 @@ module top_level_block_design_wrapper
         .sysref_in_diff_n(sysref_in_diff_n),
         .sysref_in_diff_p(sysref_in_diff_p),
         .vout12_0_v_n(vout12_0_v_n),
-        .vout12_0_v_p(vout12_0_v_p));
+        .vout12_0_v_p(vout12_0_v_p),
+        .vout13_0_v_n(vout13_0_v_n),
+        .vout13_0_v_p(vout13_0_v_p));
 endmodule

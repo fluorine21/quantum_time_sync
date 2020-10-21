@@ -101,10 +101,18 @@ module top_level_block_design_usp_rf_data_converter_0_0_block (
   output            vout12_p,
   output            vout12_n,
 
+  output            vout13_p,
+  output            vout13_n,
+
   // DAC AXI Streaming Data for DAC12
   input  [255:0]    s12_axis_tdata,
   input             s12_axis_tvalid,
   output            s12_axis_tready,
+
+  // DAC AXI Streaming Data for DAC13
+  input  [255:0]    s13_axis_tdata,
+  input             s13_axis_tvalid,
+  output            s13_axis_tready,
 
   // DAC Debug Ports
   // DAC0
@@ -287,9 +295,9 @@ module top_level_block_design_usp_rf_data_converter_0_0_block (
   localparam [2:0] dac12_interpolation = 3'd1;
   localparam [1:0] dac12_mixer         = 2'd2;
   localparam       dac12_sinc          = 1'b0;
-  localparam       dac13_enable        = 1'b0;
+  localparam       dac13_enable        = 1'b1;
   localparam       dac13_data_type     = 1'b0;
-  localparam [2:0] dac13_interpolation = 3'd0;
+  localparam [2:0] dac13_interpolation = 3'd1;
   localparam [1:0] dac13_mixer         = 2'd2;
   localparam       dac13_sinc          = 1'b0;
 
@@ -1012,9 +1020,11 @@ module top_level_block_design_usp_rf_data_converter_0_0_block (
   reg              dac13_irq_en;
 
   wire  [255:0]    dac12_data_i;
+  wire  [255:0]    dac13_data_i;
 
 
   assign  dac12_data_i  =  s12_axis_tdata;
+  assign  dac13_data_i  =  s13_axis_tdata;
 
   top_level_block_design_usp_rf_data_converter_0_0_rf_wrapper
   top_level_block_design_usp_rf_data_converter_0_0_rf_wrapper_i(
@@ -1158,6 +1168,9 @@ module top_level_block_design_usp_rf_data_converter_0_0_block (
     .vout12_p              (vout12_p),
     .vout12_n              (vout12_n),
 
+    .vout13_p              (vout13_p),
+    .vout13_n              (vout13_n),
+
     // DAC data for DAC00
     .dac00_data_in         (256'b0),
     .dac00_valid_in        (1'b0),
@@ -1194,9 +1207,9 @@ module top_level_block_design_usp_rf_data_converter_0_0_block (
     .dac12_ready_out       (s12_axis_tready),
 
     // DAC data for DAC13
-    .dac13_data_in         (256'b0),
-    .dac13_valid_in        (1'b0),
-    .dac13_ready_out       (),
+    .dac13_data_in         (dac13_data_i),
+    .dac13_valid_in        (s13_axis_tvalid),
+    .dac13_ready_out       (s13_axis_tready),
 
     .drp_addr              (drp_addr),
     .drp_di                (drp_di),
@@ -3519,7 +3532,7 @@ module top_level_block_design_usp_rf_data_converter_0_0_block (
                                bank0_read[33] ? {6'b0, adc33_mixer, 1'b0, adc33_decimation, 2'b00, adc33_data_type, adc33_enable,  6'b0, adc32_mixer, 1'b0, adc32_decimation, 2'b00, adc32_data_type, adc32_enable} :
                                bank0_read[40] ? {24'h000000, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0} :
                                bank0_read[41] ? {1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0} :
-                               bank0_read[42] ? {1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0} :
+                               bank0_read[42] ? {1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1, 1'b1, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1, 1'b1, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0} :
                                bank0_read[64] ? tile_irq2axi :
                                bank0_read[65] ? {axi_timeout_en, 23'b0, adc3_irq_en, adc2_irq_en, adc1_irq_en, adc0_irq_en, 2'b00, dac1_irq_en, dac0_irq_en} :
                                32'h00000000;

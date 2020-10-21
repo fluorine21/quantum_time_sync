@@ -18,7 +18,12 @@ wire [255:0] m_axis_tdata;
 wire m_axis_tvalid;
 reg m_axis_tready;
 
+wire [255:0] m0_axis_tdata;
+wire m0_axis_tvalid;
+reg m0_axis_tready;
+
 wire [7:0] state_out;
+wire busy;
 
 pulse_gen dut
 (
@@ -38,8 +43,13 @@ pulse_gen dut
     m_axis_tdata,
     m_axis_tvalid,
     m_axis_tready,
+	
+	m0_axis_tdata,
+    m0_axis_tvalid,
+    m0_axis_tready,
 
-	state_out	
+	state_out,
+	busy
 );
 
 
@@ -49,13 +59,14 @@ initial begin
 	rst = 1;
 	
 	instr_fifo_empty = 1;
-	instr_fifo_data = {8'h05, 8'h00, 16'h000A};//Send the sync and stream command with 10 sync pulses, 5 dead pulses
+	instr_fifo_data = {8'h06, 8'h0A, 16'h000A};//Send the sync and stream command with 10 sync pulses, 10 dead pulses
 	
 	pulse_fifo_empty = 0;
 	pulse_fifo_data = 0;
 	
 	m_axis_tready = 1;
-	
+	m0_axis_tready = 1;
+
 	//Reset the sysme
 	repeat(10) clk_cycle();
 	rst = 0;
@@ -71,7 +82,7 @@ initial begin
 	while(1) begin
 	
 		clk_cycle();
-		
+		//Increment the pulse 
 		if(pulse_fifo_read == 1'b1) begin
 			repeat(2) clk_cycle();
 			pulse_fifo_data = pulse_fifo_data + 1;

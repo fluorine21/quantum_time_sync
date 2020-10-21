@@ -9,7 +9,7 @@
       <spirit:instanceName>top_level_block_design_system_ila_1_0</spirit:instanceName>
       <spirit:componentRef spirit:vendor="xilinx.com" spirit:library="ip" spirit:name="system_ila" spirit:version="1.1"/>
       <spirit:configurableElementValues>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.CLK.CLK.ASSOCIATED_BUSIF">SLOT_0_AXIS</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.CLK.CLK.ASSOCIATED_BUSIF">SLOT_0_AXIS:SLOT_1_AXIS</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.CLK.CLK.ASSOCIATED_RESET">resetn</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.CLK.CLK.CLK_DOMAIN">top_level_block_design_usp_rf_data_converter_0_0_clk_dac1</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.CLK.CLK.FREQ_HZ">250000000</spirit:configurableElementValue>
@@ -31,6 +31,19 @@
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.SLOT_0_AXIS.TDEST_WIDTH">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.SLOT_0_AXIS.TID_WIDTH">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.SLOT_0_AXIS.TUSER_WIDTH">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.SLOT_1_AXIS.CLK_DOMAIN">top_level_block_design_usp_rf_data_converter_0_0_clk_dac1</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.SLOT_1_AXIS.FREQ_HZ">250000000</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.SLOT_1_AXIS.HAS_TKEEP">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.SLOT_1_AXIS.HAS_TLAST">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.SLOT_1_AXIS.HAS_TREADY">1</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.SLOT_1_AXIS.HAS_TSTRB">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.SLOT_1_AXIS.INSERT_VIP">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.SLOT_1_AXIS.LAYERED_METADATA">undef</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.SLOT_1_AXIS.PHASE">0.000</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.SLOT_1_AXIS.TDATA_NUM_BYTES">32</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.SLOT_1_AXIS.TDEST_WIDTH">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.SLOT_1_AXIS.TID_WIDTH">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.SLOT_1_AXIS.TUSER_WIDTH">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.ALL_PROBE_SAME_MU">TRUE</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.ALL_PROBE_SAME_MU_CNT">1</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_ADV_TRIGGER">FALSE</spirit:configurableElementValue>
@@ -42,7 +55,7 @@
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_EN_TIME_TAG">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_INPUT_PIPE_STAGES">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_MON_TYPE">MIX</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_NUM_MONITOR_SLOTS">1</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_NUM_MONITOR_SLOTS">2</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_NUM_OF_PROBES">8</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_PROBE0_MU_CNT">1</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_PROBE0_TYPE">0</spirit:configurableElementValue>
@@ -3481,7 +3494,7 @@
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_SLOT_1_AXI_W_SEL">1</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_SLOT_1_AXI_W_SEL_DATA">1</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_SLOT_1_AXI_W_SEL_TRIG">1</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_SLOT_1_INTF_TYPE">xilinx.com:interface:aximm_rtl:1.0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_SLOT_1_INTF_TYPE">xilinx.com:interface:axis_rtl:1.0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_SLOT_1_MAX_RD_BURSTS">2</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_SLOT_1_MAX_WR_BURSTS">2</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_SLOT_1_TXN_CNTR_EN">1</spirit:configurableElementValue>
@@ -3904,6 +3917,18 @@
             <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.SLOT_0_AXIS.TDEST_WIDTH" xilinx:valuePermission="bd"/>
             <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.SLOT_0_AXIS.TID_WIDTH" xilinx:valuePermission="bd"/>
             <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.SLOT_0_AXIS.TUSER_WIDTH" xilinx:valuePermission="bd"/>
+            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.SLOT_1_AXIS.CLK_DOMAIN" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
+            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.SLOT_1_AXIS.FREQ_HZ" xilinx:valuePermission="bd"/>
+            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.SLOT_1_AXIS.HAS_TKEEP" xilinx:valuePermission="bd"/>
+            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.SLOT_1_AXIS.HAS_TLAST" xilinx:valuePermission="bd"/>
+            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.SLOT_1_AXIS.HAS_TREADY" xilinx:valuePermission="bd"/>
+            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.SLOT_1_AXIS.HAS_TSTRB" xilinx:valuePermission="bd"/>
+            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.SLOT_1_AXIS.LAYERED_METADATA" xilinx:valuePermission="bd"/>
+            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.SLOT_1_AXIS.PHASE" xilinx:valuePermission="bd"/>
+            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.SLOT_1_AXIS.TDATA_NUM_BYTES" xilinx:valuePermission="bd"/>
+            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.SLOT_1_AXIS.TDEST_WIDTH" xilinx:valuePermission="bd"/>
+            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.SLOT_1_AXIS.TID_WIDTH" xilinx:valuePermission="bd"/>
+            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.SLOT_1_AXIS.TUSER_WIDTH" xilinx:valuePermission="bd"/>
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_BRAM_CNT" xilinx:valueSource="user"/>
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_DATA_DEPTH" xilinx:valueSource="user"/>
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_MON_TYPE" xilinx:valueSource="user"/>
@@ -4001,6 +4026,7 @@
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_SLOT_15_AXI_ID_WIDTH" xilinx:valuePermission="bd_and_user"/>
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_SLOT_15_AXI_RUSER_WIDTH" xilinx:valuePermission="bd_and_user"/>
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_SLOT_15_AXI_WUSER_WIDTH" xilinx:valuePermission="bd_and_user"/>
+            <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_SLOT_1_APC_EN" xilinx:valueSource="user"/>
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_SLOT_1_AXIS_TDATA_WIDTH" xilinx:valuePermission="bd_and_user"/>
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_SLOT_1_AXIS_TDEST_WIDTH" xilinx:valuePermission="bd_and_user"/>
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_SLOT_1_AXIS_TID_WIDTH" xilinx:valuePermission="bd_and_user"/>
@@ -4009,10 +4035,13 @@
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_SLOT_1_AXI_ARUSER_WIDTH" xilinx:valuePermission="bd_and_user"/>
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_SLOT_1_AXI_AWUSER_WIDTH" xilinx:valuePermission="bd_and_user"/>
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_SLOT_1_AXI_BUSER_WIDTH" xilinx:valuePermission="bd_and_user"/>
+            <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_SLOT_1_AXI_DATA_SEL" xilinx:valueSource="user"/>
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_SLOT_1_AXI_DATA_WIDTH" xilinx:valuePermission="bd_and_user"/>
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_SLOT_1_AXI_ID_WIDTH" xilinx:valuePermission="bd_and_user"/>
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_SLOT_1_AXI_RUSER_WIDTH" xilinx:valuePermission="bd_and_user"/>
+            <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_SLOT_1_AXI_TRIG_SEL" xilinx:valueSource="user"/>
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_SLOT_1_AXI_WUSER_WIDTH" xilinx:valuePermission="bd_and_user"/>
+            <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_SLOT_1_INTF_TYPE" xilinx:valueSource="user"/>
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_SLOT_2_AXIS_TDATA_WIDTH" xilinx:valuePermission="bd_and_user"/>
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_SLOT_2_AXIS_TDEST_WIDTH" xilinx:valuePermission="bd_and_user"/>
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_SLOT_2_AXIS_TID_WIDTH" xilinx:valuePermission="bd_and_user"/>

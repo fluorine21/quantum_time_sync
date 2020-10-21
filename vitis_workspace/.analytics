@@ -403,3 +403,6 @@ timestamp=[2020-09-12 14:29:34], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00
 timestamp=[2020-09-19 20:39:41], mode=WORKBENCH_START, duration=0:00:13.157, duration_ms=13157, data={}
 timestamp=[2020-09-19 20:39:42], mode=WORKBENCH_UI_INIT, duration=0:00:00.980, duration_ms=980, data={editors_count=6, platform_editors_count=0, projects_count=6, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,test_proj_ethernet,test_proj_ethernet_system,test_proj_plat,test_proj_pulse_ctrl,test_proj_pulse_ctrl_system}
 timestamp=[2020-09-19 20:39:43], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.082, duration_ms=82, data={}
+timestamp=[2020-09-28 10:40:09], mode=WORKBENCH_START, duration=0:00:13.853, duration_ms=13853, data={}
+timestamp=[2020-09-28 10:40:11], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.085, duration_ms=85, data={}
+timestamp=[2020-09-28 10:40:14], mode=WORKBENCH_UI_INIT, duration=0:00:04.922, duration_ms=4922, data={editors_count=6, platform_editors_count=0, projects_count=6, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,test_proj_ethernet,test_proj_ethernet_system,test_proj_plat,test_proj_pulse_ctrl,test_proj_pulse_ctrl_system}

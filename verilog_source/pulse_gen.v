@@ -33,14 +33,22 @@ module pulse_gen
 	
 	
 	//output to RFSoC module
-    output wire [255:0] m_axis_tdata,
-    output wire m_axis_tvalid,
-    input wire m_axis_tready,
+    (* X_INTERFACE_PARAMETER = "FREQ_HZ 250000000"*) output wire [255:0] m_axis_tdata,
+    (* X_INTERFACE_PARAMETER = "FREQ_HZ 250000000"*) output wire m_axis_tvalid,
+    (* X_INTERFACE_PARAMETER = "FREQ_HZ 250000000"*) input wire m_axis_tready,
+	
+	//Output to second channel used for sending single entangled photon for synchronization
+	(* X_INTERFACE_PARAMETER = "FREQ_HZ 250000000"*) output reg [255:0] m0_axis_tdata,
+    (* X_INTERFACE_PARAMETER = "FREQ_HZ 250000000"*) output wire m0_axis_tvalid,
+    (* X_INTERFACE_PARAMETER = "FREQ_HZ 250000000"*) input wire m0_axis_tready,
 
 	output wire [7:0] state_out,
 
 	output wire busy
 );
+
+//Data always valid for entangled photon channel
+assign m0_axis_tvalid = 1;
 
 reg is_phase_meas_mode;//if 1, then pulse is emitted at each clock tick
 reg [15:0] amplitude;
@@ -52,7 +60,7 @@ reg [45:0] main_clock;
 reg [23:0] clock_period;
 
 reg [15:0] pulses_to_send;//Used for toggling phase measurement mode
-reg [7:0] dead_pulses;//Number of pulses between phase measurement and data
+reg [7:0] dead_pulses, dead_pulses_reg;//Number of pulses between phase measurement and data
 
 reg [15:0] pulse_len_reg;//Holds user-defined pulse length in number of samples 
 
@@ -126,7 +134,7 @@ assign busy = (state != state_idle) || is_phase_meas_mode;
 
 //Generates a pulse of length pulse_len with amplitude amp
 function [255:0] get_default_pulse;
-input [7:0] pulse_len; //in number of samples
+input [15:0] pulse_len; //in number of samples
 input [15:0] amp;//Pulse amplitude
 integer i;
 begin
@@ -167,6 +175,9 @@ begin
 	pulse_end_return_vector <= state_idle;
 	pulse_samples_left <= 0;
 	pulse_fifo_read <= 0;
+	
+	m0_axis_tdata <= 0;
+	dead_pulses_reg <= 0;
 end
 endtask
 
@@ -259,6 +270,7 @@ always @ (posedge clk or negedge rst) begin
 					command_sync_and_stream: begin
 						pulses_to_send <= instr_fifo_data[15:0];
 						dead_pulses <= instr_fifo_data[23:16];
+						dead_pulses_reg <= instr_fifo_data[23:16];
 						//is_phase_meas_mode <= 1;
 						state <= state_ss_1;
 					end
@@ -380,12 +392,20 @@ always @ (posedge clk or negedge rst) begin
 			
 			state_ss_wait: begin//Wait for the dead pulse period to end
 			
+				//default assignment
+				m0_axis_tdata <= 0;
+			
 				if(dead_pulses == 0) begin
 					state <= state_ss_2;
 					pulse_fifo_read <= 1;
 				end
 				else if(clock_tick) begin
 					dead_pulses <= dead_pulses - 1;
+					//If we're halfway through sending dead pulses
+					if(dead_pulses == (dead_pulses_reg >> 1)) begin
+						//Send out a single entangled pair
+						m0_axis_tdata <= get_default_pulse(pulse_len_reg, amplitude);
+					end
 				end
 			
 			end

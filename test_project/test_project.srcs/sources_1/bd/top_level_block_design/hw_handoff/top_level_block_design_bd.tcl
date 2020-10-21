@@ -177,6 +177,8 @@ proc create_root_design { parentCell } {
 
   set vout12_0 [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:diff_analog_io_rtl:1.0 vout12_0 ]
 
+  set vout13_0 [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:diff_analog_io_rtl:1.0 vout13_0 ]
+
 
   # Create ports
   set reset [ create_bd_port -dir I -type rst reset ]
@@ -276,7 +278,7 @@ proc create_root_design { parentCell } {
    CONFIG.C_BRAM_CNT {59.5} \
    CONFIG.C_DATA_DEPTH {8192} \
    CONFIG.C_MON_TYPE {MIX} \
-   CONFIG.C_NUM_MONITOR_SLOTS {1} \
+   CONFIG.C_NUM_MONITOR_SLOTS {2} \
    CONFIG.C_NUM_OF_PROBES {8} \
    CONFIG.C_PROBE0_TYPE {0} \
    CONFIG.C_PROBE1_TYPE {0} \
@@ -286,6 +288,10 @@ proc create_root_design { parentCell } {
    CONFIG.C_SLOT_0_AXI_DATA_SEL {1} \
    CONFIG.C_SLOT_0_AXI_TRIG_SEL {1} \
    CONFIG.C_SLOT_0_INTF_TYPE {xilinx.com:interface:axis_rtl:1.0} \
+   CONFIG.C_SLOT_1_APC_EN {0} \
+   CONFIG.C_SLOT_1_AXI_DATA_SEL {1} \
+   CONFIG.C_SLOT_1_AXI_TRIG_SEL {1} \
+   CONFIG.C_SLOT_1_INTF_TYPE {xilinx.com:interface:axis_rtl:1.0} \
  ] $system_ila_1
 
   # Create instance: usp_rf_data_converter_0, and set properties
@@ -316,9 +322,11 @@ proc create_root_design { parentCell } {
    CONFIG.DAC_Interpolation_Mode00 {0} \
    CONFIG.DAC_Interpolation_Mode10 {0} \
    CONFIG.DAC_Interpolation_Mode12 {1} \
+   CONFIG.DAC_Interpolation_Mode13 {1} \
    CONFIG.DAC_Mixer_Type00 {3} \
    CONFIG.DAC_Mixer_Type10 {3} \
    CONFIG.DAC_Mixer_Type12 {0} \
+   CONFIG.DAC_Mixer_Type13 {0} \
    CONFIG.DAC_RESERVED_1_00 {false} \
    CONFIG.DAC_RESERVED_1_01 {false} \
    CONFIG.DAC_RESERVED_1_02 {false} \
@@ -330,6 +338,7 @@ proc create_root_design { parentCell } {
    CONFIG.DAC_Slice00_Enable {false} \
    CONFIG.DAC_Slice10_Enable {false} \
    CONFIG.DAC_Slice12_Enable {true} \
+   CONFIG.DAC_Slice13_Enable {true} \
  ] $usp_rf_data_converter_0
 
   # Create instance: zynq_ultra_ps_e_0, and set properties
@@ -1014,11 +1023,15 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net default_sysclk3_100mhz_1 [get_bd_intf_ports default_sysclk3_100mhz] [get_bd_intf_pins clk_wiz_0/CLK_IN1_D]
   connect_bd_intf_net -intf_net ps8_0_axi_periph_M00_AXI [get_bd_intf_pins ps8_0_axi_periph/M00_AXI] [get_bd_intf_pins usp_rf_data_converter_0/s_axi]
   connect_bd_intf_net -intf_net ps8_0_axi_periph_M01_AXI [get_bd_intf_pins axi_gpio_0/S_AXI] [get_bd_intf_pins ps8_0_axi_periph/M01_AXI]
+  connect_bd_intf_net -intf_net pulse_gen_0_m0_axis [get_bd_intf_pins pulse_gen_0/m0_axis] [get_bd_intf_pins usp_rf_data_converter_0/s13_axis]
+connect_bd_intf_net -intf_net [get_bd_intf_nets pulse_gen_0_m0_axis] [get_bd_intf_pins pulse_gen_0/m0_axis] [get_bd_intf_pins system_ila_1/SLOT_1_AXIS]
+  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_intf_nets pulse_gen_0_m0_axis]
   connect_bd_intf_net -intf_net pulse_gen_0_m_axis [get_bd_intf_pins pulse_gen_0/m_axis] [get_bd_intf_pins usp_rf_data_converter_0/s12_axis]
 connect_bd_intf_net -intf_net [get_bd_intf_nets pulse_gen_0_m_axis] [get_bd_intf_pins pulse_gen_0/m_axis] [get_bd_intf_pins system_ila_1/SLOT_0_AXIS]
   set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_intf_nets pulse_gen_0_m_axis]
   connect_bd_intf_net -intf_net sysref_in_1 [get_bd_intf_ports sysref_in] [get_bd_intf_pins usp_rf_data_converter_0/sysref_in]
   connect_bd_intf_net -intf_net usp_rf_data_converter_0_vout12 [get_bd_intf_ports vout12_0] [get_bd_intf_pins usp_rf_data_converter_0/vout12]
+  connect_bd_intf_net -intf_net usp_rf_data_converter_0_vout13 [get_bd_intf_ports vout13_0] [get_bd_intf_pins usp_rf_data_converter_0/vout13]
   connect_bd_intf_net -intf_net zynq_ultra_ps_e_0_M_AXI_HPM0_FPD [get_bd_intf_pins ps8_0_axi_periph/S00_AXI] [get_bd_intf_pins zynq_ultra_ps_e_0/M_AXI_HPM0_FPD]
 
   # Create port connections
