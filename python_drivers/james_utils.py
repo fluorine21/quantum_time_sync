@@ -16,8 +16,8 @@ ALICE_PORT = "COM4"
 BOB_PORT = "COM9"
 
 #Channel definitions for Alice and Bob, can all be set to a single channel if you're just doing key transmission
-ALICE_CHANNEL_SEND = 2
-ALICE_CHANNEL_RECEIVE = 2
+ALICE_CHANNEL_SEND = 1
+ALICE_CHANNEL_RECEIVE = 1
 BOB_CHANNEL_SEND = 2
 BOB_CHANNEL_RECEIVE = 2
 

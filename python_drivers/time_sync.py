@@ -1110,9 +1110,23 @@ class time_sync:
         james_utils.send_timestamp(self.s, num_dead_pulse)
         james_utils.send_timestamp(self.s, self.period)
         
+        
+        #Readout our encoded pulse list so
+        print("Receiving pulse list for entangled photon detection")
+        pulse_list = self.tdc.end_record(self.channel_receive,1)
+        alice_entangled_pulse_timestamp = 0
+        if(len(pulse_list) < 5):
+            print("Failed to retreive pulses on Alices end, cannot accomplish absolute synchronization")
+        else:
+            decoded_vals, a, b, alice_entangled_pulse_timestamp = james_utils.decode_pulse_list(pulse_list, self.period, self.bin_number, self.bin_size, num_sync_pulse)
+        
+        
         print("Waiting for Bob to finish")
         #Set the socket timeout to something long
         self.s.settimeout(TIMEOUT_LONG)
+        
+        #Get the timestamp of the entangled pulse from Bob
+        entangled_pulse_timestamp = james_utils.receive_timestamp(self.s)
         
         #Wait to get back the number of extracted values
         bob_extracted_values_len = james_utils.receive_timestamp(self.s)
@@ -1131,10 +1145,12 @@ class time_sync:
             
         #For profiling purposes
         #self.s.send(bytearray([SERVER_EXIT]))
+            
+        print("Alice entangled timestamp was " + str(alice_entangled_pulse_timestamp) + ", Bob entangled timestmap was " + str(entangled_pulse_timestamp))
         
         
         self.disconnect_from_server()
-        return bob_extracted_values
+        return bob_extracted_values, alice_entangled_pulse_timestamp, entangled_pulse_timestamp
         
     
     #Receives a stream at Bob's end and decodes it
@@ -1168,7 +1184,7 @@ class time_sync:
         print("Expected " + str(num_pulses) + ", got " + str(len(pulse_list)) + " pulses")
         
         #decoded_vals = self.analyze_pulse_list(pulse_list, num_pulses, num_sync_pulses, num_dead_pulses)
-        decoded_vals, a, b = james_utils.decode_pulse_list(pulse_list, self.period, self.bin_number, self.bin_size, num_sync_pulses)
+        decoded_vals, a, b, entangled_pulse_timestamp = james_utils.decode_pulse_list(pulse_list, self.period, self.bin_number, self.bin_size, num_sync_pulses)
         
         print("Done decoding")
         print("Got: ")
@@ -1179,6 +1195,9 @@ class time_sync:
         #print(res_str)
         print(str(decoded_vals))
         
+        #Send the entangled pulse timestamp
+        james_utils.send_timestamp(sck, entangled_pulse_timestamp)
+        
         #Send the length of decoded vals and then each val
         james_utils.send_timestamp(sck, len(decoded_vals))
         
@@ -1187,163 +1206,7 @@ class time_sync:
 
         return 0 #We're done       
     
-    #depreciated, do not use
-    def val_to_coarse_fine(self, val):
-        
-        offset = self.val_to_offset(val)
-        c = Math.floor(offset / 4000)
-        f = Math.floor((offset/250)%16)
-        return c,f
     
-    #Depreciated, do not use
-    def val_to_offset(self, val):
-        
-        return (val * self.bin_size) + (0.5 * self.bin_size)
-    #Depreciated, do not use
-    def offset_to_val(self, offset):
-        
-        if(offset > self.bin_number * self.bin_size):
-            print("Error, received photon outside of allowed range, should not happen here")
-            return FAIL_TIMESTAMP_BAD_RANGE
-        
-        val = Math.floor(offset/self.bin_size)
-        return val    
-    
-    #Depreciated, do not use
-    #-1 is did not detect, -2 is fell outsize allowable range
-    def analyze_pulse_list(self, pulse_list, expected_num_pulses, num_sync_pulses, num_dead_pulses):
-        
-        
-        #For profiling purposes
-        #self.shutdown_flag = 1
-        
-        if(self.period < 5):
-            print("Expected period too small, aborting decode")
-            return []
-        
-        #Convert pulses to relative first
-        p_offset = pulse_list[0]
-        for i in range(0, len(pulse_list)):
-            #print("Got pulse: " + str(pulse_list[i]))
-            pulse_list[i] -= p_offset
-        
-        ##################################################
-        ##Relative synchronization happening here
-        diffs_pre = []
-        max_diff = 0
-        first_encoded_index = 0
-        #Figure out the largest difference to find the first encoded photon
-        for i in range(0, len(pulse_list)-1):
-            
-            d = pulse_list[i+1] - pulse_list[i]
-            
-            #If we find a larger difference
-            if(d > max_diff):
-                max_diff = d
-                first_encoded_index = i+1#Record this index
-
-        #Calculate the calibration differences
-        for i in range(0, first_encoded_index - 1):
-            diffs_pre.append(pulse_list[i+1] - pulse_list[i])
-            
-        diffs = []
-        
-        
-        #Throw out any that are too large
-        for i in range(0, len(diffs_pre)):
-            if(diffs_pre[i] < min(diffs_pre) *1.5):
-                diffs.append(diffs_pre[i])
-                
-                
-        #Sanity check on diffs
-        if(len(diffs) > num_sync_pulses):
-            print("Error, too many sync pulses received, aborting decode")
-            file = open("bob_pulse_analysis_log.txt",'a')
-            file.write(datetime.datetime.now().strftime("\n================\n%I:%M%p on %B %d, %Y\nError, too many sync pulses received, aborting decode\n"))
-            file.close()
-            return []
-        
-        ####################################################
-        
-        
-        #Start the time bin counter
-        avg_period = sum(diffs) / len(diffs)
-        
-        #If the avg period is too far off
-        if(abs((avg_period - self.period)/min(avg_period, self.period)) > PERIOD_DIFF_THRESHOLD):
-            
-            print("Average period too far outsize of allowable bounds, aborting")
-            file = open("bob_pulse_analysis_log.txt",'a')
-            file.write(datetime.datetime.now().strftime("\n================\n%I:%M%p on %B %d, %Y\nAverage period too far outsize of allowable bounds, aborting\n"))
-            file.close()
-            return []
-        
-        if(PERIOD_OVERRIDE):
-            avg_period = self.period #Use this period for stability
-        
-        #If the time between the last sync pulse and first encoded pulse is too small
-        if(pulse_list[first_encoded_index] - pulse_list[first_encoded_index-1] < self.period):
-            
-            print("Time between sync pulses and first encoded pulse was too short")
-            file = open("bob_pulse_analysis_log.txt",'a')
-            file.write(datetime.datetime.now().strftime("\n================\n%I:%M%p on %B %d, %Y\nTime between sync pulses and first encoded pulse was too short, aborting\n"))
-            file.close()
-            return []
-        
-        current_clock_tick = pulse_list[first_encoded_index - 1]
-        decoded_vals = []
-        offsets = []
-        succ_vals = 0
-        for j in range(first_encoded_index, len(pulse_list)):
-        
-            while(current_clock_tick < pulse_list[j] - avg_period):
-                #If we're having to increment after the first pulse then we've missed one
-                if(j != first_encoded_index):
-                    print("Detected missing pulse number " + str(j - first_encoded_index))
-                    decoded_vals.append(FAIL_TIMESTAMP_NO_PHOTON)
-                    offsets.append(FAIL_TIMESTAMP_NO_PHOTON)
-                current_clock_tick += avg_period
-            
-            offset = pulse_list[j] - current_clock_tick
-            offsets.append(offset)
-            
-            if(offset < 0):
-                print("Fatal error, offset was less than 0!")
-                decoded_vals.append(FAIL_TIMESTAMP_NEG_OFFSET)
-                current_clock_tick += avg_period#Go to next pulse
-            elif(INFER_TICK):
-                #Figure out the offset we should have had
-                val = self.offset_to_val(offset)
-                decoded_vals.append(val)
-                exact_offset = self.val_to_offset(val)
-                if(val >= 0 and val < self.bin_number):#If the decode is valid
-                    succ_vals += 1
-                    current_clock_tick = pulse_list[j] - exact_offset + avg_period#nfer the last clock tick and update
-                else:
-                    current_clock_tick += avg_period#Go to next pulse
-            else:
-                decoded_vals.append(self.offset_to_val(offset))
-                succ_vals += 1
-                current_clock_tick += avg_period#Go to next pulse
-            
-        print("[ANALYZE STREAM RESULTS] Sync pulses: " + str(first_encoded_index) + ", decoded pulses: " + str(succ_vals) + ", avg period: " + str(avg_period))
-        dv_str = "Decoded values: "
-        for d in decoded_vals:
-            dv_str += str(d)  + ", "
-        #print(dv_str)
-        
-        #log to file
-        if(BOB_FILE_DEBUG):
-            file = open("bob_pulse_analysis_log.txt",'a')
-            file.write(datetime.datetime.now().strftime("\n================\n%I:%M%p on %B %d, %Y\n"))
-            file.write("Expected " + str(expected_num_pulses) + ", got " + str(len(pulse_list)) + " pulses, used " + str(len(diffs) + 1) + " pulses to calculate period")
-            for p in pulse_list:
-                file.write(str(p) + "\n")
-            for i in range(0, len(offsets)):
-                file.write("offset: " + str(offsets[i]) + ", became value " + str(decoded_vals[i]) + "\n")
-            file.close()
-        
-        return decoded_vals
             
         
 #Does certificate generation for SSL socket
@@ -1392,6 +1255,208 @@ def cert_gen(
         f.write(crypto.dump_privatekey(crypto.FILETYPE_PEM, k).decode("utf-8"))
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# #depreciated, do not use
+#     def val_to_coarse_fine(self, val):
+        
+#         offset = self.val_to_offset(val)
+#         c = Math.floor(offset / 4000)
+#         f = Math.floor((offset/250)%16)
+#         return c,f
+    
+#     #Depreciated, do not use
+#     def val_to_offset(self, val):
+        
+#         return (val * self.bin_size) + (0.5 * self.bin_size)
+#     #Depreciated, do not use
+#     def offset_to_val(self, offset):
+        
+#         if(offset > self.bin_number * self.bin_size):
+#             print("Error, received photon outside of allowed range, should not happen here")
+#             return FAIL_TIMESTAMP_BAD_RANGE
+        
+#         val = Math.floor(offset/self.bin_size)
+#         return val    
+    
+#     #Depreciated, do not use
+#     #-1 is did not detect, -2 is fell outsize allowable range
+#     def analyze_pulse_list(self, pulse_list, expected_num_pulses, num_sync_pulses, num_dead_pulses):
+        
+        
+#         #For profiling purposes
+#         #self.shutdown_flag = 1
+        
+#         if(self.period < 5):
+#             print("Expected period too small, aborting decode")
+#             return []
+        
+#         #Convert pulses to relative first
+#         p_offset = pulse_list[0]
+#         for i in range(0, len(pulse_list)):
+#             #print("Got pulse: " + str(pulse_list[i]))
+#             pulse_list[i] -= p_offset
+        
+#         ##################################################
+#         ##Relative synchronization happening here
+#         diffs_pre = []
+#         max_diff = 0
+#         first_encoded_index = 0
+#         #Figure out the largest difference to find the first encoded photon
+#         for i in range(0, len(pulse_list)-1):
+            
+#             d = pulse_list[i+1] - pulse_list[i]
+            
+#             #If we find a larger difference
+#             if(d > max_diff):
+#                 max_diff = d
+#                 first_encoded_index = i+1#Record this index
+
+#         #Calculate the calibration differences
+#         for i in range(0, first_encoded_index - 1):
+#             diffs_pre.append(pulse_list[i+1] - pulse_list[i])
+            
+#         diffs = []
+        
+        
+#         #Throw out any that are too large
+#         for i in range(0, len(diffs_pre)):
+#             if(diffs_pre[i] < min(diffs_pre) *1.5):
+#                 diffs.append(diffs_pre[i])
+                
+                
+#         #Sanity check on diffs
+#         if(len(diffs) > num_sync_pulses):
+#             print("Error, too many sync pulses received, aborting decode")
+#             file = open("bob_pulse_analysis_log.txt",'a')
+#             file.write(datetime.datetime.now().strftime("\n================\n%I:%M%p on %B %d, %Y\nError, too many sync pulses received, aborting decode\n"))
+#             file.close()
+#             return []
+        
+#         ####################################################
+        
+        
+#         #Start the time bin counter
+#         avg_period = sum(diffs) / len(diffs)
+        
+#         #If the avg period is too far off
+#         if(abs((avg_period - self.period)/min(avg_period, self.period)) > PERIOD_DIFF_THRESHOLD):
+            
+#             print("Average period too far outsize of allowable bounds, aborting")
+#             file = open("bob_pulse_analysis_log.txt",'a')
+#             file.write(datetime.datetime.now().strftime("\n================\n%I:%M%p on %B %d, %Y\nAverage period too far outsize of allowable bounds, aborting\n"))
+#             file.close()
+#             return []
+        
+#         if(PERIOD_OVERRIDE):
+#             avg_period = self.period #Use this period for stability
+        
+#         #If the time between the last sync pulse and first encoded pulse is too small
+#         if(pulse_list[first_encoded_index] - pulse_list[first_encoded_index-1] < self.period):
+            
+#             print("Time between sync pulses and first encoded pulse was too short")
+#             file = open("bob_pulse_analysis_log.txt",'a')
+#             file.write(datetime.datetime.now().strftime("\n================\n%I:%M%p on %B %d, %Y\nTime between sync pulses and first encoded pulse was too short, aborting\n"))
+#             file.close()
+#             return []
+        
+#         current_clock_tick = pulse_list[first_encoded_index - 1]
+#         decoded_vals = []
+#         offsets = []
+#         succ_vals = 0
+#         for j in range(first_encoded_index, len(pulse_list)):
+        
+#             while(current_clock_tick < pulse_list[j] - avg_period):
+#                 #If we're having to increment after the first pulse then we've missed one
+#                 if(j != first_encoded_index):
+#                     print("Detected missing pulse number " + str(j - first_encoded_index))
+#                     decoded_vals.append(FAIL_TIMESTAMP_NO_PHOTON)
+#                     offsets.append(FAIL_TIMESTAMP_NO_PHOTON)
+#                 current_clock_tick += avg_period
+            
+#             offset = pulse_list[j] - current_clock_tick
+#             offsets.append(offset)
+            
+#             if(offset < 0):
+#                 print("Fatal error, offset was less than 0!")
+#                 decoded_vals.append(FAIL_TIMESTAMP_NEG_OFFSET)
+#                 current_clock_tick += avg_period#Go to next pulse
+#             elif(INFER_TICK):
+#                 #Figure out the offset we should have had
+#                 val = self.offset_to_val(offset)
+#                 decoded_vals.append(val)
+#                 exact_offset = self.val_to_offset(val)
+#                 if(val >= 0 and val < self.bin_number):#If the decode is valid
+#                     succ_vals += 1
+#                     current_clock_tick = pulse_list[j] - exact_offset + avg_period#nfer the last clock tick and update
+#                 else:
+#                     current_clock_tick += avg_period#Go to next pulse
+#             else:
+#                 decoded_vals.append(self.offset_to_val(offset))
+#                 succ_vals += 1
+#                 current_clock_tick += avg_period#Go to next pulse
+            
+#         print("[ANALYZE STREAM RESULTS] Sync pulses: " + str(first_encoded_index) + ", decoded pulses: " + str(succ_vals) + ", avg period: " + str(avg_period))
+#         dv_str = "Decoded values: "
+#         for d in decoded_vals:
+#             dv_str += str(d)  + ", "
+#         #print(dv_str)
+        
+#         #log to file
+#         if(BOB_FILE_DEBUG):
+#             file = open("bob_pulse_analysis_log.txt",'a')
+#             file.write(datetime.datetime.now().strftime("\n================\n%I:%M%p on %B %d, %Y\n"))
+#             file.write("Expected " + str(expected_num_pulses) + ", got " + str(len(pulse_list)) + " pulses, used " + str(len(diffs) + 1) + " pulses to calculate period")
+#             for p in pulse_list:
+#                 file.write(str(p) + "\n")
+#             for i in range(0, len(offsets)):
+#                 file.write("offset: " + str(offsets[i]) + ", became value " + str(decoded_vals[i]) + "\n")
+#             file.close()
+        
+#         return decoded_vals
 
 
     
