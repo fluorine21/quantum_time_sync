@@ -726,7 +726,7 @@ class tdc_wrapper:
                 #c.send(SERVER_ACK)
                 james_utils.send_timestamp(c, 0)
             elif(client_cmd[0] == COMMAND_GET_NUM_PULSES):
-                print("[CLIENT HANDLER] Client at " + ip_str + ": COMMAND_STOP_RECORD")
+                print("[CLIENT HANDLER] Client at " + ip_str + ": COMMAND_GET_NUM_PULSES, num was " + str(len(self.timestamp_list)))
                 james_utils.send_timestamp(c, len(self.timestamp_list))
             
             else:

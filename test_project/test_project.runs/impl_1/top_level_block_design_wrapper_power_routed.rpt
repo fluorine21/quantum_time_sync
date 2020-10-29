@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date             : Wed Oct 21 15:22:28 2020
+| Date             : Wed Oct 28 13:49:00 2020
 | Host             : pme10D0025 running 64-bit major release  (build 9200)
 | Command          : report_power -file top_level_block_design_wrapper_power_routed.rpt -pb top_level_block_design_wrapper_power_summary_routed.pb -rpx top_level_block_design_wrapper_power_routed.rpx
 | Design           : top_level_block_design_wrapper
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 4.431        |
+| Total On-Chip Power (W)  | 4.433        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 3.231        |
+| Dynamic (W)              | 3.233        |
 | Device Static (W)        | 1.201        |
 | Effective TJA (C/W)      | 0.8          |
 | Max Ambient (C)          | 96.3         |
@@ -52,9 +52,9 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.093 |       35 |       --- |             --- |
-| CLB Logic                |     0.029 |    23089 |       --- |             --- |
-|   LUT as Logic           |     0.021 |     8111 |    425280 |            1.91 |
+| Clocks                   |     0.090 |       35 |       --- |             --- |
+| CLB Logic                |     0.030 |    23089 |       --- |             --- |
+|   LUT as Logic           |     0.023 |     8115 |    425280 |            1.91 |
 |   LUT as Shift Register  |     0.006 |      757 |    213600 |            0.35 |
 |   Register               |    <0.001 |     9850 |    850560 |            1.16 |
 |   LUT as Distributed RAM |    <0.001 |       88 |    213600 |            0.04 |
@@ -62,7 +62,7 @@ Table of Contents
 |   Others                 |     0.000 |     1327 |       --- |             --- |
 |   F7/F8 Muxes            |     0.000 |       79 |    425280 |            0.02 |
 |   BUFG                   |     0.000 |        1 |        64 |            1.56 |
-| Signals                  |     0.046 |    18415 |       --- |             --- |
+| Signals                  |     0.050 |    18409 |       --- |             --- |
 | Block RAM                |     0.240 |      166 |      1080 |           15.37 |
 | RFAMS                    |     0.427 |        6 |       --- |             --- |
 |   RFDAC                  |     0.427 |        2 |         4 |           50.00 |
@@ -73,7 +73,7 @@ Table of Contents
 | Static Power             |     1.201 |          |           |                 |
 |   PS Static              |     0.098 |          |           |                 |
 |   PL Static              |     1.103 |          |           |                 |
-| Total                    |     4.431 |          |           |                 |
+| Total                    |     4.433 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -83,7 +83,7 @@ Table of Contents
 +-----------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source          | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint          |       0.850 |     0.759 |       0.450 |      0.310 |       NA    | Unspecified | NA         |
+| Vccint          |       0.850 |     0.762 |       0.452 |      0.310 |       NA    | Unspecified | NA         |
 | Vccint_io       |       0.850 |     0.071 |       0.000 |      0.071 |       NA    | Unspecified | NA         |
 | Vccbram         |       0.850 |     0.034 |       0.029 |      0.005 |       NA    | Unspecified | NA         |
 | Vccaux          |       1.800 |     0.333 |       0.054 |      0.279 |       NA    | Unspecified | NA         |
@@ -180,26 +180,26 @@ Table of Contents
 +--------------------------------+-----------+
 | Name                           | Power (W) |
 +--------------------------------+-----------+
-| top_level_block_design_wrapper |     3.231 |
-|   dbg_hub                      |     0.006 |
-|     inst                       |     0.006 |
-|       BSCANID.u_xsdbm_id       |     0.006 |
-|   top_level_block_design_i     |     3.225 |
+| top_level_block_design_wrapper |     3.233 |
+|   dbg_hub                      |     0.005 |
+|     inst                       |     0.005 |
+|       BSCANID.u_xsdbm_id       |     0.005 |
+|   top_level_block_design_i     |     3.227 |
 |     clk_wiz_0                  |     0.100 |
 |       inst                     |     0.100 |
 |     instr_fifo                 |     0.002 |
 |       U0                       |     0.002 |
-|     ps8_0_axi_periph           |     0.015 |
+|     ps8_0_axi_periph           |     0.014 |
 |       s00_couplers             |     0.013 |
 |       xbar                     |     0.001 |
 |     pulse_fifo                 |     0.026 |
 |       U0                       |     0.026 |
-|     pulse_gen_0                |     0.040 |
-|       inst                     |     0.040 |
+|     pulse_gen_0                |     0.042 |
+|       inst                     |     0.042 |
 |     system_ila_1               |     0.295 |
 |       inst                     |     0.295 |
-|     usp_rf_data_converter_0    |     0.449 |
-|       inst                     |     0.449 |
+|     usp_rf_data_converter_0    |     0.450 |
+|       inst                     |     0.450 |
 |     zynq_ultra_ps_e_0          |     2.297 |
 |       inst                     |     2.297 |
 +--------------------------------+-----------+

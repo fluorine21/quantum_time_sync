@@ -3,3 +3,163 @@
 05:52PM on September 20, 2020
 bin_size = 8000, bin_number = 16, period = 280000
 test num, test num for this # of photons, number of photons
+
+================
+08:32PM on October 28, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+08:34PM on October 28, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+08:40PM on October 28, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+08:44PM on October 28, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+08:46PM on October 28, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+08:49PM on October 28, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+08:51PM on October 28, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+08:51PM on October 28, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+08:53PM on October 28, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+08:53PM on October 28, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+08:54PM on October 28, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+08:54PM on October 28, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+08:54PM on October 28, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+08:54PM on October 28, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+08:54PM on October 28, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+08:54PM on October 28, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+08:55PM on October 28, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+08:58PM on October 28, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+08:59PM on October 28, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+09:00PM on October 28, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+09:00PM on October 28, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+09:00PM on October 28, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+09:00PM on October 28, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+09:00PM on October 28, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+09:00PM on October 28, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+09:00PM on October 28, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+09:00PM on October 28, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+09:01PM on October 28, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+09:01PM on October 28, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+09:01PM on October 28, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+09:01PM on October 28, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+10:05AM on October 29, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons

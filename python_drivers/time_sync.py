@@ -1028,7 +1028,7 @@ class time_sync:
     #Should be used by user to test encoded pulse transmission
     #Returns -1 on fail
     #Returns bob's decoded values on success
-    def send_stream(self, vals, num_sync_pulse, num_dead_pulse, pulse_len, pulse_amp):
+    def send_stream(self, vals, num_sync_pulse, num_dead_pulse, pulse_len, pulse_amp, look_for_entangled_pair = 0):
         
         if(self.mode != CLIENT):
             print("Error, send_encoded_photon must be called in client mode")
@@ -1066,7 +1066,7 @@ class time_sync:
                 print("Bad value " + str(v) + ", too large, must be smaller than number of bins")
                 self.disconnect_from_server()
                 return -1
-            c, f = self.val_to_coarse_fine(v)
+            c, f = james_utils.val_to_coarse_fine(v, self.bin_size)
             val_coarse.append(c)
             val_fine.append(f)
             #print("Val " + str(v) + " has coarse: " + str(c) + ", fine: " + str(f))
@@ -1097,9 +1097,14 @@ class time_sync:
             print("Board was busy")
             
         expected_num_pulses = (num_sync_pulse + len(vals)) * 0.95
-        while(self.tdc.get_num_pulses() < expected_num_pulses):
+        times_waited = 0
+        while(self.tdc.get_num_pulses() < expected_num_pulses and times_waited < 10):
             print("Still waiting on TDC...")
             time.sleep(0.5)
+            times_waited += 1
+            
+        if(times_waited > 10):
+            print("Warning, timed out waiting for tdc to finish")
         
         self.tdc.set_record(0)
         
@@ -1112,13 +1117,14 @@ class time_sync:
         
         
         #Readout our encoded pulse list so
-        print("Receiving pulse list for entangled photon detection")
-        pulse_list = self.tdc.end_record(self.channel_receive,1)
         alice_entangled_pulse_timestamp = 0
-        if(len(pulse_list) < 5):
-            print("Failed to retreive pulses on Alices end, cannot accomplish absolute synchronization")
-        else:
-            decoded_vals, a, b, alice_entangled_pulse_timestamp = james_utils.decode_pulse_list(pulse_list, self.period, self.bin_number, self.bin_size, num_sync_pulse)
+        if(look_for_entangled_pair == 1):
+            print("Receiving pulse list for entangled photon detection")
+            pulse_list = self.tdc.end_record(self.channel_receive,1)
+            if(len(pulse_list) < 5):
+                print("Failed to retreive pulses on Alices end, cannot accomplish absolute synchronization")
+            else:
+                decoded_vals, a, b, alice_entangled_pulse_timestamp = james_utils.decode_pulse_list(pulse_list, self.period, self.bin_number, self.bin_size, num_sync_pulse)
         
         
         print("Waiting for Bob to finish")

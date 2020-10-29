@@ -2175,7 +2175,7 @@ module top_level_block_design_usp_rf_data_converter_0_0_block (
   always @(posedge Bus2IP_Clk)
     if (~Bus2IP_Resetn)
     begin
-      dac1_ref_clk_freq <= 32'd250000;
+      dac1_ref_clk_freq <= 32'd200000;
     end
     else if (bank3_write[192])
     begin

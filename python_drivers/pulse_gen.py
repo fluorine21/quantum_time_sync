@@ -286,7 +286,7 @@ class pulse_gen:
         #self.port.open()
         self.port.flush
         b0 = 0
-        b1 = 0
+        b1 = (num_samples >> 8) & 0xFF
         b2 = num_samples & 0xFF
         
         self.port.write([CMD_PREAMBLE,CMD_SET_PULSE_LEN, b0, b1, b2])

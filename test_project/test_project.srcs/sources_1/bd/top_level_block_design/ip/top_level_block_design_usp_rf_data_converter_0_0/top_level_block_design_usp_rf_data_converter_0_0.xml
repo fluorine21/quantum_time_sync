@@ -18556,11 +18556,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Oct 21 17:37:03 UTC 2020</spirit:value>
+            <spirit:value>Wed Oct 28 18:37:28 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:e5c8e064</spirit:value>
+            <spirit:value>9:0d10377f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -18571,7 +18571,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:e5c8e064</spirit:value>
+            <spirit:value>9:0d10377f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -18587,11 +18587,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Oct 21 17:37:04 UTC 2020</spirit:value>
+            <spirit:value>Wed Oct 28 18:37:29 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:e5c8e064</spirit:value>
+            <spirit:value>9:0d10377f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -18606,11 +18606,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Oct 21 17:37:05 UTC 2020</spirit:value>
+            <spirit:value>Wed Oct 28 18:37:30 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:736fcb24</spirit:value>
+            <spirit:value>9:488aff06</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -18626,11 +18626,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Oct 21 17:37:04 UTC 2020</spirit:value>
+            <spirit:value>Wed Oct 28 18:37:29 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:736fcb24</spirit:value>
+            <spirit:value>9:488aff06</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -18644,11 +18644,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Oct 21 17:39:40 UTC 2020</spirit:value>
+            <spirit:value>Wed Oct 28 18:40:01 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:e5c8e064</spirit:value>
+            <spirit:value>9:0d10377f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -46757,7 +46757,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="float">
         <spirit:name>C_DAC1_Refclk_Freq</spirit:name>
-        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_DAC1_Refclk_Freq">250.000</spirit:value>
+        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_DAC1_Refclk_Freq">200.000</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="float">
         <spirit:name>C_DAC1_Outclk_Freq</spirit:name>
@@ -46765,7 +46765,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="long">
         <spirit:name>C_DAC1_FBDIV</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_DAC1_FBDIV">48</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_DAC1_FBDIV">60</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="long">
         <spirit:name>C_DAC1_OutDiv</spirit:name>
@@ -54182,7 +54182,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>DAC1_Refclk_Freq</spirit:name>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.DAC1_Refclk_Freq" spirit:choiceRef="choice_list_c002c6cb" spirit:order="487">250.000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.DAC1_Refclk_Freq" spirit:choiceRef="choice_list_c002c6cb" spirit:order="487">200.000</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>

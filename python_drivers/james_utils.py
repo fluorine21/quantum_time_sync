@@ -18,19 +18,19 @@ BOB_PORT = "COM9"
 #Channel definitions for Alice and Bob, can all be set to a single channel if you're just doing key transmission
 ALICE_CHANNEL_SEND = 1
 ALICE_CHANNEL_RECEIVE = 1
-BOB_CHANNEL_SEND = 2
-BOB_CHANNEL_RECEIVE = 2
+BOB_CHANNEL_SEND = 1
+BOB_CHANNEL_RECEIVE = 1
 
-#TDC_THRESHOLD = 0.1 #100mV for SNSPDs
-TDC_THRESHOLD = 0.0 #0mV for just FPGA
-TDC_CHANNEL_LIST = (2,3,4)
+TDC_THRESHOLD = 0.1 #100mV for SNSPDs
+#TDC_THRESHOLD = 0.0 #0mV for just FPGA
+TDC_CHANNEL_LIST = (1,2,3,4)
 
 PERIOD_THRESHOLD = 0.1 #If the measured and expected periods differ by more than this fracion then decode fails
 SYNC_PERIOD_THRESHOLD = 0.01#Tighter for determining which sync pulses are valid
 
 
-LOG_TO_FILE = 0
-logfile = "received_pulse_streams_cw_light.txt"
+LOG_TO_FILE = 1
+logfile = "received_pulse_streams_cw_light_10_29_2020.txt"
 INFER_TICK = 0 #If 1, next tick will be inferred from decoded value, do not use
 
 #Timestamps denoting decode failiure
@@ -142,17 +142,17 @@ class sync_pulse:
         self.diffs = []
     
 #Converts a value to be encoded to a coarse and fine offset used by the FPGA
-def val_to_coarse_fine(self, val):
+def val_to_coarse_fine(val, bin_size):
     
-    offset = self.val_to_offset(val)
+    offset = val_to_offset(val, bin_size)
     c = Math.floor(offset / 4000)
     f = Math.floor((offset/250)%16)
     return c,f
 
 #Converts a value to an offset in picoseconds
-def val_to_offset(self, val):
+def val_to_offset(val, bin_size):
     
-    return (val * self.bin_size) + (0.5 * self.bin_size)
+    return (val * bin_size) + (0.5 * bin_size)
 
 #Converts an offset value from the last bin start in picoseconds to the encoded value
 def offset_to_val(offset, bin_number, bin_size):
@@ -193,7 +193,7 @@ def check_results(sent, recv):
 #Decodes a list of pulses sourced from the TDC
 #expected encoded pulses is the number of these we expect to  find
 #All units in picoseconds
-def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_size, expected_num_sync_pulses, missing_timestamp_limit = 100):
+def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_size, expected_num_sync_pulses, missing_timestamp_limit = 100, look_for_entangled_pair = 0):
     
     
     #Used later on to get correct timestamp for entangled pulse
@@ -212,12 +212,12 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
     
     if(LOG_TO_FILE):
         file = open(logfile,'a')
-        new_line = ""
+        new_line = "period = " + str(expected_period) + ", bin_num = " + str(expected_bin_num) + "\n"
         for p in pulses:
             new_line += str(p) + ","
         file.write(new_line + "\n")
         file.close()
-        return [1]
+        #return [1], 0, 0, 0
     
     
     #Fist thing to do is figure out where the sync pulses end and encoded pulses start
@@ -252,7 +252,7 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
     
     if(first_encoded_pulse_pos == 0):
         print("Cannot determine index of first encoded pulse, aborting")
-        return []
+        return [0], 0, 0, 0
     
     print("Done separating list of pulses")
     
@@ -286,7 +286,7 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
     #If we end up with no successfull period measurement
     if(len(periods_final) == 0):
         print("Error, could not identify any synchronization pulses")
-        return []
+        return [0], 0, 0, 0
             
     #Calculate the measured period
     measured_period = sum(periods_final) / len(periods_final)
@@ -316,7 +316,7 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
     #If there were no valid sync pulses then we fail
     if(len(valid_sync_pulses) < 1):
         print("Cannot decode pulse list, not enough valid sync pulses!")
-        return []
+        return [0], 0, 0, 0
         
     
     print("Found " + str(len(valid_sync_pulses)) + " valid sync pulses")
@@ -331,9 +331,13 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
     entangled_pulse_timestamp = orig_pulses[first_encoded_pulse_pos]
     
     #If this pulse is not far enough from the rest of the pulses we treat it as an encoded pulse instead
-    if(abs(entangled_pulse_timestamp - orig_pulses[first_encoded_pulse_pos+1]) < measured_period*3):
+    #Or we don't care about entangled pulses
+    if( (abs(entangled_pulse_timestamp - orig_pulses[first_encoded_pulse_pos+1]) < measured_period*3) or look_for_entangled_pair == 0):
         encoded_pulses = pulses[first_encoded_pulse_pos:len(pulses)]
-        print("Unable to determine which encoded pluse was an entangled photon.")
+        if(look_for_entangled_pair == 1):
+            print("Unable to determine which encoded pluse was an entangled photon.")
+        else:
+            print("Skipped looking for entagled pair")
         entangled_pulse_timestamp = 0
     else:
         encoded_pulses = pulses[first_encoded_pulse_pos+1:len(pulses)]
@@ -341,7 +345,7 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
     #Fail if there are no encoded pulses to decode
     if(len(encoded_pulses) < 1):
         print("Cannot decode pulse list, no encoded pulses found!")
-        return []
+        return [0], 0, 0, 0
     #Now we know where the last valid clock tick was, so we extrapolate to determine the start of the first bin set
     while(encoded_pulses[0] - last_valid_sync_pulse > measured_period):
         last_valid_sync_pulse += measured_period
@@ -357,7 +361,7 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
     #While we haven't run out of pulses to decode and we haven't decoded more than the expected number
     #while(last_valid_sync_pulse < max(encoded_pulses) and encoded_pulse_index < expected_encoded_pulses):
     
-    while(last_valid_sync_pulse < max(encoded_pulses)):  
+    while(last_valid_sync_pulse < max(encoded_pulses) and missing_count < missing_timestamp_limit):  
         #Take care of empty bin sets here
         while(encoded_pulses[encoded_pulse_index] - last_valid_sync_pulse > measured_period and missing_count < missing_timestamp_limit):
             last_valid_sync_pulse += measured_period
@@ -369,7 +373,12 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
         #We always assume the first pulse here is valid
         offset = encoded_pulses[encoded_pulse_index] - last_valid_sync_pulse;
         #Append the decoded value to our next index
-        decoded_vals.append(offset_to_val(offset, expected_bin_num, measured_bin_size))
+        v = offset_to_val(offset, expected_bin_num, measured_bin_size)
+        decoded_vals.append(v)
+        if(v == FAIL_TIMESTAMP_BAD_RANGE):
+            missing_count += 1
+        else:
+            missing_count = 0
         
         
         #Figure out the next valid timestamp

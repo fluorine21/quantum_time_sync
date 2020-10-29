@@ -36,20 +36,29 @@ pg.set_pulse_len(16)
 #Send the pulses with 10 leading ticks, 5 dead ticks
 #pg.sync_and_stream(5, 5)
 
-#pg.toggle_phase_meas(100000)
 
 print("Blasting...")
 
+# while(1):
+    
+#     try:
+#         pg.toggle_phase_meas(65535)
+#         #time.sleep(0.5)
+#     except:
+#         print("exiting...")
+#         break
 
-res = pg.get_busy()
+#res = pg.get_busy()
 
-print("Busy w/o phase meas was: " + str(res))
+#print("Busy w/o phase meas was: " + str(res))
+
+#pg.toggle_phase_meas(65535)
 
 pg.phase_meas_on()
 
-res = pg.get_busy()
+#res = pg.get_busy()
 
-print("Busy w/ phase meas was: " + str(res))
+#print("Busy w/ phase meas was: " + str(res))
 
 
 time.sleep(5)

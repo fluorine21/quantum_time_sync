@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Oct 21 15:12:09 2020" VIVADOVERSION="2020.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Oct 28 13:37:35 2020" VIVADOVERSION="2020.1">
 
   <SYSTEMINFO ARCH="zynquplusRFSOC" BOARD="xilinx.com:zcu111:part0:1.2" DEVICE="xczu28dr" NAME="top_level_block_design" PACKAGE="ffvg1517" SPEEDGRADE="-2"/>
 
@@ -7489,9 +7489,9 @@
         <PARAMETER NAME="C_DAC1_PLL_Enable" VALUE="true"/>
         <PARAMETER NAME="C_DAC1_Sampling_Rate" VALUE="4"/>
         <PARAMETER NAME="C_DAC1_Fs_Max" VALUE="6.554"/>
-        <PARAMETER NAME="C_DAC1_Refclk_Freq" VALUE="250.000"/>
+        <PARAMETER NAME="C_DAC1_Refclk_Freq" VALUE="200.000"/>
         <PARAMETER NAME="C_DAC1_Outclk_Freq" VALUE="250.000"/>
-        <PARAMETER NAME="C_DAC1_FBDIV" VALUE="48"/>
+        <PARAMETER NAME="C_DAC1_FBDIV" VALUE="60"/>
         <PARAMETER NAME="C_DAC1_OutDiv" VALUE="3"/>
         <PARAMETER NAME="C_DAC1_Vco" VALUE="12000"/>
         <PARAMETER NAME="C_DAC1_Fabric_Freq" VALUE="250.000"/>
@@ -8227,7 +8227,7 @@
         <PARAMETER NAME="DAC1_Enable" VALUE="1"/>
         <PARAMETER NAME="DAC1_PLL_Enable" VALUE="true"/>
         <PARAMETER NAME="DAC1_Sampling_Rate" VALUE="4"/>
-        <PARAMETER NAME="DAC1_Refclk_Freq" VALUE="250.000"/>
+        <PARAMETER NAME="DAC1_Refclk_Freq" VALUE="200.000"/>
         <PARAMETER NAME="DAC1_Outclk_Freq" VALUE="250.000"/>
         <PARAMETER NAME="DAC1_Fabric_Freq" VALUE="250.000"/>
         <PARAMETER NAME="DAC1_Multi_Tile_Sync" VALUE="false"/>

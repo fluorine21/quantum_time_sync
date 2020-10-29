@@ -1,0 +1,1179 @@
+
+================
+10:07AM on October 29, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+10:08AM on October 29, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+10:09AM on October 29, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
+
+================
+10:12AM on October 29, 2020
+bin_size = 8000, bin_number = 16, period = 280000, num sync pulses = 400, pulse len (samples) = 16, pulse amp = 0x7fff
+test num, test num for this # of photons, number of photons
+
+================
+10:14AM on October 29, 2020
+bin_size = 8000, bin_number = 16, period = 280000, num sync pulses = 400, pulse len (samples) = 32, pulse amp = 0x7fff
+test num, test num for this # of photons, number of photons
+
+================
+10:15AM on October 29, 2020
+bin_size = 16000, bin_number = 4, period = 64000, num sync pulses = 400, pulse len (samples) = 32, pulse amp = 0x7fff
+test num, test num for this # of photons, number of photons
+
+================
+10:16AM on October 29, 2020
+bin_size = 16000, bin_number = 4, period = 64000, num sync pulses = 400, pulse len (samples) = 32, pulse amp = 0x7fff
+test num, test num for this # of photons, number of photons
+
+================
+10:18AM on October 29, 2020
+bin_size = 16000, bin_number = 4, period = 64000, num sync pulses = 400, pulse len (samples) = 32, pulse amp = 0x7fff
+test num, test num for this # of photons, number of photons
+
+================
+10:18AM on October 29, 2020
+bin_size = 16000, bin_number = 4, period = 64000, num sync pulses = 400, pulse len (samples) = 32, pulse amp = 0x7fff
+test num, test num for this # of photons, number of photons
+
+================
+10:19AM on October 29, 2020
+bin_size = 16000, bin_number = 4, period = 64000, num sync pulses = 400, pulse len (samples) = 32, pulse amp = 0x7fff
+test num, test num for this # of photons, number of photons
+
+================
+10:21AM on October 29, 2020
+bin_size = 8000, bin_number = 16, period = 280000, num sync pulses = 400, pulse len (samples) = 32, pulse amp = 0x7fff
+test num, test num for this # of photons, number of photons
+
+================
+10:33AM on October 29, 2020
+bin_size = 8000, bin_number = 16, period = 280000, num sync pulses = 400, pulse len (samples) = 32, pulse amp = 0x7fff
+test num, test num for this # of photons, number of photons
+0, 0, 400, success:, 0, num errors:,370, num_no_photon,100, num_bad_range,2325, num_neg_offset,0
+
+================
+10:34AM on October 29, 2020
+bin_size = 8000, bin_number = 16, period = 280000, num sync pulses = 400, pulse len (samples) = 32, pulse amp = 0x7fff
+test num, test num for this # of photons, number of photons
+0, 0, 400, success:, 0, num errors:,229, num_no_photon,100, num_bad_range,1957, num_neg_offset,0
+
+================
+10:35AM on October 29, 2020
+bin_size = 16000, bin_number = 4, period = 64000, num sync pulses = 400, pulse len (samples) = 32, pulse amp = 0x7fff
+test num, test num for this # of photons, number of photons
+0, 0, 400, success:, 0, num errors:,399, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+
+================
+10:35AM on October 29, 2020
+bin_size = 16000, bin_number = 4, period = 64000, num sync pulses = 400, pulse len (samples) = 32, pulse amp = 0x7fff
+test num, test num for this # of photons, number of photons
+
+================
+10:37AM on October 29, 2020
+bin_size = 16000, bin_number = 4, period = 280000, num sync pulses = 400, pulse len (samples) = 32, pulse amp = 0x7fff
+test num, test num for this # of photons, number of photons
+0, 0, 400, success:, 0, num errors:,192, num_no_photon,100, num_bad_range,2098, num_neg_offset,0
+
+================
+10:38AM on October 29, 2020
+bin_size = 16000, bin_number = 4, period = 280000, num sync pulses = 200, pulse len (samples) = 16, pulse amp = 0x7fff
+test num, test num for this # of photons, number of photons
+0, 0, 400, success:, 0, num errors:,166, num_no_photon,100, num_bad_range,2014, num_neg_offset,0
+
+================
+10:43AM on October 29, 2020
+bin_size = 16000, bin_number = 4, period = 280000, num sync pulses = 200, pulse len (samples) = 16, pulse amp = 0x7fff
+test num, test num for this # of photons, number of photons
+0, 0, 400, success:, 0, num errors:,274, num_no_photon,186, num_bad_range,2183, num_neg_offset,0
+1, 1, 400, success:, 0, num errors:,399, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+2, 2, 400, success:, 0, num errors:,352, num_no_photon,6, num_bad_range,2307, num_neg_offset,0
+3, 3, 400, success:, 0, num errors:,61, num_no_photon,125, num_bad_range,2014, num_neg_offset,0
+4, 4, 400, success:, 0, num errors:,383, num_no_photon,3, num_bad_range,2281, num_neg_offset,0
+5, 5, 400, success:, 0, num errors:,300, num_no_photon,104, num_bad_range,2287, num_neg_offset,0
+6, 6, 400, success:, 0, num errors:,359, num_no_photon,9, num_bad_range,2357, num_neg_offset,0
+7, 7, 400, success:, 0, num errors:,339, num_no_photon,48, num_bad_range,2209, num_neg_offset,0
+
+================
+10:46AM on October 29, 2020
+bin_size = 16000, bin_number = 4, period = 280000, num sync pulses = 200, pulse len (samples) = 32, pulse amp = 0x7fff
+test num, test num for this # of photons, number of photons
+0, 0, 400, success:, 0, num errors:,235, num_no_photon,99, num_bad_range,2158, num_neg_offset,0
+
+================
+10:48AM on October 29, 2020
+bin_size = 16000, bin_number = 4, period = 280000, num sync pulses = 200, pulse len (samples) = 32, pulse amp = 0x7fff
+test num, test num for this # of photons, number of photons
+0, 0, 400, success:, 0, num errors:,399, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+
+================
+10:48AM on October 29, 2020
+bin_size = 16000, bin_number = 4, period = 280000, num sync pulses = 200, pulse len (samples) = 32, pulse amp = 0x7fff
+test num, test num for this # of photons, number of photons
+0, 0, 400, success:, 0, num errors:,349, num_no_photon,0, num_bad_range,2316, num_neg_offset,0
+
+================
+10:49AM on October 29, 2020
+bin_size = 16000, bin_number = 4, period = 280000, num sync pulses = 200, pulse len (samples) = 32, pulse amp = 0x7fff
+test num, test num for this # of photons, number of photons
+0, 0, 400, success:, 0, num errors:,84, num_no_photon,99, num_bad_range,19, num_neg_offset,0
+
+================
+10:49AM on October 29, 2020
+bin_size = 16000, bin_number = 4, period = 280000, num sync pulses = 200, pulse len (samples) = 32, pulse amp = 0x7fff
+test num, test num for this # of photons, number of photons
+0, 0, 400, success:, 0, num errors:,21, num_no_photon,104, num_bad_range,3, num_neg_offset,0
+
+================
+10:49AM on October 29, 2020
+bin_size = 16000, bin_number = 4, period = 280000, num sync pulses = 200, pulse len (samples) = 32, pulse amp = 0x7fff
+test num, test num for this # of photons, number of photons
+0, 0, 400, success:, 0, num errors:,377, num_no_photon,0, num_bad_range,185, num_neg_offset,0
+
+================
+10:49AM on October 29, 2020
+bin_size = 16000, bin_number = 4, period = 280000, num sync pulses = 200, pulse len (samples) = 32, pulse amp = 0x7fff
+test num, test num for this # of photons, number of photons
+0, 0, 400, success:, 0, num errors:,351, num_no_photon,42, num_bad_range,239, num_neg_offset,0
+
+================
+10:49AM on October 29, 2020
+bin_size = 16000, bin_number = 4, period = 280000, num sync pulses = 200, pulse len (samples) = 32, pulse amp = 0x7fff
+test num, test num for this # of photons, number of photons
+0, 0, 400, success:, 0, num errors:,374, num_no_photon,110, num_bad_range,198, num_neg_offset,0
+
+================
+10:50AM on October 29, 2020
+bin_size = 16000, bin_number = 4, period = 280000, num sync pulses = 200, pulse len (samples) = 32, pulse amp = 0x7fff
+test num, test num for this # of photons, number of photons
+0, 0, 400, success:, 0, num errors:,399, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+
+================
+10:50AM on October 29, 2020
+bin_size = 16000, bin_number = 4, period = 280000, num sync pulses = 200, pulse len (samples) = 32, pulse amp = 0x7fff
+test num, test num for this # of photons, number of photons
+0, 0, 400, success:, 0, num errors:,160, num_no_photon,102, num_bad_range,84, num_neg_offset,0
+
+================
+10:50AM on October 29, 2020
+bin_size = 16000, bin_number = 4, period = 280000, num sync pulses = 400, pulse len (samples) = 32, pulse amp = 0x7fff
+test num, test num for this # of photons, number of photons
+0, 0, 400, success:, 0, num errors:,203, num_no_photon,101, num_bad_range,115, num_neg_offset,0
+
+================
+10:50AM on October 29, 2020
+bin_size = 16000, bin_number = 4, period = 280000, num sync pulses = 400, pulse len (samples) = 32, pulse amp = 0x7fff
+test num, test num for this # of photons, number of photons
+0, 0, 100, success:, 0, num errors:,9, num_no_photon,101, num_bad_range,1, num_neg_offset,0
+1, 1, 100, success:, 0, num errors:,25, num_no_photon,100, num_bad_range,5, num_neg_offset,0
+2, 2, 100, success:, 0, num errors:,54, num_no_photon,112, num_bad_range,1, num_neg_offset,0
+3, 3, 100, success:, 0, num errors:,37, num_no_photon,113, num_bad_range,1, num_neg_offset,0
+4, 4, 100, success:, 0, num errors:,7, num_no_photon,104, num_bad_range,2, num_neg_offset,0
+5, 5, 100, success:, 0, num errors:,46, num_no_photon,110, num_bad_range,1, num_neg_offset,0
+6, 6, 100, success:, 0, num errors:,36, num_no_photon,110, num_bad_range,1, num_neg_offset,0
+7, 7, 100, success:, 0, num errors:,29, num_no_photon,123, num_bad_range,2, num_neg_offset,0
+8, 8, 100, success:, 0, num errors:,28, num_no_photon,101, num_bad_range,26, num_neg_offset,0
+9, 9, 100, success:, 0, num errors:,52, num_no_photon,103, num_bad_range,34, num_neg_offset,0
+10, 10, 100, success:, 0, num errors:,40, num_no_photon,113, num_bad_range,1, num_neg_offset,0
+11, 11, 100, success:, 0, num errors:,32, num_no_photon,121, num_bad_range,25, num_neg_offset,0
+12, 12, 100, success:, 0, num errors:,30, num_no_photon,103, num_bad_range,5, num_neg_offset,0
+13, 13, 100, success:, 0, num errors:,43, num_no_photon,100, num_bad_range,20, num_neg_offset,0
+14, 14, 100, success:, 0, num errors:,37, num_no_photon,116, num_bad_range,2, num_neg_offset,0
+15, 15, 100, success:, 0, num errors:,54, num_no_photon,121, num_bad_range,28, num_neg_offset,0
+16, 16, 100, success:, 0, num errors:,42, num_no_photon,121, num_bad_range,7, num_neg_offset,0
+17, 17, 100, success:, 0, num errors:,7, num_no_photon,125, num_bad_range,3, num_neg_offset,0
+18, 18, 100, success:, 0, num errors:,39, num_no_photon,120, num_bad_range,7, num_neg_offset,0
+19, 19, 100, success:, 0, num errors:,29, num_no_photon,100, num_bad_range,25, num_neg_offset,0
+20, 20, 100, success:, 0, num errors:,3, num_no_photon,102, num_bad_range,2, num_neg_offset,0
+21, 21, 100, success:, 0, num errors:,99, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+22, 22, 100, success:, 0, num errors:,31, num_no_photon,105, num_bad_range,25, num_neg_offset,0
+23, 23, 100, success:, 0, num errors:,33, num_no_photon,122, num_bad_range,4, num_neg_offset,0
+24, 24, 100, success:, 0, num errors:,37, num_no_photon,110, num_bad_range,1, num_neg_offset,0
+25, 25, 100, success:, 0, num errors:,49, num_no_photon,100, num_bad_range,32, num_neg_offset,0
+26, 26, 100, success:, 0, num errors:,49, num_no_photon,122, num_bad_range,7, num_neg_offset,0
+27, 27, 100, success:, 0, num errors:,9, num_no_photon,100, num_bad_range,3, num_neg_offset,0
+28, 28, 100, success:, 0, num errors:,99, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+29, 29, 100, success:, 0, num errors:,38, num_no_photon,143, num_bad_range,23, num_neg_offset,0
+30, 30, 100, success:, 0, num errors:,5, num_no_photon,102, num_bad_range,1, num_neg_offset,0
+31, 31, 100, success:, 0, num errors:,27, num_no_photon,179, num_bad_range,27, num_neg_offset,0
+32, 32, 100, success:, 0, num errors:,16, num_no_photon,103, num_bad_range,1, num_neg_offset,0
+33, 33, 100, success:, 0, num errors:,35, num_no_photon,103, num_bad_range,9, num_neg_offset,0
+34, 34, 100, success:, 0, num errors:,57, num_no_photon,102, num_bad_range,14, num_neg_offset,0
+35, 35, 100, success:, 0, num errors:,57, num_no_photon,99, num_bad_range,38, num_neg_offset,0
+36, 36, 100, success:, 0, num errors:,99, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+37, 37, 100, success:, 0, num errors:,5, num_no_photon,101, num_bad_range,2, num_neg_offset,0
+38, 38, 100, success:, 0, num errors:,28, num_no_photon,100, num_bad_range,26, num_neg_offset,0
+39, 39, 100, success:, 0, num errors:,23, num_no_photon,100, num_bad_range,8, num_neg_offset,0
+40, 40, 100, success:, 0, num errors:,26, num_no_photon,100, num_bad_range,26, num_neg_offset,0
+41, 41, 100, success:, 0, num errors:,61, num_no_photon,172, num_bad_range,39, num_neg_offset,0
+42, 42, 100, success:, 0, num errors:,53, num_no_photon,100, num_bad_range,15, num_neg_offset,0
+43, 43, 100, success:, 0, num errors:,35, num_no_photon,100, num_bad_range,23, num_neg_offset,0
+44, 44, 100, success:, 0, num errors:,4, num_no_photon,193, num_bad_range,2, num_neg_offset,0
+45, 45, 100, success:, 0, num errors:,36, num_no_photon,123, num_bad_range,6, num_neg_offset,0
+46, 46, 100, success:, 0, num errors:,36, num_no_photon,121, num_bad_range,2, num_neg_offset,0
+47, 47, 100, success:, 0, num errors:,34, num_no_photon,102, num_bad_range,22, num_neg_offset,0
+48, 48, 100, success:, 0, num errors:,23, num_no_photon,102, num_bad_range,8, num_neg_offset,0
+49, 49, 100, success:, 0, num errors:,9, num_no_photon,100, num_bad_range,6, num_neg_offset,0
+50, 50, 100, success:, 0, num errors:,13, num_no_photon,99, num_bad_range,4, num_neg_offset,0
+51, 51, 100, success:, 0, num errors:,99, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+52, 52, 100, success:, 0, num errors:,32, num_no_photon,100, num_bad_range,22, num_neg_offset,0
+53, 53, 100, success:, 0, num errors:,5, num_no_photon,99, num_bad_range,2, num_neg_offset,0
+54, 54, 100, success:, 0, num errors:,29, num_no_photon,117, num_bad_range,2, num_neg_offset,0
+55, 55, 100, success:, 0, num errors:,46, num_no_photon,117, num_bad_range,2, num_neg_offset,0
+56, 56, 100, success:, 0, num errors:,34, num_no_photon,119, num_bad_range,1, num_neg_offset,0
+57, 57, 100, success:, 0, num errors:,53, num_no_photon,109, num_bad_range,1, num_neg_offset,0
+58, 58, 100, success:, 0, num errors:,65, num_no_photon,100, num_bad_range,42, num_neg_offset,0
+59, 59, 100, success:, 0, num errors:,3, num_no_photon,100, num_bad_range,1, num_neg_offset,0
+60, 60, 100, success:, 0, num errors:,7, num_no_photon,104, num_bad_range,1, num_neg_offset,0
+61, 61, 100, success:, 0, num errors:,35, num_no_photon,119, num_bad_range,1, num_neg_offset,0
+62, 62, 100, success:, 0, num errors:,40, num_no_photon,99, num_bad_range,20, num_neg_offset,0
+63, 63, 100, success:, 0, num errors:,30, num_no_photon,119, num_bad_range,2, num_neg_offset,0
+64, 64, 100, success:, 0, num errors:,2, num_no_photon,101, num_bad_range,1, num_neg_offset,0
+65, 65, 100, success:, 0, num errors:,35, num_no_photon,124, num_bad_range,2, num_neg_offset,0
+66, 66, 100, success:, 0, num errors:,4, num_no_photon,101, num_bad_range,1, num_neg_offset,0
+67, 67, 100, success:, 0, num errors:,39, num_no_photon,103, num_bad_range,29, num_neg_offset,0
+68, 68, 100, success:, 0, num errors:,37, num_no_photon,102, num_bad_range,24, num_neg_offset,0
+69, 69, 100, success:, 0, num errors:,40, num_no_photon,103, num_bad_range,1, num_neg_offset,0
+70, 70, 100, success:, 0, num errors:,9, num_no_photon,101, num_bad_range,1, num_neg_offset,0
+71, 71, 100, success:, 0, num errors:,49, num_no_photon,103, num_bad_range,18, num_neg_offset,0
+72, 72, 100, success:, 0, num errors:,38, num_no_photon,121, num_bad_range,6, num_neg_offset,0
+73, 73, 100, success:, 0, num errors:,52, num_no_photon,111, num_bad_range,1, num_neg_offset,0
+74, 74, 100, success:, 0, num errors:,3, num_no_photon,101, num_bad_range,1, num_neg_offset,0
+75, 75, 100, success:, 0, num errors:,50, num_no_photon,99, num_bad_range,16, num_neg_offset,0
+76, 76, 100, success:, 0, num errors:,53, num_no_photon,99, num_bad_range,36, num_neg_offset,0
+77, 77, 100, success:, 0, num errors:,3, num_no_photon,100, num_bad_range,2, num_neg_offset,0
+78, 78, 100, success:, 0, num errors:,99, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+79, 79, 100, success:, 0, num errors:,56, num_no_photon,100, num_bad_range,19, num_neg_offset,0
+80, 80, 100, success:, 0, num errors:,62, num_no_photon,98, num_bad_range,39, num_neg_offset,0
+81, 81, 100, success:, 0, num errors:,4, num_no_photon,99, num_bad_range,3, num_neg_offset,0
+82, 82, 100, success:, 0, num errors:,32, num_no_photon,156, num_bad_range,26, num_neg_offset,0
+83, 83, 100, success:, 0, num errors:,45, num_no_photon,100, num_bad_range,19, num_neg_offset,0
+84, 84, 100, success:, 0, num errors:,10, num_no_photon,99, num_bad_range,5, num_neg_offset,0
+85, 85, 100, success:, 0, num errors:,99, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+86, 86, 100, success:, 0, num errors:,30, num_no_photon,101, num_bad_range,25, num_neg_offset,0
+87, 87, 100, success:, 0, num errors:,61, num_no_photon,122, num_bad_range,15, num_neg_offset,0
+88, 88, 100, success:, 0, num errors:,34, num_no_photon,111, num_bad_range,1, num_neg_offset,0
+89, 89, 100, success:, 0, num errors:,4, num_no_photon,102, num_bad_range,2, num_neg_offset,0
+90, 90, 100, success:, 0, num errors:,99, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+91, 91, 100, success:, 0, num errors:,60, num_no_photon,124, num_bad_range,13, num_neg_offset,0
+92, 92, 100, success:, 0, num errors:,3, num_no_photon,100, num_bad_range,3, num_neg_offset,0
+93, 93, 100, success:, 0, num errors:,5, num_no_photon,101, num_bad_range,2, num_neg_offset,0
+94, 94, 100, success:, 0, num errors:,33, num_no_photon,104, num_bad_range,23, num_neg_offset,0
+95, 95, 100, success:, 0, num errors:,13, num_no_photon,103, num_bad_range,2, num_neg_offset,0
+96, 96, 100, success:, 0, num errors:,4, num_no_photon,131, num_bad_range,2, num_neg_offset,0
+97, 97, 100, success:, 0, num errors:,45, num_no_photon,120, num_bad_range,1, num_neg_offset,0
+98, 98, 100, success:, 0, num errors:,13, num_no_photon,185, num_bad_range,2, num_neg_offset,0
+99, 99, 100, success:, 0, num errors:,27, num_no_photon,155, num_bad_range,24, num_neg_offset,0
+100, 0, 200, success:, 0, num errors:,96, num_no_photon,123, num_bad_range,1, num_neg_offset,0
+101, 1, 200, success:, 0, num errors:,91, num_no_photon,142, num_bad_range,13, num_neg_offset,0
+102, 2, 200, success:, 0, num errors:,70, num_no_photon,139, num_bad_range,5, num_neg_offset,0
+103, 3, 200, success:, 0, num errors:,77, num_no_photon,129, num_bad_range,1, num_neg_offset,0
+104, 4, 200, success:, 0, num errors:,90, num_no_photon,139, num_bad_range,16, num_neg_offset,0
+105, 5, 200, success:, 0, num errors:,126, num_no_photon,98, num_bad_range,75, num_neg_offset,0
+106, 6, 200, success:, 0, num errors:,71, num_no_photon,105, num_bad_range,42, num_neg_offset,0
+107, 7, 200, success:, 0, num errors:,21, num_no_photon,103, num_bad_range,1, num_neg_offset,0
+108, 8, 200, success:, 0, num errors:,136, num_no_photon,158, num_bad_range,80, num_neg_offset,0
+109, 9, 200, success:, 0, num errors:,7, num_no_photon,104, num_bad_range,1, num_neg_offset,0
+110, 10, 200, success:, 0, num errors:,7, num_no_photon,101, num_bad_range,1, num_neg_offset,0
+111, 11, 200, success:, 0, num errors:,53, num_no_photon,110, num_bad_range,1, num_neg_offset,0
+112, 12, 200, success:, 0, num errors:,108, num_no_photon,118, num_bad_range,2, num_neg_offset,0
+113, 13, 200, success:, 0, num errors:,25, num_no_photon,106, num_bad_range,2, num_neg_offset,0
+114, 14, 200, success:, 0, num errors:,68, num_no_photon,100, num_bad_range,51, num_neg_offset,0
+115, 15, 200, success:, 0, num errors:,106, num_no_photon,199, num_bad_range,3, num_neg_offset,0
+116, 16, 200, success:, 0, num errors:,199, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+117, 17, 200, success:, 0, num errors:,9, num_no_photon,104, num_bad_range,1, num_neg_offset,0
+118, 18, 200, success:, 0, num errors:,113, num_no_photon,229, num_bad_range,1, num_neg_offset,0
+119, 19, 200, success:, 0, num errors:,77, num_no_photon,120, num_bad_range,1, num_neg_offset,0
+120, 20, 200, success:, 0, num errors:,168, num_no_photon,65, num_bad_range,142, num_neg_offset,0
+121, 21, 200, success:, 0, num errors:,129, num_no_photon,145, num_bad_range,28, num_neg_offset,0
+122, 22, 200, success:, 0, num errors:,135, num_no_photon,97, num_bad_range,92, num_neg_offset,0
+123, 23, 200, success:, 0, num errors:,91, num_no_photon,104, num_bad_range,59, num_neg_offset,0
+124, 24, 200, success:, 0, num errors:,8, num_no_photon,103, num_bad_range,4, num_neg_offset,0
+125, 25, 200, success:, 0, num errors:,5, num_no_photon,102, num_bad_range,2, num_neg_offset,0
+126, 26, 200, success:, 0, num errors:,78, num_no_photon,102, num_bad_range,60, num_neg_offset,0
+127, 27, 200, success:, 0, num errors:,102, num_no_photon,99, num_bad_range,69, num_neg_offset,0
+128, 28, 200, success:, 0, num errors:,199, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+129, 29, 200, success:, 0, num errors:,45, num_no_photon,99, num_bad_range,21, num_neg_offset,0
+130, 30, 200, success:, 0, num errors:,20, num_no_photon,107, num_bad_range,1, num_neg_offset,0
+131, 31, 200, success:, 0, num errors:,78, num_no_photon,132, num_bad_range,1, num_neg_offset,0
+132, 32, 200, success:, 0, num errors:,85, num_no_photon,117, num_bad_range,1, num_neg_offset,0
+133, 33, 200, success:, 0, num errors:,130, num_no_photon,98, num_bad_range,77, num_neg_offset,0
+134, 34, 200, success:, 0, num errors:,75, num_no_photon,132, num_bad_range,3, num_neg_offset,0
+135, 35, 200, success:, 0, num errors:,38, num_no_photon,111, num_bad_range,1, num_neg_offset,0
+136, 36, 200, success:, 0, num errors:,199, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+137, 37, 200, success:, 0, num errors:,83, num_no_photon,117, num_bad_range,1, num_neg_offset,0
+138, 38, 200, success:, 0, num errors:,64, num_no_photon,100, num_bad_range,49, num_neg_offset,0
+139, 39, 200, success:, 0, num errors:,77, num_no_photon,140, num_bad_range,10, num_neg_offset,0
+140, 40, 200, success:, 0, num errors:,145, num_no_photon,151, num_bad_range,33, num_neg_offset,0
+141, 41, 200, success:, 0, num errors:,111, num_no_photon,129, num_bad_range,1, num_neg_offset,0
+142, 42, 200, success:, 0, num errors:,90, num_no_photon,140, num_bad_range,12, num_neg_offset,0
+143, 43, 200, success:, 0, num errors:,108, num_no_photon,98, num_bad_range,66, num_neg_offset,0
+144, 44, 200, success:, 0, num errors:,78, num_no_photon,198, num_bad_range,43, num_neg_offset,0
+145, 45, 200, success:, 0, num errors:,84, num_no_photon,134, num_bad_range,1, num_neg_offset,0
+146, 46, 200, success:, 0, num errors:,74, num_no_photon,133, num_bad_range,1, num_neg_offset,0
+147, 47, 200, success:, 0, num errors:,199, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+148, 48, 200, success:, 0, num errors:,15, num_no_photon,142, num_bad_range,6, num_neg_offset,0
+149, 49, 200, success:, 0, num errors:,53, num_no_photon,116, num_bad_range,1, num_neg_offset,0
+150, 50, 200, success:, 0, num errors:,128, num_no_photon,98, num_bad_range,80, num_neg_offset,0
+151, 51, 200, success:, 0, num errors:,33, num_no_photon,111, num_bad_range,1, num_neg_offset,0
+152, 52, 200, success:, 0, num errors:,17, num_no_photon,100, num_bad_range,4, num_neg_offset,0
+153, 53, 200, success:, 0, num errors:,160, num_no_photon,100, num_bad_range,110, num_neg_offset,0
+154, 54, 200, success:, 0, num errors:,109, num_no_photon,126, num_bad_range,1, num_neg_offset,0
+155, 55, 200, success:, 0, num errors:,93, num_no_photon,101, num_bad_range,40, num_neg_offset,0
+156, 56, 200, success:, 0, num errors:,199, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+157, 57, 200, success:, 0, num errors:,103, num_no_photon,100, num_bad_range,39, num_neg_offset,0
+158, 58, 200, success:, 0, num errors:,99, num_no_photon,100, num_bad_range,68, num_neg_offset,0
+159, 59, 200, success:, 0, num errors:,199, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+160, 60, 200, success:, 0, num errors:,5, num_no_photon,102, num_bad_range,2, num_neg_offset,0
+161, 61, 200, success:, 0, num errors:,152, num_no_photon,97, num_bad_range,106, num_neg_offset,0
+162, 62, 200, success:, 0, num errors:,147, num_no_photon,98, num_bad_range,92, num_neg_offset,0
+163, 63, 200, success:, 0, num errors:,89, num_no_photon,123, num_bad_range,1, num_neg_offset,0
+164, 64, 200, success:, 0, num errors:,75, num_no_photon,136, num_bad_range,3, num_neg_offset,0
+165, 65, 200, success:, 0, num errors:,49, num_no_photon,116, num_bad_range,1, num_neg_offset,0
+166, 66, 200, success:, 0, num errors:,167, num_no_photon,43, num_bad_range,146, num_neg_offset,0
+167, 67, 200, success:, 0, num errors:,199, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+168, 68, 200, success:, 0, num errors:,30, num_no_photon,109, num_bad_range,1, num_neg_offset,0
+169, 69, 200, success:, 0, num errors:,82, num_no_photon,141, num_bad_range,12, num_neg_offset,0
+170, 70, 200, success:, 0, num errors:,83, num_no_photon,99, num_bad_range,42, num_neg_offset,0
+171, 71, 200, success:, 0, num errors:,95, num_no_photon,103, num_bad_range,31, num_neg_offset,0
+172, 72, 200, success:, 0, num errors:,4, num_no_photon,100, num_bad_range,2, num_neg_offset,0
+173, 73, 200, success:, 0, num errors:,4, num_no_photon,139, num_bad_range,1, num_neg_offset,0
+174, 74, 200, success:, 0, num errors:,32, num_no_photon,100, num_bad_range,10, num_neg_offset,0
+175, 75, 200, success:, 0, num errors:,199, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+176, 76, 200, success:, 0, num errors:,154, num_no_photon,94, num_bad_range,123, num_neg_offset,0
+177, 77, 200, success:, 0, num errors:,13, num_no_photon,106, num_bad_range,1, num_neg_offset,0
+178, 78, 200, success:, 0, num errors:,168, num_no_photon,116, num_bad_range,118, num_neg_offset,0
+179, 79, 200, success:, 0, num errors:,72, num_no_photon,131, num_bad_range,46, num_neg_offset,0
+180, 80, 200, success:, 0, num errors:,107, num_no_photon,143, num_bad_range,21, num_neg_offset,0
+181, 81, 200, success:, 0, num errors:,158, num_no_photon,97, num_bad_range,117, num_neg_offset,0
+182, 82, 200, success:, 0, num errors:,107, num_no_photon,101, num_bad_range,67, num_neg_offset,0
+183, 83, 200, success:, 0, num errors:,81, num_no_photon,99, num_bad_range,61, num_neg_offset,0
+184, 84, 200, success:, 0, num errors:,67, num_no_photon,101, num_bad_range,52, num_neg_offset,0
+185, 85, 200, success:, 0, num errors:,107, num_no_photon,120, num_bad_range,2, num_neg_offset,0
+186, 86, 200, success:, 0, num errors:,137, num_no_photon,97, num_bad_range,93, num_neg_offset,0
+187, 87, 200, success:, 0, num errors:,132, num_no_photon,100, num_bad_range,78, num_neg_offset,0
+188, 88, 200, success:, 0, num errors:,100, num_no_photon,126, num_bad_range,1, num_neg_offset,0
+189, 89, 200, success:, 0, num errors:,46, num_no_photon,103, num_bad_range,12, num_neg_offset,0
+190, 90, 200, success:, 0, num errors:,132, num_no_photon,144, num_bad_range,31, num_neg_offset,0
+191, 91, 200, success:, 0, num errors:,105, num_no_photon,101, num_bad_range,33, num_neg_offset,0
+192, 92, 200, success:, 0, num errors:,97, num_no_photon,127, num_bad_range,2, num_neg_offset,0
+193, 93, 200, success:, 0, num errors:,64, num_no_photon,142, num_bad_range,6, num_neg_offset,0
+194, 94, 200, success:, 0, num errors:,10, num_no_photon,101, num_bad_range,1, num_neg_offset,0
+195, 95, 200, success:, 0, num errors:,87, num_no_photon,112, num_bad_range,2, num_neg_offset,0
+196, 96, 200, success:, 0, num errors:,129, num_no_photon,206, num_bad_range,36, num_neg_offset,0
+197, 97, 200, success:, 0, num errors:,76, num_no_photon,128, num_bad_range,3, num_neg_offset,0
+198, 98, 200, success:, 0, num errors:,89, num_no_photon,99, num_bad_range,24, num_neg_offset,0
+199, 99, 200, success:, 0, num errors:,199, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+200, 0, 300, success:, 0, num errors:,187, num_no_photon,102, num_bad_range,111, num_neg_offset,0
+201, 1, 300, success:, 0, num errors:,299, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+202, 2, 300, success:, 0, num errors:,299, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+203, 3, 300, success:, 0, num errors:,123, num_no_photon,238, num_bad_range,4, num_neg_offset,0
+204, 4, 300, success:, 0, num errors:,29, num_no_photon,103, num_bad_range,10, num_neg_offset,0
+205, 5, 300, success:, 0, num errors:,244, num_no_photon,96, num_bad_range,174, num_neg_offset,0
+206, 6, 300, success:, 0, num errors:,241, num_no_photon,101, num_bad_range,160, num_neg_offset,0
+207, 7, 300, success:, 0, num errors:,40, num_no_photon,101, num_bad_range,10, num_neg_offset,0
+208, 8, 300, success:, 0, num errors:,151, num_no_photon,166, num_bad_range,26, num_neg_offset,0
+209, 9, 300, success:, 0, num errors:,172, num_no_photon,99, num_bad_range,105, num_neg_offset,0
+210, 10, 300, success:, 0, num errors:,218, num_no_photon,101, num_bad_range,132, num_neg_offset,0
+211, 11, 300, success:, 0, num errors:,84, num_no_photon,123, num_bad_range,1, num_neg_offset,0
+212, 12, 300, success:, 0, num errors:,244, num_no_photon,159, num_bad_range,103, num_neg_offset,0
+213, 13, 300, success:, 0, num errors:,80, num_no_photon,155, num_bad_range,4, num_neg_offset,0
+214, 14, 300, success:, 0, num errors:,197, num_no_photon,102, num_bad_range,119, num_neg_offset,0
+215, 15, 300, success:, 0, num errors:,224, num_no_photon,168, num_bad_range,67, num_neg_offset,0
+216, 16, 300, success:, 0, num errors:,112, num_no_photon,147, num_bad_range,2, num_neg_offset,0
+217, 17, 300, success:, 0, num errors:,191, num_no_photon,99, num_bad_range,117, num_neg_offset,0
+218, 18, 300, success:, 0, num errors:,299, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+219, 19, 300, success:, 0, num errors:,135, num_no_photon,104, num_bad_range,59, num_neg_offset,0
+220, 20, 300, success:, 0, num errors:,111, num_no_photon,100, num_bad_range,73, num_neg_offset,0
+221, 21, 300, success:, 0, num errors:,8, num_no_photon,101, num_bad_range,2, num_neg_offset,0
+222, 22, 300, success:, 0, num errors:,244, num_no_photon,99, num_bad_range,163, num_neg_offset,0
+223, 23, 300, success:, 0, num errors:,299, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+224, 24, 300, success:, 0, num errors:,299, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+225, 25, 300, success:, 0, num errors:,212, num_no_photon,99, num_bad_range,127, num_neg_offset,0
+226, 26, 300, success:, 0, num errors:,133, num_no_photon,101, num_bad_range,60, num_neg_offset,0
+227, 27, 300, success:, 0, num errors:,176, num_no_photon,202, num_bad_range,39, num_neg_offset,0
+228, 28, 300, success:, 0, num errors:,109, num_no_photon,100, num_bad_range,34, num_neg_offset,0
+229, 29, 300, success:, 0, num errors:,162, num_no_photon,101, num_bad_range,47, num_neg_offset,0
+230, 30, 300, success:, 0, num errors:,241, num_no_photon,86, num_bad_range,171, num_neg_offset,0
+231, 31, 300, success:, 0, num errors:,230, num_no_photon,161, num_bad_range,79, num_neg_offset,0
+232, 32, 300, success:, 0, num errors:,243, num_no_photon,99, num_bad_range,162, num_neg_offset,0
+233, 33, 300, success:, 0, num errors:,242, num_no_photon,146, num_bad_range,118, num_neg_offset,0
+234, 34, 300, success:, 0, num errors:,97, num_no_photon,101, num_bad_range,75, num_neg_offset,0
+235, 35, 300, success:, 0, num errors:,189, num_no_photon,164, num_bad_range,35, num_neg_offset,0
+236, 36, 300, success:, 0, num errors:,12, num_no_photon,100, num_bad_range,5, num_neg_offset,0
+237, 37, 300, success:, 0, num errors:,148, num_no_photon,140, num_bad_range,1, num_neg_offset,0
+238, 38, 300, success:, 0, num errors:,253, num_no_photon,61, num_bad_range,209, num_neg_offset,0
+239, 39, 300, success:, 0, num errors:,114, num_no_photon,144, num_bad_range,3, num_neg_offset,0
+240, 40, 300, success:, 0, num errors:,257, num_no_photon,111, num_bad_range,168, num_neg_offset,0
+241, 41, 300, success:, 0, num errors:,189, num_no_photon,162, num_bad_range,38, num_neg_offset,0
+242, 42, 300, success:, 0, num errors:,127, num_no_photon,181, num_bad_range,2, num_neg_offset,0
+243, 43, 300, success:, 0, num errors:,250, num_no_photon,158, num_bad_range,119, num_neg_offset,0
+244, 44, 300, success:, 0, num errors:,9, num_no_photon,108, num_bad_range,1, num_neg_offset,0
+245, 45, 300, success:, 0, num errors:,48, num_no_photon,110, num_bad_range,2, num_neg_offset,0
+246, 46, 300, success:, 0, num errors:,299, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+247, 47, 300, success:, 0, num errors:,140, num_no_photon,125, num_bad_range,1, num_neg_offset,0
+248, 48, 300, success:, 0, num errors:,7, num_no_photon,104, num_bad_range,1, num_neg_offset,0
+249, 49, 300, success:, 0, num errors:,299, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+250, 50, 300, success:, 0, num errors:,5, num_no_photon,102, num_bad_range,1, num_neg_offset,0
+251, 51, 300, success:, 0, num errors:,50, num_no_photon,115, num_bad_range,1, num_neg_offset,0
+252, 52, 300, success:, 0, num errors:,247, num_no_photon,100, num_bad_range,171, num_neg_offset,0
+253, 53, 300, success:, 0, num errors:,251, num_no_photon,143, num_bad_range,161, num_neg_offset,0
+254, 54, 300, success:, 0, num errors:,17, num_no_photon,109, num_bad_range,1, num_neg_offset,0
+255, 55, 300, success:, 0, num errors:,156, num_no_photon,166, num_bad_range,29, num_neg_offset,0
+256, 56, 300, success:, 0, num errors:,185, num_no_photon,102, num_bad_range,105, num_neg_offset,0
+257, 57, 300, success:, 0, num errors:,216, num_no_photon,233, num_bad_range,72, num_neg_offset,0
+258, 58, 300, success:, 0, num errors:,128, num_no_photon,125, num_bad_range,1, num_neg_offset,0
+259, 59, 300, success:, 0, num errors:,158, num_no_photon,99, num_bad_range,91, num_neg_offset,0
+260, 60, 300, success:, 0, num errors:,241, num_no_photon,156, num_bad_range,94, num_neg_offset,0
+261, 61, 300, success:, 0, num errors:,299, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+262, 62, 300, success:, 0, num errors:,223, num_no_photon,169, num_bad_range,137, num_neg_offset,0
+263, 63, 300, success:, 0, num errors:,243, num_no_photon,110, num_bad_range,171, num_neg_offset,0
+264, 64, 300, success:, 0, num errors:,228, num_no_photon,155, num_bad_range,86, num_neg_offset,0
+265, 65, 300, success:, 0, num errors:,118, num_no_photon,99, num_bad_range,68, num_neg_offset,0
+266, 66, 300, success:, 0, num errors:,147, num_no_photon,99, num_bad_range,97, num_neg_offset,0
+267, 67, 300, success:, 0, num errors:,101, num_no_photon,117, num_bad_range,1, num_neg_offset,0
+268, 68, 300, success:, 0, num errors:,133, num_no_photon,102, num_bad_range,62, num_neg_offset,0
+269, 69, 300, success:, 0, num errors:,187, num_no_photon,164, num_bad_range,41, num_neg_offset,0
+270, 70, 300, success:, 0, num errors:,256, num_no_photon,117, num_bad_range,177, num_neg_offset,0
+271, 71, 300, success:, 0, num errors:,272, num_no_photon,126, num_bad_range,107, num_neg_offset,0
+272, 72, 300, success:, 0, num errors:,208, num_no_photon,162, num_bad_range,57, num_neg_offset,0
+273, 73, 300, success:, 0, num errors:,238, num_no_photon,248, num_bad_range,88, num_neg_offset,0
+274, 74, 300, success:, 0, num errors:,131, num_no_photon,221, num_bad_range,22, num_neg_offset,0
+275, 75, 300, success:, 0, num errors:,219, num_no_photon,174, num_bad_range,70, num_neg_offset,0
+276, 76, 300, success:, 0, num errors:,141, num_no_photon,103, num_bad_range,77, num_neg_offset,0
+277, 77, 300, success:, 0, num errors:,94, num_no_photon,152, num_bad_range,2, num_neg_offset,0
+278, 78, 300, success:, 0, num errors:,236, num_no_photon,189, num_bad_range,107, num_neg_offset,0
+279, 79, 300, success:, 0, num errors:,6, num_no_photon,103, num_bad_range,1, num_neg_offset,0
+280, 80, 300, success:, 0, num errors:,5, num_no_photon,103, num_bad_range,1, num_neg_offset,0
+281, 81, 300, success:, 0, num errors:,165, num_no_photon,149, num_bad_range,1, num_neg_offset,0
+282, 82, 300, success:, 0, num errors:,299, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+283, 83, 300, success:, 0, num errors:,150, num_no_photon,163, num_bad_range,25, num_neg_offset,0
+284, 84, 300, success:, 0, num errors:,249, num_no_photon,50, num_bad_range,206, num_neg_offset,0
+285, 85, 300, success:, 0, num errors:,128, num_no_photon,148, num_bad_range,1, num_neg_offset,0
+286, 86, 300, success:, 0, num errors:,237, num_no_photon,186, num_bad_range,165, num_neg_offset,0
+287, 87, 300, success:, 0, num errors:,189, num_no_photon,193, num_bad_range,111, num_neg_offset,0
+288, 88, 300, success:, 0, num errors:,200, num_no_photon,100, num_bad_range,112, num_neg_offset,0
+289, 89, 300, success:, 0, num errors:,132, num_no_photon,102, num_bad_range,31, num_neg_offset,0
+290, 90, 300, success:, 0, num errors:,121, num_no_photon,151, num_bad_range,4, num_neg_offset,0
+291, 91, 300, success:, 0, num errors:,189, num_no_photon,104, num_bad_range,109, num_neg_offset,0
+292, 92, 300, success:, 0, num errors:,299, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+293, 93, 300, success:, 0, num errors:,112, num_no_photon,149, num_bad_range,2, num_neg_offset,0
+294, 94, 300, success:, 0, num errors:,140, num_no_photon,156, num_bad_range,24, num_neg_offset,0
+295, 95, 300, success:, 0, num errors:,166, num_no_photon,138, num_bad_range,1, num_neg_offset,0
+296, 96, 300, success:, 0, num errors:,6, num_no_photon,102, num_bad_range,1, num_neg_offset,0
+297, 97, 300, success:, 0, num errors:,197, num_no_photon,101, num_bad_range,116, num_neg_offset,0
+298, 98, 300, success:, 0, num errors:,235, num_no_photon,157, num_bad_range,99, num_neg_offset,0
+299, 99, 300, success:, 0, num errors:,4, num_no_photon,103, num_bad_range,2, num_neg_offset,0
+300, 0, 400, success:, 0, num errors:,5, num_no_photon,102, num_bad_range,2, num_neg_offset,0
+301, 1, 400, success:, 0, num errors:,176, num_no_photon,191, num_bad_range,90, num_neg_offset,0
+302, 2, 400, success:, 0, num errors:,155, num_no_photon,168, num_bad_range,7, num_neg_offset,0
+303, 3, 400, success:, 0, num errors:,160, num_no_photon,141, num_bad_range,2, num_neg_offset,0
+304, 4, 400, success:, 0, num errors:,154, num_no_photon,176, num_bad_range,10, num_neg_offset,0
+305, 5, 400, success:, 0, num errors:,296, num_no_photon,184, num_bad_range,89, num_neg_offset,0
+306, 6, 400, success:, 0, num errors:,399, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+307, 7, 400, success:, 0, num errors:,260, num_no_photon,185, num_bad_range,62, num_neg_offset,0
+308, 8, 400, success:, 0, num errors:,213, num_no_photon,174, num_bad_range,27, num_neg_offset,0
+309, 9, 400, success:, 0, num errors:,184, num_no_photon,139, num_bad_range,92, num_neg_offset,0
+310, 10, 400, success:, 0, num errors:,179, num_no_photon,169, num_bad_range,6, num_neg_offset,0
+311, 11, 400, success:, 0, num errors:,348, num_no_photon,0, num_bad_range,244, num_neg_offset,0
+312, 12, 400, success:, 0, num errors:,193, num_no_photon,127, num_bad_range,78, num_neg_offset,0
+313, 13, 400, success:, 0, num errors:,214, num_no_photon,145, num_bad_range,1, num_neg_offset,0
+314, 14, 400, success:, 0, num errors:,399, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+315, 15, 400, success:, 0, num errors:,203, num_no_photon,98, num_bad_range,131, num_neg_offset,0
+316, 16, 400, success:, 0, num errors:,242, num_no_photon,99, num_bad_range,138, num_neg_offset,0
+317, 17, 400, success:, 0, num errors:,399, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+318, 18, 400, success:, 0, num errors:,290, num_no_photon,98, num_bad_range,179, num_neg_offset,0
+319, 19, 400, success:, 0, num errors:,10, num_no_photon,103, num_bad_range,2, num_neg_offset,0
+320, 20, 400, success:, 0, num errors:,250, num_no_photon,101, num_bad_range,148, num_neg_offset,0
+321, 21, 400, success:, 0, num errors:,303, num_no_photon,183, num_bad_range,98, num_neg_offset,0
+322, 22, 400, success:, 0, num errors:,208, num_no_photon,154, num_bad_range,1, num_neg_offset,0
+323, 23, 400, success:, 0, num errors:,166, num_no_photon,161, num_bad_range,2, num_neg_offset,0
+324, 24, 400, success:, 0, num errors:,399, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+325, 25, 400, success:, 0, num errors:,5, num_no_photon,101, num_bad_range,1, num_neg_offset,0
+326, 26, 400, success:, 0, num errors:,177, num_no_photon,173, num_bad_range,16, num_neg_offset,0
+327, 27, 400, success:, 0, num errors:,23, num_no_photon,113, num_bad_range,8, num_neg_offset,0
+328, 28, 400, success:, 0, num errors:,24, num_no_photon,107, num_bad_range,1, num_neg_offset,0
+329, 29, 400, success:, 0, num errors:,159, num_no_photon,106, num_bad_range,91, num_neg_offset,0
+330, 30, 400, success:, 0, num errors:,349, num_no_photon,4, num_bad_range,250, num_neg_offset,0
+331, 31, 400, success:, 0, num errors:,183, num_no_photon,102, num_bad_range,92, num_neg_offset,0
+332, 32, 400, success:, 0, num errors:,188, num_no_photon,168, num_bad_range,12, num_neg_offset,0
+333, 33, 400, success:, 0, num errors:,360, num_no_photon,34, num_bad_range,201, num_neg_offset,0
+334, 34, 400, success:, 0, num errors:,323, num_no_photon,94, num_bad_range,215, num_neg_offset,0
+335, 35, 400, success:, 0, num errors:,183, num_no_photon,164, num_bad_range,9, num_neg_offset,0
+336, 36, 400, success:, 0, num errors:,249, num_no_photon,181, num_bad_range,51, num_neg_offset,0
+337, 37, 400, success:, 0, num errors:,225, num_no_photon,184, num_bad_range,43, num_neg_offset,0
+338, 38, 400, success:, 0, num errors:,52, num_no_photon,113, num_bad_range,1, num_neg_offset,0
+339, 39, 400, success:, 0, num errors:,222, num_no_photon,176, num_bad_range,41, num_neg_offset,0
+340, 40, 400, success:, 0, num errors:,399, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+341, 41, 400, success:, 0, num errors:,193, num_no_photon,99, num_bad_range,71, num_neg_offset,0
+342, 42, 400, success:, 0, num errors:,143, num_no_photon,103, num_bad_range,81, num_neg_offset,0
+343, 43, 400, success:, 0, num errors:,399, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+344, 44, 400, success:, 0, num errors:,129, num_no_photon,186, num_bad_range,13, num_neg_offset,0
+345, 45, 400, success:, 0, num errors:,348, num_no_photon,1, num_bad_range,234, num_neg_offset,0
+346, 46, 400, success:, 0, num errors:,399, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+347, 47, 400, success:, 0, num errors:,10, num_no_photon,103, num_bad_range,2, num_neg_offset,0
+348, 48, 400, success:, 0, num errors:,355, num_no_photon,1, num_bad_range,239, num_neg_offset,0
+349, 49, 400, success:, 0, num errors:,214, num_no_photon,98, num_bad_range,122, num_neg_offset,0
+350, 50, 400, success:, 0, num errors:,194, num_no_photon,134, num_bad_range,82, num_neg_offset,0
+351, 51, 400, success:, 0, num errors:,368, num_no_photon,41, num_bad_range,191, num_neg_offset,0
+352, 52, 400, success:, 0, num errors:,249, num_no_photon,100, num_bad_range,148, num_neg_offset,0
+353, 53, 400, success:, 0, num errors:,399, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+354, 54, 400, success:, 0, num errors:,255, num_no_photon,98, num_bad_range,149, num_neg_offset,0
+355, 55, 400, success:, 0, num errors:,213, num_no_photon,146, num_bad_range,1, num_neg_offset,0
+356, 56, 400, success:, 0, num errors:,399, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+357, 57, 400, success:, 0, num errors:,325, num_no_photon,178, num_bad_range,141, num_neg_offset,0
+358, 58, 400, success:, 0, num errors:,112, num_no_photon,203, num_bad_range,3, num_neg_offset,0
+359, 59, 400, success:, 0, num errors:,331, num_no_photon,170, num_bad_range,166, num_neg_offset,0
+360, 60, 400, success:, 0, num errors:,399, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+361, 61, 400, success:, 0, num errors:,250, num_no_photon,98, num_bad_range,138, num_neg_offset,0
+362, 62, 400, success:, 0, num errors:,363, num_no_photon,2, num_bad_range,201, num_neg_offset,0
+363, 63, 400, success:, 0, num errors:,161, num_no_photon,164, num_bad_range,3, num_neg_offset,0
+364, 64, 400, success:, 0, num errors:,346, num_no_photon,126, num_bad_range,202, num_neg_offset,0
+365, 65, 400, success:, 0, num errors:,223, num_no_photon,182, num_bad_range,43, num_neg_offset,0
+366, 66, 400, success:, 0, num errors:,399, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+367, 67, 400, success:, 0, num errors:,236, num_no_photon,98, num_bad_range,138, num_neg_offset,0
+368, 68, 400, success:, 0, num errors:,210, num_no_photon,99, num_bad_range,122, num_neg_offset,0
+369, 69, 400, success:, 0, num errors:,132, num_no_photon,100, num_bad_range,33, num_neg_offset,0
+370, 70, 400, success:, 0, num errors:,171, num_no_photon,180, num_bad_range,17, num_neg_offset,0
+371, 71, 400, success:, 0, num errors:,276, num_no_photon,103, num_bad_range,128, num_neg_offset,0
+372, 72, 400, success:, 0, num errors:,24, num_no_photon,102, num_bad_range,8, num_neg_offset,0
+373, 73, 400, success:, 0, num errors:,154, num_no_photon,168, num_bad_range,3, num_neg_offset,0
+374, 74, 400, success:, 0, num errors:,282, num_no_photon,193, num_bad_range,81, num_neg_offset,0
+375, 75, 400, success:, 0, num errors:,200, num_no_photon,100, num_bad_range,50, num_neg_offset,0
+376, 76, 400, success:, 0, num errors:,160, num_no_photon,177, num_bad_range,12, num_neg_offset,0
+377, 77, 400, success:, 0, num errors:,205, num_no_photon,157, num_bad_range,6, num_neg_offset,0
+378, 78, 400, success:, 0, num errors:,239, num_no_photon,178, num_bad_range,49, num_neg_offset,0
+379, 79, 400, success:, 0, num errors:,365, num_no_photon,38, num_bad_range,209, num_neg_offset,0
+380, 80, 400, success:, 0, num errors:,211, num_no_photon,99, num_bad_range,128, num_neg_offset,0
+381, 81, 400, success:, 0, num errors:,186, num_no_photon,157, num_bad_range,1, num_neg_offset,0
+382, 82, 400, success:, 0, num errors:,276, num_no_photon,98, num_bad_range,170, num_neg_offset,0
+383, 83, 400, success:, 0, num errors:,196, num_no_photon,173, num_bad_range,30, num_neg_offset,0
+384, 84, 400, success:, 0, num errors:,336, num_no_photon,93, num_bad_range,236, num_neg_offset,0
+385, 85, 400, success:, 0, num errors:,253, num_no_photon,102, num_bad_range,146, num_neg_offset,0
+386, 86, 400, success:, 0, num errors:,354, num_no_photon,0, num_bad_range,251, num_neg_offset,0
+387, 87, 400, success:, 0, num errors:,185, num_no_photon,102, num_bad_range,108, num_neg_offset,0
+388, 88, 400, success:, 0, num errors:,399, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+389, 89, 400, success:, 0, num errors:,203, num_no_photon,144, num_bad_range,1, num_neg_offset,0
+390, 90, 400, success:, 0, num errors:,57, num_no_photon,201, num_bad_range,15, num_neg_offset,0
+391, 91, 400, success:, 0, num errors:,10, num_no_photon,143, num_bad_range,3, num_neg_offset,0
+392, 92, 400, success:, 0, num errors:,349, num_no_photon,1, num_bad_range,248, num_neg_offset,0
+393, 93, 400, success:, 0, num errors:,324, num_no_photon,128, num_bad_range,155, num_neg_offset,0
+394, 94, 400, success:, 0, num errors:,218, num_no_photon,151, num_bad_range,1, num_neg_offset,0
+395, 95, 400, success:, 0, num errors:,399, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+396, 96, 400, success:, 0, num errors:,222, num_no_photon,100, num_bad_range,134, num_neg_offset,0
+397, 97, 400, success:, 0, num errors:,346, num_no_photon,52, num_bad_range,181, num_neg_offset,0
+398, 98, 400, success:, 0, num errors:,331, num_no_photon,206, num_bad_range,173, num_neg_offset,0
+399, 99, 400, success:, 0, num errors:,361, num_no_photon,45, num_bad_range,178, num_neg_offset,0
+400, 0, 500, success:, 0, num errors:,406, num_no_photon,112, num_bad_range,191, num_neg_offset,0
+401, 1, 500, success:, 0, num errors:,340, num_no_photon,99, num_bad_range,202, num_neg_offset,0
+402, 2, 500, success:, 0, num errors:,499, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+403, 3, 500, success:, 0, num errors:,199, num_no_photon,101, num_bad_range,101, num_neg_offset,0
+404, 4, 500, success:, 0, num errors:,23, num_no_photon,102, num_bad_range,5, num_neg_offset,0
+405, 5, 500, success:, 0, num errors:,268, num_no_photon,190, num_bad_range,34, num_neg_offset,0
+406, 6, 500, success:, 0, num errors:,444, num_no_photon,56, num_bad_range,262, num_neg_offset,0
+407, 7, 500, success:, 0, num errors:,463, num_no_photon,37, num_bad_range,215, num_neg_offset,0
+408, 8, 500, success:, 0, num errors:,314, num_no_photon,203, num_bad_range,65, num_neg_offset,0
+409, 9, 500, success:, 0, num errors:,391, num_no_photon,209, num_bad_range,139, num_neg_offset,0
+410, 10, 500, success:, 0, num errors:,6, num_no_photon,100, num_bad_range,3, num_neg_offset,0
+411, 11, 500, success:, 0, num errors:,334, num_no_photon,103, num_bad_range,183, num_neg_offset,0
+412, 12, 500, success:, 0, num errors:,252, num_no_photon,190, num_bad_range,36, num_neg_offset,0
+413, 13, 500, success:, 0, num errors:,206, num_no_photon,169, num_bad_range,114, num_neg_offset,0
+414, 14, 500, success:, 0, num errors:,275, num_no_photon,155, num_bad_range,1, num_neg_offset,0
+415, 15, 500, success:, 0, num errors:,499, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+416, 16, 500, success:, 0, num errors:,405, num_no_photon,77, num_bad_range,282, num_neg_offset,0
+417, 17, 500, success:, 0, num errors:,383, num_no_photon,97, num_bad_range,259, num_neg_offset,0
+418, 18, 500, success:, 0, num errors:,297, num_no_photon,230, num_bad_range,47, num_neg_offset,0
+419, 19, 500, success:, 0, num errors:,429, num_no_photon,2, num_bad_range,303, num_neg_offset,0
+420, 20, 500, success:, 0, num errors:,330, num_no_photon,98, num_bad_range,188, num_neg_offset,0
+421, 21, 500, success:, 0, num errors:,363, num_no_photon,205, num_bad_range,101, num_neg_offset,0
+422, 22, 500, success:, 0, num errors:,414, num_no_photon,146, num_bad_range,285, num_neg_offset,0
+423, 23, 500, success:, 0, num errors:,256, num_no_photon,179, num_bad_range,2, num_neg_offset,0
+424, 24, 500, success:, 0, num errors:,142, num_no_photon,99, num_bad_range,41, num_neg_offset,0
+425, 25, 500, success:, 0, num errors:,431, num_no_photon,82, num_bad_range,260, num_neg_offset,0
+426, 26, 500, success:, 0, num errors:,365, num_no_photon,202, num_bad_range,112, num_neg_offset,0
+427, 27, 500, success:, 0, num errors:,34, num_no_photon,107, num_bad_range,4, num_neg_offset,0
+428, 28, 500, success:, 0, num errors:,234, num_no_photon,148, num_bad_range,3, num_neg_offset,0
+429, 29, 500, success:, 0, num errors:,447, num_no_photon,50, num_bad_range,209, num_neg_offset,0
+430, 30, 500, success:, 0, num errors:,210, num_no_photon,189, num_bad_range,3, num_neg_offset,0
+431, 31, 500, success:, 0, num errors:,246, num_no_photon,107, num_bad_range,91, num_neg_offset,0
+432, 32, 500, success:, 0, num errors:,446, num_no_photon,59, num_bad_range,223, num_neg_offset,0
+433, 33, 500, success:, 0, num errors:,42, num_no_photon,143, num_bad_range,12, num_neg_offset,0
+434, 34, 500, success:, 0, num errors:,499, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+435, 35, 500, success:, 0, num errors:,362, num_no_photon,99, num_bad_range,213, num_neg_offset,0
+436, 36, 500, success:, 0, num errors:,446, num_no_photon,7, num_bad_range,256, num_neg_offset,0
+437, 37, 500, success:, 0, num errors:,269, num_no_photon,153, num_bad_range,2, num_neg_offset,0
+438, 38, 500, success:, 0, num errors:,39, num_no_photon,106, num_bad_range,11, num_neg_offset,0
+439, 39, 500, success:, 0, num errors:,499, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+440, 40, 500, success:, 0, num errors:,430, num_no_photon,2, num_bad_range,315, num_neg_offset,0
+441, 41, 500, success:, 0, num errors:,398, num_no_photon,85, num_bad_range,273, num_neg_offset,0
+442, 42, 500, success:, 0, num errors:,499, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+443, 43, 500, success:, 0, num errors:,499, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+444, 44, 500, success:, 0, num errors:,90, num_no_photon,100, num_bad_range,26, num_neg_offset,0
+445, 45, 500, success:, 0, num errors:,324, num_no_photon,203, num_bad_range,62, num_neg_offset,0
+446, 46, 500, success:, 0, num errors:,82, num_no_photon,101, num_bad_range,21, num_neg_offset,0
+447, 47, 500, success:, 0, num errors:,235, num_no_photon,103, num_bad_range,89, num_neg_offset,0
+448, 48, 500, success:, 0, num errors:,14, num_no_photon,156, num_bad_range,4, num_neg_offset,0
+449, 49, 500, success:, 0, num errors:,8, num_no_photon,174, num_bad_range,5, num_neg_offset,0
+450, 50, 500, success:, 0, num errors:,239, num_no_photon,103, num_bad_range,95, num_neg_offset,0
+451, 51, 500, success:, 0, num errors:,215, num_no_photon,190, num_bad_range,10, num_neg_offset,0
+452, 52, 500, success:, 0, num errors:,12, num_no_photon,105, num_bad_range,1, num_neg_offset,0
+453, 53, 500, success:, 0, num errors:,390, num_no_photon,206, num_bad_range,137, num_neg_offset,0
+454, 54, 500, success:, 0, num errors:,152, num_no_photon,204, num_bad_range,8, num_neg_offset,0
+455, 55, 500, success:, 0, num errors:,454, num_no_photon,2, num_bad_range,228, num_neg_offset,0
+456, 56, 500, success:, 0, num errors:,422, num_no_photon,5, num_bad_range,298, num_neg_offset,0
+457, 57, 500, success:, 0, num errors:,291, num_no_photon,193, num_bad_range,51, num_neg_offset,0
+458, 58, 500, success:, 0, num errors:,438, num_no_photon,66, num_bad_range,224, num_neg_offset,0
+459, 59, 500, success:, 0, num errors:,218, num_no_photon,99, num_bad_range,107, num_neg_offset,0
+460, 60, 500, success:, 0, num errors:,372, num_no_photon,100, num_bad_range,190, num_neg_offset,0
+461, 61, 500, success:, 0, num errors:,49, num_no_photon,104, num_bad_range,11, num_neg_offset,0
+462, 62, 500, success:, 0, num errors:,240, num_no_photon,169, num_bad_range,2, num_neg_offset,0
+463, 63, 500, success:, 0, num errors:,448, num_no_photon,3, num_bad_range,253, num_neg_offset,0
+464, 64, 500, success:, 0, num errors:,446, num_no_photon,51, num_bad_range,221, num_neg_offset,0
+465, 65, 500, success:, 0, num errors:,403, num_no_photon,203, num_bad_range,157, num_neg_offset,0
+466, 66, 500, success:, 0, num errors:,240, num_no_photon,109, num_bad_range,110, num_neg_offset,0
+467, 67, 500, success:, 0, num errors:,310, num_no_photon,167, num_bad_range,170, num_neg_offset,0
+468, 68, 500, success:, 0, num errors:,247, num_no_photon,103, num_bad_range,92, num_neg_offset,0
+469, 69, 500, success:, 0, num errors:,373, num_no_photon,206, num_bad_range,118, num_neg_offset,0
+470, 70, 500, success:, 0, num errors:,376, num_no_photon,211, num_bad_range,126, num_neg_offset,0
+471, 71, 500, success:, 0, num errors:,305, num_no_photon,100, num_bad_range,148, num_neg_offset,0
+472, 72, 500, success:, 0, num errors:,22, num_no_photon,105, num_bad_range,1, num_neg_offset,0
+473, 73, 500, success:, 0, num errors:,465, num_no_photon,35, num_bad_range,190, num_neg_offset,0
+474, 74, 500, success:, 0, num errors:,243, num_no_photon,154, num_bad_range,2, num_neg_offset,0
+475, 75, 500, success:, 0, num errors:,393, num_no_photon,173, num_bad_range,176, num_neg_offset,0
+476, 76, 500, success:, 0, num errors:,228, num_no_photon,103, num_bad_range,127, num_neg_offset,0
+477, 77, 500, success:, 0, num errors:,274, num_no_photon,185, num_bad_range,34, num_neg_offset,0
+478, 78, 500, success:, 0, num errors:,263, num_no_photon,166, num_bad_range,1, num_neg_offset,0
+479, 79, 500, success:, 0, num errors:,499, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+480, 80, 500, success:, 0, num errors:,214, num_no_photon,184, num_bad_range,6, num_neg_offset,0
+481, 81, 500, success:, 0, num errors:,220, num_no_photon,151, num_bad_range,3, num_neg_offset,0
+482, 82, 500, success:, 0, num errors:,106, num_no_photon,125, num_bad_range,1, num_neg_offset,0
+483, 83, 500, success:, 0, num errors:,343, num_no_photon,98, num_bad_range,203, num_neg_offset,0
+484, 84, 500, success:, 0, num errors:,400, num_no_photon,95, num_bad_range,272, num_neg_offset,0
+485, 85, 500, success:, 0, num errors:,443, num_no_photon,5, num_bad_range,276, num_neg_offset,0
+486, 86, 500, success:, 0, num errors:,10, num_no_photon,100, num_bad_range,4, num_neg_offset,0
+487, 87, 500, success:, 0, num errors:,225, num_no_photon,184, num_bad_range,10, num_neg_offset,0
+488, 88, 500, success:, 0, num errors:,421, num_no_photon,7, num_bad_range,314, num_neg_offset,0
+489, 89, 500, success:, 0, num errors:,17, num_no_photon,141, num_bad_range,3, num_neg_offset,0
+490, 90, 500, success:, 0, num errors:,499, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+491, 91, 500, success:, 0, num errors:,355, num_no_photon,98, num_bad_range,218, num_neg_offset,0
+492, 92, 500, success:, 0, num errors:,223, num_no_photon,100, num_bad_range,94, num_neg_offset,0
+493, 93, 500, success:, 0, num errors:,63, num_no_photon,104, num_bad_range,13, num_neg_offset,0
+494, 94, 500, success:, 0, num errors:,382, num_no_photon,100, num_bad_range,241, num_neg_offset,0
+495, 95, 500, success:, 0, num errors:,444, num_no_photon,3, num_bad_range,279, num_neg_offset,0
+496, 96, 500, success:, 0, num errors:,209, num_no_photon,235, num_bad_range,6, num_neg_offset,0
+497, 97, 500, success:, 0, num errors:,440, num_no_photon,0, num_bad_range,264, num_neg_offset,0
+498, 98, 500, success:, 0, num errors:,433, num_no_photon,65, num_bad_range,241, num_neg_offset,0
+499, 99, 500, success:, 0, num errors:,228, num_no_photon,101, num_bad_range,144, num_neg_offset,0
+
+================
+11:31AM on October 29, 2020
+bin_size = 8000, bin_number = 16, period = 280000, num sync pulses = 400, pulse len (samples) = 32, pulse amp = 0x7fff
+test num, test num for this # of photons, number of photons
+0, 0, 100, success:, 0, num errors:,32, num_no_photon,101, num_bad_range,1, num_neg_offset,0
+1, 1, 100, success:, 0, num errors:,59, num_no_photon,104, num_bad_range,11, num_neg_offset,0
+2, 2, 100, success:, 0, num errors:,54, num_no_photon,101, num_bad_range,16, num_neg_offset,0
+3, 3, 100, success:, 0, num errors:,16, num_no_photon,100, num_bad_range,1, num_neg_offset,0
+4, 4, 100, success:, 0, num errors:,51, num_no_photon,105, num_bad_range,3, num_neg_offset,0
+5, 5, 100, success:, 0, num errors:,34, num_no_photon,100, num_bad_range,8, num_neg_offset,0
+6, 6, 100, success:, 0, num errors:,38, num_no_photon,100, num_bad_range,1, num_neg_offset,0
+7, 7, 100, success:, 0, num errors:,23, num_no_photon,104, num_bad_range,3, num_neg_offset,0
+8, 8, 100, success:, 0, num errors:,21, num_no_photon,101, num_bad_range,1, num_neg_offset,0
+9, 9, 100, success:, 0, num errors:,22, num_no_photon,100, num_bad_range,7, num_neg_offset,0
+10, 10, 100, success:, 0, num errors:,22, num_no_photon,102, num_bad_range,1, num_neg_offset,0
+11, 11, 100, success:, 0, num errors:,42, num_no_photon,101, num_bad_range,15, num_neg_offset,0
+12, 12, 100, success:, 0, num errors:,42, num_no_photon,108, num_bad_range,5, num_neg_offset,0
+13, 13, 100, success:, 0, num errors:,49, num_no_photon,182, num_bad_range,1, num_neg_offset,0
+14, 14, 100, success:, 0, num errors:,36, num_no_photon,101, num_bad_range,1, num_neg_offset,0
+15, 15, 100, success:, 0, num errors:,25, num_no_photon,103, num_bad_range,3, num_neg_offset,0
+16, 16, 100, success:, 0, num errors:,99, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+17, 17, 100, success:, 0, num errors:,51, num_no_photon,195, num_bad_range,13, num_neg_offset,0
+18, 18, 100, success:, 0, num errors:,60, num_no_photon,109, num_bad_range,13, num_neg_offset,0
+19, 19, 100, success:, 0, num errors:,49, num_no_photon,102, num_bad_range,7, num_neg_offset,0
+20, 20, 100, success:, 0, num errors:,38, num_no_photon,105, num_bad_range,2, num_neg_offset,0
+21, 21, 100, success:, 0, num errors:,46, num_no_photon,99, num_bad_range,12, num_neg_offset,0
+22, 22, 100, success:, 0, num errors:,52, num_no_photon,102, num_bad_range,11, num_neg_offset,0
+23, 23, 100, success:, 0, num errors:,31, num_no_photon,106, num_bad_range,2, num_neg_offset,0
+24, 24, 100, success:, 0, num errors:,23, num_no_photon,101, num_bad_range,1, num_neg_offset,0
+25, 25, 100, success:, 0, num errors:,34, num_no_photon,101, num_bad_range,9, num_neg_offset,0
+26, 26, 100, success:, 0, num errors:,30, num_no_photon,102, num_bad_range,6, num_neg_offset,0
+27, 27, 100, success:, 0, num errors:,65, num_no_photon,100, num_bad_range,23, num_neg_offset,0
+28, 28, 100, success:, 0, num errors:,50, num_no_photon,100, num_bad_range,4, num_neg_offset,0
+29, 29, 100, success:, 0, num errors:,40, num_no_photon,108, num_bad_range,3, num_neg_offset,0
+30, 30, 100, success:, 0, num errors:,40, num_no_photon,106, num_bad_range,3, num_neg_offset,0
+31, 31, 100, success:, 0, num errors:,53, num_no_photon,180, num_bad_range,5, num_neg_offset,0
+32, 32, 100, success:, 0, num errors:,29, num_no_photon,110, num_bad_range,3, num_neg_offset,0
+33, 33, 100, success:, 0, num errors:,22, num_no_photon,102, num_bad_range,2, num_neg_offset,0
+34, 34, 100, success:, 0, num errors:,28, num_no_photon,103, num_bad_range,2, num_neg_offset,0
+35, 35, 100, success:, 0, num errors:,34, num_no_photon,105, num_bad_range,1, num_neg_offset,0
+36, 36, 100, success:, 0, num errors:,42, num_no_photon,103, num_bad_range,1, num_neg_offset,0
+37, 37, 100, success:, 0, num errors:,11, num_no_photon,101, num_bad_range,1, num_neg_offset,0
+38, 38, 100, success:, 0, num errors:,58, num_no_photon,107, num_bad_range,5, num_neg_offset,0
+39, 39, 100, success:, 0, num errors:,44, num_no_photon,111, num_bad_range,7, num_neg_offset,0
+40, 40, 100, success:, 0, num errors:,29, num_no_photon,100, num_bad_range,6, num_neg_offset,0
+41, 41, 100, success:, 0, num errors:,52, num_no_photon,101, num_bad_range,18, num_neg_offset,0
+42, 42, 100, success:, 0, num errors:,24, num_no_photon,103, num_bad_range,1, num_neg_offset,0
+43, 43, 100, success:, 0, num errors:,21, num_no_photon,101, num_bad_range,5, num_neg_offset,0
+44, 44, 100, success:, 0, num errors:,99, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+45, 45, 100, success:, 0, num errors:,34, num_no_photon,106, num_bad_range,4, num_neg_offset,0
+46, 46, 100, success:, 0, num errors:,32, num_no_photon,101, num_bad_range,2, num_neg_offset,0
+47, 47, 100, success:, 0, num errors:,34, num_no_photon,105, num_bad_range,2, num_neg_offset,0
+48, 48, 100, success:, 0, num errors:,48, num_no_photon,106, num_bad_range,8, num_neg_offset,0
+49, 49, 100, success:, 0, num errors:,38, num_no_photon,176, num_bad_range,1, num_neg_offset,0
+50, 50, 100, success:, 0, num errors:,41, num_no_photon,104, num_bad_range,5, num_neg_offset,0
+51, 51, 100, success:, 0, num errors:,31, num_no_photon,106, num_bad_range,2, num_neg_offset,0
+52, 52, 100, success:, 0, num errors:,29, num_no_photon,204, num_bad_range,3, num_neg_offset,0
+53, 53, 100, success:, 0, num errors:,50, num_no_photon,103, num_bad_range,1, num_neg_offset,0
+54, 54, 100, success:, 0, num errors:,68, num_no_photon,102, num_bad_range,20, num_neg_offset,0
+55, 55, 100, success:, 0, num errors:,44, num_no_photon,106, num_bad_range,8, num_neg_offset,0
+56, 56, 100, success:, 0, num errors:,62, num_no_photon,107, num_bad_range,20, num_neg_offset,0
+57, 57, 100, success:, 0, num errors:,29, num_no_photon,100, num_bad_range,2, num_neg_offset,0
+58, 58, 100, success:, 0, num errors:,55, num_no_photon,106, num_bad_range,7, num_neg_offset,0
+59, 59, 100, success:, 0, num errors:,99, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+60, 60, 100, success:, 0, num errors:,47, num_no_photon,105, num_bad_range,3, num_neg_offset,0
+61, 61, 100, success:, 0, num errors:,27, num_no_photon,109, num_bad_range,2, num_neg_offset,0
+62, 62, 100, success:, 0, num errors:,26, num_no_photon,101, num_bad_range,7, num_neg_offset,0
+63, 63, 100, success:, 0, num errors:,17, num_no_photon,100, num_bad_range,1, num_neg_offset,0
+64, 64, 100, success:, 0, num errors:,37, num_no_photon,101, num_bad_range,2, num_neg_offset,0
+65, 65, 100, success:, 0, num errors:,18, num_no_photon,102, num_bad_range,2, num_neg_offset,0
+66, 66, 100, success:, 0, num errors:,22, num_no_photon,105, num_bad_range,1, num_neg_offset,0
+67, 67, 100, success:, 0, num errors:,36, num_no_photon,202, num_bad_range,3, num_neg_offset,0
+68, 68, 100, success:, 0, num errors:,55, num_no_photon,137, num_bad_range,12, num_neg_offset,0
+69, 69, 100, success:, 0, num errors:,99, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+70, 70, 100, success:, 0, num errors:,50, num_no_photon,103, num_bad_range,5, num_neg_offset,0
+71, 71, 100, success:, 0, num errors:,38, num_no_photon,148, num_bad_range,4, num_neg_offset,0
+72, 72, 100, success:, 0, num errors:,26, num_no_photon,106, num_bad_range,2, num_neg_offset,0
+73, 73, 100, success:, 0, num errors:,38, num_no_photon,105, num_bad_range,10, num_neg_offset,0
+74, 74, 100, success:, 0, num errors:,11, num_no_photon,99, num_bad_range,3, num_neg_offset,0
+75, 75, 100, success:, 0, num errors:,41, num_no_photon,109, num_bad_range,4, num_neg_offset,0
+76, 76, 100, success:, 0, num errors:,26, num_no_photon,100, num_bad_range,7, num_neg_offset,0
+77, 77, 100, success:, 0, num errors:,45, num_no_photon,105, num_bad_range,7, num_neg_offset,0
+78, 78, 100, success:, 0, num errors:,27, num_no_photon,150, num_bad_range,3, num_neg_offset,0
+79, 79, 100, success:, 0, num errors:,45, num_no_photon,100, num_bad_range,13, num_neg_offset,0
+80, 80, 100, success:, 0, num errors:,50, num_no_photon,101, num_bad_range,4, num_neg_offset,0
+81, 81, 100, success:, 0, num errors:,31, num_no_photon,105, num_bad_range,1, num_neg_offset,0
+82, 82, 100, success:, 0, num errors:,61, num_no_photon,141, num_bad_range,14, num_neg_offset,0
+83, 83, 100, success:, 0, num errors:,99, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+84, 84, 100, success:, 0, num errors:,45, num_no_photon,103, num_bad_range,4, num_neg_offset,0
+85, 85, 100, success:, 0, num errors:,53, num_no_photon,100, num_bad_range,8, num_neg_offset,0
+86, 86, 100, success:, 0, num errors:,33, num_no_photon,103, num_bad_range,2, num_neg_offset,0
+87, 87, 100, success:, 0, num errors:,22, num_no_photon,200, num_bad_range,6, num_neg_offset,0
+88, 88, 100, success:, 0, num errors:,26, num_no_photon,101, num_bad_range,9, num_neg_offset,0
+89, 89, 100, success:, 0, num errors:,50, num_no_photon,164, num_bad_range,17, num_neg_offset,0
+90, 90, 100, success:, 0, num errors:,58, num_no_photon,101, num_bad_range,11, num_neg_offset,0
+91, 91, 100, success:, 0, num errors:,30, num_no_photon,101, num_bad_range,1, num_neg_offset,0
+92, 92, 100, success:, 0, num errors:,72, num_no_photon,103, num_bad_range,23, num_neg_offset,0
+93, 93, 100, success:, 0, num errors:,32, num_no_photon,101, num_bad_range,9, num_neg_offset,0
+94, 94, 100, success:, 0, num errors:,49, num_no_photon,104, num_bad_range,1, num_neg_offset,0
+95, 95, 100, success:, 0, num errors:,60, num_no_photon,108, num_bad_range,10, num_neg_offset,0
+96, 96, 100, success:, 0, num errors:,27, num_no_photon,103, num_bad_range,1, num_neg_offset,0
+97, 97, 100, success:, 0, num errors:,29, num_no_photon,191, num_bad_range,3, num_neg_offset,0
+98, 98, 100, success:, 0, num errors:,40, num_no_photon,100, num_bad_range,3, num_neg_offset,0
+99, 99, 100, success:, 0, num errors:,48, num_no_photon,104, num_bad_range,5, num_neg_offset,0
+100, 0, 200, success:, 0, num errors:,106, num_no_photon,122, num_bad_range,25, num_neg_offset,0
+101, 1, 200, success:, 0, num errors:,99, num_no_photon,100, num_bad_range,8, num_neg_offset,0
+102, 2, 200, success:, 0, num errors:,97, num_no_photon,102, num_bad_range,9, num_neg_offset,0
+103, 3, 200, success:, 0, num errors:,136, num_no_photon,100, num_bad_range,29, num_neg_offset,0
+104, 4, 200, success:, 0, num errors:,66, num_no_photon,115, num_bad_range,3, num_neg_offset,0
+105, 5, 200, success:, 0, num errors:,70, num_no_photon,100, num_bad_range,10, num_neg_offset,0
+106, 6, 200, success:, 0, num errors:,43, num_no_photon,102, num_bad_range,2, num_neg_offset,0
+107, 7, 200, success:, 0, num errors:,82, num_no_photon,105, num_bad_range,3, num_neg_offset,0
+108, 8, 200, success:, 0, num errors:,120, num_no_photon,138, num_bad_range,30, num_neg_offset,0
+109, 9, 200, success:, 0, num errors:,104, num_no_photon,107, num_bad_range,2, num_neg_offset,0
+110, 10, 200, success:, 0, num errors:,138, num_no_photon,111, num_bad_range,22, num_neg_offset,0
+111, 11, 200, success:, 0, num errors:,64, num_no_photon,102, num_bad_range,2, num_neg_offset,0
+112, 12, 200, success:, 0, num errors:,199, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+113, 13, 200, success:, 0, num errors:,46, num_no_photon,103, num_bad_range,3, num_neg_offset,0
+114, 14, 200, success:, 0, num errors:,84, num_no_photon,111, num_bad_range,1, num_neg_offset,0
+115, 15, 200, success:, 0, num errors:,104, num_no_photon,104, num_bad_range,2, num_neg_offset,0
+116, 16, 200, success:, 0, num errors:,69, num_no_photon,103, num_bad_range,5, num_neg_offset,0
+117, 17, 200, success:, 0, num errors:,136, num_no_photon,99, num_bad_range,36, num_neg_offset,0
+118, 18, 200, success:, 0, num errors:,159, num_no_photon,104, num_bad_range,50, num_neg_offset,0
+119, 19, 200, success:, 0, num errors:,113, num_no_photon,163, num_bad_range,26, num_neg_offset,0
+120, 20, 200, success:, 0, num errors:,152, num_no_photon,110, num_bad_range,30, num_neg_offset,0
+121, 21, 200, success:, 0, num errors:,148, num_no_photon,136, num_bad_range,28, num_neg_offset,0
+122, 22, 200, success:, 0, num errors:,79, num_no_photon,108, num_bad_range,1, num_neg_offset,0
+123, 23, 200, success:, 0, num errors:,150, num_no_photon,111, num_bad_range,34, num_neg_offset,0
+124, 24, 200, success:, 0, num errors:,91, num_no_photon,105, num_bad_range,1, num_neg_offset,0
+125, 25, 200, success:, 0, num errors:,137, num_no_photon,145, num_bad_range,33, num_neg_offset,0
+126, 26, 200, success:, 0, num errors:,148, num_no_photon,102, num_bad_range,45, num_neg_offset,0
+127, 27, 200, success:, 0, num errors:,82, num_no_photon,118, num_bad_range,9, num_neg_offset,0
+128, 28, 200, success:, 0, num errors:,99, num_no_photon,114, num_bad_range,13, num_neg_offset,0
+129, 29, 200, success:, 0, num errors:,104, num_no_photon,101, num_bad_range,23, num_neg_offset,0
+130, 30, 200, success:, 0, num errors:,70, num_no_photon,100, num_bad_range,2, num_neg_offset,0
+131, 31, 200, success:, 0, num errors:,114, num_no_photon,110, num_bad_range,16, num_neg_offset,0
+132, 32, 200, success:, 0, num errors:,58, num_no_photon,103, num_bad_range,15, num_neg_offset,0
+133, 33, 200, success:, 0, num errors:,85, num_no_photon,101, num_bad_range,16, num_neg_offset,0
+134, 34, 200, success:, 0, num errors:,147, num_no_photon,167, num_bad_range,34, num_neg_offset,0
+135, 35, 200, success:, 0, num errors:,122, num_no_photon,109, num_bad_range,15, num_neg_offset,0
+136, 36, 200, success:, 0, num errors:,111, num_no_photon,101, num_bad_range,17, num_neg_offset,0
+137, 37, 200, success:, 0, num errors:,84, num_no_photon,107, num_bad_range,15, num_neg_offset,0
+138, 38, 200, success:, 0, num errors:,79, num_no_photon,101, num_bad_range,9, num_neg_offset,0
+139, 39, 200, success:, 0, num errors:,199, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+140, 40, 200, success:, 0, num errors:,88, num_no_photon,105, num_bad_range,3, num_neg_offset,0
+141, 41, 200, success:, 0, num errors:,151, num_no_photon,100, num_bad_range,43, num_neg_offset,0
+142, 42, 200, success:, 0, num errors:,166, num_no_photon,102, num_bad_range,71, num_neg_offset,0
+143, 43, 200, success:, 0, num errors:,89, num_no_photon,105, num_bad_range,4, num_neg_offset,0
+144, 44, 200, success:, 0, num errors:,132, num_no_photon,101, num_bad_range,26, num_neg_offset,0
+145, 45, 200, success:, 0, num errors:,74, num_no_photon,192, num_bad_range,15, num_neg_offset,0
+146, 46, 200, success:, 0, num errors:,106, num_no_photon,195, num_bad_range,11, num_neg_offset,0
+147, 47, 200, success:, 0, num errors:,108, num_no_photon,113, num_bad_range,9, num_neg_offset,0
+148, 48, 200, success:, 0, num errors:,199, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+149, 49, 200, success:, 0, num errors:,69, num_no_photon,103, num_bad_range,2, num_neg_offset,0
+150, 50, 200, success:, 0, num errors:,168, num_no_photon,113, num_bad_range,56, num_neg_offset,0
+151, 51, 200, success:, 0, num errors:,96, num_no_photon,100, num_bad_range,23, num_neg_offset,0
+152, 52, 200, success:, 0, num errors:,66, num_no_photon,100, num_bad_range,9, num_neg_offset,0
+153, 53, 200, success:, 0, num errors:,123, num_no_photon,101, num_bad_range,25, num_neg_offset,0
+154, 54, 200, success:, 0, num errors:,67, num_no_photon,111, num_bad_range,2, num_neg_offset,0
+155, 55, 200, success:, 0, num errors:,132, num_no_photon,109, num_bad_range,20, num_neg_offset,0
+156, 56, 200, success:, 0, num errors:,69, num_no_photon,104, num_bad_range,5, num_neg_offset,0
+157, 57, 200, success:, 0, num errors:,110, num_no_photon,112, num_bad_range,6, num_neg_offset,0
+158, 58, 200, success:, 0, num errors:,34, num_no_photon,102, num_bad_range,3, num_neg_offset,0
+159, 59, 200, success:, 0, num errors:,123, num_no_photon,115, num_bad_range,14, num_neg_offset,0
+160, 60, 200, success:, 0, num errors:,95, num_no_photon,197, num_bad_range,4, num_neg_offset,0
+161, 61, 200, success:, 0, num errors:,51, num_no_photon,104, num_bad_range,1, num_neg_offset,0
+162, 62, 200, success:, 0, num errors:,136, num_no_photon,107, num_bad_range,38, num_neg_offset,0
+163, 63, 200, success:, 0, num errors:,69, num_no_photon,148, num_bad_range,13, num_neg_offset,0
+164, 64, 200, success:, 0, num errors:,136, num_no_photon,113, num_bad_range,17, num_neg_offset,0
+165, 65, 200, success:, 0, num errors:,48, num_no_photon,103, num_bad_range,5, num_neg_offset,0
+166, 66, 200, success:, 0, num errors:,157, num_no_photon,101, num_bad_range,51, num_neg_offset,0
+167, 67, 200, success:, 0, num errors:,51, num_no_photon,103, num_bad_range,1, num_neg_offset,0
+168, 68, 200, success:, 0, num errors:,40, num_no_photon,101, num_bad_range,4, num_neg_offset,0
+169, 69, 200, success:, 0, num errors:,85, num_no_photon,109, num_bad_range,1, num_neg_offset,0
+170, 70, 200, success:, 0, num errors:,117, num_no_photon,110, num_bad_range,8, num_neg_offset,0
+171, 71, 200, success:, 0, num errors:,38, num_no_photon,140, num_bad_range,3, num_neg_offset,0
+172, 72, 200, success:, 0, num errors:,100, num_no_photon,102, num_bad_range,29, num_neg_offset,0
+173, 73, 200, success:, 0, num errors:,199, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+174, 74, 200, success:, 0, num errors:,40, num_no_photon,101, num_bad_range,1, num_neg_offset,0
+175, 75, 200, success:, 0, num errors:,86, num_no_photon,152, num_bad_range,1, num_neg_offset,0
+176, 76, 200, success:, 0, num errors:,109, num_no_photon,104, num_bad_range,19, num_neg_offset,0
+177, 77, 200, success:, 0, num errors:,199, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+178, 78, 200, success:, 0, num errors:,83, num_no_photon,102, num_bad_range,19, num_neg_offset,0
+179, 79, 200, success:, 0, num errors:,199, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+180, 80, 200, success:, 0, num errors:,107, num_no_photon,102, num_bad_range,7, num_neg_offset,0
+181, 81, 200, success:, 0, num errors:,65, num_no_photon,173, num_bad_range,3, num_neg_offset,0
+182, 82, 200, success:, 0, num errors:,55, num_no_photon,105, num_bad_range,1, num_neg_offset,0
+183, 83, 200, success:, 0, num errors:,86, num_no_photon,110, num_bad_range,6, num_neg_offset,0
+184, 84, 200, success:, 0, num errors:,40, num_no_photon,102, num_bad_range,2, num_neg_offset,0
+185, 85, 200, success:, 0, num errors:,64, num_no_photon,100, num_bad_range,15, num_neg_offset,0
+186, 86, 200, success:, 0, num errors:,72, num_no_photon,102, num_bad_range,9, num_neg_offset,0
+187, 87, 200, success:, 0, num errors:,123, num_no_photon,103, num_bad_range,26, num_neg_offset,0
+188, 88, 200, success:, 0, num errors:,116, num_no_photon,102, num_bad_range,28, num_neg_offset,0
+189, 89, 200, success:, 0, num errors:,113, num_no_photon,106, num_bad_range,25, num_neg_offset,0
+190, 90, 200, success:, 0, num errors:,113, num_no_photon,100, num_bad_range,24, num_neg_offset,0
+191, 91, 200, success:, 0, num errors:,112, num_no_photon,103, num_bad_range,26, num_neg_offset,0
+192, 92, 200, success:, 0, num errors:,125, num_no_photon,144, num_bad_range,18, num_neg_offset,0
+193, 93, 200, success:, 0, num errors:,148, num_no_photon,110, num_bad_range,35, num_neg_offset,0
+194, 94, 200, success:, 0, num errors:,125, num_no_photon,103, num_bad_range,28, num_neg_offset,0
+195, 95, 200, success:, 0, num errors:,199, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+196, 96, 200, success:, 0, num errors:,118, num_no_photon,102, num_bad_range,21, num_neg_offset,0
+197, 97, 200, success:, 0, num errors:,199, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+198, 98, 200, success:, 0, num errors:,88, num_no_photon,101, num_bad_range,9, num_neg_offset,0
+199, 99, 200, success:, 0, num errors:,105, num_no_photon,109, num_bad_range,14, num_neg_offset,0
+200, 0, 300, success:, 0, num errors:,228, num_no_photon,126, num_bad_range,28, num_neg_offset,0
+201, 1, 300, success:, 0, num errors:,132, num_no_photon,103, num_bad_range,14, num_neg_offset,0
+202, 2, 300, success:, 0, num errors:,112, num_no_photon,133, num_bad_range,4, num_neg_offset,0
+203, 3, 300, success:, 0, num errors:,260, num_no_photon,95, num_bad_range,93, num_neg_offset,0
+204, 4, 300, success:, 0, num errors:,255, num_no_photon,115, num_bad_range,59, num_neg_offset,0
+205, 5, 300, success:, 0, num errors:,97, num_no_photon,109, num_bad_range,14, num_neg_offset,0
+206, 6, 300, success:, 0, num errors:,180, num_no_photon,113, num_bad_range,9, num_neg_offset,0
+207, 7, 300, success:, 0, num errors:,110, num_no_photon,144, num_bad_range,2, num_neg_offset,0
+208, 8, 300, success:, 0, num errors:,232, num_no_photon,116, num_bad_range,47, num_neg_offset,0
+209, 9, 300, success:, 0, num errors:,131, num_no_photon,182, num_bad_range,7, num_neg_offset,0
+210, 10, 300, success:, 0, num errors:,88, num_no_photon,117, num_bad_range,3, num_neg_offset,0
+211, 11, 300, success:, 0, num errors:,162, num_no_photon,114, num_bad_range,15, num_neg_offset,0
+212, 12, 300, success:, 0, num errors:,137, num_no_photon,108, num_bad_range,3, num_neg_offset,0
+213, 13, 300, success:, 0, num errors:,204, num_no_photon,102, num_bad_range,38, num_neg_offset,0
+214, 14, 300, success:, 0, num errors:,226, num_no_photon,152, num_bad_range,30, num_neg_offset,0
+215, 15, 300, success:, 0, num errors:,168, num_no_photon,100, num_bad_range,31, num_neg_offset,0
+216, 16, 300, success:, 0, num errors:,240, num_no_photon,118, num_bad_range,51, num_neg_offset,0
+217, 17, 300, success:, 0, num errors:,82, num_no_photon,180, num_bad_range,5, num_neg_offset,0
+218, 18, 300, success:, 0, num errors:,299, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+219, 19, 300, success:, 0, num errors:,235, num_no_photon,137, num_bad_range,43, num_neg_offset,0
+220, 20, 300, success:, 0, num errors:,90, num_no_photon,101, num_bad_range,21, num_neg_offset,0
+221, 21, 300, success:, 0, num errors:,168, num_no_photon,101, num_bad_range,31, num_neg_offset,0
+222, 22, 300, success:, 0, num errors:,243, num_no_photon,115, num_bad_range,59, num_neg_offset,0
+223, 23, 300, success:, 0, num errors:,57, num_no_photon,189, num_bad_range,3, num_neg_offset,0
+224, 24, 300, success:, 0, num errors:,195, num_no_photon,119, num_bad_range,19, num_neg_offset,0
+225, 25, 300, success:, 0, num errors:,101, num_no_photon,111, num_bad_range,15, num_neg_offset,0
+226, 26, 300, success:, 0, num errors:,176, num_no_photon,100, num_bad_range,28, num_neg_offset,0
+227, 27, 300, success:, 0, num errors:,225, num_no_photon,101, num_bad_range,47, num_neg_offset,0
+228, 28, 300, success:, 0, num errors:,197, num_no_photon,114, num_bad_range,18, num_neg_offset,0
+229, 29, 300, success:, 0, num errors:,80, num_no_photon,111, num_bad_range,8, num_neg_offset,0
+230, 30, 300, success:, 0, num errors:,38, num_no_photon,101, num_bad_range,2, num_neg_offset,0
+231, 31, 300, success:, 0, num errors:,259, num_no_photon,99, num_bad_range,92, num_neg_offset,0
+232, 32, 300, success:, 0, num errors:,114, num_no_photon,101, num_bad_range,19, num_neg_offset,0
+233, 33, 300, success:, 0, num errors:,197, num_no_photon,100, num_bad_range,41, num_neg_offset,0
+234, 34, 300, success:, 0, num errors:,299, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+235, 35, 300, success:, 0, num errors:,195, num_no_photon,117, num_bad_range,25, num_neg_offset,0
+236, 36, 300, success:, 0, num errors:,250, num_no_photon,114, num_bad_range,60, num_neg_offset,0
+237, 37, 300, success:, 0, num errors:,84, num_no_photon,117, num_bad_range,4, num_neg_offset,0
+238, 38, 300, success:, 0, num errors:,134, num_no_photon,102, num_bad_range,26, num_neg_offset,0
+239, 39, 300, success:, 0, num errors:,299, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+240, 40, 300, success:, 0, num errors:,299, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+241, 41, 300, success:, 0, num errors:,217, num_no_photon,101, num_bad_range,49, num_neg_offset,0
+242, 42, 300, success:, 0, num errors:,299, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+243, 43, 300, success:, 0, num errors:,238, num_no_photon,103, num_bad_range,68, num_neg_offset,0
+244, 44, 300, success:, 0, num errors:,236, num_no_photon,101, num_bad_range,67, num_neg_offset,0
+245, 45, 300, success:, 0, num errors:,183, num_no_photon,119, num_bad_range,18, num_neg_offset,0
+246, 46, 300, success:, 0, num errors:,218, num_no_photon,116, num_bad_range,34, num_neg_offset,0
+247, 47, 300, success:, 0, num errors:,217, num_no_photon,120, num_bad_range,27, num_neg_offset,0
+248, 48, 300, success:, 0, num errors:,275, num_no_photon,95, num_bad_range,127, num_neg_offset,0
+249, 49, 300, success:, 0, num errors:,226, num_no_photon,100, num_bad_range,54, num_neg_offset,0
+250, 50, 300, success:, 0, num errors:,81, num_no_photon,115, num_bad_range,2, num_neg_offset,0
+251, 51, 300, success:, 0, num errors:,299, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+252, 52, 300, success:, 0, num errors:,226, num_no_photon,135, num_bad_range,56, num_neg_offset,0
+253, 53, 300, success:, 0, num errors:,190, num_no_photon,101, num_bad_range,37, num_neg_offset,0
+254, 54, 300, success:, 0, num errors:,170, num_no_photon,102, num_bad_range,22, num_neg_offset,0
+255, 55, 300, success:, 0, num errors:,174, num_no_photon,117, num_bad_range,10, num_neg_offset,0
+256, 56, 300, success:, 0, num errors:,187, num_no_photon,252, num_bad_range,39, num_neg_offset,0
+257, 57, 300, success:, 0, num errors:,230, num_no_photon,101, num_bad_range,55, num_neg_offset,0
+258, 58, 300, success:, 0, num errors:,222, num_no_photon,181, num_bad_range,59, num_neg_offset,0
+259, 59, 300, success:, 0, num errors:,299, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+260, 60, 300, success:, 0, num errors:,147, num_no_photon,102, num_bad_range,14, num_neg_offset,0
+261, 61, 300, success:, 0, num errors:,299, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+262, 62, 300, success:, 0, num errors:,238, num_no_photon,118, num_bad_range,54, num_neg_offset,0
+263, 63, 300, success:, 0, num errors:,156, num_no_photon,103, num_bad_range,24, num_neg_offset,0
+264, 64, 300, success:, 0, num errors:,260, num_no_photon,115, num_bad_range,81, num_neg_offset,0
+265, 65, 300, success:, 0, num errors:,63, num_no_photon,102, num_bad_range,4, num_neg_offset,0
+266, 66, 300, success:, 0, num errors:,147, num_no_photon,110, num_bad_range,1, num_neg_offset,0
+267, 67, 300, success:, 0, num errors:,148, num_no_photon,112, num_bad_range,2, num_neg_offset,0
+268, 68, 300, success:, 0, num errors:,299, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+269, 69, 300, success:, 0, num errors:,250, num_no_photon,100, num_bad_range,84, num_neg_offset,0
+270, 70, 300, success:, 0, num errors:,157, num_no_photon,114, num_bad_range,8, num_neg_offset,0
+271, 71, 300, success:, 0, num errors:,193, num_no_photon,115, num_bad_range,20, num_neg_offset,0
+272, 72, 300, success:, 0, num errors:,259, num_no_photon,119, num_bad_range,77, num_neg_offset,0
+273, 73, 300, success:, 0, num errors:,267, num_no_photon,95, num_bad_range,116, num_neg_offset,0
+274, 74, 300, success:, 0, num errors:,254, num_no_photon,154, num_bad_range,63, num_neg_offset,0
+275, 75, 300, success:, 0, num errors:,254, num_no_photon,153, num_bad_range,84, num_neg_offset,0
+276, 76, 300, success:, 0, num errors:,215, num_no_photon,101, num_bad_range,42, num_neg_offset,0
+277, 77, 300, success:, 0, num errors:,228, num_no_photon,120, num_bad_range,36, num_neg_offset,0
+278, 78, 300, success:, 0, num errors:,48, num_no_photon,101, num_bad_range,2, num_neg_offset,0
+279, 79, 300, success:, 0, num errors:,115, num_no_photon,100, num_bad_range,23, num_neg_offset,0
+280, 80, 300, success:, 0, num errors:,106, num_no_photon,101, num_bad_range,10, num_neg_offset,0
+281, 81, 300, success:, 0, num errors:,94, num_no_photon,100, num_bad_range,25, num_neg_offset,0
+282, 82, 300, success:, 0, num errors:,116, num_no_photon,115, num_bad_range,2, num_neg_offset,0
+283, 83, 300, success:, 0, num errors:,254, num_no_photon,151, num_bad_range,81, num_neg_offset,0
+284, 84, 300, success:, 0, num errors:,163, num_no_photon,115, num_bad_range,16, num_neg_offset,0
+285, 85, 300, success:, 0, num errors:,299, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+286, 86, 300, success:, 0, num errors:,212, num_no_photon,119, num_bad_range,25, num_neg_offset,0
+287, 87, 300, success:, 0, num errors:,238, num_no_photon,118, num_bad_range,48, num_neg_offset,0
+288, 88, 300, success:, 0, num errors:,200, num_no_photon,103, num_bad_range,47, num_neg_offset,0
+289, 89, 300, success:, 0, num errors:,234, num_no_photon,102, num_bad_range,64, num_neg_offset,0
+290, 90, 300, success:, 0, num errors:,96, num_no_photon,124, num_bad_range,7, num_neg_offset,0
+291, 91, 300, success:, 0, num errors:,167, num_no_photon,115, num_bad_range,12, num_neg_offset,0
+292, 92, 300, success:, 0, num errors:,248, num_no_photon,99, num_bad_range,75, num_neg_offset,0
+293, 93, 300, success:, 0, num errors:,128, num_no_photon,100, num_bad_range,16, num_neg_offset,0
+294, 94, 300, success:, 0, num errors:,263, num_no_photon,147, num_bad_range,103, num_neg_offset,0
+295, 95, 300, success:, 0, num errors:,111, num_no_photon,202, num_bad_range,15, num_neg_offset,0
+296, 96, 300, success:, 0, num errors:,171, num_no_photon,101, num_bad_range,35, num_neg_offset,0
+297, 97, 300, success:, 0, num errors:,209, num_no_photon,100, num_bad_range,44, num_neg_offset,0
+298, 98, 300, success:, 0, num errors:,177, num_no_photon,111, num_bad_range,7, num_neg_offset,0
+299, 99, 300, success:, 0, num errors:,154, num_no_photon,108, num_bad_range,2, num_neg_offset,0
+300, 0, 400, success:, 0, num errors:,317, num_no_photon,97, num_bad_range,69, num_neg_offset,0
+301, 1, 400, success:, 0, num errors:,135, num_no_photon,183, num_bad_range,2, num_neg_offset,0
+302, 2, 400, success:, 0, num errors:,91, num_no_photon,106, num_bad_range,4, num_neg_offset,0
+303, 3, 400, success:, 0, num errors:,296, num_no_photon,98, num_bad_range,63, num_neg_offset,0
+304, 4, 400, success:, 0, num errors:,325, num_no_photon,122, num_bad_range,53, num_neg_offset,0
+305, 5, 400, success:, 0, num errors:,204, num_no_photon,97, num_bad_range,52, num_neg_offset,0
+306, 6, 400, success:, 0, num errors:,399, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+307, 7, 400, success:, 0, num errors:,341, num_no_photon,125, num_bad_range,72, num_neg_offset,0
+308, 8, 400, success:, 0, num errors:,220, num_no_photon,105, num_bad_range,39, num_neg_offset,0
+309, 9, 400, success:, 0, num errors:,399, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+310, 10, 400, success:, 0, num errors:,226, num_no_photon,121, num_bad_range,5, num_neg_offset,0
+311, 11, 400, success:, 0, num errors:,252, num_no_photon,96, num_bad_range,55, num_neg_offset,0
+312, 12, 400, success:, 0, num errors:,187, num_no_photon,142, num_bad_range,3, num_neg_offset,0
+313, 13, 400, success:, 0, num errors:,76, num_no_photon,103, num_bad_range,5, num_neg_offset,0
+314, 14, 400, success:, 0, num errors:,288, num_no_photon,119, num_bad_range,44, num_neg_offset,0
+315, 15, 400, success:, 0, num errors:,284, num_no_photon,189, num_bad_range,30, num_neg_offset,0
+316, 16, 400, success:, 0, num errors:,213, num_no_photon,117, num_bad_range,9, num_neg_offset,0
+317, 17, 400, success:, 0, num errors:,327, num_no_photon,121, num_bad_range,65, num_neg_offset,0
+318, 18, 400, success:, 0, num errors:,304, num_no_photon,122, num_bad_range,44, num_neg_offset,0
+319, 19, 400, success:, 0, num errors:,193, num_no_photon,103, num_bad_range,14, num_neg_offset,0
+320, 20, 400, success:, 0, num errors:,332, num_no_photon,95, num_bad_range,95, num_neg_offset,0
+321, 21, 400, success:, 0, num errors:,285, num_no_photon,99, num_bad_range,62, num_neg_offset,0
+322, 22, 400, success:, 0, num errors:,257, num_no_photon,119, num_bad_range,25, num_neg_offset,0
+323, 23, 400, success:, 0, num errors:,399, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+324, 24, 400, success:, 0, num errors:,291, num_no_photon,98, num_bad_range,64, num_neg_offset,0
+325, 25, 400, success:, 0, num errors:,322, num_no_photon,96, num_bad_range,91, num_neg_offset,0
+326, 26, 400, success:, 0, num errors:,311, num_no_photon,95, num_bad_range,88, num_neg_offset,0
+327, 27, 400, success:, 0, num errors:,316, num_no_photon,96, num_bad_range,84, num_neg_offset,0
+328, 28, 400, success:, 0, num errors:,221, num_no_photon,98, num_bad_range,40, num_neg_offset,0
+329, 29, 400, success:, 0, num errors:,340, num_no_photon,115, num_bad_range,75, num_neg_offset,0
+330, 30, 400, success:, 0, num errors:,347, num_no_photon,123, num_bad_range,106, num_neg_offset,0
+331, 31, 400, success:, 0, num errors:,356, num_no_photon,117, num_bad_range,119, num_neg_offset,0
+332, 32, 400, success:, 0, num errors:,216, num_no_photon,100, num_bad_range,36, num_neg_offset,0
+333, 33, 400, success:, 0, num errors:,363, num_no_photon,92, num_bad_range,150, num_neg_offset,0
+334, 34, 400, success:, 0, num errors:,340, num_no_photon,96, num_bad_range,111, num_neg_offset,0
+335, 35, 400, success:, 0, num errors:,287, num_no_photon,95, num_bad_range,64, num_neg_offset,0
+336, 36, 400, success:, 0, num errors:,183, num_no_photon,111, num_bad_range,1, num_neg_offset,0
+337, 37, 400, success:, 0, num errors:,353, num_no_photon,114, num_bad_range,133, num_neg_offset,0
+338, 38, 400, success:, 0, num errors:,327, num_no_photon,121, num_bad_range,63, num_neg_offset,0
+339, 39, 400, success:, 0, num errors:,211, num_no_photon,123, num_bad_range,11, num_neg_offset,0
+340, 40, 400, success:, 0, num errors:,340, num_no_photon,95, num_bad_range,119, num_neg_offset,0
+341, 41, 400, success:, 0, num errors:,229, num_no_photon,100, num_bad_range,42, num_neg_offset,0
+342, 42, 400, success:, 0, num errors:,304, num_no_photon,95, num_bad_range,77, num_neg_offset,0
+343, 43, 400, success:, 0, num errors:,249, num_no_photon,100, num_bad_range,47, num_neg_offset,0
+344, 44, 400, success:, 0, num errors:,167, num_no_photon,100, num_bad_range,19, num_neg_offset,0
+345, 45, 400, success:, 0, num errors:,399, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+346, 46, 400, success:, 0, num errors:,346, num_no_photon,129, num_bad_range,124, num_neg_offset,0
+347, 47, 400, success:, 0, num errors:,343, num_no_photon,119, num_bad_range,97, num_neg_offset,0
+348, 48, 400, success:, 0, num errors:,219, num_no_photon,98, num_bad_range,35, num_neg_offset,0
+349, 49, 400, success:, 0, num errors:,58, num_no_photon,104, num_bad_range,3, num_neg_offset,0
+350, 50, 400, success:, 0, num errors:,342, num_no_photon,93, num_bad_range,116, num_neg_offset,0
+351, 51, 400, success:, 0, num errors:,370, num_no_photon,119, num_bad_range,184, num_neg_offset,0
+352, 52, 400, success:, 0, num errors:,294, num_no_photon,98, num_bad_range,60, num_neg_offset,0
+353, 53, 400, success:, 0, num errors:,399, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+354, 54, 400, success:, 0, num errors:,370, num_no_photon,90, num_bad_range,205, num_neg_offset,0
+355, 55, 400, success:, 0, num errors:,202, num_no_photon,99, num_bad_range,10, num_neg_offset,0
+356, 56, 400, success:, 0, num errors:,245, num_no_photon,125, num_bad_range,19, num_neg_offset,0
+357, 57, 400, success:, 0, num errors:,166, num_no_photon,169, num_bad_range,16, num_neg_offset,0
+358, 58, 400, success:, 0, num errors:,214, num_no_photon,98, num_bad_range,51, num_neg_offset,0
+359, 59, 400, success:, 0, num errors:,399, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+360, 60, 400, success:, 0, num errors:,251, num_no_photon,118, num_bad_range,17, num_neg_offset,0
+361, 61, 400, success:, 0, num errors:,270, num_no_photon,96, num_bad_range,61, num_neg_offset,0
+362, 62, 400, success:, 0, num errors:,191, num_no_photon,98, num_bad_range,24, num_neg_offset,0
+363, 63, 400, success:, 0, num errors:,334, num_no_photon,170, num_bad_range,102, num_neg_offset,0
+364, 64, 400, success:, 0, num errors:,399, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+365, 65, 400, success:, 0, num errors:,366, num_no_photon,90, num_bad_range,182, num_neg_offset,0
+366, 66, 400, success:, 0, num errors:,399, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+367, 67, 400, success:, 0, num errors:,292, num_no_photon,96, num_bad_range,68, num_neg_offset,0
+368, 68, 400, success:, 0, num errors:,359, num_no_photon,95, num_bad_range,136, num_neg_offset,0
+369, 69, 400, success:, 0, num errors:,112, num_no_photon,119, num_bad_range,2, num_neg_offset,0
+370, 70, 400, success:, 0, num errors:,171, num_no_photon,113, num_bad_range,6, num_neg_offset,0
+371, 71, 400, success:, 0, num errors:,216, num_no_photon,187, num_bad_range,30, num_neg_offset,0
+372, 72, 400, success:, 0, num errors:,111, num_no_photon,119, num_bad_range,1, num_neg_offset,0
+373, 73, 400, success:, 0, num errors:,131, num_no_photon,120, num_bad_range,5, num_neg_offset,0
+374, 74, 400, success:, 0, num errors:,254, num_no_photon,123, num_bad_range,19, num_neg_offset,0
+375, 75, 400, success:, 0, num errors:,256, num_no_photon,127, num_bad_range,16, num_neg_offset,0
+376, 76, 400, success:, 0, num errors:,348, num_no_photon,126, num_bad_range,104, num_neg_offset,0
+377, 77, 400, success:, 0, num errors:,339, num_no_photon,152, num_bad_range,99, num_neg_offset,0
+378, 78, 400, success:, 0, num errors:,356, num_no_photon,95, num_bad_range,141, num_neg_offset,0
+379, 79, 400, success:, 0, num errors:,215, num_no_photon,96, num_bad_range,40, num_neg_offset,0
+380, 80, 400, success:, 0, num errors:,195, num_no_photon,108, num_bad_range,3, num_neg_offset,0
+381, 81, 400, success:, 0, num errors:,270, num_no_photon,154, num_bad_range,66, num_neg_offset,0
+382, 82, 400, success:, 0, num errors:,167, num_no_photon,109, num_bad_range,1, num_neg_offset,0
+383, 83, 400, success:, 0, num errors:,279, num_no_photon,120, num_bad_range,31, num_neg_offset,0
+384, 84, 400, success:, 0, num errors:,329, num_no_photon,126, num_bad_range,64, num_neg_offset,0
+385, 85, 400, success:, 0, num errors:,102, num_no_photon,107, num_bad_range,3, num_neg_offset,0
+386, 86, 400, success:, 0, num errors:,264, num_no_photon,120, num_bad_range,32, num_neg_offset,0
+387, 87, 400, success:, 0, num errors:,218, num_no_photon,120, num_bad_range,10, num_neg_offset,0
+388, 88, 400, success:, 0, num errors:,220, num_no_photon,123, num_bad_range,10, num_neg_offset,0
+389, 89, 400, success:, 0, num errors:,169, num_no_photon,102, num_bad_range,14, num_neg_offset,0
+390, 90, 400, success:, 0, num errors:,188, num_no_photon,163, num_bad_range,2, num_neg_offset,0
+391, 91, 400, success:, 0, num errors:,77, num_no_photon,101, num_bad_range,6, num_neg_offset,0
+392, 92, 400, success:, 0, num errors:,357, num_no_photon,123, num_bad_range,133, num_neg_offset,0
+393, 93, 400, success:, 0, num errors:,399, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+394, 94, 400, success:, 0, num errors:,253, num_no_photon,102, num_bad_range,42, num_neg_offset,0
+395, 95, 400, success:, 0, num errors:,330, num_no_photon,157, num_bad_range,61, num_neg_offset,0
+396, 96, 400, success:, 0, num errors:,332, num_no_photon,123, num_bad_range,75, num_neg_offset,0
+397, 97, 400, success:, 0, num errors:,72, num_no_photon,103, num_bad_range,6, num_neg_offset,0
+398, 98, 400, success:, 0, num errors:,333, num_no_photon,94, num_bad_range,94, num_neg_offset,0
+399, 99, 400, success:, 0, num errors:,399, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+400, 0, 500, success:, 0, num errors:,222, num_no_photon,103, num_bad_range,37, num_neg_offset,0
+401, 1, 500, success:, 0, num errors:,499, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+402, 2, 500, success:, 0, num errors:,444, num_no_photon,124, num_bad_range,132, num_neg_offset,0
+403, 3, 500, success:, 0, num errors:,344, num_no_photon,107, num_bad_range,55, num_neg_offset,0
+404, 4, 500, success:, 0, num errors:,301, num_no_photon,147, num_bad_range,16, num_neg_offset,0
+405, 5, 500, success:, 0, num errors:,185, num_no_photon,123, num_bad_range,3, num_neg_offset,0
+406, 6, 500, success:, 0, num errors:,251, num_no_photon,103, num_bad_range,38, num_neg_offset,0
+407, 7, 500, success:, 0, num errors:,299, num_no_photon,125, num_bad_range,16, num_neg_offset,0
+408, 8, 500, success:, 0, num errors:,393, num_no_photon,100, num_bad_range,88, num_neg_offset,0
+409, 9, 500, success:, 0, num errors:,348, num_no_photon,101, num_bad_range,74, num_neg_offset,0
+410, 10, 500, success:, 0, num errors:,499, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+411, 11, 500, success:, 0, num errors:,243, num_no_photon,103, num_bad_range,36, num_neg_offset,0
+412, 12, 500, success:, 0, num errors:,135, num_no_photon,129, num_bad_range,5, num_neg_offset,0
+413, 13, 500, success:, 0, num errors:,499, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+414, 14, 500, success:, 0, num errors:,346, num_no_photon,131, num_bad_range,34, num_neg_offset,0
+415, 15, 500, success:, 0, num errors:,416, num_no_photon,120, num_bad_range,74, num_neg_offset,0
+416, 16, 500, success:, 0, num errors:,499, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+417, 17, 500, success:, 0, num errors:,439, num_no_photon,125, num_bad_range,121, num_neg_offset,0
+418, 18, 500, success:, 0, num errors:,355, num_no_photon,123, num_bad_range,34, num_neg_offset,0
+419, 19, 500, success:, 0, num errors:,95, num_no_photon,104, num_bad_range,7, num_neg_offset,0
+420, 20, 500, success:, 0, num errors:,249, num_no_photon,105, num_bad_range,22, num_neg_offset,0
+421, 21, 500, success:, 0, num errors:,180, num_no_photon,101, num_bad_range,10, num_neg_offset,0
+422, 22, 500, success:, 0, num errors:,204, num_no_photon,186, num_bad_range,21, num_neg_offset,0
+423, 23, 500, success:, 0, num errors:,339, num_no_photon,154, num_bad_range,57, num_neg_offset,0
+424, 24, 500, success:, 0, num errors:,378, num_no_photon,189, num_bad_range,48, num_neg_offset,0
+425, 25, 500, success:, 0, num errors:,457, num_no_photon,101, num_bad_range,205, num_neg_offset,0
+426, 26, 500, success:, 0, num errors:,289, num_no_photon,138, num_bad_range,18, num_neg_offset,0
+427, 27, 500, success:, 0, num errors:,348, num_no_photon,130, num_bad_range,27, num_neg_offset,0
+428, 28, 500, success:, 0, num errors:,417, num_no_photon,101, num_bad_range,117, num_neg_offset,0
+429, 29, 500, success:, 0, num errors:,499, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+430, 30, 500, success:, 0, num errors:,449, num_no_photon,120, num_bad_range,163, num_neg_offset,0
+431, 31, 500, success:, 0, num errors:,398, num_no_photon,122, num_bad_range,68, num_neg_offset,0
+432, 32, 500, success:, 0, num errors:,121, num_no_photon,100, num_bad_range,8, num_neg_offset,0
+433, 33, 500, success:, 0, num errors:,475, num_no_photon,117, num_bad_range,330, num_neg_offset,0
+434, 34, 500, success:, 0, num errors:,281, num_no_photon,128, num_bad_range,48, num_neg_offset,0
+435, 35, 500, success:, 0, num errors:,499, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+436, 36, 500, success:, 0, num errors:,404, num_no_photon,101, num_bad_range,104, num_neg_offset,0
+437, 37, 500, success:, 0, num errors:,458, num_no_photon,102, num_bad_range,230, num_neg_offset,0
+438, 38, 500, success:, 0, num errors:,188, num_no_photon,131, num_bad_range,7, num_neg_offset,0
+439, 39, 500, success:, 0, num errors:,499, num_no_photon,0, num_bad_range,109, num_neg_offset,0
+440, 40, 500, success:, 0, num errors:,371, num_no_photon,102, num_bad_range,90, num_neg_offset,0
+441, 41, 500, success:, 0, num errors:,93, num_no_photon,104, num_bad_range,4, num_neg_offset,0
+442, 42, 500, success:, 0, num errors:,457, num_no_photon,119, num_bad_range,193, num_neg_offset,0
+443, 43, 500, success:, 0, num errors:,449, num_no_photon,122, num_bad_range,148, num_neg_offset,0
+444, 44, 500, success:, 0, num errors:,175, num_no_photon,148, num_bad_range,36, num_neg_offset,0
+445, 45, 500, success:, 0, num errors:,449, num_no_photon,124, num_bad_range,153, num_neg_offset,0
+446, 46, 500, success:, 0, num errors:,375, num_no_photon,125, num_bad_range,62, num_neg_offset,0
+447, 47, 500, success:, 0, num errors:,420, num_no_photon,102, num_bad_range,111, num_neg_offset,0
+448, 48, 500, success:, 0, num errors:,448, num_no_photon,208, num_bad_range,148, num_neg_offset,0
+449, 49, 500, success:, 0, num errors:,97, num_no_photon,110, num_bad_range,4, num_neg_offset,0
+450, 50, 500, success:, 0, num errors:,349, num_no_photon,176, num_bad_range,42, num_neg_offset,0
+451, 51, 500, success:, 0, num errors:,427, num_no_photon,126, num_bad_range,92, num_neg_offset,0
+452, 52, 500, success:, 0, num errors:,417, num_no_photon,117, num_bad_range,92, num_neg_offset,0
+453, 53, 500, success:, 0, num errors:,228, num_no_photon,180, num_bad_range,16, num_neg_offset,0
+454, 54, 500, success:, 0, num errors:,247, num_no_photon,115, num_bad_range,2, num_neg_offset,0
+455, 55, 500, success:, 0, num errors:,190, num_no_photon,119, num_bad_range,4, num_neg_offset,0
+456, 56, 500, success:, 0, num errors:,499, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+457, 57, 500, success:, 0, num errors:,370, num_no_photon,115, num_bad_range,45, num_neg_offset,0
+458, 58, 500, success:, 0, num errors:,457, num_no_photon,120, num_bad_range,174, num_neg_offset,0
+459, 59, 500, success:, 0, num errors:,356, num_no_photon,103, num_bad_range,75, num_neg_offset,0
+460, 60, 500, success:, 0, num errors:,405, num_no_photon,100, num_bad_range,99, num_neg_offset,0
+461, 61, 500, success:, 0, num errors:,385, num_no_photon,129, num_bad_range,62, num_neg_offset,0
+462, 62, 500, success:, 0, num errors:,100, num_no_photon,111, num_bad_range,1, num_neg_offset,0
+463, 63, 500, success:, 0, num errors:,457, num_no_photon,195, num_bad_range,197, num_neg_offset,0
+464, 64, 500, success:, 0, num errors:,107, num_no_photon,104, num_bad_range,6, num_neg_offset,0
+465, 65, 500, success:, 0, num errors:,407, num_no_photon,179, num_bad_range,113, num_neg_offset,0
+466, 66, 500, success:, 0, num errors:,443, num_no_photon,125, num_bad_range,121, num_neg_offset,0
+467, 67, 500, success:, 0, num errors:,447, num_no_photon,106, num_bad_range,175, num_neg_offset,0
+468, 68, 500, success:, 0, num errors:,430, num_no_photon,214, num_bad_range,97, num_neg_offset,0
+469, 69, 500, success:, 0, num errors:,358, num_no_photon,104, num_bad_range,77, num_neg_offset,0
+470, 70, 500, success:, 0, num errors:,439, num_no_photon,104, num_bad_range,149, num_neg_offset,0
+471, 71, 500, success:, 0, num errors:,429, num_no_photon,101, num_bad_range,133, num_neg_offset,0
+472, 72, 500, success:, 0, num errors:,392, num_no_photon,102, num_bad_range,86, num_neg_offset,0
+473, 73, 500, success:, 0, num errors:,252, num_no_photon,112, num_bad_range,2, num_neg_offset,0
+474, 74, 500, success:, 0, num errors:,499, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+475, 75, 500, success:, 0, num errors:,414, num_no_photon,103, num_bad_range,116, num_neg_offset,0
+476, 76, 500, success:, 0, num errors:,265, num_no_photon,103, num_bad_range,27, num_neg_offset,0
+477, 77, 500, success:, 0, num errors:,441, num_no_photon,125, num_bad_range,175, num_neg_offset,0
+478, 78, 500, success:, 0, num errors:,499, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+479, 79, 500, success:, 0, num errors:,395, num_no_photon,119, num_bad_range,62, num_neg_offset,0
+480, 80, 500, success:, 0, num errors:,212, num_no_photon,100, num_bad_range,17, num_neg_offset,0
+481, 81, 500, success:, 0, num errors:,499, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+482, 82, 500, success:, 0, num errors:,341, num_no_photon,101, num_bad_range,70, num_neg_offset,0
+483, 83, 500, success:, 0, num errors:,499, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+484, 84, 500, success:, 0, num errors:,442, num_no_photon,142, num_bad_range,160, num_neg_offset,0
+485, 85, 500, success:, 0, num errors:,421, num_no_photon,103, num_bad_range,116, num_neg_offset,0
+486, 86, 500, success:, 0, num errors:,499, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+487, 87, 500, success:, 0, num errors:,499, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+488, 88, 500, success:, 0, num errors:,430, num_no_photon,100, num_bad_range,134, num_neg_offset,0
+489, 89, 500, success:, 0, num errors:,201, num_no_photon,141, num_bad_range,24, num_neg_offset,0
+490, 90, 500, success:, 0, num errors:,499, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+491, 91, 500, success:, 0, num errors:,272, num_no_photon,103, num_bad_range,39, num_neg_offset,0
+492, 92, 500, success:, 0, num errors:,439, num_no_photon,106, num_bad_range,149, num_neg_offset,0
+493, 93, 500, success:, 0, num errors:,378, num_no_photon,124, num_bad_range,48, num_neg_offset,0
+494, 94, 500, success:, 0, num errors:,410, num_no_photon,123, num_bad_range,83, num_neg_offset,0
+495, 95, 500, success:, 0, num errors:,415, num_no_photon,102, num_bad_range,119, num_neg_offset,0
+496, 96, 500, success:, 0, num errors:,499, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+497, 97, 500, success:, 0, num errors:,349, num_no_photon,105, num_bad_range,62, num_neg_offset,0
+498, 98, 500, success:, 0, num errors:,213, num_no_photon,137, num_bad_range,31, num_neg_offset,0
+499, 99, 500, success:, 0, num errors:,264, num_no_photon,118, num_bad_range,1, num_neg_offset,0
