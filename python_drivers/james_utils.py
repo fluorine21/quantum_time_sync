@@ -29,7 +29,7 @@ PERIOD_THRESHOLD = 0.1 #If the measured and expected periods differ by more than
 SYNC_PERIOD_THRESHOLD = 0.01#Tighter for determining which sync pulses are valid
 
 
-LOG_TO_FILE = 1
+LOG_TO_FILE = 0
 logfile = "received_pulse_streams_cw_light_10_29_2020.txt"
 INFER_TICK = 0 #If 1, next tick will be inferred from decoded value, do not use
 
@@ -303,7 +303,11 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
         num_valid_diffs = 0
         
         #Loop through differences and look for those that meet threshold
-        for d in sp.diffs:    
+        for d in sp.diffs:
+            #If this pulse is too close to a dark count then throw it out
+            if(d < (measured_period * 0.5)):
+                num_valid_diffs = 0
+                break
             thresh = abs(d - measured_period)/measured_period
             if(thresh < SYNC_PERIOD_THRESHOLD):
                 num_valid_diffs += 1
@@ -321,10 +325,18 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
     
     print("Found " + str(len(valid_sync_pulses)) + " valid sync pulses")
     #now we figure out which was the last valid pulse
+    valid_sync_pulse_timestamps = []
     last_valid_sync_pulse = 0
+    cnt = 0
     for p in valid_sync_pulses:
+        cnt += 1
+        valid_sync_pulse_timestamps.append(p)
         if(p > last_valid_sync_pulse):
             last_valid_sync_pulse = p
+            #Select a sync pulse from somewhere in the middle
+            #if(cnt > 79):
+            #    break
+            
             
             
     #The first encoded pulse is actually a synchrionization photon, so we're saving and returning it to the user and skipping the decode for it
@@ -346,9 +358,24 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
     if(len(encoded_pulses) < 1):
         print("Cannot decode pulse list, no encoded pulses found!")
         return [0], 0, 0, 0
+    
+    
+    #FOR TESTING PURPOSES ONLY
+    #measured_period = expected_period
+    #last_valid_sync_pulse -= 8000
+    #measured_bin_size = 16000
+    
     #Now we know where the last valid clock tick was, so we extrapolate to determine the start of the first bin set
     while(encoded_pulses[0] - last_valid_sync_pulse > measured_period):
         last_valid_sync_pulse += measured_period
+        
+        
+    #Experimental correction routine
+    #Assumes the stream starts with 0s
+    if(encoded_pulses[0] - last_valid_sync_pulse > (measured_bin_size * expected_bin_num)):
+        last_valid_sync_pulse += measured_period
+        while(last_valid_sync_pulse > encoded_pulses[0]):
+            last_valid_sync_pulse -= (measured_bin_size/2)
         
         
     decoded_vals = []
@@ -356,10 +383,7 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
     
     bin_start_timestamps = [last_valid_sync_pulse]
     
-    
-    missing_count = 0
-    #While we haven't run out of pulses to decode and we haven't decoded more than the expected number
-    #while(last_valid_sync_pulse < max(encoded_pulses) and encoded_pulse_index < expected_encoded_pulses):
+    missing_count = 0   
     
     while(last_valid_sync_pulse < max(encoded_pulses) and missing_count < missing_timestamp_limit):  
         #Take care of empty bin sets here
@@ -398,7 +422,7 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
         else:
             break
     
-    return decoded_vals, bin_start_timestamps, end_of_sync_pulses_timestamp, entangled_pulse_timestamp
+    return decoded_vals, bin_start_timestamps, end_of_sync_pulses_timestamp, entangled_pulse_timestamp, valid_sync_pulse_timestamps
 
 
 

@@ -7,16 +7,16 @@ Created on Fri Aug 28 12:16:06 2020
 
 
 expected_period = 280000
-expected_bin_num = 16
-expected_bin_size = 8000
-expected_num_sync_pulses = 200
+expected_bin_num = 4
+expected_bin_size = 16000
+expected_num_sync_pulses = 400
 
 import james_utils as ju
 import matplotlib.pyplot as plt
 import mplcursors
 
 
-f = open("received_pulse_streams_cw_light.txt", "r")
+f = open("pulse_stream_test.txt", "r")
 lines = f.readlines()
 
 pulse_lists = []
@@ -33,7 +33,7 @@ for l in lines:
 for pl in pulse_lists:
 
     try:
-        decoded_vals, bin_starts, last_sync_pulse_timestamp = ju.decode_pulse_list(pl, expected_period, expected_bin_num, expected_bin_size, expected_num_sync_pulses)
+        decoded_vals, bin_starts, last_sync_pulse_timestamp, entangled_timestamp, valid_sync_pulse_timestamps = ju.decode_pulse_list(pl, expected_period, expected_bin_num, expected_bin_size, expected_num_sync_pulses)
     except:
         print("Failed on decode, continuing")
         continue
@@ -51,15 +51,20 @@ for pl in pulse_lists:
     
     pl_y = []
     bs_y = []
+    vspt = []
     for p in pl:
         pl_y.append(1)
         
     for b in bin_starts:
         bs_y.append(1)
         
+    for v in valid_sync_pulse_timestamps:
+        vspt.append(1)
+        
     fig = plt.figure()
     plt.scatter(pl, pl_y, color='blue', label="Timestamps")
     plt.scatter(bin_starts, bs_y, color='red', label="Bin Starts")
+    plt.scatter(valid_sync_pulse_timestamps, vspt, color='orange', label="Valid Sync Pulses")
     plt.scatter([last_sync_pulse_timestamp], [1], color='green', label="Sync end")
     
     axes = plt.gca()
@@ -72,11 +77,11 @@ for pl in pulse_lists:
     mplcursors.cursor(hover=True)
     plt.show()
 
-    a = input("Continue?")
+    #a = input("Continue?")
     
     
 
-    plt.clf()
+    #plt.clf()
     #break
 
             

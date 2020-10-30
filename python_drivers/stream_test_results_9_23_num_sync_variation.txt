@@ -3808,3 +3808,8 @@ test num, test num for this # of photons, number of photons
 3797, 197, 10000, success:, 0, num errors:,0, num_no_photon,0, num_bad_range,0, num_neg_offset,0, num_sync_pulse,1900
 3798, 198, 10000, success:, 0, num errors:,0, num_no_photon,0, num_bad_range,0, num_neg_offset,0, num_sync_pulse,1900
 3799, 199, 10000, success:, 0, num errors:,0, num_no_photon,0, num_bad_range,0, num_neg_offset,0, num_sync_pulse,1900
+
+================
+12:00PM on October 30, 2020
+bin_size = 8000, bin_number = 16, period = 280000
+test num, test num for this # of photons, number of photons
