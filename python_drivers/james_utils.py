@@ -30,7 +30,7 @@ SYNC_PERIOD_THRESHOLD = 0.01#Tighter for determining which sync pulses are valid
 
 
 LOG_TO_FILE = 0
-logfile = "received_pulse_streams_cw_light_10_29_2020.txt"
+logfile = "received_pulse_streams_cw_light_11_1_2020.txt"
 INFER_TICK = 0 #If 1, next tick will be inferred from decoded value, do not use
 
 #Timestamps denoting decode failiure
@@ -190,6 +190,26 @@ def check_results(sent, recv):
     return correct 
             
 
+
+def remove_duplicate_pulses(pulse_list, expected_period):
+    
+    pulse_list_final = []
+    i = 0
+    while(i < len(pulse_list)-1):
+        #If the difference between this pulse and the next pulse is relatively small
+        if(pulse_list[i+1]-pulse_list[i] < (expected_period * 0.1)):
+            #Replace the pulse with a single average of the two
+            average_timestamp = (pulse_list[i] + pulse_list[i+1])/2
+            pulse_list_final.append(average_timestamp)
+            i += 2
+        else:
+            #Otherwise keep it
+            pulse_list_final.append(pulse_list[i])
+            i += 1
+            
+    return pulse_list_final
+    
+
 #Decodes a list of pulses sourced from the TDC
 #expected encoded pulses is the number of these we expect to  find
 #All units in picoseconds
@@ -233,17 +253,50 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
     # first_encoded_pulse_pos = max_diff_pos + 1;
     
     #Find the first difference between two pulses which is close to the period
+    # for i in range(0, len(pulses)-1):
+    #     diff = pulses[i+1] - pulses[i]
+    #     tol = abs((diff - expected_period))/expected_period
+    #     if(tol < PERIOD_THRESHOLD):
+    #         first_sync_pulse_index = i
+    #         break
+        
+        
+    #Experimental pulse preprocessing to remove double counts
+    pulses = remove_duplicate_pulses(pulses, expected_period)
+        
+        
+        
+    #find one of the sync pulses
+    small_delay_cnt = 0
+    last_known_sync_pulse = 0
     for i in range(0, len(pulses)-1):
+        if(small_delay_cnt > 10):
+            last_known_sync_pulse = i
+            break
         diff = pulses[i+1] - pulses[i]
-        tol = abs((diff - expected_period))/expected_period
-        if(tol < PERIOD_THRESHOLD):
-            first_sync_pulse_index = i
+        if(diff < expected_period * 3):
+            small_delay_cnt += 1
+        else:
+            small_delay_cnt = 0
+    
+    if(last_known_sync_pulse == 0):
+        print("Error, unable to find first sync pulse, aborting")
+        return [0], 0, 0, 0, 0
+    
+    #Walk backwards to the first sync pulse
+    j = last_known_sync_pulse
+    first_sync_pulse_index = 0
+    while(j > 5):
+        diff = pulses[j] - pulses[j-1]
+        j = j - 1
+        if(diff > expected_period*3):
+            first_sync_pulse_index = j
             break
         
-    end_of_sync_pulses_timestamp = pulses[first_sync_pulse_index] + (expected_period * (expected_num_sync_pulses + 3))
+    end_of_sync_pulses_timestamp = pulses[first_sync_pulse_index] + (expected_period * (expected_num_sync_pulses))
     
     first_encoded_pulse_pos = 0
-    for i in range(0, len(pulses)):
+    for i in range(first_sync_pulse_index, len(pulses)):
         
         if(pulses[i] > end_of_sync_pulses_timestamp):
             first_encoded_pulse_pos = i
@@ -252,7 +305,7 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
     
     if(first_encoded_pulse_pos == 0):
         print("Cannot determine index of first encoded pulse, aborting")
-        return [0], 0, 0, 0
+        return [0], 0, 0, 0, 0
     
     print("Done separating list of pulses")
     
@@ -260,7 +313,7 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
     #If any pulse has two differences which are close enough to the expected period then we'll mark those as valid
     
     #Now we calculate the period based on the measured differences of the first max_diff_pos pulses
-    sync_pulse_vals = pulses[0:first_encoded_pulse_pos]
+    sync_pulse_vals = pulses[first_sync_pulse_index:first_encoded_pulse_pos]
     period_diffs = []
     sync_pulse_objs= []
     for i in range(0, len(sync_pulse_vals)):
@@ -286,7 +339,7 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
     #If we end up with no successfull period measurement
     if(len(periods_final) == 0):
         print("Error, could not identify any synchronization pulses")
-        return [0], 0, 0, 0
+        return [0], 0, 0, 0, 0
             
     #Calculate the measured period
     measured_period = sum(periods_final) / len(periods_final)
@@ -305,9 +358,9 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
         #Loop through differences and look for those that meet threshold
         for d in sp.diffs:
             #If this pulse is too close to a dark count then throw it out
-            if(d < (measured_period * 0.5)):
-                num_valid_diffs = 0
-                break
+            #if(d < (measured_period * 0.5)):
+            #    num_valid_diffs = 0
+            #    break
             thresh = abs(d - measured_period)/measured_period
             if(thresh < SYNC_PERIOD_THRESHOLD):
                 num_valid_diffs += 1
@@ -320,7 +373,7 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
     #If there were no valid sync pulses then we fail
     if(len(valid_sync_pulses) < 1):
         print("Cannot decode pulse list, not enough valid sync pulses!")
-        return [0], 0, 0, 0
+        return [0], 0, 0, 0, 0
         
     
     print("Found " + str(len(valid_sync_pulses)) + " valid sync pulses")
@@ -357,7 +410,7 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
     #Fail if there are no encoded pulses to decode
     if(len(encoded_pulses) < 1):
         print("Cannot decode pulse list, no encoded pulses found!")
-        return [0], 0, 0, 0
+        return [0], 0, 0, 0, 0
     
     
     #FOR TESTING PURPOSES ONLY
@@ -372,10 +425,10 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
         
     #Experimental correction routine
     #Assumes the stream starts with 0s
-    if(encoded_pulses[0] - last_valid_sync_pulse > (measured_bin_size * expected_bin_num)):
-        last_valid_sync_pulse += measured_period
-        while(last_valid_sync_pulse > encoded_pulses[0]):
-            last_valid_sync_pulse -= (measured_bin_size/2)
+    # if(encoded_pulses[0] - last_valid_sync_pulse > (measured_bin_size * expected_bin_num)):
+    #     last_valid_sync_pulse += measured_period
+    #     while(last_valid_sync_pulse > encoded_pulses[0]):
+    #         last_valid_sync_pulse -= (measured_bin_size/2)
         
         
     decoded_vals = []

@@ -1190,7 +1190,7 @@ class time_sync:
         print("Expected " + str(num_pulses) + ", got " + str(len(pulse_list)) + " pulses")
         
         #decoded_vals = self.analyze_pulse_list(pulse_list, num_pulses, num_sync_pulses, num_dead_pulses)
-        decoded_vals, a, b, entangled_pulse_timestamp = james_utils.decode_pulse_list(pulse_list, self.period, self.bin_number, self.bin_size, num_sync_pulses)
+        decoded_vals, a, b, entangled_pulse_timestamp, d = james_utils.decode_pulse_list(pulse_list, self.period, self.bin_number, self.bin_size, num_sync_pulses)
         
         print("Done decoding")
         print("Got: ")

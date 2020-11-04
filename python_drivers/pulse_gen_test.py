@@ -64,5 +64,4 @@ pg.phase_meas_on()
 time.sleep(5)
 
 pg.phase_meas_off()
-
 pg.close_board()

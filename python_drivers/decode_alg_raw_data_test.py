@@ -7,6 +7,7 @@ Created on Fri Aug 28 12:16:06 2020
 
 
 expected_period = 280000
+#expected_period = 360000
 expected_bin_num = 4
 expected_bin_size = 16000
 expected_num_sync_pulses = 400
@@ -32,12 +33,9 @@ for l in lines:
     
 for pl in pulse_lists:
 
-    try:
-        decoded_vals, bin_starts, last_sync_pulse_timestamp, entangled_timestamp, valid_sync_pulse_timestamps = ju.decode_pulse_list(pl, expected_period, expected_bin_num, expected_bin_size, expected_num_sync_pulses)
-    except:
-        print("Failed on decode, continuing")
-        continue
-    
+   
+    decoded_vals, bin_starts, last_sync_pulse_timestamp, entangled_timestamp, valid_sync_pulse_timestamps = ju.decode_pulse_list(pl, expected_period, expected_bin_num, expected_bin_size, expected_num_sync_pulses)
+ 
     decode_str = "Decoded: "
     for d in decoded_vals:
         if(d < 20):
@@ -49,23 +47,43 @@ for pl in pulse_lists:
     print(decode_str)
     
     
+    pl = ju.remove_duplicate_pulses(pl, expected_period)
+    
+    first_small_delay = 0
+    sec = 0
+    consecutives = 0
+    pl.sort()
+    for i in range(0, len(pl)-1):
+        if(consecutives > 11):
+            first_small_delay = pl[i]
+            sec = pl[i+1]
+            break
+        if(abs(pl[i+1] - pl[i]) < expected_period*3):
+            consecutives += 1
+        else:
+            consecutives = 0
+            
+    print("Diff was " + str(sec - first_small_delay))
     pl_y = []
     bs_y = []
     vspt = []
     for p in pl:
         pl_y.append(1)
-        
-    for b in bin_starts:
-        bs_y.append(1)
-        
-    for v in valid_sync_pulse_timestamps:
-        vspt.append(1)
+      
+    if(len(decode_str) > 10):
+        for b in bin_starts:
+            bs_y.append(1)
+            
+        for v in valid_sync_pulse_timestamps:
+            vspt.append(1)
         
     fig = plt.figure()
     plt.scatter(pl, pl_y, color='blue', label="Timestamps")
-    plt.scatter(bin_starts, bs_y, color='red', label="Bin Starts")
-    plt.scatter(valid_sync_pulse_timestamps, vspt, color='orange', label="Valid Sync Pulses")
-    plt.scatter([last_sync_pulse_timestamp], [1], color='green', label="Sync end")
+    plt.scatter([first_small_delay, sec], [1,1], color='black', label="First Small Delay")
+    if(len(decode_str) > 10):
+        plt.scatter(bin_starts, bs_y, color='red', label="Bin Starts")
+        plt.scatter(valid_sync_pulse_timestamps, vspt, color='orange', label="Valid Sync Pulses")
+        plt.scatter([last_sync_pulse_timestamp], [1], color='green', label="Sync end")
     
     axes = plt.gca()
     #axes.set_xlim([-1,1])
@@ -82,7 +100,7 @@ for pl in pulse_lists:
     
 
     #plt.clf()
-    #break
+    break
 
             
     

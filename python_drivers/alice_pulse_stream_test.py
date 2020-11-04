@@ -13,7 +13,7 @@ import tdc_wrapper
 import random 
 import datetime
 import james_utils
-logfile = "stream_test_results_10_29.txt"
+logfile = "stream_test_results_11_1.txt"
 
 def log_to_file(test_num, test_series_num, stream_len, succ, num_errors, num_no_photon, num_bad_range, num_neg_offset, sent_stream, received_stream):
     
@@ -49,9 +49,10 @@ ts = time_sync.time_sync(james_utils.ALICE_PORT, bob_ip, time_sync.CLIENT, tdc)
 count = 0
 
 #is working and tested
-#bin_size = 16000 #in ps
-#bin_number = 4#can encode values between 0 and 15
-#period = 280000 #in ps
+bin_size = 16000 #in ps
+bin_number = 4#can encode values between 0 and 15
+period = 280000 #in ps
+#period = 100000 #in ps
 
 #Working with 16 bins#
 #bin_size = 8000 #in ps
@@ -59,20 +60,22 @@ count = 0
 #period = 140000 #in ps
 
 #Faster with 32 bins, working
-bin_size = 8000 #in ps
-bin_number = 16#can encode values between 0 and 15
-period = 280000 #in ps
+#bin_size = 8000 #in ps
+#bin_number = 16#can encode values between 0 and 15
+#period = 280000 #in ps
 
 num_sync_pulse = 400
-num_dead_pulse = 100
+num_dead_pulse = 20
 
-pulse_len = 32
+pulse_len = 16
 pulse_amp = 0x7FFF
+
+num_leading_0s = 10
 
 
 file = open(logfile,'a')
 file.write(datetime.datetime.now().strftime("\n================\n%I:%M%p on %B %d, %Y\n"))
-file.write("bin_size = " + str(bin_size) + ", bin_number = " + str(bin_number) + ", period = " + str(period) + ", num sync pulses = " + str(num_sync_pulse) + ", pulse len (samples) = " + str(pulse_len) + ", pulse amp = " + hex(pulse_amp) + "\n")
+file.write("bin_size = " + str(bin_size) + ", bin_number = " + str(bin_number) + ", period = " + str(period) + ", num sync pulses = " + str(num_sync_pulse) + ", pulse len (samples) = " + str(pulse_len) + ", pulse amp = " + hex(pulse_amp) + ", leading 0s = " + str(num_leading_0s) + "\n")
 file.write("test num, test num for this # of photons, number of photons\n")
 file.close()
 
@@ -88,7 +91,7 @@ else:
     
     #2600
     #16300
-    for stream_len in range(100, 600, 100):
+    for stream_len in range(40, 400, 10):
         
         if(exit_test):
                 break
@@ -106,7 +109,11 @@ else:
                 test_stream = []
                 for i in range(0, stream_len):
                     #test_stream.append(random.randint(0,bin_number - 1))
-                    test_stream.append(i%bin_number)
+                    if(i >= num_leading_0s):
+                        test_stream.append(i%bin_number)
+                    else:
+                        #pad with leading 0s
+                        test_stream.append(0)
                     
                     
                 sent_str = "Sending: "
