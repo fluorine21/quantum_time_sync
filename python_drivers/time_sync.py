@@ -1081,6 +1081,7 @@ class time_sync:
         self.tdc.clear_all()#Clear any old pulses
         
         self.tdc.set_record(1)
+        time.sleep(0.1)
         
         #Send the pulses
         print("Sending pulses")
@@ -1098,7 +1099,7 @@ class time_sync:
             
         expected_num_pulses = (num_sync_pulse + len(vals)) * 0.95
         times_waited = 0
-        while(self.tdc.get_num_pulses() < expected_num_pulses and times_waited < 10):
+        while(self.tdc.get_num_pulses() < (expected_num_pulses*3) and times_waited < 2):
             print("Still waiting on TDC...")
             time.sleep(0.5)
             times_waited += 1

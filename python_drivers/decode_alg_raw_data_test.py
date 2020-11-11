@@ -6,11 +6,12 @@ Created on Fri Aug 28 12:16:06 2020
 """
 
 
-expected_period = 280000
+#expected_period = 500000
+expected_period = 653059
 #expected_period = 360000
 expected_bin_num = 4
 expected_bin_size = 16000
-expected_num_sync_pulses = 400
+expected_num_sync_pulses = 100
 
 import james_utils as ju
 import matplotlib.pyplot as plt
@@ -34,12 +35,18 @@ for l in lines:
 for pl in pulse_lists:
 
    
+    pl_dupe = pl.copy()
+    
     decoded_vals, bin_starts, last_sync_pulse_timestamp, entangled_timestamp, valid_sync_pulse_timestamps = ju.decode_pulse_list(pl, expected_period, expected_bin_num, expected_bin_size, expected_num_sync_pulses)
  
     decode_str = "Decoded: "
     for d in decoded_vals:
         if(d < 20):
             decode_str += str(d) + ","
+        elif (d == ju.FAIL_TIMESTAMP_BAD_RANGE):
+            decode_str += "br,"
+        elif (d == ju.FAIL_TIMESTAMP_NO_PHOTON):
+            decode_str += "np,"
         else:
             decode_str += ".,"
             
@@ -49,12 +56,15 @@ for pl in pulse_lists:
     
     pl = ju.remove_duplicate_pulses(pl, expected_period)
     
+    #pl = pl_dupe
+    
     first_small_delay = 0
     sec = 0
     consecutives = 0
     pl.sort()
     for i in range(0, len(pl)-1):
-        if(consecutives > 11):
+        if(consecutives > 3):
+            print("Pulses start at i = " + str(i))
             first_small_delay = pl[i]
             sec = pl[i+1]
             break
@@ -70,7 +80,7 @@ for pl in pulse_lists:
     for p in pl:
         pl_y.append(1)
       
-    if(len(decode_str) > 10):
+    if(len(decode_str) > 20):
         for b in bin_starts:
             bs_y.append(1)
             
@@ -80,7 +90,7 @@ for pl in pulse_lists:
     fig = plt.figure()
     plt.scatter(pl, pl_y, color='blue', label="Timestamps")
     plt.scatter([first_small_delay, sec], [1,1], color='black', label="First Small Delay")
-    if(len(decode_str) > 10):
+    if(len(decode_str) > 20):
         plt.scatter(bin_starts, bs_y, color='red', label="Bin Starts")
         plt.scatter(valid_sync_pulse_timestamps, vspt, color='orange', label="Valid Sync Pulses")
         plt.scatter([last_sync_pulse_timestamp], [1], color='green', label="Sync end")

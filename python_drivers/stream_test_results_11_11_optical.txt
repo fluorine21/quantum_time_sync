@@ -1,0 +1,196 @@
+
+================
+12:07PM on November 11, 2020
+bin_size = 16000, bin_number = 4, period = 280000, num sync pulses = 400, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0
+test num, test num for this # of photons, number of photons
+0, 0, 40, success:, 0, num errors:,39, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+
+================
+12:09PM on November 11, 2020
+bin_size = 16000, bin_number = 4, period = 300000, num sync pulses = 400, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0
+test num, test num for this # of photons, number of photons
+0, 0, 40, success:, 0, num errors:,39, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+
+================
+12:10PM on November 11, 2020
+bin_size = 16000, bin_number = 4, period = 300000, num sync pulses = 400, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0
+test num, test num for this # of photons, number of photons
+0, 0, 40, success:, 0, num errors:,39, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+
+================
+12:10PM on November 11, 2020
+bin_size = 16000, bin_number = 4, period = 300000, num sync pulses = 400, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0
+test num, test num for this # of photons, number of photons
+0, 0, 40, success:, 0, num errors:,39, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+
+================
+12:11PM on November 11, 2020
+bin_size = 16000, bin_number = 4, period = 500000, num sync pulses = 400, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0
+test num, test num for this # of photons, number of photons
+0, 0, 40, success:, 0, num errors:,38, num_no_photon,120, num_bad_range,2, num_neg_offset,0
+
+================
+12:15PM on November 11, 2020
+bin_size = 16000, bin_number = 4, period = 500000, num sync pulses = 400, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0
+test num, test num for this # of photons, number of photons
+0, 0, 40, success:, 0, num errors:,39, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+
+================
+12:15PM on November 11, 2020
+bin_size = 16000, bin_number = 4, period = 500000, num sync pulses = 400, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0
+test num, test num for this # of photons, number of photons
+0, 0, 40, success:, 0, num errors:,39, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+
+================
+12:15PM on November 11, 2020
+bin_size = 16000, bin_number = 4, period = 500000, num sync pulses = 400, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0
+test num, test num for this # of photons, number of photons
+0, 0, 40, success:, 0, num errors:,39, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+
+================
+12:15PM on November 11, 2020
+bin_size = 16000, bin_number = 4, period = 500000, num sync pulses = 400, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0
+test num, test num for this # of photons, number of photons
+0, 0, 40, success:, 0, num errors:,39, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+
+================
+12:15PM on November 11, 2020
+bin_size = 16000, bin_number = 4, period = 500000, num sync pulses = 400, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0
+test num, test num for this # of photons, number of photons
+0, 0, 40, success:, 0, num errors:,39, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+
+================
+12:16PM on November 11, 2020
+bin_size = 16000, bin_number = 4, period = 500000, num sync pulses = 400, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0
+test num, test num for this # of photons, number of photons
+0, 0, 40, success:, 0, num errors:,39, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+
+================
+12:16PM on November 11, 2020
+bin_size = 16000, bin_number = 4, period = 500000, num sync pulses = 400, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0
+test num, test num for this # of photons, number of photons
+0, 0, 40, success:, 0, num errors:,39, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+
+================
+12:18PM on November 11, 2020
+bin_size = 16000, bin_number = 4, period = 500000, num sync pulses = 400, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0
+test num, test num for this # of photons, number of photons
+
+================
+12:47PM on November 11, 2020
+bin_size = 16000, bin_number = 4, period = 500000, num sync pulses = 400, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0
+test num, test num for this # of photons, number of photons
+0, 0, 40, success:, 0, num errors:,40, num_no_photon,99, num_bad_range,2, num_neg_offset,0
+
+================
+12:47PM on November 11, 2020
+bin_size = 16000, bin_number = 4, period = 500000, num sync pulses = 400, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0
+test num, test num for this # of photons, number of photons
+0, 0, 40, success:, 0, num errors:,40, num_no_photon,99, num_bad_range,2, num_neg_offset,0
+
+================
+12:47PM on November 11, 2020
+bin_size = 16000, bin_number = 4, period = 500000, num sync pulses = 400, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0
+test num, test num for this # of photons, number of photons
+0, 0, 40, success:, 0, num errors:,39, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+
+================
+12:47PM on November 11, 2020
+bin_size = 16000, bin_number = 4, period = 500000, num sync pulses = 400, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0
+test num, test num for this # of photons, number of photons
+0, 0, 40, success:, 0, num errors:,39, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+
+================
+12:47PM on November 11, 2020
+bin_size = 16000, bin_number = 4, period = 500000, num sync pulses = 400, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0
+test num, test num for this # of photons, number of photons
+0, 0, 40, success:, 0, num errors:,40, num_no_photon,99, num_bad_range,2, num_neg_offset,0
+
+================
+12:50PM on November 11, 2020
+bin_size = 16000, bin_number = 4, period = 500000, num sync pulses = 100, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0
+test num, test num for this # of photons, number of photons
+0, 0, 40, success:, 0, num errors:,39, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+
+================
+12:50PM on November 11, 2020
+bin_size = 16000, bin_number = 4, period = 500000, num sync pulses = 100, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0
+test num, test num for this # of photons, number of photons
+0, 0, 40, success:, 0, num errors:,39, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+
+================
+12:50PM on November 11, 2020
+bin_size = 16000, bin_number = 4, period = 500000, num sync pulses = 100, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0
+test num, test num for this # of photons, number of photons
+0, 0, 40, success:, 0, num errors:,39, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+
+================
+02:01PM on November 11, 2020
+bin_size = 16000, bin_number = 4, period = 500000, num sync pulses = 100, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0
+test num, test num for this # of photons, number of photons
+0, 0, 40, success:, 0, num errors:,39, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+
+================
+02:01PM on November 11, 2020
+bin_size = 16000, bin_number = 4, period = 500000, num sync pulses = 100, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0
+test num, test num for this # of photons, number of photons
+0, 0, 40, success:, 0, num errors:,39, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+
+================
+02:01PM on November 11, 2020
+bin_size = 16000, bin_number = 4, period = 500000, num sync pulses = 100, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0
+test num, test num for this # of photons, number of photons
+0, 0, 40, success:, 0, num errors:,39, num_no_photon,0, num_bad_range,0, num_neg_offset,0
+
+================
+02:28PM on November 11, 2020
+bin_size = 16000, bin_number = 4, period = 500000, num sync pulses = 100, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0
+test num, test num for this # of photons, number of photons
+0, 0, 40, success:, 0, num errors:,23, num_no_photon,118, num_bad_range,2, num_neg_offset,0
+
+================
+02:28PM on November 11, 2020
+bin_size = 16000, bin_number = 4, period = 500000, num sync pulses = 100, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0
+test num, test num for this # of photons, number of photons
+0, 0, 40, success:, 0, num errors:,34, num_no_photon,102, num_bad_range,16, num_neg_offset,0
+
+================
+02:28PM on November 11, 2020
+bin_size = 16000, bin_number = 4, period = 500000, num sync pulses = 100, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0
+test num, test num for this # of photons, number of photons
+0, 0, 40, success:, 0, num errors:,26, num_no_photon,115, num_bad_range,4, num_neg_offset,0
+
+================
+02:28PM on November 11, 2020
+bin_size = 16000, bin_number = 4, period = 500000, num sync pulses = 100, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0
+test num, test num for this # of photons, number of photons
+0, 0, 40, success:, 0, num errors:,23, num_no_photon,115, num_bad_range,6, num_neg_offset,0
+
+================
+02:29PM on November 11, 2020
+bin_size = 32000, bin_number = 4, period = 500000, num sync pulses = 100, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0
+test num, test num for this # of photons, number of photons
+0, 0, 40, success:, 0, num errors:,19, num_no_photon,114, num_bad_range,3, num_neg_offset,0
+
+================
+02:29PM on November 11, 2020
+bin_size = 32000, bin_number = 4, period = 500000, num sync pulses = 100, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0
+test num, test num for this # of photons, number of photons
+0, 0, 40, success:, 0, num errors:,32, num_no_photon,111, num_bad_range,14, num_neg_offset,0
+
+================
+02:30PM on November 11, 2020
+bin_size = 32000, bin_number = 4, period = 500000, num sync pulses = 100, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0
+test num, test num for this # of photons, number of photons
+
+================
+02:31PM on November 11, 2020
+bin_size = 32000, bin_number = 4, period = 500000, num sync pulses = 100, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0
+test num, test num for this # of photons, number of photons
+0, 0, 40, success:, 0, num errors:,16, num_no_photon,114, num_bad_range,1, num_neg_offset,0
+
+================
+02:31PM on November 11, 2020
+bin_size = 32000, bin_number = 4, period = 500000, num sync pulses = 100, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0
+test num, test num for this # of photons, number of photons
+0, 0, 40, success:, 0, num errors:,13, num_no_photon,113, num_bad_range,1, num_neg_offset,0

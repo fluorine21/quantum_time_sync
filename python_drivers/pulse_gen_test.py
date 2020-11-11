@@ -29,12 +29,12 @@ pg.set_pulse_len(16)
 
 
 #List of values to send
-#for j in range(0, 2):
-#    for i in range(0,15):
-#        pg.load_pulse(j, i)
+# for j in range(0, 20):
+#     for i in range(0,15):
+#         pg.load_pulse(j, i)
     
 #Send the pulses with 10 leading ticks, 5 dead ticks
-#pg.sync_and_stream(5, 5)
+#pg.sync_and_stream(40, 20)
 
 
 print("Blasting...")

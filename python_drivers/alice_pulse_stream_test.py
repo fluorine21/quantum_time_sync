@@ -13,7 +13,7 @@ import tdc_wrapper
 import random 
 import datetime
 import james_utils
-logfile = "stream_test_results_11_1.txt"
+logfile = "stream_test_results_11_11_optical_better_data.txt"
 
 def log_to_file(test_num, test_series_num, stream_len, succ, num_errors, num_no_photon, num_bad_range, num_neg_offset, sent_stream, received_stream):
     
@@ -49,9 +49,10 @@ ts = time_sync.time_sync(james_utils.ALICE_PORT, bob_ip, time_sync.CLIENT, tdc)
 count = 0
 
 #is working and tested
-bin_size = 16000 #in ps
+#bin_size = 16000 #in ps
+bin_size = 32000 #in ps
 bin_number = 4#can encode values between 0 and 15
-period = 280000 #in ps
+period = 500000 #in ps
 #period = 100000 #in ps
 
 #Working with 16 bins#
@@ -64,13 +65,13 @@ period = 280000 #in ps
 #bin_number = 16#can encode values between 0 and 15
 #period = 280000 #in ps
 
-num_sync_pulse = 400
+num_sync_pulse = 100
 num_dead_pulse = 20
 
 pulse_len = 16
 pulse_amp = 0x7FFF
 
-num_leading_0s = 10
+num_leading_0s = 0
 
 
 file = open(logfile,'a')
@@ -91,7 +92,7 @@ else:
     
     #2600
     #16300
-    for stream_len in range(40, 400, 10):
+    for stream_len in range(40, 100, 10):
         
         if(exit_test):
                 break
@@ -148,6 +149,10 @@ else:
                     
                     if(i < 100):
                         res_str += str(i) + ", "
+                    elif (i == james_utils.FAIL_TIMESTAMP_BAD_RANGE):
+                        res_str += "br,"
+                    elif (i == james_utils.FAIL_TIMESTAMP_NO_PHOTON):
+                        res_str += "np,"
                     else:
                         res_str += ".,"
                 print(sent_str)

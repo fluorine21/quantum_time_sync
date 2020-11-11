@@ -16,21 +16,22 @@ ALICE_PORT = "COM4"
 BOB_PORT = "COM9"
 
 #Channel definitions for Alice and Bob, can all be set to a single channel if you're just doing key transmission
-ALICE_CHANNEL_SEND = 1
-ALICE_CHANNEL_RECEIVE = 1
-BOB_CHANNEL_SEND = 1
-BOB_CHANNEL_RECEIVE = 1
+ALICE_CHANNEL_SEND = 2
+ALICE_CHANNEL_RECEIVE = 2
+BOB_CHANNEL_SEND = 2
+BOB_CHANNEL_RECEIVE = 2
 
 TDC_THRESHOLD = 0.1 #100mV for SNSPDs
-#TDC_THRESHOLD = 0.0 #0mV for just FPGA
-TDC_CHANNEL_LIST = (1,2,3,4)
+#TDC_THRESHOLD = 0.6 #600mV for just FPGA
+#TDC_CHANNEL_LIST = (1,2,3,4)
+TDC_CHANNEL_LIST = (2,3,4) # for just fpga
 
 PERIOD_THRESHOLD = 0.1 #If the measured and expected periods differ by more than this fracion then decode fails
 SYNC_PERIOD_THRESHOLD = 0.01#Tighter for determining which sync pulses are valid
 
 
-LOG_TO_FILE = 0
-logfile = "received_pulse_streams_cw_light_11_1_2020.txt"
+LOG_TO_FILE = 1
+logfile = "received_pulse_streams_optical_11_11_2020_better_data.txt"
 INFER_TICK = 0 #If 1, next tick will be inferred from decoded value, do not use
 
 #Timestamps denoting decode failiure
@@ -195,18 +196,21 @@ def remove_duplicate_pulses(pulse_list, expected_period):
     
     pulse_list_final = []
     i = 0
-    while(i < len(pulse_list)-1):
+    num_dupes = 0
+    while(i < len(pulse_list)):
         #If the difference between this pulse and the next pulse is relatively small
-        if(pulse_list[i+1]-pulse_list[i] < (expected_period * 0.1)):
+        if(i < len(pulse_list)-1 and pulse_list[i+1]-pulse_list[i] < (expected_period * 0.1)):
             #Replace the pulse with a single average of the two
             average_timestamp = (pulse_list[i] + pulse_list[i+1])/2
             pulse_list_final.append(average_timestamp)
             i += 2
+            num_dupes += 1
         else:
             #Otherwise keep it
             pulse_list_final.append(pulse_list[i])
             i += 1
             
+    print("Removed " + str(num_dupes) + " duplicate pulses from pulse list")
     return pulse_list_final
     
 
@@ -232,7 +236,7 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
     
     if(LOG_TO_FILE):
         file = open(logfile,'a')
-        new_line = "period = " + str(expected_period) + ", bin_num = " + str(expected_bin_num) + "\n"
+        new_line = "period = " + str(expected_period) + ", bin_num = " + str(expected_bin_num) + ", length = " + str(len(pulses)) +"\n"
         for p in pulses:
             new_line += str(p) + ","
         file.write(new_line + "\n")
@@ -270,7 +274,7 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
     small_delay_cnt = 0
     last_known_sync_pulse = 0
     for i in range(0, len(pulses)-1):
-        if(small_delay_cnt > 10):
+        if(small_delay_cnt > 3):
             last_known_sync_pulse = i
             break
         diff = pulses[i+1] - pulses[i]
@@ -290,10 +294,10 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
         diff = pulses[j] - pulses[j-1]
         j = j - 1
         if(diff > expected_period*3):
-            first_sync_pulse_index = j
+            first_sync_pulse_index = j+2
             break
         
-    end_of_sync_pulses_timestamp = pulses[first_sync_pulse_index] + (expected_period * (expected_num_sync_pulses))
+    end_of_sync_pulses_timestamp = pulses[first_sync_pulse_index] + (expected_period * (expected_num_sync_pulses+5))
     
     first_encoded_pulse_pos = 0
     for i in range(first_sync_pulse_index, len(pulses)):

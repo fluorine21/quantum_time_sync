@@ -13,6 +13,9 @@ import threading
 import james_utils
 
 
+tdc_err_logfile = "tdc_error_log.txt"
+
+
 TIMEOUT_LONG = 15#For waiting on TDC to finish
 
 #Use secore mode?
@@ -232,7 +235,7 @@ class tdc_wrapper:
             #    print("Warning, data loss was " + str(d_loss) + ", some timestamps have been missed")
             
             #Readback timestamps from the device
-            #t_s = self.device.getLastTimestamps(True)
+            #t_s = self.device.ttTimestamps(True)
             
             #If we didnt get any timestamps
             #if(t_s[2] == 0):
@@ -602,6 +605,10 @@ class tdc_wrapper:
             d_loss = self.device.getDataLost()
             if(d_loss != 0):
                 print("[TDC SERVICE] Warning, data loss was " + str(d_loss) + ", some timestamps have been missed")
+                file = open(tdc_err_logfile,'a')
+                new_line = "TDC experienced data loss"
+                file.write(new_line + "\n")
+                file.close()
             
             #Readback timestamps from the device
             t_s = self.device.getLastTimestamps(True)
