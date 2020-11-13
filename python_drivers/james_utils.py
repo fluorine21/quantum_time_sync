@@ -16,10 +16,10 @@ ALICE_PORT = "COM4"
 BOB_PORT = "COM9"
 
 #Channel definitions for Alice and Bob, can all be set to a single channel if you're just doing key transmission
-ALICE_CHANNEL_SEND = 2
-ALICE_CHANNEL_RECEIVE = 2
-BOB_CHANNEL_SEND = 2
-BOB_CHANNEL_RECEIVE = 2
+ALICE_CHANNEL_SEND = 4
+ALICE_CHANNEL_RECEIVE = 4
+BOB_CHANNEL_SEND = 4
+BOB_CHANNEL_RECEIVE = 4
 
 TDC_THRESHOLD = 0.1 #100mV for SNSPDs
 #TDC_THRESHOLD = 0.6 #600mV for just FPGA
@@ -31,7 +31,7 @@ SYNC_PERIOD_THRESHOLD = 0.01#Tighter for determining which sync pulses are valid
 
 
 LOG_TO_FILE = 1
-logfile = "received_pulse_streams_optical_11_11_2020_better_data.txt"
+logfile = "collected_data\received_pulse_streams_optical_11_13_2020.txt"
 INFER_TICK = 0 #If 1, next tick will be inferred from decoded value, do not use
 
 #Timestamps denoting decode failiure

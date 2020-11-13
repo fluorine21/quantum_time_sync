@@ -13,7 +13,7 @@ import tdc_wrapper
 import random 
 import datetime
 import james_utils
-logfile = "stream_test_results_11_11_optical_better_data.txt"
+logfile = "collected_data\stream_test_results_11_13_optical.txt"
 
 def log_to_file(test_num, test_series_num, stream_len, succ, num_errors, num_no_photon, num_bad_range, num_neg_offset, sent_stream, received_stream):
     
@@ -50,7 +50,7 @@ count = 0
 
 #is working and tested
 #bin_size = 16000 #in ps
-bin_size = 32000 #in ps
+bin_size = 100000 #in ps
 bin_number = 4#can encode values between 0 and 15
 period = 500000 #in ps
 #period = 100000 #in ps
@@ -86,6 +86,12 @@ res += ts.set_bin_size(bin_size)
 res += ts.set_bin_number(bin_number)
 res += ts.set_period(period)
 exit_test = 0
+
+num_runs_per_len = 100
+#Lists for doing analysis
+len_list = []
+perc_errs_list = [] #Percentage of errors in pulse decoding
+
 if(res):
     print("Failed to set encoding parameters, aborting..")
 else:
@@ -97,7 +103,9 @@ else:
         if(exit_test):
                 break
         
-        for test_num in range(0, 100):
+        
+        errs_total = 0
+        for test_num in range(0, num_runs_per_len):
     
             if(exit_test):
                 break
@@ -162,7 +170,7 @@ else:
                 
                 print("Errors: " + str(errs))
                     
-                
+                errs_total += errs
                 
                     
                 log_to_file(count, test_num, stream_len, 0, errs, num_no_photon, num_bad_range, num_neg_offset, test_stream, res)
@@ -178,6 +186,27 @@ else:
                 exit_test = 1
                 break
             
+        
+        
+        len_list.append(stream_len)
+        perc_errs_list.append(errs_total/(stream_len*num_runs_per_len))
+        
             
+            
+        
+#Append the final results
+new_line = "\n\n=================================================\nFinal results: \n num_encoded_pulses:,"
+for l in len_list:
+    new_line += ","+str(l)
+new_line += "\n percent_error:"
+for p in perc_errs_list:
+    new_line += ","+str(p)
+new_line += "\n=============================================\n\n"
+
+print(new_line)
+file = open(logfile,'a')
+file.write(new_line + "\n")
+file.close()
+
 ts.board.close_board()           
 print("Done testing")       
