@@ -13,7 +13,7 @@ import tdc_wrapper
 import random 
 import datetime
 import james_utils
-logfile = "stream_test_results_11_13_optical_1000k.txt"
+logfile = "stream_test_results_11_13_optical_1100k.txt"
 
 def log_to_file(test_num, test_series_num, stream_len, succ, num_errors, num_no_photon, num_bad_range, num_neg_offset, sent_stream, received_stream):
     
@@ -82,9 +82,9 @@ perc_errs_list = [] #Percentage of errors in pulse decoding
 
 #External experimental factors to be recorded
 attenuation = 21.6 # in dB
-laser_power = 10.5 # in mW
-light_counts = 1050 # in thousands per second
-dark_counts = 8.7 # in thousands per second
+laser_power = 11 # in mW
+light_counts = 1130 # in thousands per second
+dark_counts = 9.7 # in thousands per second
 
 
 file = open(logfile,'a')

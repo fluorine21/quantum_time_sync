@@ -31,7 +31,7 @@ SYNC_PERIOD_THRESHOLD = 0.01#Tighter for determining which sync pulses are valid
 
 
 LOG_TO_FILE = 1
-logfile = "received_pulse_streams_optical_11_13_2020_1000k.txt"
+logfile = "received_pulse_streams_optical_11_13_2020_1100k.txt"
 INFER_TICK = 0 #If 1, next tick will be inferred from decoded value, do not use
 
 #Timestamps denoting decode failiure
