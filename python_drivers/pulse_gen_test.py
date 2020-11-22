@@ -62,6 +62,7 @@ pg.phase_meas_on()
 
 
 time.sleep(5)
+import pdb; pdb.set_trace()
 
 pg.phase_meas_off()
 pg.close_board()

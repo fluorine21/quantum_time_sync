@@ -1,0 +1,5 @@
+
+================
+04:36PM on November 13, 2020
+bin_size = 100000, bin_number = 4, period = 500000, num sync pulses = 100, pulse len (samples) = 16, pulse amp = 0x7fff, leading 0s = 0, laser power: 5dBm, attenuation: 25dB, light counts per s: 220k, dark counts per s: 17k
+test num, test num for this # of photons, number of photons

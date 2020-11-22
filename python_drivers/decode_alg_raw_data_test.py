@@ -7,10 +7,10 @@ Created on Fri Aug 28 12:16:06 2020
 
 
 #expected_period = 500000
-expected_period = 653059
-#expected_period = 360000
+#expected_period = 653059
+expected_period = 750000
 expected_bin_num = 4
-expected_bin_size = 16000
+expected_bin_size = 100000
 expected_num_sync_pulses = 100
 
 import james_utils as ju
@@ -63,7 +63,7 @@ for pl in pulse_lists:
     consecutives = 0
     pl.sort()
     for i in range(0, len(pl)-1):
-        if(consecutives > 3):
+        if(consecutives > 7):
             print("Pulses start at i = " + str(i))
             first_small_delay = pl[i]
             sec = pl[i+1]

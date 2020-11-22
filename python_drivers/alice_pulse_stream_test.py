@@ -13,7 +13,7 @@ import tdc_wrapper
 import random 
 import datetime
 import james_utils
-logfile = "collected_data\stream_test_results_11_13_optical.txt"
+logfile = "stream_test_results_11_13_optical_1000k.txt"
 
 def log_to_file(test_num, test_series_num, stream_len, succ, num_errors, num_no_photon, num_bad_range, num_neg_offset, sent_stream, received_stream):
     
@@ -74,9 +74,22 @@ pulse_amp = 0x7FFF
 num_leading_0s = 0
 
 
+num_runs_per_len = 200
+
+#Lists for doing analysis
+len_list = []
+perc_errs_list = [] #Percentage of errors in pulse decoding
+
+#External experimental factors to be recorded
+attenuation = 21.6 # in dB
+laser_power = 10.5 # in mW
+light_counts = 1050 # in thousands per second
+dark_counts = 8.7 # in thousands per second
+
+
 file = open(logfile,'a')
 file.write(datetime.datetime.now().strftime("\n================\n%I:%M%p on %B %d, %Y\n"))
-file.write("bin_size = " + str(bin_size) + ", bin_number = " + str(bin_number) + ", period = " + str(period) + ", num sync pulses = " + str(num_sync_pulse) + ", pulse len (samples) = " + str(pulse_len) + ", pulse amp = " + hex(pulse_amp) + ", leading 0s = " + str(num_leading_0s) + "\n")
+file.write("bin_size = " + str(bin_size) + ", bin_number = " + str(bin_number) + ", period = " + str(period) + ", num sync pulses = " + str(num_sync_pulse) + ", pulse len (samples) = " + str(pulse_len) + ", pulse amp = " + hex(pulse_amp) + ", leading 0s = " + str(num_leading_0s) + ", laser power: " + str(laser_power) + "mW, attenuation: " + str(attenuation) + "dB, light counts per s: " + str(light_counts) + "k, dark counts per s: " + str(dark_counts) + "k\n")
 file.write("test num, test num for this # of photons, number of photons\n")
 file.close()
 
@@ -87,10 +100,7 @@ res += ts.set_bin_number(bin_number)
 res += ts.set_period(period)
 exit_test = 0
 
-num_runs_per_len = 100
-#Lists for doing analysis
-len_list = []
-perc_errs_list = [] #Percentage of errors in pulse decoding
+
 
 if(res):
     print("Failed to set encoding parameters, aborting..")
@@ -177,9 +187,10 @@ else:
                 
                 count += 1
                 print("Waiting 3 seconds...")
-                time.sleep(3)
+                time.sleep(1)
                 
-                #exit_test = 1
+                exit_test = 0
+                
                 
             except KeyboardInterrupt:
                 print("Exiting")
@@ -189,19 +200,19 @@ else:
         
         
         len_list.append(stream_len)
-        perc_errs_list.append(errs_total/(stream_len*num_runs_per_len))
+        perc_errs_list.append(100*errs_total/(stream_len*num_runs_per_len))
         
             
             
         
 #Append the final results
-new_line = "\n\n=================================================\nFinal results: \n num_encoded_pulses:,"
+new_line = "\n\n=================================================\nFinal results: \n num_encoded_pulses:"
 for l in len_list:
     new_line += ","+str(l)
 new_line += "\n percent_error:"
 for p in perc_errs_list:
     new_line += ","+str(p)
-new_line += "\n=============================================\n\n"
+new_line += "\n=============================================\n\n\n\n"
 
 print(new_line)
 file = open(logfile,'a')
