@@ -21,17 +21,17 @@ ALICE_CHANNEL_RECEIVE = 4
 BOB_CHANNEL_SEND = 4
 BOB_CHANNEL_RECEIVE = 4
 
-TDC_THRESHOLD = 0.1 #100mV for SNSPDs
-#TDC_THRESHOLD = 0.6 #600mV for just FPGA
-#TDC_CHANNEL_LIST = (1,2,3,4)
-TDC_CHANNEL_LIST = (2,3,4) # for just fpga
+#TDC_THRESHOLD = 0.1 #100mV for SNSPDs
+TDC_THRESHOLD = 0.1 #600mV for just FPGA
+TDC_CHANNEL_LIST = (1,2,3,4)
+#TDC_CHANNEL_LIST = (2,3,4) # for just fpga
 
 PERIOD_THRESHOLD = 0.1 #If the measured and expected periods differ by more than this fracion then decode fails
 SYNC_PERIOD_THRESHOLD = 0.01#Tighter for determining which sync pulses are valid
 
 
-LOG_TO_FILE = 1
-logfile = "received_pulse_streams_optical_11_13_2020_1100k.txt"
+LOG_TO_FILE = 0
+logfile = "received_pulse_streams_optical_2_9_test.txt"
 INFER_TICK = 0 #If 1, next tick will be inferred from decoded value, do not use
 
 #Timestamps denoting decode failiure
@@ -210,7 +210,7 @@ def remove_duplicate_pulses(pulse_list, expected_period):
             pulse_list_final.append(pulse_list[i])
             i += 1
             
-    print("Removed " + str(num_dupes) + " duplicate pulses from pulse list")
+    #print("Removed " + str(num_dupes) + " duplicate pulses from pulse list")
     return pulse_list_final
     
 
@@ -311,7 +311,7 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
         print("Cannot determine index of first encoded pulse, aborting")
         return [0], 0, 0, 0, 0
     
-    print("Done separating list of pulses")
+    #print("Done separating list of pulses")
     
     #Now we're going to create objects for each pulse which store a list of their time differences to every other sync pulse
     #If any pulse has two differences which are close enough to the expected period then we'll mark those as valid
@@ -351,7 +351,7 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
     measured_bin_size = (measured_period/expected_period) * expected_bin_size
     
     
-    print("Measured period was " + str(measured_period) + ", measured bin size was " + str(measured_bin_size))
+    #print("Measured period was " + str(measured_period) + ", measured bin size was " + str(measured_bin_size))
     
     #Now go through the list of sync pulses and determine if they are valid
     valid_sync_pulses = []
@@ -380,7 +380,7 @@ def decode_pulse_list(pulses, expected_period, expected_bin_num, expected_bin_si
         return [0], 0, 0, 0, 0
         
     
-    print("Found " + str(len(valid_sync_pulses)) + " valid sync pulses")
+    #print("Found " + str(len(valid_sync_pulses)) + " valid sync pulses")
     #now we figure out which was the last valid pulse
     valid_sync_pulse_timestamps = []
     last_valid_sync_pulse = 0

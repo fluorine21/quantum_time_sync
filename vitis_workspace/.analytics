@@ -415,3 +415,6 @@ timestamp=[2020-11-13 14:33:32], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00
 timestamp=[2020-11-21 16:02:16], mode=WORKBENCH_START, duration=0:00:14.907, duration_ms=14907, data={}
 timestamp=[2020-11-21 16:02:17], mode=WORKBENCH_UI_INIT, duration=0:00:00.860, duration_ms=860, data={editors_count=9, platform_editors_count=0, projects_count=6, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,test_proj_ethernet,test_proj_ethernet_system,test_proj_plat,test_proj_pulse_ctrl,test_proj_pulse_ctrl_system}
 timestamp=[2020-11-21 16:02:18], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.163, duration_ms=163, data={}
+timestamp=[2021-02-09 11:51:10], mode=WORKBENCH_START, duration=0:00:14.530, duration_ms=14530, data={}
+timestamp=[2021-02-09 11:51:11], mode=WORKBENCH_UI_INIT, duration=0:00:00.941, duration_ms=941, data={editors_count=10, platform_editors_count=0, projects_count=6, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,test_proj_ethernet,test_proj_ethernet_system,test_proj_plat,test_proj_pulse_ctrl,test_proj_pulse_ctrl_system}
+timestamp=[2021-02-09 11:51:12], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.146, duration_ms=146, data={}

@@ -13,7 +13,7 @@ import tdc_wrapper
 import random 
 import datetime
 import james_utils
-logfile = "stream_test_results_11_13_optical_1100k.txt"
+logfile = "stream_test_results_2_10_200k.txt"
 
 def log_to_file(test_num, test_series_num, stream_len, succ, num_errors, num_no_photon, num_bad_range, num_neg_offset, sent_stream, received_stream):
     
@@ -82,9 +82,9 @@ perc_errs_list = [] #Percentage of errors in pulse decoding
 
 #External experimental factors to be recorded
 attenuation = 21.6 # in dB
-laser_power = 11 # in mW
-light_counts = 1130 # in thousands per second
-dark_counts = 9.7 # in thousands per second
+laser_power = 0.7 # in mW
+light_counts = 216 # in thousands per second
+dark_counts = 1.1 # in thousands per second
 
 
 file = open(logfile,'a')
@@ -108,7 +108,7 @@ else:
     
     #2600
     #16300
-    for stream_len in range(40, 100, 10):
+    for stream_len in range(100, 400, 10):
         
         if(exit_test):
                 break
@@ -127,12 +127,12 @@ else:
                 
                 test_stream = []
                 for i in range(0, stream_len):
-                    #test_stream.append(random.randint(0,bin_number - 1))
-                    if(i >= num_leading_0s):
-                        test_stream.append(i%bin_number)
-                    else:
+                    test_stream.append(random.randint(0,bin_number - 1))
+                    #if(i >= num_leading_0s):  
+                    #    test_stream.append(i%bin_number)
+                    #else:
                         #pad with leading 0s
-                        test_stream.append(0)
+                    #    test_stream.append(0)
                     
                     
                 sent_str = "Sending: "
@@ -189,7 +189,7 @@ else:
                 print("Waiting 3 seconds...")
                 time.sleep(1)
                 
-                exit_test = 0
+                #exit_test = 1
                 
                 
             except KeyboardInterrupt:
